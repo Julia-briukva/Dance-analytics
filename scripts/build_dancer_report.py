@@ -370,6 +370,83 @@ def build_tournament_dance_results(dance_results: pd.DataFrame) -> pd.DataFrame:
     return result
 
 
+def tournament_metric_record(row: pd.Series, metric_type: str, role: str | None = None) -> dict[str, Any]:
+    value_key = "cross_count" if metric_type == "cross_count" else "final_place"
+    value = row[value_key]
+    record: dict[str, Any] = {
+        "dance": clean_value(row["dance"]),
+        "dance_code": clean_value(row["dance_code"]),
+        "metric_value": clean_value(round(float(value), 3) if metric_type == "final_place" else int(value)),
+        "metric_type": metric_type,
+        "metric_label": "крестов судей" if metric_type == "cross_count" else "итоговое место",
+        "category": clean_value(row["category"]),
+        "protocol_id": clean_value(row["protocol_id"]),
+    }
+    if metric_type == "cross_count":
+        record["cross_count"] = clean_value(int(value))
+        record["interpretation"] = "выше всего оценивался судьями" if role == "best" else "ниже всего оценивался судьями"
+    else:
+        record["final_place"] = clean_value(round(float(value), 3))
+        record["interpretation"] = "по итоговым местам"
+    return record
+
+
+def apply_tournament_display_mode(summary: dict[str, Any], metrics: pd.DataFrame, metric_type: str) -> dict[str, Any]:
+    value_column = "cross_count" if metric_type == "cross_count" else "final_place"
+    metrics = metrics.dropna(subset=[value_column]).copy()
+    if metrics.empty:
+        summary["display_mode"] = "insufficient_data"
+        summary["message"] = "недостаточно данных"
+        return summary
+
+    metrics["_dance_order"] = metrics["dance_code"].map(lambda code: DANCE_CODE_ORDER.get(code, 999))
+    metrics = metrics.sort_values(["_dance_order", "dance_code"])
+    values = [round(float(item), 6) for item in metrics[value_column].tolist()]
+    metric_count = len(metrics)
+
+    if metric_count == 1:
+        row = metrics.iloc[0]
+        summary["data_sufficient"] = True
+        summary["display_mode"] = "single_dance"
+        summary["evaluated_dance"] = tournament_metric_record(row, metric_type)
+        return summary
+
+    if max(values) == min(values):
+        value = values[0]
+        summary["data_sufficient"] = True
+        summary["display_mode"] = "tied"
+        summary["tied_dances"] = clean_value(metrics["dance_code"].tolist())
+        summary["tied_metric_value"] = clean_value(round(float(value), 3) if metric_type == "final_place" else int(value))
+        return summary
+
+    summary["data_sufficient"] = True
+    summary["display_mode"] = "best_worst"
+    ascending = True if metric_type == "final_place" else False
+    best_value = min(values) if metric_type == "final_place" else max(values)
+    worst_value = max(values) if metric_type == "final_place" else min(values)
+    best_rows = metrics[metrics[value_column].round(6) == best_value].sort_values(["_dance_order", "dance_code"])
+    worst_rows = metrics[metrics[value_column].round(6) == worst_value].sort_values(["_dance_order", "dance_code"])
+    best_codes = [clean_value(row["dance_code"]) for _, row in best_rows.iterrows()]
+    worst_codes = [clean_value(row["dance_code"]) for _, row in worst_rows.iterrows()]
+    if set(best_codes) == set(worst_codes):
+        value = best_value
+        summary["display_mode"] = "tied"
+        summary["tied_dances"] = clean_value(metrics["dance_code"].tolist())
+        summary["tied_metric_value"] = clean_value(round(float(value), 3) if metric_type == "final_place" else int(value))
+        return summary
+    best = best_rows.iloc[0]
+    worst = worst_rows.iloc[0]
+    if len(best_rows) == 1 and len(worst_rows) == 1 and clean_value(best["dance_code"]) == clean_value(worst["dance_code"]):
+        summary["display_mode"] = "single_dance"
+        summary["evaluated_dance"] = tournament_metric_record(best, metric_type)
+        return summary
+    summary["best_dances"] = [tournament_metric_record(row, metric_type, role="best") for _, row in best_rows.iterrows()]
+    summary["worst_dances"] = [tournament_metric_record(row, metric_type, role="worst") for _, row in worst_rows.iterrows()]
+    summary["best_dance"] = summary["best_dances"][0] if summary["best_dances"] else None
+    summary["worst_dance"] = summary["worst_dances"][0] if summary["worst_dances"] else None
+    return summary
+
+
 def build_program_tournament_summary(program: str, rows: pd.DataFrame, mark_rows: pd.DataFrame | None = None) -> dict[str, Any]:
     scored = rows.dropna(subset=["final_place"]).copy() if not rows.empty else pd.DataFrame()
     source_rows = mark_rows if mark_rows is not None and not mark_rows.empty else rows
@@ -389,28 +466,30 @@ def build_program_tournament_summary(program: str, rows: pd.DataFrame, mark_rows
         "metric_type": "final_place" if scored_dance_count >= 2 else None,
         "metric_label": "по итоговым местам" if scored_dance_count >= 2 else None,
         "data_sufficient": False,
+        "display_mode": "insufficient_data",
         "best_dance": None,
         "worst_dance": None,
+        "best_dances": [],
+        "worst_dances": [],
+        "evaluated_dance": None,
+        "tied_dances": [],
+        "tied_metric_value": None,
     }
 
-    if scored_dance_count >= 2:
-        summary["data_sufficient"] = True
-        scored["_dance_order"] = scored["dance_code"].map(lambda code: DANCE_CODE_ORDER.get(code, 999))
-        best = scored.sort_values(["final_place", "_dance_order"], ascending=[True, True]).iloc[0]
-        worst = scored.sort_values(["final_place", "_dance_order"], ascending=[False, True]).iloc[0]
-        for key, row in [("best_dance", best), ("worst_dance", worst)]:
-            summary[key] = {
-                "dance": clean_value(row["dance"]),
-                "dance_code": clean_value(row["dance_code"]),
-                "final_place": clean_value(round(float(row["final_place"]), 3)),
-                "metric_value": clean_value(round(float(row["final_place"]), 3)),
-                "metric_type": "final_place",
-                "metric_label": "итоговое место",
-                "interpretation": "по итоговым местам",
-                "category": clean_value(row["category"]),
-                "protocol_id": clean_value(row["protocol_id"]),
-            }
-        return summary
+    if scored_dance_count >= 1:
+        summary["metric_type"] = "final_place"
+        summary["metric_label"] = "по итоговым местам"
+        final_metrics = (
+            scored.groupby(["program", "dance_code"], as_index=False)
+            .agg(
+                dance=("dance", "first"),
+                final_place=("final_place", "mean"),
+                protocol_id=("protocol_id", "first"),
+                category=("category", "first"),
+            )
+        )
+        final_metrics["final_place"] = final_metrics["final_place"].round(3)
+        return apply_tournament_display_mode(summary, final_metrics, "final_place")
 
     cross_rows = source_rows[source_rows["mark_type"] == "cross"].copy() if not source_rows.empty and "mark_type" in source_rows.columns else pd.DataFrame()
     if not cross_rows.empty:
@@ -424,26 +503,11 @@ def build_program_tournament_summary(program: str, rows: pd.DataFrame, mark_rows
         )
         cross_summary["dance_code"] = cross_summary["dance"].map(normalize_dance_code)
         cross_summary["_dance_order"] = cross_summary["dance_code"].map(lambda code: DANCE_CODE_ORDER.get(code, 999))
-        if int(cross_summary["dance"].nunique()) >= 2:
-            summary["data_sufficient"] = True
+        if int(cross_summary["dance"].nunique()) >= 1:
             summary["metric_type"] = "cross_count"
             summary["metric_label"] = "по крестам судей"
             summary["overall"]["dance_count"] = int(cross_summary["dance"].nunique())
-            best = cross_summary.sort_values(["cross_count", "_dance_order"], ascending=[False, True]).iloc[0]
-            worst = cross_summary.sort_values(["cross_count", "_dance_order"], ascending=[True, True]).iloc[0]
-            for key, row in [("best_dance", best), ("worst_dance", worst)]:
-                summary[key] = {
-                    "dance": clean_value(row["dance"]),
-                    "dance_code": clean_value(row["dance_code"]),
-                    "cross_count": clean_value(int(row["cross_count"])),
-                    "metric_value": clean_value(int(row["cross_count"])),
-                    "metric_type": "cross_count",
-                    "metric_label": "крестов судей",
-                    "interpretation": "выше всего оценивался судьями" if key == "best_dance" else "ниже всего оценивался судьями",
-                    "category": clean_value(row["category"]),
-                    "protocol_id": clean_value(row["protocol_id"]),
-                }
-            return summary
+            return apply_tournament_display_mode(summary, cross_summary, "cross_count")
 
     summary["message"] = "недостаточно данных"
     return summary

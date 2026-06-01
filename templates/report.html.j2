@@ -636,12 +636,12 @@
 
   <nav class="tabs" aria-label="Режим просмотра отчёта">
     <label class="tab-label" for="tab-trainer">
-      <span class="tab-title">Тренер — детали для работы на тренировках</span>
+      <span class="tab-title">Тренеру</span>
       <span class="tab-help">Разбор программ, динамики, танцев и турниров</span>
     </label>
     <label class="tab-label" for="tab-parent">
-      <span class="tab-title">Родитель — кратко и понятно о прогрессе</span>
-      <span class="tab-help">Главные выводы без технических деталей</span>
+      <span class="tab-title">Родителю</span>
+      <span class="tab-help">Кратко и понятно о прогрессе</span>
     </label>
   </nav>
 
@@ -943,13 +943,25 @@
                     {{ program.overall.dance_codes|join(", ") }} · {{ program.metric_label or "по оценкам судей" }}
                   {% endif %}
                 </p>
-                {% if program.data_sufficient %}
+                {% if program.display_mode == "best_worst" %}
                   {% if program.metric_type == "cross_count" %}
-                    <p><strong>Лучший танец:</strong> {{ program.best_dance.dance_code }} <span class="muted">— {{ program.best_dance.interpretation }} · {{ program.best_dance.cross_count }} крестов</span></p>
-                    <p><strong>Требует внимания:</strong> {{ program.worst_dance.dance_code }} <span class="muted">— {{ program.worst_dance.interpretation }} · {{ program.worst_dance.cross_count }} крестов</span></p>
+                    <p><strong>{% if program.best_dances|length > 1 %}Лучшие танцы{% else %}Лучший танец{% endif %}:</strong> {{ program.best_dances|map(attribute="dance_code")|join(", ") }} <span class="muted">— {{ program.best_dance.interpretation }} · {{ program.best_dance.cross_count }} крестов</span></p>
+                    <p><strong>{% if program.worst_dances|length > 1 %}Требуют внимания{% else %}Требует внимания{% endif %}:</strong> {{ program.worst_dances|map(attribute="dance_code")|join(", ") }} <span class="muted">— {{ program.worst_dance.interpretation }} · {{ program.worst_dance.cross_count }} крестов</span></p>
                   {% else %}
-                    <p><strong>Лучший танец:</strong> {{ program.best_dance.dance_code }} <span class="muted">место {{ program.best_dance.final_place|fmt }}</span></p>
-                    <p><strong>Требует внимания:</strong> {{ program.worst_dance.dance_code }} <span class="muted">место {{ program.worst_dance.final_place|fmt }}</span></p>
+                    <p><strong>{% if program.best_dances|length > 1 %}Лучшие танцы{% else %}Лучший танец{% endif %}:</strong> {{ program.best_dances|map(attribute="dance_code")|join(", ") }} <span class="muted">место {{ program.best_dance.final_place|fmt }}</span></p>
+                    <p><strong>{% if program.worst_dances|length > 1 %}Требуют внимания{% else %}Требует внимания{% endif %}:</strong> {{ program.worst_dances|map(attribute="dance_code")|join(", ") }} <span class="muted">место {{ program.worst_dance.final_place|fmt }}</span></p>
+                  {% endif %}
+                {% elif program.display_mode == "single_dance" and program.evaluated_dance %}
+                  {% if program.metric_type == "cross_count" %}
+                    <p><strong>Оценённый танец:</strong> {{ program.evaluated_dance.dance_code }} <span class="muted">— {{ program.evaluated_dance.cross_count }} крестов</span></p>
+                  {% else %}
+                    <p><strong>Оценённый танец:</strong> {{ program.evaluated_dance.dance_code }} <span class="muted">— место {{ program.evaluated_dance.final_place|fmt }}</span></p>
+                  {% endif %}
+                {% elif program.display_mode == "tied" %}
+                  {% if program.metric_type == "cross_count" %}
+                    <p><strong>Танцы оценены примерно одинаково:</strong> {{ program.tied_dances|join(", ") }} <span class="muted">— {{ program.tied_metric_value }} крестов</span></p>
+                  {% else %}
+                    <p><strong>Танцы оценены примерно одинаково:</strong> {{ program.tied_dances|join(", ") }} <span class="muted">— среднее место {{ program.tied_metric_value|fmt }}</span></p>
                   {% endif %}
                 {% else %}
                   <p class="muted">Недостаточно данных для лучшего и худшего танца.</p>

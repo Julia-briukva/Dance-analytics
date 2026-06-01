@@ -13,6 +13,8 @@ from pathlib import Path
 import requests
 from bs4 import BeautifulSoup
 
+from compreg_encoding import read_compreg_html_file, write_compreg_html_file
+
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_DB_PATH = PROJECT_ROOT / "database" / "compreg_spb_2025_2026.sqlite"
@@ -73,13 +75,11 @@ def fetch_card_html(idd: str) -> tuple[str, str, Path | None]:
         response.raise_for_status()
     except requests.RequestException as exc:
         if cache_path.exists():
-            return cache_path.read_text(encoding="utf-8", errors="ignore"), f"cache fallback after network error: {exc}", cache_path
+            return read_compreg_html_file(cache_path), f"cache fallback after network error: {exc}", cache_path
         raise RuntimeError(f"Failed to fetch Compreg card and no cache fallback exists: {exc}") from exc
 
-    response.encoding = response.encoding or "utf-8"
-    CACHE_DIR.mkdir(parents=True, exist_ok=True)
-    cache_path.write_text(response.text, encoding=response.encoding, errors="replace")
-    return response.text, f"live POST {CARD_URL} body={{'ci': '{idd}'}}", cache_path
+    html = write_compreg_html_file(cache_path, response.content, declared_encoding=response.encoding)
+    return html, f"live POST {CARD_URL} body={{'ci': '{idd}'}}", cache_path
 
 
 def label_value_pairs(info: BeautifulSoup) -> list[tuple[str, str]]:

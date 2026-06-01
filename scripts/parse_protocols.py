@@ -16,6 +16,8 @@ from pathlib import Path
 import pandas as pd
 from bs4 import BeautifulSoup, Tag
 
+from compreg_encoding import read_compreg_html_file
+
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_DB_PATH = PROJECT_ROOT / "database" / "compreg_spb_2025_2026.sqlite"
@@ -490,7 +492,7 @@ def parse_protocol(conn: sqlite3.Connection, record: ProtocolRecord) -> tuple[st
     if not record.cache_path.exists():
         mark_status(conn, record.db_id, "skipped", f"missing cache: {record.cache_path}")
         return "skipped", 0
-    html = record.cache_path.read_text(encoding="utf-8", errors="replace")
+    html = read_compreg_html_file(record.cache_path)
     soup = BeautifulSoup(html, "html.parser")
     metadata = extract_metadata(soup)
     conn.execute(

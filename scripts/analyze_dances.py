@@ -20,6 +20,7 @@ from analyze_dancer import (
     resolve_dancer_by_idd,
     selected_marks_by_internal_id,
 )
+from compreg_encoding import read_compreg_html_file
 from parse_protocols import clean_empty, normalize_text, parse_float
 
 
@@ -169,7 +170,7 @@ def selected_dance_results_by_internal_id(conn: sqlite3.Connection, internal_dan
             cache_path = Path(path)
             if not cache_path.is_absolute():
                 cache_path = DEFAULT_DB_PATH.parents[1] / cache_path
-            soup_cache[path] = BeautifulSoup(cache_path.read_text(encoding="utf-8", errors="ignore"), "html.parser")
+            soup_cache[path] = BeautifulSoup(read_compreg_html_file(cache_path), "html.parser")
         final_place = None
         for canvas in soup_cache[path].select(".prot-table-canvas"):
             final_place = extract_ordinary_dance_result(

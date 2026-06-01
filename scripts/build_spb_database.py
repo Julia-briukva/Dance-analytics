@@ -20,6 +20,8 @@ import pandas as pd
 import requests
 from bs4 import BeautifulSoup
 
+from compreg_encoding import read_compreg_html_file, write_compreg_html_file
+
 
 BASE_URL = "https://compreg.ru"
 DEFAULT_START_DATE = "2025-09-01"
@@ -239,9 +241,8 @@ def fetch_html(
     except requests.RequestException as exc:
         return FetchResult(url=url, local_path=None, status_code=None, from_cache=False, error=str(exc))
 
-    if response.status_code == 200 and response.text.strip():
-        cache_path.parent.mkdir(parents=True, exist_ok=True)
-        cache_path.write_text(response.text, encoding=response.encoding or "utf-8", errors="replace")
+    html = write_compreg_html_file(cache_path, response.content, declared_encoding=response.encoding) if response.status_code == 200 and response.content.strip() else ""
+    if response.status_code == 200 and html.strip():
         if marker_path.exists():
             marker_path.unlink()
         return FetchResult(url=url, local_path=cache_path, status_code=response.status_code, from_cache=False)
@@ -346,7 +347,7 @@ def extract_title_and_city_sources(soup: BeautifulSoup) -> tuple[str | None, lis
 
 
 def extract_protocol_city_sources(local_path: Path) -> list[tuple[str, str]]:
-    html = local_path.read_text(encoding="utf-8", errors="replace")
+    html = read_compreg_html_file(local_path)
     soup = BeautifulSoup(html, "html.parser")
     _, sources = extract_title_and_city_sources(soup)
     metadata_sources = [(source, text) for source, text in sources if source != "html_text"]
@@ -359,7 +360,7 @@ def parse_tournament_page(
     city_protocol_sample: int,
     refresh: bool,
 ) -> TournamentPage | RejectedTournamentPage | None:
-    html = local_path.read_text(encoding="utf-8", errors="replace")
+    html = read_compreg_html_file(local_path)
     soup = BeautifulSoup(html, "html.parser")
 
     matches = LOAD_CATEGORY_RE.findall(html)
@@ -828,6 +829,10 @@ def save_metadata(
     with sqlite3.connect(db_path) as conn:
         conn.execute("PRAGMA foreign_keys = ON")
         if prune_existing:
+            conn.execute("DELETE FROM marks")
+            conn.execute("DELETE FROM protocol_dancers")
+            conn.execute("DELETE FROM protocol_judges")
+            conn.execute("DELETE FROM protocol_parse_status")
             conn.execute("DELETE FROM protocols")
             conn.execute("DELETE FROM tournaments")
             conn.execute("DELETE FROM rejected_tournaments")

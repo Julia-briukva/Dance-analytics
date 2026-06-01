@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-06-01T14:31:21.038486+00:00",
+    "generated_at": "2026-06-01T15:57:03.700416+00:00",
     "analytics_version": "report_layer_v1",
     "database": "database/compreg_spb_2025_2026.sqlite"
   },
@@ -10993,28 +10993,69 @@
             "metric_type": "final_place",
             "metric_label": "по итоговым местам",
             "data_sufficient": true,
+            "display_mode": "best_worst",
             "best_dance": {
               "dance": "T",
               "dance_code": "T",
-              "final_place": 1.0,
               "metric_value": 1.0,
               "metric_type": "final_place",
               "metric_label": "итоговое место",
-              "interpretation": "по итоговым местам",
               "category": "Ювеналы-1 E+D Соло Ж St",
-              "protocol_id": 73068
+              "protocol_id": 73068,
+              "final_place": 1.0,
+              "interpretation": "по итоговым местам"
             },
             "worst_dance": {
               "dance": "W",
               "dance_code": "W",
-              "final_place": 6.0,
               "metric_value": 6.0,
               "metric_type": "final_place",
               "metric_label": "итоговое место",
-              "interpretation": "по итоговым местам",
               "category": "Ювеналы-1 E+D Соло Ж St",
-              "protocol_id": 73068
-            }
+              "protocol_id": 73068,
+              "final_place": 6.0,
+              "interpretation": "по итоговым местам"
+            },
+            "best_dances": [
+              {
+                "dance": "T",
+                "dance_code": "T",
+                "metric_value": 1.0,
+                "metric_type": "final_place",
+                "metric_label": "итоговое место",
+                "category": "Ювеналы-1 E+D Соло Ж St",
+                "protocol_id": 73068,
+                "final_place": 1.0,
+                "interpretation": "по итоговым местам"
+              },
+              {
+                "dance": "Q",
+                "dance_code": "Q",
+                "metric_value": 1.0,
+                "metric_type": "final_place",
+                "metric_label": "итоговое место",
+                "category": "Ювеналы-1 E+D Соло Ж St",
+                "protocol_id": 73068,
+                "final_place": 1.0,
+                "interpretation": "по итоговым местам"
+              }
+            ],
+            "worst_dances": [
+              {
+                "dance": "W",
+                "dance_code": "W",
+                "metric_value": 6.0,
+                "metric_type": "final_place",
+                "metric_label": "итоговое место",
+                "category": "Ювеналы-1 E+D Соло Ж St",
+                "protocol_id": 73068,
+                "final_place": 6.0,
+                "interpretation": "по итоговым местам"
+              }
+            ],
+            "evaluated_dance": null,
+            "tied_dances": [],
+            "tied_metric_value": null
           },
           {
             "program": "latin",
@@ -11039,28 +11080,80 @@
             "metric_type": "final_place",
             "metric_label": "по итоговым местам",
             "data_sufficient": true,
+            "display_mode": "best_worst",
             "best_dance": {
               "dance": "C",
               "dance_code": "Ch",
-              "final_place": 4.0,
               "metric_value": 4.0,
               "metric_type": "final_place",
               "metric_label": "итоговое место",
-              "interpretation": "по итоговым местам",
               "category": "Ювеналы-1 E+D Соло Ж La",
-              "protocol_id": 73091
+              "protocol_id": 73091,
+              "final_place": 4.0,
+              "interpretation": "по итоговым местам"
             },
             "worst_dance": {
               "dance": "S",
               "dance_code": "S",
-              "final_place": 5.0,
               "metric_value": 5.0,
               "metric_type": "final_place",
               "metric_label": "итоговое место",
-              "interpretation": "по итоговым местам",
               "category": "Ювеналы-1 E+D Соло Ж La",
-              "protocol_id": 73091
-            }
+              "protocol_id": 73091,
+              "final_place": 5.0,
+              "interpretation": "по итоговым местам"
+            },
+            "best_dances": [
+              {
+                "dance": "C",
+                "dance_code": "Ch",
+                "metric_value": 4.0,
+                "metric_type": "final_place",
+                "metric_label": "итоговое место",
+                "category": "Ювеналы-1 E+D Соло Ж La",
+                "protocol_id": 73091,
+                "final_place": 4.0,
+                "interpretation": "по итоговым местам"
+              }
+            ],
+            "worst_dances": [
+              {
+                "dance": "S",
+                "dance_code": "S",
+                "metric_value": 5.0,
+                "metric_type": "final_place",
+                "metric_label": "итоговое место",
+                "category": "Ювеналы-1 E+D Соло Ж La",
+                "protocol_id": 73091,
+                "final_place": 5.0,
+                "interpretation": "по итоговым местам"
+              },
+              {
+                "dance": "R",
+                "dance_code": "R",
+                "metric_value": 5.0,
+                "metric_type": "final_place",
+                "metric_label": "итоговое место",
+                "category": "Ювеналы-1 E+D Соло Ж La",
+                "protocol_id": 73091,
+                "final_place": 5.0,
+                "interpretation": "по итоговым местам"
+              },
+              {
+                "dance": "J",
+                "dance_code": "J",
+                "metric_value": 5.0,
+                "metric_type": "final_place",
+                "metric_label": "итоговое место",
+                "category": "Ювеналы-1 E+D Соло Ж La",
+                "protocol_id": 73091,
+                "final_place": 5.0,
+                "interpretation": "по итоговым местам"
+              }
+            ],
+            "evaluated_dance": null,
+            "tied_dances": [],
+            "tied_metric_value": null
           }
         ],
         "dance_results": [
@@ -11233,28 +11326,80 @@
             "metric_type": "final_place",
             "metric_label": "по итоговым местам",
             "data_sufficient": true,
+            "display_mode": "best_worst",
             "best_dance": {
               "dance": "W",
               "dance_code": "W",
-              "final_place": 5.0,
               "metric_value": 5.0,
               "metric_type": "final_place",
               "metric_label": "итоговое место",
-              "interpretation": "по итоговым местам",
               "category": "Ювеналы-1 E+D соло Ж St",
-              "protocol_id": 73635
+              "protocol_id": 73635,
+              "final_place": 5.0,
+              "interpretation": "по итоговым местам"
             },
             "worst_dance": {
               "dance": "Q",
               "dance_code": "Q",
-              "final_place": 6.0,
               "metric_value": 6.0,
               "metric_type": "final_place",
               "metric_label": "итоговое место",
-              "interpretation": "по итоговым местам",
               "category": "Ювеналы-1 E+D соло Ж St",
-              "protocol_id": 73635
-            }
+              "protocol_id": 73635,
+              "final_place": 6.0,
+              "interpretation": "по итоговым местам"
+            },
+            "best_dances": [
+              {
+                "dance": "W",
+                "dance_code": "W",
+                "metric_value": 5.0,
+                "metric_type": "final_place",
+                "metric_label": "итоговое место",
+                "category": "Ювеналы-1 E+D соло Ж St",
+                "protocol_id": 73635,
+                "final_place": 5.0,
+                "interpretation": "по итоговым местам"
+              },
+              {
+                "dance": "T",
+                "dance_code": "T",
+                "metric_value": 5.0,
+                "metric_type": "final_place",
+                "metric_label": "итоговое место",
+                "category": "Ювеналы-1 E+D соло Ж St",
+                "protocol_id": 73635,
+                "final_place": 5.0,
+                "interpretation": "по итоговым местам"
+              },
+              {
+                "dance": "F",
+                "dance_code": "F",
+                "metric_value": 5.0,
+                "metric_type": "final_place",
+                "metric_label": "итоговое место",
+                "category": "Ювеналы-1 E+D соло Ж St",
+                "protocol_id": 73635,
+                "final_place": 5.0,
+                "interpretation": "по итоговым местам"
+              }
+            ],
+            "worst_dances": [
+              {
+                "dance": "Q",
+                "dance_code": "Q",
+                "metric_value": 6.0,
+                "metric_type": "final_place",
+                "metric_label": "итоговое место",
+                "category": "Ювеналы-1 E+D соло Ж St",
+                "protocol_id": 73635,
+                "final_place": 6.0,
+                "interpretation": "по итоговым местам"
+              }
+            ],
+            "evaluated_dance": null,
+            "tied_dances": [],
+            "tied_metric_value": null
           },
           {
             "program": "latin",
@@ -11279,28 +11424,58 @@
             "metric_type": "final_place",
             "metric_label": "по итоговым местам",
             "data_sufficient": true,
+            "display_mode": "best_worst",
             "best_dance": {
               "dance": "J",
               "dance_code": "J",
-              "final_place": 2.0,
               "metric_value": 2.0,
               "metric_type": "final_place",
               "metric_label": "итоговое место",
-              "interpretation": "по итоговым местам",
               "category": "Ювеналы-1 E+D соло Ж La",
-              "protocol_id": 73644
+              "protocol_id": 73644,
+              "final_place": 2.0,
+              "interpretation": "по итоговым местам"
             },
             "worst_dance": {
               "dance": "S",
               "dance_code": "S",
-              "final_place": 5.0,
               "metric_value": 5.0,
               "metric_type": "final_place",
               "metric_label": "итоговое место",
-              "interpretation": "по итоговым местам",
               "category": "Ювеналы-1 E+D соло Ж La",
-              "protocol_id": 73644
-            }
+              "protocol_id": 73644,
+              "final_place": 5.0,
+              "interpretation": "по итоговым местам"
+            },
+            "best_dances": [
+              {
+                "dance": "J",
+                "dance_code": "J",
+                "metric_value": 2.0,
+                "metric_type": "final_place",
+                "metric_label": "итоговое место",
+                "category": "Ювеналы-1 E+D соло Ж La",
+                "protocol_id": 73644,
+                "final_place": 2.0,
+                "interpretation": "по итоговым местам"
+              }
+            ],
+            "worst_dances": [
+              {
+                "dance": "S",
+                "dance_code": "S",
+                "metric_value": 5.0,
+                "metric_type": "final_place",
+                "metric_label": "итоговое место",
+                "category": "Ювеналы-1 E+D соло Ж La",
+                "protocol_id": 73644,
+                "final_place": 5.0,
+                "interpretation": "по итоговым местам"
+              }
+            ],
+            "evaluated_dance": null,
+            "tied_dances": [],
+            "tied_metric_value": null
           }
         ],
         "dance_results": [
@@ -11475,28 +11650,69 @@
             "metric_type": "final_place",
             "metric_label": "по итоговым местам",
             "data_sufficient": true,
+            "display_mode": "best_worst",
             "best_dance": {
-              "dance": "W",
-              "dance_code": "W",
-              "final_place": 1.0,
+              "dance": "T",
+              "dance_code": "T",
               "metric_value": 1.0,
               "metric_type": "final_place",
               "metric_label": "итоговое место",
-              "interpretation": "по итоговым местам",
               "category": "Ювеналы-1 E+D Соло Ж St",
-              "protocol_id": 74560
+              "protocol_id": 74560,
+              "final_place": 1.0,
+              "interpretation": "по итоговым местам"
             },
             "worst_dance": {
               "dance": "W",
               "dance_code": "W",
-              "final_place": 3.0,
-              "metric_value": 3.0,
+              "metric_value": 2.0,
               "metric_type": "final_place",
               "metric_label": "итоговое место",
-              "interpretation": "по итоговым местам",
-              "category": "Ювеналы-2 E+D Соло Ж St",
-              "protocol_id": 74563
-            }
+              "category": "Ювеналы-1 E+D Соло Ж St",
+              "protocol_id": 74560,
+              "final_place": 2.0,
+              "interpretation": "по итоговым местам"
+            },
+            "best_dances": [
+              {
+                "dance": "T",
+                "dance_code": "T",
+                "metric_value": 1.0,
+                "metric_type": "final_place",
+                "metric_label": "итоговое место",
+                "category": "Ювеналы-1 E+D Соло Ж St",
+                "protocol_id": 74560,
+                "final_place": 1.0,
+                "interpretation": "по итоговым местам"
+              },
+              {
+                "dance": "F",
+                "dance_code": "F",
+                "metric_value": 1.0,
+                "metric_type": "final_place",
+                "metric_label": "итоговое место",
+                "category": "Ювеналы-1 E+D Соло Ж St",
+                "protocol_id": 74560,
+                "final_place": 1.0,
+                "interpretation": "по итоговым местам"
+              }
+            ],
+            "worst_dances": [
+              {
+                "dance": "W",
+                "dance_code": "W",
+                "metric_value": 2.0,
+                "metric_type": "final_place",
+                "metric_label": "итоговое место",
+                "category": "Ювеналы-1 E+D Соло Ж St",
+                "protocol_id": 74560,
+                "final_place": 2.0,
+                "interpretation": "по итоговым местам"
+              }
+            ],
+            "evaluated_dance": null,
+            "tied_dances": [],
+            "tied_metric_value": null
           },
           {
             "program": "latin",
@@ -11521,28 +11737,69 @@
             "metric_type": "final_place",
             "metric_label": "по итоговым местам",
             "data_sufficient": true,
+            "display_mode": "best_worst",
             "best_dance": {
               "dance": "S",
               "dance_code": "S",
-              "final_place": 2.0,
-              "metric_value": 2.0,
+              "metric_value": 3.0,
               "metric_type": "final_place",
               "metric_label": "итоговое место",
-              "interpretation": "по итоговым местам",
-              "category": "Ювеналы-2 E+D Соло Ж La",
-              "protocol_id": 74574
+              "category": "Ювеналы-1 E+D Соло Ж La",
+              "protocol_id": 74571,
+              "final_place": 3.0,
+              "interpretation": "по итоговым местам"
             },
             "worst_dance": {
-              "dance": "J",
-              "dance_code": "J",
-              "final_place": 6.0,
-              "metric_value": 6.0,
+              "dance": "C",
+              "dance_code": "Ch",
+              "metric_value": 4.0,
               "metric_type": "final_place",
               "metric_label": "итоговое место",
-              "interpretation": "по итоговым местам",
-              "category": "Ювеналы-2 E+D Соло Ж La",
-              "protocol_id": 74574
-            }
+              "category": "Ювеналы-1 E+D Соло Ж La",
+              "protocol_id": 74571,
+              "final_place": 4.0,
+              "interpretation": "по итоговым местам"
+            },
+            "best_dances": [
+              {
+                "dance": "S",
+                "dance_code": "S",
+                "metric_value": 3.0,
+                "metric_type": "final_place",
+                "metric_label": "итоговое место",
+                "category": "Ювеналы-1 E+D Соло Ж La",
+                "protocol_id": 74571,
+                "final_place": 3.0,
+                "interpretation": "по итоговым местам"
+              }
+            ],
+            "worst_dances": [
+              {
+                "dance": "C",
+                "dance_code": "Ch",
+                "metric_value": 4.0,
+                "metric_type": "final_place",
+                "metric_label": "итоговое место",
+                "category": "Ювеналы-1 E+D Соло Ж La",
+                "protocol_id": 74571,
+                "final_place": 4.0,
+                "interpretation": "по итоговым местам"
+              },
+              {
+                "dance": "J",
+                "dance_code": "J",
+                "metric_value": 4.0,
+                "metric_type": "final_place",
+                "metric_label": "итоговое место",
+                "category": "Ювеналы-1 E+D Соло Ж La",
+                "protocol_id": 74571,
+                "final_place": 4.0,
+                "interpretation": "по итоговым местам"
+              }
+            ],
+            "evaluated_dance": null,
+            "tied_dances": [],
+            "tied_metric_value": null
           }
         ],
         "dance_results": [
@@ -11835,28 +12092,80 @@
             "metric_type": "final_place",
             "metric_label": "по итоговым местам",
             "data_sufficient": true,
+            "display_mode": "best_worst",
             "best_dance": {
               "dance": "T",
               "dance_code": "T",
-              "final_place": 2.0,
               "metric_value": 2.0,
               "metric_type": "final_place",
               "metric_label": "итоговое место",
-              "interpretation": "по итоговым местам",
               "category": "Ювеналы-1+2 D Соло Ж St",
-              "protocol_id": 74915
+              "protocol_id": 74915,
+              "final_place": 2.0,
+              "interpretation": "по итоговым местам"
             },
             "worst_dance": {
               "dance": "W",
               "dance_code": "W",
-              "final_place": 3.0,
               "metric_value": 3.0,
               "metric_type": "final_place",
               "metric_label": "итоговое место",
-              "interpretation": "по итоговым местам",
               "category": "Ювеналы-1+2 D Соло Ж St",
-              "protocol_id": 74915
-            }
+              "protocol_id": 74915,
+              "final_place": 3.0,
+              "interpretation": "по итоговым местам"
+            },
+            "best_dances": [
+              {
+                "dance": "T",
+                "dance_code": "T",
+                "metric_value": 2.0,
+                "metric_type": "final_place",
+                "metric_label": "итоговое место",
+                "category": "Ювеналы-1+2 D Соло Ж St",
+                "protocol_id": 74915,
+                "final_place": 2.0,
+                "interpretation": "по итоговым местам"
+              },
+              {
+                "dance": "Q",
+                "dance_code": "Q",
+                "metric_value": 2.0,
+                "metric_type": "final_place",
+                "metric_label": "итоговое место",
+                "category": "Ювеналы-1+2 D Соло Ж St",
+                "protocol_id": 74915,
+                "final_place": 2.0,
+                "interpretation": "по итоговым местам"
+              }
+            ],
+            "worst_dances": [
+              {
+                "dance": "W",
+                "dance_code": "W",
+                "metric_value": 3.0,
+                "metric_type": "final_place",
+                "metric_label": "итоговое место",
+                "category": "Ювеналы-1+2 D Соло Ж St",
+                "protocol_id": 74915,
+                "final_place": 3.0,
+                "interpretation": "по итоговым местам"
+              },
+              {
+                "dance": "F",
+                "dance_code": "F",
+                "metric_value": 3.0,
+                "metric_type": "final_place",
+                "metric_label": "итоговое место",
+                "category": "Ювеналы-1+2 D Соло Ж St",
+                "protocol_id": 74915,
+                "final_place": 3.0,
+                "interpretation": "по итоговым местам"
+              }
+            ],
+            "evaluated_dance": null,
+            "tied_dances": [],
+            "tied_metric_value": null
           },
           {
             "program": "latin",
@@ -11881,28 +12190,80 @@
             "metric_type": "final_place",
             "metric_label": "по итоговым местам",
             "data_sufficient": true,
+            "display_mode": "best_worst",
             "best_dance": {
               "dance": "S",
               "dance_code": "S",
-              "final_place": 1.0,
               "metric_value": 1.0,
               "metric_type": "final_place",
               "metric_label": "итоговое место",
-              "interpretation": "по итоговым местам",
               "category": "Ювеналы-1+2 D Соло Ж La",
-              "protocol_id": 74917
+              "protocol_id": 74917,
+              "final_place": 1.0,
+              "interpretation": "по итоговым местам"
             },
             "worst_dance": {
               "dance": "C",
               "dance_code": "Ch",
-              "final_place": 3.0,
               "metric_value": 3.0,
               "metric_type": "final_place",
               "metric_label": "итоговое место",
-              "interpretation": "по итоговым местам",
               "category": "Ювеналы-1+2 D Соло Ж La",
-              "protocol_id": 74917
-            }
+              "protocol_id": 74917,
+              "final_place": 3.0,
+              "interpretation": "по итоговым местам"
+            },
+            "best_dances": [
+              {
+                "dance": "S",
+                "dance_code": "S",
+                "metric_value": 1.0,
+                "metric_type": "final_place",
+                "metric_label": "итоговое место",
+                "category": "Ювеналы-1+2 D Соло Ж La",
+                "protocol_id": 74917,
+                "final_place": 1.0,
+                "interpretation": "по итоговым местам"
+              },
+              {
+                "dance": "R",
+                "dance_code": "R",
+                "metric_value": 1.0,
+                "metric_type": "final_place",
+                "metric_label": "итоговое место",
+                "category": "Ювеналы-1+2 D Соло Ж La",
+                "protocol_id": 74917,
+                "final_place": 1.0,
+                "interpretation": "по итоговым местам"
+              },
+              {
+                "dance": "J",
+                "dance_code": "J",
+                "metric_value": 1.0,
+                "metric_type": "final_place",
+                "metric_label": "итоговое место",
+                "category": "Ювеналы-1+2 D Соло Ж La",
+                "protocol_id": 74917,
+                "final_place": 1.0,
+                "interpretation": "по итоговым местам"
+              }
+            ],
+            "worst_dances": [
+              {
+                "dance": "C",
+                "dance_code": "Ch",
+                "metric_value": 3.0,
+                "metric_type": "final_place",
+                "metric_label": "итоговое место",
+                "category": "Ювеналы-1+2 D Соло Ж La",
+                "protocol_id": 74917,
+                "final_place": 3.0,
+                "interpretation": "по итоговым местам"
+              }
+            ],
+            "evaluated_dance": null,
+            "tied_dances": [],
+            "tied_metric_value": null
           }
         ],
         "dance_results": [
@@ -12075,28 +12436,80 @@
             "metric_type": "final_place",
             "metric_label": "по итоговым местам",
             "data_sufficient": true,
+            "display_mode": "best_worst",
             "best_dance": {
               "dance": "F",
               "dance_code": "F",
-              "final_place": 4.0,
               "metric_value": 4.0,
               "metric_type": "final_place",
               "metric_label": "итоговое место",
-              "interpretation": "по итоговым местам",
               "category": "Ювеналы-1+2 E+D соло Ж St",
-              "protocol_id": 76397
+              "protocol_id": 76397,
+              "final_place": 4.0,
+              "interpretation": "по итоговым местам"
             },
             "worst_dance": {
               "dance": "W",
               "dance_code": "W",
-              "final_place": 7.0,
               "metric_value": 7.0,
               "metric_type": "final_place",
               "metric_label": "итоговое место",
-              "interpretation": "по итоговым местам",
               "category": "Ювеналы-1+2 E+D соло Ж St",
-              "protocol_id": 76397
-            }
+              "protocol_id": 76397,
+              "final_place": 7.0,
+              "interpretation": "по итоговым местам"
+            },
+            "best_dances": [
+              {
+                "dance": "F",
+                "dance_code": "F",
+                "metric_value": 4.0,
+                "metric_type": "final_place",
+                "metric_label": "итоговое место",
+                "category": "Ювеналы-1+2 E+D соло Ж St",
+                "protocol_id": 76397,
+                "final_place": 4.0,
+                "interpretation": "по итоговым местам"
+              }
+            ],
+            "worst_dances": [
+              {
+                "dance": "W",
+                "dance_code": "W",
+                "metric_value": 7.0,
+                "metric_type": "final_place",
+                "metric_label": "итоговое место",
+                "category": "Ювеналы-1+2 E+D соло Ж St",
+                "protocol_id": 76397,
+                "final_place": 7.0,
+                "interpretation": "по итоговым местам"
+              },
+              {
+                "dance": "T",
+                "dance_code": "T",
+                "metric_value": 7.0,
+                "metric_type": "final_place",
+                "metric_label": "итоговое место",
+                "category": "Ювеналы-1+2 E+D соло Ж St",
+                "protocol_id": 76397,
+                "final_place": 7.0,
+                "interpretation": "по итоговым местам"
+              },
+              {
+                "dance": "Q",
+                "dance_code": "Q",
+                "metric_value": 7.0,
+                "metric_type": "final_place",
+                "metric_label": "итоговое место",
+                "category": "Ювеналы-1+2 E+D соло Ж St",
+                "protocol_id": 76397,
+                "final_place": 7.0,
+                "interpretation": "по итоговым местам"
+              }
+            ],
+            "evaluated_dance": null,
+            "tied_dances": [],
+            "tied_metric_value": null
           },
           {
             "program": "latin",
@@ -12121,28 +12534,19 @@
             "metric_type": "final_place",
             "metric_label": "по итоговым местам",
             "data_sufficient": true,
-            "best_dance": {
-              "dance": "S",
-              "dance_code": "S",
-              "final_place": 5.0,
-              "metric_value": 5.0,
-              "metric_type": "final_place",
-              "metric_label": "итоговое место",
-              "interpretation": "по итоговым местам",
-              "category": "Ювеналы-1+2 E+D соло Ж La",
-              "protocol_id": 76400
-            },
-            "worst_dance": {
-              "dance": "S",
-              "dance_code": "S",
-              "final_place": 5.0,
-              "metric_value": 5.0,
-              "metric_type": "final_place",
-              "metric_label": "итоговое место",
-              "interpretation": "по итоговым местам",
-              "category": "Ювеналы-1+2 E+D соло Ж La",
-              "protocol_id": 76400
-            }
+            "display_mode": "tied",
+            "best_dance": null,
+            "worst_dance": null,
+            "best_dances": [],
+            "worst_dances": [],
+            "evaluated_dance": null,
+            "tied_dances": [
+              "S",
+              "Ch",
+              "R",
+              "J"
+            ],
+            "tied_metric_value": 5.0
           }
         ],
         "dance_results": [
@@ -12321,28 +12725,58 @@
             "metric_type": "final_place",
             "metric_label": "по итоговым местам",
             "data_sufficient": true,
+            "display_mode": "best_worst",
             "best_dance": {
-              "dance": "F",
-              "dance_code": "F",
-              "final_place": 3.0,
-              "metric_value": 3.0,
+              "dance": "W",
+              "dance_code": "W",
+              "metric_value": 4.0,
               "metric_type": "final_place",
               "metric_label": "итоговое место",
-              "interpretation": "по итоговым местам",
               "category": "Ювеналы-2 E+D Соло Ж St",
-              "protocol_id": 77414
+              "protocol_id": 77414,
+              "final_place": 4.0,
+              "interpretation": "по итоговым местам"
             },
             "worst_dance": {
-              "dance": "T",
-              "dance_code": "T",
-              "final_place": 6.0,
-              "metric_value": 6.0,
+              "dance": "V",
+              "dance_code": "V",
+              "metric_value": 5.5,
               "metric_type": "final_place",
               "metric_label": "итоговое место",
-              "interpretation": "по итоговым местам",
               "category": "Ювеналы-1+2 D+C Соло Ж St",
-              "protocol_id": 77420
-            }
+              "protocol_id": 77420,
+              "final_place": 5.5,
+              "interpretation": "по итоговым местам"
+            },
+            "best_dances": [
+              {
+                "dance": "W",
+                "dance_code": "W",
+                "metric_value": 4.0,
+                "metric_type": "final_place",
+                "metric_label": "итоговое место",
+                "category": "Ювеналы-2 E+D Соло Ж St",
+                "protocol_id": 77414,
+                "final_place": 4.0,
+                "interpretation": "по итоговым местам"
+              }
+            ],
+            "worst_dances": [
+              {
+                "dance": "V",
+                "dance_code": "V",
+                "metric_value": 5.5,
+                "metric_type": "final_place",
+                "metric_label": "итоговое место",
+                "category": "Ювеналы-1+2 D+C Соло Ж St",
+                "protocol_id": 77420,
+                "final_place": 5.5,
+                "interpretation": "по итоговым местам"
+              }
+            ],
+            "evaluated_dance": null,
+            "tied_dances": [],
+            "tied_metric_value": null
           },
           {
             "program": "latin",
@@ -12369,28 +12803,20 @@
             "metric_type": "final_place",
             "metric_label": "по итоговым местам",
             "data_sufficient": true,
-            "best_dance": {
-              "dance": "S",
-              "dance_code": "S",
-              "final_place": 6.0,
-              "metric_value": 6.0,
-              "metric_type": "final_place",
-              "metric_label": "итоговое место",
-              "interpretation": "по итоговым местам",
-              "category": "Ювеналы-1+2 D+C Соло Ж La",
-              "protocol_id": 77444
-            },
-            "worst_dance": {
-              "dance": "S",
-              "dance_code": "S",
-              "final_place": 6.0,
-              "metric_value": 6.0,
-              "metric_type": "final_place",
-              "metric_label": "итоговое место",
-              "interpretation": "по итоговым местам",
-              "category": "Ювеналы-1+2 D+C Соло Ж La",
-              "protocol_id": 77444
-            }
+            "display_mode": "tied",
+            "best_dance": null,
+            "worst_dance": null,
+            "best_dances": [],
+            "worst_dances": [],
+            "evaluated_dance": null,
+            "tied_dances": [
+              "S",
+              "Ch",
+              "R",
+              "P",
+              "J"
+            ],
+            "tied_metric_value": 6.0
           }
         ],
         "dance_results": [
@@ -12660,28 +13086,58 @@
             "metric_type": "final_place",
             "metric_label": "по итоговым местам",
             "data_sufficient": true,
+            "display_mode": "best_worst",
             "best_dance": {
               "dance": "W",
               "dance_code": "W",
-              "final_place": 1.0,
-              "metric_value": 1.0,
+              "metric_value": 3.5,
               "metric_type": "final_place",
               "metric_label": "итоговое место",
-              "interpretation": "по итоговым местам",
               "category": "Ювеналы-2 E+D Соло Ж St",
-              "protocol_id": 77963
+              "protocol_id": 77963,
+              "final_place": 3.5,
+              "interpretation": "по итоговым местам"
             },
             "worst_dance": {
               "dance": "F",
               "dance_code": "F",
-              "final_place": 7.0,
-              "metric_value": 7.0,
+              "metric_value": 6.0,
               "metric_type": "final_place",
               "metric_label": "итоговое место",
-              "interpretation": "по итоговым местам",
-              "category": "EADC Ювеналы-2 Соло Ж St",
-              "protocol_id": 77973
-            }
+              "category": "Ювеналы-2 E+D Соло Ж St",
+              "protocol_id": 77963,
+              "final_place": 6.0,
+              "interpretation": "по итоговым местам"
+            },
+            "best_dances": [
+              {
+                "dance": "W",
+                "dance_code": "W",
+                "metric_value": 3.5,
+                "metric_type": "final_place",
+                "metric_label": "итоговое место",
+                "category": "Ювеналы-2 E+D Соло Ж St",
+                "protocol_id": 77963,
+                "final_place": 3.5,
+                "interpretation": "по итоговым местам"
+              }
+            ],
+            "worst_dances": [
+              {
+                "dance": "F",
+                "dance_code": "F",
+                "metric_value": 6.0,
+                "metric_type": "final_place",
+                "metric_label": "итоговое место",
+                "category": "Ювеналы-2 E+D Соло Ж St",
+                "protocol_id": 77963,
+                "final_place": 6.0,
+                "interpretation": "по итоговым местам"
+              }
+            ],
+            "evaluated_dance": null,
+            "tied_dances": [],
+            "tied_metric_value": null
           },
           {
             "program": "latin",
@@ -12695,7 +13151,7 @@
             ],
             "overall": {
               "avg_place": 7.0,
-              "dance_count": 5,
+              "dance_count": 1,
               "protocol_count": 3,
               "dance_codes": [
                 "S",
@@ -12705,31 +13161,27 @@
                 "J"
               ]
             },
-            "metric_type": "cross_count",
-            "metric_label": "по крестам судей",
+            "metric_type": "final_place",
+            "metric_label": "по итоговым местам",
             "data_sufficient": true,
-            "best_dance": {
+            "display_mode": "single_dance",
+            "best_dance": null,
+            "worst_dance": null,
+            "best_dances": [],
+            "worst_dances": [],
+            "evaluated_dance": {
               "dance": "J",
               "dance_code": "J",
-              "cross_count": 16,
-              "metric_value": 16,
-              "metric_type": "cross_count",
-              "metric_label": "крестов судей",
-              "interpretation": "выше всего оценивался судьями",
-              "category": "Ювеналы-2 E+D Соло Ж La",
-              "protocol_id": 77977
-            },
-            "worst_dance": {
-              "dance": "P",
-              "dance_code": "P",
-              "cross_count": 3,
-              "metric_value": 3,
-              "metric_type": "cross_count",
-              "metric_label": "крестов судей",
-              "interpretation": "ниже всего оценивался судьями",
+              "metric_value": 7.0,
+              "metric_type": "final_place",
+              "metric_label": "итоговое место",
               "category": "EADC Ювеналы-2 Соло Ж La",
-              "protocol_id": 77987
-            }
+              "protocol_id": 77987,
+              "final_place": 7.0,
+              "interpretation": "по итоговым местам"
+            },
+            "tied_dances": [],
+            "tied_metric_value": null
           }
         ],
         "dance_results": [
@@ -12902,28 +13354,69 @@
             "metric_type": "final_place",
             "metric_label": "по итоговым местам",
             "data_sufficient": true,
+            "display_mode": "best_worst",
             "best_dance": {
               "dance": "T",
               "dance_code": "T",
-              "final_place": 1.0,
               "metric_value": 1.0,
               "metric_type": "final_place",
               "metric_label": "итоговое место",
-              "interpretation": "по итоговым местам",
               "category": "Ювеналы-2 E+D Соло Ж St",
-              "protocol_id": 79410
+              "protocol_id": 79410,
+              "final_place": 1.0,
+              "interpretation": "по итоговым местам"
             },
             "worst_dance": {
               "dance": "W",
               "dance_code": "W",
-              "final_place": 5.0,
               "metric_value": 5.0,
               "metric_type": "final_place",
               "metric_label": "итоговое место",
-              "interpretation": "по итоговым местам",
               "category": "Ювеналы-2 E+D Соло Ж St",
-              "protocol_id": 79410
-            }
+              "protocol_id": 79410,
+              "final_place": 5.0,
+              "interpretation": "по итоговым местам"
+            },
+            "best_dances": [
+              {
+                "dance": "T",
+                "dance_code": "T",
+                "metric_value": 1.0,
+                "metric_type": "final_place",
+                "metric_label": "итоговое место",
+                "category": "Ювеналы-2 E+D Соло Ж St",
+                "protocol_id": 79410,
+                "final_place": 1.0,
+                "interpretation": "по итоговым местам"
+              },
+              {
+                "dance": "F",
+                "dance_code": "F",
+                "metric_value": 1.0,
+                "metric_type": "final_place",
+                "metric_label": "итоговое место",
+                "category": "Ювеналы-2 E+D Соло Ж St",
+                "protocol_id": 79410,
+                "final_place": 1.0,
+                "interpretation": "по итоговым местам"
+              }
+            ],
+            "worst_dances": [
+              {
+                "dance": "W",
+                "dance_code": "W",
+                "metric_value": 5.0,
+                "metric_type": "final_place",
+                "metric_label": "итоговое место",
+                "category": "Ювеналы-2 E+D Соло Ж St",
+                "protocol_id": 79410,
+                "final_place": 5.0,
+                "interpretation": "по итоговым местам"
+              }
+            ],
+            "evaluated_dance": null,
+            "tied_dances": [],
+            "tied_metric_value": null
           },
           {
             "program": "latin",
@@ -12948,28 +13441,58 @@
             "metric_type": "cross_count",
             "metric_label": "по крестам судей",
             "data_sufficient": true,
+            "display_mode": "best_worst",
             "best_dance": {
               "dance": "R",
               "dance_code": "R",
-              "cross_count": 13,
               "metric_value": 13,
               "metric_type": "cross_count",
               "metric_label": "крестов судей",
-              "interpretation": "выше всего оценивался судьями",
               "category": "Ювеналы-2 E+D Соло Ж La",
-              "protocol_id": 79425
+              "protocol_id": 79425,
+              "cross_count": 13,
+              "interpretation": "выше всего оценивался судьями"
             },
             "worst_dance": {
               "dance": "C",
               "dance_code": "Ch",
-              "cross_count": 5,
               "metric_value": 5,
               "metric_type": "cross_count",
               "metric_label": "крестов судей",
-              "interpretation": "ниже всего оценивался судьями",
               "category": "Ювеналы-2 E+D Соло Ж La",
-              "protocol_id": 79425
-            }
+              "protocol_id": 79425,
+              "cross_count": 5,
+              "interpretation": "ниже всего оценивался судьями"
+            },
+            "best_dances": [
+              {
+                "dance": "R",
+                "dance_code": "R",
+                "metric_value": 13,
+                "metric_type": "cross_count",
+                "metric_label": "крестов судей",
+                "category": "Ювеналы-2 E+D Соло Ж La",
+                "protocol_id": 79425,
+                "cross_count": 13,
+                "interpretation": "выше всего оценивался судьями"
+              }
+            ],
+            "worst_dances": [
+              {
+                "dance": "C",
+                "dance_code": "Ch",
+                "metric_value": 5,
+                "metric_type": "cross_count",
+                "metric_label": "крестов судей",
+                "category": "Ювеналы-2 E+D Соло Ж La",
+                "protocol_id": 79425,
+                "cross_count": 5,
+                "interpretation": "ниже всего оценивался судьями"
+              }
+            ],
+            "evaluated_dance": null,
+            "tied_dances": [],
+            "tied_metric_value": null
           }
         ],
         "dance_results": [
@@ -13082,28 +13605,69 @@
             "metric_type": "final_place",
             "metric_label": "по итоговым местам",
             "data_sufficient": true,
+            "display_mode": "best_worst",
             "best_dance": {
               "dance": "T",
               "dance_code": "T",
-              "final_place": 3.0,
               "metric_value": 3.0,
               "metric_type": "final_place",
               "metric_label": "итоговое место",
-              "interpretation": "по итоговым местам",
               "category": "Ювеналы-2 E+D Соло Ж St",
-              "protocol_id": 80591
+              "protocol_id": 80591,
+              "final_place": 3.0,
+              "interpretation": "по итоговым местам"
             },
             "worst_dance": {
               "dance": "Q",
               "dance_code": "Q",
-              "final_place": 6.0,
               "metric_value": 6.0,
               "metric_type": "final_place",
               "metric_label": "итоговое место",
-              "interpretation": "по итоговым местам",
               "category": "Ювеналы-2 E+D Соло Ж St",
-              "protocol_id": 80591
-            }
+              "protocol_id": 80591,
+              "final_place": 6.0,
+              "interpretation": "по итоговым местам"
+            },
+            "best_dances": [
+              {
+                "dance": "T",
+                "dance_code": "T",
+                "metric_value": 3.0,
+                "metric_type": "final_place",
+                "metric_label": "итоговое место",
+                "category": "Ювеналы-2 E+D Соло Ж St",
+                "protocol_id": 80591,
+                "final_place": 3.0,
+                "interpretation": "по итоговым местам"
+              },
+              {
+                "dance": "F",
+                "dance_code": "F",
+                "metric_value": 3.0,
+                "metric_type": "final_place",
+                "metric_label": "итоговое место",
+                "category": "Ювеналы-2 E+D Соло Ж St",
+                "protocol_id": 80591,
+                "final_place": 3.0,
+                "interpretation": "по итоговым местам"
+              }
+            ],
+            "worst_dances": [
+              {
+                "dance": "Q",
+                "dance_code": "Q",
+                "metric_value": 6.0,
+                "metric_type": "final_place",
+                "metric_label": "итоговое место",
+                "category": "Ювеналы-2 E+D Соло Ж St",
+                "protocol_id": 80591,
+                "final_place": 6.0,
+                "interpretation": "по итоговым местам"
+              }
+            ],
+            "evaluated_dance": null,
+            "tied_dances": [],
+            "tied_metric_value": null
           },
           {
             "program": "latin",
@@ -13128,28 +13692,69 @@
             "metric_type": "cross_count",
             "metric_label": "по крестам судей",
             "data_sufficient": true,
+            "display_mode": "best_worst",
             "best_dance": {
               "dance": "R",
               "dance_code": "R",
-              "cross_count": 6,
               "metric_value": 6,
               "metric_type": "cross_count",
               "metric_label": "крестов судей",
-              "interpretation": "выше всего оценивался судьями",
               "category": "Ювеналы-2 E+D Соло Ж La",
-              "protocol_id": 80603
+              "protocol_id": 80603,
+              "cross_count": 6,
+              "interpretation": "выше всего оценивался судьями"
             },
             "worst_dance": {
               "dance": "S",
               "dance_code": "S",
-              "cross_count": 4,
               "metric_value": 4,
               "metric_type": "cross_count",
               "metric_label": "крестов судей",
-              "interpretation": "ниже всего оценивался судьями",
               "category": "Ювеналы-2 E+D Соло Ж La",
-              "protocol_id": 80603
-            }
+              "protocol_id": 80603,
+              "cross_count": 4,
+              "interpretation": "ниже всего оценивался судьями"
+            },
+            "best_dances": [
+              {
+                "dance": "R",
+                "dance_code": "R",
+                "metric_value": 6,
+                "metric_type": "cross_count",
+                "metric_label": "крестов судей",
+                "category": "Ювеналы-2 E+D Соло Ж La",
+                "protocol_id": 80603,
+                "cross_count": 6,
+                "interpretation": "выше всего оценивался судьями"
+              }
+            ],
+            "worst_dances": [
+              {
+                "dance": "S",
+                "dance_code": "S",
+                "metric_value": 4,
+                "metric_type": "cross_count",
+                "metric_label": "крестов судей",
+                "category": "Ювеналы-2 E+D Соло Ж La",
+                "protocol_id": 80603,
+                "cross_count": 4,
+                "interpretation": "ниже всего оценивался судьями"
+              },
+              {
+                "dance": "J",
+                "dance_code": "J",
+                "metric_value": 4,
+                "metric_type": "cross_count",
+                "metric_label": "крестов судей",
+                "category": "Ювеналы-2 E+D Соло Ж La",
+                "protocol_id": 80603,
+                "cross_count": 4,
+                "interpretation": "ниже всего оценивался судьями"
+              }
+            ],
+            "evaluated_dance": null,
+            "tied_dances": [],
+            "tied_metric_value": null
           }
         ],
         "dance_results": [

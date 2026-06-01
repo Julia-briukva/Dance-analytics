@@ -17,6 +17,8 @@ from urllib.parse import urljoin, urlparse
 import requests
 from bs4 import BeautifulSoup
 
+from compreg_encoding import write_compreg_html_file
+
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 CACHE_DIR = PROJECT_ROOT / "data" / "cache" / "dancer_profiles"
@@ -143,11 +145,9 @@ def parse_response(
     payload: dict[str, str] | None,
     cache_path: Path,
 ) -> EndpointResult:
-    CACHE_DIR.mkdir(parents=True, exist_ok=True)
-    response.encoding = response.encoding or "utf-8"
-    cache_path.write_text(response.text, encoding=response.encoding, errors="replace")
+    html = write_compreg_html_file(cache_path, response.content, declared_encoding=response.encoding)
 
-    soup = BeautifulSoup(response.text, "html.parser")
+    soup = BeautifulSoup(html, "html.parser")
     text = normalize_space(soup.get_text("\n", strip=True))
     result_links, protocol_links = extract_links(soup, url)
     return EndpointResult(
