@@ -1,0 +1,673 @@
+#!/usr/bin/env python3
+"""Render a dancer HTML report from an existing JSON report."""
+
+from __future__ import annotations
+
+import argparse
+import json
+import sys
+from pathlib import Path
+from typing import Any
+
+from jinja2 import Environment, FileSystemLoader, select_autoescape
+
+
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+DEFAULT_REPORTS_DIR = PROJECT_ROOT / "reports"
+DEFAULT_TEMPLATES_DIR = PROJECT_ROOT / "templates"
+DEFAULT_TEMPLATE_NAME = "report.html.j2"
+
+
+def load_report(path: Path) -> dict[str, Any]:
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+def report_path_for_idd(idd: str) -> Path:
+    return DEFAULT_REPORTS_DIR / f"dancer_{idd}_report.json"
+
+
+def output_path_for_report(report: dict[str, Any], input_path: Path) -> Path:
+    idd = str(report.get("dancer", {}).get("idd") or "").strip()
+    if idd:
+        return DEFAULT_REPORTS_DIR / f"dancer_{idd}_report.html"
+    return input_path.with_suffix(".html")
+
+
+def fmt(value: Any, digits: int = 3) -> str:
+    if value is None:
+        return "—"
+    if isinstance(value, float):
+        return f"{value:.{digits}f}"
+    return str(value)
+
+
+def label_program(value: str | None) -> str:
+    return {"standard": "стандарт", "latin": "латина", "unknown": "неизвестно"}.get(str(value or ""), str(value or "—"))
+
+
+def label_entry_type(value: str | None) -> str:
+    return {"solo": "солистка", "pair_or_unknown": "пара / не уточнено", "unknown": "неизвестно"}.get(
+        str(value or ""),
+        str(value or "—"),
+    )
+
+
+def dance_label(value: str | None) -> str:
+    return {
+        "W": "Медленный вальс",
+        "T": "Танго",
+        "V": "Венский вальс",
+        "F": "Фокстрот",
+        "Q": "Квикстеп",
+        "S": "Самба",
+        "C": "Ча-ча-ча",
+        "R": "Румба",
+        "P": "Пасодобль",
+        "J": "Джайв",
+    }.get(str(value or ""), str(value or "—"))
+
+
+def first_present(items: list[dict[str, Any]], key: str) -> Any:
+    for item in items:
+        value = item.get(key)
+        if value not in (None, ""):
+            return value
+    return None
+
+
+def least_stable(metrics: list[dict[str, Any]]) -> dict[str, Any] | None:
+    candidates = [item for item in metrics if item.get("std_deviation") is not None]
+    if not candidates:
+        return None
+    return sorted(candidates, key=lambda item: (item.get("std_deviation") or 0, item.get("n_marks") or 0), reverse=True)[0]
+
+
+JUDGE_SCALE = {
+    5: ("★★★★★", "Значительно строже среднего"),
+    4: ("★★★★☆", "Строже среднего"),
+    3: ("★★★☆☆", "Близко к среднему"),
+    2: ("★★☆☆☆", "Мягче среднего"),
+    1: ("★☆☆☆☆", "Значительно мягче среднего"),
+}
+
+
+def percentile_rank(value: float, values: list[float], reverse: bool = False) -> int:
+    ordered = sorted(values, reverse=reverse)
+    if not ordered:
+        return 3
+    index = ordered.index(value)
+    bucket = int(index * 5 / len(ordered))
+    return max(1, min(5, 5 - bucket))
+
+
+def stability_label_for_percent(percent: int) -> str:
+    if percent >= 86:
+        return "Очень высокая"
+    if percent >= 68:
+        return "Высокая"
+    if percent >= 48:
+        return "Средняя"
+    if percent >= 30:
+        return "Низкая"
+    return "Очень низкая"
+
+
+def add_stability_interpretation(metrics: list[dict[str, Any]], stability_values: list[float]) -> list[dict[str, Any]]:
+    interpreted = []
+    values = [float(value) for value in stability_values if value is not None]
+    min_value = min(values) if values else None
+    max_value = max(values) if values else None
+    for item in metrics:
+        enriched = dict(item)
+        value = item.get("final_std_deviation")
+        if value is None:
+            percent = 50
+        elif min_value is None or max_value is None or max_value == min_value:
+            percent = 78
+        else:
+            normalized = (float(value) - min_value) / (max_value - min_value)
+            percent = round(95 - normalized * 70)
+            percent = max(18, min(95, percent))
+        enriched["stability_score"] = percent
+        enriched["stability_label"] = stability_label_for_percent(percent)
+        enriched["stability_percent"] = percent
+        interpreted.append(enriched)
+    return interpreted
+
+
+def add_judge_interpretation(items: list[dict[str, Any]], all_deviations: list[float]) -> list[dict[str, Any]]:
+    interpreted = []
+    for item in items:
+        enriched = dict(item)
+        value = item.get("avg_deviation")
+        if value is None:
+            score = 3
+        else:
+            score = percentile_rank(float(value), all_deviations, reverse=True)
+        stars, label = JUDGE_SCALE[score]
+        enriched["judge_score"] = score
+        enriched["judge_stars"] = stars
+        enriched["judge_label"] = label
+        interpreted.append(enriched)
+    return interpreted
+
+
+def user_facing_notes(notes: list[str]) -> list[str]:
+    replacements = {
+        "Performance dance analytics use final_avg_place: one dance result per protocol, round, and dance.": (
+            "Танцевальная аналитика использует итоговое место танца: один результат на протокол, тур и танец."
+        ),
+        "judge_avg_place is diagnostic and is not used for strongest/weakest/stability/trend rankings.": (
+            "Судейская метрика используется только как внутренняя диагностика и не входит в основные рейтинги."
+        ),
+        "Cross analytics are kept separate and are not mixed into place metrics.": (
+            "Кресты учитываются отдельно и не смешиваются с метриками мест."
+        ),
+        "Parser intentionally skips unsupported FKT/EADC raw strings when judge-position mapping is not validated.": (
+            "Некоторые технически неоднозначные строки протоколов пропускаются до ручной проверки структуры."
+        ),
+    }
+    return [replacements.get(note, note) for note in notes]
+
+
+def short_stability_label(score: int | None) -> str:
+    if score is None:
+        return "Средняя"
+    if score >= 4:
+        return "Высокая"
+    if score <= 2:
+        return "Низкая"
+    return "Средняя"
+
+
+def dance_names(items: list[dict[str, Any]], limit: int = 2) -> str:
+    names = [dance_label(item.get("dance")).lower() for item in items[:limit]]
+    if not names:
+        return "нет устойчивого набора танцев"
+    if len(names) == 1:
+        return names[0]
+    return " и ".join([", ".join(names[:-1]), names[-1]]) if len(names) > 2 else " и ".join(names)
+
+
+def russian_plural(count: int, one: str, few: str, many: str) -> str:
+    if count % 10 == 1 and count % 100 != 11:
+        return one
+    if count % 10 in {2, 3, 4} and count % 100 not in {12, 13, 14}:
+        return few
+    return many
+
+
+def pluralize(value: Any, one: str, few: str, many: str) -> str:
+    try:
+        count = int(value)
+    except (TypeError, ValueError):
+        count = 0
+    return f"{count} {russian_plural(count, one, few, many)}"
+
+
+def protocol_word(count: int) -> str:
+    return russian_plural(count, "протокол", "протокола", "протоколов")
+
+
+def reliable_metrics(metrics: list[dict[str, Any]], min_protocols: int = 6) -> list[dict[str, Any]]:
+    return [item for item in metrics if int(item.get("n_protocols") or 0) >= min_protocols]
+
+
+def limited_metrics(metrics: list[dict[str, Any]], min_protocols: int = 6) -> list[dict[str, Any]]:
+    return [
+        item
+        for item in metrics
+        if 0 < int(item.get("n_protocols") or 0) < min_protocols
+    ]
+
+
+def sort_by_value(items: list[dict[str, Any]], key: str, reverse: bool = False) -> list[dict[str, Any]]:
+    return sorted(
+        [item for item in items if item.get(key) is not None],
+        key=lambda item: (float(item.get(key) or 0), -(int(item.get("n_protocols") or 0))),
+        reverse=reverse,
+    )
+
+
+def best_dance_candidates(items: list[dict[str, Any]], close_delta: float = 0.35) -> list[dict[str, Any]]:
+    ranked = sort_by_value(items, "final_avg_place")
+    if not ranked:
+        return []
+    best = ranked[0]
+    result = [best]
+    if len(ranked) > 1:
+        second = ranked[1]
+        if float(second.get("final_avg_place") or 0) - float(best.get("final_avg_place") or 0) <= close_delta:
+            result.append(second)
+    return result
+
+
+def split_program_trends(
+    trends: list[dict[str, Any]],
+    min_dates: int = 2,
+    eligible_dances: set[Any] | None = None,
+) -> dict[str, list[dict[str, Any]]]:
+    reliable = [
+        item
+        for item in trends
+        if item.get("trend_over_time") is not None and int(item.get("n_dates") or 0) >= min_dates
+    ]
+    if eligible_dances is not None:
+        reliable = [item for item in reliable if item.get("dance") in eligible_dances]
+    improving = sorted(
+        [item for item in reliable if float(item.get("trend_over_time") or 0) < -0.001],
+        key=lambda item: float(item.get("trend_over_time") or 0),
+    )
+    declining = sorted(
+        [item for item in reliable if float(item.get("trend_over_time") or 0) > 0.001],
+        key=lambda item: float(item.get("trend_over_time") or 0),
+        reverse=True,
+    )
+    stable = sorted(
+        [item for item in reliable if abs(float(item.get("trend_over_time") or 0)) <= 0.001],
+        key=lambda item: item.get("dance") or "",
+    )
+    return {"improving": improving, "declining": declining, "stable": stable}
+
+
+def unique_by_dance(items: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    seen = set()
+    result = []
+    for item in items:
+        dance = item.get("dance")
+        if dance in seen:
+            continue
+        seen.add(dance)
+        result.append(item)
+    return result
+
+
+def trend_sentence(trend_groups: dict[str, list[dict[str, Any]]], enough_data: bool) -> str:
+    if trend_groups["improving"] and trend_groups["declining"]:
+        return (
+            f"Положительная динамика заметнее всего в танцах: {dance_names(trend_groups['improving'])}. "
+            f"Больше внимания стоит уделить танцам: {dance_names(trend_groups['declining'])}."
+        )
+    if trend_groups["improving"]:
+        return f"По динамике лучше всего выглядят {dance_names(trend_groups['improving'])}: итоговые места там постепенно улучшаются."
+    if trend_groups["declining"]:
+        return f"Тревожная динамика заметнее всего в танцах: {dance_names(trend_groups['declining'])}. Это зона для спокойной проверки на тренировках."
+    if enough_data:
+        return "Резкой тревожной динамики не видно: результаты держатся примерно в одном диапазоне."
+    return "Для уверенного вывода по динамике пока мало наблюдений."
+
+
+def program_parent_view(key: str, program: dict[str, Any]) -> dict[str, Any]:
+    metrics = program.get("metrics", []) or []
+    core = reliable_metrics(metrics)
+    limited = limited_metrics(metrics)
+    enough_data = len(core) >= 2
+    ranked = best_dance_candidates(core)
+    full_ranked = sort_by_value(core, "final_avg_place")
+    stable = sort_by_value(core, "final_std_deviation")
+    core_dances = {item.get("dance") for item in core}
+    trends = split_program_trends(program.get("trends", []) or [], eligible_dances=core_dances)
+    by_dance = {item.get("dance"): item for item in core}
+    declining_metrics = [
+        by_dance[item.get("dance")]
+        for item in trends["declining"]
+        if item.get("dance") in by_dance
+    ]
+    best_dances = {item.get("dance") for item in ranked}
+    attention_candidates = unique_by_dance(declining_metrics + sort_by_value(core, "final_avg_place", reverse=True))
+    growth = [item for item in attention_candidates if item.get("dance") not in best_dances]
+    attention_overlap_note = None
+    if not growth and attention_candidates:
+        growth = attention_candidates[:1]
+        if growth[0].get("dance") in best_dances:
+            attention_overlap_note = (
+                f"{dance_label(growth[0].get('dance'))} даёт хорошие средние результаты, "
+                "но динамика последних турниров снижается, поэтому танец отмечен отдельно."
+            )
+    title_phrase = "стандартной программе" if key == "standard" else "латинской программе"
+
+    if enough_data:
+        best = ranked[0] if ranked else None
+        stable_item = stable[0] if stable else None
+        growth_item = growth[0] if growth else None
+        best_text = (
+            f"В {title_phrase} наиболее уверенно выглядит {dance_label(best.get('dance')).lower()}: "
+            f"именно этот танец чаще даёт лучшие итоговые места."
+            if best
+            else f"В {title_phrase} результаты основных танцев близки друг к другу."
+        )
+        if len(ranked) > 1:
+            best_text += f" Близко по среднему месту находится {dance_label(ranked[1].get('dance')).lower()}."
+        attention_text = (
+            f"Больше внимания сейчас требует {dance_label(growth_item.get('dance')).lower()}: "
+            "здесь заметнее всего потенциал для роста по итоговым местам или по динамике последних турниров."
+            if growth_item
+            else "Явной зоны роста по среднему месту сейчас не выделяется."
+        )
+        if stable_item and best and stable_item.get("dance") != best.get("dance"):
+            best_text += (
+                f" {dance_label(stable_item.get('dance'))} остаётся самым стабильным танцем, "
+                "но стабильность не всегда означает лучшее среднее место."
+            )
+        overview = [
+            f"В {title_phrase} есть достаточно наблюдений, чтобы смотреть не на отдельный турнир, а на общую картину.",
+            best_text,
+            attention_text,
+            trend_sentence(trends, enough_data=True),
+        ]
+        if attention_overlap_note:
+            overview.append(attention_overlap_note)
+    else:
+        best_text = (
+            f"В {title_phrase} уже есть первые результаты, но основных наблюдений пока меньше рабочего порога."
+        )
+        attention_text = "Выводы лучше читать как предварительные: отдельные турниры могут заметно менять картину."
+        overview = [
+            best_text,
+            attention_text,
+            trend_sentence(trends, enough_data=False),
+        ]
+
+    if limited:
+        overview.append(
+            "Танцы с ограниченной выборкой: "
+            + ", ".join(
+                f"{dance_label(item.get('dance'))} ({int(item.get('n_protocols') or 0)} {protocol_word(int(item.get('n_protocols') or 0))})"
+                for item in limited
+            )
+            + "."
+        )
+
+    return {
+        "title": program.get("title"),
+        "enough_data": enough_data,
+        "best": ranked[:3],
+        "full_ranked": full_ranked,
+        "attention": growth[:3],
+        "attention_overlap_note": attention_overlap_note,
+        "stable": stable[:3],
+        "improving": trends["improving"][:3],
+        "declining": trends["declining"][:3],
+        "stable_trends": trends["stable"][:3],
+        "limited": limited,
+        "best_text": best_text,
+        "attention_text": attention_text,
+        "trend_text": trend_sentence(trends, enough_data=enough_data),
+        "overview": overview,
+    }
+
+
+def overall_progress(trends: list[dict[str, Any]]) -> tuple[str, str, dict[str, int]]:
+    reliable = [item for item in trends if item.get("first_to_last_delta") is not None]
+    counts = {"improving": 0, "declining": 0, "stable": 0}
+    for item in reliable:
+        delta = float(item.get("first_to_last_delta") or 0)
+        if delta <= -0.5:
+            counts["improving"] += 1
+        elif delta >= 0.5:
+            counts["declining"] += 1
+        else:
+            counts["stable"] += 1
+    if len(reliable) < 3:
+        return "недостаточно данных", "Пока недостаточно устойчивых наблюдений, чтобы уверенно описать динамику сезона.", counts
+    if counts["improving"] >= counts["declining"] + 2:
+        return "стабильный прогресс", "По нескольким танцам итоговые места становятся лучше, общий вектор выглядит положительным.", counts
+    if counts["improving"] > counts["declining"]:
+        return "умеренный прогресс", "Есть положительная динамика, но часть танцев ещё требует закрепления результата.", counts
+    if counts["stable"] >= max(counts["improving"], counts["declining"]):
+        return "стабильный уровень", "Результаты в основном держатся в близком диапазоне от турнира к турниру.", counts
+    return "неоднородная динамика", "Часть танцев улучшается, а часть требует внимания, поэтому полезнее смотреть стандарт и латину отдельно.", counts
+
+
+def tournament_cards(tournaments: list[dict[str, Any]], limit: int = 5) -> list[dict[str, Any]]:
+    return sorted(tournaments, key=lambda item: item.get("event_date") or "")[-limit:]
+
+
+def tournament_performance(tournaments: list[dict[str, Any]], dynamics: list[dict[str, Any]], limit: int = 3) -> dict[str, list[dict[str, Any]]]:
+    date_to_titles: dict[str, list[str]] = {}
+    for item in tournaments:
+        date_to_titles.setdefault(item.get("event_date"), []).append(item.get("tournament_title") or "—")
+    rows = []
+    grouped: dict[str, list[float]] = {}
+    for item in dynamics:
+        if item.get("event_date") and item.get("final_avg_place") is not None:
+            grouped.setdefault(item["event_date"], []).append(float(item["final_avg_place"]))
+    for date, values in grouped.items():
+        if not values:
+            continue
+        rows.append(
+            {
+                "event_date": date,
+                "tournament_title": "; ".join(dict.fromkeys(date_to_titles.get(date, ["—"]))),
+                "avg_place": sum(values) / len(values),
+            }
+        )
+    rows = sorted(rows, key=lambda item: (item["avg_place"], item["event_date"]))
+    return {"best": rows[:limit], "hardest": list(reversed(rows[-limit:]))}
+
+
+def build_tournament_details(report: dict[str, Any]) -> list[dict[str, Any]]:
+    tournaments = report.get("tournaments", {}).get("items", []) or []
+    dynamics = report.get("dances", {}).get("dynamics_by_date", []) or []
+    rows_by_date: dict[str, list[dict[str, Any]]] = {}
+    for row in dynamics:
+        if row.get("event_date"):
+            rows_by_date.setdefault(row["event_date"], []).append(row)
+
+    details = []
+    for item in sorted(tournaments, key=lambda value: value.get("event_date") or ""):
+        dance_rows = sorted(
+            rows_by_date.get(item.get("event_date"), []),
+            key=lambda row: (row.get("program") or "", row.get("dance") or ""),
+        )
+        scored = [row for row in dance_rows if row.get("final_avg_place") is not None]
+        best = min(scored, key=lambda row: float(row["final_avg_place"])) if scored else None
+        weakest = max(scored, key=lambda row: float(row["final_avg_place"])) if scored else None
+        avg_place = (sum(float(row["final_avg_place"]) for row in scored) / len(scored)) if scored else None
+        details.append(
+            {
+                **item,
+                "dance_results": dance_rows,
+                "best_dance": best,
+                "weakest_dance": weakest,
+                "avg_final_place": avg_place,
+            }
+        )
+    return details
+
+
+def build_role_views(programs: dict[str, dict[str, Any]], report: dict[str, Any], summary: dict[str, Any]) -> dict[str, Any]:
+    program_views = {key: program_parent_view(key, program) for key, program in programs.items()}
+    all_metrics = [item for program in programs.values() for item in program["metrics"]]
+    trends = report.get("dances", {}).get("trends", []) or []
+    progress_label, progress_comment, progress_counts = overall_progress(trends)
+    avg_stability = round(sum(item.get("stability_score", 50) for item in all_metrics) / len(all_metrics)) if all_metrics else 50
+    stability_label = stability_label_for_percent(avg_stability)
+    tournaments = report.get("tournaments", {}).get("items", []) or []
+    tournament_perf = tournament_performance(tournaments, report.get("dances", {}).get("dynamics_by_date", []) or [])
+
+    return {
+        "parent": {
+            "season_status": progress_label,
+            "season_comment": progress_comment,
+            "progress_counts": progress_counts,
+            "stability": stability_label,
+            "latest_tournaments": tournament_cards(tournaments),
+            "programs": program_views,
+        },
+        "trainer": {
+            "programs": program_views,
+            "best_tournaments": tournament_perf["best"],
+            "hardest_tournaments": tournament_perf["hardest"],
+        },
+    }
+
+
+def build_view_model(report: dict[str, Any], input_path: Path, output_path: Path) -> dict[str, Any]:
+    tournaments = report.get("tournaments", {}).get("protocols", [])
+    entry_types = {item.get("entry_type") for item in tournaments if item.get("entry_type")}
+    entry_label = "солистка" if entry_types == {"solo"} else ", ".join(label_entry_type(item) for item in sorted(entry_types)) or "—"
+    all_metrics = report.get("dances", {}).get("metrics", [])
+    judges = dict(report.get("judges", {}))
+    warnings = dict(report.get("warnings", {}))
+    warnings["notes"] = user_facing_notes(warnings.get("notes", []) or [])
+    judge_deviations = [
+        float(item["avg_deviation"])
+        for item in (judges.get("strictest", []) or []) + (judges.get("softest", []) or [])
+        if item.get("avg_deviation") is not None
+    ]
+    judges["strictest"] = add_judge_interpretation(judges.get("strictest", []) or [], judge_deviations)
+    judges["softest"] = add_judge_interpretation(judges.get("softest", []) or [], judge_deviations)
+
+    programs: dict[str, dict[str, Any]] = {}
+    for key, title in [("standard", "стандарт"), ("latin", "латина")]:
+        payload = report.get("programs", {}).get(key, {})
+        raw_metrics = payload.get("metrics", [])
+        program_stability_values = [
+            float(item["final_std_deviation"])
+            for item in raw_metrics
+            if item.get("final_std_deviation") is not None and int(item.get("n_protocols") or 0) >= 2
+        ]
+        metrics = add_stability_interpretation(raw_metrics, program_stability_values)
+        trends = [item for item in report.get("dances", {}).get("trends", []) if item.get("program") == key]
+        most_stable = payload.get("most_stable_dance")
+        if most_stable:
+            most_stable = add_stability_interpretation([most_stable], program_stability_values)[0]
+        programs[key] = {
+            "title": title,
+            "metrics": metrics,
+            "best_by_final_average": payload.get("best_by_final_average"),
+            "best_by_median": payload.get("best_by_median"),
+            "most_stable": most_stable,
+            "best_peak": payload.get("best_peak"),
+            "worst_by_final_average": payload.get("worst_by_final_average"),
+            "judge_level_best": payload.get("judge_level_best"),
+            "strongest": payload.get("strongest_dance"),
+            "weakest": payload.get("weakest_dance"),
+            "least_stable": least_stable(metrics),
+            "most_improved": payload.get("most_improved_dance"),
+            "trends": trends,
+        }
+
+    role_views = build_role_views(programs, report, report.get("summary", {}))
+
+    sections = []
+    checks = [
+        ("Title", True),
+        ("Dancer summary", bool(report.get("summary"))),
+        ("Data quality warnings", bool(report.get("warnings"))),
+        ("Standard summary", bool(programs["standard"]["metrics"])),
+        ("Latin summary", bool(programs["latin"]["metrics"])),
+        ("Judge analytics", bool(report.get("judges"))),
+        ("Dance analytics", bool(report.get("dances"))),
+        ("Tournament list", bool(report.get("tournaments", {}).get("protocols"))),
+        ("Methodology note", True),
+    ]
+    sections.extend(name for name, rendered in checks if rendered)
+
+    return {
+        "report": report,
+        "input_path": input_path,
+        "output_path": output_path,
+        "metadata": report.get("metadata", {}),
+        "dancer": report.get("dancer", {}),
+        "summary": report.get("summary", {}),
+        "entry_label": entry_label,
+        "programs": programs,
+        "judges": judges,
+        "dances": report.get("dances", {}),
+        "tournaments": report.get("tournaments", {}),
+        "tournament_details": build_tournament_details(report),
+        "warnings": warnings,
+        "role_views": role_views,
+        "sections": sections,
+    }
+
+
+def build_print_summary(view_model: dict[str, Any]) -> dict[str, int]:
+    warnings = view_model["warnings"]
+    judges = view_model["judges"]
+    dances = view_model["dances"]
+    return {
+        "sections_filled": len(view_model["sections"]),
+        "warnings": sum(
+            len(warnings.get(key, []) or [])
+            for key in [
+                "parser_status",
+                "low_confidence_dances",
+                "missing_dances",
+                "incomplete_protocols",
+                "ranking_mismatch",
+                "notes",
+            ]
+        ),
+        "judge_rows": len(judges.get("strictest", []) or []) + len(judges.get("softest", []) or []),
+        "dance_rows": len(dances.get("metrics", []) or []) + len(dances.get("trends", []) or []),
+    }
+
+
+def render_report(view_model: dict[str, Any]) -> str:
+    environment = Environment(
+        loader=FileSystemLoader(DEFAULT_TEMPLATES_DIR),
+        autoescape=select_autoescape(["html", "xml", "j2"]),
+        trim_blocks=True,
+        lstrip_blocks=True,
+    )
+    environment.filters["fmt"] = fmt
+    environment.filters["program_label"] = label_program
+    environment.filters["entry_label"] = label_entry_type
+    environment.filters["dance_label"] = dance_label
+    environment.filters["pluralize"] = pluralize
+    template = environment.get_template(DEFAULT_TEMPLATE_NAME)
+    return template.render(**view_model)
+
+
+def display_path(path: Path) -> str:
+    try:
+        return str(path.relative_to(PROJECT_ROOT))
+    except ValueError:
+        return str(path)
+
+
+def parse_args(argv: list[str]) -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description="Render an HTML report from an existing dancer JSON report.")
+    source = parser.add_mutually_exclusive_group(required=True)
+    source.add_argument("--idd", help="External Compreg dancer IDD. Reads reports/dancer_<idd>_report.json.")
+    source.add_argument("--input", type=Path, help="Path to an existing JSON report.")
+    parser.add_argument("--output", type=Path, default=None, help="Optional HTML output path.")
+    if not argv:
+        parser.print_help(sys.stderr)
+        raise SystemExit(2)
+    return parser.parse_args(argv)
+
+
+def main(argv: list[str]) -> int:
+    args = parse_args(argv)
+    input_path = args.input or report_path_for_idd(args.idd)
+    input_path = input_path if input_path.is_absolute() else PROJECT_ROOT / input_path
+    report = load_report(input_path)
+    output_path = args.output or output_path_for_report(report, input_path)
+    output_path = output_path if output_path.is_absolute() else PROJECT_ROOT / output_path
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+
+    view_model = build_view_model(report, input_path, output_path)
+    output_path.write_text(render_report(view_model), encoding="utf-8")
+    summary = build_print_summary(view_model)
+
+    print(f"Wrote {display_path(output_path)}")
+    print(
+        "Summary: "
+        f"sections={summary['sections_filled']}; "
+        f"warnings={summary['warnings']}; "
+        f"judge_rows={summary['judge_rows']}; "
+        f"dance_rows={summary['dance_rows']}; "
+        f"output={display_path(output_path)}"
+    )
+    print("Rendered sections:")
+    for section in view_model["sections"]:
+        print(f"- {section}")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main(sys.argv[1:]))

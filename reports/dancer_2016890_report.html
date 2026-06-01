@@ -1,0 +1,2132 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Отчёт танцора · Нестерова Елизавета · 2016890</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #F8F7FC;
+      --paper: #FFFFFF;
+      --paper-soft: #FDFBFF;
+      --ink: #20212A;
+      --ink-soft: #3D3F4C;
+      --muted: #727488;
+      --line: #E9E5F4;
+      --accent: #7B6ED6;
+      --accent-dark: #5E51B8;
+      --accent-soft: #F0EDFB;
+      --accent-light: #FAF8FF;
+      --note-soft: #F6F4FC;
+      --success-soft: #EAF6F1;
+      --shadow: 0 12px 32px rgba(49, 42, 96, .07);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font: 14px/1.62 Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+    }
+
+    .report {
+      width: min(1080px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 34px 0 64px;
+    }
+
+    .cover {
+      background: linear-gradient(135deg, var(--paper) 0%, var(--accent-light) 100%);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      padding: 34px 36px 28px;
+      margin-bottom: 18px;
+    }
+
+    .eyebrow {
+      color: var(--accent-dark);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    h1, h2, h3, h4 { margin: 0; line-height: 1.2; letter-spacing: 0; }
+    h1 { font-size: 34px; max-width: 760px; font-weight: 720; }
+    h2 { font-size: 22px; margin-bottom: 12px; font-weight: 680; }
+    h3 { font-size: 17px; margin: 0 0 10px; font-weight: 640; color: var(--ink-soft); }
+    h4 { font-size: 13px; margin: 0 0 8px; font-weight: 650; color: var(--ink-soft); }
+    p { margin: 0 0 10px; }
+
+    .cover-subtitle {
+      color: var(--ink-soft);
+      font-size: 16px;
+      margin-top: 8px;
+    }
+
+    .profile-grid,
+    .kpi-grid,
+    .insight-grid,
+    .two-column,
+    .three-column {
+      display: grid;
+      gap: 12px;
+    }
+
+    .profile-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); margin-top: 22px; }
+    .kpi-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .insight-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .two-column { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .three-column { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+    .profile-item,
+    .card,
+    .insight-card {
+      background: rgba(255, 255, 255, .78);
+      border: 1px solid rgba(109, 91, 208, .16);
+      border-radius: 14px;
+      padding: 14px;
+      break-inside: avoid;
+    }
+
+    .label {
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    .value {
+      color: var(--ink);
+      font-weight: 700;
+      margin-top: 4px;
+      overflow-wrap: anywhere;
+    }
+
+    .tabs {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      background: rgba(248, 247, 252, .94);
+      backdrop-filter: blur(8px);
+      padding: 10px 0 18px;
+      margin-bottom: 12px;
+    }
+
+    .tab-input { position: absolute; opacity: 0; pointer-events: none; }
+
+    .tab-label {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      cursor: pointer;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--paper);
+      color: var(--ink-soft);
+      padding: 15px 18px;
+      box-shadow: 0 6px 18px rgba(49, 42, 96, .04);
+      transition: all .18s ease;
+    }
+
+    .tab-title {
+      font-size: 16px;
+      font-weight: 680;
+    }
+
+    .tab-help {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    #tab-parent:checked ~ .tabs label[for="tab-parent"],
+    #tab-trainer:checked ~ .tabs label[for="tab-trainer"] {
+      background: var(--accent-soft);
+      border-color: rgba(94, 81, 184, .42);
+      color: var(--accent-dark);
+      box-shadow: 0 8px 22px rgba(77, 61, 181, .10);
+    }
+
+    #tab-parent:checked ~ .tabs label[for="tab-parent"] .tab-help,
+    #tab-trainer:checked ~ .tabs label[for="tab-trainer"] .tab-help {
+      color: var(--muted);
+    }
+
+    .mode-panel { display: none; }
+    #tab-parent:checked ~ .parent-panel { display: block; }
+    #tab-trainer:checked ~ .trainer-panel { display: block; }
+
+    .section {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(49, 42, 96, .045);
+      margin: 24px 0;
+      padding: 24px;
+      break-inside: avoid;
+    }
+
+    .section-kicker {
+      color: var(--muted);
+      font-size: 13px;
+      max-width: 720px;
+      margin-bottom: 14px;
+    }
+
+    .kpi-value,
+    .big-status {
+      color: var(--accent-dark);
+      font-size: 26px;
+      font-weight: 640;
+      line-height: 1.05;
+      margin-top: 8px;
+    }
+
+    .big-status { font-size: 23px; }
+
+    .card {
+      background: #FBFAFF;
+      min-height: 110px;
+    }
+
+    .insight-card {
+      background: var(--paper-soft);
+      min-height: 120px;
+    }
+
+    .rank-list,
+    .plain-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 8px;
+    }
+
+    .rank-list li,
+    .plain-list li {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #fff;
+      padding: 10px 12px;
+    }
+
+    .rank {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 28px;
+      height: 28px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #fff;
+      font-weight: 760;
+      margin-right: 8px;
+    }
+
+    .muted { color: var(--muted); }
+    .tiny { color: var(--muted); font-size: 11px; margin-top: 3px; }
+    .number { text-align: right; white-space: nowrap; }
+
+    .progress-label {
+      color: var(--ink-soft);
+      font-size: 12px;
+      font-weight: 650;
+      margin-bottom: 6px;
+    }
+
+    .progress-track {
+      display: block;
+      width: 100%;
+      min-width: 92px;
+      height: 7px;
+      border-radius: 999px;
+      background: #ECE8F6;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      border-radius: inherit;
+      background: var(--accent);
+    }
+
+    .interpretation {
+      color: var(--ink-soft);
+      font-weight: 800;
+      margin-top: 2px;
+    }
+
+    .note-box {
+      border-radius: 12px;
+      padding: 12px 14px;
+      margin-top: 10px;
+    }
+
+    .note-box {
+      background: var(--note-soft);
+      border: 1px solid var(--line);
+      border-left: 3px solid rgba(123, 110, 214, .42);
+      color: var(--ink-soft);
+    }
+
+    .program-story {
+      display: grid;
+      gap: 16px;
+    }
+
+    .program-story + .program-story {
+      margin-top: 22px;
+      padding-top: 22px;
+      border-top: 1px solid var(--line);
+    }
+
+    .story-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .story-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 14px;
+    }
+
+    .story-card h3 {
+      color: var(--ink-soft);
+      font-size: 14px;
+      font-weight: 650;
+      margin-bottom: 8px;
+    }
+
+    .program-heading {
+      color: var(--accent-dark);
+      font-size: 18px;
+      font-weight: 640;
+      margin: 2px 0 0;
+    }
+
+    .parent-conclusion {
+      background: transparent;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 18px 18px 10px;
+      color: var(--ink-soft);
+    }
+
+    .parent-conclusion h2 {
+      color: var(--ink-soft);
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      margin-top: 10px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--paper);
+      font-size: 12.5px;
+    }
+
+    th, td {
+      border-bottom: 1px solid var(--line);
+      padding: 9px 10px;
+      text-align: left;
+      vertical-align: top;
+      overflow-wrap: anywhere;
+    }
+
+    th {
+      background: #F5F2FC;
+      color: #4A4568;
+      font-size: 11px;
+      font-weight: 720;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    tbody tr:nth-child(even) td { background: #FEFDFF; }
+    tbody tr:last-child td { border-bottom: 0; }
+
+    details {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--paper-soft);
+      padding: 14px 16px;
+      margin-top: 12px;
+    }
+
+    summary {
+      cursor: pointer;
+      color: var(--accent-dark);
+      font-size: 18px;
+      font-weight: 720;
+    }
+
+    .tournament-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .tournament-summary {
+      display: grid;
+      grid-template-columns: minmax(92px, .35fr) minmax(180px, 1fr) minmax(180px, 1fr) minmax(120px, .45fr);
+      gap: 12px;
+      align-items: start;
+      color: var(--ink);
+    }
+
+    .summary-title {
+      font-weight: 720;
+      color: var(--ink);
+    }
+
+    .summary-meta {
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 4px;
+    }
+
+    .tournament-detail-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin: 14px 0;
+    }
+
+    @media (max-width: 900px) {
+      .profile-grid,
+      .kpi-grid,
+      .insight-grid,
+      .two-column,
+      .three-column,
+      .story-grid,
+      .tournament-summary,
+      .tournament-detail-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 620px) {
+      .report { width: min(100% - 24px, 1080px); padding-top: 18px; }
+      .cover, .section { padding: 18px; border-radius: 14px; }
+      h1 { font-size: 26px; }
+      .profile-grid,
+      .kpi-grid,
+      .insight-grid,
+      .two-column,
+      .three-column,
+      .story-grid,
+      .tournament-summary,
+      .tournament-detail-grid,
+      .tabs {
+        grid-template-columns: 1fr;
+      }
+      .tabs { position: static; }
+    }
+
+    @media print {
+      @page { size: A4; margin: 12mm; }
+      body { background: #fff; font-size: 11px; }
+      .report { width: 100%; padding: 0; }
+      .tabs { position: static; padding: 0 0 10px; }
+      .cover, .section {
+        box-shadow: none;
+        break-inside: avoid;
+        page-break-inside: avoid;
+        border-radius: 10px;
+      }
+      .tab-label { box-shadow: none; }
+      h1 { font-size: 24px; }
+      h2, summary { font-size: 17px; }
+      table { font-size: 10px; }
+      th, td { padding: 5px 6px; }
+      .table-wrap { overflow: visible; }
+    }
+  </style>
+</head>
+<body>
+<main class="report">
+  <header class="cover">
+    <div class="eyebrow">Отчёт по спортивным бальным танцам</div>
+    <h1>Нестерова Елизавета</h1>
+    <p class="cover-subtitle">солистка · Compreg IDD 2016890</p>
+    <div class="profile-grid">
+      <div class="profile-item"><div class="label">Клуб</div><div class="value">Триумф</div></div>
+      <div class="profile-item"><div class="label">Город</div><div class="value">Санкт-Петербург</div></div>
+      <div class="profile-item"><div class="label">Период</div><div class="value">2025-09-28 — 2026-05-24</div></div>
+      <div class="profile-item"><div class="label">Режим отчёта</div><div class="value">выберите ниже</div></div>
+    </div>
+  </header>
+
+  <input class="tab-input" type="radio" name="report-mode" id="tab-parent" checked>
+  <input class="tab-input" type="radio" name="report-mode" id="tab-trainer">
+
+  <nav class="tabs" aria-label="Режим просмотра отчёта">
+    <label class="tab-label" for="tab-parent">
+      <span class="tab-title">Родитель — кратко и понятно о прогрессе</span>
+      <span class="tab-help">Главные выводы без технических деталей</span>
+    </label>
+    <label class="tab-label" for="tab-trainer">
+      <span class="tab-title">Тренер — детали для работы на тренировках</span>
+      <span class="tab-help">Разбор программ, динамики, танцев и турниров</span>
+    </label>
+  </nav>
+
+  <section class="mode-panel parent-panel">
+    <section class="section">
+      <h2>Общая оценка сезона</h2>
+      <p class="section-kicker">Краткая сводка по турнирам и динамике выступлений.</p>
+      <div class="kpi-grid">
+        <div class="card"><div class="label">Турниры</div><div class="kpi-value">13</div><div class="muted">13 турниров в отчёте</div></div>
+        <div class="card"><div class="label">Выступления</div><div class="kpi-value">34</div><div class="muted">34 выступления</div></div>
+        <div class="card"><div class="label">Период наблюдения</div><div class="kpi-value" style="font-size:20px">2025-09-28 — 2026-05-24</div></div>
+      </div>
+      <div class="note-box">
+        <div class="label">Общий вывод</div>
+        <div class="big-status">неоднородная динамика</div>
+        <p>Часть танцев улучшается, а часть требует внимания, поэтому полезнее смотреть стандарт и латину отдельно.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Выводы по программам</h2>
+      <p class="section-kicker">Стандарт и латина показаны отдельно, чтобы не смешивать разные программы.</p>
+      <div class="program-story">
+        <h3 class="program-heading">Стандарт</h3>
+        <div class="story-grid">
+          <div class="story-card">
+            <h4>Что получается лучше всего</h4>
+            <p>В стандартной программе наиболее уверенно выглядит танго: именно этот танец чаще даёт лучшие итоговые места. Близко по среднему месту находится фокстрот. Медленный вальс остаётся самым стабильным танцем, но стабильность не всегда означает лучшее среднее место.</p>
+            <ul class="plain-list">
+                <li><strong>Танго</strong><span class="muted">среднее место 2.235</span></li>
+                <li><strong>Фокстрот</strong><span class="muted">среднее место 2.312</span></li>
+            </ul>
+          </div>
+          <div class="story-card">
+            <h4>Что требует внимания</h4>
+            <p>Больше внимания сейчас требует медленный вальс: здесь заметнее всего потенциал для роста по итоговым местам или по динамике последних турниров.</p>
+            <ul class="plain-list">
+                <li><strong>Медленный вальс</strong><span class="muted">среднее место 2.412</span></li>
+                <li><strong>Квикстеп</strong><span class="muted">среднее место 2.353</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="story-card">
+          <h4>Динамика</h4>
+          <p>Положительная динамика заметнее всего в танцах: танго и фокстрот. Больше внимания стоит уделить танцам: медленный вальс.</p>
+            <p class="muted">Отдельные танцы пока имеют ограниченную выборку и не влияют на основной вывод.</p>
+        </div>
+        <div class="parent-conclusion">
+          <h2>Общий вывод</h2>
+            <p>В стандартной программе есть достаточно наблюдений, чтобы смотреть не на отдельный турнир, а на общую картину.</p>
+            <p>В стандартной программе наиболее уверенно выглядит танго: именно этот танец чаще даёт лучшие итоговые места. Близко по среднему месту находится фокстрот. Медленный вальс остаётся самым стабильным танцем, но стабильность не всегда означает лучшее среднее место.</p>
+            <p>Больше внимания сейчас требует медленный вальс: здесь заметнее всего потенциал для роста по итоговым местам или по динамике последних турниров.</p>
+            <p>Положительная динамика заметнее всего в танцах: танго и фокстрот. Больше внимания стоит уделить танцам: медленный вальс.</p>
+            <p>Танцы с ограниченной выборкой: Венский вальс (3 протокола).</p>
+        </div>
+      </div>
+      <div class="program-story">
+        <h3 class="program-heading">Латина</h3>
+        <div class="story-grid">
+          <div class="story-card">
+            <h4>Что получается лучше всего</h4>
+            <p>В латинской программе наиболее уверенно выглядит ча-ча-ча: именно этот танец чаще даёт лучшие итоговые места. Близко по среднему месту находится румба. Румба остаётся самым стабильным танцем, но стабильность не всегда означает лучшее среднее место.</p>
+            <ul class="plain-list">
+                <li><strong>Ча-ча-ча</strong><span class="muted">среднее место 1.529</span></li>
+                <li><strong>Румба</strong><span class="muted">среднее место 1.588</span></li>
+            </ul>
+          </div>
+          <div class="story-card">
+            <h4>Что требует внимания</h4>
+            <p>Больше внимания сейчас требует джайв: здесь заметнее всего потенциал для роста по итоговым местам или по динамике последних турниров.</p>
+            <ul class="plain-list">
+                <li><strong>Джайв</strong><span class="muted">среднее место 2.176</span></li>
+                <li><strong>Самба</strong><span class="muted">среднее место 2.088</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="story-card">
+          <h4>Динамика</h4>
+          <p>Тревожная динамика заметнее всего в танцах: джайв и самба. Это зона для спокойной проверки на тренировках.</p>
+            <p class="muted">Отдельные танцы пока имеют ограниченную выборку и не влияют на основной вывод.</p>
+        </div>
+        <div class="parent-conclusion">
+          <h2>Общий вывод</h2>
+            <p>В латинской программе есть достаточно наблюдений, чтобы смотреть не на отдельный турнир, а на общую картину.</p>
+            <p>В латинской программе наиболее уверенно выглядит ча-ча-ча: именно этот танец чаще даёт лучшие итоговые места. Близко по среднему месту находится румба. Румба остаётся самым стабильным танцем, но стабильность не всегда означает лучшее среднее место.</p>
+            <p>Больше внимания сейчас требует джайв: здесь заметнее всего потенциал для роста по итоговым местам или по динамике последних турниров.</p>
+            <p>Тревожная динамика заметнее всего в танцах: джайв и самба. Это зона для спокойной проверки на тренировках.</p>
+            <p>Танцы с ограниченной выборкой: Пасодобль (3 протокола).</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Последние турниры</h2>
+      <div class="plain-list">
+          <li><span><strong>2026-02-01</strong> · Tiara Dance Cup (Санкт-Петербург)</span><span class="muted">2 выступления</span></li>
+          <li><span><strong>2026-02-23</strong> · Открытый Рейтинговый и Классификационный Чемпионат СПТЛ 2026 (Санкт-Петербург)</span><span class="muted">4 выступления</span></li>
+          <li><span><strong>2026-03-08</strong> · Амбассадор 2026 (Санкт-Петербург)</span><span class="muted">4 выступления</span></li>
+          <li><span><strong>2026-05-17</strong> · Чемпионат СПТС 2026 (Санкт-Петербург)</span><span class="muted">4 выступления</span></li>
+          <li><span><strong>2026-05-24</strong> · Чемпионат СПТЛ 2026 (Санкт-Петербург)</span><span class="muted">4 выступления</span></li>
+      </div>
+    </section>
+
+  </section>
+
+  <section class="mode-panel trainer-panel">
+    <section class="section">
+      <h2>Ключевые выводы</h2>
+      <div class="program-story">
+        <h3 class="program-heading">Стандарт</h3>
+        <div class="three-column">
+          <div class="insight-card">
+            <h3>Лучше по среднему месту</h3>
+            <ul class="plain-list">
+                <li><strong>Танго</strong><span class="muted">2.235</span></li>
+                <li><strong>Фокстрот</strong><span class="muted">2.312</span></li>
+            </ul>
+          </div>
+          <div class="insight-card">
+            <h3>Требуют внимания</h3>
+            <ul class="plain-list">
+                <li><strong>Медленный вальс</strong><span class="muted">2.412</span></li>
+                <li><strong>Квикстеп</strong><span class="muted">2.353</span></li>
+            </ul>
+          </div>
+          <div class="insight-card">
+            <h3>Наиболее стабильные</h3>
+            <ul class="plain-list">
+                <li>
+                  <strong>Медленный вальс</strong>
+                  <span>
+                    <span class="progress-label">Средняя</span>
+                    <span class="progress-track"><span class="progress-fill" style="width: 61%"></span></span>
+                  </span>
+                </li>
+                <li>
+                  <strong>Фокстрот</strong>
+                  <span>
+                    <span class="progress-label">Средняя</span>
+                    <span class="progress-track"><span class="progress-fill" style="width: 51%"></span></span>
+                  </span>
+                </li>
+                <li>
+                  <strong>Танго</strong>
+                  <span>
+                    <span class="progress-label">Низкая</span>
+                    <span class="progress-track"><span class="progress-fill" style="width: 40%"></span></span>
+                  </span>
+                </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="program-story">
+        <h3 class="program-heading">Латина</h3>
+        <div class="three-column">
+          <div class="insight-card">
+            <h3>Лучше по среднему месту</h3>
+            <ul class="plain-list">
+                <li><strong>Ча-ча-ча</strong><span class="muted">1.529</span></li>
+                <li><strong>Румба</strong><span class="muted">1.588</span></li>
+            </ul>
+          </div>
+          <div class="insight-card">
+            <h3>Требуют внимания</h3>
+            <ul class="plain-list">
+                <li><strong>Джайв</strong><span class="muted">2.176</span></li>
+                <li><strong>Самба</strong><span class="muted">2.088</span></li>
+            </ul>
+          </div>
+          <div class="insight-card">
+            <h3>Наиболее стабильные</h3>
+            <ul class="plain-list">
+                <li>
+                  <strong>Румба</strong>
+                  <span>
+                    <span class="progress-label">Очень высокая</span>
+                    <span class="progress-track"><span class="progress-fill" style="width: 95%"></span></span>
+                  </span>
+                </li>
+                <li>
+                  <strong>Ча-ча-ча</strong>
+                  <span>
+                    <span class="progress-label">Очень высокая</span>
+                    <span class="progress-track"><span class="progress-fill" style="width: 95%"></span></span>
+                  </span>
+                </li>
+                <li>
+                  <strong>Самба</strong>
+                  <span>
+                    <span class="progress-label">Средняя</span>
+                    <span class="progress-track"><span class="progress-fill" style="width: 65%"></span></span>
+                  </span>
+                </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Динамика</h2>
+      <div class="program-story">
+        <h3 class="program-heading">Стандарт</h3>
+        <div class="three-column">
+          <div class="insight-card">
+            <h3>Улучшается</h3>
+              <ul class="plain-list"><li><strong>Танго</strong><span class="muted">6.000 → 3.000</span></li><li><strong>Фокстрот</strong><span class="muted">4.000 → 3.500</span></li><li><strong>Квикстеп</strong><span class="muted">4.000 → 3.000</span></li></ul>
+          </div>
+          <div class="insight-card">
+            <h3>Требует внимания по динамике</h3>
+              <ul class="plain-list"><li><strong>Медленный вальс</strong><span class="muted">2.000 → 3.500</span></li></ul>
+          </div>
+          <div class="insight-card">
+            <h3>Стабильно</h3>
+              <p class="muted">Отдельной группы стабильной динамики сейчас не выделяется.</p>
+          </div>
+        </div>
+      </div>
+      <div class="program-story">
+        <h3 class="program-heading">Латина</h3>
+        <div class="three-column">
+          <div class="insight-card">
+            <h3>Улучшается</h3>
+              <p class="muted">Явного улучшения по тренду сейчас не видно.</p>
+          </div>
+          <div class="insight-card">
+            <h3>Требует внимания по динамике</h3>
+              <ul class="plain-list"><li><strong>Джайв</strong><span class="muted">2.000 → 3.000</span></li><li><strong>Самба</strong><span class="muted">1.000 → 2.500</span></li><li><strong>Ча-ча-ча</strong><span class="muted">1.000 → 2.500</span></li></ul>
+          </div>
+          <div class="insight-card">
+            <h3>Стабильно</h3>
+              <p class="muted">Отдельной группы стабильной динамики сейчас не выделяется.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Танцы: стандарт</h2>
+      <p class="section-kicker">Меньшее место означает лучший результат. Стабильность показывает, насколько сильно меняется итоговое место танца от турнира к турниру. Чем меньше колебания, тем выше стабильность.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Танец</th><th class="number">Среднее итоговое место</th><th class="number">Лучший результат</th><th>Стабильность</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><strong>Фокстрот</strong></td>
+              <td class="number">2.312</td>
+              <td class="number">1.000</td>
+              <td>
+                <div class="progress-label">Средняя</div>
+                <div class="progress-track"><div class="progress-fill" style="width: 51%"></div></div>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Квикстеп</strong></td>
+              <td class="number">2.353</td>
+              <td class="number">1.000</td>
+              <td>
+                <div class="progress-label">Очень низкая</div>
+                <div class="progress-track"><div class="progress-fill" style="width: 25%"></div></div>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Танго</strong></td>
+              <td class="number">2.235</td>
+              <td class="number">1.000</td>
+              <td>
+                <div class="progress-label">Низкая</div>
+                <div class="progress-track"><div class="progress-fill" style="width: 40%"></div></div>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Венский вальс</strong></td>
+              <td class="number">4.833</td>
+              <td class="number">4.000</td>
+              <td>
+                <div class="progress-label">Очень высокая</div>
+                <div class="progress-track"><div class="progress-fill" style="width: 95%"></div></div>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Медленный вальс</strong></td>
+              <td class="number">2.412</td>
+              <td class="number">1.000</td>
+              <td>
+                <div class="progress-label">Средняя</div>
+                <div class="progress-track"><div class="progress-fill" style="width: 61%"></div></div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="note-box">Расчёт стабильности основан на разбросе итоговых мест по турнирам. Полная шкала означает очень устойчивый результат, короткая шкала — сильные колебания.</div>
+    </section>
+    <section class="section">
+      <h2>Танцы: латина</h2>
+      <p class="section-kicker">Меньшее место означает лучший результат. Стабильность показывает, насколько сильно меняется итоговое место танца от турнира к турниру. Чем меньше колебания, тем выше стабильность.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Танец</th><th class="number">Среднее итоговое место</th><th class="number">Лучший результат</th><th>Стабильность</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><strong>Ча-ча-ча</strong></td>
+              <td class="number">1.529</td>
+              <td class="number">1.000</td>
+              <td>
+                <div class="progress-label">Очень высокая</div>
+                <div class="progress-track"><div class="progress-fill" style="width: 95%"></div></div>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Джайв</strong></td>
+              <td class="number">2.176</td>
+              <td class="number">1.000</td>
+              <td>
+                <div class="progress-label">Очень низкая</div>
+                <div class="progress-track"><div class="progress-fill" style="width: 27%"></div></div>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Пасодобль</strong></td>
+              <td class="number">3.667</td>
+              <td class="number">2.000</td>
+              <td>
+                <div class="progress-label">Очень низкая</div>
+                <div class="progress-track"><div class="progress-fill" style="width: 25%"></div></div>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Румба</strong></td>
+              <td class="number">1.588</td>
+              <td class="number">1.000</td>
+              <td>
+                <div class="progress-label">Очень высокая</div>
+                <div class="progress-track"><div class="progress-fill" style="width: 95%"></div></div>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Самба</strong></td>
+              <td class="number">2.088</td>
+              <td class="number">1.000</td>
+              <td>
+                <div class="progress-label">Средняя</div>
+                <div class="progress-track"><div class="progress-fill" style="width: 65%"></div></div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="note-box">Расчёт стабильности основан на разбросе итоговых мест по турнирам. Полная шкала означает очень устойчивый результат, короткая шкала — сильные колебания.</div>
+    </section>
+
+    <section class="section">
+      <details>
+        <summary>Дополнительная аналитика судей</summary>
+        <p class="section-kicker">В рейтинг включены только судьи, по которым доступно не менее 10 оценок.</p>
+        <div class="two-column">
+          <div>
+            <h3>Более строгие судьи</h3>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>Судья</th><th>Интерпретация</th><th class="number">Оценок</th></tr></thead>
+                <tbody>
+                  <tr><td>Огаркова Оксана</td><td><div class="interpretation">Значительно строже среднего</div><div class="tiny">отклонение от панели: 2.272</div></td><td class="number">13 оценок</td></tr>
+                  <tr><td>Будин Виктор</td><td><div class="interpretation">Значительно строже среднего</div><div class="tiny">отклонение от панели: 1.751</div></td><td class="number">21 оценка</td></tr>
+                  <tr><td>Попова Анастасия</td><td><div class="interpretation">Значительно строже среднего</div><div class="tiny">отклонение от панели: 1.233</div></td><td class="number">22 оценки</td></tr>
+                  <tr><td>Логинова Оксана</td><td><div class="interpretation">Значительно строже среднего</div><div class="tiny">отклонение от панели: 1.085</div></td><td class="number">16 оценок</td></tr>
+                  <tr><td>Зеленина Елизавета</td><td><div class="interpretation">Строже среднего</div><div class="tiny">отклонение от панели: 1.019</div></td><td class="number">29 оценок</td></tr>
+                  <tr><td>Данилова Екатерина</td><td><div class="interpretation">Строже среднего</div><div class="tiny">отклонение от панели: 1.018</div></td><td class="number">28 оценок</td></tr>
+                  <tr><td>Курило Иван</td><td><div class="interpretation">Строже среднего</div><div class="tiny">отклонение от панели: 1.002</div></td><td class="number">16 оценок</td></tr>
+                  <tr><td>Чуносова Альбина</td><td><div class="interpretation">Строже среднего</div><div class="tiny">отклонение от панели: 0.895</div></td><td class="number">12 оценок</td></tr>
+                  <tr><td>Кинареев Михаил</td><td><div class="interpretation">Близко к среднему</div><div class="tiny">отклонение от панели: 0.881</div></td><td class="number">16 оценок</td></tr>
+                  <tr><td>Мардачев Олег</td><td><div class="interpretation">Близко к среднему</div><div class="tiny">отклонение от панели: 0.765</div></td><td class="number">17 оценок</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div>
+            <h3>Более мягкие судьи</h3>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>Судья</th><th>Интерпретация</th><th class="number">Оценок</th></tr></thead>
+                <tbody>
+                  <tr><td>Порохина Мария</td><td><div class="interpretation">Значительно мягче среднего</div><div class="tiny">отклонение от панели: -1.563</div></td><td class="number">46 оценок</td></tr>
+                  <tr><td>Филиппов Виталий</td><td><div class="interpretation">Значительно мягче среднего</div><div class="tiny">отклонение от панели: -1.436</div></td><td class="number">34 оценки</td></tr>
+                  <tr><td>Федоров Влад</td><td><div class="interpretation">Значительно мягче среднего</div><div class="tiny">отклонение от панели: -1.304</div></td><td class="number">13 оценок</td></tr>
+                  <tr><td>Вершинина Елизавета</td><td><div class="interpretation">Значительно мягче среднего</div><div class="tiny">отклонение от панели: -1.198</div></td><td class="number">22 оценки</td></tr>
+                  <tr><td>Лисичкин Константин</td><td><div class="interpretation">Мягче среднего</div><div class="tiny">отклонение от панели: -0.982</div></td><td class="number">12 оценок</td></tr>
+                  <tr><td>Стратьева Юлия</td><td><div class="interpretation">Мягче среднего</div><div class="tiny">отклонение от панели: -0.941</div></td><td class="number">16 оценок</td></tr>
+                  <tr><td>Сыров Павел</td><td><div class="interpretation">Мягче среднего</div><div class="tiny">отклонение от панели: -0.887</div></td><td class="number">33 оценки</td></tr>
+                  <tr><td>Сарнакова Ксения</td><td><div class="interpretation">Мягче среднего</div><div class="tiny">отклонение от панели: -0.846</div></td><td class="number">16 оценок</td></tr>
+                  <tr><td>Яковенко Камилия</td><td><div class="interpretation">Близко к среднему</div><div class="tiny">отклонение от панели: -0.832</div></td><td class="number">20 оценок</td></tr>
+                  <tr><td>Ларченко Екатерина</td><td><div class="interpretation">Близко к среднему</div><div class="tiny">отклонение от панели: -0.832</div></td><td class="number">12 оценок</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <section class="section">
+      <h2>Турниры</h2>
+      <div class="two-column">
+        <div class="insight-card">
+          <h3>Лучшие турниры</h3>
+          <ul class="plain-list">
+              <li><span><strong>2025-12-14</strong> · Golden s Cup 2025 (Санкт-Петербург)</span><span class="muted">1.250</span></li>
+              <li><span><strong>2026-01-18</strong> · Lider Cup 2026 (Санкт-Петербург)</span><span class="muted">1.250</span></li>
+              <li><span><strong>2026-01-25</strong> · Русский Вальс 2026 (Санкт-Петербург)</span><span class="muted">1.375</span></li>
+          </ul>
+        </div>
+        <div class="insight-card">
+          <h3>Наиболее сложные турниры</h3>
+          <ul class="plain-list">
+              <li><span><strong>2026-05-24</strong> · Чемпионат СПТЛ 2026 (Санкт-Петербург)</span><span class="muted">3.200</span></li>
+              <li><span><strong>2026-02-23</strong> · Открытый Рейтинговый и Классификационный Чемпионат СПТЛ 2026 (Санкт-Петербург)</span><span class="muted">2.975</span></li>
+              <li><span><strong>2026-03-08</strong> · Амбассадор 2026 (Санкт-Петербург)</span><span class="muted">2.900</span></li>
+          </ul>
+        </div>
+      </div>
+      <h3 style="margin-top:18px">Полный список турниров</h3>
+      <div class="tournament-list">
+        <details>
+          <summary>
+            <div class="tournament-summary">
+              <div>
+                <div class="label">Дата</div>
+                <div class="summary-title">2025-09-28</div>
+              </div>
+              <div>
+                <div class="label">Турнир</div>
+                <div class="summary-title">Северный кубок 2025 (Санкт-Петербург)</div>
+              </div>
+              <div>
+                <div class="label">Категория / программа</div>
+                <div class="summary-meta">Ювеналы-1 E+D Соло Ж La; Ювеналы-1 E+D Соло Ж St</div>
+                <div class="summary-meta">латина, стандарт</div>
+              </div>
+              <div>
+                <div class="label">Итоговый результат</div>
+                <div class="summary-title">Среднее место 2.625</div>
+              </div>
+            </div>
+          </summary>
+          <div class="tournament-detail-grid">
+            <div class="insight-card">
+              <h3>Лучший танец турнира</h3>
+                <p><strong>Ча-ча-ча</strong></p>
+                <p class="muted">Итоговое место: 1.000</p>
+            </div>
+            <div class="insight-card">
+              <h3>Требует внимания</h3>
+                <p><strong>Танго</strong></p>
+                <p class="muted">Итоговое место: 6.000</p>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Танец</th><th>Программа</th><th class="number">Итоговое место</th><th class="number">Протоколов</th></tr></thead>
+              <tbody>
+                <tr>
+                  <td><strong>Ча-ча-ча</strong></td>
+                  <td>латина</td>
+                  <td class="number">1.000</td>
+                  <td class="number">1 протокол</td>
+                </tr>
+                <tr>
+                  <td><strong>Джайв</strong></td>
+                  <td>латина</td>
+                  <td class="number">2.000</td>
+                  <td class="number">1 протокол</td>
+                </tr>
+                <tr>
+                  <td><strong>Румба</strong></td>
+                  <td>латина</td>
+                  <td class="number">1.000</td>
+                  <td class="number">1 протокол</td>
+                </tr>
+                <tr>
+                  <td><strong>Самба</strong></td>
+                  <td>латина</td>
+                  <td class="number">1.000</td>
+                  <td class="number">1 протокол</td>
+                </tr>
+                <tr>
+                  <td><strong>Фокстрот</strong></td>
+                  <td>стандарт</td>
+                  <td class="number">4.000</td>
+                  <td class="number">1 протокол</td>
+                </tr>
+                <tr>
+                  <td><strong>Квикстеп</strong></td>
+                  <td>стандарт</td>
+                  <td class="number">4.000</td>
+                  <td class="number">1 протокол</td>
+                </tr>
+                <tr>
+                  <td><strong>Танго</strong></td>
+                  <td>стандарт</td>
+                  <td class="number">6.000</td>
+                  <td class="number">1 протокол</td>
+                </tr>
+                <tr>
+                  <td><strong>Медленный вальс</strong></td>
+                  <td>стандарт</td>
+                  <td class="number">2.000</td>
+                  <td class="number">1 протокол</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+        <details>
+          <summary>
+            <div class="tournament-summary">
+              <div>
+                <div class="label">Дата</div>
+                <div class="summary-title">2025-10-12</div>
+              </div>
+              <div>
+                <div class="label">Турнир</div>
+                <div class="summary-title">Балтийская Звезда - 2025 (Санкт-Петербург)</div>
+              </div>
+              <div>
+                <div class="label">Категория / программа</div>
+                <div class="summary-meta">Ювеналы-1 E+D соло Ж La; Ювеналы-1 E+D соло Ж St</div>
+                <div class="summary-meta">латина, стандарт</div>
+              </div>
+              <div>
+                <div class="label">Итоговый результат</div>
+                <div class="summary-title">Среднее место 1.625</div>
+              </div>
+            </div>
+          </summary>
+          <div class="tournament-detail-grid">
+            <div class="insight-card">
+              <h3>Лучший танец турнира</h3>
+                <p><strong>Ча-ча-ча</strong></p>
+                <p class="muted">Итоговое место: 1.000</p>
+            </div>
+            <div class="insight-card">
+              <h3>Требует внимания</h3>
+                <p><strong>Танго</strong></p>
+                <p class="muted">Итоговое место: 3.000</p>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Танец</th><th>Программа</th><th class="number">Итоговое место</th><th class="number">Протоколов</th></tr></thead>
+              <tbody>
+                <tr>
+                  <td><strong>Ча-ча-ча</strong></td>
+                  <td>латина</td>
+                  <td class="number">1.000</td>
+                  <td class="number">1 протокол</td>
+                </tr>
+                <tr>
+                  <td><strong>Джайв</strong></td>
+                  <td>латина</td>
+                  <td class="number">1.000</td>
+                  <td class="number">1 протокол</td>
+                </tr>
+                <tr>
+                  <td><strong>Румба</strong></td>
+                  <td>латина</td>
+                  <td class="number">1.000</td>
+                  <td class="number">1 протокол</td>
+                </tr>
+                <tr>
+                  <td><strong>Самба</strong></td>
+                  <td>латина</td>
+                  <td class="number">1.000</td>
+                  <td class="number">1 протокол</td>
+                </tr>
+                <tr>
+                  <td><strong>Фокстрот</strong></td>
+                  <td>стандарт</td>
+                  <td class="number">2.000</td>
+                  <td class="number">1 протокол</td>
+                </tr>
+                <tr>
+                  <td><strong>Квикстеп</strong></td>
+                  <td>стандарт</td>
+                  <td class="number">2.000</td>
+                  <td class="number">1 протокол</td>
+                </tr>
+                <tr>
+                  <td><strong>Танго</strong></td>
+                  <td>стандарт</td>
+                  <td class="number">3.000</td>
+                  <td class="number">1 протокол</td>
+                </tr>
+                <tr>
+                  <td><strong>Медленный вальс</strong></td>
+                  <td>стандарт</td>
+                  <td class="number">2.000</td>
+                  <td class="number">1 протокол</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+        <details>
+          <summary>
+            <div class="tournament-summary">
+              <div>
+                <div class="label">Дата</div>
+                <div class="summary-title">2025-11-09</div>
+              </div>
+              <div>
+                <div class="label">Турнир</div>
+                <div class="summary-title">Кубок Лиги 2025 (Санкт-Петербург)</div>
+              </div>
+              <div>
+                <div class="label">Категория / программа</div>
+                <div class="summary-meta">Ювеналы-1 E+D Соло Ж La; Ювеналы-1 E+D Соло Ж St</div>
+                <div class="summary-meta">латина, стандарт</div>
+              </div>
+              <div>
+                <div class="label">Итоговый результат</div>
+                <div class="summary-title">Среднее место 1.750</div>
+              </div>
+            </div>
+          </summary>
+          <div class="tournament-detail-grid">
+            <div class="insight-card">
+              <h3>Лучший танец турнира</h3>
+                <p><strong>Ча-ча-ча</strong></p>
+                <p class="muted">Итоговое место: 1.000</p>
+            </div>
+            <div class="insight-card">
+              <h3>Требует внимания</h3>
+                <p><strong>Самба</strong></p>
+                <p class="muted">Итоговое место: 3.000</p>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Танец</th><th>Программа</th><th class="number">Итоговое место</th><th class="number">Протоколов</th></tr></thead>
+              <tbody>
+                <tr>
+                  <td><strong>Ча-ча-ча</strong></td>
+                  <td>латина</td>
+                  <td class="number">1.000</td>
+                  <td class="number">1 протокол</td>
+                </tr>
+                <tr>
+                  <td><strong>Джайв</strong></td>
+                  <td>латина</td>
+                  <td class="number">1.000</td>
+                  <td class="number">1 протокол</td>
+                </tr>
+                <tr>
+                  <td><strong>Румба</strong></td>
+                  <td>латина</td>
+                  <td class="number">1.000</td>
+                  <td class="number">1 протокол</td>
+                </tr>
+                <tr>
+                  <td><strong>Самба</strong></td>
+                  <td>латина</td>
+                  <td class="number">3.000</td>
+                  <td class="number">1 протокол</td>
+                </tr>
+                <tr>
+                  <td><strong>Фокстрот</strong></td>
+                  <td>стандарт</td>
+                  <td class="number">2.000</td>
+                  <td class="number">1 протокол</td>
+                </tr>
+                <tr>
+                  <td><strong>Квикстеп</strong></td>
+                  <td>стандарт</td>
+                  <td class="number">2.000</td>
+                  <td class="number">1 протокол</td>
+                </tr>
+                <tr>
+                  <td><strong>Танго</strong></td>
+                  <td>стандарт</td>
+                  <td class="number">2.000</td>
+                  <td class="number">1 протокол</td>
+                </tr>
+                <tr>
+                  <td><strong>Медленный вальс</strong></td>
+                  <td>стандарт</td>
+                  <td class="number">2.000</td>
+                  <td class="number">1 протокол</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+        <details>
+          <summary>
+            <div class="tournament-summary">
+              <div>
+                <div class="label">Дата</div>
+                <div class="summary-title">2025-11-16</div>
+              </div>
+              <div>
+                <div class="label">Турнир</div>
+                <div class="summary-title">Гордость Санкт-Петербурга 2025 (Санкт-Петербург)</div>
+              </div>
+              <div>
+                <div class="label">Категория / программа</div>
+                <div class="summary-meta">Ювеналы-1+2 E+D Соло Ж La; Ювеналы-1+2 E+D Соло Ж St</div>
+                <div class="summary-meta">латина, стандарт</div>
+              </div>
+              <div>
+                <div class="label">Итоговый результат</div>
+                <div class="summary-title">Среднее место 1.875</div>
+              </div>
+            </div>
+          </summary>
+          <div class="tournament-detail-grid">
+            <div class="insight-card">
+              <h3>Лучший танец турнира</h3>
+                <p><strong>Квикстеп</strong></p>
+                <p class="muted">Итоговое место: 1.000</p>
+            </div>
+            <div class="insight-card">
+              <h3>Требует внимания</h3>
+                <p><strong>Джайв</strong></p>
+                <p class="muted">Итоговое место: 3.000</p>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Танец</th><th>Программа</th><th class="number">Итоговое место</th><th class="number">Протоколов</th></tr></thead>
+              <tbody>
+                <tr>
+                  <td><strong>Ча-ча-ча</strong></td>
+                  <td>латина</td>
+                  <td class="number">2.000</td>
+                  <td class="number">1 протокол</td>
+                </tr>
+                <tr>
+                  <td><strong>Джайв</strong></td>
+                  <td>латина</td>
+                  <td class="number">3.000</td>
+                  <td class="number">1 протокол</td>
+                </tr>
+                <tr>
+                  <td><strong>Румба</strong></td>
+                  <td>латина</td>
+                  <td class="number">3.000</td>
+                  <td class="number">1 протокол</td>
+                </tr>
+                <tr>
+                  <td><strong>Самба</strong></td>
+                  <td>латина</td>
+                  <td class="number">2.000</td>
+                  <td class="number">1 протокол</td>
+                </tr>
+                <tr>
+                  <td><strong>Фокстрот</strong></td>
+                  <td>стандарт</td>
+                  <td class="number">2.000</td>
+                  <td class="number">1 протокол</td>
+                </tr>
+                <tr>
+                  <td><strong>Квикстеп</strong></td>
+                  <td>стандарт</td>
+                  <td class="number">1.000</td>
+                  <td class="number">1 протокол</td>
+                </tr>
+                <tr>
+                  <td><strong>Танго</strong></td>
+                  <td>стандарт</td>
+                  <td class="number">1.000</td>
+                  <td class="number">1 протокол</td>
+                </tr>
+                <tr>
+                  <td><strong>Медленный вальс</strong></td>
+                  <td>стандарт</td>
+                  <td class="number">1.000</td>
+                  <td class="number">1 протокол</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+        <details>
+          <summary>
+            <div class="tournament-summary">
+              <div>
+                <div class="label">Дата</div>
+                <div class="summary-title">2025-12-14</div>
+              </div>
+              <div>
+                <div class="label">Турнир</div>
+                <div class="summary-title">Golden s Cup 2025 (Санкт-Петербург)</div>
+              </div>
+              <div>
+                <div class="label">Категория / программа</div>
+                <div class="summary-meta">Ювеналы-1+2 E+D Соло Ж La; Ювеналы-1+2 E+D Соло Ж St</div>
+                <div class="summary-meta">латина, стандарт</div>
+              </div>
+              <div>
+                <div class="label">Итоговый результат</div>
+                <div class="summary-title">Среднее место 1.250</div>
+              </div>
+            </div>
+          </summary>
+          <div class="tournament-detail-grid">
+            <div class="insight-card">
+              <h3>Лучший танец турнира</h3>
+                <p><strong>Ча-ча-ча</strong></p>
+                <p class="muted">Итоговое место: 1.000</p>
+            </div>
+            <div class="insight-card">
+              <h3>Требует внимания</h3>
+                <p><strong>Танго</strong></p>
+                <p class="muted">Итоговое место: 2.000</p>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Танец</th><th>Программа</th><th class="number">Итоговое место</th><th class="number">Протоколов</th></tr></thead>
+              <tbody>
+                <tr>
+                  <td><strong>Ча-ча-ча</strong></td>
+                  <td>латина</td>
+                  <td class="number">1.000</td>
+                  <td class="number">1 протокол</td>
+                </tr>
+                <tr>
+                  <td><strong>Джайв</strong></td>
+                  <td>латина</td>
+                  <td class="number">1.000</td>
+                  <td class="number">1 протокол</td>
+                </tr>
+                <tr>
+                  <td><strong>Румба</strong></td>
+                  <td>латина</td>
+                  <td class="number">1.000</td>
+                  <td class="number">1 протокол</td>
+                </tr>
+                <tr>
+                  <td><strong>Самба</strong></td>
+                  <td>латина</td>
+                  <td class="number">1.000</td>
+                  <td class="number">1 протокол</td>
+                </tr>
+                <tr>
+                  <td><strong>Фокстрот</strong></td>
+                  <td>стандарт</td>
+                  <td class="number">1.000</td>
+                  <td class="number">1 протокол</td>
+                </tr>
+                <tr>
+                  <td><strong>Квикстеп</strong></td>
+                  <td>стандарт</td>
+                  <td class="number">1.000</td>
+                  <td class="number">1 протокол</td>
+                </tr>
+                <tr>
+                  <td><strong>Танго</strong></td>
+                  <td>стандарт</td>
+                  <td class="number">2.000</td>
+                  <td class="number">1 протокол</td>
+                </tr>
+                <tr>
+                  <td><strong>Медленный вальс</strong></td>
+                  <td>стандарт</td>
+                  <td class="number">2.000</td>
+                  <td class="number">1 протокол</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+        <details>
+          <summary>
+            <div class="tournament-summary">
+              <div>
+                <div class="label">Дата</div>
+                <div class="summary-title">2025-12-21</div>
+              </div>
+              <div>
+                <div class="label">Турнир</div>
+                <div class="summary-title">Кубок Петербурга 2025 (Санкт-Петербург)</div>
+              </div>
+              <div>
+                <div class="label">Категория / программа</div>
+                <div class="summary-meta">Ювеналы-1+2 E+D Соло Ж La; Ювеналы-1+2 E+D Соло Ж St</div>
+                <div class="summary-meta">латина, стандарт</div>
+              </div>
+              <div>
+                <div class="label">Итоговый результат</div>
+                <div class="summary-title">Среднее место 2.500</div>
+              </div>
+            </div>
+          </summary>
+          <div class="tournament-detail-grid">
+            <div class="insight-card">
+              <h3>Лучший танец турнира</h3>
+                <p><strong>Ча-ча-ча</strong></p>
+                <p class="muted">Итоговое место: 1.000</p>
+            </div>
+            <div class="insight-card">
+              <h3>Требует внимания</h3>
+                <p><strong>Квикстеп</strong></p>
+                <p class="muted">Итоговое место: 5.000</p>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Танец</th><th>Программа</th><th class="number">Итоговое место</th><th class="number">Протоколов</th></tr></thead>
+              <tbody>
+                <tr>
+                  <td><strong>Ча-ча-ча</strong></td>
+                  <td>латина</td>
+                  <td class="number">1.000</td>
+                  <td class="number">1 протокол</td>
+                </tr>
+                <tr>
+                  <td><strong>Джайв</strong></td>
+                  <td>латина</td>
+                  <td class="number">1.000</td>
+                  <td class="number">1 протокол</td>
+                </tr>
+                <tr>
+                  <td><strong>Румба</strong></td>
+                  <td>латина</td>
+                  <td class="number">1.000</td>
+                  <td class="number">1 протокол</td>
+                </tr>
+                <tr>
+                  <td><strong>Самба</strong></td>
+                  <td>латина</td>
+                  <td class="number">1.000</td>
+                  <td class="number">1 протокол</td>
+                </tr>
+                <tr>
+                  <td><strong>Фокстрот</strong></td>
+                  <td>стандарт</td>
+                  <td class="number">4.000</td>
+                  <td class="number">1 протокол</td>
+                </tr>
+                <tr>
+                  <td><strong>Квикстеп</strong></td>
+                  <td>стандарт</td>
+                  <td class="number">5.000</td>
+                  <td class="number">1 протокол</td>
+                </tr>
+                <tr>
+                  <td><strong>Танго</strong></td>
+                  <td>стандарт</td>
+                  <td class="number">4.000</td>
+                  <td class="number">1 протокол</td>
+                </tr>
+                <tr>
+                  <td><strong>Медленный вальс</strong></td>
+                  <td>стандарт</td>
+                  <td class="number">3.000</td>
+                  <td class="number">1 протокол</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+        <details>
+          <summary>
+            <div class="tournament-summary">
+              <div>
+                <div class="label">Дата</div>
+                <div class="summary-title">2026-01-18</div>
+              </div>
+              <div>
+                <div class="label">Турнир</div>
+                <div class="summary-title">Lider Cup 2026 (Санкт-Петербург)</div>
+              </div>
+              <div>
+                <div class="label">Категория / программа</div>
+                <div class="summary-meta">Ювеналы-1+2 E+D соло Ж La; Ювеналы-1+2 E+D соло Ж St</div>
+                <div class="summary-meta">латина, стандарт</div>
+              </div>
+              <div>
+                <div class="label">Итоговый результат</div>
+                <div class="summary-title">Среднее место 1.250</div>
+              </div>
+            </div>
+          </summary>
+          <div class="tournament-detail-grid">
+            <div class="insight-card">
+              <h3>Лучший танец турнира</h3>
+                <p><strong>Ча-ча-ча</strong></p>
+                <p class="muted">Итоговое место: 1.000</p>
+            </div>
+            <div class="insight-card">
+              <h3>Требует внимания</h3>
+                <p><strong>Самба</strong></p>
+                <p class="muted">Итоговое место: 3.000</p>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Танец</th><th>Программа</th><th class="number">Итоговое место</th><th class="number">Протоколов</th></tr></thead>
+              <tbody>
+                <tr>
+                  <td><strong>Ча-ча-ча</strong></td>
+                  <td>латина</td>
+                  <td class="number">1.000</td>
+                  <td class="number">1 протокол</td>
+                </tr>
+                <tr>
+                  <td><strong>Джайв</strong></td>
+                  <td>латина</td>
+                  <td class="number">1.000</td>
+                  <td class="number">1 протокол</td>
+                </tr>
+                <tr>
+                  <td><strong>Румба</strong></td>
+                  <td>латина</td>
+                  <td class="number">1.000</td>
+                  <td class="number">1 протокол</td>
+                </tr>
+                <tr>
+                  <td><strong>Самба</strong></td>
+                  <td>латина</td>
+                  <td class="number">3.000</td>
+                  <td class="number">1 протокол</td>
+                </tr>
+                <tr>
+                  <td><strong>Фокстрот</strong></td>
+                  <td>стандарт</td>
+                  <td class="number">1.000</td>
+                  <td class="number">1 протокол</td>
+                </tr>
+                <tr>
+                  <td><strong>Квикстеп</strong></td>
+                  <td>стандарт</td>
+                  <td class="number">1.000</td>
+                  <td class="number">1 протокол</td>
+                </tr>
+                <tr>
+                  <td><strong>Танго</strong></td>
+                  <td>стандарт</td>
+                  <td class="number">1.000</td>
+                  <td class="number">1 протокол</td>
+                </tr>
+                <tr>
+                  <td><strong>Медленный вальс</strong></td>
+                  <td>стандарт</td>
+                  <td class="number">1.000</td>
+                  <td class="number">1 протокол</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+        <details>
+          <summary>
+            <div class="tournament-summary">
+              <div>
+                <div class="label">Дата</div>
+                <div class="summary-title">2026-01-25</div>
+              </div>
+              <div>
+                <div class="label">Турнир</div>
+                <div class="summary-title">Русский Вальс 2026 (Санкт-Петербург)</div>
+              </div>
+              <div>
+                <div class="label">Категория / программа</div>
+                <div class="summary-meta">Ювеналы-1+2 E+D Соло Ж La; Ювеналы-1+2 E+D Соло Ж St</div>
+                <div class="summary-meta">латина, стандарт</div>
+              </div>
+              <div>
+                <div class="label">Итоговый результат</div>
+                <div class="summary-title">Среднее место 1.375</div>
+              </div>
+            </div>
+          </summary>
+          <div class="tournament-detail-grid">
+            <div class="insight-card">
+              <h3>Лучший танец турнира</h3>
+                <p><strong>Ча-ча-ча</strong></p>
+                <p class="muted">Итоговое место: 1.000</p>
+            </div>
+            <div class="insight-card">
+              <h3>Требует внимания</h3>
+                <p><strong>Медленный вальс</strong></p>
+                <p class="muted">Итоговое место: 3.000</p>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Танец</th><th>Программа</th><th class="number">Итоговое место</th><th class="number">Протоколов</th></tr></thead>
+              <tbody>
+                <tr>
+                  <td><strong>Ча-ча-ча</strong></td>
+                  <td>латина</td>
+                  <td class="number">1.000</td>
+                  <td class="number">1 протокол</td>
+                </tr>
+                <tr>
+                  <td><strong>Джайв</strong></td>
+                  <td>латина</td>
+                  <td class="number">2.000</td>
+                  <td class="number">1 протокол</td>
+                </tr>
+                <tr>
+                  <td><strong>Румба</strong></td>
+                  <td>латина</td>
+                  <td class="number">1.000</td>
+                  <td class="number">1 протокол</td>
+                </tr>
+                <tr>
+                  <td><strong>Самба</strong></td>
+                  <td>латина</td>
+                  <td class="number">1.000</td>
+                  <td class="number">1 протокол</td>
+                </tr>
+                <tr>
+                  <td><strong>Фокстрот</strong></td>
+                  <td>стандарт</td>
+                  <td class="number">1.000</td>
+                  <td class="number">1 протокол</td>
+                </tr>
+                <tr>
+                  <td><strong>Квикстеп</strong></td>
+                  <td>стандарт</td>
+                  <td class="number">1.000</td>
+                  <td class="number">1 протокол</td>
+                </tr>
+                <tr>
+                  <td><strong>Танго</strong></td>
+                  <td>стандарт</td>
+                  <td class="number">1.000</td>
+                  <td class="number">1 протокол</td>
+                </tr>
+                <tr>
+                  <td><strong>Медленный вальс</strong></td>
+                  <td>стандарт</td>
+                  <td class="number">3.000</td>
+                  <td class="number">1 протокол</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+        <details>
+          <summary>
+            <div class="tournament-summary">
+              <div>
+                <div class="label">Дата</div>
+                <div class="summary-title">2026-02-01</div>
+              </div>
+              <div>
+                <div class="label">Турнир</div>
+                <div class="summary-title">Tiara Dance Cup (Санкт-Петербург)</div>
+              </div>
+              <div>
+                <div class="label">Категория / программа</div>
+                <div class="summary-meta">Ювеналы-2 E+D соло Ж La; Ювеналы-2 E+D соло Ж St</div>
+                <div class="summary-meta">латина, стандарт</div>
+              </div>
+              <div>
+                <div class="label">Итоговый результат</div>
+                <div class="summary-title">Среднее место 2.125</div>
+              </div>
+            </div>
+          </summary>
+          <div class="tournament-detail-grid">
+            <div class="insight-card">
+              <h3>Лучший танец турнира</h3>
+                <p><strong>Ча-ча-ча</strong></p>
+                <p class="muted">Итоговое место: 1.000</p>
+            </div>
+            <div class="insight-card">
+              <h3>Требует внимания</h3>
+                <p><strong>Фокстрот</strong></p>
+                <p class="muted">Итоговое место: 4.000</p>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Танец</th><th>Программа</th><th class="number">Итоговое место</th><th class="number">Протоколов</th></tr></thead>
+              <tbody>
+                <tr>
+                  <td><strong>Ча-ча-ча</strong></td>
+                  <td>латина</td>
+                  <td class="number">1.000</td>
+                  <td class="number">1 протокол</td>
+                </tr>
+                <tr>
+                  <td><strong>Джайв</strong></td>
+                  <td>латина</td>
+                  <td class="number">1.000</td>
+                  <td class="number">1 протокол</td>
+                </tr>
+                <tr>
+                  <td><strong>Румба</strong></td>
+                  <td>латина</td>
+                  <td class="number">1.000</td>
+                  <td class="number">1 протокол</td>
+                </tr>
+                <tr>
+                  <td><strong>Самба</strong></td>
+                  <td>латина</td>
+                  <td class="number">2.000</td>
+                  <td class="number">1 протокол</td>
+                </tr>
+                <tr>
+                  <td><strong>Фокстрот</strong></td>
+                  <td>стандарт</td>
+                  <td class="number">4.000</td>
+                  <td class="number">1 протокол</td>
+                </tr>
+                <tr>
+                  <td><strong>Квикстеп</strong></td>
+                  <td>стандарт</td>
+                  <td class="number">3.000</td>
+                  <td class="number">1 протокол</td>
+                </tr>
+                <tr>
+                  <td><strong>Танго</strong></td>
+                  <td>стандарт</td>
+                  <td class="number">2.000</td>
+                  <td class="number">1 протокол</td>
+                </tr>
+                <tr>
+                  <td><strong>Медленный вальс</strong></td>
+                  <td>стандарт</td>
+                  <td class="number">3.000</td>
+                  <td class="number">1 протокол</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+        <details>
+          <summary>
+            <div class="tournament-summary">
+              <div>
+                <div class="label">Дата</div>
+                <div class="summary-title">2026-02-23</div>
+              </div>
+              <div>
+                <div class="label">Турнир</div>
+                <div class="summary-title">Открытый Рейтинговый и Классификационный Чемпионат СПТЛ 2026 (Санкт-Петербург)</div>
+              </div>
+              <div>
+                <div class="label">Категория / программа</div>
+                <div class="summary-meta">Ювеналы-1+2 D+C Соло Ж La; Ювеналы-1+2 D+C Соло Ж St; Ювеналы-2 E+D Соло Ж La; Ювеналы-2 E+D Соло Ж St</div>
+                <div class="summary-meta">латина, стандарт</div>
+              </div>
+              <div>
+                <div class="label">Итоговый результат</div>
+                <div class="summary-title">Среднее место 2.975</div>
+              </div>
+            </div>
+          </summary>
+          <div class="tournament-detail-grid">
+            <div class="insight-card">
+              <h3>Лучший танец турнира</h3>
+                <p><strong>Фокстрот</strong></p>
+                <p class="muted">Итоговое место: 2.000</p>
+            </div>
+            <div class="insight-card">
+              <h3>Требует внимания</h3>
+                <p><strong>Венский вальс</strong></p>
+                <p class="muted">Итоговое место: 5.500</p>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Танец</th><th>Программа</th><th class="number">Итоговое место</th><th class="number">Протоколов</th></tr></thead>
+              <tbody>
+                <tr>
+                  <td><strong>Ча-ча-ча</strong></td>
+                  <td>латина</td>
+                  <td class="number">3.000</td>
+                  <td class="number">2 протокола</td>
+                </tr>
+                <tr>
+                  <td><strong>Джайв</strong></td>
+                  <td>латина</td>
+                  <td class="number">2.500</td>
+                  <td class="number">2 протокола</td>
+                </tr>
+                <tr>
+                  <td><strong>Пасодобль</strong></td>
+                  <td>латина</td>
+                  <td class="number">5.000</td>
+                  <td class="number">1 протокол</td>
+                </tr>
+                <tr>
+                  <td><strong>Румба</strong></td>
+                  <td>латина</td>
+                  <td class="number">2.500</td>
+                  <td class="number">2 протокола</td>
+                </tr>
+                <tr>
+                  <td><strong>Самба</strong></td>
+                  <td>латина</td>
+                  <td class="number">2.250</td>
+                  <td class="number">2 протокола</td>
+                </tr>
+                <tr>
+                  <td><strong>Фокстрот</strong></td>
+                  <td>стандарт</td>
+                  <td class="number">2.000</td>
+                  <td class="number">2 протокола</td>
+                </tr>
+                <tr>
+                  <td><strong>Квикстеп</strong></td>
+                  <td>стандарт</td>
+                  <td class="number">3.000</td>
+                  <td class="number">2 протокола</td>
+                </tr>
+                <tr>
+                  <td><strong>Танго</strong></td>
+                  <td>стандарт</td>
+                  <td class="number">2.000</td>
+                  <td class="number">2 протокола</td>
+                </tr>
+                <tr>
+                  <td><strong>Венский вальс</strong></td>
+                  <td>стандарт</td>
+                  <td class="number">5.500</td>
+                  <td class="number">1 протокол</td>
+                </tr>
+                <tr>
+                  <td><strong>Медленный вальс</strong></td>
+                  <td>стандарт</td>
+                  <td class="number">2.000</td>
+                  <td class="number">2 протокола</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+        <details>
+          <summary>
+            <div class="tournament-summary">
+              <div>
+                <div class="label">Дата</div>
+                <div class="summary-title">2026-03-08</div>
+              </div>
+              <div>
+                <div class="label">Турнир</div>
+                <div class="summary-title">Амбассадор 2026 (Санкт-Петербург)</div>
+              </div>
+              <div>
+                <div class="label">Категория / программа</div>
+                <div class="summary-meta">EADC Ювеналы-2 Соло Ж La; EADC Ювеналы-2 Соло Ж St; Ювеналы-2 E+D Соло Ж La; Ювеналы-2 E+D Соло Ж St</div>
+                <div class="summary-meta">латина, стандарт</div>
+              </div>
+              <div>
+                <div class="label">Итоговый результат</div>
+                <div class="summary-title">Среднее место 2.900</div>
+              </div>
+            </div>
+          </summary>
+          <div class="tournament-detail-grid">
+            <div class="insight-card">
+              <h3>Лучший танец турнира</h3>
+                <p><strong>Ча-ча-ча</strong></p>
+                <p class="muted">Итоговое место: 1.500</p>
+            </div>
+            <div class="insight-card">
+              <h3>Требует внимания</h3>
+                <p><strong>Джайв</strong></p>
+                <p class="muted">Итоговое место: 4.500</p>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Танец</th><th>Программа</th><th class="number">Итоговое место</th><th class="number">Протоколов</th></tr></thead>
+              <tbody>
+                <tr>
+                  <td><strong>Ча-ча-ча</strong></td>
+                  <td>латина</td>
+                  <td class="number">1.500</td>
+                  <td class="number">2 протокола</td>
+                </tr>
+                <tr>
+                  <td><strong>Джайв</strong></td>
+                  <td>латина</td>
+                  <td class="number">4.500</td>
+                  <td class="number">2 протокола</td>
+                </tr>
+                <tr>
+                  <td><strong>Пасодобль</strong></td>
+                  <td>латина</td>
+                  <td class="number">2.000</td>
+                  <td class="number">1 протокол</td>
+                </tr>
+                <tr>
+                  <td><strong>Румба</strong></td>
+                  <td>латина</td>
+                  <td class="number">2.500</td>
+                  <td class="number">2 протокола</td>
+                </tr>
+                <tr>
+                  <td><strong>Самба</strong></td>
+                  <td>латина</td>
+                  <td class="number">3.500</td>
+                  <td class="number">2 протокола</td>
+                </tr>
+                <tr>
+                  <td><strong>Фокстрот</strong></td>
+                  <td>стандарт</td>
+                  <td class="number">2.000</td>
+                  <td class="number">1 протокол</td>
+                </tr>
+                <tr>
+                  <td><strong>Квикстеп</strong></td>
+                  <td>стандарт</td>
+                  <td class="number">3.000</td>
+                  <td class="number">2 протокола</td>
+                </tr>
+                <tr>
+                  <td><strong>Танго</strong></td>
+                  <td>стандарт</td>
+                  <td class="number">2.000</td>
+                  <td class="number">2 протокола</td>
+                </tr>
+                <tr>
+                  <td><strong>Венский вальс</strong></td>
+                  <td>стандарт</td>
+                  <td class="number">4.000</td>
+                  <td class="number">1 протокол</td>
+                </tr>
+                <tr>
+                  <td><strong>Медленный вальс</strong></td>
+                  <td>стандарт</td>
+                  <td class="number">4.000</td>
+                  <td class="number">2 протокола</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+        <details>
+          <summary>
+            <div class="tournament-summary">
+              <div>
+                <div class="label">Дата</div>
+                <div class="summary-title">2026-05-17</div>
+              </div>
+              <div>
+                <div class="label">Турнир</div>
+                <div class="summary-title">Чемпионат СПТС 2026 (Санкт-Петербург)</div>
+              </div>
+              <div>
+                <div class="label">Категория / программа</div>
+                <div class="summary-meta">Ювеналы-1+2 E+D Соло Ж La; Ювеналы-1+2 E+D Соло Ж St; Ювеналы-2 E+D Соло Ж La; Ювеналы-2 E+D Соло Ж St</div>
+                <div class="summary-meta">латина, стандарт</div>
+              </div>
+              <div>
+                <div class="label">Итоговый результат</div>
+                <div class="summary-title">Среднее место 1.375</div>
+              </div>
+            </div>
+          </summary>
+          <div class="tournament-detail-grid">
+            <div class="insight-card">
+              <h3>Лучший танец турнира</h3>
+                <p><strong>Ча-ча-ча</strong></p>
+                <p class="muted">Итоговое место: 1.000</p>
+            </div>
+            <div class="insight-card">
+              <h3>Требует внимания</h3>
+                <p><strong>Джайв</strong></p>
+                <p class="muted">Итоговое место: 2.000</p>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Танец</th><th>Программа</th><th class="number">Итоговое место</th><th class="number">Протоколов</th></tr></thead>
+              <tbody>
+                <tr>
+                  <td><strong>Ча-ча-ча</strong></td>
+                  <td>латина</td>
+                  <td class="number">1.000</td>
+                  <td class="number">2 протокола</td>
+                </tr>
+                <tr>
+                  <td><strong>Джайв</strong></td>
+                  <td>латина</td>
+                  <td class="number">2.000</td>
+                  <td class="number">2 протокола</td>
+                </tr>
+                <tr>
+                  <td><strong>Румба</strong></td>
+                  <td>латина</td>
+                  <td class="number">1.000</td>
+                  <td class="number">2 протокола</td>
+                </tr>
+                <tr>
+                  <td><strong>Самба</strong></td>
+                  <td>латина</td>
+                  <td class="number">2.000</td>
+                  <td class="number">2 протокола</td>
+                </tr>
+                <tr>
+                  <td><strong>Фокстрот</strong></td>
+                  <td>стандарт</td>
+                  <td class="number">1.500</td>
+                  <td class="number">2 протокола</td>
+                </tr>
+                <tr>
+                  <td><strong>Квикстеп</strong></td>
+                  <td>стандарт</td>
+                  <td class="number">1.000</td>
+                  <td class="number">2 протокола</td>
+                </tr>
+                <tr>
+                  <td><strong>Танго</strong></td>
+                  <td>стандарт</td>
+                  <td class="number">1.000</td>
+                  <td class="number">2 протокола</td>
+                </tr>
+                <tr>
+                  <td><strong>Медленный вальс</strong></td>
+                  <td>стандарт</td>
+                  <td class="number">1.500</td>
+                  <td class="number">2 протокола</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+        <details>
+          <summary>
+            <div class="tournament-summary">
+              <div>
+                <div class="label">Дата</div>
+                <div class="summary-title">2026-05-24</div>
+              </div>
+              <div>
+                <div class="label">Турнир</div>
+                <div class="summary-title">Чемпионат СПТЛ 2026 (Санкт-Петербург)</div>
+              </div>
+              <div>
+                <div class="label">Категория / программа</div>
+                <div class="summary-meta">EADC Ювеналы-2 Соло Ж La; EADC Ювеналы-2 Соло Ж St; Ювеналы-2 E+D Соло Ж La; Ювеналы-2 E+D Соло Ж St</div>
+                <div class="summary-meta">латина, стандарт</div>
+              </div>
+              <div>
+                <div class="label">Итоговый результат</div>
+                <div class="summary-title">Среднее место 3.200</div>
+              </div>
+            </div>
+          </summary>
+          <div class="tournament-detail-grid">
+            <div class="insight-card">
+              <h3>Лучший танец турнира</h3>
+                <p><strong>Румба</strong></p>
+                <p class="muted">Итоговое место: 2.000</p>
+            </div>
+            <div class="insight-card">
+              <h3>Требует внимания</h3>
+                <p><strong>Венский вальс</strong></p>
+                <p class="muted">Итоговое место: 5.000</p>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Танец</th><th>Программа</th><th class="number">Итоговое место</th><th class="number">Протоколов</th></tr></thead>
+              <tbody>
+                <tr>
+                  <td><strong>Ча-ча-ча</strong></td>
+                  <td>латина</td>
+                  <td class="number">2.500</td>
+                  <td class="number">2 протокола</td>
+                </tr>
+                <tr>
+                  <td><strong>Джайв</strong></td>
+                  <td>латина</td>
+                  <td class="number">3.000</td>
+                  <td class="number">2 протокола</td>
+                </tr>
+                <tr>
+                  <td><strong>Пасодобль</strong></td>
+                  <td>латина</td>
+                  <td class="number">4.000</td>
+                  <td class="number">1 протокол</td>
+                </tr>
+                <tr>
+                  <td><strong>Румба</strong></td>
+                  <td>латина</td>
+                  <td class="number">2.000</td>
+                  <td class="number">2 протокола</td>
+                </tr>
+                <tr>
+                  <td><strong>Самба</strong></td>
+                  <td>латина</td>
+                  <td class="number">2.500</td>
+                  <td class="number">2 протокола</td>
+                </tr>
+                <tr>
+                  <td><strong>Фокстрот</strong></td>
+                  <td>стандарт</td>
+                  <td class="number">3.500</td>
+                  <td class="number">2 протокола</td>
+                </tr>
+                <tr>
+                  <td><strong>Квикстеп</strong></td>
+                  <td>стандарт</td>
+                  <td class="number">3.000</td>
+                  <td class="number">2 протокола</td>
+                </tr>
+                <tr>
+                  <td><strong>Танго</strong></td>
+                  <td>стандарт</td>
+                  <td class="number">3.000</td>
+                  <td class="number">2 протокола</td>
+                </tr>
+                <tr>
+                  <td><strong>Венский вальс</strong></td>
+                  <td>стандарт</td>
+                  <td class="number">5.000</td>
+                  <td class="number">1 протокол</td>
+                </tr>
+                <tr>
+                  <td><strong>Медленный вальс</strong></td>
+                  <td>стандарт</td>
+                  <td class="number">3.500</td>
+                  <td class="number">2 протокола</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+      </div>
+    </section>
+
+  </section>
+</main>
+</body>
+</html>

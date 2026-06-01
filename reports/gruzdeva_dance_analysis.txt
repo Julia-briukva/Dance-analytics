@@ -1,0 +1,265 @@
+Dance analytics: Груздева Александра
+Клуб/город: Триумф / Санкт-Петербург
+Numeric final marks: 690
+Protocols: 18
+Tournaments: 9
+Confidence: dance rankings require n_marks >= 6; trends require at least 2 dates
+
+All dance metrics
+ program dance  avg_place  median_place  std_deviation  variance  n_marks  n_protocols  n_dates                                                                                                                                               categories  consistency_score  volatility_score     confidence
+   latin     C      4.200           4.0          1.770     3.131       65            7        6 Ювеналы-1 E+D Соло Ж La; Ювеналы-1 E+D соло Ж La; Ювеналы-1+2 D Соло Ж La; Ювеналы-1+2 D+C Соло Ж La; Ювеналы-1+2 E+D соло Ж La; Ювеналы-2 E+D Соло Ж La              0.361             1.770             ok
+   latin     J      3.785           4.0          1.972     3.890       65            7        6 Ювеналы-1 E+D Соло Ж La; Ювеналы-1 E+D соло Ж La; Ювеналы-1+2 D Соло Ж La; Ювеналы-1+2 D+C Соло Ж La; Ювеналы-1+2 E+D соло Ж La; Ювеналы-2 E+D Соло Ж La              0.336             1.972             ok
+   latin     P      5.778           6.0          0.667     0.444        9            1        1                                                                                                                                Ювеналы-1+2 D+C Соло Ж La              0.600             0.667 low confidence
+   latin     R      3.969           4.0          1.845     3.405       65            7        6 Ювеналы-1 E+D Соло Ж La; Ювеналы-1 E+D соло Ж La; Ювеналы-1+2 D Соло Ж La; Ювеналы-1+2 D+C Соло Ж La; Ювеналы-1+2 E+D соло Ж La; Ювеналы-2 E+D Соло Ж La              0.351             1.845             ok
+   latin     S      3.892           4.0          1.830     3.348       65            7        6 Ювеналы-1 E+D Соло Ж La; Ювеналы-1 E+D соло Ж La; Ювеналы-1+2 D Соло Ж La; Ювеналы-1+2 D+C Соло Ж La; Ювеналы-1+2 E+D соло Ж La; Ювеналы-2 E+D Соло Ж La              0.353             1.830             ok
+standard     F      3.767           4.0          2.045     4.180      103           11        9 Ювеналы-1 E+D Соло Ж St; Ювеналы-1 E+D соло Ж St; Ювеналы-1+2 D Соло Ж St; Ювеналы-1+2 D+C Соло Ж St; Ювеналы-1+2 E+D соло Ж St; Ювеналы-2 E+D Соло Ж St              0.328             2.045             ok
+standard     Q      3.718           3.0          2.041     4.165      103           11        9 Ювеналы-1 E+D Соло Ж St; Ювеналы-1 E+D соло Ж St; Ювеналы-1+2 D Соло Ж St; Ювеналы-1+2 D+C Соло Ж St; Ювеналы-1+2 E+D соло Ж St; Ювеналы-2 E+D Соло Ж St              0.329             2.041             ok
+standard     T      3.398           3.0          1.906     3.634      103           11        9 Ювеналы-1 E+D Соло Ж St; Ювеналы-1 E+D соло Ж St; Ювеналы-1+2 D Соло Ж St; Ювеналы-1+2 D+C Соло Ж St; Ювеналы-1+2 E+D соло Ж St; Ювеналы-2 E+D Соло Ж St              0.344             1.906             ok
+standard     V      4.889           5.0          1.453     2.111        9            1        1                                                                                                                                Ювеналы-1+2 D+C Соло Ж St              0.408             1.453 low confidence
+standard     W      4.029           4.0          1.912     3.656      103           11        9 Ювеналы-1 E+D Соло Ж St; Ювеналы-1 E+D соло Ж St; Ювеналы-1+2 D Соло Ж St; Ювеналы-1+2 D+C Соло Ж St; Ювеналы-1+2 E+D соло Ж St; Ювеналы-2 E+D Соло Ж St              0.343             1.912             ok
+
+1. Strongest dances: lowest avg_place
+ program dance  avg_place  median_place  std_deviation  variance  n_marks  n_protocols  n_dates                                                                                                                                               categories  consistency_score  volatility_score confidence
+standard     T      3.398           3.0          1.906     3.634      103           11        9 Ювеналы-1 E+D Соло Ж St; Ювеналы-1 E+D соло Ж St; Ювеналы-1+2 D Соло Ж St; Ювеналы-1+2 D+C Соло Ж St; Ювеналы-1+2 E+D соло Ж St; Ювеналы-2 E+D Соло Ж St              0.344             1.906         ok
+standard     Q      3.718           3.0          2.041     4.165      103           11        9 Ювеналы-1 E+D Соло Ж St; Ювеналы-1 E+D соло Ж St; Ювеналы-1+2 D Соло Ж St; Ювеналы-1+2 D+C Соло Ж St; Ювеналы-1+2 E+D соло Ж St; Ювеналы-2 E+D Соло Ж St              0.329             2.041         ok
+standard     F      3.767           4.0          2.045     4.180      103           11        9 Ювеналы-1 E+D Соло Ж St; Ювеналы-1 E+D соло Ж St; Ювеналы-1+2 D Соло Ж St; Ювеналы-1+2 D+C Соло Ж St; Ювеналы-1+2 E+D соло Ж St; Ювеналы-2 E+D Соло Ж St              0.328             2.045         ok
+   latin     J      3.785           4.0          1.972     3.890       65            7        6 Ювеналы-1 E+D Соло Ж La; Ювеналы-1 E+D соло Ж La; Ювеналы-1+2 D Соло Ж La; Ювеналы-1+2 D+C Соло Ж La; Ювеналы-1+2 E+D соло Ж La; Ювеналы-2 E+D Соло Ж La              0.336             1.972         ok
+   latin     S      3.892           4.0          1.830     3.348       65            7        6 Ювеналы-1 E+D Соло Ж La; Ювеналы-1 E+D соло Ж La; Ювеналы-1+2 D Соло Ж La; Ювеналы-1+2 D+C Соло Ж La; Ювеналы-1+2 E+D соло Ж La; Ювеналы-2 E+D Соло Ж La              0.353             1.830         ok
+   latin     R      3.969           4.0          1.845     3.405       65            7        6 Ювеналы-1 E+D Соло Ж La; Ювеналы-1 E+D соло Ж La; Ювеналы-1+2 D Соло Ж La; Ювеналы-1+2 D+C Соло Ж La; Ювеналы-1+2 E+D соло Ж La; Ювеналы-2 E+D Соло Ж La              0.351             1.845         ok
+standard     W      4.029           4.0          1.912     3.656      103           11        9 Ювеналы-1 E+D Соло Ж St; Ювеналы-1 E+D соло Ж St; Ювеналы-1+2 D Соло Ж St; Ювеналы-1+2 D+C Соло Ж St; Ювеналы-1+2 E+D соло Ж St; Ювеналы-2 E+D Соло Ж St              0.343             1.912         ok
+   latin     C      4.200           4.0          1.770     3.131       65            7        6 Ювеналы-1 E+D Соло Ж La; Ювеналы-1 E+D соло Ж La; Ювеналы-1+2 D Соло Ж La; Ювеналы-1+2 D+C Соло Ж La; Ювеналы-1+2 E+D соло Ж La; Ювеналы-2 E+D Соло Ж La              0.361             1.770         ok
+
+2. Weakest dances: highest avg_place
+ program dance  avg_place  median_place  std_deviation  variance  n_marks  n_protocols  n_dates                                                                                                                                               categories  consistency_score  volatility_score confidence
+   latin     C      4.200           4.0          1.770     3.131       65            7        6 Ювеналы-1 E+D Соло Ж La; Ювеналы-1 E+D соло Ж La; Ювеналы-1+2 D Соло Ж La; Ювеналы-1+2 D+C Соло Ж La; Ювеналы-1+2 E+D соло Ж La; Ювеналы-2 E+D Соло Ж La              0.361             1.770         ok
+standard     W      4.029           4.0          1.912     3.656      103           11        9 Ювеналы-1 E+D Соло Ж St; Ювеналы-1 E+D соло Ж St; Ювеналы-1+2 D Соло Ж St; Ювеналы-1+2 D+C Соло Ж St; Ювеналы-1+2 E+D соло Ж St; Ювеналы-2 E+D Соло Ж St              0.343             1.912         ok
+   latin     R      3.969           4.0          1.845     3.405       65            7        6 Ювеналы-1 E+D Соло Ж La; Ювеналы-1 E+D соло Ж La; Ювеналы-1+2 D Соло Ж La; Ювеналы-1+2 D+C Соло Ж La; Ювеналы-1+2 E+D соло Ж La; Ювеналы-2 E+D Соло Ж La              0.351             1.845         ok
+   latin     S      3.892           4.0          1.830     3.348       65            7        6 Ювеналы-1 E+D Соло Ж La; Ювеналы-1 E+D соло Ж La; Ювеналы-1+2 D Соло Ж La; Ювеналы-1+2 D+C Соло Ж La; Ювеналы-1+2 E+D соло Ж La; Ювеналы-2 E+D Соло Ж La              0.353             1.830         ok
+   latin     J      3.785           4.0          1.972     3.890       65            7        6 Ювеналы-1 E+D Соло Ж La; Ювеналы-1 E+D соло Ж La; Ювеналы-1+2 D Соло Ж La; Ювеналы-1+2 D+C Соло Ж La; Ювеналы-1+2 E+D соло Ж La; Ювеналы-2 E+D Соло Ж La              0.336             1.972         ok
+standard     F      3.767           4.0          2.045     4.180      103           11        9 Ювеналы-1 E+D Соло Ж St; Ювеналы-1 E+D соло Ж St; Ювеналы-1+2 D Соло Ж St; Ювеналы-1+2 D+C Соло Ж St; Ювеналы-1+2 E+D соло Ж St; Ювеналы-2 E+D Соло Ж St              0.328             2.045         ok
+standard     Q      3.718           3.0          2.041     4.165      103           11        9 Ювеналы-1 E+D Соло Ж St; Ювеналы-1 E+D соло Ж St; Ювеналы-1+2 D Соло Ж St; Ювеналы-1+2 D+C Соло Ж St; Ювеналы-1+2 E+D соло Ж St; Ювеналы-2 E+D Соло Ж St              0.329             2.041         ok
+standard     T      3.398           3.0          1.906     3.634      103           11        9 Ювеналы-1 E+D Соло Ж St; Ювеналы-1 E+D соло Ж St; Ювеналы-1+2 D Соло Ж St; Ювеналы-1+2 D+C Соло Ж St; Ювеналы-1+2 E+D соло Ж St; Ювеналы-2 E+D Соло Ж St              0.344             1.906         ok
+
+3. Stability ranking: lowest std_deviation
+ program dance  avg_place  median_place  std_deviation  variance  n_marks  n_protocols  n_dates                                                                                                                                               categories  consistency_score  volatility_score confidence
+   latin     C      4.200           4.0          1.770     3.131       65            7        6 Ювеналы-1 E+D Соло Ж La; Ювеналы-1 E+D соло Ж La; Ювеналы-1+2 D Соло Ж La; Ювеналы-1+2 D+C Соло Ж La; Ювеналы-1+2 E+D соло Ж La; Ювеналы-2 E+D Соло Ж La              0.361             1.770         ok
+   latin     S      3.892           4.0          1.830     3.348       65            7        6 Ювеналы-1 E+D Соло Ж La; Ювеналы-1 E+D соло Ж La; Ювеналы-1+2 D Соло Ж La; Ювеналы-1+2 D+C Соло Ж La; Ювеналы-1+2 E+D соло Ж La; Ювеналы-2 E+D Соло Ж La              0.353             1.830         ok
+   latin     R      3.969           4.0          1.845     3.405       65            7        6 Ювеналы-1 E+D Соло Ж La; Ювеналы-1 E+D соло Ж La; Ювеналы-1+2 D Соло Ж La; Ювеналы-1+2 D+C Соло Ж La; Ювеналы-1+2 E+D соло Ж La; Ювеналы-2 E+D Соло Ж La              0.351             1.845         ok
+standard     T      3.398           3.0          1.906     3.634      103           11        9 Ювеналы-1 E+D Соло Ж St; Ювеналы-1 E+D соло Ж St; Ювеналы-1+2 D Соло Ж St; Ювеналы-1+2 D+C Соло Ж St; Ювеналы-1+2 E+D соло Ж St; Ювеналы-2 E+D Соло Ж St              0.344             1.906         ok
+standard     W      4.029           4.0          1.912     3.656      103           11        9 Ювеналы-1 E+D Соло Ж St; Ювеналы-1 E+D соло Ж St; Ювеналы-1+2 D Соло Ж St; Ювеналы-1+2 D+C Соло Ж St; Ювеналы-1+2 E+D соло Ж St; Ювеналы-2 E+D Соло Ж St              0.343             1.912         ok
+   latin     J      3.785           4.0          1.972     3.890       65            7        6 Ювеналы-1 E+D Соло Ж La; Ювеналы-1 E+D соло Ж La; Ювеналы-1+2 D Соло Ж La; Ювеналы-1+2 D+C Соло Ж La; Ювеналы-1+2 E+D соло Ж La; Ювеналы-2 E+D Соло Ж La              0.336             1.972         ok
+standard     Q      3.718           3.0          2.041     4.165      103           11        9 Ювеналы-1 E+D Соло Ж St; Ювеналы-1 E+D соло Ж St; Ювеналы-1+2 D Соло Ж St; Ювеналы-1+2 D+C Соло Ж St; Ювеналы-1+2 E+D соло Ж St; Ювеналы-2 E+D Соло Ж St              0.329             2.041         ok
+standard     F      3.767           4.0          2.045     4.180      103           11        9 Ювеналы-1 E+D Соло Ж St; Ювеналы-1 E+D соло Ж St; Ювеналы-1+2 D Соло Ж St; Ювеналы-1+2 D+C Соло Ж St; Ювеналы-1+2 E+D соло Ж St; Ювеналы-2 E+D Соло Ж St              0.328             2.045         ok
+
+4. Least stable ranking: highest std_deviation
+ program dance  avg_place  median_place  std_deviation  variance  n_marks  n_protocols  n_dates                                                                                                                                               categories  consistency_score  volatility_score confidence
+standard     F      3.767           4.0          2.045     4.180      103           11        9 Ювеналы-1 E+D Соло Ж St; Ювеналы-1 E+D соло Ж St; Ювеналы-1+2 D Соло Ж St; Ювеналы-1+2 D+C Соло Ж St; Ювеналы-1+2 E+D соло Ж St; Ювеналы-2 E+D Соло Ж St              0.328             2.045         ok
+standard     Q      3.718           3.0          2.041     4.165      103           11        9 Ювеналы-1 E+D Соло Ж St; Ювеналы-1 E+D соло Ж St; Ювеналы-1+2 D Соло Ж St; Ювеналы-1+2 D+C Соло Ж St; Ювеналы-1+2 E+D соло Ж St; Ювеналы-2 E+D Соло Ж St              0.329             2.041         ok
+   latin     J      3.785           4.0          1.972     3.890       65            7        6 Ювеналы-1 E+D Соло Ж La; Ювеналы-1 E+D соло Ж La; Ювеналы-1+2 D Соло Ж La; Ювеналы-1+2 D+C Соло Ж La; Ювеналы-1+2 E+D соло Ж La; Ювеналы-2 E+D Соло Ж La              0.336             1.972         ok
+standard     W      4.029           4.0          1.912     3.656      103           11        9 Ювеналы-1 E+D Соло Ж St; Ювеналы-1 E+D соло Ж St; Ювеналы-1+2 D Соло Ж St; Ювеналы-1+2 D+C Соло Ж St; Ювеналы-1+2 E+D соло Ж St; Ювеналы-2 E+D Соло Ж St              0.343             1.912         ok
+standard     T      3.398           3.0          1.906     3.634      103           11        9 Ювеналы-1 E+D Соло Ж St; Ювеналы-1 E+D соло Ж St; Ювеналы-1+2 D Соло Ж St; Ювеналы-1+2 D+C Соло Ж St; Ювеналы-1+2 E+D соло Ж St; Ювеналы-2 E+D Соло Ж St              0.344             1.906         ok
+   latin     R      3.969           4.0          1.845     3.405       65            7        6 Ювеналы-1 E+D Соло Ж La; Ювеналы-1 E+D соло Ж La; Ювеналы-1+2 D Соло Ж La; Ювеналы-1+2 D+C Соло Ж La; Ювеналы-1+2 E+D соло Ж La; Ювеналы-2 E+D Соло Ж La              0.351             1.845         ok
+   latin     S      3.892           4.0          1.830     3.348       65            7        6 Ювеналы-1 E+D Соло Ж La; Ювеналы-1 E+D соло Ж La; Ювеналы-1+2 D Соло Ж La; Ювеналы-1+2 D+C Соло Ж La; Ювеналы-1+2 E+D соло Ж La; Ювеналы-2 E+D Соло Ж La              0.353             1.830         ok
+   latin     C      4.200           4.0          1.770     3.131       65            7        6 Ювеналы-1 E+D Соло Ж La; Ювеналы-1 E+D соло Ж La; Ювеналы-1+2 D Соло Ж La; Ювеналы-1+2 D+C Соло Ж La; Ювеналы-1+2 E+D соло Ж La; Ювеналы-2 E+D Соло Ж La              0.361             1.770         ok
+
+5. Improvement ranking: strongest negative trend_over_time
+ program dance  trend_over_time first_date  first_avg_place  last_date  last_avg_place  first_to_last_delta  n_dates confidence
+standard     F           -0.060 2025-09-28            3.727 2026-05-24           3.273               -0.454        9         ok
+standard     W           -0.037 2025-09-28            4.636 2026-05-24           4.182               -0.454        9         ok
+standard     Q            0.045 2025-09-28            3.182 2026-05-24           4.273                1.091        9         ok
+standard     T            0.048 2025-09-28            2.909 2026-05-24           3.000                0.091        9         ok
+   latin     J            0.096 2025-09-28            4.909 2026-02-23           5.000                0.091        6         ok
+   latin     S            0.116 2025-09-28            4.455 2026-02-23           5.444                0.989        6         ok
+   latin     R            0.208 2025-09-28            4.545 2026-02-23           5.444                0.899        6         ok
+   latin     C            0.242 2025-09-28            4.545 2026-02-23           5.556                1.011        6         ok
+
+6. Regression ranking: strongest positive trend_over_time
+ program dance  trend_over_time first_date  first_avg_place  last_date  last_avg_place  first_to_last_delta  n_dates confidence
+   latin     C            0.242 2025-09-28            4.545 2026-02-23           5.556                1.011        6         ok
+   latin     R            0.208 2025-09-28            4.545 2026-02-23           5.444                0.899        6         ok
+   latin     S            0.116 2025-09-28            4.455 2026-02-23           5.444                0.989        6         ok
+   latin     J            0.096 2025-09-28            4.909 2026-02-23           5.000                0.091        6         ok
+standard     T            0.048 2025-09-28            2.909 2026-05-24           3.000                0.091        9         ok
+standard     Q            0.045 2025-09-28            3.182 2026-05-24           4.273                1.091        9         ok
+standard     W           -0.037 2025-09-28            4.636 2026-05-24           4.182               -0.454        9         ok
+standard     F           -0.060 2025-09-28            3.727 2026-05-24           3.273               -0.454        9         ok
+
+=== STANDARD ===
+
+Dance metrics
+ program dance  avg_place  median_place  std_deviation  variance  n_marks  n_protocols  n_dates                                                                                                                                               categories  consistency_score  volatility_score     confidence
+standard     F      3.767           4.0          2.045     4.180      103           11        9 Ювеналы-1 E+D Соло Ж St; Ювеналы-1 E+D соло Ж St; Ювеналы-1+2 D Соло Ж St; Ювеналы-1+2 D+C Соло Ж St; Ювеналы-1+2 E+D соло Ж St; Ювеналы-2 E+D Соло Ж St              0.328             2.045             ok
+standard     Q      3.718           3.0          2.041     4.165      103           11        9 Ювеналы-1 E+D Соло Ж St; Ювеналы-1 E+D соло Ж St; Ювеналы-1+2 D Соло Ж St; Ювеналы-1+2 D+C Соло Ж St; Ювеналы-1+2 E+D соло Ж St; Ювеналы-2 E+D Соло Ж St              0.329             2.041             ok
+standard     T      3.398           3.0          1.906     3.634      103           11        9 Ювеналы-1 E+D Соло Ж St; Ювеналы-1 E+D соло Ж St; Ювеналы-1+2 D Соло Ж St; Ювеналы-1+2 D+C Соло Ж St; Ювеналы-1+2 E+D соло Ж St; Ювеналы-2 E+D Соло Ж St              0.344             1.906             ok
+standard     V      4.889           5.0          1.453     2.111        9            1        1                                                                                                                                Ювеналы-1+2 D+C Соло Ж St              0.408             1.453 low confidence
+standard     W      4.029           4.0          1.912     3.656      103           11        9 Ювеналы-1 E+D Соло Ж St; Ювеналы-1 E+D соло Ж St; Ювеналы-1+2 D Соло Ж St; Ювеналы-1+2 D+C Соло Ж St; Ювеналы-1+2 E+D соло Ж St; Ювеналы-2 E+D Соло Ж St              0.343             1.912             ok
+
+Strongest dances
+ program dance  avg_place  median_place  std_deviation  variance  n_marks  n_protocols  n_dates                                                                                                                                               categories  consistency_score  volatility_score confidence
+standard     T      3.398           3.0          1.906     3.634      103           11        9 Ювеналы-1 E+D Соло Ж St; Ювеналы-1 E+D соло Ж St; Ювеналы-1+2 D Соло Ж St; Ювеналы-1+2 D+C Соло Ж St; Ювеналы-1+2 E+D соло Ж St; Ювеналы-2 E+D Соло Ж St              0.344             1.906         ok
+standard     Q      3.718           3.0          2.041     4.165      103           11        9 Ювеналы-1 E+D Соло Ж St; Ювеналы-1 E+D соло Ж St; Ювеналы-1+2 D Соло Ж St; Ювеналы-1+2 D+C Соло Ж St; Ювеналы-1+2 E+D соло Ж St; Ювеналы-2 E+D Соло Ж St              0.329             2.041         ok
+standard     F      3.767           4.0          2.045     4.180      103           11        9 Ювеналы-1 E+D Соло Ж St; Ювеналы-1 E+D соло Ж St; Ювеналы-1+2 D Соло Ж St; Ювеналы-1+2 D+C Соло Ж St; Ювеналы-1+2 E+D соло Ж St; Ювеналы-2 E+D Соло Ж St              0.328             2.045         ok
+standard     W      4.029           4.0          1.912     3.656      103           11        9 Ювеналы-1 E+D Соло Ж St; Ювеналы-1 E+D соло Ж St; Ювеналы-1+2 D Соло Ж St; Ювеналы-1+2 D+C Соло Ж St; Ювеналы-1+2 E+D соло Ж St; Ювеналы-2 E+D Соло Ж St              0.343             1.912         ok
+
+Weakest dances
+ program dance  avg_place  median_place  std_deviation  variance  n_marks  n_protocols  n_dates                                                                                                                                               categories  consistency_score  volatility_score confidence
+standard     W      4.029           4.0          1.912     3.656      103           11        9 Ювеналы-1 E+D Соло Ж St; Ювеналы-1 E+D соло Ж St; Ювеналы-1+2 D Соло Ж St; Ювеналы-1+2 D+C Соло Ж St; Ювеналы-1+2 E+D соло Ж St; Ювеналы-2 E+D Соло Ж St              0.343             1.912         ok
+standard     F      3.767           4.0          2.045     4.180      103           11        9 Ювеналы-1 E+D Соло Ж St; Ювеналы-1 E+D соло Ж St; Ювеналы-1+2 D Соло Ж St; Ювеналы-1+2 D+C Соло Ж St; Ювеналы-1+2 E+D соло Ж St; Ювеналы-2 E+D Соло Ж St              0.328             2.045         ok
+standard     Q      3.718           3.0          2.041     4.165      103           11        9 Ювеналы-1 E+D Соло Ж St; Ювеналы-1 E+D соло Ж St; Ювеналы-1+2 D Соло Ж St; Ювеналы-1+2 D+C Соло Ж St; Ювеналы-1+2 E+D соло Ж St; Ювеналы-2 E+D Соло Ж St              0.329             2.041         ok
+standard     T      3.398           3.0          1.906     3.634      103           11        9 Ювеналы-1 E+D Соло Ж St; Ювеналы-1 E+D соло Ж St; Ювеналы-1+2 D Соло Ж St; Ювеналы-1+2 D+C Соло Ж St; Ювеналы-1+2 E+D соло Ж St; Ювеналы-2 E+D Соло Ж St              0.344             1.906         ok
+
+Stability ranking
+ program dance  avg_place  median_place  std_deviation  variance  n_marks  n_protocols  n_dates                                                                                                                                               categories  consistency_score  volatility_score confidence
+standard     T      3.398           3.0          1.906     3.634      103           11        9 Ювеналы-1 E+D Соло Ж St; Ювеналы-1 E+D соло Ж St; Ювеналы-1+2 D Соло Ж St; Ювеналы-1+2 D+C Соло Ж St; Ювеналы-1+2 E+D соло Ж St; Ювеналы-2 E+D Соло Ж St              0.344             1.906         ok
+standard     W      4.029           4.0          1.912     3.656      103           11        9 Ювеналы-1 E+D Соло Ж St; Ювеналы-1 E+D соло Ж St; Ювеналы-1+2 D Соло Ж St; Ювеналы-1+2 D+C Соло Ж St; Ювеналы-1+2 E+D соло Ж St; Ювеналы-2 E+D Соло Ж St              0.343             1.912         ok
+standard     Q      3.718           3.0          2.041     4.165      103           11        9 Ювеналы-1 E+D Соло Ж St; Ювеналы-1 E+D соло Ж St; Ювеналы-1+2 D Соло Ж St; Ювеналы-1+2 D+C Соло Ж St; Ювеналы-1+2 E+D соло Ж St; Ювеналы-2 E+D Соло Ж St              0.329             2.041         ok
+standard     F      3.767           4.0          2.045     4.180      103           11        9 Ювеналы-1 E+D Соло Ж St; Ювеналы-1 E+D соло Ж St; Ювеналы-1+2 D Соло Ж St; Ювеналы-1+2 D+C Соло Ж St; Ювеналы-1+2 E+D соло Ж St; Ювеналы-2 E+D Соло Ж St              0.328             2.045         ok
+
+Least stable ranking
+ program dance  avg_place  median_place  std_deviation  variance  n_marks  n_protocols  n_dates                                                                                                                                               categories  consistency_score  volatility_score confidence
+standard     F      3.767           4.0          2.045     4.180      103           11        9 Ювеналы-1 E+D Соло Ж St; Ювеналы-1 E+D соло Ж St; Ювеналы-1+2 D Соло Ж St; Ювеналы-1+2 D+C Соло Ж St; Ювеналы-1+2 E+D соло Ж St; Ювеналы-2 E+D Соло Ж St              0.328             2.045         ok
+standard     Q      3.718           3.0          2.041     4.165      103           11        9 Ювеналы-1 E+D Соло Ж St; Ювеналы-1 E+D соло Ж St; Ювеналы-1+2 D Соло Ж St; Ювеналы-1+2 D+C Соло Ж St; Ювеналы-1+2 E+D соло Ж St; Ювеналы-2 E+D Соло Ж St              0.329             2.041         ok
+standard     W      4.029           4.0          1.912     3.656      103           11        9 Ювеналы-1 E+D Соло Ж St; Ювеналы-1 E+D соло Ж St; Ювеналы-1+2 D Соло Ж St; Ювеналы-1+2 D+C Соло Ж St; Ювеналы-1+2 E+D соло Ж St; Ювеналы-2 E+D Соло Ж St              0.343             1.912         ok
+standard     T      3.398           3.0          1.906     3.634      103           11        9 Ювеналы-1 E+D Соло Ж St; Ювеналы-1 E+D соло Ж St; Ювеналы-1+2 D Соло Ж St; Ювеналы-1+2 D+C Соло Ж St; Ювеналы-1+2 E+D соло Ж St; Ювеналы-2 E+D Соло Ж St              0.344             1.906         ok
+
+Improvement ranking
+ program dance  trend_over_time first_date  first_avg_place  last_date  last_avg_place  first_to_last_delta  n_dates confidence
+standard     F           -0.060 2025-09-28            3.727 2026-05-24           3.273               -0.454        9         ok
+standard     W           -0.037 2025-09-28            4.636 2026-05-24           4.182               -0.454        9         ok
+standard     Q            0.045 2025-09-28            3.182 2026-05-24           4.273                1.091        9         ok
+standard     T            0.048 2025-09-28            2.909 2026-05-24           3.000                0.091        9         ok
+
+Regression ranking
+ program dance  trend_over_time first_date  first_avg_place  last_date  last_avg_place  first_to_last_delta  n_dates confidence
+standard     T            0.048 2025-09-28            2.909 2026-05-24           3.000                0.091        9         ok
+standard     Q            0.045 2025-09-28            3.182 2026-05-24           4.273                1.091        9         ok
+standard     W           -0.037 2025-09-28            4.636 2026-05-24           4.182               -0.454        9         ok
+standard     F           -0.060 2025-09-28            3.727 2026-05-24           3.273               -0.454        9         ok
+
+=== LATIN ===
+
+Dance metrics
+program dance  avg_place  median_place  std_deviation  variance  n_marks  n_protocols  n_dates                                                                                                                                               categories  consistency_score  volatility_score     confidence
+  latin     C      4.200           4.0          1.770     3.131       65            7        6 Ювеналы-1 E+D Соло Ж La; Ювеналы-1 E+D соло Ж La; Ювеналы-1+2 D Соло Ж La; Ювеналы-1+2 D+C Соло Ж La; Ювеналы-1+2 E+D соло Ж La; Ювеналы-2 E+D Соло Ж La              0.361             1.770             ok
+  latin     J      3.785           4.0          1.972     3.890       65            7        6 Ювеналы-1 E+D Соло Ж La; Ювеналы-1 E+D соло Ж La; Ювеналы-1+2 D Соло Ж La; Ювеналы-1+2 D+C Соло Ж La; Ювеналы-1+2 E+D соло Ж La; Ювеналы-2 E+D Соло Ж La              0.336             1.972             ok
+  latin     P      5.778           6.0          0.667     0.444        9            1        1                                                                                                                                Ювеналы-1+2 D+C Соло Ж La              0.600             0.667 low confidence
+  latin     R      3.969           4.0          1.845     3.405       65            7        6 Ювеналы-1 E+D Соло Ж La; Ювеналы-1 E+D соло Ж La; Ювеналы-1+2 D Соло Ж La; Ювеналы-1+2 D+C Соло Ж La; Ювеналы-1+2 E+D соло Ж La; Ювеналы-2 E+D Соло Ж La              0.351             1.845             ok
+  latin     S      3.892           4.0          1.830     3.348       65            7        6 Ювеналы-1 E+D Соло Ж La; Ювеналы-1 E+D соло Ж La; Ювеналы-1+2 D Соло Ж La; Ювеналы-1+2 D+C Соло Ж La; Ювеналы-1+2 E+D соло Ж La; Ювеналы-2 E+D Соло Ж La              0.353             1.830             ok
+
+Strongest dances
+program dance  avg_place  median_place  std_deviation  variance  n_marks  n_protocols  n_dates                                                                                                                                               categories  consistency_score  volatility_score confidence
+  latin     J      3.785           4.0          1.972     3.890       65            7        6 Ювеналы-1 E+D Соло Ж La; Ювеналы-1 E+D соло Ж La; Ювеналы-1+2 D Соло Ж La; Ювеналы-1+2 D+C Соло Ж La; Ювеналы-1+2 E+D соло Ж La; Ювеналы-2 E+D Соло Ж La              0.336             1.972         ok
+  latin     S      3.892           4.0          1.830     3.348       65            7        6 Ювеналы-1 E+D Соло Ж La; Ювеналы-1 E+D соло Ж La; Ювеналы-1+2 D Соло Ж La; Ювеналы-1+2 D+C Соло Ж La; Ювеналы-1+2 E+D соло Ж La; Ювеналы-2 E+D Соло Ж La              0.353             1.830         ok
+  latin     R      3.969           4.0          1.845     3.405       65            7        6 Ювеналы-1 E+D Соло Ж La; Ювеналы-1 E+D соло Ж La; Ювеналы-1+2 D Соло Ж La; Ювеналы-1+2 D+C Соло Ж La; Ювеналы-1+2 E+D соло Ж La; Ювеналы-2 E+D Соло Ж La              0.351             1.845         ok
+  latin     C      4.200           4.0          1.770     3.131       65            7        6 Ювеналы-1 E+D Соло Ж La; Ювеналы-1 E+D соло Ж La; Ювеналы-1+2 D Соло Ж La; Ювеналы-1+2 D+C Соло Ж La; Ювеналы-1+2 E+D соло Ж La; Ювеналы-2 E+D Соло Ж La              0.361             1.770         ok
+
+Weakest dances
+program dance  avg_place  median_place  std_deviation  variance  n_marks  n_protocols  n_dates                                                                                                                                               categories  consistency_score  volatility_score confidence
+  latin     C      4.200           4.0          1.770     3.131       65            7        6 Ювеналы-1 E+D Соло Ж La; Ювеналы-1 E+D соло Ж La; Ювеналы-1+2 D Соло Ж La; Ювеналы-1+2 D+C Соло Ж La; Ювеналы-1+2 E+D соло Ж La; Ювеналы-2 E+D Соло Ж La              0.361             1.770         ok
+  latin     R      3.969           4.0          1.845     3.405       65            7        6 Ювеналы-1 E+D Соло Ж La; Ювеналы-1 E+D соло Ж La; Ювеналы-1+2 D Соло Ж La; Ювеналы-1+2 D+C Соло Ж La; Ювеналы-1+2 E+D соло Ж La; Ювеналы-2 E+D Соло Ж La              0.351             1.845         ok
+  latin     S      3.892           4.0          1.830     3.348       65            7        6 Ювеналы-1 E+D Соло Ж La; Ювеналы-1 E+D соло Ж La; Ювеналы-1+2 D Соло Ж La; Ювеналы-1+2 D+C Соло Ж La; Ювеналы-1+2 E+D соло Ж La; Ювеналы-2 E+D Соло Ж La              0.353             1.830         ok
+  latin     J      3.785           4.0          1.972     3.890       65            7        6 Ювеналы-1 E+D Соло Ж La; Ювеналы-1 E+D соло Ж La; Ювеналы-1+2 D Соло Ж La; Ювеналы-1+2 D+C Соло Ж La; Ювеналы-1+2 E+D соло Ж La; Ювеналы-2 E+D Соло Ж La              0.336             1.972         ok
+
+Stability ranking
+program dance  avg_place  median_place  std_deviation  variance  n_marks  n_protocols  n_dates                                                                                                                                               categories  consistency_score  volatility_score confidence
+  latin     C      4.200           4.0          1.770     3.131       65            7        6 Ювеналы-1 E+D Соло Ж La; Ювеналы-1 E+D соло Ж La; Ювеналы-1+2 D Соло Ж La; Ювеналы-1+2 D+C Соло Ж La; Ювеналы-1+2 E+D соло Ж La; Ювеналы-2 E+D Соло Ж La              0.361             1.770         ok
+  latin     S      3.892           4.0          1.830     3.348       65            7        6 Ювеналы-1 E+D Соло Ж La; Ювеналы-1 E+D соло Ж La; Ювеналы-1+2 D Соло Ж La; Ювеналы-1+2 D+C Соло Ж La; Ювеналы-1+2 E+D соло Ж La; Ювеналы-2 E+D Соло Ж La              0.353             1.830         ok
+  latin     R      3.969           4.0          1.845     3.405       65            7        6 Ювеналы-1 E+D Соло Ж La; Ювеналы-1 E+D соло Ж La; Ювеналы-1+2 D Соло Ж La; Ювеналы-1+2 D+C Соло Ж La; Ювеналы-1+2 E+D соло Ж La; Ювеналы-2 E+D Соло Ж La              0.351             1.845         ok
+  latin     J      3.785           4.0          1.972     3.890       65            7        6 Ювеналы-1 E+D Соло Ж La; Ювеналы-1 E+D соло Ж La; Ювеналы-1+2 D Соло Ж La; Ювеналы-1+2 D+C Соло Ж La; Ювеналы-1+2 E+D соло Ж La; Ювеналы-2 E+D Соло Ж La              0.336             1.972         ok
+
+Least stable ranking
+program dance  avg_place  median_place  std_deviation  variance  n_marks  n_protocols  n_dates                                                                                                                                               categories  consistency_score  volatility_score confidence
+  latin     J      3.785           4.0          1.972     3.890       65            7        6 Ювеналы-1 E+D Соло Ж La; Ювеналы-1 E+D соло Ж La; Ювеналы-1+2 D Соло Ж La; Ювеналы-1+2 D+C Соло Ж La; Ювеналы-1+2 E+D соло Ж La; Ювеналы-2 E+D Соло Ж La              0.336             1.972         ok
+  latin     R      3.969           4.0          1.845     3.405       65            7        6 Ювеналы-1 E+D Соло Ж La; Ювеналы-1 E+D соло Ж La; Ювеналы-1+2 D Соло Ж La; Ювеналы-1+2 D+C Соло Ж La; Ювеналы-1+2 E+D соло Ж La; Ювеналы-2 E+D Соло Ж La              0.351             1.845         ok
+  latin     S      3.892           4.0          1.830     3.348       65            7        6 Ювеналы-1 E+D Соло Ж La; Ювеналы-1 E+D соло Ж La; Ювеналы-1+2 D Соло Ж La; Ювеналы-1+2 D+C Соло Ж La; Ювеналы-1+2 E+D соло Ж La; Ювеналы-2 E+D Соло Ж La              0.353             1.830         ok
+  latin     C      4.200           4.0          1.770     3.131       65            7        6 Ювеналы-1 E+D Соло Ж La; Ювеналы-1 E+D соло Ж La; Ювеналы-1+2 D Соло Ж La; Ювеналы-1+2 D+C Соло Ж La; Ювеналы-1+2 E+D соло Ж La; Ювеналы-2 E+D Соло Ж La              0.361             1.770         ok
+
+Improvement ranking
+program dance  trend_over_time first_date  first_avg_place  last_date  last_avg_place  first_to_last_delta  n_dates confidence
+  latin     J            0.096 2025-09-28            4.909 2026-02-23           5.000                0.091        6         ok
+  latin     S            0.116 2025-09-28            4.455 2026-02-23           5.444                0.989        6         ok
+  latin     R            0.208 2025-09-28            4.545 2026-02-23           5.444                0.899        6         ok
+  latin     C            0.242 2025-09-28            4.545 2026-02-23           5.556                1.011        6         ok
+
+Regression ranking
+program dance  trend_over_time first_date  first_avg_place  last_date  last_avg_place  first_to_last_delta  n_dates confidence
+  latin     C            0.242 2025-09-28            4.545 2026-02-23           5.556                1.011        6         ok
+  latin     R            0.208 2025-09-28            4.545 2026-02-23           5.444                0.899        6         ok
+  latin     S            0.116 2025-09-28            4.455 2026-02-23           5.444                0.989        6         ok
+  latin     J            0.096 2025-09-28            4.909 2026-02-23           5.000                0.091        6         ok
+
+Dynamics by date
+ program dance event_date  avg_place  median_place  n_marks  n_protocols  rolling_average  tournament_to_tournament_delta
+   latin     C 2025-09-28      4.545           4.0       11            1            4.545                             NaN
+   latin     C 2025-10-12      3.909           4.0       11            1            4.227                          -0.636
+   latin     C 2025-11-09      3.786           4.0       14            2            4.080                          -0.123
+   latin     C 2025-11-22      3.077           3.0       13            1            3.591                          -0.709
+   latin     C 2026-01-18      5.286           6.0        7            1            4.049                           2.209
+   latin     C 2026-02-23      5.556           6.0        9            1            4.639                           0.270
+   latin     J 2025-09-28      4.909           5.0       11            1            4.909                             NaN
+   latin     J 2025-10-12      3.364           3.0       11            1            4.136                          -1.545
+   latin     J 2025-11-09      3.571           4.0       14            2            3.948                           0.208
+   latin     J 2025-11-22      2.000           2.0       13            1            2.978                          -1.571
+   latin     J 2026-01-18      4.857           5.0        7            1            3.476                           2.857
+   latin     J 2026-02-23      5.000           6.0        9            1            3.952                           0.143
+   latin     P 2026-02-23      5.778           6.0        9            1            5.778                             NaN
+   latin     R 2025-09-28      4.545           5.0       11            1            4.545                             NaN
+   latin     R 2025-10-12      3.545           4.0       11            1            4.045                          -1.000
+   latin     R 2025-11-09      4.071           4.0       14            2            4.054                           0.526
+   latin     R 2025-11-22      2.077           2.0       13            1            3.231                          -1.995
+   latin     R 2026-01-18      5.143           6.0        7            1            3.764                           3.066
+   latin     R 2026-02-23      5.444           6.0        9            1            4.221                           0.302
+   latin     S 2025-09-28      4.455           4.0       11            1            4.455                             NaN
+   latin     S 2025-10-12      4.455           5.0       11            1            4.455                           0.000
+   latin     S 2025-11-09      3.500           3.5       14            2            4.136                          -0.955
+   latin     S 2025-11-22      1.846           2.0       13            1            3.267                          -1.654
+   latin     S 2026-01-18      4.714           5.0        7            1            3.353                           2.868
+   latin     S 2026-02-23      5.444           6.0        9            1            4.002                           0.730
+standard     F 2025-09-28      3.727           3.0       11            1            3.727                             NaN
+standard     F 2025-10-12      4.818           5.0       11            1            4.273                           1.091
+standard     F 2025-11-09      3.000           2.5       14            2            3.848                          -1.818
+standard     F 2025-11-22      3.231           3.0       13            1            3.683                           0.231
+standard     F 2026-01-18      4.429           4.0        7            1            3.553                           1.198
+standard     F 2026-02-23      4.222           4.0       18            2            3.961                          -0.206
+standard     F 2026-03-08      4.667           5.0        9            1            4.439                           0.444
+standard     F 2026-04-26      2.778           2.0        9            1            3.889                          -1.889
+standard     F 2026-05-24      3.273           3.0       11            1            3.572                           0.495
+standard     Q 2025-09-28      3.182           3.0       11            1            3.182                             NaN
+standard     Q 2025-10-12      5.000           6.0       11            1            4.091                           1.818
+standard     Q 2025-11-09      2.786           2.0       14            2            3.656                          -2.214
+standard     Q 2025-11-22      2.538           2.0       13            1            3.441                          -0.247
+standard     Q 2026-01-18      4.571           6.0        7            1            3.299                           2.033
+standard     Q 2026-02-23      4.333           5.0       18            2            3.814                          -0.238
+standard     Q 2026-03-08      4.222           4.0        9            1            4.376                          -0.111
+standard     Q 2026-04-26      2.889           2.0        9            1            3.815                          -1.333
+standard     Q 2026-05-24      4.273           5.0       11            1            3.795                           1.384
+standard     T 2025-09-28      2.909           1.0       11            1            2.909                             NaN
+standard     T 2025-10-12      4.000           4.0       11            1            3.455                           1.091
+standard     T 2025-11-09      2.071           1.0       14            2            2.994                          -1.929
+standard     T 2025-11-22      2.923           3.0       13            1            2.998                           0.852
+standard     T 2026-01-18      4.857           6.0        7            1            3.284                           1.934
+standard     T 2026-02-23      4.222           4.0       18            2            4.001                          -0.635
+standard     T 2026-03-08      4.000           4.0        9            1            4.360                          -0.222
+standard     T 2026-04-26      3.111           2.0        9            1            3.778                          -0.889
+standard     T 2026-05-24      3.000           3.0       11            1            3.370                          -0.111
+standard     V 2026-02-23      4.889           5.0        9            1            4.889                             NaN
+standard     W 2025-09-28      4.636           5.0       11            1            4.636                             NaN
+standard     W 2025-10-12      4.727           5.0       11            1            4.682                           0.091
+standard     W 2025-11-09      3.071           2.0       14            2            4.145                          -1.656
+standard     W 2025-11-22      3.385           3.0       13            1            3.728                           0.313
+standard     W 2026-01-18      5.143           6.0        7            1            3.866                           1.758
+standard     W 2026-02-23      4.111           4.0       18            2            4.213                          -1.032
+standard     W 2026-03-08      3.778           3.0        9            1            4.344                          -0.333
+standard     W 2026-04-26      3.889           5.0        9            1            3.926                           0.111
+standard     W 2026-05-24      4.182           4.0       11            1            3.949                           0.293
+
+Missing dances
+  Нет данных
+
+Incomplete protocol warnings
+  Нет данных
+
+Confidence warnings
+ program dance  avg_place  median_place  std_deviation  variance  n_marks  n_protocols  n_dates                categories  consistency_score  volatility_score     confidence
+   latin     P      5.778           6.0          0.667     0.444        9            1        1 Ювеналы-1+2 D+C Соло Ж La              0.600             0.667 low confidence
+standard     V      4.889           5.0          1.453     2.111        9            1        1 Ювеналы-1+2 D+C Соло Ж St              0.408             1.453 low confidence
