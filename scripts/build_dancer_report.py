@@ -265,14 +265,25 @@ def build_category_slices(numeric: pd.DataFrame, dance_results: pd.DataFrame, ma
     marks_with_slices = with_category_slice(marks)
     payload: dict[str, dict[str, Any]] = {"standard": {}, "latin": {}}
 
+    def program_subset(df: pd.DataFrame, program: str) -> pd.DataFrame:
+        if df.empty or "program" not in df.columns:
+            return pd.DataFrame()
+        return df[df["program"] == program].copy()
+
+    def program_slice_subset(df: pd.DataFrame, program: str, slice_key: str) -> pd.DataFrame:
+        subset = program_subset(df, program)
+        if subset.empty or "category_slice" not in subset.columns:
+            return pd.DataFrame()
+        return subset[subset["category_slice"] == slice_key].copy()
+
     for program in ["standard", "latin"]:
         present_slice_keys = {
             str(item)
             for item in pd.concat(
                 [
-                    numeric_with_slices[numeric_with_slices["program"] == program]["category_slice"],
-                    results_with_slices[results_with_slices["program"] == program]["category_slice"],
-                    marks_with_slices[marks_with_slices["program"] == program]["category_slice"],
+                    program_subset(numeric_with_slices, program).get("category_slice", pd.Series(dtype="object")),
+                    program_subset(results_with_slices, program).get("category_slice", pd.Series(dtype="object")),
+                    program_subset(marks_with_slices, program).get("category_slice", pd.Series(dtype="object")),
                 ],
                 ignore_index=True,
             ).dropna()
@@ -285,19 +296,13 @@ def build_category_slices(numeric: pd.DataFrame, dance_results: pd.DataFrame, ma
         for slice_key in ordered_slice_keys:
             label = CATEGORY_SLICE_LABELS.get(slice_key) or CLASS_GROUP_LABELS.get(slice_key) or slice_key
             if slice_key == "all":
-                slice_numeric = numeric_with_slices[numeric_with_slices["program"] == program].copy()
-                slice_results = results_with_slices[results_with_slices["program"] == program].copy()
-                slice_marks = marks_with_slices[marks_with_slices["program"] == program].copy()
+                slice_numeric = program_subset(numeric_with_slices, program)
+                slice_results = program_subset(results_with_slices, program)
+                slice_marks = program_subset(marks_with_slices, program)
             else:
-                slice_numeric = numeric_with_slices[
-                    (numeric_with_slices["program"] == program) & (numeric_with_slices["category_slice"] == slice_key)
-                ].copy()
-                slice_results = results_with_slices[
-                    (results_with_slices["program"] == program) & (results_with_slices["category_slice"] == slice_key)
-                ].copy()
-                slice_marks = marks_with_slices[
-                    (marks_with_slices["program"] == program) & (marks_with_slices["category_slice"] == slice_key)
-                ].copy()
+                slice_numeric = program_slice_subset(numeric_with_slices, program, slice_key)
+                slice_results = program_slice_subset(results_with_slices, program, slice_key)
+                slice_marks = program_slice_subset(marks_with_slices, program, slice_key)
                 if slice_numeric.empty or slice_results.empty:
                     continue
 
@@ -566,6 +571,17 @@ def build_trainer_mode_payload(tournament_dance_results: pd.DataFrame, marks: pd
 
 def build_judges_payload(numeric: pd.DataFrame) -> dict[str, Any]:
     stats = final_judge_stats(numeric)
+    required_columns = {"n_marks", "strictness", "softness"}
+    if stats.empty or not required_columns.issubset(stats.columns):
+        return {
+            "strictest": [],
+            "softest": [],
+            "low_confidence": [],
+            "by_program": {
+                "standard": {"strictest": [], "softest": []},
+                "latin": {"strictest": [], "softest": []},
+            },
+        }
     reportable = stats[stats["n_marks"] >= JUDGE_REPORT_MIN_MARKS].copy() if not stats.empty else stats
     by_program = judge_stats_by_program(numeric)
     payload = {
@@ -577,6 +593,9 @@ def build_judges_payload(numeric: pd.DataFrame) -> dict[str, Any]:
         "by_program": {},
     }
     for program in ["standard", "latin"]:
+        if by_program.empty or not required_columns.union({"program"}).issubset(by_program.columns):
+            payload["by_program"][program] = {"strictest": [], "softest": []}
+            continue
         subset = by_program[(by_program["program"] == program) & (by_program["n_marks"] >= JUDGE_REPORT_MIN_MARKS)].copy()
         payload["by_program"][program] = {
             "strictest": df_records(subset.sort_values(["strictness", "n_marks"], ascending=[False, False]), max_rows=10),

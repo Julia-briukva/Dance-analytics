@@ -1,0 +1,4559 @@
+{
+  "metadata": {
+    "generated_at": "2026-06-01T19:11:12.217902+00:00",
+    "analytics_version": "report_layer_v1",
+    "database": "database/compreg_spb_2025_2026.sqlite"
+  },
+  "dancer": {
+    "internal_dancer_id": 26598,
+    "idd": "2016913",
+    "name": "Рикунова Ксения",
+    "club": "Триумф",
+    "city": "Санкт-Петербург"
+  },
+  "summary": {
+    "protocols": 13,
+    "tournaments": 7,
+    "judges": 55,
+    "marks": 492,
+    "numeric_place_marks": 132,
+    "numeric_final_marks": 132,
+    "cross_marks": 360,
+    "date_from": "2025-09-28",
+    "date_to": "2026-04-26"
+  },
+  "programs": {
+    "standard": {
+      "metrics": [
+        {
+          "program": "standard",
+          "dance": "F",
+          "final_avg_place": 8.0,
+          "median_place": 8.0,
+          "std_deviation": 0.0,
+          "variance": 0.0,
+          "n_marks": 1,
+          "n_protocols": 1,
+          "n_dates": 1,
+          "best_place": 8.0,
+          "worst_place": 8.0,
+          "categories": "Ювеналы-2 E+D Соло Ж St",
+          "judge_avg_place": 6.182,
+          "judge_std_deviation": 2.089,
+          "judge_variance": 4.364,
+          "judge_marks": 11,
+          "avg_place": 8.0,
+          "final_median_place": 8.0,
+          "final_std_deviation": null,
+          "consistency_score": 1.0,
+          "volatility_score": 0.0,
+          "confidence": "low confidence"
+        },
+        {
+          "program": "standard",
+          "dance": "Q",
+          "final_avg_place": 7.0,
+          "median_place": 7.0,
+          "std_deviation": 0.0,
+          "variance": 0.0,
+          "n_marks": 1,
+          "n_protocols": 1,
+          "n_dates": 1,
+          "best_place": 7.0,
+          "worst_place": 7.0,
+          "categories": "Ювеналы-2 E+D Соло Ж St",
+          "judge_avg_place": 5.727,
+          "judge_std_deviation": 2.195,
+          "judge_variance": 4.818,
+          "judge_marks": 11,
+          "avg_place": 7.0,
+          "final_median_place": 7.0,
+          "final_std_deviation": null,
+          "consistency_score": 1.0,
+          "volatility_score": 0.0,
+          "confidence": "low confidence"
+        },
+        {
+          "program": "standard",
+          "dance": "T",
+          "final_avg_place": 8.0,
+          "median_place": 8.0,
+          "std_deviation": 0.0,
+          "variance": 0.0,
+          "n_marks": 1,
+          "n_protocols": 1,
+          "n_dates": 1,
+          "best_place": 8.0,
+          "worst_place": 8.0,
+          "categories": "Ювеналы-2 E+D Соло Ж St",
+          "judge_avg_place": 5.909,
+          "judge_std_deviation": 2.3,
+          "judge_variance": 5.291,
+          "judge_marks": 11,
+          "avg_place": 8.0,
+          "final_median_place": 8.0,
+          "final_std_deviation": null,
+          "consistency_score": 1.0,
+          "volatility_score": 0.0,
+          "confidence": "low confidence"
+        },
+        {
+          "program": "standard",
+          "dance": "W",
+          "final_avg_place": 3.0,
+          "median_place": 3.0,
+          "std_deviation": 0.0,
+          "variance": 0.0,
+          "n_marks": 1,
+          "n_protocols": 1,
+          "n_dates": 1,
+          "best_place": 3.0,
+          "worst_place": 3.0,
+          "categories": "Ювеналы-2 E+D Соло Ж St",
+          "judge_avg_place": 4.455,
+          "judge_std_deviation": 2.423,
+          "judge_variance": 5.873,
+          "judge_marks": 11,
+          "avg_place": 3.0,
+          "final_median_place": 3.0,
+          "final_std_deviation": null,
+          "consistency_score": 1.0,
+          "volatility_score": 0.0,
+          "confidence": "low confidence"
+        }
+      ],
+      "best_by_final_average": null,
+      "best_by_median": null,
+      "most_stable_dance": null,
+      "best_peak": null,
+      "worst_by_final_average": null,
+      "judge_level_best": null,
+      "strongest_dance": null,
+      "weakest_dance": null,
+      "most_improved_dance": null
+    },
+    "latin": {
+      "metrics": [
+        {
+          "program": "latin",
+          "dance": "C",
+          "final_avg_place": 5.5,
+          "median_place": 5.5,
+          "std_deviation": 2.121,
+          "variance": 4.5,
+          "n_marks": 2,
+          "n_protocols": 2,
+          "n_dates": 2,
+          "best_place": 4.0,
+          "worst_place": 7.0,
+          "categories": "Ювеналы-2 E+D Соло Ж La; Ювеналы-2 E+D соло Ж La",
+          "judge_avg_place": 4.591,
+          "judge_std_deviation": 2.085,
+          "judge_variance": 4.348,
+          "judge_marks": 22,
+          "avg_place": 5.5,
+          "final_median_place": 5.5,
+          "final_std_deviation": 2.121,
+          "consistency_score": 0.32,
+          "volatility_score": 2.121,
+          "confidence": "low confidence"
+        },
+        {
+          "program": "latin",
+          "dance": "J",
+          "final_avg_place": 5.0,
+          "median_place": 5.0,
+          "std_deviation": 2.828,
+          "variance": 8.0,
+          "n_marks": 2,
+          "n_protocols": 2,
+          "n_dates": 2,
+          "best_place": 3.0,
+          "worst_place": 7.0,
+          "categories": "Ювеналы-2 E+D Соло Ж La; Ювеналы-2 E+D соло Ж La",
+          "judge_avg_place": 4.364,
+          "judge_std_deviation": 1.965,
+          "judge_variance": 3.861,
+          "judge_marks": 22,
+          "avg_place": 5.0,
+          "final_median_place": 5.0,
+          "final_std_deviation": 2.828,
+          "consistency_score": 0.261,
+          "volatility_score": 2.828,
+          "confidence": "low confidence"
+        },
+        {
+          "program": "latin",
+          "dance": "R",
+          "final_avg_place": 4.5,
+          "median_place": 4.5,
+          "std_deviation": 3.536,
+          "variance": 12.5,
+          "n_marks": 2,
+          "n_protocols": 2,
+          "n_dates": 2,
+          "best_place": 2.0,
+          "worst_place": 7.0,
+          "categories": "Ювеналы-2 E+D Соло Ж La; Ювеналы-2 E+D соло Ж La",
+          "judge_avg_place": 4.136,
+          "judge_std_deviation": 2.054,
+          "judge_variance": 4.219,
+          "judge_marks": 22,
+          "avg_place": 4.5,
+          "final_median_place": 4.5,
+          "final_std_deviation": 3.536,
+          "consistency_score": 0.22,
+          "volatility_score": 3.536,
+          "confidence": "low confidence"
+        },
+        {
+          "program": "latin",
+          "dance": "S",
+          "final_avg_place": 5.5,
+          "median_place": 5.5,
+          "std_deviation": 2.121,
+          "variance": 4.5,
+          "n_marks": 2,
+          "n_protocols": 2,
+          "n_dates": 2,
+          "best_place": 4.0,
+          "worst_place": 7.0,
+          "categories": "Ювеналы-2 E+D Соло Ж La; Ювеналы-2 E+D соло Ж La",
+          "judge_avg_place": 4.409,
+          "judge_std_deviation": 1.943,
+          "judge_variance": 3.777,
+          "judge_marks": 22,
+          "avg_place": 5.5,
+          "final_median_place": 5.5,
+          "final_std_deviation": 2.121,
+          "consistency_score": 0.32,
+          "volatility_score": 2.121,
+          "confidence": "low confidence"
+        }
+      ],
+      "best_by_final_average": null,
+      "best_by_median": null,
+      "most_stable_dance": null,
+      "best_peak": null,
+      "worst_by_final_average": null,
+      "judge_level_best": null,
+      "strongest_dance": null,
+      "weakest_dance": null,
+      "most_improved_dance": {
+        "program": "latin",
+        "dance": "R",
+        "trend_over_time": -5.0,
+        "first_date": "2025-09-28",
+        "first_avg_place": 7.0,
+        "last_date": "2025-10-12",
+        "last_avg_place": 2.0,
+        "first_to_last_delta": -5.0,
+        "n_dates": 2,
+        "confidence": "low confidence trend"
+      }
+    }
+  },
+  "judges": {
+    "strictest": [
+      {
+        "judge": "Филиппов Виталий",
+        "n_marks": 12,
+        "protocols": 3,
+        "avg_judge_mark": 5.083,
+        "avg_panel_mean": 4.773,
+        "avg_deviation": 0.311,
+        "strictness": 0.311,
+        "softness": -0.311,
+        "confidence": "ok"
+      }
+    ],
+    "softest": [
+      {
+        "judge": "Филиппов Виталий",
+        "n_marks": 12,
+        "protocols": 3,
+        "avg_judge_mark": 5.083,
+        "avg_panel_mean": 4.773,
+        "avg_deviation": 0.311,
+        "strictness": 0.311,
+        "softness": -0.311,
+        "confidence": "ok"
+      }
+    ],
+    "low_confidence": [
+      {
+        "judge": "Курило Иван",
+        "n_marks": 4,
+        "protocols": 1,
+        "avg_judge_mark": 5.5,
+        "avg_panel_mean": 3.273,
+        "avg_deviation": 2.227,
+        "strictness": 2.227,
+        "softness": -2.227,
+        "confidence": "low confidence"
+      },
+      {
+        "judge": "Агеева Наталья",
+        "n_marks": 4,
+        "protocols": 1,
+        "avg_judge_mark": 5.25,
+        "avg_panel_mean": 3.273,
+        "avg_deviation": 1.977,
+        "strictness": 1.977,
+        "softness": -1.977,
+        "confidence": "low confidence"
+      },
+      {
+        "judge": "Оскольских Татьяна",
+        "n_marks": 4,
+        "protocols": 1,
+        "avg_judge_mark": 5.25,
+        "avg_panel_mean": 3.273,
+        "avg_deviation": 1.977,
+        "strictness": 1.977,
+        "softness": -1.977,
+        "confidence": "low confidence"
+      },
+      {
+        "judge": "Ларченко Екатерина",
+        "n_marks": 8,
+        "protocols": 2,
+        "avg_judge_mark": 7.125,
+        "avg_panel_mean": 5.523,
+        "avg_deviation": 1.602,
+        "strictness": 1.602,
+        "softness": -1.602,
+        "confidence": "low confidence"
+      },
+      {
+        "judge": "Кабисов Тимур",
+        "n_marks": 8,
+        "protocols": 2,
+        "avg_judge_mark": 6.75,
+        "avg_panel_mean": 5.523,
+        "avg_deviation": 1.227,
+        "strictness": 1.227,
+        "softness": -1.227,
+        "confidence": "low confidence"
+      },
+      {
+        "judge": "Ютанов Василий",
+        "n_marks": 8,
+        "protocols": 2,
+        "avg_judge_mark": 6.375,
+        "avg_panel_mean": 5.523,
+        "avg_deviation": 0.852,
+        "strictness": 0.852,
+        "softness": -0.852,
+        "confidence": "low confidence"
+      },
+      {
+        "judge": "Жмерик Елена",
+        "n_marks": 4,
+        "protocols": 1,
+        "avg_judge_mark": 4.0,
+        "avg_panel_mean": 3.273,
+        "avg_deviation": 0.727,
+        "strictness": 0.727,
+        "softness": -0.727,
+        "confidence": "low confidence"
+      },
+      {
+        "judge": "Сперанский Валерий",
+        "n_marks": 8,
+        "protocols": 2,
+        "avg_judge_mark": 5.875,
+        "avg_panel_mean": 5.523,
+        "avg_deviation": 0.352,
+        "strictness": 0.352,
+        "softness": -0.352,
+        "confidence": "low confidence"
+      },
+      {
+        "judge": "Дюков Юрий",
+        "n_marks": 4,
+        "protocols": 1,
+        "avg_judge_mark": 3.5,
+        "avg_panel_mean": 3.273,
+        "avg_deviation": 0.227,
+        "strictness": 0.227,
+        "softness": -0.227,
+        "confidence": "low confidence"
+      },
+      {
+        "judge": "Чубарова Влада",
+        "n_marks": 4,
+        "protocols": 1,
+        "avg_judge_mark": 3.5,
+        "avg_panel_mean": 3.273,
+        "avg_deviation": 0.227,
+        "strictness": 0.227,
+        "softness": -0.227,
+        "confidence": "low confidence"
+      },
+      {
+        "judge": "Новичкова Валерия",
+        "n_marks": 8,
+        "protocols": 2,
+        "avg_judge_mark": 5.375,
+        "avg_panel_mean": 5.523,
+        "avg_deviation": -0.148,
+        "strictness": -0.148,
+        "softness": 0.148,
+        "confidence": "low confidence"
+      },
+      {
+        "judge": "Садковская Юлия",
+        "n_marks": 8,
+        "protocols": 2,
+        "avg_judge_mark": 5.375,
+        "avg_panel_mean": 5.523,
+        "avg_deviation": -0.148,
+        "strictness": -0.148,
+        "softness": 0.148,
+        "confidence": "low confidence"
+      },
+      {
+        "judge": "Кашина Анна",
+        "n_marks": 4,
+        "protocols": 1,
+        "avg_judge_mark": 2.75,
+        "avg_panel_mean": 3.273,
+        "avg_deviation": -0.523,
+        "strictness": -0.523,
+        "softness": 0.523,
+        "confidence": "low confidence"
+      },
+      {
+        "judge": "Оводов Сергей",
+        "n_marks": 4,
+        "protocols": 1,
+        "avg_judge_mark": 2.5,
+        "avg_panel_mean": 3.273,
+        "avg_deviation": -0.773,
+        "strictness": -0.773,
+        "softness": 0.773,
+        "confidence": "low confidence"
+      },
+      {
+        "judge": "Евсеева Татьяна",
+        "n_marks": 8,
+        "protocols": 2,
+        "avg_judge_mark": 4.5,
+        "avg_panel_mean": 5.523,
+        "avg_deviation": -1.023,
+        "strictness": -1.023,
+        "softness": 1.023,
+        "confidence": "low confidence"
+      },
+      {
+        "judge": "Карташева Анастасия",
+        "n_marks": 8,
+        "protocols": 2,
+        "avg_judge_mark": 4.5,
+        "avg_panel_mean": 5.523,
+        "avg_deviation": -1.023,
+        "strictness": -1.023,
+        "softness": 1.023,
+        "confidence": "low confidence"
+      },
+      {
+        "judge": "Замахаева Екатерина",
+        "n_marks": 8,
+        "protocols": 2,
+        "avg_judge_mark": 4.0,
+        "avg_panel_mean": 5.523,
+        "avg_deviation": -1.523,
+        "strictness": -1.523,
+        "softness": 1.523,
+        "confidence": "low confidence"
+      },
+      {
+        "judge": "Стратьева Юлия",
+        "n_marks": 4,
+        "protocols": 1,
+        "avg_judge_mark": 1.75,
+        "avg_panel_mean": 3.273,
+        "avg_deviation": -1.523,
+        "strictness": -1.523,
+        "softness": 1.523,
+        "confidence": "low confidence"
+      },
+      {
+        "judge": "Шумков Егор",
+        "n_marks": 8,
+        "protocols": 2,
+        "avg_judge_mark": 3.75,
+        "avg_panel_mean": 5.523,
+        "avg_deviation": -1.773,
+        "strictness": -1.773,
+        "softness": 1.773,
+        "confidence": "low confidence"
+      },
+      {
+        "judge": "Степовой Сергей",
+        "n_marks": 4,
+        "protocols": 1,
+        "avg_judge_mark": 1.0,
+        "avg_panel_mean": 3.273,
+        "avg_deviation": -2.273,
+        "strictness": -2.273,
+        "softness": 2.273,
+        "confidence": "low confidence"
+      }
+    ],
+    "by_program": {
+      "standard": {
+        "strictest": [],
+        "softest": []
+      },
+      "latin": {
+        "strictest": [],
+        "softest": []
+      }
+    }
+  },
+  "dances": {
+    "metrics": [
+      {
+        "program": "latin",
+        "dance": "C",
+        "final_avg_place": 5.5,
+        "median_place": 5.5,
+        "std_deviation": 2.121,
+        "variance": 4.5,
+        "n_marks": 2,
+        "n_protocols": 2,
+        "n_dates": 2,
+        "best_place": 4.0,
+        "worst_place": 7.0,
+        "categories": "Ювеналы-2 E+D Соло Ж La; Ювеналы-2 E+D соло Ж La",
+        "judge_avg_place": 4.591,
+        "judge_std_deviation": 2.085,
+        "judge_variance": 4.348,
+        "judge_marks": 22,
+        "avg_place": 5.5,
+        "final_median_place": 5.5,
+        "final_std_deviation": 2.121,
+        "consistency_score": 0.32,
+        "volatility_score": 2.121,
+        "confidence": "low confidence"
+      },
+      {
+        "program": "latin",
+        "dance": "J",
+        "final_avg_place": 5.0,
+        "median_place": 5.0,
+        "std_deviation": 2.828,
+        "variance": 8.0,
+        "n_marks": 2,
+        "n_protocols": 2,
+        "n_dates": 2,
+        "best_place": 3.0,
+        "worst_place": 7.0,
+        "categories": "Ювеналы-2 E+D Соло Ж La; Ювеналы-2 E+D соло Ж La",
+        "judge_avg_place": 4.364,
+        "judge_std_deviation": 1.965,
+        "judge_variance": 3.861,
+        "judge_marks": 22,
+        "avg_place": 5.0,
+        "final_median_place": 5.0,
+        "final_std_deviation": 2.828,
+        "consistency_score": 0.261,
+        "volatility_score": 2.828,
+        "confidence": "low confidence"
+      },
+      {
+        "program": "latin",
+        "dance": "R",
+        "final_avg_place": 4.5,
+        "median_place": 4.5,
+        "std_deviation": 3.536,
+        "variance": 12.5,
+        "n_marks": 2,
+        "n_protocols": 2,
+        "n_dates": 2,
+        "best_place": 2.0,
+        "worst_place": 7.0,
+        "categories": "Ювеналы-2 E+D Соло Ж La; Ювеналы-2 E+D соло Ж La",
+        "judge_avg_place": 4.136,
+        "judge_std_deviation": 2.054,
+        "judge_variance": 4.219,
+        "judge_marks": 22,
+        "avg_place": 4.5,
+        "final_median_place": 4.5,
+        "final_std_deviation": 3.536,
+        "consistency_score": 0.22,
+        "volatility_score": 3.536,
+        "confidence": "low confidence"
+      },
+      {
+        "program": "latin",
+        "dance": "S",
+        "final_avg_place": 5.5,
+        "median_place": 5.5,
+        "std_deviation": 2.121,
+        "variance": 4.5,
+        "n_marks": 2,
+        "n_protocols": 2,
+        "n_dates": 2,
+        "best_place": 4.0,
+        "worst_place": 7.0,
+        "categories": "Ювеналы-2 E+D Соло Ж La; Ювеналы-2 E+D соло Ж La",
+        "judge_avg_place": 4.409,
+        "judge_std_deviation": 1.943,
+        "judge_variance": 3.777,
+        "judge_marks": 22,
+        "avg_place": 5.5,
+        "final_median_place": 5.5,
+        "final_std_deviation": 2.121,
+        "consistency_score": 0.32,
+        "volatility_score": 2.121,
+        "confidence": "low confidence"
+      },
+      {
+        "program": "standard",
+        "dance": "F",
+        "final_avg_place": 8.0,
+        "median_place": 8.0,
+        "std_deviation": 0.0,
+        "variance": 0.0,
+        "n_marks": 1,
+        "n_protocols": 1,
+        "n_dates": 1,
+        "best_place": 8.0,
+        "worst_place": 8.0,
+        "categories": "Ювеналы-2 E+D Соло Ж St",
+        "judge_avg_place": 6.182,
+        "judge_std_deviation": 2.089,
+        "judge_variance": 4.364,
+        "judge_marks": 11,
+        "avg_place": 8.0,
+        "final_median_place": 8.0,
+        "final_std_deviation": null,
+        "consistency_score": 1.0,
+        "volatility_score": 0.0,
+        "confidence": "low confidence"
+      },
+      {
+        "program": "standard",
+        "dance": "Q",
+        "final_avg_place": 7.0,
+        "median_place": 7.0,
+        "std_deviation": 0.0,
+        "variance": 0.0,
+        "n_marks": 1,
+        "n_protocols": 1,
+        "n_dates": 1,
+        "best_place": 7.0,
+        "worst_place": 7.0,
+        "categories": "Ювеналы-2 E+D Соло Ж St",
+        "judge_avg_place": 5.727,
+        "judge_std_deviation": 2.195,
+        "judge_variance": 4.818,
+        "judge_marks": 11,
+        "avg_place": 7.0,
+        "final_median_place": 7.0,
+        "final_std_deviation": null,
+        "consistency_score": 1.0,
+        "volatility_score": 0.0,
+        "confidence": "low confidence"
+      },
+      {
+        "program": "standard",
+        "dance": "T",
+        "final_avg_place": 8.0,
+        "median_place": 8.0,
+        "std_deviation": 0.0,
+        "variance": 0.0,
+        "n_marks": 1,
+        "n_protocols": 1,
+        "n_dates": 1,
+        "best_place": 8.0,
+        "worst_place": 8.0,
+        "categories": "Ювеналы-2 E+D Соло Ж St",
+        "judge_avg_place": 5.909,
+        "judge_std_deviation": 2.3,
+        "judge_variance": 5.291,
+        "judge_marks": 11,
+        "avg_place": 8.0,
+        "final_median_place": 8.0,
+        "final_std_deviation": null,
+        "consistency_score": 1.0,
+        "volatility_score": 0.0,
+        "confidence": "low confidence"
+      },
+      {
+        "program": "standard",
+        "dance": "W",
+        "final_avg_place": 3.0,
+        "median_place": 3.0,
+        "std_deviation": 0.0,
+        "variance": 0.0,
+        "n_marks": 1,
+        "n_protocols": 1,
+        "n_dates": 1,
+        "best_place": 3.0,
+        "worst_place": 3.0,
+        "categories": "Ювеналы-2 E+D Соло Ж St",
+        "judge_avg_place": 4.455,
+        "judge_std_deviation": 2.423,
+        "judge_variance": 5.873,
+        "judge_marks": 11,
+        "avg_place": 3.0,
+        "final_median_place": 3.0,
+        "final_std_deviation": null,
+        "consistency_score": 1.0,
+        "volatility_score": 0.0,
+        "confidence": "low confidence"
+      }
+    ],
+    "trends": [
+      {
+        "program": "latin",
+        "dance": "R",
+        "trend_over_time": -5.0,
+        "first_date": "2025-09-28",
+        "first_avg_place": 7.0,
+        "last_date": "2025-10-12",
+        "last_avg_place": 2.0,
+        "first_to_last_delta": -5.0,
+        "n_dates": 2,
+        "confidence": "low confidence trend"
+      },
+      {
+        "program": "latin",
+        "dance": "J",
+        "trend_over_time": -4.0,
+        "first_date": "2025-09-28",
+        "first_avg_place": 7.0,
+        "last_date": "2025-10-12",
+        "last_avg_place": 3.0,
+        "first_to_last_delta": -4.0,
+        "n_dates": 2,
+        "confidence": "low confidence trend"
+      },
+      {
+        "program": "latin",
+        "dance": "C",
+        "trend_over_time": -3.0,
+        "first_date": "2025-09-28",
+        "first_avg_place": 7.0,
+        "last_date": "2025-10-12",
+        "last_avg_place": 4.0,
+        "first_to_last_delta": -3.0,
+        "n_dates": 2,
+        "confidence": "low confidence trend"
+      },
+      {
+        "program": "latin",
+        "dance": "S",
+        "trend_over_time": -3.0,
+        "first_date": "2025-09-28",
+        "first_avg_place": 7.0,
+        "last_date": "2025-10-12",
+        "last_avg_place": 4.0,
+        "first_to_last_delta": -3.0,
+        "n_dates": 2,
+        "confidence": "low confidence trend"
+      },
+      {
+        "program": "standard",
+        "dance": "F",
+        "trend_over_time": null,
+        "first_date": "2025-09-28",
+        "first_avg_place": 8.0,
+        "last_date": "2025-09-28",
+        "last_avg_place": 8.0,
+        "first_to_last_delta": 0.0,
+        "n_dates": 1,
+        "confidence": "insufficient trend"
+      },
+      {
+        "program": "standard",
+        "dance": "Q",
+        "trend_over_time": null,
+        "first_date": "2025-09-28",
+        "first_avg_place": 7.0,
+        "last_date": "2025-09-28",
+        "last_avg_place": 7.0,
+        "first_to_last_delta": 0.0,
+        "n_dates": 1,
+        "confidence": "insufficient trend"
+      },
+      {
+        "program": "standard",
+        "dance": "T",
+        "trend_over_time": null,
+        "first_date": "2025-09-28",
+        "first_avg_place": 8.0,
+        "last_date": "2025-09-28",
+        "last_avg_place": 8.0,
+        "first_to_last_delta": 0.0,
+        "n_dates": 1,
+        "confidence": "insufficient trend"
+      },
+      {
+        "program": "standard",
+        "dance": "W",
+        "trend_over_time": null,
+        "first_date": "2025-09-28",
+        "first_avg_place": 3.0,
+        "last_date": "2025-09-28",
+        "last_avg_place": 3.0,
+        "first_to_last_delta": 0.0,
+        "n_dates": 1,
+        "confidence": "insufficient trend"
+      }
+    ],
+    "dynamics_by_date": [
+      {
+        "program": "latin",
+        "dance": "C",
+        "event_date": "2025-09-28",
+        "avg_place": 7.0,
+        "final_avg_place": 7.0,
+        "median_place": 7.0,
+        "n_marks": 1,
+        "n_protocols": 1,
+        "rolling_average": 7.0,
+        "tournament_to_tournament_delta": null
+      },
+      {
+        "program": "latin",
+        "dance": "C",
+        "event_date": "2025-10-12",
+        "avg_place": 4.0,
+        "final_avg_place": 4.0,
+        "median_place": 4.0,
+        "n_marks": 1,
+        "n_protocols": 1,
+        "rolling_average": 5.5,
+        "tournament_to_tournament_delta": -3.0
+      },
+      {
+        "program": "latin",
+        "dance": "J",
+        "event_date": "2025-09-28",
+        "avg_place": 7.0,
+        "final_avg_place": 7.0,
+        "median_place": 7.0,
+        "n_marks": 1,
+        "n_protocols": 1,
+        "rolling_average": 7.0,
+        "tournament_to_tournament_delta": null
+      },
+      {
+        "program": "latin",
+        "dance": "J",
+        "event_date": "2025-10-12",
+        "avg_place": 3.0,
+        "final_avg_place": 3.0,
+        "median_place": 3.0,
+        "n_marks": 1,
+        "n_protocols": 1,
+        "rolling_average": 5.0,
+        "tournament_to_tournament_delta": -4.0
+      },
+      {
+        "program": "latin",
+        "dance": "R",
+        "event_date": "2025-09-28",
+        "avg_place": 7.0,
+        "final_avg_place": 7.0,
+        "median_place": 7.0,
+        "n_marks": 1,
+        "n_protocols": 1,
+        "rolling_average": 7.0,
+        "tournament_to_tournament_delta": null
+      },
+      {
+        "program": "latin",
+        "dance": "R",
+        "event_date": "2025-10-12",
+        "avg_place": 2.0,
+        "final_avg_place": 2.0,
+        "median_place": 2.0,
+        "n_marks": 1,
+        "n_protocols": 1,
+        "rolling_average": 4.5,
+        "tournament_to_tournament_delta": -5.0
+      },
+      {
+        "program": "latin",
+        "dance": "S",
+        "event_date": "2025-09-28",
+        "avg_place": 7.0,
+        "final_avg_place": 7.0,
+        "median_place": 7.0,
+        "n_marks": 1,
+        "n_protocols": 1,
+        "rolling_average": 7.0,
+        "tournament_to_tournament_delta": null
+      },
+      {
+        "program": "latin",
+        "dance": "S",
+        "event_date": "2025-10-12",
+        "avg_place": 4.0,
+        "final_avg_place": 4.0,
+        "median_place": 4.0,
+        "n_marks": 1,
+        "n_protocols": 1,
+        "rolling_average": 5.5,
+        "tournament_to_tournament_delta": -3.0
+      },
+      {
+        "program": "standard",
+        "dance": "F",
+        "event_date": "2025-09-28",
+        "avg_place": 8.0,
+        "final_avg_place": 8.0,
+        "median_place": 8.0,
+        "n_marks": 1,
+        "n_protocols": 1,
+        "rolling_average": 8.0,
+        "tournament_to_tournament_delta": null
+      },
+      {
+        "program": "standard",
+        "dance": "Q",
+        "event_date": "2025-09-28",
+        "avg_place": 7.0,
+        "final_avg_place": 7.0,
+        "median_place": 7.0,
+        "n_marks": 1,
+        "n_protocols": 1,
+        "rolling_average": 7.0,
+        "tournament_to_tournament_delta": null
+      },
+      {
+        "program": "standard",
+        "dance": "T",
+        "event_date": "2025-09-28",
+        "avg_place": 8.0,
+        "final_avg_place": 8.0,
+        "median_place": 8.0,
+        "n_marks": 1,
+        "n_protocols": 1,
+        "rolling_average": 8.0,
+        "tournament_to_tournament_delta": null
+      },
+      {
+        "program": "standard",
+        "dance": "W",
+        "event_date": "2025-09-28",
+        "avg_place": 3.0,
+        "final_avg_place": 3.0,
+        "median_place": 3.0,
+        "n_marks": 1,
+        "n_protocols": 1,
+        "rolling_average": 3.0,
+        "tournament_to_tournament_delta": null
+      }
+    ]
+  },
+  "category_slices": {
+    "standard": {
+      "all": {
+        "metrics": [
+          {
+            "program": "standard",
+            "dance": "F",
+            "final_avg_place": 8.0,
+            "median_place": 8.0,
+            "std_deviation": 0.0,
+            "variance": 0.0,
+            "n_marks": 1,
+            "n_protocols": 1,
+            "n_dates": 1,
+            "best_place": 8.0,
+            "worst_place": 8.0,
+            "categories": "Ювеналы-2 E+D Соло Ж St",
+            "judge_avg_place": 6.182,
+            "judge_std_deviation": 2.089,
+            "judge_variance": 4.364,
+            "judge_marks": 11,
+            "avg_place": 8.0,
+            "final_median_place": 8.0,
+            "final_std_deviation": null,
+            "consistency_score": 1.0,
+            "volatility_score": 0.0,
+            "confidence": "low confidence"
+          },
+          {
+            "program": "standard",
+            "dance": "Q",
+            "final_avg_place": 7.0,
+            "median_place": 7.0,
+            "std_deviation": 0.0,
+            "variance": 0.0,
+            "n_marks": 1,
+            "n_protocols": 1,
+            "n_dates": 1,
+            "best_place": 7.0,
+            "worst_place": 7.0,
+            "categories": "Ювеналы-2 E+D Соло Ж St",
+            "judge_avg_place": 5.727,
+            "judge_std_deviation": 2.195,
+            "judge_variance": 4.818,
+            "judge_marks": 11,
+            "avg_place": 7.0,
+            "final_median_place": 7.0,
+            "final_std_deviation": null,
+            "consistency_score": 1.0,
+            "volatility_score": 0.0,
+            "confidence": "low confidence"
+          },
+          {
+            "program": "standard",
+            "dance": "T",
+            "final_avg_place": 8.0,
+            "median_place": 8.0,
+            "std_deviation": 0.0,
+            "variance": 0.0,
+            "n_marks": 1,
+            "n_protocols": 1,
+            "n_dates": 1,
+            "best_place": 8.0,
+            "worst_place": 8.0,
+            "categories": "Ювеналы-2 E+D Соло Ж St",
+            "judge_avg_place": 5.909,
+            "judge_std_deviation": 2.3,
+            "judge_variance": 5.291,
+            "judge_marks": 11,
+            "avg_place": 8.0,
+            "final_median_place": 8.0,
+            "final_std_deviation": null,
+            "consistency_score": 1.0,
+            "volatility_score": 0.0,
+            "confidence": "low confidence"
+          },
+          {
+            "program": "standard",
+            "dance": "W",
+            "final_avg_place": 3.0,
+            "median_place": 3.0,
+            "std_deviation": 0.0,
+            "variance": 0.0,
+            "n_marks": 1,
+            "n_protocols": 1,
+            "n_dates": 1,
+            "best_place": 3.0,
+            "worst_place": 3.0,
+            "categories": "Ювеналы-2 E+D Соло Ж St",
+            "judge_avg_place": 4.455,
+            "judge_std_deviation": 2.423,
+            "judge_variance": 5.873,
+            "judge_marks": 11,
+            "avg_place": 3.0,
+            "final_median_place": 3.0,
+            "final_std_deviation": null,
+            "consistency_score": 1.0,
+            "volatility_score": 0.0,
+            "confidence": "low confidence"
+          }
+        ],
+        "best_by_final_average": null,
+        "best_by_median": null,
+        "most_stable_dance": null,
+        "best_peak": null,
+        "worst_by_final_average": null,
+        "judge_level_best": null,
+        "strongest_dance": null,
+        "weakest_dance": null,
+        "most_improved_dance": null,
+        "key": "all",
+        "label": "Все категории",
+        "source": "selected_dancer_marks_and_results",
+        "class_group": null,
+        "age_groups": [
+          "Ювеналы-1+2",
+          "Ювеналы-2"
+        ],
+        "source_categories": [
+          "Ювеналы-1+2 E+D Соло Ж St",
+          "Ювеналы-1+2 E+D соло Ж St",
+          "Ювеналы-2 E+D Соло Ж St",
+          "Ювеналы-2 E+D соло Ж St"
+        ],
+        "protocol_count": 1,
+        "tournament_count": 1,
+        "evidence": {
+          "tournaments": 7,
+          "protocols": 7,
+          "marks": 193,
+          "results": 4
+        },
+        "dynamics_by_date": [
+          {
+            "program": "standard",
+            "dance": "F",
+            "event_date": "2025-09-28",
+            "avg_place": 8.0,
+            "final_avg_place": 8.0,
+            "median_place": 8.0,
+            "n_marks": 1,
+            "n_protocols": 1,
+            "rolling_average": 8.0,
+            "tournament_to_tournament_delta": null
+          },
+          {
+            "program": "standard",
+            "dance": "Q",
+            "event_date": "2025-09-28",
+            "avg_place": 7.0,
+            "final_avg_place": 7.0,
+            "median_place": 7.0,
+            "n_marks": 1,
+            "n_protocols": 1,
+            "rolling_average": 7.0,
+            "tournament_to_tournament_delta": null
+          },
+          {
+            "program": "standard",
+            "dance": "T",
+            "event_date": "2025-09-28",
+            "avg_place": 8.0,
+            "final_avg_place": 8.0,
+            "median_place": 8.0,
+            "n_marks": 1,
+            "n_protocols": 1,
+            "rolling_average": 8.0,
+            "tournament_to_tournament_delta": null
+          },
+          {
+            "program": "standard",
+            "dance": "W",
+            "event_date": "2025-09-28",
+            "avg_place": 3.0,
+            "final_avg_place": 3.0,
+            "median_place": 3.0,
+            "n_marks": 1,
+            "n_protocols": 1,
+            "rolling_average": 3.0,
+            "tournament_to_tournament_delta": null
+          }
+        ],
+        "trends": [
+          {
+            "program": "standard",
+            "dance": "F",
+            "trend_over_time": null,
+            "first_date": "2025-09-28",
+            "first_avg_place": 8.0,
+            "last_date": "2025-09-28",
+            "last_avg_place": 8.0,
+            "first_to_last_delta": 0.0,
+            "n_dates": 1,
+            "confidence": "insufficient trend"
+          },
+          {
+            "program": "standard",
+            "dance": "Q",
+            "trend_over_time": null,
+            "first_date": "2025-09-28",
+            "first_avg_place": 7.0,
+            "last_date": "2025-09-28",
+            "last_avg_place": 7.0,
+            "first_to_last_delta": 0.0,
+            "n_dates": 1,
+            "confidence": "insufficient trend"
+          },
+          {
+            "program": "standard",
+            "dance": "T",
+            "trend_over_time": null,
+            "first_date": "2025-09-28",
+            "first_avg_place": 8.0,
+            "last_date": "2025-09-28",
+            "last_avg_place": 8.0,
+            "first_to_last_delta": 0.0,
+            "n_dates": 1,
+            "confidence": "insufficient trend"
+          },
+          {
+            "program": "standard",
+            "dance": "W",
+            "trend_over_time": null,
+            "first_date": "2025-09-28",
+            "first_avg_place": 3.0,
+            "last_date": "2025-09-28",
+            "last_avg_place": 3.0,
+            "first_to_last_delta": 0.0,
+            "n_dates": 1,
+            "confidence": "insufficient trend"
+          }
+        ],
+        "tournament_dance_results": [
+          {
+            "event_date": "2025-09-28",
+            "tournament_id": 2025092800,
+            "tournament_title": "Северный кубок 2025 (Санкт-Петербург)",
+            "protocol_id": 73071,
+            "category": "Ювеналы-2 E+D Соло Ж St",
+            "program": "standard",
+            "dance": "W",
+            "final_place": 3.0,
+            "best_place": 3.0,
+            "worst_place": 3.0,
+            "n_results": 1,
+            "judge_marks": 11,
+            "dance_code": "W"
+          },
+          {
+            "event_date": "2025-09-28",
+            "tournament_id": 2025092800,
+            "tournament_title": "Северный кубок 2025 (Санкт-Петербург)",
+            "protocol_id": 73071,
+            "category": "Ювеналы-2 E+D Соло Ж St",
+            "program": "standard",
+            "dance": "T",
+            "final_place": 8.0,
+            "best_place": 8.0,
+            "worst_place": 8.0,
+            "n_results": 1,
+            "judge_marks": 11,
+            "dance_code": "T"
+          },
+          {
+            "event_date": "2025-09-28",
+            "tournament_id": 2025092800,
+            "tournament_title": "Северный кубок 2025 (Санкт-Петербург)",
+            "protocol_id": 73071,
+            "category": "Ювеналы-2 E+D Соло Ж St",
+            "program": "standard",
+            "dance": "F",
+            "final_place": 8.0,
+            "best_place": 8.0,
+            "worst_place": 8.0,
+            "n_results": 1,
+            "judge_marks": 11,
+            "dance_code": "F"
+          },
+          {
+            "event_date": "2025-09-28",
+            "tournament_id": 2025092800,
+            "tournament_title": "Северный кубок 2025 (Санкт-Петербург)",
+            "protocol_id": 73071,
+            "category": "Ювеналы-2 E+D Соло Ж St",
+            "program": "standard",
+            "dance": "Q",
+            "final_place": 7.0,
+            "best_place": 7.0,
+            "worst_place": 7.0,
+            "n_results": 1,
+            "judge_marks": 11,
+            "dance_code": "Q"
+          }
+        ]
+      },
+      "e_d": {
+        "metrics": [
+          {
+            "program": "standard",
+            "dance": "F",
+            "final_avg_place": 8.0,
+            "median_place": 8.0,
+            "std_deviation": 0.0,
+            "variance": 0.0,
+            "n_marks": 1,
+            "n_protocols": 1,
+            "n_dates": 1,
+            "best_place": 8.0,
+            "worst_place": 8.0,
+            "categories": "Ювеналы-2 E+D Соло Ж St",
+            "judge_avg_place": 6.182,
+            "judge_std_deviation": 2.089,
+            "judge_variance": 4.364,
+            "judge_marks": 11,
+            "avg_place": 8.0,
+            "final_median_place": 8.0,
+            "final_std_deviation": null,
+            "consistency_score": 1.0,
+            "volatility_score": 0.0,
+            "confidence": "low confidence"
+          },
+          {
+            "program": "standard",
+            "dance": "Q",
+            "final_avg_place": 7.0,
+            "median_place": 7.0,
+            "std_deviation": 0.0,
+            "variance": 0.0,
+            "n_marks": 1,
+            "n_protocols": 1,
+            "n_dates": 1,
+            "best_place": 7.0,
+            "worst_place": 7.0,
+            "categories": "Ювеналы-2 E+D Соло Ж St",
+            "judge_avg_place": 5.727,
+            "judge_std_deviation": 2.195,
+            "judge_variance": 4.818,
+            "judge_marks": 11,
+            "avg_place": 7.0,
+            "final_median_place": 7.0,
+            "final_std_deviation": null,
+            "consistency_score": 1.0,
+            "volatility_score": 0.0,
+            "confidence": "low confidence"
+          },
+          {
+            "program": "standard",
+            "dance": "T",
+            "final_avg_place": 8.0,
+            "median_place": 8.0,
+            "std_deviation": 0.0,
+            "variance": 0.0,
+            "n_marks": 1,
+            "n_protocols": 1,
+            "n_dates": 1,
+            "best_place": 8.0,
+            "worst_place": 8.0,
+            "categories": "Ювеналы-2 E+D Соло Ж St",
+            "judge_avg_place": 5.909,
+            "judge_std_deviation": 2.3,
+            "judge_variance": 5.291,
+            "judge_marks": 11,
+            "avg_place": 8.0,
+            "final_median_place": 8.0,
+            "final_std_deviation": null,
+            "consistency_score": 1.0,
+            "volatility_score": 0.0,
+            "confidence": "low confidence"
+          },
+          {
+            "program": "standard",
+            "dance": "W",
+            "final_avg_place": 3.0,
+            "median_place": 3.0,
+            "std_deviation": 0.0,
+            "variance": 0.0,
+            "n_marks": 1,
+            "n_protocols": 1,
+            "n_dates": 1,
+            "best_place": 3.0,
+            "worst_place": 3.0,
+            "categories": "Ювеналы-2 E+D Соло Ж St",
+            "judge_avg_place": 4.455,
+            "judge_std_deviation": 2.423,
+            "judge_variance": 5.873,
+            "judge_marks": 11,
+            "avg_place": 3.0,
+            "final_median_place": 3.0,
+            "final_std_deviation": null,
+            "consistency_score": 1.0,
+            "volatility_score": 0.0,
+            "confidence": "low confidence"
+          }
+        ],
+        "best_by_final_average": null,
+        "best_by_median": null,
+        "most_stable_dance": null,
+        "best_peak": null,
+        "worst_by_final_average": null,
+        "judge_level_best": null,
+        "strongest_dance": null,
+        "weakest_dance": null,
+        "most_improved_dance": null,
+        "key": "e_d",
+        "label": "E+D",
+        "source": "selected_dancer_marks_and_results",
+        "class_group": "E+D",
+        "age_groups": [
+          "Ювеналы-1+2",
+          "Ювеналы-2"
+        ],
+        "source_categories": [
+          "Ювеналы-1+2 E+D Соло Ж St",
+          "Ювеналы-1+2 E+D соло Ж St",
+          "Ювеналы-2 E+D Соло Ж St",
+          "Ювеналы-2 E+D соло Ж St"
+        ],
+        "protocol_count": 1,
+        "tournament_count": 1,
+        "evidence": {
+          "tournaments": 7,
+          "protocols": 7,
+          "marks": 193,
+          "results": 4
+        },
+        "dynamics_by_date": [
+          {
+            "program": "standard",
+            "dance": "F",
+            "event_date": "2025-09-28",
+            "avg_place": 8.0,
+            "final_avg_place": 8.0,
+            "median_place": 8.0,
+            "n_marks": 1,
+            "n_protocols": 1,
+            "rolling_average": 8.0,
+            "tournament_to_tournament_delta": null
+          },
+          {
+            "program": "standard",
+            "dance": "Q",
+            "event_date": "2025-09-28",
+            "avg_place": 7.0,
+            "final_avg_place": 7.0,
+            "median_place": 7.0,
+            "n_marks": 1,
+            "n_protocols": 1,
+            "rolling_average": 7.0,
+            "tournament_to_tournament_delta": null
+          },
+          {
+            "program": "standard",
+            "dance": "T",
+            "event_date": "2025-09-28",
+            "avg_place": 8.0,
+            "final_avg_place": 8.0,
+            "median_place": 8.0,
+            "n_marks": 1,
+            "n_protocols": 1,
+            "rolling_average": 8.0,
+            "tournament_to_tournament_delta": null
+          },
+          {
+            "program": "standard",
+            "dance": "W",
+            "event_date": "2025-09-28",
+            "avg_place": 3.0,
+            "final_avg_place": 3.0,
+            "median_place": 3.0,
+            "n_marks": 1,
+            "n_protocols": 1,
+            "rolling_average": 3.0,
+            "tournament_to_tournament_delta": null
+          }
+        ],
+        "trends": [
+          {
+            "program": "standard",
+            "dance": "F",
+            "trend_over_time": null,
+            "first_date": "2025-09-28",
+            "first_avg_place": 8.0,
+            "last_date": "2025-09-28",
+            "last_avg_place": 8.0,
+            "first_to_last_delta": 0.0,
+            "n_dates": 1,
+            "confidence": "insufficient trend"
+          },
+          {
+            "program": "standard",
+            "dance": "Q",
+            "trend_over_time": null,
+            "first_date": "2025-09-28",
+            "first_avg_place": 7.0,
+            "last_date": "2025-09-28",
+            "last_avg_place": 7.0,
+            "first_to_last_delta": 0.0,
+            "n_dates": 1,
+            "confidence": "insufficient trend"
+          },
+          {
+            "program": "standard",
+            "dance": "T",
+            "trend_over_time": null,
+            "first_date": "2025-09-28",
+            "first_avg_place": 8.0,
+            "last_date": "2025-09-28",
+            "last_avg_place": 8.0,
+            "first_to_last_delta": 0.0,
+            "n_dates": 1,
+            "confidence": "insufficient trend"
+          },
+          {
+            "program": "standard",
+            "dance": "W",
+            "trend_over_time": null,
+            "first_date": "2025-09-28",
+            "first_avg_place": 3.0,
+            "last_date": "2025-09-28",
+            "last_avg_place": 3.0,
+            "first_to_last_delta": 0.0,
+            "n_dates": 1,
+            "confidence": "insufficient trend"
+          }
+        ],
+        "tournament_dance_results": [
+          {
+            "event_date": "2025-09-28",
+            "tournament_id": 2025092800,
+            "tournament_title": "Северный кубок 2025 (Санкт-Петербург)",
+            "protocol_id": 73071,
+            "category": "Ювеналы-2 E+D Соло Ж St",
+            "program": "standard",
+            "dance": "W",
+            "final_place": 3.0,
+            "best_place": 3.0,
+            "worst_place": 3.0,
+            "n_results": 1,
+            "judge_marks": 11,
+            "dance_code": "W"
+          },
+          {
+            "event_date": "2025-09-28",
+            "tournament_id": 2025092800,
+            "tournament_title": "Северный кубок 2025 (Санкт-Петербург)",
+            "protocol_id": 73071,
+            "category": "Ювеналы-2 E+D Соло Ж St",
+            "program": "standard",
+            "dance": "T",
+            "final_place": 8.0,
+            "best_place": 8.0,
+            "worst_place": 8.0,
+            "n_results": 1,
+            "judge_marks": 11,
+            "dance_code": "T"
+          },
+          {
+            "event_date": "2025-09-28",
+            "tournament_id": 2025092800,
+            "tournament_title": "Северный кубок 2025 (Санкт-Петербург)",
+            "protocol_id": 73071,
+            "category": "Ювеналы-2 E+D Соло Ж St",
+            "program": "standard",
+            "dance": "F",
+            "final_place": 8.0,
+            "best_place": 8.0,
+            "worst_place": 8.0,
+            "n_results": 1,
+            "judge_marks": 11,
+            "dance_code": "F"
+          },
+          {
+            "event_date": "2025-09-28",
+            "tournament_id": 2025092800,
+            "tournament_title": "Северный кубок 2025 (Санкт-Петербург)",
+            "protocol_id": 73071,
+            "category": "Ювеналы-2 E+D Соло Ж St",
+            "program": "standard",
+            "dance": "Q",
+            "final_place": 7.0,
+            "best_place": 7.0,
+            "worst_place": 7.0,
+            "n_results": 1,
+            "judge_marks": 11,
+            "dance_code": "Q"
+          }
+        ]
+      }
+    },
+    "latin": {
+      "all": {
+        "metrics": [
+          {
+            "program": "latin",
+            "dance": "C",
+            "final_avg_place": 5.5,
+            "median_place": 5.5,
+            "std_deviation": 2.121,
+            "variance": 4.5,
+            "n_marks": 2,
+            "n_protocols": 2,
+            "n_dates": 2,
+            "best_place": 4.0,
+            "worst_place": 7.0,
+            "categories": "Ювеналы-2 E+D Соло Ж La; Ювеналы-2 E+D соло Ж La",
+            "judge_avg_place": 4.591,
+            "judge_std_deviation": 2.085,
+            "judge_variance": 4.348,
+            "judge_marks": 22,
+            "avg_place": 5.5,
+            "final_median_place": 5.5,
+            "final_std_deviation": 2.121,
+            "consistency_score": 0.32,
+            "volatility_score": 2.121,
+            "confidence": "low confidence"
+          },
+          {
+            "program": "latin",
+            "dance": "J",
+            "final_avg_place": 5.0,
+            "median_place": 5.0,
+            "std_deviation": 2.828,
+            "variance": 8.0,
+            "n_marks": 2,
+            "n_protocols": 2,
+            "n_dates": 2,
+            "best_place": 3.0,
+            "worst_place": 7.0,
+            "categories": "Ювеналы-2 E+D Соло Ж La; Ювеналы-2 E+D соло Ж La",
+            "judge_avg_place": 4.364,
+            "judge_std_deviation": 1.965,
+            "judge_variance": 3.861,
+            "judge_marks": 22,
+            "avg_place": 5.0,
+            "final_median_place": 5.0,
+            "final_std_deviation": 2.828,
+            "consistency_score": 0.261,
+            "volatility_score": 2.828,
+            "confidence": "low confidence"
+          },
+          {
+            "program": "latin",
+            "dance": "R",
+            "final_avg_place": 4.5,
+            "median_place": 4.5,
+            "std_deviation": 3.536,
+            "variance": 12.5,
+            "n_marks": 2,
+            "n_protocols": 2,
+            "n_dates": 2,
+            "best_place": 2.0,
+            "worst_place": 7.0,
+            "categories": "Ювеналы-2 E+D Соло Ж La; Ювеналы-2 E+D соло Ж La",
+            "judge_avg_place": 4.136,
+            "judge_std_deviation": 2.054,
+            "judge_variance": 4.219,
+            "judge_marks": 22,
+            "avg_place": 4.5,
+            "final_median_place": 4.5,
+            "final_std_deviation": 3.536,
+            "consistency_score": 0.22,
+            "volatility_score": 3.536,
+            "confidence": "low confidence"
+          },
+          {
+            "program": "latin",
+            "dance": "S",
+            "final_avg_place": 5.5,
+            "median_place": 5.5,
+            "std_deviation": 2.121,
+            "variance": 4.5,
+            "n_marks": 2,
+            "n_protocols": 2,
+            "n_dates": 2,
+            "best_place": 4.0,
+            "worst_place": 7.0,
+            "categories": "Ювеналы-2 E+D Соло Ж La; Ювеналы-2 E+D соло Ж La",
+            "judge_avg_place": 4.409,
+            "judge_std_deviation": 1.943,
+            "judge_variance": 3.777,
+            "judge_marks": 22,
+            "avg_place": 5.5,
+            "final_median_place": 5.5,
+            "final_std_deviation": 2.121,
+            "consistency_score": 0.32,
+            "volatility_score": 2.121,
+            "confidence": "low confidence"
+          }
+        ],
+        "best_by_final_average": null,
+        "best_by_median": null,
+        "most_stable_dance": null,
+        "best_peak": null,
+        "worst_by_final_average": null,
+        "judge_level_best": null,
+        "strongest_dance": null,
+        "weakest_dance": null,
+        "most_improved_dance": {
+          "program": "latin",
+          "dance": "R",
+          "trend_over_time": -5.0,
+          "first_date": "2025-09-28",
+          "first_avg_place": 7.0,
+          "last_date": "2025-10-12",
+          "last_avg_place": 2.0,
+          "first_to_last_delta": -5.0,
+          "n_dates": 2,
+          "confidence": "low confidence trend"
+        },
+        "key": "all",
+        "label": "Все категории",
+        "source": "selected_dancer_marks_and_results",
+        "class_group": null,
+        "age_groups": [
+          "Ювеналы-1+2",
+          "Ювеналы-2"
+        ],
+        "source_categories": [
+          "Ювеналы-1+2 E+D Соло Ж La",
+          "Ювеналы-1+2 E+D соло Ж La",
+          "Ювеналы-2 E+D Соло Ж La",
+          "Ювеналы-2 E+D соло Ж La"
+        ],
+        "protocol_count": 2,
+        "tournament_count": 2,
+        "evidence": {
+          "tournaments": 6,
+          "protocols": 6,
+          "marks": 299,
+          "results": 8
+        },
+        "dynamics_by_date": [
+          {
+            "program": "latin",
+            "dance": "C",
+            "event_date": "2025-09-28",
+            "avg_place": 7.0,
+            "final_avg_place": 7.0,
+            "median_place": 7.0,
+            "n_marks": 1,
+            "n_protocols": 1,
+            "rolling_average": 7.0,
+            "tournament_to_tournament_delta": null
+          },
+          {
+            "program": "latin",
+            "dance": "C",
+            "event_date": "2025-10-12",
+            "avg_place": 4.0,
+            "final_avg_place": 4.0,
+            "median_place": 4.0,
+            "n_marks": 1,
+            "n_protocols": 1,
+            "rolling_average": 5.5,
+            "tournament_to_tournament_delta": -3.0
+          },
+          {
+            "program": "latin",
+            "dance": "J",
+            "event_date": "2025-09-28",
+            "avg_place": 7.0,
+            "final_avg_place": 7.0,
+            "median_place": 7.0,
+            "n_marks": 1,
+            "n_protocols": 1,
+            "rolling_average": 7.0,
+            "tournament_to_tournament_delta": null
+          },
+          {
+            "program": "latin",
+            "dance": "J",
+            "event_date": "2025-10-12",
+            "avg_place": 3.0,
+            "final_avg_place": 3.0,
+            "median_place": 3.0,
+            "n_marks": 1,
+            "n_protocols": 1,
+            "rolling_average": 5.0,
+            "tournament_to_tournament_delta": -4.0
+          },
+          {
+            "program": "latin",
+            "dance": "R",
+            "event_date": "2025-09-28",
+            "avg_place": 7.0,
+            "final_avg_place": 7.0,
+            "median_place": 7.0,
+            "n_marks": 1,
+            "n_protocols": 1,
+            "rolling_average": 7.0,
+            "tournament_to_tournament_delta": null
+          },
+          {
+            "program": "latin",
+            "dance": "R",
+            "event_date": "2025-10-12",
+            "avg_place": 2.0,
+            "final_avg_place": 2.0,
+            "median_place": 2.0,
+            "n_marks": 1,
+            "n_protocols": 1,
+            "rolling_average": 4.5,
+            "tournament_to_tournament_delta": -5.0
+          },
+          {
+            "program": "latin",
+            "dance": "S",
+            "event_date": "2025-09-28",
+            "avg_place": 7.0,
+            "final_avg_place": 7.0,
+            "median_place": 7.0,
+            "n_marks": 1,
+            "n_protocols": 1,
+            "rolling_average": 7.0,
+            "tournament_to_tournament_delta": null
+          },
+          {
+            "program": "latin",
+            "dance": "S",
+            "event_date": "2025-10-12",
+            "avg_place": 4.0,
+            "final_avg_place": 4.0,
+            "median_place": 4.0,
+            "n_marks": 1,
+            "n_protocols": 1,
+            "rolling_average": 5.5,
+            "tournament_to_tournament_delta": -3.0
+          }
+        ],
+        "trends": [
+          {
+            "program": "latin",
+            "dance": "R",
+            "trend_over_time": -5.0,
+            "first_date": "2025-09-28",
+            "first_avg_place": 7.0,
+            "last_date": "2025-10-12",
+            "last_avg_place": 2.0,
+            "first_to_last_delta": -5.0,
+            "n_dates": 2,
+            "confidence": "low confidence trend"
+          },
+          {
+            "program": "latin",
+            "dance": "J",
+            "trend_over_time": -4.0,
+            "first_date": "2025-09-28",
+            "first_avg_place": 7.0,
+            "last_date": "2025-10-12",
+            "last_avg_place": 3.0,
+            "first_to_last_delta": -4.0,
+            "n_dates": 2,
+            "confidence": "low confidence trend"
+          },
+          {
+            "program": "latin",
+            "dance": "C",
+            "trend_over_time": -3.0,
+            "first_date": "2025-09-28",
+            "first_avg_place": 7.0,
+            "last_date": "2025-10-12",
+            "last_avg_place": 4.0,
+            "first_to_last_delta": -3.0,
+            "n_dates": 2,
+            "confidence": "low confidence trend"
+          },
+          {
+            "program": "latin",
+            "dance": "S",
+            "trend_over_time": -3.0,
+            "first_date": "2025-09-28",
+            "first_avg_place": 7.0,
+            "last_date": "2025-10-12",
+            "last_avg_place": 4.0,
+            "first_to_last_delta": -3.0,
+            "n_dates": 2,
+            "confidence": "low confidence trend"
+          }
+        ],
+        "tournament_dance_results": [
+          {
+            "event_date": "2025-09-28",
+            "tournament_id": 2025092800,
+            "tournament_title": "Северный кубок 2025 (Санкт-Петербург)",
+            "protocol_id": 73094,
+            "category": "Ювеналы-2 E+D Соло Ж La",
+            "program": "latin",
+            "dance": "S",
+            "final_place": 7.0,
+            "best_place": 7.0,
+            "worst_place": 7.0,
+            "n_results": 1,
+            "judge_marks": 11,
+            "dance_code": "S"
+          },
+          {
+            "event_date": "2025-09-28",
+            "tournament_id": 2025092800,
+            "tournament_title": "Северный кубок 2025 (Санкт-Петербург)",
+            "protocol_id": 73094,
+            "category": "Ювеналы-2 E+D Соло Ж La",
+            "program": "latin",
+            "dance": "C",
+            "final_place": 7.0,
+            "best_place": 7.0,
+            "worst_place": 7.0,
+            "n_results": 1,
+            "judge_marks": 11,
+            "dance_code": "Ch"
+          },
+          {
+            "event_date": "2025-09-28",
+            "tournament_id": 2025092800,
+            "tournament_title": "Северный кубок 2025 (Санкт-Петербург)",
+            "protocol_id": 73094,
+            "category": "Ювеналы-2 E+D Соло Ж La",
+            "program": "latin",
+            "dance": "R",
+            "final_place": 7.0,
+            "best_place": 7.0,
+            "worst_place": 7.0,
+            "n_results": 1,
+            "judge_marks": 11,
+            "dance_code": "R"
+          },
+          {
+            "event_date": "2025-09-28",
+            "tournament_id": 2025092800,
+            "tournament_title": "Северный кубок 2025 (Санкт-Петербург)",
+            "protocol_id": 73094,
+            "category": "Ювеналы-2 E+D Соло Ж La",
+            "program": "latin",
+            "dance": "J",
+            "final_place": 7.0,
+            "best_place": 7.0,
+            "worst_place": 7.0,
+            "n_results": 1,
+            "judge_marks": 11,
+            "dance_code": "J"
+          },
+          {
+            "event_date": "2025-10-12",
+            "tournament_id": 2025101200,
+            "tournament_title": "Балтийская Звезда - 2025 (Санкт-Петербург)",
+            "protocol_id": 73646,
+            "category": "Ювеналы-2 E+D соло Ж La",
+            "program": "latin",
+            "dance": "S",
+            "final_place": 4.0,
+            "best_place": 4.0,
+            "worst_place": 4.0,
+            "n_results": 1,
+            "judge_marks": 11,
+            "dance_code": "S"
+          },
+          {
+            "event_date": "2025-10-12",
+            "tournament_id": 2025101200,
+            "tournament_title": "Балтийская Звезда - 2025 (Санкт-Петербург)",
+            "protocol_id": 73646,
+            "category": "Ювеналы-2 E+D соло Ж La",
+            "program": "latin",
+            "dance": "C",
+            "final_place": 4.0,
+            "best_place": 4.0,
+            "worst_place": 4.0,
+            "n_results": 1,
+            "judge_marks": 11,
+            "dance_code": "Ch"
+          },
+          {
+            "event_date": "2025-10-12",
+            "tournament_id": 2025101200,
+            "tournament_title": "Балтийская Звезда - 2025 (Санкт-Петербург)",
+            "protocol_id": 73646,
+            "category": "Ювеналы-2 E+D соло Ж La",
+            "program": "latin",
+            "dance": "R",
+            "final_place": 2.0,
+            "best_place": 2.0,
+            "worst_place": 2.0,
+            "n_results": 1,
+            "judge_marks": 11,
+            "dance_code": "R"
+          },
+          {
+            "event_date": "2025-10-12",
+            "tournament_id": 2025101200,
+            "tournament_title": "Балтийская Звезда - 2025 (Санкт-Петербург)",
+            "protocol_id": 73646,
+            "category": "Ювеналы-2 E+D соло Ж La",
+            "program": "latin",
+            "dance": "J",
+            "final_place": 3.0,
+            "best_place": 3.0,
+            "worst_place": 3.0,
+            "n_results": 1,
+            "judge_marks": 11,
+            "dance_code": "J"
+          }
+        ]
+      },
+      "e_d": {
+        "metrics": [
+          {
+            "program": "latin",
+            "dance": "C",
+            "final_avg_place": 5.5,
+            "median_place": 5.5,
+            "std_deviation": 2.121,
+            "variance": 4.5,
+            "n_marks": 2,
+            "n_protocols": 2,
+            "n_dates": 2,
+            "best_place": 4.0,
+            "worst_place": 7.0,
+            "categories": "Ювеналы-2 E+D Соло Ж La; Ювеналы-2 E+D соло Ж La",
+            "judge_avg_place": 4.591,
+            "judge_std_deviation": 2.085,
+            "judge_variance": 4.348,
+            "judge_marks": 22,
+            "avg_place": 5.5,
+            "final_median_place": 5.5,
+            "final_std_deviation": 2.121,
+            "consistency_score": 0.32,
+            "volatility_score": 2.121,
+            "confidence": "low confidence"
+          },
+          {
+            "program": "latin",
+            "dance": "J",
+            "final_avg_place": 5.0,
+            "median_place": 5.0,
+            "std_deviation": 2.828,
+            "variance": 8.0,
+            "n_marks": 2,
+            "n_protocols": 2,
+            "n_dates": 2,
+            "best_place": 3.0,
+            "worst_place": 7.0,
+            "categories": "Ювеналы-2 E+D Соло Ж La; Ювеналы-2 E+D соло Ж La",
+            "judge_avg_place": 4.364,
+            "judge_std_deviation": 1.965,
+            "judge_variance": 3.861,
+            "judge_marks": 22,
+            "avg_place": 5.0,
+            "final_median_place": 5.0,
+            "final_std_deviation": 2.828,
+            "consistency_score": 0.261,
+            "volatility_score": 2.828,
+            "confidence": "low confidence"
+          },
+          {
+            "program": "latin",
+            "dance": "R",
+            "final_avg_place": 4.5,
+            "median_place": 4.5,
+            "std_deviation": 3.536,
+            "variance": 12.5,
+            "n_marks": 2,
+            "n_protocols": 2,
+            "n_dates": 2,
+            "best_place": 2.0,
+            "worst_place": 7.0,
+            "categories": "Ювеналы-2 E+D Соло Ж La; Ювеналы-2 E+D соло Ж La",
+            "judge_avg_place": 4.136,
+            "judge_std_deviation": 2.054,
+            "judge_variance": 4.219,
+            "judge_marks": 22,
+            "avg_place": 4.5,
+            "final_median_place": 4.5,
+            "final_std_deviation": 3.536,
+            "consistency_score": 0.22,
+            "volatility_score": 3.536,
+            "confidence": "low confidence"
+          },
+          {
+            "program": "latin",
+            "dance": "S",
+            "final_avg_place": 5.5,
+            "median_place": 5.5,
+            "std_deviation": 2.121,
+            "variance": 4.5,
+            "n_marks": 2,
+            "n_protocols": 2,
+            "n_dates": 2,
+            "best_place": 4.0,
+            "worst_place": 7.0,
+            "categories": "Ювеналы-2 E+D Соло Ж La; Ювеналы-2 E+D соло Ж La",
+            "judge_avg_place": 4.409,
+            "judge_std_deviation": 1.943,
+            "judge_variance": 3.777,
+            "judge_marks": 22,
+            "avg_place": 5.5,
+            "final_median_place": 5.5,
+            "final_std_deviation": 2.121,
+            "consistency_score": 0.32,
+            "volatility_score": 2.121,
+            "confidence": "low confidence"
+          }
+        ],
+        "best_by_final_average": null,
+        "best_by_median": null,
+        "most_stable_dance": null,
+        "best_peak": null,
+        "worst_by_final_average": null,
+        "judge_level_best": null,
+        "strongest_dance": null,
+        "weakest_dance": null,
+        "most_improved_dance": {
+          "program": "latin",
+          "dance": "R",
+          "trend_over_time": -5.0,
+          "first_date": "2025-09-28",
+          "first_avg_place": 7.0,
+          "last_date": "2025-10-12",
+          "last_avg_place": 2.0,
+          "first_to_last_delta": -5.0,
+          "n_dates": 2,
+          "confidence": "low confidence trend"
+        },
+        "key": "e_d",
+        "label": "E+D",
+        "source": "selected_dancer_marks_and_results",
+        "class_group": "E+D",
+        "age_groups": [
+          "Ювеналы-1+2",
+          "Ювеналы-2"
+        ],
+        "source_categories": [
+          "Ювеналы-1+2 E+D Соло Ж La",
+          "Ювеналы-1+2 E+D соло Ж La",
+          "Ювеналы-2 E+D Соло Ж La",
+          "Ювеналы-2 E+D соло Ж La"
+        ],
+        "protocol_count": 2,
+        "tournament_count": 2,
+        "evidence": {
+          "tournaments": 6,
+          "protocols": 6,
+          "marks": 299,
+          "results": 8
+        },
+        "dynamics_by_date": [
+          {
+            "program": "latin",
+            "dance": "C",
+            "event_date": "2025-09-28",
+            "avg_place": 7.0,
+            "final_avg_place": 7.0,
+            "median_place": 7.0,
+            "n_marks": 1,
+            "n_protocols": 1,
+            "rolling_average": 7.0,
+            "tournament_to_tournament_delta": null
+          },
+          {
+            "program": "latin",
+            "dance": "C",
+            "event_date": "2025-10-12",
+            "avg_place": 4.0,
+            "final_avg_place": 4.0,
+            "median_place": 4.0,
+            "n_marks": 1,
+            "n_protocols": 1,
+            "rolling_average": 5.5,
+            "tournament_to_tournament_delta": -3.0
+          },
+          {
+            "program": "latin",
+            "dance": "J",
+            "event_date": "2025-09-28",
+            "avg_place": 7.0,
+            "final_avg_place": 7.0,
+            "median_place": 7.0,
+            "n_marks": 1,
+            "n_protocols": 1,
+            "rolling_average": 7.0,
+            "tournament_to_tournament_delta": null
+          },
+          {
+            "program": "latin",
+            "dance": "J",
+            "event_date": "2025-10-12",
+            "avg_place": 3.0,
+            "final_avg_place": 3.0,
+            "median_place": 3.0,
+            "n_marks": 1,
+            "n_protocols": 1,
+            "rolling_average": 5.0,
+            "tournament_to_tournament_delta": -4.0
+          },
+          {
+            "program": "latin",
+            "dance": "R",
+            "event_date": "2025-09-28",
+            "avg_place": 7.0,
+            "final_avg_place": 7.0,
+            "median_place": 7.0,
+            "n_marks": 1,
+            "n_protocols": 1,
+            "rolling_average": 7.0,
+            "tournament_to_tournament_delta": null
+          },
+          {
+            "program": "latin",
+            "dance": "R",
+            "event_date": "2025-10-12",
+            "avg_place": 2.0,
+            "final_avg_place": 2.0,
+            "median_place": 2.0,
+            "n_marks": 1,
+            "n_protocols": 1,
+            "rolling_average": 4.5,
+            "tournament_to_tournament_delta": -5.0
+          },
+          {
+            "program": "latin",
+            "dance": "S",
+            "event_date": "2025-09-28",
+            "avg_place": 7.0,
+            "final_avg_place": 7.0,
+            "median_place": 7.0,
+            "n_marks": 1,
+            "n_protocols": 1,
+            "rolling_average": 7.0,
+            "tournament_to_tournament_delta": null
+          },
+          {
+            "program": "latin",
+            "dance": "S",
+            "event_date": "2025-10-12",
+            "avg_place": 4.0,
+            "final_avg_place": 4.0,
+            "median_place": 4.0,
+            "n_marks": 1,
+            "n_protocols": 1,
+            "rolling_average": 5.5,
+            "tournament_to_tournament_delta": -3.0
+          }
+        ],
+        "trends": [
+          {
+            "program": "latin",
+            "dance": "R",
+            "trend_over_time": -5.0,
+            "first_date": "2025-09-28",
+            "first_avg_place": 7.0,
+            "last_date": "2025-10-12",
+            "last_avg_place": 2.0,
+            "first_to_last_delta": -5.0,
+            "n_dates": 2,
+            "confidence": "low confidence trend"
+          },
+          {
+            "program": "latin",
+            "dance": "J",
+            "trend_over_time": -4.0,
+            "first_date": "2025-09-28",
+            "first_avg_place": 7.0,
+            "last_date": "2025-10-12",
+            "last_avg_place": 3.0,
+            "first_to_last_delta": -4.0,
+            "n_dates": 2,
+            "confidence": "low confidence trend"
+          },
+          {
+            "program": "latin",
+            "dance": "C",
+            "trend_over_time": -3.0,
+            "first_date": "2025-09-28",
+            "first_avg_place": 7.0,
+            "last_date": "2025-10-12",
+            "last_avg_place": 4.0,
+            "first_to_last_delta": -3.0,
+            "n_dates": 2,
+            "confidence": "low confidence trend"
+          },
+          {
+            "program": "latin",
+            "dance": "S",
+            "trend_over_time": -3.0,
+            "first_date": "2025-09-28",
+            "first_avg_place": 7.0,
+            "last_date": "2025-10-12",
+            "last_avg_place": 4.0,
+            "first_to_last_delta": -3.0,
+            "n_dates": 2,
+            "confidence": "low confidence trend"
+          }
+        ],
+        "tournament_dance_results": [
+          {
+            "event_date": "2025-09-28",
+            "tournament_id": 2025092800,
+            "tournament_title": "Северный кубок 2025 (Санкт-Петербург)",
+            "protocol_id": 73094,
+            "category": "Ювеналы-2 E+D Соло Ж La",
+            "program": "latin",
+            "dance": "S",
+            "final_place": 7.0,
+            "best_place": 7.0,
+            "worst_place": 7.0,
+            "n_results": 1,
+            "judge_marks": 11,
+            "dance_code": "S"
+          },
+          {
+            "event_date": "2025-09-28",
+            "tournament_id": 2025092800,
+            "tournament_title": "Северный кубок 2025 (Санкт-Петербург)",
+            "protocol_id": 73094,
+            "category": "Ювеналы-2 E+D Соло Ж La",
+            "program": "latin",
+            "dance": "C",
+            "final_place": 7.0,
+            "best_place": 7.0,
+            "worst_place": 7.0,
+            "n_results": 1,
+            "judge_marks": 11,
+            "dance_code": "Ch"
+          },
+          {
+            "event_date": "2025-09-28",
+            "tournament_id": 2025092800,
+            "tournament_title": "Северный кубок 2025 (Санкт-Петербург)",
+            "protocol_id": 73094,
+            "category": "Ювеналы-2 E+D Соло Ж La",
+            "program": "latin",
+            "dance": "R",
+            "final_place": 7.0,
+            "best_place": 7.0,
+            "worst_place": 7.0,
+            "n_results": 1,
+            "judge_marks": 11,
+            "dance_code": "R"
+          },
+          {
+            "event_date": "2025-09-28",
+            "tournament_id": 2025092800,
+            "tournament_title": "Северный кубок 2025 (Санкт-Петербург)",
+            "protocol_id": 73094,
+            "category": "Ювеналы-2 E+D Соло Ж La",
+            "program": "latin",
+            "dance": "J",
+            "final_place": 7.0,
+            "best_place": 7.0,
+            "worst_place": 7.0,
+            "n_results": 1,
+            "judge_marks": 11,
+            "dance_code": "J"
+          },
+          {
+            "event_date": "2025-10-12",
+            "tournament_id": 2025101200,
+            "tournament_title": "Балтийская Звезда - 2025 (Санкт-Петербург)",
+            "protocol_id": 73646,
+            "category": "Ювеналы-2 E+D соло Ж La",
+            "program": "latin",
+            "dance": "S",
+            "final_place": 4.0,
+            "best_place": 4.0,
+            "worst_place": 4.0,
+            "n_results": 1,
+            "judge_marks": 11,
+            "dance_code": "S"
+          },
+          {
+            "event_date": "2025-10-12",
+            "tournament_id": 2025101200,
+            "tournament_title": "Балтийская Звезда - 2025 (Санкт-Петербург)",
+            "protocol_id": 73646,
+            "category": "Ювеналы-2 E+D соло Ж La",
+            "program": "latin",
+            "dance": "C",
+            "final_place": 4.0,
+            "best_place": 4.0,
+            "worst_place": 4.0,
+            "n_results": 1,
+            "judge_marks": 11,
+            "dance_code": "Ch"
+          },
+          {
+            "event_date": "2025-10-12",
+            "tournament_id": 2025101200,
+            "tournament_title": "Балтийская Звезда - 2025 (Санкт-Петербург)",
+            "protocol_id": 73646,
+            "category": "Ювеналы-2 E+D соло Ж La",
+            "program": "latin",
+            "dance": "R",
+            "final_place": 2.0,
+            "best_place": 2.0,
+            "worst_place": 2.0,
+            "n_results": 1,
+            "judge_marks": 11,
+            "dance_code": "R"
+          },
+          {
+            "event_date": "2025-10-12",
+            "tournament_id": 2025101200,
+            "tournament_title": "Балтийская Звезда - 2025 (Санкт-Петербург)",
+            "protocol_id": 73646,
+            "category": "Ювеналы-2 E+D соло Ж La",
+            "program": "latin",
+            "dance": "J",
+            "final_place": 3.0,
+            "best_place": 3.0,
+            "worst_place": 3.0,
+            "n_results": 1,
+            "judge_marks": 11,
+            "dance_code": "J"
+          }
+        ]
+      }
+    }
+  },
+  "tournaments": {
+    "count": 7,
+    "protocol_count": 13,
+    "items": [
+      {
+        "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
+        "tournament_title": "Северный кубок 2025 (Санкт-Петербург)",
+        "protocols": 2,
+        "categories": [
+          "Ювеналы-2 E+D Соло Ж La",
+          "Ювеналы-2 E+D Соло Ж St"
+        ],
+        "programs": [
+          "latin",
+          "standard"
+        ],
+        "dance_codes": [
+          "W",
+          "T",
+          "F",
+          "Q",
+          "S",
+          "Ch",
+          "R",
+          "J"
+        ]
+      },
+      {
+        "event_date": "2025-10-12",
+        "tournament_id": 2025101200,
+        "tournament_title": "Балтийская Звезда - 2025 (Санкт-Петербург)",
+        "protocols": 2,
+        "categories": [
+          "Ювеналы-2 E+D соло Ж La",
+          "Ювеналы-2 E+D соло Ж St"
+        ],
+        "programs": [
+          "latin",
+          "standard"
+        ],
+        "dance_codes": [
+          "W",
+          "T",
+          "F",
+          "Q",
+          "S",
+          "Ch",
+          "R",
+          "J"
+        ]
+      },
+      {
+        "event_date": "2025-11-16",
+        "tournament_id": 2025111600,
+        "tournament_title": "Гордость Санкт-Петербурга 2025 (Санкт-Петербург)",
+        "protocols": 2,
+        "categories": [
+          "Ювеналы-1+2 E+D Соло Ж La",
+          "Ювеналы-1+2 E+D Соло Ж St"
+        ],
+        "programs": [
+          "latin",
+          "standard"
+        ],
+        "dance_codes": [
+          "T",
+          "F",
+          "Q",
+          "S",
+          "Ch",
+          "R",
+          "J"
+        ]
+      },
+      {
+        "event_date": "2026-01-18",
+        "tournament_id": 2026011801,
+        "tournament_title": "Lider Cup 2026 (Санкт-Петербург)",
+        "protocols": 2,
+        "categories": [
+          "Ювеналы-1+2 E+D соло Ж La",
+          "Ювеналы-1+2 E+D соло Ж St"
+        ],
+        "programs": [
+          "latin",
+          "standard"
+        ],
+        "dance_codes": [
+          "W",
+          "T",
+          "F",
+          "Q",
+          "S",
+          "Ch",
+          "R",
+          "J"
+        ]
+      },
+      {
+        "event_date": "2026-02-01",
+        "tournament_id": 2026020100,
+        "tournament_title": "Tiara Dance Cup (Санкт-Петербург)",
+        "protocols": 2,
+        "categories": [
+          "Ювеналы-2 E+D соло Ж La",
+          "Ювеналы-2 E+D соло Ж St"
+        ],
+        "programs": [
+          "latin",
+          "standard"
+        ],
+        "dance_codes": [
+          "W",
+          "T",
+          "F",
+          "Q",
+          "S",
+          "Ch",
+          "R",
+          "J"
+        ]
+      },
+      {
+        "event_date": "2026-03-08",
+        "tournament_id": 2026030800,
+        "tournament_title": "Амбассадор 2026 (Санкт-Петербург)",
+        "protocols": 2,
+        "categories": [
+          "Ювеналы-2 E+D Соло Ж La",
+          "Ювеналы-2 E+D Соло Ж St"
+        ],
+        "programs": [
+          "latin",
+          "standard"
+        ],
+        "dance_codes": [
+          "W",
+          "T",
+          "F",
+          "Q",
+          "S",
+          "Ch",
+          "R",
+          "J"
+        ]
+      },
+      {
+        "event_date": "2026-04-26",
+        "tournament_id": 2026042600,
+        "tournament_title": "Карнавал 2026 (Санкт-Петербург)",
+        "protocols": 1,
+        "categories": [
+          "Ювеналы-2 E+D Соло Ж St"
+        ],
+        "programs": [
+          "standard"
+        ],
+        "dance_codes": [
+          "W",
+          "T",
+          "F",
+          "Q"
+        ]
+      }
+    ],
+    "protocols": [
+      {
+        "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
+        "tournament_title": "Северный кубок 2025 (Санкт-Петербург)",
+        "protocol_id": 73071,
+        "category": "Ювеналы-2 E+D Соло Ж St",
+        "program": "standard",
+        "entry_type": "solo"
+      },
+      {
+        "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
+        "tournament_title": "Северный кубок 2025 (Санкт-Петербург)",
+        "protocol_id": 73094,
+        "category": "Ювеналы-2 E+D Соло Ж La",
+        "program": "latin",
+        "entry_type": "solo"
+      },
+      {
+        "event_date": "2025-10-12",
+        "tournament_id": 2025101200,
+        "tournament_title": "Балтийская Звезда - 2025 (Санкт-Петербург)",
+        "protocol_id": 73638,
+        "category": "Ювеналы-2 E+D соло Ж St",
+        "program": "standard",
+        "entry_type": "solo"
+      },
+      {
+        "event_date": "2025-10-12",
+        "tournament_id": 2025101200,
+        "tournament_title": "Балтийская Звезда - 2025 (Санкт-Петербург)",
+        "protocol_id": 73646,
+        "category": "Ювеналы-2 E+D соло Ж La",
+        "program": "latin",
+        "entry_type": "solo"
+      },
+      {
+        "event_date": "2025-11-16",
+        "tournament_id": 2025111600,
+        "tournament_title": "Гордость Санкт-Петербурга 2025 (Санкт-Петербург)",
+        "protocol_id": 74688,
+        "category": "Ювеналы-1+2 E+D Соло Ж St",
+        "program": "standard",
+        "entry_type": "solo"
+      },
+      {
+        "event_date": "2025-11-16",
+        "tournament_id": 2025111600,
+        "tournament_title": "Гордость Санкт-Петербурга 2025 (Санкт-Петербург)",
+        "protocol_id": 74700,
+        "category": "Ювеналы-1+2 E+D Соло Ж La",
+        "program": "latin",
+        "entry_type": "solo"
+      },
+      {
+        "event_date": "2026-01-18",
+        "tournament_id": 2026011801,
+        "tournament_title": "Lider Cup 2026 (Санкт-Петербург)",
+        "protocol_id": 76397,
+        "category": "Ювеналы-1+2 E+D соло Ж St",
+        "program": "standard",
+        "entry_type": "solo"
+      },
+      {
+        "event_date": "2026-01-18",
+        "tournament_id": 2026011801,
+        "tournament_title": "Lider Cup 2026 (Санкт-Петербург)",
+        "protocol_id": 76400,
+        "category": "Ювеналы-1+2 E+D соло Ж La",
+        "program": "latin",
+        "entry_type": "solo"
+      },
+      {
+        "event_date": "2026-02-01",
+        "tournament_id": 2026020100,
+        "tournament_title": "Tiara Dance Cup (Санкт-Петербург)",
+        "protocol_id": 76809,
+        "category": "Ювеналы-2 E+D соло Ж St",
+        "program": "standard",
+        "entry_type": "solo"
+      },
+      {
+        "event_date": "2026-02-01",
+        "tournament_id": 2026020100,
+        "tournament_title": "Tiara Dance Cup (Санкт-Петербург)",
+        "protocol_id": 76824,
+        "category": "Ювеналы-2 E+D соло Ж La",
+        "program": "latin",
+        "entry_type": "solo"
+      },
+      {
+        "event_date": "2026-03-08",
+        "tournament_id": 2026030800,
+        "tournament_title": "Амбассадор 2026 (Санкт-Петербург)",
+        "protocol_id": 77963,
+        "category": "Ювеналы-2 E+D Соло Ж St",
+        "program": "standard",
+        "entry_type": "solo"
+      },
+      {
+        "event_date": "2026-03-08",
+        "tournament_id": 2026030800,
+        "tournament_title": "Амбассадор 2026 (Санкт-Петербург)",
+        "protocol_id": 77977,
+        "category": "Ювеналы-2 E+D Соло Ж La",
+        "program": "latin",
+        "entry_type": "solo"
+      },
+      {
+        "event_date": "2026-04-26",
+        "tournament_id": 2026042600,
+        "tournament_title": "Карнавал 2026 (Санкт-Петербург)",
+        "protocol_id": 79410,
+        "category": "Ювеналы-2 E+D Соло Ж St",
+        "program": "standard",
+        "entry_type": "solo"
+      }
+    ],
+    "dance_results": [
+      {
+        "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
+        "tournament_title": "Северный кубок 2025 (Санкт-Петербург)",
+        "protocol_id": 73071,
+        "category": "Ювеналы-2 E+D Соло Ж St",
+        "program": "standard",
+        "dance": "W",
+        "final_place": 3.0,
+        "best_place": 3.0,
+        "worst_place": 3.0,
+        "n_results": 1,
+        "judge_marks": 11,
+        "dance_code": "W"
+      },
+      {
+        "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
+        "tournament_title": "Северный кубок 2025 (Санкт-Петербург)",
+        "protocol_id": 73071,
+        "category": "Ювеналы-2 E+D Соло Ж St",
+        "program": "standard",
+        "dance": "T",
+        "final_place": 8.0,
+        "best_place": 8.0,
+        "worst_place": 8.0,
+        "n_results": 1,
+        "judge_marks": 11,
+        "dance_code": "T"
+      },
+      {
+        "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
+        "tournament_title": "Северный кубок 2025 (Санкт-Петербург)",
+        "protocol_id": 73071,
+        "category": "Ювеналы-2 E+D Соло Ж St",
+        "program": "standard",
+        "dance": "F",
+        "final_place": 8.0,
+        "best_place": 8.0,
+        "worst_place": 8.0,
+        "n_results": 1,
+        "judge_marks": 11,
+        "dance_code": "F"
+      },
+      {
+        "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
+        "tournament_title": "Северный кубок 2025 (Санкт-Петербург)",
+        "protocol_id": 73071,
+        "category": "Ювеналы-2 E+D Соло Ж St",
+        "program": "standard",
+        "dance": "Q",
+        "final_place": 7.0,
+        "best_place": 7.0,
+        "worst_place": 7.0,
+        "n_results": 1,
+        "judge_marks": 11,
+        "dance_code": "Q"
+      },
+      {
+        "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
+        "tournament_title": "Северный кубок 2025 (Санкт-Петербург)",
+        "protocol_id": 73094,
+        "category": "Ювеналы-2 E+D Соло Ж La",
+        "program": "latin",
+        "dance": "S",
+        "final_place": 7.0,
+        "best_place": 7.0,
+        "worst_place": 7.0,
+        "n_results": 1,
+        "judge_marks": 11,
+        "dance_code": "S"
+      },
+      {
+        "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
+        "tournament_title": "Северный кубок 2025 (Санкт-Петербург)",
+        "protocol_id": 73094,
+        "category": "Ювеналы-2 E+D Соло Ж La",
+        "program": "latin",
+        "dance": "C",
+        "final_place": 7.0,
+        "best_place": 7.0,
+        "worst_place": 7.0,
+        "n_results": 1,
+        "judge_marks": 11,
+        "dance_code": "Ch"
+      },
+      {
+        "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
+        "tournament_title": "Северный кубок 2025 (Санкт-Петербург)",
+        "protocol_id": 73094,
+        "category": "Ювеналы-2 E+D Соло Ж La",
+        "program": "latin",
+        "dance": "R",
+        "final_place": 7.0,
+        "best_place": 7.0,
+        "worst_place": 7.0,
+        "n_results": 1,
+        "judge_marks": 11,
+        "dance_code": "R"
+      },
+      {
+        "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
+        "tournament_title": "Северный кубок 2025 (Санкт-Петербург)",
+        "protocol_id": 73094,
+        "category": "Ювеналы-2 E+D Соло Ж La",
+        "program": "latin",
+        "dance": "J",
+        "final_place": 7.0,
+        "best_place": 7.0,
+        "worst_place": 7.0,
+        "n_results": 1,
+        "judge_marks": 11,
+        "dance_code": "J"
+      },
+      {
+        "event_date": "2025-10-12",
+        "tournament_id": 2025101200,
+        "tournament_title": "Балтийская Звезда - 2025 (Санкт-Петербург)",
+        "protocol_id": 73646,
+        "category": "Ювеналы-2 E+D соло Ж La",
+        "program": "latin",
+        "dance": "S",
+        "final_place": 4.0,
+        "best_place": 4.0,
+        "worst_place": 4.0,
+        "n_results": 1,
+        "judge_marks": 11,
+        "dance_code": "S"
+      },
+      {
+        "event_date": "2025-10-12",
+        "tournament_id": 2025101200,
+        "tournament_title": "Балтийская Звезда - 2025 (Санкт-Петербург)",
+        "protocol_id": 73646,
+        "category": "Ювеналы-2 E+D соло Ж La",
+        "program": "latin",
+        "dance": "C",
+        "final_place": 4.0,
+        "best_place": 4.0,
+        "worst_place": 4.0,
+        "n_results": 1,
+        "judge_marks": 11,
+        "dance_code": "Ch"
+      },
+      {
+        "event_date": "2025-10-12",
+        "tournament_id": 2025101200,
+        "tournament_title": "Балтийская Звезда - 2025 (Санкт-Петербург)",
+        "protocol_id": 73646,
+        "category": "Ювеналы-2 E+D соло Ж La",
+        "program": "latin",
+        "dance": "R",
+        "final_place": 2.0,
+        "best_place": 2.0,
+        "worst_place": 2.0,
+        "n_results": 1,
+        "judge_marks": 11,
+        "dance_code": "R"
+      },
+      {
+        "event_date": "2025-10-12",
+        "tournament_id": 2025101200,
+        "tournament_title": "Балтийская Звезда - 2025 (Санкт-Петербург)",
+        "protocol_id": 73646,
+        "category": "Ювеналы-2 E+D соло Ж La",
+        "program": "latin",
+        "dance": "J",
+        "final_place": 3.0,
+        "best_place": 3.0,
+        "worst_place": 3.0,
+        "n_results": 1,
+        "judge_marks": 11,
+        "dance_code": "J"
+      }
+    ]
+  },
+  "trainer_mode": {
+    "tournament_summaries": [
+      {
+        "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
+        "tournament_title": "Северный кубок 2025 (Санкт-Петербург)",
+        "categories": [
+          "Ювеналы-2 E+D Соло Ж La",
+          "Ювеналы-2 E+D Соло Ж St"
+        ],
+        "programs": [
+          "latin",
+          "standard"
+        ],
+        "protocols": 2,
+        "dance_codes": [
+          "W",
+          "T",
+          "F",
+          "Q",
+          "S",
+          "Ch",
+          "R",
+          "J"
+        ],
+        "program_summaries": [
+          {
+            "program": "standard",
+            "program_label": "Стандарт",
+            "dance_codes": [
+              "W",
+              "T",
+              "F",
+              "Q"
+            ],
+            "overall": {
+              "avg_place": 6.5,
+              "dance_count": 4,
+              "protocol_count": 1,
+              "dance_codes": [
+                "W",
+                "T",
+                "F",
+                "Q"
+              ]
+            },
+            "metric_type": "final_place",
+            "metric_label": "по итоговым местам",
+            "data_sufficient": true,
+            "display_mode": "best_worst",
+            "best_dance": {
+              "dance": "W",
+              "dance_code": "W",
+              "metric_value": 3.0,
+              "metric_type": "final_place",
+              "metric_label": "итоговое место",
+              "category": "Ювеналы-2 E+D Соло Ж St",
+              "protocol_id": 73071,
+              "final_place": 3.0,
+              "interpretation": "по итоговым местам"
+            },
+            "worst_dance": {
+              "dance": "T",
+              "dance_code": "T",
+              "metric_value": 8.0,
+              "metric_type": "final_place",
+              "metric_label": "итоговое место",
+              "category": "Ювеналы-2 E+D Соло Ж St",
+              "protocol_id": 73071,
+              "final_place": 8.0,
+              "interpretation": "по итоговым местам"
+            },
+            "best_dances": [
+              {
+                "dance": "W",
+                "dance_code": "W",
+                "metric_value": 3.0,
+                "metric_type": "final_place",
+                "metric_label": "итоговое место",
+                "category": "Ювеналы-2 E+D Соло Ж St",
+                "protocol_id": 73071,
+                "final_place": 3.0,
+                "interpretation": "по итоговым местам"
+              }
+            ],
+            "worst_dances": [
+              {
+                "dance": "T",
+                "dance_code": "T",
+                "metric_value": 8.0,
+                "metric_type": "final_place",
+                "metric_label": "итоговое место",
+                "category": "Ювеналы-2 E+D Соло Ж St",
+                "protocol_id": 73071,
+                "final_place": 8.0,
+                "interpretation": "по итоговым местам"
+              },
+              {
+                "dance": "F",
+                "dance_code": "F",
+                "metric_value": 8.0,
+                "metric_type": "final_place",
+                "metric_label": "итоговое место",
+                "category": "Ювеналы-2 E+D Соло Ж St",
+                "protocol_id": 73071,
+                "final_place": 8.0,
+                "interpretation": "по итоговым местам"
+              }
+            ],
+            "evaluated_dance": null,
+            "tied_dances": [],
+            "tied_metric_value": null
+          },
+          {
+            "program": "latin",
+            "program_label": "Латина",
+            "dance_codes": [
+              "S",
+              "Ch",
+              "R",
+              "J"
+            ],
+            "overall": {
+              "avg_place": 7.0,
+              "dance_count": 4,
+              "protocol_count": 1,
+              "dance_codes": [
+                "S",
+                "Ch",
+                "R",
+                "J"
+              ]
+            },
+            "metric_type": "final_place",
+            "metric_label": "по итоговым местам",
+            "data_sufficient": true,
+            "display_mode": "tied",
+            "best_dance": null,
+            "worst_dance": null,
+            "best_dances": [],
+            "worst_dances": [],
+            "evaluated_dance": null,
+            "tied_dances": [
+              "S",
+              "Ch",
+              "R",
+              "J"
+            ],
+            "tied_metric_value": 7.0
+          }
+        ],
+        "dance_results": [
+          {
+            "event_date": "2025-09-28",
+            "tournament_id": 2025092800,
+            "tournament_title": "Северный кубок 2025 (Санкт-Петербург)",
+            "protocol_id": 73071,
+            "category": "Ювеналы-2 E+D Соло Ж St",
+            "program": "standard",
+            "dance": "W",
+            "final_place": 3.0,
+            "best_place": 3.0,
+            "worst_place": 3.0,
+            "n_results": 1,
+            "judge_marks": 11,
+            "dance_code": "W"
+          },
+          {
+            "event_date": "2025-09-28",
+            "tournament_id": 2025092800,
+            "tournament_title": "Северный кубок 2025 (Санкт-Петербург)",
+            "protocol_id": 73071,
+            "category": "Ювеналы-2 E+D Соло Ж St",
+            "program": "standard",
+            "dance": "T",
+            "final_place": 8.0,
+            "best_place": 8.0,
+            "worst_place": 8.0,
+            "n_results": 1,
+            "judge_marks": 11,
+            "dance_code": "T"
+          },
+          {
+            "event_date": "2025-09-28",
+            "tournament_id": 2025092800,
+            "tournament_title": "Северный кубок 2025 (Санкт-Петербург)",
+            "protocol_id": 73071,
+            "category": "Ювеналы-2 E+D Соло Ж St",
+            "program": "standard",
+            "dance": "F",
+            "final_place": 8.0,
+            "best_place": 8.0,
+            "worst_place": 8.0,
+            "n_results": 1,
+            "judge_marks": 11,
+            "dance_code": "F"
+          },
+          {
+            "event_date": "2025-09-28",
+            "tournament_id": 2025092800,
+            "tournament_title": "Северный кубок 2025 (Санкт-Петербург)",
+            "protocol_id": 73071,
+            "category": "Ювеналы-2 E+D Соло Ж St",
+            "program": "standard",
+            "dance": "Q",
+            "final_place": 7.0,
+            "best_place": 7.0,
+            "worst_place": 7.0,
+            "n_results": 1,
+            "judge_marks": 11,
+            "dance_code": "Q"
+          },
+          {
+            "event_date": "2025-09-28",
+            "tournament_id": 2025092800,
+            "tournament_title": "Северный кубок 2025 (Санкт-Петербург)",
+            "protocol_id": 73094,
+            "category": "Ювеналы-2 E+D Соло Ж La",
+            "program": "latin",
+            "dance": "S",
+            "final_place": 7.0,
+            "best_place": 7.0,
+            "worst_place": 7.0,
+            "n_results": 1,
+            "judge_marks": 11,
+            "dance_code": "S"
+          },
+          {
+            "event_date": "2025-09-28",
+            "tournament_id": 2025092800,
+            "tournament_title": "Северный кубок 2025 (Санкт-Петербург)",
+            "protocol_id": 73094,
+            "category": "Ювеналы-2 E+D Соло Ж La",
+            "program": "latin",
+            "dance": "C",
+            "final_place": 7.0,
+            "best_place": 7.0,
+            "worst_place": 7.0,
+            "n_results": 1,
+            "judge_marks": 11,
+            "dance_code": "Ch"
+          },
+          {
+            "event_date": "2025-09-28",
+            "tournament_id": 2025092800,
+            "tournament_title": "Северный кубок 2025 (Санкт-Петербург)",
+            "protocol_id": 73094,
+            "category": "Ювеналы-2 E+D Соло Ж La",
+            "program": "latin",
+            "dance": "R",
+            "final_place": 7.0,
+            "best_place": 7.0,
+            "worst_place": 7.0,
+            "n_results": 1,
+            "judge_marks": 11,
+            "dance_code": "R"
+          },
+          {
+            "event_date": "2025-09-28",
+            "tournament_id": 2025092800,
+            "tournament_title": "Северный кубок 2025 (Санкт-Петербург)",
+            "protocol_id": 73094,
+            "category": "Ювеналы-2 E+D Соло Ж La",
+            "program": "latin",
+            "dance": "J",
+            "final_place": 7.0,
+            "best_place": 7.0,
+            "worst_place": 7.0,
+            "n_results": 1,
+            "judge_marks": 11,
+            "dance_code": "J"
+          }
+        ]
+      },
+      {
+        "event_date": "2025-10-12",
+        "tournament_id": 2025101200,
+        "tournament_title": "Балтийская Звезда - 2025 (Санкт-Петербург)",
+        "categories": [
+          "Ювеналы-2 E+D соло Ж La",
+          "Ювеналы-2 E+D соло Ж St"
+        ],
+        "programs": [
+          "latin",
+          "standard"
+        ],
+        "protocols": 2,
+        "dance_codes": [
+          "W",
+          "T",
+          "F",
+          "Q",
+          "S",
+          "Ch",
+          "R",
+          "J"
+        ],
+        "program_summaries": [
+          {
+            "program": "standard",
+            "program_label": "Стандарт",
+            "dance_codes": [
+              "W",
+              "T",
+              "F",
+              "Q"
+            ],
+            "overall": {
+              "avg_place": null,
+              "dance_count": 4,
+              "protocol_count": 1,
+              "dance_codes": [
+                "W",
+                "T",
+                "F",
+                "Q"
+              ]
+            },
+            "metric_type": "cross_count",
+            "metric_label": "по крестам судей",
+            "data_sufficient": true,
+            "display_mode": "best_worst",
+            "best_dance": {
+              "dance": "F",
+              "dance_code": "F",
+              "metric_value": 9,
+              "metric_type": "cross_count",
+              "metric_label": "крестов судей",
+              "category": "Ювеналы-2 E+D соло Ж St",
+              "protocol_id": 73638,
+              "cross_count": 9,
+              "interpretation": "выше всего оценивался судьями"
+            },
+            "worst_dance": {
+              "dance": "T",
+              "dance_code": "T",
+              "metric_value": 3,
+              "metric_type": "cross_count",
+              "metric_label": "крестов судей",
+              "category": "Ювеналы-2 E+D соло Ж St",
+              "protocol_id": 73638,
+              "cross_count": 3,
+              "interpretation": "ниже всего оценивался судьями"
+            },
+            "best_dances": [
+              {
+                "dance": "F",
+                "dance_code": "F",
+                "metric_value": 9,
+                "metric_type": "cross_count",
+                "metric_label": "крестов судей",
+                "category": "Ювеналы-2 E+D соло Ж St",
+                "protocol_id": 73638,
+                "cross_count": 9,
+                "interpretation": "выше всего оценивался судьями"
+              }
+            ],
+            "worst_dances": [
+              {
+                "dance": "T",
+                "dance_code": "T",
+                "metric_value": 3,
+                "metric_type": "cross_count",
+                "metric_label": "крестов судей",
+                "category": "Ювеналы-2 E+D соло Ж St",
+                "protocol_id": 73638,
+                "cross_count": 3,
+                "interpretation": "ниже всего оценивался судьями"
+              }
+            ],
+            "evaluated_dance": null,
+            "tied_dances": [],
+            "tied_metric_value": null
+          },
+          {
+            "program": "latin",
+            "program_label": "Латина",
+            "dance_codes": [
+              "S",
+              "Ch",
+              "R",
+              "J"
+            ],
+            "overall": {
+              "avg_place": 3.25,
+              "dance_count": 4,
+              "protocol_count": 1,
+              "dance_codes": [
+                "S",
+                "Ch",
+                "R",
+                "J"
+              ]
+            },
+            "metric_type": "final_place",
+            "metric_label": "по итоговым местам",
+            "data_sufficient": true,
+            "display_mode": "best_worst",
+            "best_dance": {
+              "dance": "R",
+              "dance_code": "R",
+              "metric_value": 2.0,
+              "metric_type": "final_place",
+              "metric_label": "итоговое место",
+              "category": "Ювеналы-2 E+D соло Ж La",
+              "protocol_id": 73646,
+              "final_place": 2.0,
+              "interpretation": "по итоговым местам"
+            },
+            "worst_dance": {
+              "dance": "S",
+              "dance_code": "S",
+              "metric_value": 4.0,
+              "metric_type": "final_place",
+              "metric_label": "итоговое место",
+              "category": "Ювеналы-2 E+D соло Ж La",
+              "protocol_id": 73646,
+              "final_place": 4.0,
+              "interpretation": "по итоговым местам"
+            },
+            "best_dances": [
+              {
+                "dance": "R",
+                "dance_code": "R",
+                "metric_value": 2.0,
+                "metric_type": "final_place",
+                "metric_label": "итоговое место",
+                "category": "Ювеналы-2 E+D соло Ж La",
+                "protocol_id": 73646,
+                "final_place": 2.0,
+                "interpretation": "по итоговым местам"
+              }
+            ],
+            "worst_dances": [
+              {
+                "dance": "S",
+                "dance_code": "S",
+                "metric_value": 4.0,
+                "metric_type": "final_place",
+                "metric_label": "итоговое место",
+                "category": "Ювеналы-2 E+D соло Ж La",
+                "protocol_id": 73646,
+                "final_place": 4.0,
+                "interpretation": "по итоговым местам"
+              },
+              {
+                "dance": "C",
+                "dance_code": "Ch",
+                "metric_value": 4.0,
+                "metric_type": "final_place",
+                "metric_label": "итоговое место",
+                "category": "Ювеналы-2 E+D соло Ж La",
+                "protocol_id": 73646,
+                "final_place": 4.0,
+                "interpretation": "по итоговым местам"
+              }
+            ],
+            "evaluated_dance": null,
+            "tied_dances": [],
+            "tied_metric_value": null
+          }
+        ],
+        "dance_results": [
+          {
+            "event_date": "2025-10-12",
+            "tournament_id": 2025101200,
+            "tournament_title": "Балтийская Звезда - 2025 (Санкт-Петербург)",
+            "protocol_id": 73646,
+            "category": "Ювеналы-2 E+D соло Ж La",
+            "program": "latin",
+            "dance": "S",
+            "final_place": 4.0,
+            "best_place": 4.0,
+            "worst_place": 4.0,
+            "n_results": 1,
+            "judge_marks": 11,
+            "dance_code": "S"
+          },
+          {
+            "event_date": "2025-10-12",
+            "tournament_id": 2025101200,
+            "tournament_title": "Балтийская Звезда - 2025 (Санкт-Петербург)",
+            "protocol_id": 73646,
+            "category": "Ювеналы-2 E+D соло Ж La",
+            "program": "latin",
+            "dance": "C",
+            "final_place": 4.0,
+            "best_place": 4.0,
+            "worst_place": 4.0,
+            "n_results": 1,
+            "judge_marks": 11,
+            "dance_code": "Ch"
+          },
+          {
+            "event_date": "2025-10-12",
+            "tournament_id": 2025101200,
+            "tournament_title": "Балтийская Звезда - 2025 (Санкт-Петербург)",
+            "protocol_id": 73646,
+            "category": "Ювеналы-2 E+D соло Ж La",
+            "program": "latin",
+            "dance": "R",
+            "final_place": 2.0,
+            "best_place": 2.0,
+            "worst_place": 2.0,
+            "n_results": 1,
+            "judge_marks": 11,
+            "dance_code": "R"
+          },
+          {
+            "event_date": "2025-10-12",
+            "tournament_id": 2025101200,
+            "tournament_title": "Балтийская Звезда - 2025 (Санкт-Петербург)",
+            "protocol_id": 73646,
+            "category": "Ювеналы-2 E+D соло Ж La",
+            "program": "latin",
+            "dance": "J",
+            "final_place": 3.0,
+            "best_place": 3.0,
+            "worst_place": 3.0,
+            "n_results": 1,
+            "judge_marks": 11,
+            "dance_code": "J"
+          }
+        ]
+      },
+      {
+        "event_date": "2025-11-16",
+        "tournament_id": 2025111600,
+        "tournament_title": "Гордость Санкт-Петербурга 2025 (Санкт-Петербург)",
+        "categories": [
+          "Ювеналы-1+2 E+D Соло Ж La",
+          "Ювеналы-1+2 E+D Соло Ж St"
+        ],
+        "programs": [
+          "latin",
+          "standard"
+        ],
+        "protocols": 2,
+        "dance_codes": [
+          "T",
+          "F",
+          "Q",
+          "S",
+          "Ch",
+          "R",
+          "J"
+        ],
+        "program_summaries": [
+          {
+            "program": "standard",
+            "program_label": "Стандарт",
+            "dance_codes": [
+              "T",
+              "F",
+              "Q"
+            ],
+            "overall": {
+              "avg_place": null,
+              "dance_count": 3,
+              "protocol_count": 1,
+              "dance_codes": [
+                "T",
+                "F",
+                "Q"
+              ]
+            },
+            "metric_type": "cross_count",
+            "metric_label": "по крестам судей",
+            "data_sufficient": true,
+            "display_mode": "best_worst",
+            "best_dance": {
+              "dance": "T",
+              "dance_code": "T",
+              "metric_value": 4,
+              "metric_type": "cross_count",
+              "metric_label": "крестов судей",
+              "category": "Ювеналы-1+2 E+D Соло Ж St",
+              "protocol_id": 74688,
+              "cross_count": 4,
+              "interpretation": "выше всего оценивался судьями"
+            },
+            "worst_dance": {
+              "dance": "F",
+              "dance_code": "F",
+              "metric_value": 3,
+              "metric_type": "cross_count",
+              "metric_label": "крестов судей",
+              "category": "Ювеналы-1+2 E+D Соло Ж St",
+              "protocol_id": 74688,
+              "cross_count": 3,
+              "interpretation": "ниже всего оценивался судьями"
+            },
+            "best_dances": [
+              {
+                "dance": "T",
+                "dance_code": "T",
+                "metric_value": 4,
+                "metric_type": "cross_count",
+                "metric_label": "крестов судей",
+                "category": "Ювеналы-1+2 E+D Соло Ж St",
+                "protocol_id": 74688,
+                "cross_count": 4,
+                "interpretation": "выше всего оценивался судьями"
+              },
+              {
+                "dance": "Q",
+                "dance_code": "Q",
+                "metric_value": 4,
+                "metric_type": "cross_count",
+                "metric_label": "крестов судей",
+                "category": "Ювеналы-1+2 E+D Соло Ж St",
+                "protocol_id": 74688,
+                "cross_count": 4,
+                "interpretation": "выше всего оценивался судьями"
+              }
+            ],
+            "worst_dances": [
+              {
+                "dance": "F",
+                "dance_code": "F",
+                "metric_value": 3,
+                "metric_type": "cross_count",
+                "metric_label": "крестов судей",
+                "category": "Ювеналы-1+2 E+D Соло Ж St",
+                "protocol_id": 74688,
+                "cross_count": 3,
+                "interpretation": "ниже всего оценивался судьями"
+              }
+            ],
+            "evaluated_dance": null,
+            "tied_dances": [],
+            "tied_metric_value": null
+          },
+          {
+            "program": "latin",
+            "program_label": "Латина",
+            "dance_codes": [
+              "S",
+              "Ch",
+              "R",
+              "J"
+            ],
+            "overall": {
+              "avg_place": null,
+              "dance_count": 4,
+              "protocol_count": 1,
+              "dance_codes": [
+                "S",
+                "Ch",
+                "R",
+                "J"
+              ]
+            },
+            "metric_type": "cross_count",
+            "metric_label": "по крестам судей",
+            "data_sufficient": true,
+            "display_mode": "best_worst",
+            "best_dance": {
+              "dance": "R",
+              "dance_code": "R",
+              "metric_value": 12,
+              "metric_type": "cross_count",
+              "metric_label": "крестов судей",
+              "category": "Ювеналы-1+2 E+D Соло Ж La",
+              "protocol_id": 74700,
+              "cross_count": 12,
+              "interpretation": "выше всего оценивался судьями"
+            },
+            "worst_dance": {
+              "dance": "C",
+              "dance_code": "Ch",
+              "metric_value": 6,
+              "metric_type": "cross_count",
+              "metric_label": "крестов судей",
+              "category": "Ювеналы-1+2 E+D Соло Ж La",
+              "protocol_id": 74700,
+              "cross_count": 6,
+              "interpretation": "ниже всего оценивался судьями"
+            },
+            "best_dances": [
+              {
+                "dance": "R",
+                "dance_code": "R",
+                "metric_value": 12,
+                "metric_type": "cross_count",
+                "metric_label": "крестов судей",
+                "category": "Ювеналы-1+2 E+D Соло Ж La",
+                "protocol_id": 74700,
+                "cross_count": 12,
+                "interpretation": "выше всего оценивался судьями"
+              }
+            ],
+            "worst_dances": [
+              {
+                "dance": "C",
+                "dance_code": "Ch",
+                "metric_value": 6,
+                "metric_type": "cross_count",
+                "metric_label": "крестов судей",
+                "category": "Ювеналы-1+2 E+D Соло Ж La",
+                "protocol_id": 74700,
+                "cross_count": 6,
+                "interpretation": "ниже всего оценивался судьями"
+              }
+            ],
+            "evaluated_dance": null,
+            "tied_dances": [],
+            "tied_metric_value": null
+          }
+        ],
+        "dance_results": []
+      },
+      {
+        "event_date": "2026-01-18",
+        "tournament_id": 2026011801,
+        "tournament_title": "Lider Cup 2026 (Санкт-Петербург)",
+        "categories": [
+          "Ювеналы-1+2 E+D соло Ж La",
+          "Ювеналы-1+2 E+D соло Ж St"
+        ],
+        "programs": [
+          "latin",
+          "standard"
+        ],
+        "protocols": 2,
+        "dance_codes": [
+          "W",
+          "T",
+          "F",
+          "Q",
+          "S",
+          "Ch",
+          "R",
+          "J"
+        ],
+        "program_summaries": [
+          {
+            "program": "standard",
+            "program_label": "Стандарт",
+            "dance_codes": [
+              "W",
+              "T",
+              "F",
+              "Q"
+            ],
+            "overall": {
+              "avg_place": null,
+              "dance_count": 4,
+              "protocol_count": 1,
+              "dance_codes": [
+                "W",
+                "T",
+                "F",
+                "Q"
+              ]
+            },
+            "metric_type": "cross_count",
+            "metric_label": "по крестам судей",
+            "data_sufficient": true,
+            "display_mode": "best_worst",
+            "best_dance": {
+              "dance": "W",
+              "dance_code": "W",
+              "metric_value": 5,
+              "metric_type": "cross_count",
+              "metric_label": "крестов судей",
+              "category": "Ювеналы-1+2 E+D соло Ж St",
+              "protocol_id": 76397,
+              "cross_count": 5,
+              "interpretation": "выше всего оценивался судьями"
+            },
+            "worst_dance": {
+              "dance": "T",
+              "dance_code": "T",
+              "metric_value": 4,
+              "metric_type": "cross_count",
+              "metric_label": "крестов судей",
+              "category": "Ювеналы-1+2 E+D соло Ж St",
+              "protocol_id": 76397,
+              "cross_count": 4,
+              "interpretation": "ниже всего оценивался судьями"
+            },
+            "best_dances": [
+              {
+                "dance": "W",
+                "dance_code": "W",
+                "metric_value": 5,
+                "metric_type": "cross_count",
+                "metric_label": "крестов судей",
+                "category": "Ювеналы-1+2 E+D соло Ж St",
+                "protocol_id": 76397,
+                "cross_count": 5,
+                "interpretation": "выше всего оценивался судьями"
+              },
+              {
+                "dance": "Q",
+                "dance_code": "Q",
+                "metric_value": 5,
+                "metric_type": "cross_count",
+                "metric_label": "крестов судей",
+                "category": "Ювеналы-1+2 E+D соло Ж St",
+                "protocol_id": 76397,
+                "cross_count": 5,
+                "interpretation": "выше всего оценивался судьями"
+              }
+            ],
+            "worst_dances": [
+              {
+                "dance": "T",
+                "dance_code": "T",
+                "metric_value": 4,
+                "metric_type": "cross_count",
+                "metric_label": "крестов судей",
+                "category": "Ювеналы-1+2 E+D соло Ж St",
+                "protocol_id": 76397,
+                "cross_count": 4,
+                "interpretation": "ниже всего оценивался судьями"
+              },
+              {
+                "dance": "F",
+                "dance_code": "F",
+                "metric_value": 4,
+                "metric_type": "cross_count",
+                "metric_label": "крестов судей",
+                "category": "Ювеналы-1+2 E+D соло Ж St",
+                "protocol_id": 76397,
+                "cross_count": 4,
+                "interpretation": "ниже всего оценивался судьями"
+              }
+            ],
+            "evaluated_dance": null,
+            "tied_dances": [],
+            "tied_metric_value": null
+          },
+          {
+            "program": "latin",
+            "program_label": "Латина",
+            "dance_codes": [
+              "S",
+              "Ch",
+              "R",
+              "J"
+            ],
+            "overall": {
+              "avg_place": null,
+              "dance_count": 4,
+              "protocol_count": 1,
+              "dance_codes": [
+                "S",
+                "Ch",
+                "R",
+                "J"
+              ]
+            },
+            "metric_type": "cross_count",
+            "metric_label": "по крестам судей",
+            "data_sufficient": true,
+            "display_mode": "best_worst",
+            "best_dance": {
+              "dance": "R",
+              "dance_code": "R",
+              "metric_value": 6,
+              "metric_type": "cross_count",
+              "metric_label": "крестов судей",
+              "category": "Ювеналы-1+2 E+D соло Ж La",
+              "protocol_id": 76400,
+              "cross_count": 6,
+              "interpretation": "выше всего оценивался судьями"
+            },
+            "worst_dance": {
+              "dance": "S",
+              "dance_code": "S",
+              "metric_value": 3,
+              "metric_type": "cross_count",
+              "metric_label": "крестов судей",
+              "category": "Ювеналы-1+2 E+D соло Ж La",
+              "protocol_id": 76400,
+              "cross_count": 3,
+              "interpretation": "ниже всего оценивался судьями"
+            },
+            "best_dances": [
+              {
+                "dance": "R",
+                "dance_code": "R",
+                "metric_value": 6,
+                "metric_type": "cross_count",
+                "metric_label": "крестов судей",
+                "category": "Ювеналы-1+2 E+D соло Ж La",
+                "protocol_id": 76400,
+                "cross_count": 6,
+                "interpretation": "выше всего оценивался судьями"
+              }
+            ],
+            "worst_dances": [
+              {
+                "dance": "S",
+                "dance_code": "S",
+                "metric_value": 3,
+                "metric_type": "cross_count",
+                "metric_label": "крестов судей",
+                "category": "Ювеналы-1+2 E+D соло Ж La",
+                "protocol_id": 76400,
+                "cross_count": 3,
+                "interpretation": "ниже всего оценивался судьями"
+              }
+            ],
+            "evaluated_dance": null,
+            "tied_dances": [],
+            "tied_metric_value": null
+          }
+        ],
+        "dance_results": []
+      },
+      {
+        "event_date": "2026-02-01",
+        "tournament_id": 2026020100,
+        "tournament_title": "Tiara Dance Cup (Санкт-Петербург)",
+        "categories": [
+          "Ювеналы-2 E+D соло Ж La",
+          "Ювеналы-2 E+D соло Ж St"
+        ],
+        "programs": [
+          "latin",
+          "standard"
+        ],
+        "protocols": 2,
+        "dance_codes": [
+          "W",
+          "T",
+          "F",
+          "Q",
+          "S",
+          "Ch",
+          "R",
+          "J"
+        ],
+        "program_summaries": [
+          {
+            "program": "standard",
+            "program_label": "Стандарт",
+            "dance_codes": [
+              "W",
+              "T",
+              "F",
+              "Q"
+            ],
+            "overall": {
+              "avg_place": null,
+              "dance_count": 4,
+              "protocol_count": 1,
+              "dance_codes": [
+                "W",
+                "T",
+                "F",
+                "Q"
+              ]
+            },
+            "metric_type": "cross_count",
+            "metric_label": "по крестам судей",
+            "data_sufficient": true,
+            "display_mode": "best_worst",
+            "best_dance": {
+              "dance": "W",
+              "dance_code": "W",
+              "metric_value": 5,
+              "metric_type": "cross_count",
+              "metric_label": "крестов судей",
+              "category": "Ювеналы-2 E+D соло Ж St",
+              "protocol_id": 76809,
+              "cross_count": 5,
+              "interpretation": "выше всего оценивался судьями"
+            },
+            "worst_dance": {
+              "dance": "T",
+              "dance_code": "T",
+              "metric_value": 1,
+              "metric_type": "cross_count",
+              "metric_label": "крестов судей",
+              "category": "Ювеналы-2 E+D соло Ж St",
+              "protocol_id": 76809,
+              "cross_count": 1,
+              "interpretation": "ниже всего оценивался судьями"
+            },
+            "best_dances": [
+              {
+                "dance": "W",
+                "dance_code": "W",
+                "metric_value": 5,
+                "metric_type": "cross_count",
+                "metric_label": "крестов судей",
+                "category": "Ювеналы-2 E+D соло Ж St",
+                "protocol_id": 76809,
+                "cross_count": 5,
+                "interpretation": "выше всего оценивался судьями"
+              },
+              {
+                "dance": "Q",
+                "dance_code": "Q",
+                "metric_value": 5,
+                "metric_type": "cross_count",
+                "metric_label": "крестов судей",
+                "category": "Ювеналы-2 E+D соло Ж St",
+                "protocol_id": 76809,
+                "cross_count": 5,
+                "interpretation": "выше всего оценивался судьями"
+              }
+            ],
+            "worst_dances": [
+              {
+                "dance": "T",
+                "dance_code": "T",
+                "metric_value": 1,
+                "metric_type": "cross_count",
+                "metric_label": "крестов судей",
+                "category": "Ювеналы-2 E+D соло Ж St",
+                "protocol_id": 76809,
+                "cross_count": 1,
+                "interpretation": "ниже всего оценивался судьями"
+              }
+            ],
+            "evaluated_dance": null,
+            "tied_dances": [],
+            "tied_metric_value": null
+          },
+          {
+            "program": "latin",
+            "program_label": "Латина",
+            "dance_codes": [
+              "S",
+              "Ch",
+              "R",
+              "J"
+            ],
+            "overall": {
+              "avg_place": null,
+              "dance_count": 4,
+              "protocol_count": 1,
+              "dance_codes": [
+                "S",
+                "Ch",
+                "R",
+                "J"
+              ]
+            },
+            "metric_type": "cross_count",
+            "metric_label": "по крестам судей",
+            "data_sufficient": true,
+            "display_mode": "best_worst",
+            "best_dance": {
+              "dance": "C",
+              "dance_code": "Ch",
+              "metric_value": 8,
+              "metric_type": "cross_count",
+              "metric_label": "крестов судей",
+              "category": "Ювеналы-2 E+D соло Ж La",
+              "protocol_id": 76824,
+              "cross_count": 8,
+              "interpretation": "выше всего оценивался судьями"
+            },
+            "worst_dance": {
+              "dance": "J",
+              "dance_code": "J",
+              "metric_value": 5,
+              "metric_type": "cross_count",
+              "metric_label": "крестов судей",
+              "category": "Ювеналы-2 E+D соло Ж La",
+              "protocol_id": 76824,
+              "cross_count": 5,
+              "interpretation": "ниже всего оценивался судьями"
+            },
+            "best_dances": [
+              {
+                "dance": "C",
+                "dance_code": "Ch",
+                "metric_value": 8,
+                "metric_type": "cross_count",
+                "metric_label": "крестов судей",
+                "category": "Ювеналы-2 E+D соло Ж La",
+                "protocol_id": 76824,
+                "cross_count": 8,
+                "interpretation": "выше всего оценивался судьями"
+              }
+            ],
+            "worst_dances": [
+              {
+                "dance": "J",
+                "dance_code": "J",
+                "metric_value": 5,
+                "metric_type": "cross_count",
+                "metric_label": "крестов судей",
+                "category": "Ювеналы-2 E+D соло Ж La",
+                "protocol_id": 76824,
+                "cross_count": 5,
+                "interpretation": "ниже всего оценивался судьями"
+              }
+            ],
+            "evaluated_dance": null,
+            "tied_dances": [],
+            "tied_metric_value": null
+          }
+        ],
+        "dance_results": []
+      },
+      {
+        "event_date": "2026-03-08",
+        "tournament_id": 2026030800,
+        "tournament_title": "Амбассадор 2026 (Санкт-Петербург)",
+        "categories": [
+          "Ювеналы-2 E+D Соло Ж La",
+          "Ювеналы-2 E+D Соло Ж St"
+        ],
+        "programs": [
+          "latin",
+          "standard"
+        ],
+        "protocols": 2,
+        "dance_codes": [
+          "W",
+          "T",
+          "F",
+          "Q",
+          "S",
+          "Ch",
+          "R",
+          "J"
+        ],
+        "program_summaries": [
+          {
+            "program": "standard",
+            "program_label": "Стандарт",
+            "dance_codes": [
+              "W",
+              "T",
+              "F",
+              "Q"
+            ],
+            "overall": {
+              "avg_place": null,
+              "dance_count": 4,
+              "protocol_count": 1,
+              "dance_codes": [
+                "W",
+                "T",
+                "F",
+                "Q"
+              ]
+            },
+            "metric_type": "cross_count",
+            "metric_label": "по крестам судей",
+            "data_sufficient": true,
+            "display_mode": "best_worst",
+            "best_dance": {
+              "dance": "Q",
+              "dance_code": "Q",
+              "metric_value": 6,
+              "metric_type": "cross_count",
+              "metric_label": "крестов судей",
+              "category": "Ювеналы-2 E+D Соло Ж St",
+              "protocol_id": 77963,
+              "cross_count": 6,
+              "interpretation": "выше всего оценивался судьями"
+            },
+            "worst_dance": {
+              "dance": "F",
+              "dance_code": "F",
+              "metric_value": 3,
+              "metric_type": "cross_count",
+              "metric_label": "крестов судей",
+              "category": "Ювеналы-2 E+D Соло Ж St",
+              "protocol_id": 77963,
+              "cross_count": 3,
+              "interpretation": "ниже всего оценивался судьями"
+            },
+            "best_dances": [
+              {
+                "dance": "Q",
+                "dance_code": "Q",
+                "metric_value": 6,
+                "metric_type": "cross_count",
+                "metric_label": "крестов судей",
+                "category": "Ювеналы-2 E+D Соло Ж St",
+                "protocol_id": 77963,
+                "cross_count": 6,
+                "interpretation": "выше всего оценивался судьями"
+              }
+            ],
+            "worst_dances": [
+              {
+                "dance": "F",
+                "dance_code": "F",
+                "metric_value": 3,
+                "metric_type": "cross_count",
+                "metric_label": "крестов судей",
+                "category": "Ювеналы-2 E+D Соло Ж St",
+                "protocol_id": 77963,
+                "cross_count": 3,
+                "interpretation": "ниже всего оценивался судьями"
+              }
+            ],
+            "evaluated_dance": null,
+            "tied_dances": [],
+            "tied_metric_value": null
+          },
+          {
+            "program": "latin",
+            "program_label": "Латина",
+            "dance_codes": [
+              "S",
+              "Ch",
+              "R",
+              "J"
+            ],
+            "overall": {
+              "avg_place": null,
+              "dance_count": 4,
+              "protocol_count": 1,
+              "dance_codes": [
+                "S",
+                "Ch",
+                "R",
+                "J"
+              ]
+            },
+            "metric_type": "cross_count",
+            "metric_label": "по крестам судей",
+            "data_sufficient": true,
+            "display_mode": "best_worst",
+            "best_dance": {
+              "dance": "S",
+              "dance_code": "S",
+              "metric_value": 4,
+              "metric_type": "cross_count",
+              "metric_label": "крестов судей",
+              "category": "Ювеналы-2 E+D Соло Ж La",
+              "protocol_id": 77977,
+              "cross_count": 4,
+              "interpretation": "выше всего оценивался судьями"
+            },
+            "worst_dance": {
+              "dance": "C",
+              "dance_code": "Ch",
+              "metric_value": 3,
+              "metric_type": "cross_count",
+              "metric_label": "крестов судей",
+              "category": "Ювеналы-2 E+D Соло Ж La",
+              "protocol_id": 77977,
+              "cross_count": 3,
+              "interpretation": "ниже всего оценивался судьями"
+            },
+            "best_dances": [
+              {
+                "dance": "S",
+                "dance_code": "S",
+                "metric_value": 4,
+                "metric_type": "cross_count",
+                "metric_label": "крестов судей",
+                "category": "Ювеналы-2 E+D Соло Ж La",
+                "protocol_id": 77977,
+                "cross_count": 4,
+                "interpretation": "выше всего оценивался судьями"
+              },
+              {
+                "dance": "J",
+                "dance_code": "J",
+                "metric_value": 4,
+                "metric_type": "cross_count",
+                "metric_label": "крестов судей",
+                "category": "Ювеналы-2 E+D Соло Ж La",
+                "protocol_id": 77977,
+                "cross_count": 4,
+                "interpretation": "выше всего оценивался судьями"
+              }
+            ],
+            "worst_dances": [
+              {
+                "dance": "C",
+                "dance_code": "Ch",
+                "metric_value": 3,
+                "metric_type": "cross_count",
+                "metric_label": "крестов судей",
+                "category": "Ювеналы-2 E+D Соло Ж La",
+                "protocol_id": 77977,
+                "cross_count": 3,
+                "interpretation": "ниже всего оценивался судьями"
+              },
+              {
+                "dance": "R",
+                "dance_code": "R",
+                "metric_value": 3,
+                "metric_type": "cross_count",
+                "metric_label": "крестов судей",
+                "category": "Ювеналы-2 E+D Соло Ж La",
+                "protocol_id": 77977,
+                "cross_count": 3,
+                "interpretation": "ниже всего оценивался судьями"
+              }
+            ],
+            "evaluated_dance": null,
+            "tied_dances": [],
+            "tied_metric_value": null
+          }
+        ],
+        "dance_results": []
+      },
+      {
+        "event_date": "2026-04-26",
+        "tournament_id": 2026042600,
+        "tournament_title": "Карнавал 2026 (Санкт-Петербург)",
+        "categories": [
+          "Ювеналы-2 E+D Соло Ж St"
+        ],
+        "programs": [
+          "standard"
+        ],
+        "protocols": 1,
+        "dance_codes": [
+          "W",
+          "T",
+          "F",
+          "Q"
+        ],
+        "program_summaries": [
+          {
+            "program": "standard",
+            "program_label": "Стандарт",
+            "dance_codes": [
+              "W",
+              "T",
+              "F",
+              "Q"
+            ],
+            "overall": {
+              "avg_place": null,
+              "dance_count": 4,
+              "protocol_count": 1,
+              "dance_codes": [
+                "W",
+                "T",
+                "F",
+                "Q"
+              ]
+            },
+            "metric_type": "cross_count",
+            "metric_label": "по крестам судей",
+            "data_sufficient": true,
+            "display_mode": "best_worst",
+            "best_dance": {
+              "dance": "Q",
+              "dance_code": "Q",
+              "metric_value": 6,
+              "metric_type": "cross_count",
+              "metric_label": "крестов судей",
+              "category": "Ювеналы-2 E+D Соло Ж St",
+              "protocol_id": 79410,
+              "cross_count": 6,
+              "interpretation": "выше всего оценивался судьями"
+            },
+            "worst_dance": {
+              "dance": "W",
+              "dance_code": "W",
+              "metric_value": 2,
+              "metric_type": "cross_count",
+              "metric_label": "крестов судей",
+              "category": "Ювеналы-2 E+D Соло Ж St",
+              "protocol_id": 79410,
+              "cross_count": 2,
+              "interpretation": "ниже всего оценивался судьями"
+            },
+            "best_dances": [
+              {
+                "dance": "Q",
+                "dance_code": "Q",
+                "metric_value": 6,
+                "metric_type": "cross_count",
+                "metric_label": "крестов судей",
+                "category": "Ювеналы-2 E+D Соло Ж St",
+                "protocol_id": 79410,
+                "cross_count": 6,
+                "interpretation": "выше всего оценивался судьями"
+              }
+            ],
+            "worst_dances": [
+              {
+                "dance": "W",
+                "dance_code": "W",
+                "metric_value": 2,
+                "metric_type": "cross_count",
+                "metric_label": "крестов судей",
+                "category": "Ювеналы-2 E+D Соло Ж St",
+                "protocol_id": 79410,
+                "cross_count": 2,
+                "interpretation": "ниже всего оценивался судьями"
+              }
+            ],
+            "evaluated_dance": null,
+            "tied_dances": [],
+            "tied_metric_value": null
+          }
+        ],
+        "dance_results": []
+      }
+    ]
+  },
+  "warnings": {
+    "parser_status": [
+      {
+        "status": "partial",
+        "message": "no marks parsed",
+        "protocols": 28
+      },
+      {
+        "status": "partial",
+        "message": "unsupported_fkt_round_layout",
+        "protocols": 9
+      },
+      {
+        "status": "skipped",
+        "message": "no_round_sections_result_summary_only",
+        "protocols": 1
+      }
+    ],
+    "low_confidence_dances": [
+      {
+        "program": "latin",
+        "dance": "C",
+        "final_avg_place": 5.5,
+        "median_place": 5.5,
+        "std_deviation": 2.121,
+        "variance": 4.5,
+        "n_marks": 2,
+        "n_protocols": 2,
+        "n_dates": 2,
+        "best_place": 4.0,
+        "worst_place": 7.0,
+        "categories": "Ювеналы-2 E+D Соло Ж La; Ювеналы-2 E+D соло Ж La",
+        "judge_avg_place": 4.591,
+        "judge_std_deviation": 2.085,
+        "judge_variance": 4.348,
+        "judge_marks": 22,
+        "avg_place": 5.5,
+        "final_median_place": 5.5,
+        "final_std_deviation": 2.121,
+        "consistency_score": 0.32,
+        "volatility_score": 2.121,
+        "confidence": "low confidence"
+      },
+      {
+        "program": "latin",
+        "dance": "J",
+        "final_avg_place": 5.0,
+        "median_place": 5.0,
+        "std_deviation": 2.828,
+        "variance": 8.0,
+        "n_marks": 2,
+        "n_protocols": 2,
+        "n_dates": 2,
+        "best_place": 3.0,
+        "worst_place": 7.0,
+        "categories": "Ювеналы-2 E+D Соло Ж La; Ювеналы-2 E+D соло Ж La",
+        "judge_avg_place": 4.364,
+        "judge_std_deviation": 1.965,
+        "judge_variance": 3.861,
+        "judge_marks": 22,
+        "avg_place": 5.0,
+        "final_median_place": 5.0,
+        "final_std_deviation": 2.828,
+        "consistency_score": 0.261,
+        "volatility_score": 2.828,
+        "confidence": "low confidence"
+      },
+      {
+        "program": "latin",
+        "dance": "R",
+        "final_avg_place": 4.5,
+        "median_place": 4.5,
+        "std_deviation": 3.536,
+        "variance": 12.5,
+        "n_marks": 2,
+        "n_protocols": 2,
+        "n_dates": 2,
+        "best_place": 2.0,
+        "worst_place": 7.0,
+        "categories": "Ювеналы-2 E+D Соло Ж La; Ювеналы-2 E+D соло Ж La",
+        "judge_avg_place": 4.136,
+        "judge_std_deviation": 2.054,
+        "judge_variance": 4.219,
+        "judge_marks": 22,
+        "avg_place": 4.5,
+        "final_median_place": 4.5,
+        "final_std_deviation": 3.536,
+        "consistency_score": 0.22,
+        "volatility_score": 3.536,
+        "confidence": "low confidence"
+      },
+      {
+        "program": "latin",
+        "dance": "S",
+        "final_avg_place": 5.5,
+        "median_place": 5.5,
+        "std_deviation": 2.121,
+        "variance": 4.5,
+        "n_marks": 2,
+        "n_protocols": 2,
+        "n_dates": 2,
+        "best_place": 4.0,
+        "worst_place": 7.0,
+        "categories": "Ювеналы-2 E+D Соло Ж La; Ювеналы-2 E+D соло Ж La",
+        "judge_avg_place": 4.409,
+        "judge_std_deviation": 1.943,
+        "judge_variance": 3.777,
+        "judge_marks": 22,
+        "avg_place": 5.5,
+        "final_median_place": 5.5,
+        "final_std_deviation": 2.121,
+        "consistency_score": 0.32,
+        "volatility_score": 2.121,
+        "confidence": "low confidence"
+      },
+      {
+        "program": "standard",
+        "dance": "F",
+        "final_avg_place": 8.0,
+        "median_place": 8.0,
+        "std_deviation": 0.0,
+        "variance": 0.0,
+        "n_marks": 1,
+        "n_protocols": 1,
+        "n_dates": 1,
+        "best_place": 8.0,
+        "worst_place": 8.0,
+        "categories": "Ювеналы-2 E+D Соло Ж St",
+        "judge_avg_place": 6.182,
+        "judge_std_deviation": 2.089,
+        "judge_variance": 4.364,
+        "judge_marks": 11,
+        "avg_place": 8.0,
+        "final_median_place": 8.0,
+        "final_std_deviation": null,
+        "consistency_score": 1.0,
+        "volatility_score": 0.0,
+        "confidence": "low confidence"
+      },
+      {
+        "program": "standard",
+        "dance": "Q",
+        "final_avg_place": 7.0,
+        "median_place": 7.0,
+        "std_deviation": 0.0,
+        "variance": 0.0,
+        "n_marks": 1,
+        "n_protocols": 1,
+        "n_dates": 1,
+        "best_place": 7.0,
+        "worst_place": 7.0,
+        "categories": "Ювеналы-2 E+D Соло Ж St",
+        "judge_avg_place": 5.727,
+        "judge_std_deviation": 2.195,
+        "judge_variance": 4.818,
+        "judge_marks": 11,
+        "avg_place": 7.0,
+        "final_median_place": 7.0,
+        "final_std_deviation": null,
+        "consistency_score": 1.0,
+        "volatility_score": 0.0,
+        "confidence": "low confidence"
+      },
+      {
+        "program": "standard",
+        "dance": "T",
+        "final_avg_place": 8.0,
+        "median_place": 8.0,
+        "std_deviation": 0.0,
+        "variance": 0.0,
+        "n_marks": 1,
+        "n_protocols": 1,
+        "n_dates": 1,
+        "best_place": 8.0,
+        "worst_place": 8.0,
+        "categories": "Ювеналы-2 E+D Соло Ж St",
+        "judge_avg_place": 5.909,
+        "judge_std_deviation": 2.3,
+        "judge_variance": 5.291,
+        "judge_marks": 11,
+        "avg_place": 8.0,
+        "final_median_place": 8.0,
+        "final_std_deviation": null,
+        "consistency_score": 1.0,
+        "volatility_score": 0.0,
+        "confidence": "low confidence"
+      },
+      {
+        "program": "standard",
+        "dance": "W",
+        "final_avg_place": 3.0,
+        "median_place": 3.0,
+        "std_deviation": 0.0,
+        "variance": 0.0,
+        "n_marks": 1,
+        "n_protocols": 1,
+        "n_dates": 1,
+        "best_place": 3.0,
+        "worst_place": 3.0,
+        "categories": "Ювеналы-2 E+D Соло Ж St",
+        "judge_avg_place": 4.455,
+        "judge_std_deviation": 2.423,
+        "judge_variance": 5.873,
+        "judge_marks": 11,
+        "avg_place": 3.0,
+        "final_median_place": 3.0,
+        "final_std_deviation": null,
+        "consistency_score": 1.0,
+        "volatility_score": 0.0,
+        "confidence": "low confidence"
+      }
+    ],
+    "missing_dances": [
+      {
+        "program": "standard",
+        "dance": "V",
+        "status": "missing numeric final marks"
+      },
+      {
+        "program": "latin",
+        "dance": "P",
+        "status": "missing numeric final marks"
+      }
+    ],
+    "incomplete_protocols": [],
+    "ranking_mismatch": [
+      {
+        "program": "standard",
+        "message": "Судейская и результативная метрики дают разные рейтинги танцев.",
+        "performance_ranking": [
+          "W",
+          "Q",
+          "F",
+          "T"
+        ],
+        "judge_ranking": [
+          "W",
+          "Q",
+          "T",
+          "F"
+        ]
+      },
+      {
+        "program": "latin",
+        "message": "Судейская и результативная метрики дают разные рейтинги танцев.",
+        "performance_ranking": [
+          "R",
+          "J",
+          "C",
+          "S"
+        ],
+        "judge_ranking": [
+          "R",
+          "J",
+          "S",
+          "C"
+        ]
+      }
+    ],
+    "category_mix": [
+      {
+        "program": "latin",
+        "entry_type": "solo",
+        "category": "Ювеналы-1+2 E+D Соло Ж La",
+        "protocols": 1
+      },
+      {
+        "program": "latin",
+        "entry_type": "solo",
+        "category": "Ювеналы-1+2 E+D соло Ж La",
+        "protocols": 1
+      },
+      {
+        "program": "latin",
+        "entry_type": "solo",
+        "category": "Ювеналы-2 E+D Соло Ж La",
+        "protocols": 2
+      },
+      {
+        "program": "latin",
+        "entry_type": "solo",
+        "category": "Ювеналы-2 E+D соло Ж La",
+        "protocols": 2
+      },
+      {
+        "program": "standard",
+        "entry_type": "solo",
+        "category": "Ювеналы-1+2 E+D Соло Ж St",
+        "protocols": 1
+      },
+      {
+        "program": "standard",
+        "entry_type": "solo",
+        "category": "Ювеналы-1+2 E+D соло Ж St",
+        "protocols": 1
+      },
+      {
+        "program": "standard",
+        "entry_type": "solo",
+        "category": "Ювеналы-2 E+D Соло Ж St",
+        "protocols": 3
+      },
+      {
+        "program": "standard",
+        "entry_type": "solo",
+        "category": "Ювеналы-2 E+D соло Ж St",
+        "protocols": 2
+      }
+    ],
+    "notes": [
+      "Performance dance analytics use final_avg_place: one dance result per protocol, round, and dance.",
+      "judge_avg_place is diagnostic and is not used for strongest/weakest/stability/trend rankings.",
+      "Cross analytics are kept separate and are not mixed into place metrics.",
+      "Parser intentionally skips unsupported FKT/EADC raw strings when judge-position mapping is not validated."
+    ]
+  }
+}

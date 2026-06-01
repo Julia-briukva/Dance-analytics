@@ -1,0 +1,478 @@
+{
+  "metadata": {
+    "generated_at": "2026-06-01T19:11:29.308487+00:00",
+    "analytics_version": "report_layer_v1",
+    "database": "database/compreg_spb_2025_2026.sqlite"
+  },
+  "dancer": {
+    "internal_dancer_id": 37911,
+    "idd": "2010734",
+    "name": "Чистова Анна",
+    "club": "Триумф",
+    "city": "Санкт-Петербург"
+  },
+  "summary": {
+    "protocols": 2,
+    "tournaments": 1,
+    "judges": 13,
+    "marks": 28,
+    "numeric_place_marks": 0,
+    "numeric_final_marks": 0,
+    "cross_marks": 28,
+    "date_from": "2026-05-17",
+    "date_to": "2026-05-17"
+  },
+  "programs": {
+    "standard": {
+      "metrics": [],
+      "best_by_final_average": null,
+      "best_by_median": null,
+      "most_stable_dance": null,
+      "best_peak": null,
+      "worst_by_final_average": null,
+      "judge_level_best": null,
+      "strongest_dance": null,
+      "weakest_dance": null,
+      "most_improved_dance": null
+    },
+    "latin": {
+      "metrics": [],
+      "best_by_final_average": null,
+      "best_by_median": null,
+      "most_stable_dance": null,
+      "best_peak": null,
+      "worst_by_final_average": null,
+      "judge_level_best": null,
+      "strongest_dance": null,
+      "weakest_dance": null,
+      "most_improved_dance": null
+    }
+  },
+  "judges": {
+    "strictest": [],
+    "softest": [],
+    "low_confidence": [],
+    "by_program": {
+      "standard": {
+        "strictest": [],
+        "softest": []
+      },
+      "latin": {
+        "strictest": [],
+        "softest": []
+      }
+    }
+  },
+  "dances": {
+    "metrics": [],
+    "trends": [],
+    "dynamics_by_date": []
+  },
+  "category_slices": {
+    "standard": {
+      "all": {
+        "metrics": [],
+        "best_by_final_average": null,
+        "best_by_median": null,
+        "most_stable_dance": null,
+        "best_peak": null,
+        "worst_by_final_average": null,
+        "judge_level_best": null,
+        "strongest_dance": null,
+        "weakest_dance": null,
+        "most_improved_dance": null,
+        "key": "all",
+        "label": "Все категории",
+        "source": "selected_dancer_marks_and_results",
+        "class_group": null,
+        "age_groups": [
+          "Юниоры-1+2"
+        ],
+        "source_categories": [
+          "Юниоры-1+2 E+D Соло Ж St"
+        ],
+        "protocol_count": 0,
+        "tournament_count": 0,
+        "evidence": {
+          "tournaments": 1,
+          "protocols": 1,
+          "marks": 12,
+          "results": 0
+        },
+        "dynamics_by_date": [],
+        "trends": [],
+        "tournament_dance_results": []
+      }
+    },
+    "latin": {
+      "all": {
+        "metrics": [],
+        "best_by_final_average": null,
+        "best_by_median": null,
+        "most_stable_dance": null,
+        "best_peak": null,
+        "worst_by_final_average": null,
+        "judge_level_best": null,
+        "strongest_dance": null,
+        "weakest_dance": null,
+        "most_improved_dance": null,
+        "key": "all",
+        "label": "Все категории",
+        "source": "selected_dancer_marks_and_results",
+        "class_group": null,
+        "age_groups": [
+          "Юниоры-1+2"
+        ],
+        "source_categories": [
+          "Юниоры-1+2 E+D Соло Ж La"
+        ],
+        "protocol_count": 0,
+        "tournament_count": 0,
+        "evidence": {
+          "tournaments": 1,
+          "protocols": 1,
+          "marks": 16,
+          "results": 0
+        },
+        "dynamics_by_date": [],
+        "trends": [],
+        "tournament_dance_results": []
+      }
+    }
+  },
+  "tournaments": {
+    "count": 1,
+    "protocol_count": 2,
+    "items": [
+      {
+        "event_date": "2026-05-17",
+        "tournament_id": 2026051601,
+        "tournament_title": "Чемпионат СПТС 2026 (Санкт-Петербург)",
+        "protocols": 2,
+        "categories": [
+          "Юниоры-1+2 E+D Соло Ж La",
+          "Юниоры-1+2 E+D Соло Ж St"
+        ],
+        "programs": [
+          "latin",
+          "standard"
+        ],
+        "dance_codes": [
+          "T",
+          "F",
+          "Q",
+          "S",
+          "Ch",
+          "R",
+          "J"
+        ]
+      }
+    ],
+    "protocols": [
+      {
+        "event_date": "2026-05-17",
+        "tournament_id": 2026051601,
+        "tournament_title": "Чемпионат СПТС 2026 (Санкт-Петербург)",
+        "protocol_id": 80279,
+        "category": "Юниоры-1+2 E+D Соло Ж St",
+        "program": "standard",
+        "entry_type": "solo"
+      },
+      {
+        "event_date": "2026-05-17",
+        "tournament_id": 2026051601,
+        "tournament_title": "Чемпионат СПТС 2026 (Санкт-Петербург)",
+        "protocol_id": 80288,
+        "category": "Юниоры-1+2 E+D Соло Ж La",
+        "program": "latin",
+        "entry_type": "solo"
+      }
+    ],
+    "dance_results": []
+  },
+  "trainer_mode": {
+    "tournament_summaries": [
+      {
+        "event_date": "2026-05-17",
+        "tournament_id": 2026051601,
+        "tournament_title": "Чемпионат СПТС 2026 (Санкт-Петербург)",
+        "categories": [
+          "Юниоры-1+2 E+D Соло Ж La",
+          "Юниоры-1+2 E+D Соло Ж St"
+        ],
+        "programs": [
+          "latin",
+          "standard"
+        ],
+        "protocols": 2,
+        "dance_codes": [
+          "T",
+          "F",
+          "Q",
+          "S",
+          "Ch",
+          "R",
+          "J"
+        ],
+        "program_summaries": [
+          {
+            "program": "standard",
+            "program_label": "Стандарт",
+            "dance_codes": [
+              "T",
+              "F",
+              "Q"
+            ],
+            "overall": {
+              "avg_place": null,
+              "dance_count": 3,
+              "protocol_count": 1,
+              "dance_codes": [
+                "T",
+                "F",
+                "Q"
+              ]
+            },
+            "metric_type": "cross_count",
+            "metric_label": "по крестам судей",
+            "data_sufficient": true,
+            "display_mode": "best_worst",
+            "best_dance": {
+              "dance": "F",
+              "dance_code": "F",
+              "metric_value": 5,
+              "metric_type": "cross_count",
+              "metric_label": "крестов судей",
+              "category": "Юниоры-1+2 E+D Соло Ж St",
+              "protocol_id": 80279,
+              "cross_count": 5,
+              "interpretation": "выше всего оценивался судьями"
+            },
+            "worst_dance": {
+              "dance": "T",
+              "dance_code": "T",
+              "metric_value": 3,
+              "metric_type": "cross_count",
+              "metric_label": "крестов судей",
+              "category": "Юниоры-1+2 E+D Соло Ж St",
+              "protocol_id": 80279,
+              "cross_count": 3,
+              "interpretation": "ниже всего оценивался судьями"
+            },
+            "best_dances": [
+              {
+                "dance": "F",
+                "dance_code": "F",
+                "metric_value": 5,
+                "metric_type": "cross_count",
+                "metric_label": "крестов судей",
+                "category": "Юниоры-1+2 E+D Соло Ж St",
+                "protocol_id": 80279,
+                "cross_count": 5,
+                "interpretation": "выше всего оценивался судьями"
+              }
+            ],
+            "worst_dances": [
+              {
+                "dance": "T",
+                "dance_code": "T",
+                "metric_value": 3,
+                "metric_type": "cross_count",
+                "metric_label": "крестов судей",
+                "category": "Юниоры-1+2 E+D Соло Ж St",
+                "protocol_id": 80279,
+                "cross_count": 3,
+                "interpretation": "ниже всего оценивался судьями"
+              }
+            ],
+            "evaluated_dance": null,
+            "tied_dances": [],
+            "tied_metric_value": null
+          },
+          {
+            "program": "latin",
+            "program_label": "Латина",
+            "dance_codes": [
+              "S",
+              "Ch",
+              "R",
+              "J"
+            ],
+            "overall": {
+              "avg_place": null,
+              "dance_count": 4,
+              "protocol_count": 1,
+              "dance_codes": [
+                "S",
+                "Ch",
+                "R",
+                "J"
+              ]
+            },
+            "metric_type": "cross_count",
+            "metric_label": "по крестам судей",
+            "data_sufficient": true,
+            "display_mode": "best_worst",
+            "best_dance": {
+              "dance": "C",
+              "dance_code": "Ch",
+              "metric_value": 5,
+              "metric_type": "cross_count",
+              "metric_label": "крестов судей",
+              "category": "Юниоры-1+2 E+D Соло Ж La",
+              "protocol_id": 80288,
+              "cross_count": 5,
+              "interpretation": "выше всего оценивался судьями"
+            },
+            "worst_dance": {
+              "dance": "R",
+              "dance_code": "R",
+              "metric_value": 2,
+              "metric_type": "cross_count",
+              "metric_label": "крестов судей",
+              "category": "Юниоры-1+2 E+D Соло Ж La",
+              "protocol_id": 80288,
+              "cross_count": 2,
+              "interpretation": "ниже всего оценивался судьями"
+            },
+            "best_dances": [
+              {
+                "dance": "C",
+                "dance_code": "Ch",
+                "metric_value": 5,
+                "metric_type": "cross_count",
+                "metric_label": "крестов судей",
+                "category": "Юниоры-1+2 E+D Соло Ж La",
+                "protocol_id": 80288,
+                "cross_count": 5,
+                "interpretation": "выше всего оценивался судьями"
+              },
+              {
+                "dance": "J",
+                "dance_code": "J",
+                "metric_value": 5,
+                "metric_type": "cross_count",
+                "metric_label": "крестов судей",
+                "category": "Юниоры-1+2 E+D Соло Ж La",
+                "protocol_id": 80288,
+                "cross_count": 5,
+                "interpretation": "выше всего оценивался судьями"
+              }
+            ],
+            "worst_dances": [
+              {
+                "dance": "R",
+                "dance_code": "R",
+                "metric_value": 2,
+                "metric_type": "cross_count",
+                "metric_label": "крестов судей",
+                "category": "Юниоры-1+2 E+D Соло Ж La",
+                "protocol_id": 80288,
+                "cross_count": 2,
+                "interpretation": "ниже всего оценивался судьями"
+              }
+            ],
+            "evaluated_dance": null,
+            "tied_dances": [],
+            "tied_metric_value": null
+          }
+        ],
+        "dance_results": []
+      }
+    ]
+  },
+  "warnings": {
+    "parser_status": [
+      {
+        "status": "partial",
+        "message": "no marks parsed",
+        "protocols": 28
+      },
+      {
+        "status": "partial",
+        "message": "unsupported_fkt_round_layout",
+        "protocols": 9
+      },
+      {
+        "status": "skipped",
+        "message": "no_round_sections_result_summary_only",
+        "protocols": 1
+      }
+    ],
+    "low_confidence_dances": [],
+    "missing_dances": [
+      {
+        "program": "standard",
+        "dance": "F",
+        "status": "missing numeric final marks"
+      },
+      {
+        "program": "standard",
+        "dance": "Q",
+        "status": "missing numeric final marks"
+      },
+      {
+        "program": "standard",
+        "dance": "T",
+        "status": "missing numeric final marks"
+      },
+      {
+        "program": "standard",
+        "dance": "V",
+        "status": "missing numeric final marks"
+      },
+      {
+        "program": "standard",
+        "dance": "W",
+        "status": "missing numeric final marks"
+      },
+      {
+        "program": "latin",
+        "dance": "C",
+        "status": "missing numeric final marks"
+      },
+      {
+        "program": "latin",
+        "dance": "J",
+        "status": "missing numeric final marks"
+      },
+      {
+        "program": "latin",
+        "dance": "P",
+        "status": "missing numeric final marks"
+      },
+      {
+        "program": "latin",
+        "dance": "R",
+        "status": "missing numeric final marks"
+      },
+      {
+        "program": "latin",
+        "dance": "S",
+        "status": "missing numeric final marks"
+      }
+    ],
+    "incomplete_protocols": [],
+    "ranking_mismatch": [],
+    "category_mix": [
+      {
+        "program": "latin",
+        "entry_type": "solo",
+        "category": "Юниоры-1+2 E+D Соло Ж La",
+        "protocols": 1
+      },
+      {
+        "program": "standard",
+        "entry_type": "solo",
+        "category": "Юниоры-1+2 E+D Соло Ж St",
+        "protocols": 1
+      }
+    ],
+    "notes": [
+      "Performance dance analytics use final_avg_place: one dance result per protocol, round, and dance.",
+      "judge_avg_place is diagnostic and is not used for strongest/weakest/stability/trend rankings.",
+      "Cross analytics are kept separate and are not mixed into place metrics.",
+      "Parser intentionally skips unsupported FKT/EADC raw strings when judge-position mapping is not validated."
+    ]
+  }
+}
