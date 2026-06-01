@@ -11,11 +11,31 @@ from typing import Any
 
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
+from dance_display import DANCE_CODE_ORDER, normalize_dance_code, sort_dance_codes
+
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_REPORTS_DIR = PROJECT_ROOT / "reports"
 DEFAULT_TEMPLATES_DIR = PROJECT_ROOT / "templates"
 DEFAULT_TEMPLATE_NAME = "report.html.j2"
+CATEGORY_SLICE_ORDER = ["all", "n", "n_e", "e", "e_d", "d", "d_c", "c", "c_b", "b", "a", "s", "m", "eadc", "open"]
+CATEGORY_SLICE_LABELS = {
+    "all": "Все категории",
+    "n": "N",
+    "n_e": "N+E",
+    "e": "E",
+    "e_d": "E+D",
+    "d": "D",
+    "d_c": "D+C",
+    "c": "C",
+    "c_b": "C+B",
+    "b": "B",
+    "a": "A",
+    "s": "S",
+    "m": "M",
+    "eadc": "EADC",
+    "open": "Open",
+}
 
 
 def load_report(path: Path) -> dict[str, Any]:
@@ -52,6 +72,10 @@ def label_entry_type(value: str | None) -> str:
     )
 
 
+def label_category_slice(value: str | None) -> str:
+    return CATEGORY_SLICE_LABELS.get(str(value or ""), str(value or "—"))
+
+
 def dance_label(value: str | None) -> str:
     return {
         "W": "Медленный вальс",
@@ -65,6 +89,10 @@ def dance_label(value: str | None) -> str:
         "P": "Пасодобль",
         "J": "Джайв",
     }.get(str(value or ""), str(value or "—"))
+
+
+def dance_code(value: str | None) -> str:
+    return normalize_dance_code(value)
 
 
 def first_present(items: list[dict[str, Any]], key: str) -> Any:
@@ -131,6 +159,7 @@ def add_stability_interpretation(metrics: list[dict[str, Any]], stability_values
         enriched["stability_score"] = percent
         enriched["stability_label"] = stability_label_for_percent(percent)
         enriched["stability_percent"] = percent
+        enriched["stability_style"] = f"--stability-width: {percent}%;"
         interpreted.append(enriched)
     return interpreted
 
@@ -420,7 +449,12 @@ def overall_progress(trends: list[dict[str, Any]]) -> tuple[str, str, dict[str, 
 
 
 def tournament_cards(tournaments: list[dict[str, Any]], limit: int = 5) -> list[dict[str, Any]]:
-    return sorted(tournaments, key=lambda item: item.get("event_date") or "")[-limit:]
+    cards = []
+    for item in sorted(tournaments, key=lambda value: value.get("event_date") or "")[-limit:]:
+        card = dict(item)
+        card["dance_codes"] = sort_dance_codes([normalize_dance_code(code) for code in item.get("dance_codes", []) or []])
+        cards.append(card)
+    return cards
 
 
 def tournament_performance(tournaments: list[dict[str, Any]], dynamics: list[dict[str, Any]], limit: int = 3) -> dict[str, list[dict[str, Any]]]:
@@ -447,33 +481,89 @@ def tournament_performance(tournaments: list[dict[str, Any]], dynamics: list[dic
 
 
 def build_tournament_details(report: dict[str, Any]) -> list[dict[str, Any]]:
-    tournaments = report.get("tournaments", {}).get("items", []) or []
-    dynamics = report.get("dances", {}).get("dynamics_by_date", []) or []
-    rows_by_date: dict[str, list[dict[str, Any]]] = {}
-    for row in dynamics:
-        if row.get("event_date"):
-            rows_by_date.setdefault(row["event_date"], []).append(row)
+    return build_tournament_details_from_records(report.get("tournaments", {}).get("dance_results", []) or [])
+
+
+def dance_sort_key(row: dict[str, Any]) -> tuple[int, str, str]:
+    code = normalize_dance_code(row.get("dance_code") or row.get("dance"))
+    return (DANCE_CODE_ORDER.get(code, 999), str(row.get("program") or ""), code)
+
+
+def build_tournament_details_from_records(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    rows_by_tournament: dict[tuple[Any, Any, Any], list[dict[str, Any]]] = {}
+    for row in records:
+        key = (row.get("event_date"), row.get("tournament_id"), row.get("tournament_title"))
+        rows_by_tournament.setdefault(key, []).append(row)
 
     details = []
-    for item in sorted(tournaments, key=lambda value: value.get("event_date") or ""):
+    for (event_date, tournament_id, tournament_title), rows in sorted(rows_by_tournament.items(), key=lambda item: item[0][0] or ""):
         dance_rows = sorted(
-            rows_by_date.get(item.get("event_date"), []),
-            key=lambda row: (row.get("program") or "", row.get("dance") or ""),
+            rows,
+            key=lambda row: (row.get("protocol_id") or 0, row.get("program") or "", dance_sort_key(row)),
         )
-        scored = [row for row in dance_rows if row.get("final_avg_place") is not None]
-        best = min(scored, key=lambda row: float(row["final_avg_place"])) if scored else None
-        weakest = max(scored, key=lambda row: float(row["final_avg_place"])) if scored else None
-        avg_place = (sum(float(row["final_avg_place"]) for row in scored) / len(scored)) if scored else None
+        scored = [row for row in dance_rows if row.get("final_place") is not None]
+        best = min(scored, key=lambda row: float(row["final_place"])) if scored else None
+        weakest = max(scored, key=lambda row: float(row["final_place"])) if scored else None
+        avg_place = (sum(float(row["final_place"]) for row in scored) / len(scored)) if scored else None
         details.append(
             {
-                **item,
+                "event_date": event_date,
+                "tournament_id": tournament_id,
+                "tournament_title": tournament_title,
+                "protocols": len({row.get("protocol_id") for row in rows if row.get("protocol_id") is not None}),
+                "categories": sorted({str(row.get("category")) for row in rows if row.get("category")}),
+                "programs": sorted({str(row.get("program")) for row in rows if row.get("program")}),
                 "dance_results": dance_rows,
                 "best_dance": best,
                 "weakest_dance": weakest,
                 "avg_final_place": avg_place,
+                "has_standard": any(row.get("program") == "standard" for row in rows),
+                "has_latin": any(row.get("program") == "latin" for row in rows),
             }
         )
     return details
+
+
+def trainer_tournament_summaries(report: dict[str, Any]) -> list[dict[str, Any]]:
+    summaries = report.get("trainer_mode", {}).get("tournament_summaries", []) or []
+    if summaries:
+        return summaries
+    return build_tournament_details(report)
+
+
+def prepare_program_view(key: str, title: str, payload: dict[str, Any], fallback_trends: list[dict[str, Any]]) -> dict[str, Any]:
+    raw_metrics = payload.get("metrics", []) or []
+    program_stability_values = [
+        float(item["final_std_deviation"])
+        for item in raw_metrics
+        if item.get("final_std_deviation") is not None and int(item.get("n_protocols") or 0) >= 2
+    ]
+    metrics = add_stability_interpretation(raw_metrics, program_stability_values)
+    trends = payload.get("trends")
+    if trends is None:
+        trends = [item for item in fallback_trends if item.get("program") == key]
+    most_stable = payload.get("most_stable_dance") or payload.get("most_stable")
+    if most_stable:
+        most_stable = add_stability_interpretation([most_stable], program_stability_values)[0]
+    return {
+        "key": payload.get("key", "all"),
+        "label": payload.get("label", label_category_slice(payload.get("key", "all"))),
+        "title": title,
+        "metrics": metrics,
+        "best_by_final_average": payload.get("best_by_final_average"),
+        "best_by_median": payload.get("best_by_median"),
+        "most_stable": most_stable,
+        "best_peak": payload.get("best_peak"),
+        "worst_by_final_average": payload.get("worst_by_final_average"),
+        "judge_level_best": payload.get("judge_level_best"),
+        "strongest": payload.get("strongest_dance"),
+        "weakest": payload.get("weakest_dance"),
+        "least_stable": least_stable(metrics),
+        "most_improved": payload.get("most_improved_dance"),
+        "trends": trends or [],
+        "protocol_count": int(payload.get("protocol_count") or 0),
+        "tournament_count": int(payload.get("tournament_count") or 0),
+    }
 
 
 def build_role_views(programs: dict[str, dict[str, Any]], report: dict[str, Any], summary: dict[str, Any]) -> dict[str, Any]:
@@ -503,6 +593,17 @@ def build_role_views(programs: dict[str, dict[str, Any]], report: dict[str, Any]
     }
 
 
+def has_category_slice_evidence(slice_payload: dict[str, Any]) -> bool:
+    evidence = slice_payload.get("evidence") or {}
+    if evidence:
+        return (
+            int(evidence.get("protocols") or 0) > 0
+            and int(evidence.get("marks") or 0) > 0
+            and int(evidence.get("results") or 0) > 0
+        )
+    return int(slice_payload.get("protocol_count") or 0) > 0
+
+
 def build_view_model(report: dict[str, Any], input_path: Path, output_path: Path) -> dict[str, Any]:
     tournaments = report.get("tournaments", {}).get("protocols", [])
     entry_types = {item.get("entry_type") for item in tournaments if item.get("entry_type")}
@@ -522,32 +623,17 @@ def build_view_model(report: dict[str, Any], input_path: Path, output_path: Path
     programs: dict[str, dict[str, Any]] = {}
     for key, title in [("standard", "стандарт"), ("latin", "латина")]:
         payload = report.get("programs", {}).get(key, {})
-        raw_metrics = payload.get("metrics", [])
-        program_stability_values = [
-            float(item["final_std_deviation"])
-            for item in raw_metrics
-            if item.get("final_std_deviation") is not None and int(item.get("n_protocols") or 0) >= 2
+        programs[key] = prepare_program_view(key, title, payload, report.get("dances", {}).get("trends", []) or [])
+        slices = report.get("category_slices", {}).get(key, {}) or {}
+        ordered_slice_keys = [slice_key for slice_key in CATEGORY_SLICE_ORDER if slice_key in slices]
+        ordered_slice_keys.extend(slice_key for slice_key in slices if slice_key not in ordered_slice_keys)
+        programs[key]["category_slices"] = [
+            prepare_program_view(key, title, slices[slice_key], [])
+            for slice_key in ordered_slice_keys
+            if has_category_slice_evidence(slices[slice_key])
         ]
-        metrics = add_stability_interpretation(raw_metrics, program_stability_values)
-        trends = [item for item in report.get("dances", {}).get("trends", []) if item.get("program") == key]
-        most_stable = payload.get("most_stable_dance")
-        if most_stable:
-            most_stable = add_stability_interpretation([most_stable], program_stability_values)[0]
-        programs[key] = {
-            "title": title,
-            "metrics": metrics,
-            "best_by_final_average": payload.get("best_by_final_average"),
-            "best_by_median": payload.get("best_by_median"),
-            "most_stable": most_stable,
-            "best_peak": payload.get("best_peak"),
-            "worst_by_final_average": payload.get("worst_by_final_average"),
-            "judge_level_best": payload.get("judge_level_best"),
-            "strongest": payload.get("strongest_dance"),
-            "weakest": payload.get("weakest_dance"),
-            "least_stable": least_stable(metrics),
-            "most_improved": payload.get("most_improved_dance"),
-            "trends": trends,
-        }
+        for slice_view in programs[key]["category_slices"]:
+            slice_view.update(program_parent_view(key, slice_view))
 
     role_views = build_role_views(programs, report, report.get("summary", {}))
 
@@ -578,6 +664,7 @@ def build_view_model(report: dict[str, Any], input_path: Path, output_path: Path
         "dances": report.get("dances", {}),
         "tournaments": report.get("tournaments", {}),
         "tournament_details": build_tournament_details(report),
+        "trainer_tournament_summaries": trainer_tournament_summaries(report),
         "warnings": warnings,
         "role_views": role_views,
         "sections": sections,
@@ -617,6 +704,7 @@ def render_report(view_model: dict[str, Any]) -> str:
     environment.filters["program_label"] = label_program
     environment.filters["entry_label"] = label_entry_type
     environment.filters["dance_label"] = dance_label
+    environment.filters["dance_code"] = dance_code
     environment.filters["pluralize"] = pluralize
     template = environment.get_template(DEFAULT_TEMPLATE_NAME)
     return template.render(**view_model)

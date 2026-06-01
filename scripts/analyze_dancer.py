@@ -12,12 +12,14 @@ from pathlib import Path
 
 import pandas as pd
 
+from dance_display import normalize_dance_code
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_DB_PATH = PROJECT_ROOT / "database" / "compreg_spb_2025_2026.sqlite"
 SPACE_RE = re.compile(r"\s+")
 STANDARD_DANCES = {"W", "T", "V", "F", "Q"}
 LATIN_DANCES = {"S", "C", "R", "P", "J"}
+LATIN_DANCE_CODES = {"S", "Ch", "R", "P", "J"}
 
 
 @dataclass(frozen=True)
@@ -150,7 +152,12 @@ def selected_marks_by_internal_id(conn: sqlite3.Connection, internal_dancer_id: 
 
 def infer_program(dance: str | None, category: str | None) -> str:
     dance_value = (dance or "").strip().upper()
+    dance_code = normalize_dance_code(dance)
     category_value = f" {category or ''} ".lower()
+    if dance_code in STANDARD_DANCES:
+        return "standard"
+    if dance_code in LATIN_DANCE_CODES:
+        return "latin"
     if dance_value in STANDARD_DANCES or re.search(r"\bst\b", category_value):
         return "standard"
     if dance_value in LATIN_DANCES or re.search(r"\bla\b", category_value):

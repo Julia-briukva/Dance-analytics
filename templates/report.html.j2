@@ -20,7 +20,7 @@
       --accent-light: #FAF8FF;
       --note-soft: #F6F4FC;
       --success-soft: #EAF6F1;
-      --shadow: 0 12px 32px rgba(49, 42, 96, .07);
+      --shadow: 0 10px 26px rgba(49, 42, 96, .055);
     }
 
     * { box-sizing: border-box; }
@@ -50,17 +50,17 @@
     .eyebrow {
       color: var(--accent-dark);
       font-size: 12px;
-      font-weight: 700;
+      font-weight: 620;
       letter-spacing: .08em;
       text-transform: uppercase;
       margin-bottom: 10px;
     }
 
     h1, h2, h3, h4 { margin: 0; line-height: 1.2; letter-spacing: 0; }
-    h1 { font-size: 34px; max-width: 760px; font-weight: 720; }
-    h2 { font-size: 22px; margin-bottom: 12px; font-weight: 680; }
-    h3 { font-size: 17px; margin: 0 0 10px; font-weight: 640; color: var(--ink-soft); }
-    h4 { font-size: 13px; margin: 0 0 8px; font-weight: 650; color: var(--ink-soft); }
+    h1 { font-size: 34px; max-width: 760px; font-weight: 680; }
+    h2 { font-size: 22px; margin-bottom: 12px; font-weight: 620; }
+    h3 { font-size: 17px; margin: 0 0 10px; font-weight: 560; color: var(--ink-soft); }
+    h4 { font-size: 13px; margin: 0 0 8px; font-weight: 560; color: var(--ink-soft); }
     p { margin: 0 0 10px; }
 
     .cover-subtitle {
@@ -87,24 +87,32 @@
     .profile-item,
     .card,
     .insight-card {
-      background: rgba(255, 255, 255, .78);
-      border: 1px solid rgba(109, 91, 208, .16);
+      background: rgba(255, 255, 255, .62);
       border-radius: 14px;
       padding: 14px;
       break-inside: avoid;
     }
 
+    .profile-item,
+    .card {
+      border: 1px solid rgba(109, 91, 208, .11);
+    }
+
+    .insight-card {
+      border: 0;
+    }
+
     .label {
       color: var(--muted);
       font-size: 11px;
-      font-weight: 700;
+      font-weight: 560;
       letter-spacing: .06em;
       text-transform: uppercase;
     }
 
     .value {
       color: var(--ink);
-      font-weight: 700;
+      font-weight: 600;
       margin-top: 4px;
       overflow-wrap: anywhere;
     }
@@ -123,6 +131,7 @@
     }
 
     .tab-input { position: absolute; opacity: 0; pointer-events: none; }
+    .category-input { position: absolute; opacity: 0; pointer-events: none; }
 
     .tab-label {
       display: flex;
@@ -140,7 +149,7 @@
 
     .tab-title {
       font-size: 16px;
-      font-weight: 680;
+      font-weight: 600;
     }
 
     .tab-help {
@@ -153,7 +162,7 @@
       background: var(--accent-soft);
       border-color: rgba(94, 81, 184, .42);
       color: var(--accent-dark);
-      box-shadow: 0 8px 22px rgba(77, 61, 181, .10);
+      box-shadow: 0 6px 16px rgba(77, 61, 181, .07);
     }
 
     #tab-parent:checked ~ .tabs label[for="tab-parent"] .tab-help,
@@ -167,9 +176,9 @@
 
     .section {
       background: var(--paper);
-      border: 1px solid var(--line);
+      border: 1px solid rgba(233, 229, 244, .78);
       border-radius: 16px;
-      box-shadow: 0 8px 24px rgba(49, 42, 96, .045);
+      box-shadow: 0 6px 18px rgba(49, 42, 96, .035);
       margin: 24px 0;
       padding: 24px;
       break-inside: avoid;
@@ -186,7 +195,7 @@
     .big-status {
       color: var(--accent-dark);
       font-size: 26px;
-      font-weight: 640;
+      font-weight: 600;
       line-height: 1.05;
       margin-top: 8px;
     }
@@ -199,7 +208,7 @@
     }
 
     .insight-card {
-      background: var(--paper-soft);
+      background: var(--accent-light);
       min-height: 120px;
     }
 
@@ -217,10 +226,14 @@
       display: flex;
       justify-content: space-between;
       gap: 12px;
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      background: #fff;
-      padding: 10px 12px;
+      border-radius: 8px;
+      background: transparent;
+      padding: 7px 0;
+    }
+
+    .rank-list li + li,
+    .plain-list li + li {
+      border-top: 1px solid rgba(233, 229, 244, .68);
     }
 
     .rank {
@@ -232,7 +245,7 @@
       border-radius: 999px;
       background: var(--accent);
       color: #fff;
-      font-weight: 760;
+      font-weight: 650;
       margin-right: 8px;
     }
 
@@ -244,7 +257,7 @@
       display: block;
       color: var(--ink-soft);
       font-size: 12px;
-      font-weight: 650;
+      font-weight: 560;
       margin-bottom: 6px;
     }
 
@@ -268,13 +281,102 @@
     .progress-fill {
       display: block;
       height: 100%;
+      width: var(--stability-width, 0%);
       border-radius: inherit;
-      background: var(--accent);
+      background: linear-gradient(90deg, var(--accent-dark), var(--accent));
+    }
+
+    .category-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 14px 0 16px;
+    }
+
+    .category-tab {
+      cursor: pointer;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--paper);
+      color: var(--ink-soft);
+      padding: 8px 12px;
+      font-size: 12px;
+      font-weight: 560;
+    }
+
+    .category-panel { display: none; }
+
+    #cat-standard-all:checked ~ .category-tabs label[for="cat-standard-all"],
+    #cat-standard-n:checked ~ .category-tabs label[for="cat-standard-n"],
+    #cat-standard-n_e:checked ~ .category-tabs label[for="cat-standard-n_e"],
+    #cat-standard-e:checked ~ .category-tabs label[for="cat-standard-e"],
+    #cat-standard-e_d:checked ~ .category-tabs label[for="cat-standard-e_d"],
+    #cat-standard-d:checked ~ .category-tabs label[for="cat-standard-d"],
+    #cat-standard-d_c:checked ~ .category-tabs label[for="cat-standard-d_c"],
+    #cat-standard-c:checked ~ .category-tabs label[for="cat-standard-c"],
+    #cat-standard-c_b:checked ~ .category-tabs label[for="cat-standard-c_b"],
+    #cat-standard-b:checked ~ .category-tabs label[for="cat-standard-b"],
+    #cat-standard-a:checked ~ .category-tabs label[for="cat-standard-a"],
+    #cat-standard-s:checked ~ .category-tabs label[for="cat-standard-s"],
+    #cat-standard-m:checked ~ .category-tabs label[for="cat-standard-m"],
+    #cat-standard-eadc:checked ~ .category-tabs label[for="cat-standard-eadc"],
+    #cat-standard-open:checked ~ .category-tabs label[for="cat-standard-open"],
+    #cat-latin-all:checked ~ .category-tabs label[for="cat-latin-all"],
+    #cat-latin-n:checked ~ .category-tabs label[for="cat-latin-n"],
+    #cat-latin-n_e:checked ~ .category-tabs label[for="cat-latin-n_e"],
+    #cat-latin-e:checked ~ .category-tabs label[for="cat-latin-e"],
+    #cat-latin-e_d:checked ~ .category-tabs label[for="cat-latin-e_d"],
+    #cat-latin-d:checked ~ .category-tabs label[for="cat-latin-d"],
+    #cat-latin-d_c:checked ~ .category-tabs label[for="cat-latin-d_c"],
+    #cat-latin-c:checked ~ .category-tabs label[for="cat-latin-c"],
+    #cat-latin-c_b:checked ~ .category-tabs label[for="cat-latin-c_b"],
+    #cat-latin-b:checked ~ .category-tabs label[for="cat-latin-b"],
+    #cat-latin-a:checked ~ .category-tabs label[for="cat-latin-a"],
+    #cat-latin-s:checked ~ .category-tabs label[for="cat-latin-s"],
+    #cat-latin-m:checked ~ .category-tabs label[for="cat-latin-m"],
+    #cat-latin-eadc:checked ~ .category-tabs label[for="cat-latin-eadc"],
+    #cat-latin-open:checked ~ .category-tabs label[for="cat-latin-open"] {
+      background: var(--accent-soft);
+      border-color: rgba(94, 81, 184, .38);
+      color: var(--accent-dark);
+    }
+
+    #cat-standard-all:checked ~ .category-panels .panel-standard-all,
+    #cat-standard-n:checked ~ .category-panels .panel-standard-n,
+    #cat-standard-n_e:checked ~ .category-panels .panel-standard-n_e,
+    #cat-standard-e:checked ~ .category-panels .panel-standard-e,
+    #cat-standard-e_d:checked ~ .category-panels .panel-standard-e_d,
+    #cat-standard-d:checked ~ .category-panels .panel-standard-d,
+    #cat-standard-d_c:checked ~ .category-panels .panel-standard-d_c,
+    #cat-standard-c:checked ~ .category-panels .panel-standard-c,
+    #cat-standard-c_b:checked ~ .category-panels .panel-standard-c_b,
+    #cat-standard-b:checked ~ .category-panels .panel-standard-b,
+    #cat-standard-a:checked ~ .category-panels .panel-standard-a,
+    #cat-standard-s:checked ~ .category-panels .panel-standard-s,
+    #cat-standard-m:checked ~ .category-panels .panel-standard-m,
+    #cat-standard-eadc:checked ~ .category-panels .panel-standard-eadc,
+    #cat-standard-open:checked ~ .category-panels .panel-standard-open,
+    #cat-latin-all:checked ~ .category-panels .panel-latin-all,
+    #cat-latin-n:checked ~ .category-panels .panel-latin-n,
+    #cat-latin-n_e:checked ~ .category-panels .panel-latin-n_e,
+    #cat-latin-e:checked ~ .category-panels .panel-latin-e,
+    #cat-latin-e_d:checked ~ .category-panels .panel-latin-e_d,
+    #cat-latin-d:checked ~ .category-panels .panel-latin-d,
+    #cat-latin-d_c:checked ~ .category-panels .panel-latin-d_c,
+    #cat-latin-c:checked ~ .category-panels .panel-latin-c,
+    #cat-latin-c_b:checked ~ .category-panels .panel-latin-c_b,
+    #cat-latin-b:checked ~ .category-panels .panel-latin-b,
+    #cat-latin-a:checked ~ .category-panels .panel-latin-a,
+    #cat-latin-s:checked ~ .category-panels .panel-latin-s,
+    #cat-latin-m:checked ~ .category-panels .panel-latin-m,
+    #cat-latin-eadc:checked ~ .category-panels .panel-latin-eadc,
+    #cat-latin-open:checked ~ .category-panels .panel-latin-open {
+      display: block;
     }
 
     .interpretation {
       color: var(--ink-soft);
-      font-weight: 800;
+      font-weight: 650;
       margin-top: 2px;
     }
 
@@ -286,8 +388,8 @@
 
     .note-box {
       background: var(--note-soft);
-      border: 1px solid var(--line);
-      border-left: 3px solid rgba(123, 110, 214, .42);
+      border: 0;
+      border-left: 3px solid rgba(123, 110, 214, .28);
       color: var(--ink-soft);
     }
 
@@ -311,7 +413,6 @@
 
     .story-card {
       background: #fff;
-      border: 1px solid var(--line);
       border-radius: 12px;
       padding: 14px;
     }
@@ -319,20 +420,20 @@
     .story-card h3 {
       color: var(--ink-soft);
       font-size: 14px;
-      font-weight: 650;
+      font-weight: 560;
       margin-bottom: 8px;
     }
 
     .program-heading {
       color: var(--accent-dark);
       font-size: 18px;
-      font-weight: 640;
+      font-weight: 560;
       margin: 2px 0 0;
     }
 
     .parent-conclusion {
       background: transparent;
-      border: 1px solid var(--line);
+      border: 0;
       border-radius: 14px;
       padding: 18px 18px 10px;
       color: var(--ink-soft);
@@ -341,7 +442,7 @@
     .parent-conclusion h2 {
       color: var(--ink-soft);
       font-size: 15px;
-      font-weight: 600;
+      font-weight: 560;
       margin-bottom: 12px;
     }
 
@@ -350,6 +451,12 @@
       border: 1px solid var(--line);
       border-radius: 12px;
       margin-top: 10px;
+    }
+
+    .tournament-list .table-wrap {
+      border: 0;
+      border-radius: 0;
+      margin-top: 16px;
     }
 
     table {
@@ -371,7 +478,7 @@
       background: #F5F2FC;
       color: #4A4568;
       font-size: 11px;
-      font-weight: 720;
+      font-weight: 600;
       letter-spacing: .04em;
       text-transform: uppercase;
       white-space: nowrap;
@@ -381,23 +488,28 @@
     tbody tr:last-child td { border-bottom: 0; }
 
     details {
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      background: var(--paper-soft);
-      padding: 14px 16px;
-      margin-top: 12px;
+      border: 0;
+      border-top: 1px solid var(--line);
+      border-radius: 0;
+      background: transparent;
+      padding: 18px 0;
+      margin-top: 0;
+    }
+
+    details:first-child {
+      border-top: 0;
     }
 
     summary {
       cursor: pointer;
-      color: var(--accent-dark);
-      font-size: 18px;
-      font-weight: 720;
+      color: var(--ink);
+      font-size: 16px;
+      font-weight: 560;
     }
 
     .tournament-list {
       display: grid;
-      gap: 12px;
+      gap: 0;
     }
 
     .tournament-summary {
@@ -409,7 +521,7 @@
     }
 
     .summary-title {
-      font-weight: 720;
+      font-weight: 600;
       color: var(--ink);
     }
 
@@ -423,7 +535,35 @@
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 12px;
-      margin: 14px 0;
+      margin: 18px 0 14px;
+      padding-top: 4px;
+    }
+
+    .tournament-detail-grid .insight-card {
+      background: transparent;
+      border-radius: 0;
+      padding: 0 18px 0 0;
+      min-height: 0;
+    }
+
+    .tournament-detail-grid .insight-card + .insight-card {
+      padding-left: 18px;
+      border-left: 1px solid rgba(233, 229, 244, .9);
+    }
+
+    .tournament-detail-grid h3 {
+      color: var(--ink);
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .tournament-detail-grid p {
+      margin-bottom: 6px;
+    }
+
+    .tournament-detail-grid strong {
+      font-weight: 600;
     }
 
     @media (max-width: 900px) {
@@ -491,17 +631,17 @@
     </div>
   </header>
 
-  <input class="tab-input" type="radio" name="report-mode" id="tab-parent" checked>
-  <input class="tab-input" type="radio" name="report-mode" id="tab-trainer">
+  <input class="tab-input" type="radio" name="report-mode" id="tab-trainer" checked>
+  <input class="tab-input" type="radio" name="report-mode" id="tab-parent">
 
   <nav class="tabs" aria-label="Режим просмотра отчёта">
-    <label class="tab-label" for="tab-parent">
-      <span class="tab-title">Родитель — кратко и понятно о прогрессе</span>
-      <span class="tab-help">Главные выводы без технических деталей</span>
-    </label>
     <label class="tab-label" for="tab-trainer">
       <span class="tab-title">Тренер — детали для работы на тренировках</span>
       <span class="tab-help">Разбор программ, динамики, танцев и турниров</span>
+    </label>
+    <label class="tab-label" for="tab-parent">
+      <span class="tab-title">Родитель — кратко и понятно о прогрессе</span>
+      <span class="tab-help">Главные выводы без технических деталей</span>
     </label>
   </nav>
 
@@ -575,7 +715,15 @@
       <h2>Последние турниры</h2>
       <div class="plain-list">
         {% for item in role_views.parent.latest_tournaments %}
-          <li><span><strong>{{ item.event_date }}</strong> · {{ item.tournament_title }}</span><span class="muted">{{ item.protocols|pluralize("выступление", "выступления", "выступлений") }}</span></li>
+          <li>
+            <span>
+              <strong>{{ item.event_date }}</strong> · {{ item.tournament_title }}
+              {% if item.dance_codes %}
+                <span class="muted">· {{ item.dance_codes|join(", ") }}</span>
+              {% endif %}
+            </span>
+            <span class="muted">{{ item.protocols|pluralize("выступление", "выступления", "выступлений") }}</span>
+          </li>
         {% endfor %}
       </div>
     </section>
@@ -583,103 +731,113 @@
   </section>
 
   <section class="mode-panel trainer-panel">
-    <section class="section">
-      <h2>Ключевые выводы</h2>
-      {% for key, program in role_views.trainer.programs.items() %}
-      <div class="program-story">
-        <h3 class="program-heading">{{ program.title|capitalize }}</h3>
-        <div class="three-column">
-          <div class="insight-card">
-            <h3>Лучше по среднему месту</h3>
-            <ul class="plain-list">
-              {% for item in program.best %}
-                <li><strong>{{ item.dance|dance_label }}</strong><span class="muted">{{ item.final_avg_place|fmt }}</span></li>
-              {% endfor %}
-            </ul>
-          </div>
-          <div class="insight-card">
-            <h3>Требуют внимания</h3>
-            <ul class="plain-list">
-              {% for item in program.attention %}
-                <li><strong>{{ item.dance|dance_label }}</strong><span class="muted">{{ item.final_avg_place|fmt }}</span></li>
-              {% endfor %}
-            </ul>
-          </div>
-          <div class="insight-card">
-            <h3>Наиболее стабильные</h3>
-            <ul class="plain-list">
-              {% for item in program.stable %}
-                <li>
-                  <strong>{{ item.dance|dance_label }}</strong>
-                  <span class="stability-meter">
-                    <span class="progress-label">{{ item.stability_label }}</span>
-                    <span class="progress-track"><span class="progress-fill" style="width: {{ item.stability_percent }}%"></span></span>
-                  </span>
-                </li>
-              {% endfor %}
-            </ul>
-          </div>
-        </div>
-      </div>
-      {% endfor %}
-    </section>
-
-    <section class="section">
-      <h2>Динамика</h2>
-      {% for key, program in role_views.trainer.programs.items() %}
-      <div class="program-story">
-        <h3 class="program-heading">{{ program.title|capitalize }}</h3>
-        <div class="three-column">
-          <div class="insight-card">
-            <h3>Улучшается</h3>
-            {% if program.improving %}
-              <ul class="plain-list">{% for item in program.improving %}<li><strong>{{ item.dance|dance_label }}</strong><span class="muted">{{ item.first_avg_place|fmt }} → {{ item.last_avg_place|fmt }}</span></li>{% endfor %}</ul>
-            {% else %}
-              <p class="muted">{{ "Для уверенного вывода пока мало наблюдений." if not program.enough_data else "Явного улучшения по тренду сейчас не видно." }}</p>
-            {% endif %}
-          </div>
-          <div class="insight-card">
-            <h3>Требует внимания по динамике</h3>
-            {% if program.declining %}
-              <ul class="plain-list">{% for item in program.declining %}<li><strong>{{ item.dance|dance_label }}</strong><span class="muted">{{ item.first_avg_place|fmt }} → {{ item.last_avg_place|fmt }}</span></li>{% endfor %}</ul>
-            {% else %}
-              <p class="muted">{{ "Для уверенного вывода пока мало наблюдений." if not program.enough_data else "Тревожной динамики по тренду сейчас не видно." }}</p>
-            {% endif %}
-          </div>
-          <div class="insight-card">
-            <h3>Стабильно</h3>
-            {% if program.stable_trends %}
-              <ul class="plain-list">{% for item in program.stable_trends %}<li><strong>{{ item.dance|dance_label }}</strong><span class="muted">{{ item.first_avg_place|fmt }} → {{ item.last_avg_place|fmt }}</span></li>{% endfor %}</ul>
-            {% else %}
-              <p class="muted">{{ "Для уверенного вывода пока мало наблюдений." if not program.enough_data else "Отдельной группы стабильной динамики сейчас не выделяется." }}</p>
-            {% endif %}
-          </div>
-        </div>
-      </div>
-      {% endfor %}
-    </section>
-
     {% for key, program in programs.items() %}
     <section class="section">
-      <h2>Танцы: {{ program.title }}</h2>
-      <p class="section-kicker">Меньшее место означает лучший результат. Стабильность показывает, насколько сильно меняется итоговое место танца от турнира к турниру. Чем меньше колебания, тем выше стабильность.</p>
-      <div class="table-wrap">
-        <table>
-          <thead><tr><th>Танец</th><th class="number">Среднее итоговое место</th><th class="number">Лучший результат</th><th>Стабильность</th></tr></thead>
-          <tbody>
-          {% for item in program.metrics %}
-            <tr>
-              <td><strong>{{ item.dance|dance_label }}</strong></td>
-              <td class="number">{{ item.final_avg_place|fmt }}</td>
-              <td class="number">{{ item.best_place|fmt }}</td>
-              <td>
-                <div class="progress-label">{{ item.stability_label }}</div>
-                <div class="progress-track"><div class="progress-fill" style="width: {{ item.stability_percent }}%"></div></div>
-              </td>
-            </tr>
-          {% endfor %}
-          </tbody>
-        </table>
+      <h2>{{ program.title|capitalize }}</h2>
+      <p class="section-kicker">Категории переключаются отдельно для каждой программы. Меньшее место означает лучший результат.</p>
+
+      {% for slice in program.category_slices %}
+        <input class="category-input" type="radio" name="cat-{{ key }}" id="cat-{{ key }}-{{ slice.key }}" {{ "checked" if loop.first else "" }}>
+      {% endfor %}
+      <div class="category-tabs">
+        {% for slice in program.category_slices %}
+          <label class="category-tab" for="cat-{{ key }}-{{ slice.key }}">{{ slice.label }}</label>
+        {% endfor %}
+      </div>
+
+      <div class="category-panels">
+      {% for slice in program.category_slices %}
+        <div class="category-panel panel-{{ key }}-{{ slice.key }}">
+          {% if slice.protocol_count < 3 %}
+            <div class="note-box">Ограниченная выборка: {{ slice.protocol_count|pluralize("протокол", "протокола", "протоколов") }} в этом срезе.</div>
+          {% endif %}
+
+          <div class="three-column">
+            <div class="insight-card">
+              <h3>Лучше по среднему месту</h3>
+              {% if slice.best %}
+              <ul class="plain-list">
+                {% for item in slice.best %}
+                  <li><strong>{{ item.dance|dance_label }}</strong><span class="muted">{{ item.final_avg_place|fmt }}</span></li>
+                {% endfor %}
+              </ul>
+              {% else %}<p class="muted">Ограниченная выборка.</p>{% endif %}
+            </div>
+            <div class="insight-card">
+              <h3>Требуют внимания</h3>
+              {% if slice.attention %}
+              <ul class="plain-list">
+                {% for item in slice.attention %}
+                  <li><strong>{{ item.dance|dance_label }}</strong><span class="muted">{{ item.final_avg_place|fmt }}</span></li>
+                {% endfor %}
+              </ul>
+              {% else %}<p class="muted">Ограниченная выборка.</p>{% endif %}
+            </div>
+            <div class="insight-card">
+              <h3>Наиболее стабильные</h3>
+              {% if slice.stable %}
+              <ul class="plain-list">
+                {% for item in slice.stable %}
+                  <li>
+                    <strong>{{ item.dance|dance_label }}</strong>
+                    <span class="stability-meter">
+                      <span class="progress-label">{{ item.stability_label }}</span>
+                      <span class="progress-track"><span class="progress-fill" style="{{ item.stability_style }}"></span></span>
+                    </span>
+                  </li>
+                {% endfor %}
+              </ul>
+              {% else %}<p class="muted">Ограниченная выборка.</p>{% endif %}
+            </div>
+          </div>
+
+          <div class="three-column" style="margin-top:12px">
+            <div class="insight-card">
+              <h3>Улучшается</h3>
+              {% if slice.improving %}
+                <ul class="plain-list">{% for item in slice.improving %}<li><strong>{{ item.dance|dance_label }}</strong><span class="muted">{{ item.first_avg_place|fmt }} → {{ item.last_avg_place|fmt }}</span></li>{% endfor %}</ul>
+              {% else %}<p class="muted">{{ "Для уверенного вывода пока мало наблюдений." if not slice.enough_data else "Явного улучшения по тренду сейчас не видно." }}</p>{% endif %}
+            </div>
+            <div class="insight-card">
+              <h3>Требует внимания по динамике</h3>
+              {% if slice.declining %}
+                <ul class="plain-list">{% for item in slice.declining %}<li><strong>{{ item.dance|dance_label }}</strong><span class="muted">{{ item.first_avg_place|fmt }} → {{ item.last_avg_place|fmt }}</span></li>{% endfor %}</ul>
+              {% else %}<p class="muted">{{ "Для уверенного вывода пока мало наблюдений." if not slice.enough_data else "Тревожной динамики по тренду сейчас не видно." }}</p>{% endif %}
+            </div>
+            <div class="insight-card">
+              <h3>Стабильно</h3>
+              {% if slice.stable_trends %}
+                <ul class="plain-list">{% for item in slice.stable_trends %}<li><strong>{{ item.dance|dance_label }}</strong><span class="muted">{{ item.first_avg_place|fmt }} → {{ item.last_avg_place|fmt }}</span></li>{% endfor %}</ul>
+              {% else %}<p class="muted">{{ "Для уверенного вывода пока мало наблюдений." if not slice.enough_data else "Отдельной группы стабильной динамики сейчас не выделяется." }}</p>{% endif %}
+            </div>
+          </div>
+
+          <h3 style="margin-top:18px">Танцы</h3>
+          <p class="section-kicker">Стабильность показывает, насколько сильно меняется итоговое место танца от турнира к турниру. Чем меньше колебания, тем выше стабильность.</p>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Танец</th><th class="number">Среднее место</th><th class="number">Лучшее место</th><th>Стабильность</th></tr></thead>
+              <tbody>
+              {% for item in slice.metrics %}
+                <tr>
+                  <td><strong>{{ item.dance|dance_label }}</strong></td>
+                  <td class="number">{{ item.final_avg_place|fmt }}</td>
+                  <td class="number">{{ item.best_place|fmt }}</td>
+                  <td>
+                    <div class="progress-label">{{ item.stability_label }}</div>
+                    <div class="progress-track"><div class="progress-fill" style="{{ item.stability_style }}"></div></div>
+                  </td>
+                </tr>
+              {% endfor %}
+              {% if not slice.metrics %}
+                <tr><td colspan="4">Ограниченная выборка.</td></tr>
+              {% endif %}
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+      {% endfor %}
       </div>
       <div class="note-box">Расчёт стабильности основан на разбросе итоговых мест по турнирам. Полная шкала означает очень устойчивый результат, короткая шкала — сильные колебания.</div>
     </section>
@@ -750,7 +908,7 @@
       </div>
       <h3 style="margin-top:18px">Полный список турниров</h3>
       <div class="tournament-list">
-        {% for item in tournament_details %}
+        {% for item in trainer_tournament_summaries %}
         <details>
           <summary>
             <div class="tournament-summary">
@@ -769,29 +927,35 @@
               </div>
               <div>
                 <div class="label">Итоговый результат</div>
-                <div class="summary-title">{{ "Среднее место " ~ (item.avg_final_place|fmt) if item.avg_final_place is not none else "Нет данных" }}</div>
+                <div class="summary-title">{{ item.protocols|pluralize("протокол", "протокола", "протоколов") }}</div>
               </div>
             </div>
           </summary>
           <div class="tournament-detail-grid">
-            <div class="insight-card">
-              <h3>Лучший танец турнира</h3>
-              {% if item.best_dance %}
-                <p><strong>{{ item.best_dance.dance|dance_label }}</strong></p>
-                <p class="muted">Итоговое место: {{ item.best_dance.final_avg_place|fmt }}</p>
-              {% else %}
-                <p class="muted">Нет данных по итоговым местам танцев.</p>
-              {% endif %}
-            </div>
-            <div class="insight-card">
-              <h3>Требует внимания</h3>
-              {% if item.weakest_dance %}
-                <p><strong>{{ item.weakest_dance.dance|dance_label }}</strong></p>
-                <p class="muted">Итоговое место: {{ item.weakest_dance.final_avg_place|fmt }}</p>
-              {% else %}
-                <p class="muted">Нет данных по итоговым местам танцев.</p>
-              {% endif %}
-            </div>
+            {% for program in item.program_summaries %}
+              <div class="insight-card">
+                <h3>{{ program.program_label }}</h3>
+                <p class="muted">
+                  Общий итог:
+                  {% if program.overall.avg_place is not none %}
+                    среднее место {{ program.overall.avg_place|fmt }} · {{ program.overall.dance_codes|join(", ") }}
+                  {% else %}
+                    {{ program.overall.dance_codes|join(", ") }} · {{ program.metric_label or "по оценкам судей" }}
+                  {% endif %}
+                </p>
+                {% if program.data_sufficient %}
+                  {% if program.metric_type == "cross_count" %}
+                    <p><strong>Лучший танец:</strong> {{ program.best_dance.dance_code }} <span class="muted">— {{ program.best_dance.interpretation }} · {{ program.best_dance.cross_count }} крестов</span></p>
+                    <p><strong>Требует внимания:</strong> {{ program.worst_dance.dance_code }} <span class="muted">— {{ program.worst_dance.interpretation }} · {{ program.worst_dance.cross_count }} крестов</span></p>
+                  {% else %}
+                    <p><strong>Лучший танец:</strong> {{ program.best_dance.dance_code }} <span class="muted">место {{ program.best_dance.final_place|fmt }}</span></p>
+                    <p><strong>Требует внимания:</strong> {{ program.worst_dance.dance_code }} <span class="muted">место {{ program.worst_dance.final_place|fmt }}</span></p>
+                  {% endif %}
+                {% else %}
+                  <p class="muted">Недостаточно данных для лучшего и худшего танца.</p>
+                {% endif %}
+              </div>
+            {% endfor %}
           </div>
           <div class="table-wrap">
             <table>
@@ -799,10 +963,10 @@
               <tbody>
               {% for result in item.dance_results %}
                 <tr>
-                  <td><strong>{{ result.dance|dance_label }}</strong></td>
+                  <td><strong>{{ result.dance_code or (result.dance|dance_code) }}</strong></td>
                   <td>{{ result.program|program_label }}</td>
-                  <td class="number">{{ result.final_avg_place|fmt }}</td>
-                  <td class="number">{{ result.n_protocols|pluralize("протокол", "протокола", "протоколов") }}</td>
+                  <td class="number">{{ result.final_place|fmt }}</td>
+                  <td class="number">{{ result.n_results|pluralize("протокол", "протокола", "протоколов") }}</td>
                 </tr>
               {% endfor %}
               </tbody>
