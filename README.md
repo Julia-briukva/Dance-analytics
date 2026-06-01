@@ -10,6 +10,16 @@
 - `data/cache/missing/` - отметки об отсутствующих страницах, чтобы не скачивать их повторно.
 - `reports/` - место для будущих выгрузок.
 
+## Важно про базу данных
+
+Файл `database/compreg_spb_2025_2026.sqlite` не хранится в GitHub, потому что он больше лимита GitHub на размер файла.
+
+После клонирования проекта базу нужно создать локально:
+
+```bash
+python3 scripts/build_spb_database.py
+python3 scripts/parse_protocols.py
+
 ## Установка
 
 ```bash
