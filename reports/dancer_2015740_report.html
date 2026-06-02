@@ -78,7 +78,7 @@
       gap: 12px;
     }
 
-    .profile-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); margin-top: 22px; }
+    .profile-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 22px; }
     .kpi-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
     .insight-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
     .two-column { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -203,7 +203,8 @@
       gap: 8px;
     }
 
-    .filter-chip {
+    .filter-chip,
+    .city-chip {
       display: inline-flex;
       align-items: center;
       gap: 6px;
@@ -214,6 +215,19 @@
       cursor: pointer;
       font-size: 12px;
       padding: 7px 10px;
+    }
+
+    .city-chip {
+      appearance: none;
+      font: inherit;
+      line-height: 1.2;
+      transition: background .16s ease, border-color .16s ease, color .16s ease;
+    }
+
+    .city-chip[aria-pressed="true"] {
+      background: var(--accent-soft);
+      border-color: rgba(94, 81, 184, .38);
+      color: var(--accent-dark);
     }
 
     .filter-chip input {
@@ -672,11 +686,23 @@
       color: var(--ink);
       font-size: 16px;
       font-weight: 560;
+      list-style: none;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
     }
 
     .tournament-list {
       display: grid;
       gap: 0;
+    }
+
+    .tournament-summary-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 12px;
+      align-items: center;
     }
 
     .tournament-summary {
@@ -685,6 +711,51 @@
       gap: 12px;
       align-items: start;
       color: var(--ink);
+      min-width: 0;
+    }
+
+    .accordion-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 30px;
+      height: 30px;
+      border-radius: 999px;
+      background: var(--accent-light);
+      color: var(--accent-dark);
+      flex: 0 0 auto;
+      transition: transform .18s ease, background .18s ease;
+    }
+
+    details[open] .accordion-icon {
+      transform: rotate(180deg);
+      background: var(--accent-soft);
+    }
+
+    .tournament-title-line {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      min-width: 0;
+    }
+
+    .tournament-badge {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      background: var(--note-soft);
+      color: var(--accent-dark);
+      font-size: 10.5px;
+      font-weight: 560;
+      line-height: 1.2;
+      padding: 3px 7px;
+      white-space: nowrap;
+    }
+
+    .tournament-badge.hardest {
+      color: #6D617A;
+      background: #F2EFF8;
     }
 
     .summary-title {
@@ -768,6 +839,9 @@
       .tabs { position: static; }
       .filter-grid,
       .date-filter-grid { grid-template-columns: 1fr; }
+      .tournament-summary-row {
+        grid-template-columns: minmax(0, 1fr) auto;
+      }
       .table-scroll {
         width: 100%;
         margin-left: 0;
@@ -819,7 +893,6 @@
       <div class="profile-item"><div class="label">Клуб</div><div class="value">Триумф</div></div>
       <div class="profile-item"><div class="label">Город</div><div class="value">Санкт-Петербург</div></div>
       <div class="profile-item"><div class="label">Период</div><div class="value">2025-09-28 — 2026-05-24</div></div>
-      <div class="profile-item"><div class="label">Режим отчёта</div><div class="value">выберите ниже</div></div>
     </div>
   </header>
 
@@ -841,11 +914,11 @@
     <div class="filter-grid">
       <div>
         <div class="filter-title">Города</div>
-        <div class="filter-chips">
-            <label class="filter-chip">
-              <input class="report-filter-city" type="checkbox" value="Санкт-Петербург" checked>
+        <div class="filter-chips" role="group" aria-label="Фильтр городов">
+          <button class="city-chip report-filter-city-all" type="button" aria-pressed="true" aria-label="Показать все города">Все города</button>
+            <button class="city-chip report-filter-city" type="button" data-city="Санкт-Петербург" aria-pressed="true" aria-label="Фильтр города: Санкт-Петербург">
               Санкт-Петербург
-            </label>
+            </button>
         </div>
       </div>
       <div>
@@ -2173,42 +2246,29 @@
 
     <section class="section">
       <h2>Турниры</h2>
-      <div class="two-column">
-        <div class="insight-card">
-          <h3>Лучшие турниры</h3>
-          <ul class="plain-list">
-              <li class="filterable-tournament" data-city="Санкт-Петербург" data-date="2025-10-12"><span><strong>2025-10-12</strong> · Балтийская Звезда - 2025 (Санкт-Петербург)</span><span class="muted">1</span></li>
-              <li class="filterable-tournament" data-city="Санкт-Петербург" data-date="2025-10-05"><span><strong>2025-10-05</strong> · Dance Planet Cup - 2025 (Санкт-Петербург)</span><span class="muted">1.9</span></li>
-              <li class="filterable-tournament" data-city="Санкт-Петербург" data-date="2026-01-25"><span><strong>2026-01-25</strong> · Русский Вальс 2026 (Санкт-Петербург)</span><span class="muted">1.95</span></li>
-          </ul>
-        </div>
-        <div class="insight-card">
-          <h3>Наиболее сложные турниры</h3>
-          <ul class="plain-list">
-              <li class="filterable-tournament" data-city="Санкт-Петербург" data-date="2026-05-24"><span><strong>2026-05-24</strong> · Чемпионат СПТЛ 2026 (Санкт-Петербург)</span><span class="muted">4.85</span></li>
-              <li class="filterable-tournament" data-city="Санкт-Петербург" data-date="2026-04-05"><span><strong>2026-04-05</strong> · Кубок Русского Стиля 2026 (Санкт-Петербург)</span><span class="muted">4</span></li>
-              <li class="filterable-tournament" data-city="Санкт-Петербург" data-date="2026-01-18"><span><strong>2026-01-18</strong> · Lider Cup 2026 (Санкт-Петербург)</span><span class="muted">3.85</span></li>
-          </ul>
-        </div>
-      </div>
-      <h3 style="margin-top:18px">Полный список турниров</h3>
+      <p class="section-kicker">Лучшие и наиболее сложные выступления отмечены прямо в списке.</p>
       <div class="tournament-list">
         <details class="filterable-tournament" data-city="Санкт-Петербург" data-date="2025-09-28">
           <summary>
-            <div class="tournament-summary">
-              <div>
-                <div class="label">Дата</div>
-                <div class="summary-title">2025-09-28</div>
-<div class="summary-meta">Санкт-Петербург</div>              </div>
-              <div>
-                <div class="label">Турнир</div>
-                <div class="summary-title">Северный кубок 2025 (Санкт-Петербург)</div>
+            <div class="tournament-summary-row">
+              <div class="tournament-summary">
+                <div>
+                  <div class="label">Дата</div>
+                  <div class="summary-title">2025-09-28</div>
+<div class="summary-meta">Санкт-Петербург</div>                </div>
+                <div>
+                  <div class="label">Турнир</div>
+                  <div class="tournament-title-line">
+                    <div class="summary-title">Северный кубок 2025 (Санкт-Петербург)</div>
+                  </div>
+                </div>
+                <div>
+                  <div class="label">Категория / программа</div>
+                  <div class="summary-meta">EADC Юниоры-1 RS Соло Ж St; Юниоры-1+2 D+C Соло Ж St; Юниоры-1+2 E+D Соло Ж La; Юниоры-1+2 E+D Соло Ж St</div>
+                  <div class="summary-meta">латина, стандарт</div>
+                </div>
               </div>
-              <div>
-                <div class="label">Категория / программа</div>
-                <div class="summary-meta">EADC Юниоры-1 RS Соло Ж St; Юниоры-1+2 D+C Соло Ж St; Юниоры-1+2 E+D Соло Ж La; Юниоры-1+2 E+D Соло Ж St</div>
-                <div class="summary-meta">латина, стандарт</div>
-              </div>
+              <span class="accordion-icon" aria-hidden="true">⌄</span>
             </div>
           </summary>
           <div class="tournament-detail-grid">
@@ -2348,20 +2408,26 @@
         </details>
         <details class="filterable-tournament" data-city="Санкт-Петербург" data-date="2025-10-05">
           <summary>
-            <div class="tournament-summary">
-              <div>
-                <div class="label">Дата</div>
-                <div class="summary-title">2025-10-05</div>
-<div class="summary-meta">Санкт-Петербург</div>              </div>
-              <div>
-                <div class="label">Турнир</div>
-                <div class="summary-title">Dance Planet Cup - 2025 (Санкт-Петербург)</div>
+            <div class="tournament-summary-row">
+              <div class="tournament-summary">
+                <div>
+                  <div class="label">Дата</div>
+                  <div class="summary-title">2025-10-05</div>
+<div class="summary-meta">Санкт-Петербург</div>                </div>
+                <div>
+                  <div class="label">Турнир</div>
+                  <div class="tournament-title-line">
+                    <div class="summary-title">Dance Planet Cup - 2025 (Санкт-Петербург)</div>
+                      <span class="tournament-badge best">лучший результат</span>
+                  </div>
+                </div>
+                <div>
+                  <div class="label">Категория / программа</div>
+                  <div class="summary-meta">Юниоры-1+2 D+C соло Ж St; Юниоры-1+2 E+D соло Ж St</div>
+                  <div class="summary-meta">стандарт</div>
+                </div>
               </div>
-              <div>
-                <div class="label">Категория / программа</div>
-                <div class="summary-meta">Юниоры-1+2 D+C соло Ж St; Юниоры-1+2 E+D соло Ж St</div>
-                <div class="summary-meta">стандарт</div>
-              </div>
+              <span class="accordion-icon" aria-hidden="true">⌄</span>
             </div>
           </summary>
           <div class="tournament-detail-grid">
@@ -2439,20 +2505,26 @@
         </details>
         <details class="filterable-tournament" data-city="Санкт-Петербург" data-date="2025-10-12">
           <summary>
-            <div class="tournament-summary">
-              <div>
-                <div class="label">Дата</div>
-                <div class="summary-title">2025-10-12</div>
-<div class="summary-meta">Санкт-Петербург</div>              </div>
-              <div>
-                <div class="label">Турнир</div>
-                <div class="summary-title">Балтийская Звезда - 2025 (Санкт-Петербург)</div>
+            <div class="tournament-summary-row">
+              <div class="tournament-summary">
+                <div>
+                  <div class="label">Дата</div>
+                  <div class="summary-title">2025-10-12</div>
+<div class="summary-meta">Санкт-Петербург</div>                </div>
+                <div>
+                  <div class="label">Турнир</div>
+                  <div class="tournament-title-line">
+                    <div class="summary-title">Балтийская Звезда - 2025 (Санкт-Петербург)</div>
+                      <span class="tournament-badge best">лучший результат</span>
+                  </div>
+                </div>
+                <div>
+                  <div class="label">Категория / программа</div>
+                  <div class="summary-meta">Юниоры-1+2 E+D соло Ж La; Юниоры-1+2 E+D соло Ж St</div>
+                  <div class="summary-meta">латина, стандарт</div>
+                </div>
               </div>
-              <div>
-                <div class="label">Категория / программа</div>
-                <div class="summary-meta">Юниоры-1+2 E+D соло Ж La; Юниоры-1+2 E+D соло Ж St</div>
-                <div class="summary-meta">латина, стандарт</div>
-              </div>
+              <span class="accordion-icon" aria-hidden="true">⌄</span>
             </div>
           </summary>
           <div class="tournament-detail-grid">
@@ -2531,20 +2603,25 @@
         </details>
         <details class="filterable-tournament" data-city="Санкт-Петербург" data-date="2025-11-02">
           <summary>
-            <div class="tournament-summary">
-              <div>
-                <div class="label">Дата</div>
-                <div class="summary-title">2025-11-02</div>
-<div class="summary-meta">Санкт-Петербург</div>              </div>
-              <div>
-                <div class="label">Турнир</div>
-                <div class="summary-title">North Star 2025 (Санкт-Петербург)</div>
+            <div class="tournament-summary-row">
+              <div class="tournament-summary">
+                <div>
+                  <div class="label">Дата</div>
+                  <div class="summary-title">2025-11-02</div>
+<div class="summary-meta">Санкт-Петербург</div>                </div>
+                <div>
+                  <div class="label">Турнир</div>
+                  <div class="tournament-title-line">
+                    <div class="summary-title">North Star 2025 (Санкт-Петербург)</div>
+                  </div>
+                </div>
+                <div>
+                  <div class="label">Категория / программа</div>
+                  <div class="summary-meta">Юниоры-1+2 D+C Соло Ж St; Юниоры-1+2 E+D Соло Ж La; Юниоры-1+2 E+D Соло Ж St</div>
+                  <div class="summary-meta">латина, стандарт</div>
+                </div>
               </div>
-              <div>
-                <div class="label">Категория / программа</div>
-                <div class="summary-meta">Юниоры-1+2 D+C Соло Ж St; Юниоры-1+2 E+D Соло Ж La; Юниоры-1+2 E+D Соло Ж St</div>
-                <div class="summary-meta">латина, стандарт</div>
-              </div>
+              <span class="accordion-icon" aria-hidden="true">⌄</span>
             </div>
           </summary>
           <div class="tournament-detail-grid">
@@ -2655,20 +2732,25 @@
         </details>
         <details class="filterable-tournament" data-city="Санкт-Петербург" data-date="2025-11-09">
           <summary>
-            <div class="tournament-summary">
-              <div>
-                <div class="label">Дата</div>
-                <div class="summary-title">2025-11-09</div>
-<div class="summary-meta">Санкт-Петербург</div>              </div>
-              <div>
-                <div class="label">Турнир</div>
-                <div class="summary-title">Кубок Лиги 2025 (Санкт-Петербург)</div>
+            <div class="tournament-summary-row">
+              <div class="tournament-summary">
+                <div>
+                  <div class="label">Дата</div>
+                  <div class="summary-title">2025-11-09</div>
+<div class="summary-meta">Санкт-Петербург</div>                </div>
+                <div>
+                  <div class="label">Турнир</div>
+                  <div class="tournament-title-line">
+                    <div class="summary-title">Кубок Лиги 2025 (Санкт-Петербург)</div>
+                  </div>
+                </div>
+                <div>
+                  <div class="label">Категория / программа</div>
+                  <div class="summary-meta">EADC Юниоры-1 RS Соло Ж St; Юниоры-1+2 E+D Соло Ж La; Юниоры-1+2 E+D Соло Ж St</div>
+                  <div class="summary-meta">латина, стандарт</div>
+                </div>
               </div>
-              <div>
-                <div class="label">Категория / программа</div>
-                <div class="summary-meta">EADC Юниоры-1 RS Соло Ж St; Юниоры-1+2 E+D Соло Ж La; Юниоры-1+2 E+D Соло Ж St</div>
-                <div class="summary-meta">латина, стандарт</div>
-              </div>
+              <span class="accordion-icon" aria-hidden="true">⌄</span>
             </div>
           </summary>
           <div class="tournament-detail-grid">
@@ -2779,20 +2861,25 @@
         </details>
         <details class="filterable-tournament" data-city="Санкт-Петербург" data-date="2025-11-16">
           <summary>
-            <div class="tournament-summary">
-              <div>
-                <div class="label">Дата</div>
-                <div class="summary-title">2025-11-16</div>
-<div class="summary-meta">Санкт-Петербург</div>              </div>
-              <div>
-                <div class="label">Турнир</div>
-                <div class="summary-title">Гордость Санкт-Петербурга 2025 (Санкт-Петербург)</div>
+            <div class="tournament-summary-row">
+              <div class="tournament-summary">
+                <div>
+                  <div class="label">Дата</div>
+                  <div class="summary-title">2025-11-16</div>
+<div class="summary-meta">Санкт-Петербург</div>                </div>
+                <div>
+                  <div class="label">Турнир</div>
+                  <div class="tournament-title-line">
+                    <div class="summary-title">Гордость Санкт-Петербурга 2025 (Санкт-Петербург)</div>
+                  </div>
+                </div>
+                <div>
+                  <div class="label">Категория / программа</div>
+                  <div class="summary-meta">Юниоры-1+2 D+C Соло Ж La; Юниоры-1+2 D+C Соло Ж St; Юниоры-1+2 E+D Соло Ж La; Юниоры-1+2 E+D Соло Ж St</div>
+                  <div class="summary-meta">латина, стандарт</div>
+                </div>
               </div>
-              <div>
-                <div class="label">Категория / программа</div>
-                <div class="summary-meta">Юниоры-1+2 D+C Соло Ж La; Юниоры-1+2 D+C Соло Ж St; Юниоры-1+2 E+D Соло Ж La; Юниоры-1+2 E+D Соло Ж St</div>
-                <div class="summary-meta">латина, стандарт</div>
-              </div>
+              <span class="accordion-icon" aria-hidden="true">⌄</span>
             </div>
           </summary>
           <div class="tournament-detail-grid">
@@ -2933,20 +3020,25 @@
         </details>
         <details class="filterable-tournament" data-city="Санкт-Петербург" data-date="2025-11-22">
           <summary>
-            <div class="tournament-summary">
-              <div>
-                <div class="label">Дата</div>
-                <div class="summary-title">2025-11-22</div>
-<div class="summary-meta">Санкт-Петербург</div>              </div>
-              <div>
-                <div class="label">Турнир</div>
-                <div class="summary-title">Большой Кубок Содружества 2025 (Санкт-Петербург)</div>
+            <div class="tournament-summary-row">
+              <div class="tournament-summary">
+                <div>
+                  <div class="label">Дата</div>
+                  <div class="summary-title">2025-11-22</div>
+<div class="summary-meta">Санкт-Петербург</div>                </div>
+                <div>
+                  <div class="label">Турнир</div>
+                  <div class="tournament-title-line">
+                    <div class="summary-title">Большой Кубок Содружества 2025 (Санкт-Петербург)</div>
+                  </div>
+                </div>
+                <div>
+                  <div class="label">Категория / программа</div>
+                  <div class="summary-meta">Юниоры-1+2 D Соло Ж La; Юниоры-1+2 D Соло Ж St</div>
+                  <div class="summary-meta">латина, стандарт</div>
+                </div>
               </div>
-              <div>
-                <div class="label">Категория / программа</div>
-                <div class="summary-meta">Юниоры-1+2 D Соло Ж La; Юниоры-1+2 D Соло Ж St</div>
-                <div class="summary-meta">латина, стандарт</div>
-              </div>
+              <span class="accordion-icon" aria-hidden="true">⌄</span>
             </div>
           </summary>
           <div class="tournament-detail-grid">
@@ -3026,20 +3118,25 @@
         </details>
         <details class="filterable-tournament" data-city="Санкт-Петербург" data-date="2025-12-21">
           <summary>
-            <div class="tournament-summary">
-              <div>
-                <div class="label">Дата</div>
-                <div class="summary-title">2025-12-21</div>
-<div class="summary-meta">Санкт-Петербург</div>              </div>
-              <div>
-                <div class="label">Турнир</div>
-                <div class="summary-title">Кубок Петербурга 2025 (Санкт-Петербург)</div>
+            <div class="tournament-summary-row">
+              <div class="tournament-summary">
+                <div>
+                  <div class="label">Дата</div>
+                  <div class="summary-title">2025-12-21</div>
+<div class="summary-meta">Санкт-Петербург</div>                </div>
+                <div>
+                  <div class="label">Турнир</div>
+                  <div class="tournament-title-line">
+                    <div class="summary-title">Кубок Петербурга 2025 (Санкт-Петербург)</div>
+                  </div>
+                </div>
+                <div>
+                  <div class="label">Категория / программа</div>
+                  <div class="summary-meta">Юниоры-1+2 E+D Соло Ж La; Юниоры-1+2 E+D Соло Ж St</div>
+                  <div class="summary-meta">латина, стандарт</div>
+                </div>
               </div>
-              <div>
-                <div class="label">Категория / программа</div>
-                <div class="summary-meta">Юниоры-1+2 E+D Соло Ж La; Юниоры-1+2 E+D Соло Ж St</div>
-                <div class="summary-meta">латина, стандарт</div>
-              </div>
+              <span class="accordion-icon" aria-hidden="true">⌄</span>
             </div>
           </summary>
           <div class="tournament-detail-grid">
@@ -3119,20 +3216,26 @@
         </details>
         <details class="filterable-tournament" data-city="Санкт-Петербург" data-date="2026-01-18">
           <summary>
-            <div class="tournament-summary">
-              <div>
-                <div class="label">Дата</div>
-                <div class="summary-title">2026-01-18</div>
-<div class="summary-meta">Санкт-Петербург</div>              </div>
-              <div>
-                <div class="label">Турнир</div>
-                <div class="summary-title">Lider Cup 2026 (Санкт-Петербург)</div>
+            <div class="tournament-summary-row">
+              <div class="tournament-summary">
+                <div>
+                  <div class="label">Дата</div>
+                  <div class="summary-title">2026-01-18</div>
+<div class="summary-meta">Санкт-Петербург</div>                </div>
+                <div>
+                  <div class="label">Турнир</div>
+                  <div class="tournament-title-line">
+                    <div class="summary-title">Lider Cup 2026 (Санкт-Петербург)</div>
+                      <span class="tournament-badge hardest">сложное выступление</span>
+                  </div>
+                </div>
+                <div>
+                  <div class="label">Категория / программа</div>
+                  <div class="summary-meta">Юниоры-1+2 D+C соло Ж La; Юниоры-1+2 D+C соло Ж St; Юниоры-1+2 E+D соло Ж La; Юниоры-1+2 E+D соло Ж St</div>
+                  <div class="summary-meta">латина, стандарт</div>
+                </div>
               </div>
-              <div>
-                <div class="label">Категория / программа</div>
-                <div class="summary-meta">Юниоры-1+2 D+C соло Ж La; Юниоры-1+2 D+C соло Ж St; Юниоры-1+2 E+D соло Ж La; Юниоры-1+2 E+D соло Ж St</div>
-                <div class="summary-meta">латина, стандарт</div>
-              </div>
+              <span class="accordion-icon" aria-hidden="true">⌄</span>
             </div>
           </summary>
           <div class="tournament-detail-grid">
@@ -3273,20 +3376,26 @@
         </details>
         <details class="filterable-tournament" data-city="Санкт-Петербург" data-date="2026-01-25">
           <summary>
-            <div class="tournament-summary">
-              <div>
-                <div class="label">Дата</div>
-                <div class="summary-title">2026-01-25</div>
-<div class="summary-meta">Санкт-Петербург</div>              </div>
-              <div>
-                <div class="label">Турнир</div>
-                <div class="summary-title">Русский Вальс 2026 (Санкт-Петербург)</div>
+            <div class="tournament-summary-row">
+              <div class="tournament-summary">
+                <div>
+                  <div class="label">Дата</div>
+                  <div class="summary-title">2026-01-25</div>
+<div class="summary-meta">Санкт-Петербург</div>                </div>
+                <div>
+                  <div class="label">Турнир</div>
+                  <div class="tournament-title-line">
+                    <div class="summary-title">Русский Вальс 2026 (Санкт-Петербург)</div>
+                      <span class="tournament-badge best">лучший результат</span>
+                  </div>
+                </div>
+                <div>
+                  <div class="label">Категория / программа</div>
+                  <div class="summary-meta">Юниоры-1+2 D+C Соло Ж La; Юниоры-1+2 D+C Соло Ж St; Юниоры-1+2 E+D Соло Ж La; Юниоры-1+2 E+D Соло Ж St</div>
+                  <div class="summary-meta">латина, стандарт</div>
+                </div>
               </div>
-              <div>
-                <div class="label">Категория / программа</div>
-                <div class="summary-meta">Юниоры-1+2 D+C Соло Ж La; Юниоры-1+2 D+C Соло Ж St; Юниоры-1+2 E+D Соло Ж La; Юниоры-1+2 E+D Соло Ж St</div>
-                <div class="summary-meta">латина, стандарт</div>
-              </div>
+              <span class="accordion-icon" aria-hidden="true">⌄</span>
             </div>
           </summary>
           <div class="tournament-detail-grid">
@@ -3427,20 +3536,25 @@
         </details>
         <details class="filterable-tournament" data-city="Санкт-Петербург" data-date="2026-02-01">
           <summary>
-            <div class="tournament-summary">
-              <div>
-                <div class="label">Дата</div>
-                <div class="summary-title">2026-02-01</div>
-<div class="summary-meta">Санкт-Петербург</div>              </div>
-              <div>
-                <div class="label">Турнир</div>
-                <div class="summary-title">Tiara Dance Cup (Санкт-Петербург)</div>
+            <div class="tournament-summary-row">
+              <div class="tournament-summary">
+                <div>
+                  <div class="label">Дата</div>
+                  <div class="summary-title">2026-02-01</div>
+<div class="summary-meta">Санкт-Петербург</div>                </div>
+                <div>
+                  <div class="label">Турнир</div>
+                  <div class="tournament-title-line">
+                    <div class="summary-title">Tiara Dance Cup (Санкт-Петербург)</div>
+                  </div>
+                </div>
+                <div>
+                  <div class="label">Категория / программа</div>
+                  <div class="summary-meta">EADC Юниоры-1 RS соло Ж La; EADC Юниоры-1 RS соло Ж St; Юниоры-1+2 E+D соло Ж La; Юниоры-1+2 E+D соло Ж St</div>
+                  <div class="summary-meta">латина, стандарт</div>
+                </div>
               </div>
-              <div>
-                <div class="label">Категория / программа</div>
-                <div class="summary-meta">EADC Юниоры-1 RS соло Ж La; EADC Юниоры-1 RS соло Ж St; Юниоры-1+2 E+D соло Ж La; Юниоры-1+2 E+D соло Ж St</div>
-                <div class="summary-meta">латина, стандарт</div>
-              </div>
+              <span class="accordion-icon" aria-hidden="true">⌄</span>
             </div>
           </summary>
           <div class="tournament-detail-grid">
@@ -3581,20 +3695,25 @@
         </details>
         <details class="filterable-tournament" data-city="Санкт-Петербург" data-date="2026-03-01">
           <summary>
-            <div class="tournament-summary">
-              <div>
-                <div class="label">Дата</div>
-                <div class="summary-title">2026-03-01</div>
-<div class="summary-meta">Санкт-Петербург</div>              </div>
-              <div>
-                <div class="label">Турнир</div>
-                <div class="summary-title">Танцевальное Свидание 2026 - Dance Date Cup (Санкт-Петербург)</div>
+            <div class="tournament-summary-row">
+              <div class="tournament-summary">
+                <div>
+                  <div class="label">Дата</div>
+                  <div class="summary-title">2026-03-01</div>
+<div class="summary-meta">Санкт-Петербург</div>                </div>
+                <div>
+                  <div class="label">Турнир</div>
+                  <div class="tournament-title-line">
+                    <div class="summary-title">Танцевальное Свидание 2026 - Dance Date Cup (Санкт-Петербург)</div>
+                  </div>
+                </div>
+                <div>
+                  <div class="label">Категория / программа</div>
+                  <div class="summary-meta">Юниоры-1+2 D+C Соло Ж La; Юниоры-1+2 D+C Соло Ж St; Юниоры-1+2 E+D Соло Ж La; Юниоры-1+2 E+D Соло Ж St</div>
+                  <div class="summary-meta">латина, стандарт</div>
+                </div>
               </div>
-              <div>
-                <div class="label">Категория / программа</div>
-                <div class="summary-meta">Юниоры-1+2 D+C Соло Ж La; Юниоры-1+2 D+C Соло Ж St; Юниоры-1+2 E+D Соло Ж La; Юниоры-1+2 E+D Соло Ж St</div>
-                <div class="summary-meta">латина, стандарт</div>
-              </div>
+              <span class="accordion-icon" aria-hidden="true">⌄</span>
             </div>
           </summary>
           <div class="tournament-detail-grid">
@@ -3735,20 +3854,25 @@
         </details>
         <details class="filterable-tournament" data-city="Санкт-Петербург" data-date="2026-03-08">
           <summary>
-            <div class="tournament-summary">
-              <div>
-                <div class="label">Дата</div>
-                <div class="summary-title">2026-03-08</div>
-<div class="summary-meta">Санкт-Петербург</div>              </div>
-              <div>
-                <div class="label">Турнир</div>
-                <div class="summary-title">Амбассадор 2026 (Санкт-Петербург)</div>
+            <div class="tournament-summary-row">
+              <div class="tournament-summary">
+                <div>
+                  <div class="label">Дата</div>
+                  <div class="summary-title">2026-03-08</div>
+<div class="summary-meta">Санкт-Петербург</div>                </div>
+                <div>
+                  <div class="label">Турнир</div>
+                  <div class="tournament-title-line">
+                    <div class="summary-title">Амбассадор 2026 (Санкт-Петербург)</div>
+                  </div>
+                </div>
+                <div>
+                  <div class="label">Категория / программа</div>
+                  <div class="summary-meta">Юниоры-1+2 D+C Соло Ж La; Юниоры-1+2 D+C Соло Ж St; Юниоры-1+2 E+D Соло Ж La; Юниоры-1+2 E+D Соло Ж St</div>
+                  <div class="summary-meta">латина, стандарт</div>
+                </div>
               </div>
-              <div>
-                <div class="label">Категория / программа</div>
-                <div class="summary-meta">Юниоры-1+2 D+C Соло Ж La; Юниоры-1+2 D+C Соло Ж St; Юниоры-1+2 E+D Соло Ж La; Юниоры-1+2 E+D Соло Ж St</div>
-                <div class="summary-meta">латина, стандарт</div>
-              </div>
+              <span class="accordion-icon" aria-hidden="true">⌄</span>
             </div>
           </summary>
           <div class="tournament-detail-grid">
@@ -3889,20 +4013,26 @@
         </details>
         <details class="filterable-tournament" data-city="Санкт-Петербург" data-date="2026-04-05">
           <summary>
-            <div class="tournament-summary">
-              <div>
-                <div class="label">Дата</div>
-                <div class="summary-title">2026-04-05</div>
-<div class="summary-meta">Санкт-Петербург</div>              </div>
-              <div>
-                <div class="label">Турнир</div>
-                <div class="summary-title">Кубок Русского Стиля 2026 (Санкт-Петербург)</div>
+            <div class="tournament-summary-row">
+              <div class="tournament-summary">
+                <div>
+                  <div class="label">Дата</div>
+                  <div class="summary-title">2026-04-05</div>
+<div class="summary-meta">Санкт-Петербург</div>                </div>
+                <div>
+                  <div class="label">Турнир</div>
+                  <div class="tournament-title-line">
+                    <div class="summary-title">Кубок Русского Стиля 2026 (Санкт-Петербург)</div>
+                      <span class="tournament-badge hardest">сложное выступление</span>
+                  </div>
+                </div>
+                <div>
+                  <div class="label">Категория / программа</div>
+                  <div class="summary-meta">EADC Юниоры-2 Соло Ж La; EADC Юниоры-2 Соло Ж St; Юниоры-1+2 E+D Соло Ж La; Юниоры-1+2 E+D Соло Ж St</div>
+                  <div class="summary-meta">латина, стандарт</div>
+                </div>
               </div>
-              <div>
-                <div class="label">Категория / программа</div>
-                <div class="summary-meta">EADC Юниоры-2 Соло Ж La; EADC Юниоры-2 Соло Ж St; Юниоры-1+2 E+D Соло Ж La; Юниоры-1+2 E+D Соло Ж St</div>
-                <div class="summary-meta">латина, стандарт</div>
-              </div>
+              <span class="accordion-icon" aria-hidden="true">⌄</span>
             </div>
           </summary>
           <div class="tournament-detail-grid">
@@ -4025,20 +4155,25 @@
         </details>
         <details class="filterable-tournament" data-city="Санкт-Петербург" data-date="2026-05-17">
           <summary>
-            <div class="tournament-summary">
-              <div>
-                <div class="label">Дата</div>
-                <div class="summary-title">2026-05-17</div>
-<div class="summary-meta">Санкт-Петербург</div>              </div>
-              <div>
-                <div class="label">Турнир</div>
-                <div class="summary-title">Чемпионат СПТС 2026 (Санкт-Петербург)</div>
+            <div class="tournament-summary-row">
+              <div class="tournament-summary">
+                <div>
+                  <div class="label">Дата</div>
+                  <div class="summary-title">2026-05-17</div>
+<div class="summary-meta">Санкт-Петербург</div>                </div>
+                <div>
+                  <div class="label">Турнир</div>
+                  <div class="tournament-title-line">
+                    <div class="summary-title">Чемпионат СПТС 2026 (Санкт-Петербург)</div>
+                  </div>
+                </div>
+                <div>
+                  <div class="label">Категория / программа</div>
+                  <div class="summary-meta">Юниоры-1+2 D+C Соло Ж La; Юниоры-1+2 D+C Соло Ж St; Юниоры-1+2 E+D Соло Ж La; Юниоры-1+2 E+D Соло Ж St</div>
+                  <div class="summary-meta">латина, стандарт</div>
+                </div>
               </div>
-              <div>
-                <div class="label">Категория / программа</div>
-                <div class="summary-meta">Юниоры-1+2 D+C Соло Ж La; Юниоры-1+2 D+C Соло Ж St; Юниоры-1+2 E+D Соло Ж La; Юниоры-1+2 E+D Соло Ж St</div>
-                <div class="summary-meta">латина, стандарт</div>
-              </div>
+              <span class="accordion-icon" aria-hidden="true">⌄</span>
             </div>
           </summary>
           <div class="tournament-detail-grid">
@@ -4179,20 +4314,26 @@
         </details>
         <details class="filterable-tournament" data-city="Санкт-Петербург" data-date="2026-05-24">
           <summary>
-            <div class="tournament-summary">
-              <div>
-                <div class="label">Дата</div>
-                <div class="summary-title">2026-05-24</div>
-<div class="summary-meta">Санкт-Петербург</div>              </div>
-              <div>
-                <div class="label">Турнир</div>
-                <div class="summary-title">Чемпионат СПТЛ 2026 (Санкт-Петербург)</div>
+            <div class="tournament-summary-row">
+              <div class="tournament-summary">
+                <div>
+                  <div class="label">Дата</div>
+                  <div class="summary-title">2026-05-24</div>
+<div class="summary-meta">Санкт-Петербург</div>                </div>
+                <div>
+                  <div class="label">Турнир</div>
+                  <div class="tournament-title-line">
+                    <div class="summary-title">Чемпионат СПТЛ 2026 (Санкт-Петербург)</div>
+                      <span class="tournament-badge hardest">сложное выступление</span>
+                  </div>
+                </div>
+                <div>
+                  <div class="label">Категория / программа</div>
+                  <div class="summary-meta">Юниоры-1+2 D+C Соло Ж La; Юниоры-1+2 D+C Соло Ж St; Юниоры-1+2 E+D Соло Ж La; Юниоры-1+2 E+D Соло Ж St</div>
+                  <div class="summary-meta">латина, стандарт</div>
+                </div>
               </div>
-              <div>
-                <div class="label">Категория / программа</div>
-                <div class="summary-meta">Юниоры-1+2 D+C Соло Ж La; Юниоры-1+2 D+C Соло Ж St; Юниоры-1+2 E+D Соло Ж La; Юниоры-1+2 E+D Соло Ж St</div>
-                <div class="summary-meta">латина, стандарт</div>
-              </div>
+              <span class="accordion-icon" aria-hidden="true">⌄</span>
             </div>
           </summary>
           <div class="tournament-detail-grid">
@@ -4336,15 +4477,42 @@
 
   </section>
 </main>
-<script>
+  <script>
   (function () {
-    var cityInputs = Array.prototype.slice.call(document.querySelectorAll(".report-filter-city"));
+    var cityAllButton = document.querySelector(".report-filter-city-all");
+    var cityButtons = Array.prototype.slice.call(document.querySelectorAll(".report-filter-city"));
     var dateFrom = document.getElementById("report-filter-date-from");
     var dateTo = document.getElementById("report-filter-date-to");
     var items = Array.prototype.slice.call(document.querySelectorAll(".filterable-tournament"));
 
+    function isPressed(button) {
+      return button && button.getAttribute("aria-pressed") === "true";
+    }
+
+    function setPressed(button, value) {
+      if (button) button.setAttribute("aria-pressed", value ? "true" : "false");
+    }
+
+    function syncAllButton() {
+      var allSelected = cityButtons.length === 0 || cityButtons.every(isPressed);
+      setPressed(cityAllButton, allSelected);
+    }
+
+    function selectAllCities() {
+      cityButtons.forEach(function (button) { setPressed(button, true); });
+      setPressed(cityAllButton, true);
+    }
+
     function selectedCities() {
-      return cityInputs.filter(function (input) { return input.checked; }).map(function (input) { return input.value; });
+      var selected = cityButtons
+        .filter(isPressed)
+        .map(function (button) { return button.getAttribute("data-city") || ""; })
+        .filter(Boolean);
+      if (!selected.length) {
+        selectAllCities();
+        return cityButtons.map(function (button) { return button.getAttribute("data-city") || ""; }).filter(Boolean);
+      }
+      return selected;
     }
 
     function inDateRange(value, from, to) {
@@ -4367,9 +4535,26 @@
       });
     }
 
-    cityInputs.forEach(function (input) { input.addEventListener("change", applyFilters); });
+    if (cityAllButton) {
+      cityAllButton.addEventListener("click", function () {
+        selectAllCities();
+        applyFilters();
+      });
+    }
+    cityButtons.forEach(function (button) {
+      button.addEventListener("click", function () {
+        setPressed(button, !isPressed(button));
+        if (!cityButtons.some(isPressed)) {
+          selectAllCities();
+        } else {
+          syncAllButton();
+        }
+        applyFilters();
+      });
+    });
     if (dateFrom) dateFrom.addEventListener("change", applyFilters);
     if (dateTo) dateTo.addEventListener("change", applyFilters);
+    selectAllCities();
     applyFilters();
   }());
 </script>

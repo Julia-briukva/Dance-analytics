@@ -685,9 +685,24 @@ def build_tournament_details_from_records(records: list[dict[str, Any]]) -> list
 
 def trainer_tournament_summaries(report: dict[str, Any]) -> list[dict[str, Any]]:
     summaries = report.get("trainer_mode", {}).get("tournament_summaries", []) or []
-    if summaries:
-        return summaries
-    return build_tournament_details(report)
+    if not summaries:
+        summaries = build_tournament_details(report)
+
+    rank_by_key = {
+        (item.get("event_date"), item.get("tournament_id"), item.get("tournament_title")): {
+            "tournament_rank": item.get("tournament_rank"),
+            "rank_direction": item.get("rank_direction") or "",
+        }
+        for item in report.get("tournaments", {}).get("items", []) or []
+    }
+    result = []
+    for item in summaries:
+        merged = dict(item)
+        rank = rank_by_key.get((item.get("event_date"), item.get("tournament_id"), item.get("tournament_title")), {})
+        merged.setdefault("tournament_rank", rank.get("tournament_rank"))
+        merged.setdefault("rank_direction", rank.get("rank_direction") or "")
+        result.append(merged)
+    return result
 
 
 def report_filter_options(report: dict[str, Any], summary: dict[str, Any]) -> dict[str, Any]:
