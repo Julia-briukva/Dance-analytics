@@ -20,15 +20,20 @@
       --accent-light: #FAF8FF;
       --note-soft: #F6F4FC;
       --success-soft: #EAF6F1;
-      --accent-positive: #2F8F6B;
-      --accent-positive-bg: #EAF7F1;
-      --accent-warning: #9A6A18;
-      --accent-warning-bg: #FFF4D8;
-      --accent-attention: #B65F5B;
-      --accent-attention-bg: #FBEDEC;
-      --accent-neutral: #6F6887;
-      --accent-neutral-bg: #F1EEF8;
+      --accent-positive: #4F8F78;
+      --accent-positive-bg: #F1F8F5;
+      --accent-warning: #9A7745;
+      --accent-warning-bg: #FFF8EA;
+      --accent-attention: #B27670;
+      --accent-attention-bg: #FCF2F0;
+      --accent-neutral: #7A7692;
+      --accent-neutral-bg: #F5F3FA;
       --shadow: 0 10px 26px rgba(49, 42, 96, .055);
+      --radius-control: 999px;
+      --radius-card: 14px;
+      --radius-panel: 12px;
+      --radius-section: 18px;
+      --radius-circle: 999px;
     }
 
     * { box-sizing: border-box; }
@@ -49,7 +54,7 @@
     .cover {
       background: linear-gradient(135deg, var(--paper) 0%, var(--accent-light) 100%);
       border: 1px solid var(--line);
-      border-radius: 18px;
+      border-radius: var(--radius-section);
       box-shadow: var(--shadow);
       padding: 34px 36px 28px;
       margin-bottom: 18px;
@@ -65,9 +70,9 @@
     }
 
     h1, h2, h3, h4 { margin: 0; line-height: 1.2; letter-spacing: 0; }
-    h1 { font-size: 34px; max-width: 760px; font-weight: 680; }
-    h2 { font-size: 22px; margin-bottom: 12px; font-weight: 620; }
-    h3 { font-size: 17px; margin: 0 0 10px; font-weight: 560; color: var(--ink-soft); }
+    h1 { font-size: 34px; max-width: 760px; font-weight: 660; }
+    h2 { font-size: 21px; margin-bottom: 12px; font-weight: 600; }
+    h3 { font-size: 16px; margin: 0 0 10px; font-weight: 560; color: var(--ink-soft); }
     h4 { font-size: 13px; margin: 0 0 8px; font-weight: 560; color: var(--ink-soft); }
     p { margin: 0 0 10px; }
 
@@ -123,7 +128,7 @@
     .card,
     .insight-card {
       background: rgba(255, 255, 255, .62);
-      border-radius: 14px;
+      border-radius: var(--radius-card);
       padding: 14px;
       break-inside: avoid;
     }
@@ -137,35 +142,77 @@
       border: 0;
     }
 
-    .insight-card.positive,
-    .insight-card.attention,
-    .insight-card.neutral {
-      border-left: 3px solid transparent;
-    }
-
     .insight-card.positive {
-      background: linear-gradient(90deg, var(--accent-positive-bg), var(--accent-light));
-      border-left-color: var(--accent-positive);
+      background: var(--accent-positive-bg);
     }
 
     .insight-card.attention {
-      background: linear-gradient(90deg, var(--accent-attention-bg), var(--accent-light));
-      border-left-color: var(--accent-attention);
+      background: var(--accent-attention-bg);
     }
 
     .insight-card.neutral {
-      background: linear-gradient(90deg, var(--accent-neutral-bg), var(--accent-light));
-      border-left-color: var(--accent-neutral);
+      background: var(--accent-neutral-bg);
+    }
+
+    .insight-card h3 {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .insight-card h3 .status-icon {
+      width: 32px;
+      height: 32px;
+      flex-basis: 32px;
+      margin-left: auto;
     }
 
     .status-icon {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-width: 1.15em;
-      margin-right: 5px;
-      color: currentColor;
-      font-weight: 650;
+      width: 24px;
+      height: 24px;
+      border-radius: var(--radius-circle);
+      background: var(--accent-neutral-bg);
+      color: var(--accent-neutral);
+      flex: 0 0 24px;
+      margin-right: 2px;
+      line-height: 0;
+    }
+
+    .status-icon svg {
+      width: 15px;
+      height: 15px;
+      stroke: currentColor;
+      stroke-width: 1.9;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .insight-card h3 .status-icon svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    .status-icon.positive,
+    .positive .status-icon {
+      background: var(--accent-positive-bg);
+      color: var(--accent-positive);
+    }
+
+    .status-icon.attention,
+    .attention .status-icon {
+      background: var(--accent-attention-bg);
+      color: var(--accent-attention);
+    }
+
+    .status-icon.neutral,
+    .neutral .status-icon,
+    .limited-note .status-icon {
+      background: var(--accent-neutral-bg);
+      color: var(--accent-neutral);
     }
 
     .label {
@@ -205,7 +252,7 @@
       gap: 3px;
       cursor: pointer;
       border: 1px solid var(--line);
-      border-radius: 14px;
+      border-radius: var(--radius-card);
       background: var(--paper);
       color: var(--ink-soft);
       padding: 15px 18px;
@@ -243,7 +290,7 @@
     .report-filters {
       background: var(--paper);
       border: 1px solid rgba(233, 229, 244, .78);
-      border-radius: 16px;
+      border-radius: var(--radius-section);
       box-shadow: 0 6px 18px rgba(49, 42, 96, .03);
       margin: 0 0 24px;
       padding: 18px;
@@ -275,7 +322,7 @@
       align-items: center;
       gap: 6px;
       border: 1px solid var(--line);
-      border-radius: 999px;
+      border-radius: var(--radius-control);
       background: var(--accent-light);
       color: var(--ink-soft);
       cursor: pointer;
@@ -311,11 +358,12 @@
     .header-date-filter input {
       width: 100%;
       border: 1px solid var(--line);
-      border-radius: 10px;
+      border-radius: var(--radius-control);
       color: var(--ink-soft);
       font: inherit;
       font-size: 13px;
-      padding: 8px 9px;
+      min-height: 34px;
+      padding: 7px 12px;
     }
 
     .filter-note {
@@ -333,7 +381,7 @@
     .section {
       background: var(--paper);
       border: 1px solid rgba(233, 229, 244, .78);
-      border-radius: 16px;
+      border-radius: var(--radius-section);
       box-shadow: 0 6px 18px rgba(49, 42, 96, .035);
       margin: 24px 0;
       padding: 24px;
@@ -382,7 +430,7 @@
       display: flex;
       justify-content: space-between;
       gap: 12px;
-      border-radius: 8px;
+      border-radius: var(--radius-panel);
       background: transparent;
       padding: 7px 0;
     }
@@ -398,7 +446,7 @@
       justify-content: center;
       min-width: 28px;
       height: 28px;
-      border-radius: 999px;
+      border-radius: var(--radius-circle);
       background: var(--accent);
       color: #fff;
       font-weight: 650;
@@ -429,7 +477,7 @@
       width: 100%;
       min-width: 92px;
       height: 7px;
-      border-radius: 999px;
+      border-radius: var(--radius-control);
       background: #ECE8F6;
       overflow: hidden;
     }
@@ -471,7 +519,7 @@
     .category-tab {
       cursor: pointer;
       border: 1px solid var(--line);
-      border-radius: 999px;
+      border-radius: var(--radius-control);
       background: var(--paper);
       color: var(--ink-soft);
       padding: 8px 12px;
@@ -490,7 +538,7 @@
     .chip-badge {
       display: inline-flex;
       margin-left: 6px;
-      border-radius: 999px;
+      border-radius: var(--radius-control);
       background: #E4DFF0;
       color: var(--accent-neutral);
       font-size: 10px;
@@ -616,7 +664,7 @@
     }
 
     .note-box {
-      border-radius: 12px;
+      border-radius: var(--radius-panel);
       padding: 12px 14px;
       margin-top: 10px;
     }
@@ -624,13 +672,11 @@
     .note-box {
       background: var(--note-soft);
       border: 0;
-      border-left: 3px solid rgba(123, 110, 214, .28);
       color: var(--ink-soft);
     }
 
     .note-box.limited-note {
       background: var(--accent-neutral-bg);
-      border-left-color: var(--accent-neutral);
     }
 
     .program-story {
@@ -647,8 +693,8 @@
     .story-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 12px;
-      margin-top: 12px;
+      gap: 18px;
+      margin-top: 14px;
     }
 
     .story-card {
@@ -681,16 +727,16 @@
     .parent-conclusion {
       background: transparent;
       border: 0;
-      border-radius: 14px;
-      padding: 12px 0 0;
+      border-radius: var(--radius-card);
+      padding: 14px 0 0;
       color: var(--ink-soft);
     }
 
     .parent-conclusion h2 {
       color: var(--ink-soft);
-      font-size: 15px;
+      font-size: 14px;
       font-weight: 560;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
 
     .table-wrap,
@@ -700,7 +746,7 @@
       overflow-y: hidden;
       -webkit-overflow-scrolling: touch;
       border: 1px solid var(--line);
-      border-radius: 12px;
+      border-radius: var(--radius-panel);
       margin-top: 10px;
     }
 
@@ -719,7 +765,7 @@
     }
 
     .table-scroll table {
-      min-width: 560px;
+      min-width: 640px;
     }
 
     .tournament-list .table-scroll table {
@@ -728,7 +774,7 @@
 
     th, td {
       border-bottom: 1px solid var(--line);
-      padding: 9px 10px;
+      padding: 10px 14px;
       text-align: left;
       vertical-align: top;
       overflow-wrap: anywhere;
@@ -746,6 +792,26 @@
 
     tbody tr:nth-child(even) td { background: #FEFDFF; }
     tbody tr:last-child td { border-bottom: 0; }
+
+    .col-dance { min-width: 170px; }
+    .col-program { min-width: 110px; }
+    .col-avg { min-width: 118px; }
+    .col-best { min-width: 104px; }
+    .col-place { min-width: 118px; }
+    .col-protocols { min-width: 108px; }
+    .col-stability {
+      min-width: 190px;
+      padding-left: 22px;
+    }
+
+    th.col-stability,
+    td.col-stability {
+      text-align: left;
+    }
+
+    .col-stability .progress-track {
+      max-width: 148px;
+    }
 
     details {
       border: 0;
@@ -799,11 +865,28 @@
       justify-content: center;
       width: 30px;
       height: 30px;
-      border-radius: 999px;
+      border-radius: var(--radius-circle);
       background: var(--accent-light);
       color: var(--accent-dark);
       flex: 0 0 auto;
+      line-height: 0;
+      transform-origin: 50% 50%;
       transition: transform .18s ease, background .18s ease;
+    }
+
+    .accordion-icon .status-icon {
+      width: 18px;
+      height: 18px;
+      flex-basis: 18px;
+      margin: 0;
+      background: transparent;
+      color: inherit;
+    }
+
+    .accordion-icon svg {
+      width: 18px;
+      height: 18px;
+      stroke-width: 2;
     }
 
     details[open] .accordion-icon {
@@ -823,7 +906,7 @@
       display: inline-flex;
       align-items: center;
       gap: 4px;
-      border-radius: 999px;
+      border-radius: var(--radius-control);
       background: var(--accent-positive-bg);
       color: var(--accent-positive);
       font-size: 10.5px;
@@ -831,6 +914,21 @@
       line-height: 1.2;
       padding: 3px 7px;
       white-space: nowrap;
+    }
+
+    .tournament-badge .status-icon {
+      width: 15px;
+      height: 15px;
+      flex-basis: 15px;
+      margin: 0;
+      background: transparent;
+      color: currentColor;
+    }
+
+    .tournament-badge .status-icon svg {
+      width: 13px;
+      height: 13px;
+      stroke-width: 2;
     }
 
     .tournament-badge.hardest {
@@ -903,7 +1001,7 @@
 
     @media (max-width: 620px) {
       .report { width: min(100% - 24px, 1080px); padding-top: 18px; }
-      .cover, .section { padding: 18px; border-radius: 14px; }
+      .cover, .section { padding: 18px; border-radius: var(--radius-card); }
       h1 { font-size: 26px; }
       .cover-subtitle { font-size: 14px; }
       .profile-grid,
@@ -963,7 +1061,7 @@
         box-shadow: none;
         break-inside: avoid;
         page-break-inside: avoid;
-        border-radius: 10px;
+        border-radius: var(--radius-panel);
       }
       .tab-label { box-shadow: none; }
       h1 { font-size: 24px; }
@@ -1225,13 +1323,17 @@
 
           <div class="three-column">
             <div class="insight-card positive">
-              <h3><span class="status-icon">★</span>Лучший танец</h3>
+              <h3><span>Лучший танец</span><span class="status-icon " aria-hidden="true">
+  <svg viewBox="0 0 24 24" fill="none"><path d="m12 3 2.7 5.47 6.03.88-4.36 4.25 1.03 6-5.4-2.84-5.4 2.84 1.03-6-4.36-4.25 6.03-.88L12 3Z"/></svg>
+</span></h3>
               <ul class="plain-list">
                   <li><strong>Квикстеп</strong><span class="muted">3.75</span></li>
               </ul>
             </div>
             <div class="insight-card attention">
-              <h3><span class="status-icon">!</span>Требуют внимания</h3>
+              <h3><span>Требуют внимания</span><span class="status-icon " aria-hidden="true">
+  <svg viewBox="0 0 24 24" fill="none"><path d="M12 9v4"/><path d="M12 17h.01"/><path d="M10.3 4.2 2.8 17.4A2 2 0 0 0 4.5 20h15a2 2 0 0 0 1.7-2.6L13.7 4.2a2 2 0 0 0-3.4 0Z"/></svg>
+</span></h3>
 <p class="muted">Ограниченная выборка.</p>            </div>
             <div class="insight-card">
               <h3>Наиболее стабильные</h3>
@@ -1240,10 +1342,14 @@
 
           <div class="three-column">
             <div class="insight-card positive">
-              <h3><span class="status-icon">↑</span>Улучшается</h3>
+              <h3><span>Улучшается</span><span class="status-icon " aria-hidden="true">
+  <svg viewBox="0 0 24 24" fill="none"><path d="M12 19V5"/><path d="m6 11 6-6 6 6"/></svg>
+</span></h3>
 <p class="muted">Для уверенного вывода пока мало наблюдений.</p>            </div>
             <div class="insight-card attention">
-              <h3><span class="status-icon">↓</span>Требует внимания по динамике</h3>
+              <h3><span>Требует внимания по динамике</span><span class="status-icon " aria-hidden="true">
+  <svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14"/><path d="m18 13-6 6-6-6"/></svg>
+</span></h3>
 <p class="muted">Для уверенного вывода пока мало наблюдений.</p>            </div>
             <div class="insight-card">
               <h3>Стабильно</h3>
@@ -1254,22 +1360,22 @@
           <p class="section-kicker">Стабильность показывает, насколько сильно меняется итоговое место танца от турнира к турниру. Чем меньше колебания, тем выше стабильность.</p>
           <div class="table-wrap table-scroll">
             <table>
-              <thead><tr><th>Танец</th><th class="number">Среднее место</th><th class="number">Лучшее место</th><th>Стабильность</th></tr></thead>
+              <thead><tr><th class="col-dance">Танец</th><th class="number col-avg">Среднее место</th><th class="number col-best">Лучшее</th><th class="col-stability">Стабильность</th></tr></thead>
               <tbody>
                 <tr>
-                  <td><strong>Квикстеп</strong></td>
-                  <td class="number">3.75</td>
-                  <td class="number">2</td>
-                  <td>
+                  <td class="col-dance"><strong>Квикстеп</strong></td>
+                  <td class="number col-avg">3.75</td>
+                  <td class="number col-best">2</td>
+                  <td class="col-stability">
                     <div class="progress-label">Очень высокая</div>
                     <div class="progress-track"><div class="progress-fill" style="--stability-width: 95%;"></div></div>
                   </td>
                 </tr>
                 <tr>
-                  <td><strong>Медленный вальс</strong></td>
-                  <td class="number">4.25</td>
-                  <td class="number">2</td>
-                  <td>
+                  <td class="col-dance"><strong>Медленный вальс</strong></td>
+                  <td class="number col-avg">4.25</td>
+                  <td class="number col-best">2</td>
+                  <td class="col-stability">
                     <div class="progress-label">Очень низкая</div>
                     <div class="progress-track"><div class="progress-fill" style="--stability-width: 25%;"></div></div>
                   </td>
@@ -1283,13 +1389,17 @@
 
           <div class="three-column">
             <div class="insight-card positive">
-              <h3><span class="status-icon">★</span>Лучший танец</h3>
+              <h3><span>Лучший танец</span><span class="status-icon " aria-hidden="true">
+  <svg viewBox="0 0 24 24" fill="none"><path d="m12 3 2.7 5.47 6.03.88-4.36 4.25 1.03 6-5.4-2.84-5.4 2.84 1.03-6-4.36-4.25 6.03-.88L12 3Z"/></svg>
+</span></h3>
               <ul class="plain-list">
                   <li><strong>Квикстеп</strong><span class="muted">3.75</span></li>
               </ul>
             </div>
             <div class="insight-card attention">
-              <h3><span class="status-icon">!</span>Требуют внимания</h3>
+              <h3><span>Требуют внимания</span><span class="status-icon " aria-hidden="true">
+  <svg viewBox="0 0 24 24" fill="none"><path d="M12 9v4"/><path d="M12 17h.01"/><path d="M10.3 4.2 2.8 17.4A2 2 0 0 0 4.5 20h15a2 2 0 0 0 1.7-2.6L13.7 4.2a2 2 0 0 0-3.4 0Z"/></svg>
+</span></h3>
 <p class="muted">Ограниченная выборка.</p>            </div>
             <div class="insight-card">
               <h3>Наиболее стабильные</h3>
@@ -1298,10 +1408,14 @@
 
           <div class="three-column">
             <div class="insight-card positive">
-              <h3><span class="status-icon">↑</span>Улучшается</h3>
+              <h3><span>Улучшается</span><span class="status-icon " aria-hidden="true">
+  <svg viewBox="0 0 24 24" fill="none"><path d="M12 19V5"/><path d="m6 11 6-6 6 6"/></svg>
+</span></h3>
 <p class="muted">Для уверенного вывода пока мало наблюдений.</p>            </div>
             <div class="insight-card attention">
-              <h3><span class="status-icon">↓</span>Требует внимания по динамике</h3>
+              <h3><span>Требует внимания по динамике</span><span class="status-icon " aria-hidden="true">
+  <svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14"/><path d="m18 13-6 6-6-6"/></svg>
+</span></h3>
 <p class="muted">Для уверенного вывода пока мало наблюдений.</p>            </div>
             <div class="insight-card">
               <h3>Стабильно</h3>
@@ -1312,22 +1426,22 @@
           <p class="section-kicker">Стабильность показывает, насколько сильно меняется итоговое место танца от турнира к турниру. Чем меньше колебания, тем выше стабильность.</p>
           <div class="table-wrap table-scroll">
             <table>
-              <thead><tr><th>Танец</th><th class="number">Среднее место</th><th class="number">Лучшее место</th><th>Стабильность</th></tr></thead>
+              <thead><tr><th class="col-dance">Танец</th><th class="number col-avg">Среднее место</th><th class="number col-best">Лучшее</th><th class="col-stability">Стабильность</th></tr></thead>
               <tbody>
                 <tr>
-                  <td><strong>Квикстеп</strong></td>
-                  <td class="number">3.75</td>
-                  <td class="number">2</td>
-                  <td>
+                  <td class="col-dance"><strong>Квикстеп</strong></td>
+                  <td class="number col-avg">3.75</td>
+                  <td class="number col-best">2</td>
+                  <td class="col-stability">
                     <div class="progress-label">Очень высокая</div>
                     <div class="progress-track"><div class="progress-fill" style="--stability-width: 95%;"></div></div>
                   </td>
                 </tr>
                 <tr>
-                  <td><strong>Медленный вальс</strong></td>
-                  <td class="number">4.25</td>
-                  <td class="number">2</td>
-                  <td>
+                  <td class="col-dance"><strong>Медленный вальс</strong></td>
+                  <td class="number col-avg">4.25</td>
+                  <td class="number col-best">2</td>
+                  <td class="col-stability">
                     <div class="progress-label">Очень низкая</div>
                     <div class="progress-track"><div class="progress-fill" style="--stability-width: 25%;"></div></div>
                   </td>
@@ -1339,14 +1453,20 @@
         </div>
         <div class="category-panel panel-standard-n_e">
             <p class="section-kicker">по оценкам судей, без финального результата</p>
-            <div class="note-box limited-note"><span class="status-icon">i</span>Ограниченная выборка: 2 протокола в этом срезе.</div>
+            <div class="note-box limited-note"><span class="status-icon neutral" aria-hidden="true">
+  <svg viewBox="0 0 24 24" fill="none"><path d="M12 11v5"/><path d="M12 8h.01"/><circle cx="12" cy="12" r="9"/></svg>
+</span>Ограниченная выборка: 2 протокола в этом срезе.</div>
 
           <div class="three-column">
             <div class="insight-card positive">
-              <h3><span class="status-icon">★</span>Лучший танец</h3>
+              <h3><span>Лучший танец</span><span class="status-icon " aria-hidden="true">
+  <svg viewBox="0 0 24 24" fill="none"><path d="m12 3 2.7 5.47 6.03.88-4.36 4.25 1.03 6-5.4-2.84-5.4 2.84 1.03-6-4.36-4.25 6.03-.88L12 3Z"/></svg>
+</span></h3>
 <p class="muted">Ограниченная выборка.</p>            </div>
             <div class="insight-card attention">
-              <h3><span class="status-icon">!</span>Требуют внимания</h3>
+              <h3><span>Требуют внимания</span><span class="status-icon " aria-hidden="true">
+  <svg viewBox="0 0 24 24" fill="none"><path d="M12 9v4"/><path d="M12 17h.01"/><path d="M10.3 4.2 2.8 17.4A2 2 0 0 0 4.5 20h15a2 2 0 0 0 1.7-2.6L13.7 4.2a2 2 0 0 0-3.4 0Z"/></svg>
+</span></h3>
 <p class="muted">Ограниченная выборка.</p>            </div>
             <div class="insight-card">
               <h3>Наиболее стабильные</h3>
@@ -1355,10 +1475,14 @@
 
           <div class="three-column">
             <div class="insight-card positive">
-              <h3><span class="status-icon">↑</span>Улучшается</h3>
+              <h3><span>Улучшается</span><span class="status-icon " aria-hidden="true">
+  <svg viewBox="0 0 24 24" fill="none"><path d="M12 19V5"/><path d="m6 11 6-6 6 6"/></svg>
+</span></h3>
 <p class="muted">Для уверенного вывода пока мало наблюдений.</p>            </div>
             <div class="insight-card attention">
-              <h3><span class="status-icon">↓</span>Требует внимания по динамике</h3>
+              <h3><span>Требует внимания по динамике</span><span class="status-icon " aria-hidden="true">
+  <svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14"/><path d="m18 13-6 6-6-6"/></svg>
+</span></h3>
 <p class="muted">Для уверенного вывода пока мало наблюдений.</p>            </div>
             <div class="insight-card">
               <h3>Стабильно</h3>
@@ -1369,7 +1493,7 @@
           <p class="section-kicker">Стабильность показывает, насколько сильно меняется итоговое место танца от турнира к турниру. Чем меньше колебания, тем выше стабильность.</p>
           <div class="table-wrap table-scroll">
             <table>
-              <thead><tr><th>Танец</th><th class="number">Среднее место</th><th class="number">Лучшее место</th><th>Стабильность</th></tr></thead>
+              <thead><tr><th class="col-dance">Танец</th><th class="number col-avg">Среднее место</th><th class="number col-best">Лучшее</th><th class="col-stability">Стабильность</th></tr></thead>
               <tbody>
                 <tr><td colspan="4">Ограниченная выборка.</td></tr>
               </tbody>
@@ -1410,13 +1534,17 @@
 
           <div class="three-column">
             <div class="insight-card positive">
-              <h3><span class="status-icon">★</span>Лучший танец</h3>
+              <h3><span>Лучший танец</span><span class="status-icon " aria-hidden="true">
+  <svg viewBox="0 0 24 24" fill="none"><path d="m12 3 2.7 5.47 6.03.88-4.36 4.25 1.03 6-5.4-2.84-5.4 2.84 1.03-6-4.36-4.25 6.03-.88L12 3Z"/></svg>
+</span></h3>
               <ul class="plain-list">
                   <li><strong>Джайв</strong><span class="muted">6</span></li>
               </ul>
             </div>
             <div class="insight-card attention">
-              <h3><span class="status-icon">!</span>Требуют внимания</h3>
+              <h3><span>Требуют внимания</span><span class="status-icon " aria-hidden="true">
+  <svg viewBox="0 0 24 24" fill="none"><path d="M12 9v4"/><path d="M12 17h.01"/><path d="M10.3 4.2 2.8 17.4A2 2 0 0 0 4.5 20h15a2 2 0 0 0 1.7-2.6L13.7 4.2a2 2 0 0 0-3.4 0Z"/></svg>
+</span></h3>
 <p class="muted">Ограниченная выборка.</p>            </div>
             <div class="insight-card">
               <h3>Наиболее стабильные</h3>
@@ -1425,10 +1553,14 @@
 
           <div class="three-column">
             <div class="insight-card positive">
-              <h3><span class="status-icon">↑</span>Улучшается</h3>
+              <h3><span>Улучшается</span><span class="status-icon " aria-hidden="true">
+  <svg viewBox="0 0 24 24" fill="none"><path d="M12 19V5"/><path d="m6 11 6-6 6 6"/></svg>
+</span></h3>
 <p class="muted">Для уверенного вывода пока мало наблюдений.</p>            </div>
             <div class="insight-card attention">
-              <h3><span class="status-icon">↓</span>Требует внимания по динамике</h3>
+              <h3><span>Требует внимания по динамике</span><span class="status-icon " aria-hidden="true">
+  <svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14"/><path d="m18 13-6 6-6-6"/></svg>
+</span></h3>
 <p class="muted">Для уверенного вывода пока мало наблюдений.</p>            </div>
             <div class="insight-card">
               <h3>Стабильно</h3>
@@ -1439,22 +1571,22 @@
           <p class="section-kicker">Стабильность показывает, насколько сильно меняется итоговое место танца от турнира к турниру. Чем меньше колебания, тем выше стабильность.</p>
           <div class="table-wrap table-scroll">
             <table>
-              <thead><tr><th>Танец</th><th class="number">Среднее место</th><th class="number">Лучшее место</th><th>Стабильность</th></tr></thead>
+              <thead><tr><th class="col-dance">Танец</th><th class="number col-avg">Среднее место</th><th class="number col-best">Лучшее</th><th class="col-stability">Стабильность</th></tr></thead>
               <tbody>
                 <tr>
-                  <td><strong>Ча-ча-ча</strong></td>
-                  <td class="number">6.5</td>
-                  <td class="number">6</td>
-                  <td>
+                  <td class="col-dance"><strong>Ча-ча-ча</strong></td>
+                  <td class="number col-avg">6.5</td>
+                  <td class="number col-best">6</td>
+                  <td class="col-stability">
                     <div class="progress-label">Очень низкая</div>
                     <div class="progress-track"><div class="progress-fill" style="--stability-width: 25%;"></div></div>
                   </td>
                 </tr>
                 <tr>
-                  <td><strong>Джайв</strong></td>
-                  <td class="number">6</td>
-                  <td class="number">6</td>
-                  <td>
+                  <td class="col-dance"><strong>Джайв</strong></td>
+                  <td class="number col-avg">6</td>
+                  <td class="number col-best">6</td>
+                  <td class="col-stability">
                     <div class="progress-label">Очень высокая</div>
                     <div class="progress-track"><div class="progress-fill" style="--stability-width: 95%;"></div></div>
                   </td>
@@ -1468,13 +1600,17 @@
 
           <div class="three-column">
             <div class="insight-card positive">
-              <h3><span class="status-icon">★</span>Лучший танец</h3>
+              <h3><span>Лучший танец</span><span class="status-icon " aria-hidden="true">
+  <svg viewBox="0 0 24 24" fill="none"><path d="m12 3 2.7 5.47 6.03.88-4.36 4.25 1.03 6-5.4-2.84-5.4 2.84 1.03-6-4.36-4.25 6.03-.88L12 3Z"/></svg>
+</span></h3>
               <ul class="plain-list">
                   <li><strong>Джайв</strong><span class="muted">6</span></li>
               </ul>
             </div>
             <div class="insight-card attention">
-              <h3><span class="status-icon">!</span>Требуют внимания</h3>
+              <h3><span>Требуют внимания</span><span class="status-icon " aria-hidden="true">
+  <svg viewBox="0 0 24 24" fill="none"><path d="M12 9v4"/><path d="M12 17h.01"/><path d="M10.3 4.2 2.8 17.4A2 2 0 0 0 4.5 20h15a2 2 0 0 0 1.7-2.6L13.7 4.2a2 2 0 0 0-3.4 0Z"/></svg>
+</span></h3>
 <p class="muted">Ограниченная выборка.</p>            </div>
             <div class="insight-card">
               <h3>Наиболее стабильные</h3>
@@ -1483,10 +1619,14 @@
 
           <div class="three-column">
             <div class="insight-card positive">
-              <h3><span class="status-icon">↑</span>Улучшается</h3>
+              <h3><span>Улучшается</span><span class="status-icon " aria-hidden="true">
+  <svg viewBox="0 0 24 24" fill="none"><path d="M12 19V5"/><path d="m6 11 6-6 6 6"/></svg>
+</span></h3>
 <p class="muted">Для уверенного вывода пока мало наблюдений.</p>            </div>
             <div class="insight-card attention">
-              <h3><span class="status-icon">↓</span>Требует внимания по динамике</h3>
+              <h3><span>Требует внимания по динамике</span><span class="status-icon " aria-hidden="true">
+  <svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14"/><path d="m18 13-6 6-6-6"/></svg>
+</span></h3>
 <p class="muted">Для уверенного вывода пока мало наблюдений.</p>            </div>
             <div class="insight-card">
               <h3>Стабильно</h3>
@@ -1497,22 +1637,22 @@
           <p class="section-kicker">Стабильность показывает, насколько сильно меняется итоговое место танца от турнира к турниру. Чем меньше колебания, тем выше стабильность.</p>
           <div class="table-wrap table-scroll">
             <table>
-              <thead><tr><th>Танец</th><th class="number">Среднее место</th><th class="number">Лучшее место</th><th>Стабильность</th></tr></thead>
+              <thead><tr><th class="col-dance">Танец</th><th class="number col-avg">Среднее место</th><th class="number col-best">Лучшее</th><th class="col-stability">Стабильность</th></tr></thead>
               <tbody>
                 <tr>
-                  <td><strong>Ча-ча-ча</strong></td>
-                  <td class="number">6.5</td>
-                  <td class="number">6</td>
-                  <td>
+                  <td class="col-dance"><strong>Ча-ча-ча</strong></td>
+                  <td class="number col-avg">6.5</td>
+                  <td class="number col-best">6</td>
+                  <td class="col-stability">
                     <div class="progress-label">Очень низкая</div>
                     <div class="progress-track"><div class="progress-fill" style="--stability-width: 25%;"></div></div>
                   </td>
                 </tr>
                 <tr>
-                  <td><strong>Джайв</strong></td>
-                  <td class="number">6</td>
-                  <td class="number">6</td>
-                  <td>
+                  <td class="col-dance"><strong>Джайв</strong></td>
+                  <td class="number col-avg">6</td>
+                  <td class="number col-best">6</td>
+                  <td class="col-stability">
                     <div class="progress-label">Очень высокая</div>
                     <div class="progress-track"><div class="progress-fill" style="--stability-width: 95%;"></div></div>
                   </td>
@@ -1524,11 +1664,15 @@
         </div>
         <div class="category-panel panel-latin-n_e">
             <p class="section-kicker">по оценкам судей, без финального результата</p>
-            <div class="note-box limited-note"><span class="status-icon">i</span>Выборка ограничена: 2 протокола. Эти данные можно использовать как справку, но не как устойчивый вывод.</div>
+            <div class="note-box limited-note"><span class="status-icon neutral" aria-hidden="true">
+  <svg viewBox="0 0 24 24" fill="none"><path d="M12 11v5"/><path d="M12 8h.01"/><circle cx="12" cy="12" r="9"/></svg>
+</span>Выборка ограничена: 2 протокола. Эти данные можно использовать как справку, но не как устойчивый вывод.</div>
 
           <div class="three-column">
             <div class="insight-card neutral">
-              <h3><span class="status-icon">i</span>Справка по участию</h3>
+              <h3><span>Справка по участию</span><span class="status-icon " aria-hidden="true">
+  <svg viewBox="0 0 24 24" fill="none"><path d="M12 11v5"/><path d="M12 8h.01"/><circle cx="12" cy="12" r="9"/></svg>
+</span></h3>
               <p>18 оценок · 2 турнира</p>
             </div>
             <div class="insight-card neutral">
@@ -1545,7 +1689,7 @@
           <p class="section-kicker">Стабильность показывает, насколько сильно меняется итоговое место танца от турнира к турниру. Чем меньше колебания, тем выше стабильность.</p>
           <div class="table-wrap table-scroll">
             <table>
-              <thead><tr><th>Танец</th><th class="number">Среднее место</th><th class="number">Лучшее место</th><th>Стабильность</th></tr></thead>
+              <thead><tr><th class="col-dance">Танец</th><th class="number col-avg">Среднее место</th><th class="number col-best">Лучшее</th><th class="col-stability">Стабильность</th></tr></thead>
               <tbody>
                 <tr><td colspan="4">Нет устойчивых метрик по танцам в этом срезе.</td></tr>
               </tbody>
@@ -1604,7 +1748,9 @@
                   <div class="label">Турнир</div>
                   <div class="tournament-title-line">
                     <div class="summary-title">Tiara Dance Cup (Санкт-Петербург)</div>
-                      <span class="tournament-badge best"><span aria-hidden="true">★</span>лучший результат</span>
+                      <span class="tournament-badge best"><span class="status-icon " aria-hidden="true">
+  <svg viewBox="0 0 24 24" fill="none"><path d="m12 3 2.7 5.47 6.03.88-4.36 4.25 1.03 6-5.4-2.84-5.4 2.84 1.03-6-4.36-4.25 6.03-.88L12 3Z"/></svg>
+</span>лучший результат</span>
                   </div>
                 </div>
                 <div>
@@ -1613,7 +1759,9 @@
                   <div class="summary-meta">латина, стандарт</div>
                 </div>
               </div>
-              <span class="accordion-icon" aria-hidden="true">⌄</span>
+              <span class="accordion-icon" aria-hidden="true"><span class="status-icon " aria-hidden="true">
+  <svg viewBox="0 0 24 24" fill="none"><path d="m6 9 6 6 6-6"/></svg>
+</span></span>
             </div>
           </summary>
           <div class="tournament-detail-grid">
@@ -1623,7 +1771,9 @@
                   Общий итог:
                     среднее место 2 · W, Q
                 </p>
-                    <p><strong><span class="status-icon">=</span>Танцы оценены примерно одинаково:</strong> W, Q <span class="muted">— среднее место 2</span></p>
+                    <p><strong><span class="status-icon neutral" aria-hidden="true">
+  <svg viewBox="0 0 24 24" fill="none"><path d="M6 9h12"/><path d="M6 15h12"/></svg>
+</span>Танцы оценены примерно одинаково:</strong> W, Q <span class="muted">— среднее место 2</span></p>
               </div>
               <div class="insight-card tournament-program-summary">
                 <h3>Латина</h3>
@@ -1631,37 +1781,41 @@
                   Общий итог:
                     среднее место 6.5 · Ch, J
                 </p>
-                    <p><strong><span class="status-icon">★</span>Лучший танец:</strong> J <span class="muted">место 6</span></p>
-                    <p><strong><span class="status-icon">!</span>Требует внимания:</strong> Ch <span class="muted">место 7</span></p>
+                    <p><strong><span class="status-icon positive" aria-hidden="true">
+  <svg viewBox="0 0 24 24" fill="none"><path d="m12 3 2.7 5.47 6.03.88-4.36 4.25 1.03 6-5.4-2.84-5.4 2.84 1.03-6-4.36-4.25 6.03-.88L12 3Z"/></svg>
+</span>Лучший танец:</strong> J <span class="muted">место 6</span></p>
+                    <p><strong><span class="status-icon attention" aria-hidden="true">
+  <svg viewBox="0 0 24 24" fill="none"><path d="M12 9v4"/><path d="M12 17h.01"/><path d="M10.3 4.2 2.8 17.4A2 2 0 0 0 4.5 20h15a2 2 0 0 0 1.7-2.6L13.7 4.2a2 2 0 0 0-3.4 0Z"/></svg>
+</span>Требует внимания:</strong> Ch <span class="muted">место 7</span></p>
               </div>
           </div>
           <div class="table-wrap table-scroll">
             <table>
-              <thead><tr><th>Танец</th><th>Программа</th><th class="number">Итоговое место</th><th class="number">Протоколов</th></tr></thead>
+              <thead><tr><th class="col-dance">Танец</th><th class="col-program">Программа</th><th class="number col-place">Итоговое место</th><th class="number col-protocols">Протоколов</th></tr></thead>
               <tbody>
                 <tr>
-                  <td><strong>W</strong></td>
-                  <td>стандарт</td>
-                  <td class="number">2</td>
-                  <td class="number">1 протокол</td>
+                  <td class="col-dance"><strong>W</strong></td>
+                  <td class="col-program">стандарт</td>
+                  <td class="number col-place">2</td>
+                  <td class="number col-protocols">1 протокол</td>
                 </tr>
                 <tr>
-                  <td><strong>Q</strong></td>
-                  <td>стандарт</td>
-                  <td class="number">2</td>
-                  <td class="number">1 протокол</td>
+                  <td class="col-dance"><strong>Q</strong></td>
+                  <td class="col-program">стандарт</td>
+                  <td class="number col-place">2</td>
+                  <td class="number col-protocols">1 протокол</td>
                 </tr>
                 <tr>
-                  <td><strong>Ch</strong></td>
-                  <td>латина</td>
-                  <td class="number">7</td>
-                  <td class="number">1 протокол</td>
+                  <td class="col-dance"><strong>Ch</strong></td>
+                  <td class="col-program">латина</td>
+                  <td class="number col-place">7</td>
+                  <td class="number col-protocols">1 протокол</td>
                 </tr>
                 <tr>
-                  <td><strong>J</strong></td>
-                  <td>латина</td>
-                  <td class="number">6</td>
-                  <td class="number">1 протокол</td>
+                  <td class="col-dance"><strong>J</strong></td>
+                  <td class="col-program">латина</td>
+                  <td class="number col-place">6</td>
+                  <td class="number col-protocols">1 протокол</td>
                 </tr>
               </tbody>
             </table>
@@ -1679,7 +1833,9 @@
                   <div class="label">Турнир</div>
                   <div class="tournament-title-line">
                     <div class="summary-title">Амбассадор 2026 (Санкт-Петербург)</div>
-                      <span class="tournament-badge best"><span aria-hidden="true">★</span>лучший результат</span>
+                      <span class="tournament-badge best"><span class="status-icon " aria-hidden="true">
+  <svg viewBox="0 0 24 24" fill="none"><path d="m12 3 2.7 5.47 6.03.88-4.36 4.25 1.03 6-5.4-2.84-5.4 2.84 1.03-6-4.36-4.25 6.03-.88L12 3Z"/></svg>
+</span>лучший результат</span>
                   </div>
                 </div>
                 <div>
@@ -1688,7 +1844,9 @@
                   <div class="summary-meta">латина, стандарт</div>
                 </div>
               </div>
-              <span class="accordion-icon" aria-hidden="true">⌄</span>
+              <span class="accordion-icon" aria-hidden="true"><span class="status-icon " aria-hidden="true">
+  <svg viewBox="0 0 24 24" fill="none"><path d="m6 9 6 6 6-6"/></svg>
+</span></span>
             </div>
           </summary>
           <div class="tournament-detail-grid">
@@ -1698,7 +1856,9 @@
                   Общий итог:
                     среднее место 3 · W, Q
                 </p>
-                    <p><strong><span class="status-icon">=</span>Танцы оценены примерно одинаково:</strong> W, Q <span class="muted">— среднее место 3</span></p>
+                    <p><strong><span class="status-icon neutral" aria-hidden="true">
+  <svg viewBox="0 0 24 24" fill="none"><path d="M6 9h12"/><path d="M6 15h12"/></svg>
+</span>Танцы оценены примерно одинаково:</strong> W, Q <span class="muted">— среднее место 3</span></p>
               </div>
               <div class="insight-card tournament-program-summary">
                 <h3>Латина</h3>
@@ -1706,25 +1866,29 @@
                   Общий итог:
                     Ch, J · по крестам судей
                 </p>
-                    <p><strong><span class="status-icon">★</span>Лучший танец:</strong> J <span class="muted">— выше всего оценивался судьями · 13 крестов</span></p>
-                    <p><strong><span class="status-icon">!</span>Требует внимания:</strong> Ch <span class="muted">— ниже всего оценивался судьями · 10 крестов</span></p>
+                    <p><strong><span class="status-icon positive" aria-hidden="true">
+  <svg viewBox="0 0 24 24" fill="none"><path d="m12 3 2.7 5.47 6.03.88-4.36 4.25 1.03 6-5.4-2.84-5.4 2.84 1.03-6-4.36-4.25 6.03-.88L12 3Z"/></svg>
+</span>Лучший танец:</strong> J <span class="muted">— выше всего оценивался судьями · 13 крестов</span></p>
+                    <p><strong><span class="status-icon attention" aria-hidden="true">
+  <svg viewBox="0 0 24 24" fill="none"><path d="M12 9v4"/><path d="M12 17h.01"/><path d="M10.3 4.2 2.8 17.4A2 2 0 0 0 4.5 20h15a2 2 0 0 0 1.7-2.6L13.7 4.2a2 2 0 0 0-3.4 0Z"/></svg>
+</span>Требует внимания:</strong> Ch <span class="muted">— ниже всего оценивался судьями · 10 крестов</span></p>
               </div>
           </div>
           <div class="table-wrap table-scroll">
             <table>
-              <thead><tr><th>Танец</th><th>Программа</th><th class="number">Итоговое место</th><th class="number">Протоколов</th></tr></thead>
+              <thead><tr><th class="col-dance">Танец</th><th class="col-program">Программа</th><th class="number col-place">Итоговое место</th><th class="number col-protocols">Протоколов</th></tr></thead>
               <tbody>
                 <tr>
-                  <td><strong>W</strong></td>
-                  <td>стандарт</td>
-                  <td class="number">3</td>
-                  <td class="number">1 протокол</td>
+                  <td class="col-dance"><strong>W</strong></td>
+                  <td class="col-program">стандарт</td>
+                  <td class="number col-place">3</td>
+                  <td class="number col-protocols">1 протокол</td>
                 </tr>
                 <tr>
-                  <td><strong>Q</strong></td>
-                  <td>стандарт</td>
-                  <td class="number">3</td>
-                  <td class="number">1 протокол</td>
+                  <td class="col-dance"><strong>Q</strong></td>
+                  <td class="col-program">стандарт</td>
+                  <td class="number col-place">3</td>
+                  <td class="number col-protocols">1 протокол</td>
                 </tr>
               </tbody>
             </table>
@@ -1742,7 +1906,9 @@
                   <div class="label">Турнир</div>
                   <div class="tournament-title-line">
                     <div class="summary-title">Карнавал 2026 (Санкт-Петербург)</div>
-                      <span class="tournament-badge hardest"><span aria-hidden="true">!</span>сложное выступление</span>
+                      <span class="tournament-badge hardest"><span class="status-icon attention" aria-hidden="true">
+  <svg viewBox="0 0 24 24" fill="none"><path d="M12 9v4"/><path d="M12 17h.01"/><path d="M10.3 4.2 2.8 17.4A2 2 0 0 0 4.5 20h15a2 2 0 0 0 1.7-2.6L13.7 4.2a2 2 0 0 0-3.4 0Z"/></svg>
+</span>сложное выступление</span>
                   </div>
                 </div>
                 <div>
@@ -1751,7 +1917,9 @@
                   <div class="summary-meta">латина, стандарт</div>
                 </div>
               </div>
-              <span class="accordion-icon" aria-hidden="true">⌄</span>
+              <span class="accordion-icon" aria-hidden="true"><span class="status-icon " aria-hidden="true">
+  <svg viewBox="0 0 24 24" fill="none"><path d="m6 9 6 6 6-6"/></svg>
+</span></span>
             </div>
           </summary>
           <div class="tournament-detail-grid">
@@ -1761,8 +1929,12 @@
                   Общий итог:
                     среднее место 6 · W, T, Q
                 </p>
-                    <p><strong><span class="status-icon">★</span>Лучший танец:</strong> Q <span class="muted">место 5</span></p>
-                    <p><strong><span class="status-icon">!</span>Требует внимания:</strong> W <span class="muted">место 7</span></p>
+                    <p><strong><span class="status-icon positive" aria-hidden="true">
+  <svg viewBox="0 0 24 24" fill="none"><path d="m12 3 2.7 5.47 6.03.88-4.36 4.25 1.03 6-5.4-2.84-5.4 2.84 1.03-6-4.36-4.25 6.03-.88L12 3Z"/></svg>
+</span>Лучший танец:</strong> Q <span class="muted">место 5</span></p>
+                    <p><strong><span class="status-icon attention" aria-hidden="true">
+  <svg viewBox="0 0 24 24" fill="none"><path d="M12 9v4"/><path d="M12 17h.01"/><path d="M10.3 4.2 2.8 17.4A2 2 0 0 0 4.5 20h15a2 2 0 0 0 1.7-2.6L13.7 4.2a2 2 0 0 0-3.4 0Z"/></svg>
+</span>Требует внимания:</strong> W <span class="muted">место 7</span></p>
               </div>
               <div class="insight-card tournament-program-summary">
                 <h3>Латина</h3>
@@ -1770,25 +1942,29 @@
                   Общий итог:
                     Ch, R, J · по крестам судей
                 </p>
-                    <p><strong><span class="status-icon">★</span>Лучшие танцы:</strong> Ch, R <span class="muted">— выше всего оценивался судьями · 5 крестов</span></p>
-                    <p><strong><span class="status-icon">!</span>Требует внимания:</strong> J <span class="muted">— ниже всего оценивался судьями · 2 крестов</span></p>
+                    <p><strong><span class="status-icon positive" aria-hidden="true">
+  <svg viewBox="0 0 24 24" fill="none"><path d="m12 3 2.7 5.47 6.03.88-4.36 4.25 1.03 6-5.4-2.84-5.4 2.84 1.03-6-4.36-4.25 6.03-.88L12 3Z"/></svg>
+</span>Лучшие танцы:</strong> Ch, R <span class="muted">— выше всего оценивался судьями · 5 крестов</span></p>
+                    <p><strong><span class="status-icon attention" aria-hidden="true">
+  <svg viewBox="0 0 24 24" fill="none"><path d="M12 9v4"/><path d="M12 17h.01"/><path d="M10.3 4.2 2.8 17.4A2 2 0 0 0 4.5 20h15a2 2 0 0 0 1.7-2.6L13.7 4.2a2 2 0 0 0-3.4 0Z"/></svg>
+</span>Требует внимания:</strong> J <span class="muted">— ниже всего оценивался судьями · 2 крестов</span></p>
               </div>
           </div>
           <div class="table-wrap table-scroll">
             <table>
-              <thead><tr><th>Танец</th><th>Программа</th><th class="number">Итоговое место</th><th class="number">Протоколов</th></tr></thead>
+              <thead><tr><th class="col-dance">Танец</th><th class="col-program">Программа</th><th class="number col-place">Итоговое место</th><th class="number col-protocols">Протоколов</th></tr></thead>
               <tbody>
                 <tr>
-                  <td><strong>W</strong></td>
-                  <td>стандарт</td>
-                  <td class="number">7</td>
-                  <td class="number">1 протокол</td>
+                  <td class="col-dance"><strong>W</strong></td>
+                  <td class="col-program">стандарт</td>
+                  <td class="number col-place">7</td>
+                  <td class="number col-protocols">1 протокол</td>
                 </tr>
                 <tr>
-                  <td><strong>Q</strong></td>
-                  <td>стандарт</td>
-                  <td class="number">5</td>
-                  <td class="number">1 протокол</td>
+                  <td class="col-dance"><strong>Q</strong></td>
+                  <td class="col-program">стандарт</td>
+                  <td class="number col-place">5</td>
+                  <td class="number col-protocols">1 протокол</td>
                 </tr>
               </tbody>
             </table>
@@ -1806,7 +1982,9 @@
                   <div class="label">Турнир</div>
                   <div class="tournament-title-line">
                     <div class="summary-title">Чемпионат СПТЛ 2026 (Санкт-Петербург)</div>
-                      <span class="tournament-badge hardest"><span aria-hidden="true">!</span>сложное выступление</span>
+                      <span class="tournament-badge hardest"><span class="status-icon attention" aria-hidden="true">
+  <svg viewBox="0 0 24 24" fill="none"><path d="M12 9v4"/><path d="M12 17h.01"/><path d="M10.3 4.2 2.8 17.4A2 2 0 0 0 4.5 20h15a2 2 0 0 0 1.7-2.6L13.7 4.2a2 2 0 0 0-3.4 0Z"/></svg>
+</span>сложное выступление</span>
                   </div>
                 </div>
                 <div>
@@ -1815,7 +1993,9 @@
                   <div class="summary-meta">латина, стандарт</div>
                 </div>
               </div>
-              <span class="accordion-icon" aria-hidden="true">⌄</span>
+              <span class="accordion-icon" aria-hidden="true"><span class="status-icon " aria-hidden="true">
+  <svg viewBox="0 0 24 24" fill="none"><path d="m6 9 6 6 6-6"/></svg>
+</span></span>
             </div>
           </summary>
           <div class="tournament-detail-grid">
@@ -1825,7 +2005,9 @@
                   Общий итог:
                     среднее место 5 · W, T, Q
                 </p>
-                    <p><strong><span class="status-icon">=</span>Танцы оценены примерно одинаково:</strong> W, Q <span class="muted">— среднее место 5</span></p>
+                    <p><strong><span class="status-icon neutral" aria-hidden="true">
+  <svg viewBox="0 0 24 24" fill="none"><path d="M6 9h12"/><path d="M6 15h12"/></svg>
+</span>Танцы оценены примерно одинаково:</strong> W, Q <span class="muted">— среднее место 5</span></p>
               </div>
               <div class="insight-card tournament-program-summary">
                 <h3>Латина</h3>
@@ -1833,36 +2015,38 @@
                   Общий итог:
                     среднее место 6 · Ch, R, J
                 </p>
-                    <p><strong><span class="status-icon">=</span>Танцы оценены примерно одинаково:</strong> Ch, J <span class="muted">— среднее место 6</span></p>
+                    <p><strong><span class="status-icon neutral" aria-hidden="true">
+  <svg viewBox="0 0 24 24" fill="none"><path d="M6 9h12"/><path d="M6 15h12"/></svg>
+</span>Танцы оценены примерно одинаково:</strong> Ch, J <span class="muted">— среднее место 6</span></p>
               </div>
           </div>
           <div class="table-wrap table-scroll">
             <table>
-              <thead><tr><th>Танец</th><th>Программа</th><th class="number">Итоговое место</th><th class="number">Протоколов</th></tr></thead>
+              <thead><tr><th class="col-dance">Танец</th><th class="col-program">Программа</th><th class="number col-place">Итоговое место</th><th class="number col-protocols">Протоколов</th></tr></thead>
               <tbody>
                 <tr>
-                  <td><strong>W</strong></td>
-                  <td>стандарт</td>
-                  <td class="number">5</td>
-                  <td class="number">1 протокол</td>
+                  <td class="col-dance"><strong>W</strong></td>
+                  <td class="col-program">стандарт</td>
+                  <td class="number col-place">5</td>
+                  <td class="number col-protocols">1 протокол</td>
                 </tr>
                 <tr>
-                  <td><strong>Q</strong></td>
-                  <td>стандарт</td>
-                  <td class="number">5</td>
-                  <td class="number">1 протокол</td>
+                  <td class="col-dance"><strong>Q</strong></td>
+                  <td class="col-program">стандарт</td>
+                  <td class="number col-place">5</td>
+                  <td class="number col-protocols">1 протокол</td>
                 </tr>
                 <tr>
-                  <td><strong>Ch</strong></td>
-                  <td>латина</td>
-                  <td class="number">6</td>
-                  <td class="number">1 протокол</td>
+                  <td class="col-dance"><strong>Ch</strong></td>
+                  <td class="col-program">латина</td>
+                  <td class="number col-place">6</td>
+                  <td class="number col-protocols">1 протокол</td>
                 </tr>
                 <tr>
-                  <td><strong>J</strong></td>
-                  <td>латина</td>
-                  <td class="number">6</td>
-                  <td class="number">1 протокол</td>
+                  <td class="col-dance"><strong>J</strong></td>
+                  <td class="col-program">латина</td>
+                  <td class="number col-place">6</td>
+                  <td class="number col-protocols">1 протокол</td>
                 </tr>
               </tbody>
             </table>
