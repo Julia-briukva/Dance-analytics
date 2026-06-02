@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-06-01T19:11:29.308487+00:00",
+    "generated_at": "2026-06-02T06:02:40.591267+00:00",
     "analytics_version": "report_layer_v1",
     "database": "database/compreg_spb_2025_2026.sqlite"
   },
@@ -102,6 +102,39 @@
         "dynamics_by_date": [],
         "trends": [],
         "tournament_dance_results": []
+      },
+      "e_d": {
+        "metrics": [],
+        "best_by_final_average": null,
+        "best_by_median": null,
+        "most_stable_dance": null,
+        "best_peak": null,
+        "worst_by_final_average": null,
+        "judge_level_best": null,
+        "strongest_dance": null,
+        "weakest_dance": null,
+        "most_improved_dance": null,
+        "key": "e_d",
+        "label": "E+D",
+        "source": "selected_dancer_marks_and_results",
+        "class_group": "E+D",
+        "age_groups": [
+          "Юниоры-1+2"
+        ],
+        "source_categories": [
+          "Юниоры-1+2 E+D Соло Ж St"
+        ],
+        "protocol_count": 0,
+        "tournament_count": 0,
+        "evidence": {
+          "tournaments": 1,
+          "protocols": 1,
+          "marks": 12,
+          "results": 0
+        },
+        "dynamics_by_date": [],
+        "trends": [],
+        "tournament_dance_results": []
       }
     },
     "latin": {
@@ -120,6 +153,39 @@
         "label": "Все категории",
         "source": "selected_dancer_marks_and_results",
         "class_group": null,
+        "age_groups": [
+          "Юниоры-1+2"
+        ],
+        "source_categories": [
+          "Юниоры-1+2 E+D Соло Ж La"
+        ],
+        "protocol_count": 0,
+        "tournament_count": 0,
+        "evidence": {
+          "tournaments": 1,
+          "protocols": 1,
+          "marks": 16,
+          "results": 0
+        },
+        "dynamics_by_date": [],
+        "trends": [],
+        "tournament_dance_results": []
+      },
+      "e_d": {
+        "metrics": [],
+        "best_by_final_average": null,
+        "best_by_median": null,
+        "most_stable_dance": null,
+        "best_peak": null,
+        "worst_by_final_average": null,
+        "judge_level_best": null,
+        "strongest_dance": null,
+        "weakest_dance": null,
+        "most_improved_dance": null,
+        "key": "e_d",
+        "label": "E+D",
+        "source": "selected_dancer_marks_and_results",
+        "class_group": "E+D",
         "age_groups": [
           "Юниоры-1+2"
         ],
@@ -165,7 +231,9 @@
           "Ch",
           "R",
           "J"
-        ]
+        ],
+        "tournament_rank": null,
+        "rank_direction": ""
       }
     ],
     "protocols": [

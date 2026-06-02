@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-06-01T19:11:14.953239+00:00",
+    "generated_at": "2026-06-02T06:02:27.806829+00:00",
     "analytics_version": "report_layer_v1",
     "database": "database/compreg_spb_2025_2026.sqlite"
   },
@@ -324,7 +324,8 @@
         "last_avg_place": 3.0,
         "first_to_last_delta": 2.0,
         "n_dates": 11,
-        "confidence": "ok"
+        "confidence": "ok",
+        "trend_status": "declining"
       }
     },
     "latin": {
@@ -628,7 +629,8 @@
         "last_avg_place": 4.0,
         "first_to_last_delta": 0.0,
         "n_dates": 6,
-        "confidence": "ok"
+        "confidence": "ok",
+        "trend_status": "stable"
       }
     }
   },
@@ -2077,7 +2079,8 @@
         "last_avg_place": 4.0,
         "first_to_last_delta": 0.0,
         "n_dates": 6,
-        "confidence": "ok"
+        "confidence": "ok",
+        "trend_status": "stable"
       },
       {
         "program": "latin",
@@ -2089,7 +2092,8 @@
         "last_avg_place": 3.0,
         "first_to_last_delta": 2.0,
         "n_dates": 11,
-        "confidence": "ok"
+        "confidence": "ok",
+        "trend_status": "declining"
       },
       {
         "program": "latin",
@@ -2101,7 +2105,8 @@
         "last_avg_place": 3.5,
         "first_to_last_delta": 2.5,
         "n_dates": 11,
-        "confidence": "ok"
+        "confidence": "ok",
+        "trend_status": "declining"
       },
       {
         "program": "latin",
@@ -2113,7 +2118,8 @@
         "last_avg_place": 4.5,
         "first_to_last_delta": 3.5,
         "n_dates": 11,
-        "confidence": "ok"
+        "confidence": "ok",
+        "trend_status": "declining"
       },
       {
         "program": "standard",
@@ -2125,7 +2131,8 @@
         "last_avg_place": 3.0,
         "first_to_last_delta": 2.0,
         "n_dates": 11,
-        "confidence": "ok"
+        "confidence": "ok",
+        "trend_status": "declining"
       },
       {
         "program": "standard",
@@ -2137,7 +2144,8 @@
         "last_avg_place": 3.0,
         "first_to_last_delta": 2.0,
         "n_dates": 11,
-        "confidence": "ok"
+        "confidence": "ok",
+        "trend_status": "declining"
       },
       {
         "program": "standard",
@@ -2149,7 +2157,8 @@
         "last_avg_place": 3.5,
         "first_to_last_delta": 2.5,
         "n_dates": 11,
-        "confidence": "ok"
+        "confidence": "ok",
+        "trend_status": "declining"
       },
       {
         "program": "standard",
@@ -2161,7 +2170,8 @@
         "last_avg_place": 4.0,
         "first_to_last_delta": 2.0,
         "n_dates": 6,
-        "confidence": "ok"
+        "confidence": "ok",
+        "trend_status": "declining"
       }
     ],
     "dynamics_by_date": [
@@ -3406,7 +3416,8 @@
           "last_avg_place": 3.0,
           "first_to_last_delta": 2.0,
           "n_dates": 11,
-          "confidence": "ok"
+          "confidence": "ok",
+          "trend_status": "declining"
         },
         "key": "all",
         "label": "Все категории",
@@ -3914,7 +3925,8 @@
             "last_avg_place": 3.0,
             "first_to_last_delta": 2.0,
             "n_dates": 11,
-            "confidence": "ok"
+            "confidence": "ok",
+            "trend_status": "declining"
           },
           {
             "program": "standard",
@@ -3926,7 +3938,8 @@
             "last_avg_place": 3.0,
             "first_to_last_delta": 2.0,
             "n_dates": 11,
-            "confidence": "ok"
+            "confidence": "ok",
+            "trend_status": "declining"
           },
           {
             "program": "standard",
@@ -3938,7 +3951,8 @@
             "last_avg_place": 3.5,
             "first_to_last_delta": 2.5,
             "n_dates": 11,
-            "confidence": "ok"
+            "confidence": "ok",
+            "trend_status": "declining"
           },
           {
             "program": "standard",
@@ -3950,7 +3964,8 @@
             "last_avg_place": 4.0,
             "first_to_last_delta": 2.0,
             "n_dates": 6,
-            "confidence": "ok"
+            "confidence": "ok",
+            "trend_status": "declining"
           }
         ],
         "tournament_dance_results": [
@@ -5088,7 +5103,8 @@
           "last_avg_place": 2.0,
           "first_to_last_delta": 1.0,
           "n_dates": 10,
-          "confidence": "ok"
+          "confidence": "ok",
+          "trend_status": "declining"
         },
         "key": "n_e",
         "label": "N+E",
@@ -5482,7 +5498,8 @@
             "last_avg_place": 2.0,
             "first_to_last_delta": 1.0,
             "n_dates": 10,
-            "confidence": "ok"
+            "confidence": "ok",
+            "trend_status": "declining"
           },
           {
             "program": "standard",
@@ -5494,7 +5511,8 @@
             "last_avg_place": 1.0,
             "first_to_last_delta": 0.0,
             "n_dates": 10,
-            "confidence": "ok"
+            "confidence": "ok",
+            "trend_status": "stable"
           },
           {
             "program": "standard",
@@ -5506,7 +5524,8 @@
             "last_avg_place": 3.0,
             "first_to_last_delta": 2.0,
             "n_dates": 10,
-            "confidence": "ok"
+            "confidence": "ok",
+            "trend_status": "declining"
           }
         ],
         "tournament_dance_results": [
@@ -6113,7 +6132,8 @@
             "last_avg_place": 3.0,
             "first_to_last_delta": 0.0,
             "n_dates": 1,
-            "confidence": "insufficient trend"
+            "confidence": "insufficient trend",
+            "trend_status": "stable"
           },
           {
             "program": "standard",
@@ -6125,7 +6145,8 @@
             "last_avg_place": 3.0,
             "first_to_last_delta": 0.0,
             "n_dates": 1,
-            "confidence": "insufficient trend"
+            "confidence": "insufficient trend",
+            "trend_status": "stable"
           },
           {
             "program": "standard",
@@ -6137,7 +6158,8 @@
             "last_avg_place": 3.0,
             "first_to_last_delta": 0.0,
             "n_dates": 1,
-            "confidence": "insufficient trend"
+            "confidence": "insufficient trend",
+            "trend_status": "stable"
           }
         ],
         "tournament_dance_results": [
@@ -6305,7 +6327,8 @@
           "last_avg_place": 4.0,
           "first_to_last_delta": -2.0,
           "n_dates": 5,
-          "confidence": "ok"
+          "confidence": "ok",
+          "trend_status": "improving"
         },
         "key": "e_d",
         "label": "E+D",
@@ -6581,7 +6604,8 @@
             "last_avg_place": 4.0,
             "first_to_last_delta": -2.0,
             "n_dates": 5,
-            "confidence": "ok"
+            "confidence": "ok",
+            "trend_status": "improving"
           },
           {
             "program": "standard",
@@ -6593,7 +6617,8 @@
             "last_avg_place": 4.0,
             "first_to_last_delta": 2.0,
             "n_dates": 5,
-            "confidence": "ok"
+            "confidence": "ok",
+            "trend_status": "declining"
           },
           {
             "program": "standard",
@@ -6605,7 +6630,8 @@
             "last_avg_place": 5.0,
             "first_to_last_delta": 2.0,
             "n_dates": 5,
-            "confidence": "ok"
+            "confidence": "ok",
+            "trend_status": "declining"
           },
           {
             "program": "standard",
@@ -6617,7 +6643,8 @@
             "last_avg_place": 4.0,
             "first_to_last_delta": 2.0,
             "n_dates": 5,
-            "confidence": "ok"
+            "confidence": "ok",
+            "trend_status": "declining"
           }
         ],
         "tournament_dance_results": [
@@ -7110,7 +7137,8 @@
             "last_avg_place": 1.0,
             "first_to_last_delta": 0.0,
             "n_dates": 1,
-            "confidence": "insufficient trend"
+            "confidence": "insufficient trend",
+            "trend_status": "stable"
           },
           {
             "program": "standard",
@@ -7122,7 +7150,8 @@
             "last_avg_place": 1.0,
             "first_to_last_delta": 0.0,
             "n_dates": 1,
-            "confidence": "insufficient trend"
+            "confidence": "insufficient trend",
+            "trend_status": "stable"
           },
           {
             "program": "standard",
@@ -7134,7 +7163,8 @@
             "last_avg_place": 1.0,
             "first_to_last_delta": 0.0,
             "n_dates": 1,
-            "confidence": "insufficient trend"
+            "confidence": "insufficient trend",
+            "trend_status": "stable"
           },
           {
             "program": "standard",
@@ -7146,7 +7176,8 @@
             "last_avg_place": 1.0,
             "first_to_last_delta": 0.0,
             "n_dates": 1,
-            "confidence": "insufficient trend"
+            "confidence": "insufficient trend",
+            "trend_status": "stable"
           }
         ],
         "tournament_dance_results": [
@@ -7515,7 +7546,8 @@
           "last_avg_place": 4.0,
           "first_to_last_delta": 0.0,
           "n_dates": 6,
-          "confidence": "ok"
+          "confidence": "ok",
+          "trend_status": "stable"
         },
         "key": "all",
         "label": "Все категории",
@@ -8023,7 +8055,8 @@
             "last_avg_place": 4.0,
             "first_to_last_delta": 0.0,
             "n_dates": 6,
-            "confidence": "ok"
+            "confidence": "ok",
+            "trend_status": "stable"
           },
           {
             "program": "latin",
@@ -8035,7 +8068,8 @@
             "last_avg_place": 3.0,
             "first_to_last_delta": 2.0,
             "n_dates": 11,
-            "confidence": "ok"
+            "confidence": "ok",
+            "trend_status": "declining"
           },
           {
             "program": "latin",
@@ -8047,7 +8081,8 @@
             "last_avg_place": 3.5,
             "first_to_last_delta": 2.5,
             "n_dates": 11,
-            "confidence": "ok"
+            "confidence": "ok",
+            "trend_status": "declining"
           },
           {
             "program": "latin",
@@ -8059,7 +8094,8 @@
             "last_avg_place": 4.5,
             "first_to_last_delta": 3.5,
             "n_dates": 11,
-            "confidence": "ok"
+            "confidence": "ok",
+            "trend_status": "declining"
           }
         ],
         "tournament_dance_results": [
@@ -9197,7 +9233,8 @@
           "last_avg_place": 2.0,
           "first_to_last_delta": 1.0,
           "n_dates": 10,
-          "confidence": "ok"
+          "confidence": "ok",
+          "trend_status": "declining"
         },
         "key": "n_e",
         "label": "N+E",
@@ -9591,7 +9628,8 @@
             "last_avg_place": 2.0,
             "first_to_last_delta": 1.0,
             "n_dates": 10,
-            "confidence": "ok"
+            "confidence": "ok",
+            "trend_status": "declining"
           },
           {
             "program": "latin",
@@ -9603,7 +9641,8 @@
             "last_avg_place": 2.0,
             "first_to_last_delta": 1.0,
             "n_dates": 10,
-            "confidence": "ok"
+            "confidence": "ok",
+            "trend_status": "declining"
           },
           {
             "program": "latin",
@@ -9615,7 +9654,8 @@
             "last_avg_place": 4.0,
             "first_to_last_delta": 3.0,
             "n_dates": 10,
-            "confidence": "ok"
+            "confidence": "ok",
+            "trend_status": "declining"
           }
         ],
         "tournament_dance_results": [
@@ -10222,7 +10262,8 @@
             "last_avg_place": 3.0,
             "first_to_last_delta": 0.0,
             "n_dates": 1,
-            "confidence": "insufficient trend"
+            "confidence": "insufficient trend",
+            "trend_status": "stable"
           },
           {
             "program": "latin",
@@ -10234,7 +10275,8 @@
             "last_avg_place": 1.0,
             "first_to_last_delta": 0.0,
             "n_dates": 1,
-            "confidence": "insufficient trend"
+            "confidence": "insufficient trend",
+            "trend_status": "stable"
           },
           {
             "program": "latin",
@@ -10246,7 +10288,8 @@
             "last_avg_place": 1.0,
             "first_to_last_delta": 0.0,
             "n_dates": 1,
-            "confidence": "insufficient trend"
+            "confidence": "insufficient trend",
+            "trend_status": "stable"
           }
         ],
         "tournament_dance_results": [
@@ -10414,7 +10457,8 @@
           "last_avg_place": 4.0,
           "first_to_last_delta": 0.0,
           "n_dates": 5,
-          "confidence": "ok"
+          "confidence": "ok",
+          "trend_status": "stable"
         },
         "key": "e_d",
         "label": "E+D",
@@ -10690,7 +10734,8 @@
             "last_avg_place": 4.0,
             "first_to_last_delta": 0.0,
             "n_dates": 5,
-            "confidence": "ok"
+            "confidence": "ok",
+            "trend_status": "stable"
           },
           {
             "program": "latin",
@@ -10702,7 +10747,8 @@
             "last_avg_place": 4.0,
             "first_to_last_delta": 0.0,
             "n_dates": 5,
-            "confidence": "ok"
+            "confidence": "ok",
+            "trend_status": "stable"
           },
           {
             "program": "latin",
@@ -10714,7 +10760,8 @@
             "last_avg_place": 5.0,
             "first_to_last_delta": 1.0,
             "n_dates": 5,
-            "confidence": "ok"
+            "confidence": "ok",
+            "trend_status": "declining"
           },
           {
             "program": "latin",
@@ -10726,7 +10773,8 @@
             "last_avg_place": 5.0,
             "first_to_last_delta": 2.0,
             "n_dates": 5,
-            "confidence": "ok"
+            "confidence": "ok",
+            "trend_status": "declining"
           }
         ],
         "tournament_dance_results": [
@@ -11219,7 +11267,8 @@
             "last_avg_place": 1.0,
             "first_to_last_delta": 0.0,
             "n_dates": 1,
-            "confidence": "insufficient trend"
+            "confidence": "insufficient trend",
+            "trend_status": "stable"
           },
           {
             "program": "latin",
@@ -11231,7 +11280,8 @@
             "last_avg_place": 1.0,
             "first_to_last_delta": 0.0,
             "n_dates": 1,
-            "confidence": "insufficient trend"
+            "confidence": "insufficient trend",
+            "trend_status": "stable"
           },
           {
             "program": "latin",
@@ -11243,7 +11293,8 @@
             "last_avg_place": 1.0,
             "first_to_last_delta": 0.0,
             "n_dates": 1,
-            "confidence": "insufficient trend"
+            "confidence": "insufficient trend",
+            "trend_status": "stable"
           },
           {
             "program": "latin",
@@ -11255,7 +11306,8 @@
             "last_avg_place": 1.0,
             "first_to_last_delta": 0.0,
             "n_dates": 1,
-            "confidence": "insufficient trend"
+            "confidence": "insufficient trend",
+            "trend_status": "stable"
           }
         ],
         "tournament_dance_results": [
@@ -11347,7 +11399,9 @@
           "Ch",
           "R",
           "J"
-        ]
+        ],
+        "tournament_rank": 1,
+        "rank_direction": "best"
       },
       {
         "event_date": "2025-10-12",
@@ -11369,7 +11423,9 @@
           "Ch",
           "R",
           "J"
-        ]
+        ],
+        "tournament_rank": 3,
+        "rank_direction": "best"
       },
       {
         "event_date": "2025-11-09",
@@ -11391,7 +11447,9 @@
           "Ch",
           "R",
           "J"
-        ]
+        ],
+        "tournament_rank": 5,
+        "rank_direction": ""
       },
       {
         "event_date": "2025-11-22",
@@ -11413,7 +11471,9 @@
           "Ch",
           "R",
           "J"
-        ]
+        ],
+        "tournament_rank": 9,
+        "rank_direction": "hardest"
       },
       {
         "event_date": "2025-12-21",
@@ -11435,7 +11495,9 @@
           "Ch",
           "R",
           "J"
-        ]
+        ],
+        "tournament_rank": 2,
+        "rank_direction": "best"
       },
       {
         "event_date": "2026-01-18",
@@ -11461,7 +11523,9 @@
           "Ch",
           "R",
           "J"
-        ]
+        ],
+        "tournament_rank": 10,
+        "rank_direction": "hardest"
       },
       {
         "event_date": "2026-02-01",
@@ -11487,7 +11551,9 @@
           "Ch",
           "R",
           "J"
-        ]
+        ],
+        "tournament_rank": 6,
+        "rank_direction": ""
       },
       {
         "event_date": "2026-02-23",
@@ -11513,7 +11579,9 @@
           "Ch",
           "R",
           "J"
-        ]
+        ],
+        "tournament_rank": 8,
+        "rank_direction": ""
       },
       {
         "event_date": "2026-03-08",
@@ -11539,7 +11607,9 @@
           "Ch",
           "R",
           "J"
-        ]
+        ],
+        "tournament_rank": 7,
+        "rank_direction": ""
       },
       {
         "event_date": "2026-04-26",
@@ -11565,7 +11635,9 @@
           "Ch",
           "R",
           "J"
-        ]
+        ],
+        "tournament_rank": 4,
+        "rank_direction": ""
       },
       {
         "event_date": "2026-05-24",
@@ -11591,7 +11663,9 @@
           "Ch",
           "R",
           "J"
-        ]
+        ],
+        "tournament_rank": 11,
+        "rank_direction": "hardest"
       }
     ],
     "protocols": [

@@ -1,28 +1,28 @@
 idd,name,status,report_html,report_json,error
 2023028,Аббясова Амина,success,reports/dancer_2023028_report.html,reports/dancer_2023028_report.json,
-2010683,Агапитов Ярослав,no_data,,,Танцор с Compreg IDD 2010683 не найден в базе.
+2010683,Агапитов Ярослав,success,reports/dancer_2010683_report.html,reports/dancer_2010683_report.json,
 2010736,Антонова Александра,success,reports/dancer_2010736_report.html,reports/dancer_2010736_report.json,
 2015745,Бедина Эльмира,success,reports/dancer_2015745_report.html,reports/dancer_2015745_report.json,
-2015747,Вегера Артем,no_data,,,Танцор с Compreg IDD 2015747 не найден в базе.
+2015747,Вегера Артем,success,reports/dancer_2015747_report.html,reports/dancer_2015747_report.json,
 2013211,Векслер Майя,success,reports/dancer_2013211_report.html,reports/dancer_2013211_report.json,
 2017576,Галактионова Анна,success,reports/dancer_2017576_report.html,reports/dancer_2017576_report.json,
 2016461,Груздева Александра,success,reports/dancer_2016461_report.html,reports/dancer_2016461_report.json,
-2010737,Дмитриева Анна,no_data,,,Танцор с Compreg IDD 2010737 не найден в базе.
+2010737,Дмитриева Анна,success,reports/dancer_2010737_report.html,reports/dancer_2010737_report.json,
 2006812,Еремин Григорий,no_data,,,Танцор с Compreg IDD 2006812 не найден в базе.
 2019417,Ившина Ксения,success,reports/dancer_2019417_report.html,reports/dancer_2019417_report.json,
 2014552,Козлова Полина,success,reports/dancer_2014552_report.html,reports/dancer_2014552_report.json,
 2019414,Козлова София,success,reports/dancer_2019414_report.html,reports/dancer_2019414_report.json,
 2019312,Костина Ксения,success,reports/dancer_2019312_report.html,reports/dancer_2019312_report.json,
 2018378,Лютых Алиса,success,reports/dancer_2018378_report.html,reports/dancer_2018378_report.json,
-2006823,Лютых Данила,no_data,,,Танцор с Compreg IDD 2006823 не найден в базе.
-2012523,Мазурина Анна,no_data,,,Танцор с Compreg IDD 2012523 не найден в базе.
-2019421,Маркелов Дмитрий,no_data,,,Танцор с Compreg IDD 2019421 не найден в базе.
+2006823,Лютых Данила,success,reports/dancer_2006823_report.html,reports/dancer_2006823_report.json,
+2012523,Мазурина Анна,success,reports/dancer_2012523_report.html,reports/dancer_2012523_report.json,
+2019421,Маркелов Дмитрий,success,reports/dancer_2019421_report.html,reports/dancer_2019421_report.json,
 2019644,Матюхина Василиса,success,reports/dancer_2019644_report.html,reports/dancer_2019644_report.json,
 2013956,Меркулова София,success,reports/dancer_2013956_report.html,reports/dancer_2013956_report.json,
 2017364,Немчинова Екатерина,success,reports/dancer_2017364_report.html,reports/dancer_2017364_report.json,
 2016890,Нестерова Елизавета,success,reports/dancer_2016890_report.html,reports/dancer_2016890_report.json,
-2011924,Попов Егор,no_data,,,Танцор с Compreg IDD 2011924 не найден в базе.
-2019422,Посыпайко Вероника,no_data,,,Танцор с Compreg IDD 2019422 не найден в базе.
+2011924,Попов Егор,success,reports/dancer_2011924_report.html,reports/dancer_2011924_report.json,
+2019422,Посыпайко Вероника,success,reports/dancer_2019422_report.html,reports/dancer_2019422_report.json,
 2013921,Привалова Виктория,success,reports/dancer_2013921_report.html,reports/dancer_2013921_report.json,
 2016913,Рикунова Ксения,success,reports/dancer_2016913_report.html,reports/dancer_2016913_report.json,
 2020091,Россошанская Дарья,success,reports/dancer_2020091_report.html,reports/dancer_2020091_report.json,
@@ -35,4 +35,4 @@ idd,name,status,report_html,report_json,error
 2010734,Чистова Анна,success,reports/dancer_2010734_report.html,reports/dancer_2010734_report.json,
 2015743,Юнцова Милана,success,reports/dancer_2015743_report.html,reports/dancer_2015743_report.json,
 2013957,Яковлева Людмила,success,reports/dancer_2013957_report.html,reports/dancer_2013957_report.json,
-2018763,Яхимович Любовь,no_data,,,Танцор с Compreg IDD 2018763 не найден в базе.
+2018763,Яхимович Любовь,success,reports/dancer_2018763_report.html,reports/dancer_2018763_report.json,

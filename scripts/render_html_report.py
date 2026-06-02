@@ -283,17 +283,32 @@ def split_program_trends(
     ]
     if eligible_dances is not None:
         reliable = [item for item in reliable if item.get("dance") in eligible_dances]
+    for item in reliable:
+        if not item.get("trend_status"):
+            delta = item.get("first_to_last_delta")
+            if delta is None:
+                delta = item.get("trend_over_time")
+            try:
+                delta_value = float(delta)
+            except (TypeError, ValueError):
+                delta_value = 0.0
+            if abs(delta_value) < 0.001:
+                item["trend_status"] = "stable"
+            elif delta_value < 0:
+                item["trend_status"] = "improving"
+            else:
+                item["trend_status"] = "declining"
     improving = sorted(
-        [item for item in reliable if float(item.get("trend_over_time") or 0) < -0.001],
-        key=lambda item: float(item.get("trend_over_time") or 0),
+        [item for item in reliable if item.get("trend_status") == "improving"],
+        key=lambda item: float(item.get("first_to_last_delta") if item.get("first_to_last_delta") is not None else item.get("trend_over_time") or 0),
     )
     declining = sorted(
-        [item for item in reliable if float(item.get("trend_over_time") or 0) > 0.001],
-        key=lambda item: float(item.get("trend_over_time") or 0),
+        [item for item in reliable if item.get("trend_status") == "declining"],
+        key=lambda item: float(item.get("first_to_last_delta") if item.get("first_to_last_delta") is not None else item.get("trend_over_time") or 0),
         reverse=True,
     )
     stable = sorted(
-        [item for item in reliable if abs(float(item.get("trend_over_time") or 0)) <= 0.001],
+        [item for item in reliable if item.get("trend_status") == "stable"],
         key=lambda item: item.get("dance") or "",
     )
     return {"improving": improving, "declining": declining, "stable": stable}
@@ -477,7 +492,13 @@ def tournament_performance(tournaments: list[dict[str, Any]], dynamics: list[dic
             }
         )
     rows = sorted(rows, key=lambda item: (item["avg_place"], item["event_date"]))
-    return {"best": rows[:limit], "hardest": list(reversed(rows[-limit:]))}
+    if not rows:
+        return {"best": [], "hardest": []}
+    display_limit = 2 if len(rows) <= 5 else limit
+    best = rows[:display_limit]
+    best_keys = {(item["event_date"], item["tournament_title"]) for item in best}
+    hardest_pool = [item for item in reversed(rows) if (item["event_date"], item["tournament_title"]) not in best_keys]
+    return {"best": best, "hardest": hardest_pool[:display_limit]}
 
 
 def build_tournament_details(report: dict[str, Any]) -> list[dict[str, Any]]:
@@ -549,6 +570,13 @@ def prepare_program_view(key: str, title: str, payload: dict[str, Any], fallback
         "key": payload.get("key", "all"),
         "label": payload.get("label", label_category_slice(payload.get("key", "all"))),
         "title": title,
+        "evidence": payload.get("evidence") or {},
+        "analysis_note": (
+            "по оценкам судей, без финального результата"
+            if int((payload.get("evidence") or {}).get("marks") or 0) > 0
+            and int((payload.get("evidence") or {}).get("results") or 0) == 0
+            else ""
+        ),
         "metrics": metrics,
         "best_by_final_average": payload.get("best_by_final_average"),
         "best_by_median": payload.get("best_by_median"),
@@ -595,13 +623,13 @@ def build_role_views(programs: dict[str, dict[str, Any]], report: dict[str, Any]
 
 def has_category_slice_evidence(slice_payload: dict[str, Any]) -> bool:
     evidence = slice_payload.get("evidence") or {}
+    metrics = slice_payload.get("metrics") or []
     if evidence:
         return (
             int(evidence.get("protocols") or 0) > 0
-            and int(evidence.get("marks") or 0) > 0
-            and int(evidence.get("results") or 0) > 0
+            and (int(evidence.get("marks") or 0) > 0 or int(evidence.get("results") or 0) > 0)
         )
-    return int(slice_payload.get("protocol_count") or 0) > 0
+    return int(slice_payload.get("protocol_count") or 0) > 0 or len(metrics) > 0
 
 
 def build_view_model(report: dict[str, Any], input_path: Path, output_path: Path) -> dict[str, Any]:

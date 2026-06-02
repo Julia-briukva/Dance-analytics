@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-06-01T19:10:58.515583+00:00",
+    "generated_at": "2026-06-02T06:02:10.519763+00:00",
     "analytics_version": "report_layer_v1",
     "database": "database/compreg_spb_2025_2026.sqlite"
   },
@@ -300,7 +300,8 @@
         "last_avg_place": 2.0,
         "first_to_last_delta": -6.0,
         "n_dates": 7,
-        "confidence": "ok"
+        "confidence": "ok",
+        "trend_status": "improving"
       }
     },
     "latin": {
@@ -604,7 +605,8 @@
         "last_avg_place": 5.0,
         "first_to_last_delta": -2.0,
         "n_dates": 12,
-        "confidence": "ok"
+        "confidence": "ok",
+        "trend_status": "improving"
       }
     }
   },
@@ -1910,7 +1912,8 @@
         "last_avg_place": 5.0,
         "first_to_last_delta": -2.0,
         "n_dates": 12,
-        "confidence": "ok"
+        "confidence": "ok",
+        "trend_status": "improving"
       },
       {
         "program": "latin",
@@ -1922,7 +1925,8 @@
         "last_avg_place": 4.0,
         "first_to_last_delta": -2.0,
         "n_dates": 12,
-        "confidence": "ok"
+        "confidence": "ok",
+        "trend_status": "improving"
       },
       {
         "program": "latin",
@@ -1934,7 +1938,8 @@
         "last_avg_place": 5.0,
         "first_to_last_delta": -2.0,
         "n_dates": 12,
-        "confidence": "ok"
+        "confidence": "ok",
+        "trend_status": "improving"
       },
       {
         "program": "latin",
@@ -1946,7 +1951,8 @@
         "last_avg_place": 7.0,
         "first_to_last_delta": 1.0,
         "n_dates": 2,
-        "confidence": "low confidence trend"
+        "confidence": "low confidence trend",
+        "trend_status": "declining"
       },
       {
         "program": "standard",
@@ -1958,7 +1964,8 @@
         "last_avg_place": 2.0,
         "first_to_last_delta": -6.0,
         "n_dates": 7,
-        "confidence": "ok"
+        "confidence": "ok",
+        "trend_status": "improving"
       },
       {
         "program": "standard",
@@ -1970,7 +1977,8 @@
         "last_avg_place": 4.0,
         "first_to_last_delta": -2.0,
         "n_dates": 7,
-        "confidence": "ok"
+        "confidence": "ok",
+        "trend_status": "improving"
       },
       {
         "program": "standard",
@@ -1982,7 +1990,8 @@
         "last_avg_place": 4.0,
         "first_to_last_delta": -4.0,
         "n_dates": 7,
-        "confidence": "ok"
+        "confidence": "ok",
+        "trend_status": "improving"
       }
     ],
     "dynamics_by_date": [
@@ -2975,7 +2984,8 @@
           "last_avg_place": 2.0,
           "first_to_last_delta": -6.0,
           "n_dates": 7,
-          "confidence": "ok"
+          "confidence": "ok",
+          "trend_status": "improving"
         },
         "key": "all",
         "label": "Все категории",
@@ -3265,7 +3275,8 @@
             "last_avg_place": 2.0,
             "first_to_last_delta": -6.0,
             "n_dates": 7,
-            "confidence": "ok"
+            "confidence": "ok",
+            "trend_status": "improving"
           },
           {
             "program": "standard",
@@ -3277,7 +3288,8 @@
             "last_avg_place": 4.0,
             "first_to_last_delta": -2.0,
             "n_dates": 7,
-            "confidence": "ok"
+            "confidence": "ok",
+            "trend_status": "improving"
           },
           {
             "program": "standard",
@@ -3289,7 +3301,8 @@
             "last_avg_place": 4.0,
             "first_to_last_delta": -4.0,
             "n_dates": 7,
-            "confidence": "ok"
+            "confidence": "ok",
+            "trend_status": "improving"
           }
         ],
         "tournament_dance_results": [
@@ -3887,7 +3900,8 @@
           "last_avg_place": 2.0,
           "first_to_last_delta": -6.0,
           "n_dates": 7,
-          "confidence": "ok"
+          "confidence": "ok",
+          "trend_status": "improving"
         },
         "key": "n_e",
         "label": "N+E",
@@ -4173,7 +4187,8 @@
             "last_avg_place": 2.0,
             "first_to_last_delta": -6.0,
             "n_dates": 7,
-            "confidence": "ok"
+            "confidence": "ok",
+            "trend_status": "improving"
           },
           {
             "program": "standard",
@@ -4185,7 +4200,8 @@
             "last_avg_place": 4.0,
             "first_to_last_delta": -2.0,
             "n_dates": 7,
-            "confidence": "ok"
+            "confidence": "ok",
+            "trend_status": "improving"
           },
           {
             "program": "standard",
@@ -4197,7 +4213,8 @@
             "last_avg_place": 4.0,
             "first_to_last_delta": -4.0,
             "n_dates": 7,
-            "confidence": "ok"
+            "confidence": "ok",
+            "trend_status": "improving"
           }
         ],
         "tournament_dance_results": [
@@ -4517,6 +4534,74 @@
             "dance_code": "Q"
           }
         ]
+      },
+      "e": {
+        "metrics": [],
+        "best_by_final_average": null,
+        "best_by_median": null,
+        "most_stable_dance": null,
+        "best_peak": null,
+        "worst_by_final_average": null,
+        "judge_level_best": null,
+        "strongest_dance": null,
+        "weakest_dance": null,
+        "most_improved_dance": null,
+        "key": "e",
+        "label": "E",
+        "source": "selected_dancer_marks_and_results",
+        "class_group": "E",
+        "age_groups": [
+          "Ювеналы-1+2"
+        ],
+        "source_categories": [
+          "Ювеналы-1+2 E Соло Ж St"
+        ],
+        "protocol_count": 0,
+        "tournament_count": 0,
+        "evidence": {
+          "tournaments": 1,
+          "protocols": 1,
+          "marks": 30,
+          "results": 0
+        },
+        "dynamics_by_date": [],
+        "trends": [],
+        "tournament_dance_results": []
+      },
+      "e_d": {
+        "metrics": [],
+        "best_by_final_average": null,
+        "best_by_median": null,
+        "most_stable_dance": null,
+        "best_peak": null,
+        "worst_by_final_average": null,
+        "judge_level_best": null,
+        "strongest_dance": null,
+        "weakest_dance": null,
+        "most_improved_dance": null,
+        "key": "e_d",
+        "label": "E+D",
+        "source": "selected_dancer_marks_and_results",
+        "class_group": "E+D",
+        "age_groups": [
+          "Ювеналы-1+2",
+          "Ювеналы-2"
+        ],
+        "source_categories": [
+          "Ювеналы-1+2 E+D Соло Ж St",
+          "Ювеналы-2 E+D Соло Ж St"
+        ],
+        "protocol_count": 0,
+        "tournament_count": 0,
+        "evidence": {
+          "tournaments": 7,
+          "protocols": 7,
+          "marks": 163,
+          "results": 0
+        },
+        "dynamics_by_date": [],
+        "trends": [],
+        "tournament_dance_results": []
       }
     },
     "latin": {
@@ -4821,7 +4906,8 @@
           "last_avg_place": 5.0,
           "first_to_last_delta": -2.0,
           "n_dates": 12,
-          "confidence": "ok"
+          "confidence": "ok",
+          "trend_status": "improving"
         },
         "key": "all",
         "label": "Все категории",
@@ -5315,7 +5401,8 @@
             "last_avg_place": 5.0,
             "first_to_last_delta": -2.0,
             "n_dates": 12,
-            "confidence": "ok"
+            "confidence": "ok",
+            "trend_status": "improving"
           },
           {
             "program": "latin",
@@ -5327,7 +5414,8 @@
             "last_avg_place": 4.0,
             "first_to_last_delta": -2.0,
             "n_dates": 12,
-            "confidence": "ok"
+            "confidence": "ok",
+            "trend_status": "improving"
           },
           {
             "program": "latin",
@@ -5339,7 +5427,8 @@
             "last_avg_place": 5.0,
             "first_to_last_delta": -2.0,
             "n_dates": 12,
-            "confidence": "ok"
+            "confidence": "ok",
+            "trend_status": "improving"
           },
           {
             "program": "latin",
@@ -5351,7 +5440,8 @@
             "last_avg_place": 7.0,
             "first_to_last_delta": 1.0,
             "n_dates": 2,
-            "confidence": "low confidence trend"
+            "confidence": "low confidence trend",
+            "trend_status": "declining"
           }
         ],
         "tournament_dance_results": [
@@ -6294,7 +6384,8 @@
           "last_avg_place": 5.0,
           "first_to_last_delta": -2.0,
           "n_dates": 12,
-          "confidence": "ok"
+          "confidence": "ok",
+          "trend_status": "improving"
         },
         "key": "n_e",
         "label": "N+E",
@@ -6760,7 +6851,8 @@
             "last_avg_place": 5.0,
             "first_to_last_delta": -2.0,
             "n_dates": 12,
-            "confidence": "ok"
+            "confidence": "ok",
+            "trend_status": "improving"
           },
           {
             "program": "latin",
@@ -6772,7 +6864,8 @@
             "last_avg_place": 5.0,
             "first_to_last_delta": -2.0,
             "n_dates": 12,
-            "confidence": "ok"
+            "confidence": "ok",
+            "trend_status": "improving"
           },
           {
             "program": "latin",
@@ -6784,7 +6877,8 @@
             "last_avg_place": 4.0,
             "first_to_last_delta": -2.0,
             "n_dates": 12,
-            "confidence": "ok"
+            "confidence": "ok",
+            "trend_status": "improving"
           }
         ],
         "tournament_dance_results": [
@@ -7330,6 +7424,39 @@
           }
         ]
       },
+      "e": {
+        "metrics": [],
+        "best_by_final_average": null,
+        "best_by_median": null,
+        "most_stable_dance": null,
+        "best_peak": null,
+        "worst_by_final_average": null,
+        "judge_level_best": null,
+        "strongest_dance": null,
+        "weakest_dance": null,
+        "most_improved_dance": null,
+        "key": "e",
+        "label": "E",
+        "source": "selected_dancer_marks_and_results",
+        "class_group": "E",
+        "age_groups": [
+          "Ювеналы-1+2"
+        ],
+        "source_categories": [
+          "Ювеналы-1+2 E Соло Ж La"
+        ],
+        "protocol_count": 0,
+        "tournament_count": 0,
+        "evidence": {
+          "tournaments": 1,
+          "protocols": 1,
+          "marks": 33,
+          "results": 0
+        },
+        "dynamics_by_date": [],
+        "trends": [],
+        "tournament_dance_results": []
+      },
       "e_d": {
         "metrics": [
           {
@@ -7447,7 +7574,8 @@
           "last_avg_place": 7.0,
           "first_to_last_delta": 1.0,
           "n_dates": 2,
-          "confidence": "low confidence trend"
+          "confidence": "low confidence trend",
+          "trend_status": "declining"
         },
         "key": "e_d",
         "label": "E+D",
@@ -7578,7 +7706,8 @@
             "last_avg_place": 7.0,
             "first_to_last_delta": 1.0,
             "n_dates": 2,
-            "confidence": "low confidence trend"
+            "confidence": "low confidence trend",
+            "trend_status": "declining"
           },
           {
             "program": "latin",
@@ -7590,7 +7719,8 @@
             "last_avg_place": 7.0,
             "first_to_last_delta": 2.0,
             "n_dates": 2,
-            "confidence": "low confidence trend"
+            "confidence": "low confidence trend",
+            "trend_status": "declining"
           },
           {
             "program": "latin",
@@ -7602,7 +7732,8 @@
             "last_avg_place": 8.0,
             "first_to_last_delta": 3.0,
             "n_dates": 2,
-            "confidence": "low confidence trend"
+            "confidence": "low confidence trend",
+            "trend_status": "declining"
           },
           {
             "program": "latin",
@@ -7614,7 +7745,8 @@
             "last_avg_place": 8.0,
             "first_to_last_delta": 3.0,
             "n_dates": 2,
-            "confidence": "low confidence trend"
+            "confidence": "low confidence trend",
+            "trend_status": "declining"
           }
         ],
         "tournament_dance_results": [
@@ -7766,7 +7898,9 @@
           "Ch",
           "R",
           "J"
-        ]
+        ],
+        "tournament_rank": 13.0,
+        "rank_direction": "hardest"
       },
       {
         "event_date": "2025-10-12",
@@ -7788,7 +7922,9 @@
           "Ch",
           "R",
           "J"
-        ]
+        ],
+        "tournament_rank": 12.0,
+        "rank_direction": "hardest"
       },
       {
         "event_date": "2025-11-02",
@@ -7810,7 +7946,9 @@
           "Ch",
           "R",
           "J"
-        ]
+        ],
+        "tournament_rank": null,
+        "rank_direction": ""
       },
       {
         "event_date": "2025-11-09",
@@ -7832,7 +7970,9 @@
           "Ch",
           "R",
           "J"
-        ]
+        ],
+        "tournament_rank": null,
+        "rank_direction": ""
       },
       {
         "event_date": "2025-11-22",
@@ -7854,7 +7994,9 @@
           "Ch",
           "R",
           "J"
-        ]
+        ],
+        "tournament_rank": null,
+        "rank_direction": ""
       },
       {
         "event_date": "2025-12-14",
@@ -7876,7 +8018,9 @@
           "Ch",
           "R",
           "J"
-        ]
+        ],
+        "tournament_rank": 2.0,
+        "rank_direction": "best"
       },
       {
         "event_date": "2025-12-21",
@@ -7898,7 +8042,9 @@
           "Ch",
           "R",
           "J"
-        ]
+        ],
+        "tournament_rank": 7.0,
+        "rank_direction": ""
       },
       {
         "event_date": "2026-01-18",
@@ -7920,7 +8066,9 @@
           "Ch",
           "R",
           "J"
-        ]
+        ],
+        "tournament_rank": 6.0,
+        "rank_direction": ""
       },
       {
         "event_date": "2026-02-01",
@@ -7942,7 +8090,9 @@
           "Ch",
           "R",
           "J"
-        ]
+        ],
+        "tournament_rank": 1.0,
+        "rank_direction": "best"
       },
       {
         "event_date": "2026-02-23",
@@ -7968,7 +8118,9 @@
           "Ch",
           "R",
           "J"
-        ]
+        ],
+        "tournament_rank": 9.0,
+        "rank_direction": ""
       },
       {
         "event_date": "2026-03-01",
@@ -7994,7 +8146,9 @@
           "Ch",
           "R",
           "J"
-        ]
+        ],
+        "tournament_rank": 8.0,
+        "rank_direction": ""
       },
       {
         "event_date": "2026-03-08",
@@ -8020,7 +8174,9 @@
           "Ch",
           "R",
           "J"
-        ]
+        ],
+        "tournament_rank": 11.0,
+        "rank_direction": "hardest"
       },
       {
         "event_date": "2026-04-05",
@@ -8046,7 +8202,9 @@
           "Ch",
           "R",
           "J"
-        ]
+        ],
+        "tournament_rank": 3.0,
+        "rank_direction": "best"
       },
       {
         "event_date": "2026-04-26",
@@ -8072,7 +8230,9 @@
           "Ch",
           "R",
           "J"
-        ]
+        ],
+        "tournament_rank": 4.0,
+        "rank_direction": ""
       },
       {
         "event_date": "2026-05-17",
@@ -8098,7 +8258,9 @@
           "Ch",
           "R",
           "J"
-        ]
+        ],
+        "tournament_rank": 10.0,
+        "rank_direction": ""
       },
       {
         "event_date": "2026-05-24",
@@ -8124,7 +8286,9 @@
           "Ch",
           "R",
           "J"
-        ]
+        ],
+        "tournament_rank": 5.0,
+        "rank_direction": ""
       }
     ],
     "protocols": [

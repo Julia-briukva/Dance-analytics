@@ -762,10 +762,94 @@
       <h2>Стандарт</h2>
       <p class="section-kicker">Категории переключаются отдельно для каждой программы. Меньшее место означает лучший результат.</p>
 
+        <input class="category-input" type="radio" name="cat-standard" id="cat-standard-all" checked>
+        <input class="category-input" type="radio" name="cat-standard" id="cat-standard-n_e" >
       <div class="category-tabs">
+          <label class="category-tab" for="cat-standard-all">Все категории</label>
+          <label class="category-tab" for="cat-standard-n_e">N+E</label>
       </div>
 
       <div class="category-panels">
+        <div class="category-panel panel-standard-all">
+            <p class="section-kicker">по оценкам судей, без финального результата</p>
+            <div class="note-box">Ограниченная выборка: 0 протоколов в этом срезе.</div>
+
+          <div class="three-column">
+            <div class="insight-card">
+              <h3>Лучше по среднему месту</h3>
+<p class="muted">Ограниченная выборка.</p>            </div>
+            <div class="insight-card">
+              <h3>Требуют внимания</h3>
+<p class="muted">Ограниченная выборка.</p>            </div>
+            <div class="insight-card">
+              <h3>Наиболее стабильные</h3>
+<p class="muted">Ограниченная выборка.</p>            </div>
+          </div>
+
+          <div class="three-column" style="margin-top:12px">
+            <div class="insight-card">
+              <h3>Улучшается</h3>
+<p class="muted">Для уверенного вывода пока мало наблюдений.</p>            </div>
+            <div class="insight-card">
+              <h3>Требует внимания по динамике</h3>
+<p class="muted">Для уверенного вывода пока мало наблюдений.</p>            </div>
+            <div class="insight-card">
+              <h3>Стабильно</h3>
+<p class="muted">Для уверенного вывода пока мало наблюдений.</p>            </div>
+          </div>
+
+          <h3 style="margin-top:18px">Танцы</h3>
+          <p class="section-kicker">Стабильность показывает, насколько сильно меняется итоговое место танца от турнира к турниру. Чем меньше колебания, тем выше стабильность.</p>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Танец</th><th class="number">Среднее место</th><th class="number">Лучшее место</th><th>Стабильность</th></tr></thead>
+              <tbody>
+                <tr><td colspan="4">Ограниченная выборка.</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+        <div class="category-panel panel-standard-n_e">
+            <p class="section-kicker">по оценкам судей, без финального результата</p>
+            <div class="note-box">Ограниченная выборка: 0 протоколов в этом срезе.</div>
+
+          <div class="three-column">
+            <div class="insight-card">
+              <h3>Лучше по среднему месту</h3>
+<p class="muted">Ограниченная выборка.</p>            </div>
+            <div class="insight-card">
+              <h3>Требуют внимания</h3>
+<p class="muted">Ограниченная выборка.</p>            </div>
+            <div class="insight-card">
+              <h3>Наиболее стабильные</h3>
+<p class="muted">Ограниченная выборка.</p>            </div>
+          </div>
+
+          <div class="three-column" style="margin-top:12px">
+            <div class="insight-card">
+              <h3>Улучшается</h3>
+<p class="muted">Для уверенного вывода пока мало наблюдений.</p>            </div>
+            <div class="insight-card">
+              <h3>Требует внимания по динамике</h3>
+<p class="muted">Для уверенного вывода пока мало наблюдений.</p>            </div>
+            <div class="insight-card">
+              <h3>Стабильно</h3>
+<p class="muted">Для уверенного вывода пока мало наблюдений.</p>            </div>
+          </div>
+
+          <h3 style="margin-top:18px">Танцы</h3>
+          <p class="section-kicker">Стабильность показывает, насколько сильно меняется итоговое место танца от турнира к турниру. Чем меньше колебания, тем выше стабильность.</p>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Танец</th><th class="number">Среднее место</th><th class="number">Лучшее место</th><th>Стабильность</th></tr></thead>
+              <tbody>
+                <tr><td colspan="4">Ограниченная выборка.</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+        </div>
       </div>
       <div class="note-box">Расчёт стабильности основан на разбросе итоговых мест по турнирам. Полная шкала означает очень устойчивый результат, короткая шкала — сильные колебания.</div>
     </section>
@@ -952,15 +1036,12 @@
           <ul class="plain-list">
               <li><span><strong>2025-11-16</strong> · Гордость Санкт-Петербурга 2025 (Санкт-Петербург)</span><span class="muted">6.333</span></li>
               <li><span><strong>2026-02-01</strong> · Tiara Dance Cup (Санкт-Петербург)</span><span class="muted">6.333</span></li>
-              <li><span><strong>2026-03-01</strong> · Танцевальное Свидание 2026 - Dance Date Cup (Санкт-Петербург)</span><span class="muted">6.333</span></li>
           </ul>
         </div>
         <div class="insight-card">
           <h3>Наиболее сложные турниры</h3>
           <ul class="plain-list">
               <li><span><strong>2026-03-01</strong> · Танцевальное Свидание 2026 - Dance Date Cup (Санкт-Петербург)</span><span class="muted">6.333</span></li>
-              <li><span><strong>2026-02-01</strong> · Tiara Dance Cup (Санкт-Петербург)</span><span class="muted">6.333</span></li>
-              <li><span><strong>2025-11-16</strong> · Гордость Санкт-Петербурга 2025 (Санкт-Петербург)</span><span class="muted">6.333</span></li>
           </ul>
         </div>
       </div>

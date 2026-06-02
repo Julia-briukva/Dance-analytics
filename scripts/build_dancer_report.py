@@ -152,6 +152,43 @@ def build_tournament_payload(marks: pd.DataFrame, dance_results: pd.DataFrame | 
         by_tournament["dance_codes"] = by_tournament["dance_codes"].apply(lambda value: value if isinstance(value, list) else [])
     else:
         by_tournament["dance_codes"] = [[] for _ in range(len(by_tournament))]
+    if dance_results is not None and not dance_results.empty:
+        perf = (
+            dance_results.dropna(subset=["final_place"])
+            .groupby(["event_date", "tournament_id", "tournament_title"], dropna=False, as_index=False)
+            .agg(avg_final_place=("final_place", "mean"))
+            .sort_values(["avg_final_place", "event_date", "tournament_id"])
+            .reset_index(drop=True)
+        )
+        if not perf.empty:
+            total = len(perf)
+            top_limit = 2 if total <= 5 else 3
+            best_keys = set()
+            ranks: dict[tuple[Any, Any, Any], dict[str, Any]] = {}
+            for rank, row in enumerate(perf.itertuples(index=False), start=1):
+                key = (row.event_date, row.tournament_id, row.tournament_title)
+                ranks[key] = {"tournament_rank": rank, "rank_direction": ""}
+                if rank <= top_limit:
+                    ranks[key]["rank_direction"] = "best"
+                    best_keys.add(key)
+            hardest_candidates = list(reversed([row for row in perf.itertuples(index=False) if (row.event_date, row.tournament_id, row.tournament_title) not in best_keys]))
+            for row in hardest_candidates[:top_limit]:
+                key = (row.event_date, row.tournament_id, row.tournament_title)
+                ranks[key]["rank_direction"] = "hardest"
+            by_tournament["tournament_rank"] = by_tournament.apply(
+                lambda row: ranks.get((row["event_date"], row["tournament_id"], row["tournament_title"]), {}).get("tournament_rank"),
+                axis=1,
+            )
+            by_tournament["rank_direction"] = by_tournament.apply(
+                lambda row: ranks.get((row["event_date"], row["tournament_id"], row["tournament_title"]), {}).get("rank_direction", ""),
+                axis=1,
+            )
+        else:
+            by_tournament["tournament_rank"] = None
+            by_tournament["rank_direction"] = ""
+    else:
+        by_tournament["tournament_rank"] = None
+        by_tournament["rank_direction"] = ""
     return {
         "count": int(marks["tournament_id"].nunique()),
         "protocol_count": int(marks["protocol_id"].nunique()),
@@ -188,6 +225,25 @@ def safe_trend_ranking(dynamics: pd.DataFrame) -> pd.DataFrame:
         trends = pd.DataFrame(rows)
     if not trends.empty and "trend_over_time" in trends.columns:
         trends["trend_over_time"] = pd.to_numeric(trends["trend_over_time"], errors="coerce").round(3)
+    if not trends.empty:
+        if "first_to_last_delta" in trends.columns:
+            trends["first_to_last_delta"] = pd.to_numeric(trends["first_to_last_delta"], errors="coerce").round(3)
+        else:
+            trends["first_to_last_delta"] = None
+
+        def trend_status(row: pd.Series) -> str:
+            delta = row.get("first_to_last_delta")
+            if pd.isna(delta):
+                trend = row.get("trend_over_time")
+                if pd.isna(trend):
+                    return "stable"
+                delta = trend
+            delta = float(delta)
+            if abs(delta) < 0.001:
+                return "stable"
+            return "improving" if delta < 0 else "declining"
+
+        trends["trend_status"] = trends.apply(trend_status, axis=1)
     return trends
 
 
@@ -303,7 +359,7 @@ def build_category_slices(numeric: pd.DataFrame, dance_results: pd.DataFrame, ma
                 slice_numeric = program_slice_subset(numeric_with_slices, program, slice_key)
                 slice_results = program_slice_subset(results_with_slices, program, slice_key)
                 slice_marks = program_slice_subset(marks_with_slices, program, slice_key)
-                if slice_numeric.empty or slice_results.empty:
+                if slice_marks.empty and slice_results.empty:
                     continue
 
             if slice_numeric.empty or slice_results.empty:
