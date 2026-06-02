@@ -227,13 +227,6 @@
       gap: 10px;
     }
 
-    .date-filter-grid label {
-      display: grid;
-      gap: 5px;
-      color: var(--muted);
-      font-size: 12px;
-    }
-
     .date-filter-grid input {
       width: 100%;
       border: 1px solid var(--line);
@@ -607,14 +600,19 @@
       margin-bottom: 12px;
     }
 
-    .table-wrap {
+    .table-wrap,
+    .table-scroll {
+      max-width: 100%;
       overflow-x: auto;
+      overflow-y: hidden;
+      -webkit-overflow-scrolling: touch;
       border: 1px solid var(--line);
       border-radius: 12px;
       margin-top: 10px;
     }
 
-    .tournament-list .table-wrap {
+    .tournament-list .table-wrap,
+    .tournament-list .table-scroll {
       border: 0;
       border-radius: 0;
       margin-top: 16px;
@@ -625,6 +623,14 @@
       border-collapse: collapse;
       background: var(--paper);
       font-size: 12.5px;
+    }
+
+    .table-scroll table {
+      min-width: 560px;
+    }
+
+    .tournament-list .table-scroll table {
+      min-width: 640px;
     }
 
     th, td {
@@ -675,7 +681,7 @@
 
     .tournament-summary {
       display: grid;
-      grid-template-columns: minmax(92px, .35fr) minmax(180px, 1fr) minmax(180px, 1fr) minmax(120px, .45fr);
+      grid-template-columns: minmax(92px, .35fr) minmax(180px, 1.1fr) minmax(180px, 1fr);
       gap: 12px;
       align-items: start;
       color: var(--ink);
@@ -698,6 +704,10 @@
       gap: 12px;
       margin: 18px 0 14px;
       padding-top: 4px;
+    }
+
+    .tournament-program-summary {
+      min-width: 0;
     }
 
     .tournament-detail-grid .insight-card {
@@ -758,6 +768,24 @@
       .tabs { position: static; }
       .filter-grid,
       .date-filter-grid { grid-template-columns: 1fr; }
+      .table-scroll {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+      }
+      .tournament-detail-grid .insight-card {
+        padding: 0;
+      }
+      .tournament-detail-grid .insight-card + .insight-card {
+        padding-left: 0;
+        border-left: 0;
+        padding-top: 14px;
+        border-top: 1px solid rgba(233, 229, 244, .72);
+      }
+      .rank-list li,
+      .plain-list li {
+        align-items: flex-start;
+      }
     }
 
     @media print {
@@ -776,7 +804,8 @@
       h2, summary { font-size: 17px; }
       table { font-size: 10px; }
       th, td { padding: 5px 6px; }
-      .table-wrap { overflow: visible; }
+      .table-wrap,
+      .table-scroll { overflow: visible; }
     }
   </style>
 </head>
@@ -822,14 +851,8 @@
       <div>
         <div class="filter-title">Период</div>
         <div class="date-filter-grid">
-          <label>
-            Дата начала
-            <input id="report-filter-date-from" type="date" value="2026-05-17">
-          </label>
-          <label>
-            Дата окончания
-            <input id="report-filter-date-to" type="date" value="2026-05-17">
-          </label>
+          <input id="report-filter-date-from" type="date" value="2026-05-17" aria-label="Дата начала периода">
+          <input id="report-filter-date-to" type="date" value="2026-05-17" aria-label="Дата окончания периода">
         </div>
       </div>
     </div>
@@ -1033,7 +1056,7 @@
 
           <h3 class="dance-table-heading">Танцы</h3>
           <p class="section-kicker">Стабильность показывает, насколько сильно меняется итоговое место танца от турнира к турниру. Чем меньше колебания, тем выше стабильность.</p>
-          <div class="table-wrap">
+          <div class="table-wrap table-scroll">
             <table>
               <thead><tr><th>Танец</th><th class="number">Среднее место</th><th class="number">Лучшее место</th><th>Стабильность</th></tr></thead>
               <tbody>
@@ -1064,7 +1087,7 @@
 
           <h3 class="dance-table-heading">Танцы</h3>
           <p class="section-kicker">Стабильность показывает, насколько сильно меняется итоговое место танца от турнира к турниру. Чем меньше колебания, тем выше стабильность.</p>
-          <div class="table-wrap">
+          <div class="table-wrap table-scroll">
             <table>
               <thead><tr><th>Танец</th><th class="number">Среднее место</th><th class="number">Лучшее место</th><th>Стабильность</th></tr></thead>
               <tbody>
@@ -1119,7 +1142,7 @@
 
           <h3 class="dance-table-heading">Танцы</h3>
           <p class="section-kicker">Стабильность показывает, насколько сильно меняется итоговое место танца от турнира к турниру. Чем меньше колебания, тем выше стабильность.</p>
-          <div class="table-wrap">
+          <div class="table-wrap table-scroll">
             <table>
               <thead><tr><th>Танец</th><th class="number">Среднее место</th><th class="number">Лучшее место</th><th>Стабильность</th></tr></thead>
               <tbody>
@@ -1150,7 +1173,7 @@
 
           <h3 class="dance-table-heading">Танцы</h3>
           <p class="section-kicker">Стабильность показывает, насколько сильно меняется итоговое место танца от турнира к турниру. Чем меньше колебания, тем выше стабильность.</p>
-          <div class="table-wrap">
+          <div class="table-wrap table-scroll">
             <table>
               <thead><tr><th>Танец</th><th class="number">Среднее место</th><th class="number">Лучшее место</th><th>Стабильность</th></tr></thead>
               <tbody>
@@ -1171,7 +1194,7 @@
         <div class="two-column">
           <div>
             <h3>Более строгие судьи</h3>
-            <div class="table-wrap">
+            <div class="table-wrap table-scroll">
               <table>
                 <thead><tr><th>Судья</th><th>Интерпретация</th><th class="number">Оценок</th></tr></thead>
                 <tbody>
@@ -1182,7 +1205,7 @@
           </div>
           <div>
             <h3>Более мягкие судьи</h3>
-            <div class="table-wrap">
+            <div class="table-wrap table-scroll">
               <table>
                 <thead><tr><th>Судья</th><th>Интерпретация</th><th class="number">Оценок</th></tr></thead>
                 <tbody>
@@ -1227,14 +1250,10 @@
                 <div class="summary-meta">Юниоры-1+2 E+D Соло Ж La; Юниоры-1+2 E+D Соло Ж St</div>
                 <div class="summary-meta">латина, стандарт</div>
               </div>
-              <div>
-                <div class="label">Итоговый результат</div>
-                <div class="summary-title">2 протокола</div>
-              </div>
             </div>
           </summary>
           <div class="tournament-detail-grid">
-              <div class="insight-card">
+              <div class="insight-card tournament-program-summary">
                 <h3>Стандарт</h3>
                 <p class="muted">
                   Общий итог:
@@ -1243,7 +1262,7 @@
                     <p><strong>Лучший танец:</strong> F <span class="muted">— выше всего оценивался судьями · 5 крестов</span></p>
                     <p><strong>Требует внимания:</strong> T <span class="muted">— ниже всего оценивался судьями · 3 крестов</span></p>
               </div>
-              <div class="insight-card">
+              <div class="insight-card tournament-program-summary">
                 <h3>Латина</h3>
                 <p class="muted">
                   Общий итог:
@@ -1253,7 +1272,7 @@
                     <p><strong>Требует внимания:</strong> R <span class="muted">— ниже всего оценивался судьями · 2 крестов</span></p>
               </div>
           </div>
-          <div class="table-wrap">
+          <div class="table-wrap table-scroll">
             <table>
               <thead><tr><th>Танец</th><th>Программа</th><th class="number">Итоговое место</th><th class="number">Протоколов</th></tr></thead>
               <tbody>

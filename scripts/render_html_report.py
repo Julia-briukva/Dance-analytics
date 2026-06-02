@@ -53,12 +53,31 @@ def output_path_for_report(report: dict[str, Any], input_path: Path) -> Path:
     return input_path.with_suffix(".html")
 
 
-def fmt(value: Any, digits: int = 3) -> str:
+def format_metric_value(value: Any, digits: int = 3) -> str:
     if value is None:
         return "—"
+    if isinstance(value, int):
+        return str(value)
     if isinstance(value, float):
-        return f"{value:.{digits}f}"
+        if value != value:
+            return "—"
+        rounded = round(value)
+        if abs(value - rounded) < 10 ** -digits:
+            return str(int(rounded))
+        return f"{value:.{digits}f}".rstrip("0").rstrip(".")
+    if isinstance(value, str):
+        stripped = value.strip()
+        try:
+            numeric = float(stripped)
+        except ValueError:
+            return value
+        if stripped and any(char.isdigit() for char in stripped):
+            return format_metric_value(numeric, digits=digits)
     return str(value)
+
+
+def fmt(value: Any, digits: int = 3) -> str:
+    return format_metric_value(value, digits=digits)
 
 
 def label_program(value: str | None) -> str:

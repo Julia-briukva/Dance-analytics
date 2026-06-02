@@ -227,13 +227,6 @@
       gap: 10px;
     }
 
-    .date-filter-grid label {
-      display: grid;
-      gap: 5px;
-      color: var(--muted);
-      font-size: 12px;
-    }
-
     .date-filter-grid input {
       width: 100%;
       border: 1px solid var(--line);
@@ -607,14 +600,19 @@
       margin-bottom: 12px;
     }
 
-    .table-wrap {
+    .table-wrap,
+    .table-scroll {
+      max-width: 100%;
       overflow-x: auto;
+      overflow-y: hidden;
+      -webkit-overflow-scrolling: touch;
       border: 1px solid var(--line);
       border-radius: 12px;
       margin-top: 10px;
     }
 
-    .tournament-list .table-wrap {
+    .tournament-list .table-wrap,
+    .tournament-list .table-scroll {
       border: 0;
       border-radius: 0;
       margin-top: 16px;
@@ -625,6 +623,14 @@
       border-collapse: collapse;
       background: var(--paper);
       font-size: 12.5px;
+    }
+
+    .table-scroll table {
+      min-width: 560px;
+    }
+
+    .tournament-list .table-scroll table {
+      min-width: 640px;
     }
 
     th, td {
@@ -675,7 +681,7 @@
 
     .tournament-summary {
       display: grid;
-      grid-template-columns: minmax(92px, .35fr) minmax(180px, 1fr) minmax(180px, 1fr) minmax(120px, .45fr);
+      grid-template-columns: minmax(92px, .35fr) minmax(180px, 1.1fr) minmax(180px, 1fr);
       gap: 12px;
       align-items: start;
       color: var(--ink);
@@ -698,6 +704,10 @@
       gap: 12px;
       margin: 18px 0 14px;
       padding-top: 4px;
+    }
+
+    .tournament-program-summary {
+      min-width: 0;
     }
 
     .tournament-detail-grid .insight-card {
@@ -758,6 +768,24 @@
       .tabs { position: static; }
       .filter-grid,
       .date-filter-grid { grid-template-columns: 1fr; }
+      .table-scroll {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+      }
+      .tournament-detail-grid .insight-card {
+        padding: 0;
+      }
+      .tournament-detail-grid .insight-card + .insight-card {
+        padding-left: 0;
+        border-left: 0;
+        padding-top: 14px;
+        border-top: 1px solid rgba(233, 229, 244, .72);
+      }
+      .rank-list li,
+      .plain-list li {
+        align-items: flex-start;
+      }
     }
 
     @media print {
@@ -776,7 +804,8 @@
       h2, summary { font-size: 17px; }
       table { font-size: 10px; }
       th, td { padding: 5px 6px; }
-      .table-wrap { overflow: visible; }
+      .table-wrap,
+      .table-scroll { overflow: visible; }
     }
   </style>
 </head>
@@ -822,14 +851,8 @@
       <div>
         <div class="filter-title">Период</div>
         <div class="date-filter-grid">
-          <label>
-            Дата начала
-            <input id="report-filter-date-from" type="date" value="2025-09-28">
-          </label>
-          <label>
-            Дата окончания
-            <input id="report-filter-date-to" type="date" value="2026-05-24">
-          </label>
+          <input id="report-filter-date-from" type="date" value="2025-09-28" aria-label="Дата начала периода">
+          <input id="report-filter-date-to" type="date" value="2026-05-24" aria-label="Дата окончания периода">
         </div>
       </div>
     </div>
@@ -1134,7 +1157,7 @@
           <div class="three-column">
             <div class="insight-card">
               <h3>Улучшается</h3>
-                <ul class="plain-list"><li><strong>Танго</strong><span class="muted">8.000 → 2.000</span></li><li><strong>Квикстеп</strong><span class="muted">8.000 → 4.000</span></li><li><strong>Медленный вальс</strong><span class="muted">6.000 → 4.000</span></li></ul>
+                <ul class="plain-list"><li><strong>Танго</strong><span class="muted">8 → 2</span></li><li><strong>Квикстеп</strong><span class="muted">8 → 4</span></li><li><strong>Медленный вальс</strong><span class="muted">6 → 4</span></li></ul>
             </div>
             <div class="insight-card">
               <h3>Требует внимания по динамике</h3>
@@ -1146,14 +1169,14 @@
 
           <h3 class="dance-table-heading">Танцы</h3>
           <p class="section-kicker">Стабильность показывает, насколько сильно меняется итоговое место танца от турнира к турниру. Чем меньше колебания, тем выше стабильность.</p>
-          <div class="table-wrap">
+          <div class="table-wrap table-scroll">
             <table>
               <thead><tr><th>Танец</th><th class="number">Среднее место</th><th class="number">Лучшее место</th><th>Стабильность</th></tr></thead>
               <tbody>
                 <tr>
                   <td><strong>Квикстеп</strong></td>
                   <td class="number">4.286</td>
-                  <td class="number">1.000</td>
+                  <td class="number">1</td>
                   <td>
                     <div class="progress-label">Низкая</div>
                     <div class="progress-track"><div class="progress-fill" style="--stability-width: 45%;"></div></div>
@@ -1162,7 +1185,7 @@
                 <tr>
                   <td><strong>Танго</strong></td>
                   <td class="number">4.143</td>
-                  <td class="number">2.000</td>
+                  <td class="number">2</td>
                   <td>
                     <div class="progress-label">Очень низкая</div>
                     <div class="progress-track"><div class="progress-fill" style="--stability-width: 25%;"></div></div>
@@ -1171,7 +1194,7 @@
                 <tr>
                   <td><strong>Медленный вальс</strong></td>
                   <td class="number">4.571</td>
-                  <td class="number">1.000</td>
+                  <td class="number">1</td>
                   <td>
                     <div class="progress-label">Очень высокая</div>
                     <div class="progress-track"><div class="progress-fill" style="--stability-width: 95%;"></div></div>
@@ -1228,7 +1251,7 @@
           <div class="three-column">
             <div class="insight-card">
               <h3>Улучшается</h3>
-                <ul class="plain-list"><li><strong>Танго</strong><span class="muted">8.000 → 2.000</span></li><li><strong>Квикстеп</strong><span class="muted">8.000 → 4.000</span></li><li><strong>Медленный вальс</strong><span class="muted">6.000 → 4.000</span></li></ul>
+                <ul class="plain-list"><li><strong>Танго</strong><span class="muted">8 → 2</span></li><li><strong>Квикстеп</strong><span class="muted">8 → 4</span></li><li><strong>Медленный вальс</strong><span class="muted">6 → 4</span></li></ul>
             </div>
             <div class="insight-card">
               <h3>Требует внимания по динамике</h3>
@@ -1240,14 +1263,14 @@
 
           <h3 class="dance-table-heading">Танцы</h3>
           <p class="section-kicker">Стабильность показывает, насколько сильно меняется итоговое место танца от турнира к турниру. Чем меньше колебания, тем выше стабильность.</p>
-          <div class="table-wrap">
+          <div class="table-wrap table-scroll">
             <table>
               <thead><tr><th>Танец</th><th class="number">Среднее место</th><th class="number">Лучшее место</th><th>Стабильность</th></tr></thead>
               <tbody>
                 <tr>
                   <td><strong>Квикстеп</strong></td>
                   <td class="number">4.286</td>
-                  <td class="number">1.000</td>
+                  <td class="number">1</td>
                   <td>
                     <div class="progress-label">Низкая</div>
                     <div class="progress-track"><div class="progress-fill" style="--stability-width: 45%;"></div></div>
@@ -1256,7 +1279,7 @@
                 <tr>
                   <td><strong>Танго</strong></td>
                   <td class="number">4.143</td>
-                  <td class="number">2.000</td>
+                  <td class="number">2</td>
                   <td>
                     <div class="progress-label">Очень низкая</div>
                     <div class="progress-track"><div class="progress-fill" style="--stability-width: 25%;"></div></div>
@@ -1265,7 +1288,7 @@
                 <tr>
                   <td><strong>Медленный вальс</strong></td>
                   <td class="number">4.571</td>
-                  <td class="number">1.000</td>
+                  <td class="number">1</td>
                   <td>
                     <div class="progress-label">Очень высокая</div>
                     <div class="progress-track"><div class="progress-fill" style="--stability-width: 95%;"></div></div>
@@ -1306,7 +1329,7 @@
 
           <h3 class="dance-table-heading">Танцы</h3>
           <p class="section-kicker">Стабильность показывает, насколько сильно меняется итоговое место танца от турнира к турниру. Чем меньше колебания, тем выше стабильность.</p>
-          <div class="table-wrap">
+          <div class="table-wrap table-scroll">
             <table>
               <thead><tr><th>Танец</th><th class="number">Среднее место</th><th class="number">Лучшее место</th><th>Стабильность</th></tr></thead>
               <tbody>
@@ -1345,7 +1368,7 @@
 
           <h3 class="dance-table-heading">Танцы</h3>
           <p class="section-kicker">Стабильность показывает, насколько сильно меняется итоговое место танца от турнира к турниру. Чем меньше колебания, тем выше стабильность.</p>
-          <div class="table-wrap">
+          <div class="table-wrap table-scroll">
             <table>
               <thead><tr><th>Танец</th><th class="number">Среднее место</th><th class="number">Лучшее место</th><th>Стабильность</th></tr></thead>
               <tbody>
@@ -1425,7 +1448,7 @@
           <div class="three-column">
             <div class="insight-card">
               <h3>Улучшается</h3>
-                <ul class="plain-list"><li><strong>Джайв</strong><span class="muted">7.000 → 5.000</span></li><li><strong>Румба</strong><span class="muted">6.000 → 4.000</span></li><li><strong>Ча-ча-ча</strong><span class="muted">7.000 → 5.000</span></li></ul>
+                <ul class="plain-list"><li><strong>Джайв</strong><span class="muted">7 → 5</span></li><li><strong>Румба</strong><span class="muted">6 → 4</span></li><li><strong>Ча-ча-ча</strong><span class="muted">7 → 5</span></li></ul>
             </div>
             <div class="insight-card">
               <h3>Требует внимания по динамике</h3>
@@ -1437,14 +1460,14 @@
 
           <h3 class="dance-table-heading">Танцы</h3>
           <p class="section-kicker">Стабильность показывает, насколько сильно меняется итоговое место танца от турнира к турниру. Чем меньше колебания, тем выше стабильность.</p>
-          <div class="table-wrap">
+          <div class="table-wrap table-scroll">
             <table>
               <thead><tr><th>Танец</th><th class="number">Среднее место</th><th class="number">Лучшее место</th><th>Стабильность</th></tr></thead>
               <tbody>
                 <tr>
                   <td><strong>Ча-ча-ча</strong></td>
-                  <td class="number">4.750</td>
-                  <td class="number">1.000</td>
+                  <td class="number">4.75</td>
+                  <td class="number">1</td>
                   <td>
                     <div class="progress-label">Низкая</div>
                     <div class="progress-track"><div class="progress-fill" style="--stability-width: 39%;"></div></div>
@@ -1453,7 +1476,7 @@
                 <tr>
                   <td><strong>Джайв</strong></td>
                   <td class="number">4.571</td>
-                  <td class="number">1.000</td>
+                  <td class="number">1</td>
                   <td>
                     <div class="progress-label">Очень низкая</div>
                     <div class="progress-track"><div class="progress-fill" style="--stability-width: 25%;"></div></div>
@@ -1462,7 +1485,7 @@
                 <tr>
                   <td><strong>Румба</strong></td>
                   <td class="number">4.821</td>
-                  <td class="number">2.000</td>
+                  <td class="number">2</td>
                   <td>
                     <div class="progress-label">Низкая</div>
                     <div class="progress-track"><div class="progress-fill" style="--stability-width: 46%;"></div></div>
@@ -1470,8 +1493,8 @@
                 </tr>
                 <tr>
                   <td><strong>Самба</strong></td>
-                  <td class="number">6.500</td>
-                  <td class="number">6.000</td>
+                  <td class="number">6.5</td>
+                  <td class="number">6</td>
                   <td>
                     <div class="progress-label">Очень высокая</div>
                     <div class="progress-track"><div class="progress-fill" style="--stability-width: 95%;"></div></div>
@@ -1488,7 +1511,7 @@
             <div class="insight-card">
               <h3>Лучший танец</h3>
               <ul class="plain-list">
-                  <li><strong>Джайв</strong><span class="muted">4.250</span></li>
+                  <li><strong>Джайв</strong><span class="muted">4.25</span></li>
               </ul>
             </div>
             <div class="insight-card">
@@ -1529,7 +1552,7 @@
           <div class="three-column">
             <div class="insight-card">
               <h3>Улучшается</h3>
-                <ul class="plain-list"><li><strong>Джайв</strong><span class="muted">7.000 → 5.000</span></li><li><strong>Ча-ча-ча</strong><span class="muted">7.000 → 5.000</span></li><li><strong>Румба</strong><span class="muted">6.000 → 4.000</span></li></ul>
+                <ul class="plain-list"><li><strong>Джайв</strong><span class="muted">7 → 5</span></li><li><strong>Ча-ча-ча</strong><span class="muted">7 → 5</span></li><li><strong>Румба</strong><span class="muted">6 → 4</span></li></ul>
             </div>
             <div class="insight-card">
               <h3>Требует внимания по динамике</h3>
@@ -1541,14 +1564,14 @@
 
           <h3 class="dance-table-heading">Танцы</h3>
           <p class="section-kicker">Стабильность показывает, насколько сильно меняется итоговое место танца от турнира к турниру. Чем меньше колебания, тем выше стабильность.</p>
-          <div class="table-wrap">
+          <div class="table-wrap table-scroll">
             <table>
               <thead><tr><th>Танец</th><th class="number">Среднее место</th><th class="number">Лучшее место</th><th>Стабильность</th></tr></thead>
               <tbody>
                 <tr>
                   <td><strong>Ча-ча-ча</strong></td>
                   <td class="number">4.542</td>
-                  <td class="number">1.000</td>
+                  <td class="number">1</td>
                   <td>
                     <div class="progress-label">Средняя</div>
                     <div class="progress-track"><div class="progress-fill" style="--stability-width: 48%;"></div></div>
@@ -1556,8 +1579,8 @@
                 </tr>
                 <tr>
                   <td><strong>Джайв</strong></td>
-                  <td class="number">4.250</td>
-                  <td class="number">1.000</td>
+                  <td class="number">4.25</td>
+                  <td class="number">1</td>
                   <td>
                     <div class="progress-label">Очень низкая</div>
                     <div class="progress-track"><div class="progress-fill" style="--stability-width: 25%;"></div></div>
@@ -1566,7 +1589,7 @@
                 <tr>
                   <td><strong>Румба</strong></td>
                   <td class="number">4.542</td>
-                  <td class="number">2.000</td>
+                  <td class="number">2</td>
                   <td>
                     <div class="progress-label">Очень высокая</div>
                     <div class="progress-track"><div class="progress-fill" style="--stability-width: 95%;"></div></div>
@@ -1607,7 +1630,7 @@
 
           <h3 class="dance-table-heading">Танцы</h3>
           <p class="section-kicker">Стабильность показывает, насколько сильно меняется итоговое место танца от турнира к турниру. Чем меньше колебания, тем выше стабильность.</p>
-          <div class="table-wrap">
+          <div class="table-wrap table-scroll">
             <table>
               <thead><tr><th>Танец</th><th class="number">Среднее место</th><th class="number">Лучшее место</th><th>Стабильность</th></tr></thead>
               <tbody>
@@ -1623,7 +1646,7 @@
             <div class="insight-card">
               <h3>Лучший танец</h3>
               <ul class="plain-list">
-                  <li><strong>Ча-ча-ча</strong><span class="muted">6.000</span></li>
+                  <li><strong>Ча-ча-ча</strong><span class="muted">6</span></li>
               </ul>
             </div>
             <div class="insight-card">
@@ -1648,14 +1671,14 @@
 
           <h3 class="dance-table-heading">Танцы</h3>
           <p class="section-kicker">Стабильность показывает, насколько сильно меняется итоговое место танца от турнира к турниру. Чем меньше колебания, тем выше стабильность.</p>
-          <div class="table-wrap">
+          <div class="table-wrap table-scroll">
             <table>
               <thead><tr><th>Танец</th><th class="number">Среднее место</th><th class="number">Лучшее место</th><th>Стабильность</th></tr></thead>
               <tbody>
                 <tr>
                   <td><strong>Ча-ча-ча</strong></td>
-                  <td class="number">6.000</td>
-                  <td class="number">5.000</td>
+                  <td class="number">6</td>
+                  <td class="number">5</td>
                   <td>
                     <div class="progress-label">Средняя</div>
                     <div class="progress-track"><div class="progress-fill" style="--stability-width: 60%;"></div></div>
@@ -1663,8 +1686,8 @@
                 </tr>
                 <tr>
                   <td><strong>Джайв</strong></td>
-                  <td class="number">6.500</td>
-                  <td class="number">5.000</td>
+                  <td class="number">6.5</td>
+                  <td class="number">5</td>
                   <td>
                     <div class="progress-label">Очень низкая</div>
                     <div class="progress-track"><div class="progress-fill" style="--stability-width: 25%;"></div></div>
@@ -1672,8 +1695,8 @@
                 </tr>
                 <tr>
                   <td><strong>Румба</strong></td>
-                  <td class="number">6.500</td>
-                  <td class="number">5.000</td>
+                  <td class="number">6.5</td>
+                  <td class="number">5</td>
                   <td>
                     <div class="progress-label">Очень низкая</div>
                     <div class="progress-track"><div class="progress-fill" style="--stability-width: 25%;"></div></div>
@@ -1681,8 +1704,8 @@
                 </tr>
                 <tr>
                   <td><strong>Самба</strong></td>
-                  <td class="number">6.500</td>
-                  <td class="number">6.000</td>
+                  <td class="number">6.5</td>
+                  <td class="number">6</td>
                   <td>
                     <div class="progress-label">Очень высокая</div>
                     <div class="progress-track"><div class="progress-fill" style="--stability-width: 95%;"></div></div>
@@ -1704,7 +1727,7 @@
         <div class="two-column">
           <div>
             <h3>Более строгие судьи</h3>
-            <div class="table-wrap">
+            <div class="table-wrap table-scroll">
               <table>
                 <thead><tr><th>Судья</th><th>Интерпретация</th><th class="number">Оценок</th></tr></thead>
                 <tbody>
@@ -1724,19 +1747,19 @@
           </div>
           <div>
             <h3>Более мягкие судьи</h3>
-            <div class="table-wrap">
+            <div class="table-wrap table-scroll">
               <table>
                 <thead><tr><th>Судья</th><th>Интерпретация</th><th class="number">Оценок</th></tr></thead>
                 <tbody>
                   <tr><td>Порохина Мария</td><td><div class="interpretation">Значительно мягче среднего</div><div class="tiny">отклонение от панели: -1.263</div></td><td class="number">25 оценок</td></tr>
                   <tr><td>Едигарьева Татьяна</td><td><div class="interpretation">Значительно мягче среднего</div><div class="tiny">отклонение от панели: -1.156</div></td><td class="number">15 оценок</td></tr>
-                  <tr><td>Ковальская Оксана</td><td><div class="interpretation">Значительно мягче среднего</div><div class="tiny">отклонение от панели: -1.150</div></td><td class="number">16 оценок</td></tr>
+                  <tr><td>Ковальская Оксана</td><td><div class="interpretation">Значительно мягче среднего</div><div class="tiny">отклонение от панели: -1.15</div></td><td class="number">16 оценок</td></tr>
                   <tr><td>Зеленина Елизавета</td><td><div class="interpretation">Значительно мягче среднего</div><div class="tiny">отклонение от панели: -1.038</div></td><td class="number">22 оценки</td></tr>
                   <tr><td>Тищенко Петр</td><td><div class="interpretation">Мягче среднего</div><div class="tiny">отклонение от панели: -0.916</div></td><td class="number">18 оценок</td></tr>
                   <tr><td>Логинова Оксана</td><td><div class="interpretation">Мягче среднего</div><div class="tiny">отклонение от панели: -0.857</div></td><td class="number">12 оценок</td></tr>
                   <tr><td>Лунев Игорь</td><td><div class="interpretation">Мягче среднего</div><div class="tiny">отклонение от панели: -0.819</div></td><td class="number">10 оценок</td></tr>
-                  <tr><td>Кашина Анна</td><td><div class="interpretation">Мягче среднего</div><div class="tiny">отклонение от панели: -0.610</div></td><td class="number">15 оценок</td></tr>
-                  <tr><td>Жаворонкова Екатерина</td><td><div class="interpretation">Близко к среднему</div><div class="tiny">отклонение от панели: -0.320</div></td><td class="number">13 оценок</td></tr>
+                  <tr><td>Кашина Анна</td><td><div class="interpretation">Мягче среднего</div><div class="tiny">отклонение от панели: -0.61</div></td><td class="number">15 оценок</td></tr>
+                  <tr><td>Жаворонкова Екатерина</td><td><div class="interpretation">Близко к среднему</div><div class="tiny">отклонение от панели: -0.32</div></td><td class="number">13 оценок</td></tr>
                   <tr><td>Яковенко Камилия</td><td><div class="interpretation">Близко к среднему</div><div class="tiny">отклонение от панели: -0.096</div></td><td class="number">12 оценок</td></tr>
                 </tbody>
               </table>
@@ -1761,7 +1784,7 @@
           <h3>Наиболее сложные турниры</h3>
           <ul class="plain-list">
               <li class="filterable-tournament" data-city="Санкт-Петербург" data-date="2025-09-28"><span><strong>2025-09-28</strong> · Северный кубок 2025 (Санкт-Петербург)</span><span class="muted">7.333</span></li>
-              <li class="filterable-tournament" data-city="Санкт-Петербург" data-date="2025-10-12"><span><strong>2025-10-12</strong> · Балтийская Звезда - 2025 (Санкт-Петербург)</span><span class="muted">6.500</span></li>
+              <li class="filterable-tournament" data-city="Санкт-Петербург" data-date="2025-10-12"><span><strong>2025-10-12</strong> · Балтийская Звезда - 2025 (Санкт-Петербург)</span><span class="muted">6.5</span></li>
               <li class="filterable-tournament" data-city="Санкт-Петербург" data-date="2026-03-08"><span><strong>2026-03-08</strong> · Амбассадор 2026 (Санкт-Петербург)</span><span class="muted">6.333</span></li>
           </ul>
         </div>
@@ -1784,23 +1807,19 @@
                 <div class="summary-meta">Ювеналы-2 N+E Соло Ж La; Ювеналы-2 N+E Соло Ж St</div>
                 <div class="summary-meta">латина, стандарт</div>
               </div>
-              <div>
-                <div class="label">Итоговый результат</div>
-                <div class="summary-title">2 протокола</div>
-              </div>
             </div>
           </summary>
           <div class="tournament-detail-grid">
-              <div class="insight-card">
+              <div class="insight-card tournament-program-summary">
                 <h3>Стандарт</h3>
                 <p class="muted">
                   Общий итог:
                     среднее место 7.333 · W, T, Q
                 </p>
-                    <p><strong>Лучший танец:</strong> W <span class="muted">место 6.000</span></p>
-                    <p><strong>Требуют внимания:</strong> T, Q <span class="muted">место 8.000</span></p>
+                    <p><strong>Лучший танец:</strong> W <span class="muted">место 6</span></p>
+                    <p><strong>Требуют внимания:</strong> T, Q <span class="muted">место 8</span></p>
               </div>
-              <div class="insight-card">
+              <div class="insight-card tournament-program-summary">
                 <h3>Латина</h3>
                 <p class="muted">
                   Общий итог:
@@ -1810,26 +1829,26 @@
                     <p><strong>Требует внимания:</strong> R <span class="muted">— ниже всего оценивался судьями · 13 крестов</span></p>
               </div>
           </div>
-          <div class="table-wrap">
+          <div class="table-wrap table-scroll">
             <table>
               <thead><tr><th>Танец</th><th>Программа</th><th class="number">Итоговое место</th><th class="number">Протоколов</th></tr></thead>
               <tbody>
                 <tr>
                   <td><strong>W</strong></td>
                   <td>стандарт</td>
-                  <td class="number">6.000</td>
+                  <td class="number">6</td>
                   <td class="number">1 протокол</td>
                 </tr>
                 <tr>
                   <td><strong>T</strong></td>
                   <td>стандарт</td>
-                  <td class="number">8.000</td>
+                  <td class="number">8</td>
                   <td class="number">1 протокол</td>
                 </tr>
                 <tr>
                   <td><strong>Q</strong></td>
                   <td>стандарт</td>
-                  <td class="number">8.000</td>
+                  <td class="number">8</td>
                   <td class="number">1 протокол</td>
                 </tr>
               </tbody>
@@ -1852,70 +1871,66 @@
                 <div class="summary-meta">Ювеналы-2 N+E соло Ж La; Ювеналы-2 N+E соло Ж St</div>
                 <div class="summary-meta">латина, стандарт</div>
               </div>
-              <div>
-                <div class="label">Итоговый результат</div>
-                <div class="summary-title">2 протокола</div>
-              </div>
             </div>
           </summary>
           <div class="tournament-detail-grid">
-              <div class="insight-card">
+              <div class="insight-card tournament-program-summary">
                 <h3>Стандарт</h3>
                 <p class="muted">
                   Общий итог:
                     среднее место 6.333 · W, T, Q
                 </p>
-                    <p><strong>Лучший танец:</strong> Q <span class="muted">место 5.000</span></p>
-                    <p><strong>Требуют внимания:</strong> W, T <span class="muted">место 7.000</span></p>
+                    <p><strong>Лучший танец:</strong> Q <span class="muted">место 5</span></p>
+                    <p><strong>Требуют внимания:</strong> W, T <span class="muted">место 7</span></p>
               </div>
-              <div class="insight-card">
+              <div class="insight-card tournament-program-summary">
                 <h3>Латина</h3>
                 <p class="muted">
                   Общий итог:
                     среднее место 6.667 · Ch, R, J
                 </p>
-                    <p><strong>Лучший танец:</strong> R <span class="muted">место 6.000</span></p>
-                    <p><strong>Требуют внимания:</strong> Ch, J <span class="muted">место 7.000</span></p>
+                    <p><strong>Лучший танец:</strong> R <span class="muted">место 6</span></p>
+                    <p><strong>Требуют внимания:</strong> Ch, J <span class="muted">место 7</span></p>
               </div>
           </div>
-          <div class="table-wrap">
+          <div class="table-wrap table-scroll">
             <table>
               <thead><tr><th>Танец</th><th>Программа</th><th class="number">Итоговое место</th><th class="number">Протоколов</th></tr></thead>
               <tbody>
                 <tr>
                   <td><strong>W</strong></td>
                   <td>стандарт</td>
-                  <td class="number">7.000</td>
+                  <td class="number">7</td>
                   <td class="number">1 протокол</td>
                 </tr>
                 <tr>
                   <td><strong>T</strong></td>
                   <td>стандарт</td>
-                  <td class="number">7.000</td>
+                  <td class="number">7</td>
                   <td class="number">1 протокол</td>
                 </tr>
                 <tr>
                   <td><strong>Q</strong></td>
                   <td>стандарт</td>
-                  <td class="number">5.000</td>
+                  <td class="number">5</td>
                   <td class="number">1 протокол</td>
                 </tr>
                 <tr>
                   <td><strong>Ch</strong></td>
                   <td>латина</td>
-                  <td class="number">7.000</td>
+                  <td class="number">7</td>
                   <td class="number">1 протокол</td>
                 </tr>
                 <tr>
                   <td><strong>R</strong></td>
                   <td>латина</td>
-                  <td class="number">6.000</td>
+                  <td class="number">6</td>
                   <td class="number">1 протокол</td>
                 </tr>
                 <tr>
                   <td><strong>J</strong></td>
                   <td>латина</td>
-                  <td class="number">7.000</td>
+                  <td class="number">7</td>
                   <td class="number">1 протокол</td>
                 </tr>
               </tbody>
@@ -1938,14 +1953,10 @@
                 <div class="summary-meta">Ювеналы-2 N+E Соло Ж La; Ювеналы-2 N+E Соло Ж St</div>
                 <div class="summary-meta">латина, стандарт</div>
               </div>
-              <div>
-                <div class="label">Итоговый результат</div>
-                <div class="summary-title">2 протокола</div>
-              </div>
             </div>
           </summary>
           <div class="tournament-detail-grid">
-              <div class="insight-card">
+              <div class="insight-card tournament-program-summary">
                 <h3>Стандарт</h3>
                 <p class="muted">
                   Общий итог:
@@ -1954,7 +1965,7 @@
                     <p><strong>Лучший танец:</strong> T <span class="muted">— выше всего оценивался судьями · 16 крестов</span></p>
                     <p><strong>Требует внимания:</strong> W <span class="muted">— ниже всего оценивался судьями · 10 крестов</span></p>
               </div>
-              <div class="insight-card">
+              <div class="insight-card tournament-program-summary">
                 <h3>Латина</h3>
                 <p class="muted">
                   Общий итог:
@@ -1964,7 +1975,7 @@
                     <p><strong>Требуют внимания:</strong> Ch, R <span class="muted">— ниже всего оценивался судьями · 13 крестов</span></p>
               </div>
           </div>
-          <div class="table-wrap">
+          <div class="table-wrap table-scroll">
             <table>
               <thead><tr><th>Танец</th><th>Программа</th><th class="number">Итоговое место</th><th class="number">Протоколов</th></tr></thead>
               <tbody>
@@ -1988,14 +1999,10 @@
                 <div class="summary-meta">Ювеналы-2 N+E Соло Ж La; Ювеналы-2 N+E Соло Ж St</div>
                 <div class="summary-meta">латина, стандарт</div>
               </div>
-              <div>
-                <div class="label">Итоговый результат</div>
-                <div class="summary-title">2 протокола</div>
-              </div>
             </div>
           </summary>
           <div class="tournament-detail-grid">
-              <div class="insight-card">
+              <div class="insight-card tournament-program-summary">
                 <h3>Стандарт</h3>
                 <p class="muted">
                   Общий итог:
@@ -2004,7 +2011,7 @@
                     <p><strong>Лучший танец:</strong> W <span class="muted">— выше всего оценивался судьями · 7 крестов</span></p>
                     <p><strong>Требуют внимания:</strong> T, Q <span class="muted">— ниже всего оценивался судьями · 5 крестов</span></p>
               </div>
-              <div class="insight-card">
+              <div class="insight-card tournament-program-summary">
                 <h3>Латина</h3>
                 <p class="muted">
                   Общий итог:
@@ -2014,7 +2021,7 @@
                     <p><strong>Требуют внимания:</strong> R, J <span class="muted">— ниже всего оценивался судьями · 7 крестов</span></p>
               </div>
           </div>
-          <div class="table-wrap">
+          <div class="table-wrap table-scroll">
             <table>
               <thead><tr><th>Танец</th><th>Программа</th><th class="number">Итоговое место</th><th class="number">Протоколов</th></tr></thead>
               <tbody>
@@ -2038,14 +2045,10 @@
                 <div class="summary-meta">Ювеналы-1+2 E Соло Ж La; Ювеналы-1+2 E Соло Ж St</div>
                 <div class="summary-meta">латина, стандарт</div>
               </div>
-              <div>
-                <div class="label">Итоговый результат</div>
-                <div class="summary-title">2 протокола</div>
-              </div>
             </div>
           </summary>
           <div class="tournament-detail-grid">
-              <div class="insight-card">
+              <div class="insight-card tournament-program-summary">
                 <h3>Стандарт</h3>
                 <p class="muted">
                   Общий итог:
@@ -2053,7 +2056,7 @@
                 </p>
                     <p><strong>Танцы оценены примерно одинаково:</strong> W, T, Q <span class="muted">— 10 крестов</span></p>
               </div>
-              <div class="insight-card">
+              <div class="insight-card tournament-program-summary">
                 <h3>Латина</h3>
                 <p class="muted">
                   Общий итог:
@@ -2063,7 +2066,7 @@
                     <p><strong>Требует внимания:</strong> R <span class="muted">— ниже всего оценивался судьями · 10 крестов</span></p>
               </div>
           </div>
-          <div class="table-wrap">
+          <div class="table-wrap table-scroll">
             <table>
               <thead><tr><th>Танец</th><th>Программа</th><th class="number">Итоговое место</th><th class="number">Протоколов</th></tr></thead>
               <tbody>
@@ -2087,14 +2090,10 @@
                 <div class="summary-meta">Ювеналы-2 N+E Соло Ж La; Ювеналы-2 N+E Соло Ж St</div>
                 <div class="summary-meta">латина, стандарт</div>
               </div>
-              <div>
-                <div class="label">Итоговый результат</div>
-                <div class="summary-title">2 протокола</div>
-              </div>
             </div>
           </summary>
           <div class="tournament-detail-grid">
-              <div class="insight-card">
+              <div class="insight-card tournament-program-summary">
                 <h3>Стандарт</h3>
                 <p class="muted">
                   Общий итог:
@@ -2103,36 +2102,36 @@
                     <p><strong>Лучшие танцы:</strong> W, Q <span class="muted">— выше всего оценивался судьями · 5 крестов</span></p>
                     <p><strong>Требует внимания:</strong> T <span class="muted">— ниже всего оценивался судьями · 4 крестов</span></p>
               </div>
-              <div class="insight-card">
+              <div class="insight-card tournament-program-summary">
                 <h3>Латина</h3>
                 <p class="muted">
                   Общий итог:
                     среднее место 2.667 · Ch, R, J
                 </p>
-                    <p><strong>Лучший танец:</strong> J <span class="muted">место 1.000</span></p>
-                    <p><strong>Требуют внимания:</strong> Ch, R <span class="muted">место 3.500</span></p>
+                    <p><strong>Лучший танец:</strong> J <span class="muted">место 1</span></p>
+                    <p><strong>Требуют внимания:</strong> Ch, R <span class="muted">место 3.5</span></p>
               </div>
           </div>
-          <div class="table-wrap">
+          <div class="table-wrap table-scroll">
             <table>
               <thead><tr><th>Танец</th><th>Программа</th><th class="number">Итоговое место</th><th class="number">Протоколов</th></tr></thead>
               <tbody>
                 <tr>
                   <td><strong>Ch</strong></td>
                   <td>латина</td>
-                  <td class="number">3.500</td>
+                  <td class="number">3.5</td>
                   <td class="number">1 протокол</td>
                 </tr>
                 <tr>
                   <td><strong>R</strong></td>
                   <td>латина</td>
-                  <td class="number">3.500</td>
+                  <td class="number">3.5</td>
                   <td class="number">1 протокол</td>
                 </tr>
                 <tr>
                   <td><strong>J</strong></td>
                   <td>латина</td>
-                  <td class="number">1.000</td>
+                  <td class="number">1</td>
                   <td class="number">1 протокол</td>
                 </tr>
               </tbody>
@@ -2155,14 +2154,10 @@
                 <div class="summary-meta">Ювеналы-2 N+E Соло Ж La; Ювеналы-2 N+E Соло Ж St</div>
                 <div class="summary-meta">латина, стандарт</div>
               </div>
-              <div>
-                <div class="label">Итоговый результат</div>
-                <div class="summary-title">2 протокола</div>
-              </div>
             </div>
           </summary>
           <div class="tournament-detail-grid">
-              <div class="insight-card">
+              <div class="insight-card tournament-program-summary">
                 <h3>Стандарт</h3>
                 <p class="muted">
                   Общий итог:
@@ -2171,36 +2166,36 @@
                     <p><strong>Лучший танец:</strong> W <span class="muted">— выше всего оценивался судьями · 7 крестов</span></p>
                     <p><strong>Требует внимания:</strong> Q <span class="muted">— ниже всего оценивался судьями · 2 крестов</span></p>
               </div>
-              <div class="insight-card">
+              <div class="insight-card tournament-program-summary">
                 <h3>Латина</h3>
                 <p class="muted">
                   Общий итог:
-                    среднее место 5.000 · Ch, R, J
+                    среднее место 5 · Ch, R, J
                 </p>
-                    <p><strong>Лучший танец:</strong> Ch <span class="muted">место 4.000</span></p>
-                    <p><strong>Требует внимания:</strong> R <span class="muted">место 6.000</span></p>
+                    <p><strong>Лучший танец:</strong> Ch <span class="muted">место 4</span></p>
+                    <p><strong>Требует внимания:</strong> R <span class="muted">место 6</span></p>
               </div>
           </div>
-          <div class="table-wrap">
+          <div class="table-wrap table-scroll">
             <table>
               <thead><tr><th>Танец</th><th>Программа</th><th class="number">Итоговое место</th><th class="number">Протоколов</th></tr></thead>
               <tbody>
                 <tr>
                   <td><strong>Ch</strong></td>
                   <td>латина</td>
-                  <td class="number">4.000</td>
+                  <td class="number">4</td>
                   <td class="number">1 протокол</td>
                 </tr>
                 <tr>
                   <td><strong>R</strong></td>
                   <td>латина</td>
-                  <td class="number">6.000</td>
+                  <td class="number">6</td>
                   <td class="number">1 протокол</td>
                 </tr>
                 <tr>
                   <td><strong>J</strong></td>
                   <td>латина</td>
-                  <td class="number">5.000</td>
+                  <td class="number">5</td>
                   <td class="number">1 протокол</td>
                 </tr>
               </tbody>
@@ -2223,70 +2218,66 @@
                 <div class="summary-meta">Ювеналы-2 N+E соло Ж La; Ювеналы-2 N+E соло Ж St</div>
                 <div class="summary-meta">латина, стандарт</div>
               </div>
-              <div>
-                <div class="label">Итоговый результат</div>
-                <div class="summary-title">2 протокола</div>
-              </div>
             </div>
           </summary>
           <div class="tournament-detail-grid">
-              <div class="insight-card">
+              <div class="insight-card tournament-program-summary">
                 <h3>Стандарт</h3>
                 <p class="muted">
                   Общий итог:
                     среднее место 2.667 · W, T, Q
                 </p>
-                    <p><strong>Лучшие танцы:</strong> T, Q <span class="muted">место 2.000</span></p>
-                    <p><strong>Требует внимания:</strong> W <span class="muted">место 4.000</span></p>
+                    <p><strong>Лучшие танцы:</strong> T, Q <span class="muted">место 2</span></p>
+                    <p><strong>Требует внимания:</strong> W <span class="muted">место 4</span></p>
               </div>
-              <div class="insight-card">
+              <div class="insight-card tournament-program-summary">
                 <h3>Латина</h3>
                 <p class="muted">
                   Общий итог:
-                    среднее место 6.000 · Ch, R, J
+                    среднее место 6 · Ch, R, J
                 </p>
-                    <p><strong>Лучший танец:</strong> Ch <span class="muted">место 5.000</span></p>
-                    <p><strong>Требует внимания:</strong> J <span class="muted">место 7.000</span></p>
+                    <p><strong>Лучший танец:</strong> Ch <span class="muted">место 5</span></p>
+                    <p><strong>Требует внимания:</strong> J <span class="muted">место 7</span></p>
               </div>
           </div>
-          <div class="table-wrap">
+          <div class="table-wrap table-scroll">
             <table>
               <thead><tr><th>Танец</th><th>Программа</th><th class="number">Итоговое место</th><th class="number">Протоколов</th></tr></thead>
               <tbody>
                 <tr>
                   <td><strong>W</strong></td>
                   <td>стандарт</td>
-                  <td class="number">4.000</td>
+                  <td class="number">4</td>
                   <td class="number">1 протокол</td>
                 </tr>
                 <tr>
                   <td><strong>T</strong></td>
                   <td>стандарт</td>
-                  <td class="number">2.000</td>
+                  <td class="number">2</td>
                   <td class="number">1 протокол</td>
                 </tr>
                 <tr>
                   <td><strong>Q</strong></td>
                   <td>стандарт</td>
-                  <td class="number">2.000</td>
+                  <td class="number">2</td>
                   <td class="number">1 протокол</td>
                 </tr>
                 <tr>
                   <td><strong>Ch</strong></td>
                   <td>латина</td>
-                  <td class="number">5.000</td>
+                  <td class="number">5</td>
                   <td class="number">1 протокол</td>
                 </tr>
                 <tr>
                   <td><strong>R</strong></td>
                   <td>латина</td>
-                  <td class="number">6.000</td>
+                  <td class="number">6</td>
                   <td class="number">1 протокол</td>
                 </tr>
                 <tr>
                   <td><strong>J</strong></td>
                   <td>латина</td>
-                  <td class="number">7.000</td>
+                  <td class="number">7</td>
                   <td class="number">1 протокол</td>
                 </tr>
               </tbody>
@@ -2309,70 +2300,66 @@
                 <div class="summary-meta">Ювеналы-2 N+E соло Ж La; Ювеналы-2 N+E соло Ж St</div>
                 <div class="summary-meta">латина, стандарт</div>
               </div>
-              <div>
-                <div class="label">Итоговый результат</div>
-                <div class="summary-title">2 протокола</div>
-              </div>
             </div>
           </summary>
           <div class="tournament-detail-grid">
-              <div class="insight-card">
+              <div class="insight-card tournament-program-summary">
                 <h3>Стандарт</h3>
                 <p class="muted">
                   Общий итог:
                     среднее место 1.667 · W, T, Q
                 </p>
-                    <p><strong>Лучшие танцы:</strong> W, Q <span class="muted">место 1.000</span></p>
-                    <p><strong>Требует внимания:</strong> T <span class="muted">место 3.000</span></p>
+                    <p><strong>Лучшие танцы:</strong> W, Q <span class="muted">место 1</span></p>
+                    <p><strong>Требует внимания:</strong> T <span class="muted">место 3</span></p>
               </div>
-              <div class="insight-card">
+              <div class="insight-card tournament-program-summary">
                 <h3>Латина</h3>
                 <p class="muted">
                   Общий итог:
                     среднее место 2.667 · Ch, R, J
                 </p>
-                    <p><strong>Лучший танец:</strong> R <span class="muted">место 2.000</span></p>
-                    <p><strong>Требуют внимания:</strong> Ch, J <span class="muted">место 3.000</span></p>
+                    <p><strong>Лучший танец:</strong> R <span class="muted">место 2</span></p>
+                    <p><strong>Требуют внимания:</strong> Ch, J <span class="muted">место 3</span></p>
               </div>
           </div>
-          <div class="table-wrap">
+          <div class="table-wrap table-scroll">
             <table>
               <thead><tr><th>Танец</th><th>Программа</th><th class="number">Итоговое место</th><th class="number">Протоколов</th></tr></thead>
               <tbody>
                 <tr>
                   <td><strong>W</strong></td>
                   <td>стандарт</td>
-                  <td class="number">1.000</td>
+                  <td class="number">1</td>
                   <td class="number">1 протокол</td>
                 </tr>
                 <tr>
                   <td><strong>T</strong></td>
                   <td>стандарт</td>
-                  <td class="number">3.000</td>
+                  <td class="number">3</td>
                   <td class="number">1 протокол</td>
                 </tr>
                 <tr>
                   <td><strong>Q</strong></td>
                   <td>стандарт</td>
-                  <td class="number">1.000</td>
+                  <td class="number">1</td>
                   <td class="number">1 протокол</td>
                 </tr>
                 <tr>
                   <td><strong>Ch</strong></td>
                   <td>латина</td>
-                  <td class="number">3.000</td>
+                  <td class="number">3</td>
                   <td class="number">1 протокол</td>
                 </tr>
                 <tr>
                   <td><strong>R</strong></td>
                   <td>латина</td>
-                  <td class="number">2.000</td>
+                  <td class="number">2</td>
                   <td class="number">1 протокол</td>
                 </tr>
                 <tr>
                   <td><strong>J</strong></td>
                   <td>латина</td>
-                  <td class="number">3.000</td>
+                  <td class="number">3</td>
                   <td class="number">1 протокол</td>
                 </tr>
               </tbody>
@@ -2395,70 +2382,66 @@
                 <div class="summary-meta">Ювеналы-2 E+D Соло Ж La; Ювеналы-2 E+D Соло Ж St; Ювеналы-2 N+E Соло Ж La; Ювеналы-2 N+E Соло Ж St</div>
                 <div class="summary-meta">латина, стандарт</div>
               </div>
-              <div>
-                <div class="label">Итоговый результат</div>
-                <div class="summary-title">4 протокола</div>
-              </div>
             </div>
           </summary>
           <div class="tournament-detail-grid">
-              <div class="insight-card">
+              <div class="insight-card tournament-program-summary">
                 <h3>Стандарт</h3>
                 <p class="muted">
                   Общий итог:
-                    среднее место 5.000 · W, T, F, Q
+                    среднее место 5 · W, T, F, Q
                 </p>
-                    <p><strong>Лучший танец:</strong> T <span class="muted">место 4.000</span></p>
-                    <p><strong>Требует внимания:</strong> W <span class="muted">место 6.000</span></p>
+                    <p><strong>Лучший танец:</strong> T <span class="muted">место 4</span></p>
+                    <p><strong>Требует внимания:</strong> W <span class="muted">место 6</span></p>
               </div>
-              <div class="insight-card">
+              <div class="insight-card tournament-program-summary">
                 <h3>Латина</h3>
                 <p class="muted">
                   Общий итог:
                     среднее место 5.333 · S, Ch, R, J
                 </p>
-                    <p><strong>Лучший танец:</strong> R <span class="muted">место 4.000</span></p>
-                    <p><strong>Требует внимания:</strong> Ch <span class="muted">место 7.000</span></p>
+                    <p><strong>Лучший танец:</strong> R <span class="muted">место 4</span></p>
+                    <p><strong>Требует внимания:</strong> Ch <span class="muted">место 7</span></p>
               </div>
           </div>
-          <div class="table-wrap">
+          <div class="table-wrap table-scroll">
             <table>
               <thead><tr><th>Танец</th><th>Программа</th><th class="number">Итоговое место</th><th class="number">Протоколов</th></tr></thead>
               <tbody>
                 <tr>
                   <td><strong>W</strong></td>
                   <td>стандарт</td>
-                  <td class="number">6.000</td>
+                  <td class="number">6</td>
                   <td class="number">1 протокол</td>
                 </tr>
                 <tr>
                   <td><strong>T</strong></td>
                   <td>стандарт</td>
-                  <td class="number">4.000</td>
+                  <td class="number">4</td>
                   <td class="number">1 протокол</td>
                 </tr>
                 <tr>
                   <td><strong>Q</strong></td>
                   <td>стандарт</td>
-                  <td class="number">5.000</td>
+                  <td class="number">5</td>
                   <td class="number">1 протокол</td>
                 </tr>
                 <tr>
                   <td><strong>Ch</strong></td>
                   <td>латина</td>
-                  <td class="number">7.000</td>
+                  <td class="number">7</td>
                   <td class="number">1 протокол</td>
                 </tr>
                 <tr>
                   <td><strong>R</strong></td>
                   <td>латина</td>
-                  <td class="number">4.000</td>
+                  <td class="number">4</td>
                   <td class="number">1 протокол</td>
                 </tr>
                 <tr>
                   <td><strong>J</strong></td>
                   <td>латина</td>
-                  <td class="number">5.000</td>
+                  <td class="number">5</td>
                   <td class="number">1 протокол</td>
                 </tr>
               </tbody>
@@ -2481,14 +2464,10 @@
                 <div class="summary-meta">Ювеналы-1+2 E+D Соло Ж La; Ювеналы-1+2 E+D Соло Ж St; Ювеналы-2 N+E Соло Ж La; Ювеналы-2 N+E Соло Ж St</div>
                 <div class="summary-meta">латина, стандарт</div>
               </div>
-              <div>
-                <div class="label">Итоговый результат</div>
-                <div class="summary-title">4 протокола</div>
-              </div>
             </div>
           </summary>
           <div class="tournament-detail-grid">
-              <div class="insight-card">
+              <div class="insight-card tournament-program-summary">
                 <h3>Стандарт</h3>
                 <p class="muted">
                   Общий итог:
@@ -2497,36 +2476,36 @@
                     <p><strong>Лучший танец:</strong> Q <span class="muted">— выше всего оценивался судьями · 16 крестов</span></p>
                     <p><strong>Требует внимания:</strong> F <span class="muted">— ниже всего оценивался судьями · 3 крестов</span></p>
               </div>
-              <div class="insight-card">
+              <div class="insight-card tournament-program-summary">
                 <h3>Латина</h3>
                 <p class="muted">
                   Общий итог:
-                    среднее место 5.000 · S, Ch, R, J
+                    среднее место 5 · S, Ch, R, J
                 </p>
-                    <p><strong>Лучший танец:</strong> Ch <span class="muted">место 4.000</span></p>
-                    <p><strong>Требует внимания:</strong> J <span class="muted">место 6.000</span></p>
+                    <p><strong>Лучший танец:</strong> Ch <span class="muted">место 4</span></p>
+                    <p><strong>Требует внимания:</strong> J <span class="muted">место 6</span></p>
               </div>
           </div>
-          <div class="table-wrap">
+          <div class="table-wrap table-scroll">
             <table>
               <thead><tr><th>Танец</th><th>Программа</th><th class="number">Итоговое место</th><th class="number">Протоколов</th></tr></thead>
               <tbody>
                 <tr>
                   <td><strong>Ch</strong></td>
                   <td>латина</td>
-                  <td class="number">4.000</td>
+                  <td class="number">4</td>
                   <td class="number">1 протокол</td>
                 </tr>
                 <tr>
                   <td><strong>R</strong></td>
                   <td>латина</td>
-                  <td class="number">5.000</td>
+                  <td class="number">5</td>
                   <td class="number">1 протокол</td>
                 </tr>
                 <tr>
                   <td><strong>J</strong></td>
                   <td>латина</td>
-                  <td class="number">6.000</td>
+                  <td class="number">6</td>
                   <td class="number">1 протокол</td>
                 </tr>
               </tbody>
@@ -2549,14 +2528,10 @@
                 <div class="summary-meta">Ювеналы-2 E+D Соло Ж La; Ювеналы-2 E+D Соло Ж St; Ювеналы-2 N+E Соло Ж La; Ювеналы-2 N+E Соло Ж St</div>
                 <div class="summary-meta">латина, стандарт</div>
               </div>
-              <div>
-                <div class="label">Итоговый результат</div>
-                <div class="summary-title">4 протокола</div>
-              </div>
             </div>
           </summary>
           <div class="tournament-detail-grid">
-              <div class="insight-card">
+              <div class="insight-card tournament-program-summary">
                 <h3>Стандарт</h3>
                 <p class="muted">
                   Общий итог:
@@ -2565,36 +2540,36 @@
                     <p><strong>Лучший танец:</strong> W <span class="muted">— выше всего оценивался судьями · 13 крестов</span></p>
                     <p><strong>Требует внимания:</strong> F <span class="muted">— ниже всего оценивался судьями · 4 крестов</span></p>
               </div>
-              <div class="insight-card">
+              <div class="insight-card tournament-program-summary">
                 <h3>Латина</h3>
                 <p class="muted">
                   Общий итог:
                     среднее место 6.333 · S, Ch, R, J
                 </p>
-                    <p><strong>Лучший танец:</strong> J <span class="muted">место 5.000</span></p>
-                    <p><strong>Требуют внимания:</strong> Ch, R <span class="muted">место 7.000</span></p>
+                    <p><strong>Лучший танец:</strong> J <span class="muted">место 5</span></p>
+                    <p><strong>Требуют внимания:</strong> Ch, R <span class="muted">место 7</span></p>
               </div>
           </div>
-          <div class="table-wrap">
+          <div class="table-wrap table-scroll">
             <table>
               <thead><tr><th>Танец</th><th>Программа</th><th class="number">Итоговое место</th><th class="number">Протоколов</th></tr></thead>
               <tbody>
                 <tr>
                   <td><strong>Ch</strong></td>
                   <td>латина</td>
-                  <td class="number">7.000</td>
+                  <td class="number">7</td>
                   <td class="number">1 протокол</td>
                 </tr>
                 <tr>
                   <td><strong>R</strong></td>
                   <td>латина</td>
-                  <td class="number">7.000</td>
+                  <td class="number">7</td>
                   <td class="number">1 протокол</td>
                 </tr>
                 <tr>
                   <td><strong>J</strong></td>
                   <td>латина</td>
-                  <td class="number">5.000</td>
+                  <td class="number">5</td>
                   <td class="number">1 протокол</td>
                 </tr>
               </tbody>
@@ -2617,14 +2592,10 @@
                 <div class="summary-meta">Ювеналы-1+2 E+D Соло Ж La; Ювеналы-1+2 E+D Соло Ж St; Ювеналы-2 N+E Соло Ж La; Ювеналы-2 N+E Соло Ж St</div>
                 <div class="summary-meta">латина, стандарт</div>
               </div>
-              <div>
-                <div class="label">Итоговый результат</div>
-                <div class="summary-title">4 протокола</div>
-              </div>
             </div>
           </summary>
           <div class="tournament-detail-grid">
-              <div class="insight-card">
+              <div class="insight-card tournament-program-summary">
                 <h3>Стандарт</h3>
                 <p class="muted">
                   Общий итог:
@@ -2633,36 +2604,36 @@
                     <p><strong>Лучший танец:</strong> W <span class="muted">— выше всего оценивался судьями · 20 крестов</span></p>
                     <p><strong>Требует внимания:</strong> F <span class="muted">— ниже всего оценивался судьями · 5 крестов</span></p>
               </div>
-              <div class="insight-card">
+              <div class="insight-card tournament-program-summary">
                 <h3>Латина</h3>
                 <p class="muted">
                   Общий итог:
                     среднее место 2.667 · S, Ch, R, J
                 </p>
-                    <p><strong>Лучший танец:</strong> J <span class="muted">место 2.000</span></p>
-                    <p><strong>Требуют внимания:</strong> Ch, R <span class="muted">место 3.000</span></p>
+                    <p><strong>Лучший танец:</strong> J <span class="muted">место 2</span></p>
+                    <p><strong>Требуют внимания:</strong> Ch, R <span class="muted">место 3</span></p>
               </div>
           </div>
-          <div class="table-wrap">
+          <div class="table-wrap table-scroll">
             <table>
               <thead><tr><th>Танец</th><th>Программа</th><th class="number">Итоговое место</th><th class="number">Протоколов</th></tr></thead>
               <tbody>
                 <tr>
                   <td><strong>Ch</strong></td>
                   <td>латина</td>
-                  <td class="number">3.000</td>
+                  <td class="number">3</td>
                   <td class="number">1 протокол</td>
                 </tr>
                 <tr>
                   <td><strong>R</strong></td>
                   <td>латина</td>
-                  <td class="number">3.000</td>
+                  <td class="number">3</td>
                   <td class="number">1 протокол</td>
                 </tr>
                 <tr>
                   <td><strong>J</strong></td>
                   <td>латина</td>
-                  <td class="number">2.000</td>
+                  <td class="number">2</td>
                   <td class="number">1 протокол</td>
                 </tr>
               </tbody>
@@ -2685,94 +2656,90 @@
                 <div class="summary-meta">Ювеналы-2 E+D Соло Ж La; Ювеналы-2 E+D Соло Ж St; Ювеналы-2 N+E Соло Ж La; Ювеналы-2 N+E Соло Ж St</div>
                 <div class="summary-meta">латина, стандарт</div>
               </div>
-              <div>
-                <div class="label">Итоговый результат</div>
-                <div class="summary-title">4 протокола</div>
-              </div>
             </div>
           </summary>
           <div class="tournament-detail-grid">
-              <div class="insight-card">
+              <div class="insight-card tournament-program-summary">
                 <h3>Стандарт</h3>
                 <p class="muted">
                   Общий итог:
-                    среднее место 4.000 · W, T, F, Q
+                    среднее место 4 · W, T, F, Q
                 </p>
-                    <p><strong>Лучший танец:</strong> T <span class="muted">место 3.000</span></p>
-                    <p><strong>Требует внимания:</strong> Q <span class="muted">место 5.000</span></p>
+                    <p><strong>Лучший танец:</strong> T <span class="muted">место 3</span></p>
+                    <p><strong>Требует внимания:</strong> Q <span class="muted">место 5</span></p>
               </div>
-              <div class="insight-card">
+              <div class="insight-card tournament-program-summary">
                 <h3>Латина</h3>
                 <p class="muted">
                   Общий итог:
                     среднее место 3.857 · S, Ch, R, J
                 </p>
-                    <p><strong>Лучший танец:</strong> Ch <span class="muted">место 3.000</span></p>
-                    <p><strong>Требует внимания:</strong> S <span class="muted">место 6.000</span></p>
+                    <p><strong>Лучший танец:</strong> Ch <span class="muted">место 3</span></p>
+                    <p><strong>Требует внимания:</strong> S <span class="muted">место 6</span></p>
               </div>
           </div>
-          <div class="table-wrap">
+          <div class="table-wrap table-scroll">
             <table>
               <thead><tr><th>Танец</th><th>Программа</th><th class="number">Итоговое место</th><th class="number">Протоколов</th></tr></thead>
               <tbody>
                 <tr>
                   <td><strong>W</strong></td>
                   <td>стандарт</td>
-                  <td class="number">4.000</td>
+                  <td class="number">4</td>
                   <td class="number">1 протокол</td>
                 </tr>
                 <tr>
                   <td><strong>T</strong></td>
                   <td>стандарт</td>
-                  <td class="number">3.000</td>
+                  <td class="number">3</td>
                   <td class="number">1 протокол</td>
                 </tr>
                 <tr>
                   <td><strong>Q</strong></td>
                   <td>стандарт</td>
-                  <td class="number">5.000</td>
+                  <td class="number">5</td>
                   <td class="number">1 протокол</td>
                 </tr>
                 <tr>
                   <td><strong>Ch</strong></td>
                   <td>латина</td>
-                  <td class="number">1.000</td>
+                  <td class="number">1</td>
                   <td class="number">1 протокол</td>
                 </tr>
                 <tr>
                   <td><strong>R</strong></td>
                   <td>латина</td>
-                  <td class="number">3.000</td>
+                  <td class="number">3</td>
                   <td class="number">1 протокол</td>
                 </tr>
                 <tr>
                   <td><strong>J</strong></td>
                   <td>латина</td>
-                  <td class="number">2.000</td>
+                  <td class="number">2</td>
                   <td class="number">1 протокол</td>
                 </tr>
                 <tr>
                   <td><strong>S</strong></td>
                   <td>латина</td>
-                  <td class="number">6.000</td>
+                  <td class="number">6</td>
                   <td class="number">1 протокол</td>
                 </tr>
                 <tr>
                   <td><strong>Ch</strong></td>
                   <td>латина</td>
-                  <td class="number">5.000</td>
+                  <td class="number">5</td>
                   <td class="number">1 протокол</td>
                 </tr>
                 <tr>
                   <td><strong>R</strong></td>
                   <td>латина</td>
-                  <td class="number">5.000</td>
+                  <td class="number">5</td>
                   <td class="number">1 протокол</td>
                 </tr>
                 <tr>
                   <td><strong>J</strong></td>
                   <td>латина</td>
-                  <td class="number">5.000</td>
+                  <td class="number">5</td>
                   <td class="number">1 протокол</td>
                 </tr>
               </tbody>
@@ -2795,14 +2762,10 @@
                 <div class="summary-meta">Ювеналы-2 E+D Соло Ж La; Ювеналы-2 E+D Соло Ж St; Ювеналы-2 N+E Соло Ж La; Ювеналы-2 N+E Соло Ж St</div>
                 <div class="summary-meta">латина, стандарт</div>
               </div>
-              <div>
-                <div class="label">Итоговый результат</div>
-                <div class="summary-title">4 протокола</div>
-              </div>
             </div>
           </summary>
           <div class="tournament-detail-grid">
-              <div class="insight-card">
+              <div class="insight-card tournament-program-summary">
                 <h3>Стандарт</h3>
                 <p class="muted">
                   Общий итог:
@@ -2811,60 +2774,60 @@
                     <p><strong>Лучший танец:</strong> T <span class="muted">— выше всего оценивался судьями · 21 крестов</span></p>
                     <p><strong>Требует внимания:</strong> F <span class="muted">— ниже всего оценивался судьями · 10 крестов</span></p>
               </div>
-              <div class="insight-card">
+              <div class="insight-card tournament-program-summary">
                 <h3>Латина</h3>
                 <p class="muted">
                   Общий итог:
                     среднее место 6.143 · S, Ch, R, J
                 </p>
-                    <p><strong>Лучший танец:</strong> J <span class="muted">место 5.500</span></p>
-                    <p><strong>Требует внимания:</strong> S <span class="muted">место 7.000</span></p>
+                    <p><strong>Лучший танец:</strong> J <span class="muted">место 5.5</span></p>
+                    <p><strong>Требует внимания:</strong> S <span class="muted">место 7</span></p>
               </div>
           </div>
-          <div class="table-wrap">
+          <div class="table-wrap table-scroll">
             <table>
               <thead><tr><th>Танец</th><th>Программа</th><th class="number">Итоговое место</th><th class="number">Протоколов</th></tr></thead>
               <tbody>
                 <tr>
                   <td><strong>Ch</strong></td>
                   <td>латина</td>
-                  <td class="number">5.000</td>
+                  <td class="number">5</td>
                   <td class="number">1 протокол</td>
                 </tr>
                 <tr>
                   <td><strong>R</strong></td>
                   <td>латина</td>
-                  <td class="number">5.000</td>
+                  <td class="number">5</td>
                   <td class="number">1 протокол</td>
                 </tr>
                 <tr>
                   <td><strong>J</strong></td>
                   <td>латина</td>
-                  <td class="number">3.000</td>
+                  <td class="number">3</td>
                   <td class="number">1 протокол</td>
                 </tr>
                 <tr>
                   <td><strong>S</strong></td>
                   <td>латина</td>
-                  <td class="number">7.000</td>
+                  <td class="number">7</td>
                   <td class="number">1 протокол</td>
                 </tr>
                 <tr>
                   <td><strong>Ch</strong></td>
                   <td>латина</td>
-                  <td class="number">7.000</td>
+                  <td class="number">7</td>
                   <td class="number">1 протокол</td>
                 </tr>
                 <tr>
                   <td><strong>R</strong></td>
                   <td>латина</td>
-                  <td class="number">8.000</td>
+                  <td class="number">8</td>
                   <td class="number">1 протокол</td>
                 </tr>
                 <tr>
                   <td><strong>J</strong></td>
                   <td>латина</td>
-                  <td class="number">8.000</td>
+                  <td class="number">8</td>
                   <td class="number">1 протокол</td>
                 </tr>
               </tbody>
@@ -2887,70 +2850,66 @@
                 <div class="summary-meta">Ювеналы-2 E+D Соло Ж La; Ювеналы-2 E+D Соло Ж St; Ювеналы-2 N+E Соло Ж La; Ювеналы-2 N+E Соло Ж St</div>
                 <div class="summary-meta">латина, стандарт</div>
               </div>
-              <div>
-                <div class="label">Итоговый результат</div>
-                <div class="summary-title">4 протокола</div>
-              </div>
             </div>
           </summary>
           <div class="tournament-detail-grid">
-              <div class="insight-card">
+              <div class="insight-card tournament-program-summary">
                 <h3>Стандарт</h3>
                 <p class="muted">
                   Общий итог:
                     среднее место 3.333 · W, T, F, Q
                 </p>
-                    <p><strong>Лучший танец:</strong> T <span class="muted">место 2.000</span></p>
-                    <p><strong>Требуют внимания:</strong> W, Q <span class="muted">место 4.000</span></p>
+                    <p><strong>Лучший танец:</strong> T <span class="muted">место 2</span></p>
+                    <p><strong>Требуют внимания:</strong> W, Q <span class="muted">место 4</span></p>
               </div>
-              <div class="insight-card">
+              <div class="insight-card tournament-program-summary">
                 <h3>Латина</h3>
                 <p class="muted">
                   Общий итог:
                     среднее место 4.667 · S, Ch, R, J
                 </p>
-                    <p><strong>Лучший танец:</strong> R <span class="muted">место 4.000</span></p>
-                    <p><strong>Требуют внимания:</strong> Ch, J <span class="muted">место 5.000</span></p>
+                    <p><strong>Лучший танец:</strong> R <span class="muted">место 4</span></p>
+                    <p><strong>Требуют внимания:</strong> Ch, J <span class="muted">место 5</span></p>
               </div>
           </div>
-          <div class="table-wrap">
+          <div class="table-wrap table-scroll">
             <table>
               <thead><tr><th>Танец</th><th>Программа</th><th class="number">Итоговое место</th><th class="number">Протоколов</th></tr></thead>
               <tbody>
                 <tr>
                   <td><strong>W</strong></td>
                   <td>стандарт</td>
-                  <td class="number">4.000</td>
+                  <td class="number">4</td>
                   <td class="number">1 протокол</td>
                 </tr>
                 <tr>
                   <td><strong>T</strong></td>
                   <td>стандарт</td>
-                  <td class="number">2.000</td>
+                  <td class="number">2</td>
                   <td class="number">1 протокол</td>
                 </tr>
                 <tr>
                   <td><strong>Q</strong></td>
                   <td>стандарт</td>
-                  <td class="number">4.000</td>
+                  <td class="number">4</td>
                   <td class="number">1 протокол</td>
                 </tr>
                 <tr>
                   <td><strong>Ch</strong></td>
                   <td>латина</td>
-                  <td class="number">5.000</td>
+                  <td class="number">5</td>
                   <td class="number">1 протокол</td>
                 </tr>
                 <tr>
                   <td><strong>R</strong></td>
                   <td>латина</td>
-                  <td class="number">4.000</td>
+                  <td class="number">4</td>
                   <td class="number">1 протокол</td>
                 </tr>
                 <tr>
                   <td><strong>J</strong></td>
                   <td>латина</td>
-                  <td class="number">5.000</td>
+                  <td class="number">5</td>
                   <td class="number">1 протокол</td>
                 </tr>
               </tbody>

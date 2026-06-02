@@ -227,13 +227,6 @@
       gap: 10px;
     }
 
-    .date-filter-grid label {
-      display: grid;
-      gap: 5px;
-      color: var(--muted);
-      font-size: 12px;
-    }
-
     .date-filter-grid input {
       width: 100%;
       border: 1px solid var(--line);
@@ -607,14 +600,19 @@
       margin-bottom: 12px;
     }
 
-    .table-wrap {
+    .table-wrap,
+    .table-scroll {
+      max-width: 100%;
       overflow-x: auto;
+      overflow-y: hidden;
+      -webkit-overflow-scrolling: touch;
       border: 1px solid var(--line);
       border-radius: 12px;
       margin-top: 10px;
     }
 
-    .tournament-list .table-wrap {
+    .tournament-list .table-wrap,
+    .tournament-list .table-scroll {
       border: 0;
       border-radius: 0;
       margin-top: 16px;
@@ -625,6 +623,14 @@
       border-collapse: collapse;
       background: var(--paper);
       font-size: 12.5px;
+    }
+
+    .table-scroll table {
+      min-width: 560px;
+    }
+
+    .tournament-list .table-scroll table {
+      min-width: 640px;
     }
 
     th, td {
@@ -675,7 +681,7 @@
 
     .tournament-summary {
       display: grid;
-      grid-template-columns: minmax(92px, .35fr) minmax(180px, 1fr) minmax(180px, 1fr) minmax(120px, .45fr);
+      grid-template-columns: minmax(92px, .35fr) minmax(180px, 1.1fr) minmax(180px, 1fr);
       gap: 12px;
       align-items: start;
       color: var(--ink);
@@ -698,6 +704,10 @@
       gap: 12px;
       margin: 18px 0 14px;
       padding-top: 4px;
+    }
+
+    .tournament-program-summary {
+      min-width: 0;
     }
 
     .tournament-detail-grid .insight-card {
@@ -758,6 +768,24 @@
       .tabs { position: static; }
       .filter-grid,
       .date-filter-grid { grid-template-columns: 1fr; }
+      .table-scroll {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+      }
+      .tournament-detail-grid .insight-card {
+        padding: 0;
+      }
+      .tournament-detail-grid .insight-card + .insight-card {
+        padding-left: 0;
+        border-left: 0;
+        padding-top: 14px;
+        border-top: 1px solid rgba(233, 229, 244, .72);
+      }
+      .rank-list li,
+      .plain-list li {
+        align-items: flex-start;
+      }
     }
 
     @media print {
@@ -776,7 +804,8 @@
       h2, summary { font-size: 17px; }
       table { font-size: 10px; }
       th, td { padding: 5px 6px; }
-      .table-wrap { overflow: visible; }
+      .table-wrap,
+      .table-scroll { overflow: visible; }
     }
   </style>
 </head>
@@ -822,14 +851,8 @@
       <div>
         <div class="filter-title">Период</div>
         <div class="date-filter-grid">
-          <label>
-            Дата начала
-            <input id="report-filter-date-from" type="date" value="2025-09-28">
-          </label>
-          <label>
-            Дата окончания
-            <input id="report-filter-date-to" type="date" value="2026-01-18">
-          </label>
+          <input id="report-filter-date-from" type="date" value="2025-09-28" aria-label="Дата начала периода">
+          <input id="report-filter-date-to" type="date" value="2026-01-18" aria-label="Дата окончания периода">
         </div>
       </div>
     </div>
@@ -1042,7 +1065,7 @@
             <div class="insight-card">
               <h3>Лучший танец</h3>
               <ul class="plain-list">
-                  <li><strong>Медленный вальс</strong><span class="muted">3.500</span></li>
+                  <li><strong>Медленный вальс</strong><span class="muted">3.5</span></li>
               </ul>
             </div>
             <div class="insight-card">
@@ -1067,14 +1090,14 @@
 
           <h3 class="dance-table-heading">Танцы</h3>
           <p class="section-kicker">Стабильность показывает, насколько сильно меняется итоговое место танца от турнира к турниру. Чем меньше колебания, тем выше стабильность.</p>
-          <div class="table-wrap">
+          <div class="table-wrap table-scroll">
             <table>
               <thead><tr><th>Танец</th><th class="number">Среднее место</th><th class="number">Лучшее место</th><th>Стабильность</th></tr></thead>
               <tbody>
                 <tr>
                   <td><strong>Фокстрот</strong></td>
-                  <td class="number">3.750</td>
-                  <td class="number">1.000</td>
+                  <td class="number">3.75</td>
+                  <td class="number">1</td>
                   <td>
                     <div class="progress-label">Средняя</div>
                     <div class="progress-track"><div class="progress-fill" style="--stability-width: 59%;"></div></div>
@@ -1082,8 +1105,8 @@
                 </tr>
                 <tr>
                   <td><strong>Квикстеп</strong></td>
-                  <td class="number">4.500</td>
-                  <td class="number">1.000</td>
+                  <td class="number">4.5</td>
+                  <td class="number">1</td>
                   <td>
                     <div class="progress-label">Очень низкая</div>
                     <div class="progress-track"><div class="progress-fill" style="--stability-width: 25%;"></div></div>
@@ -1091,8 +1114,8 @@
                 </tr>
                 <tr>
                   <td><strong>Танго</strong></td>
-                  <td class="number">3.750</td>
-                  <td class="number">1.000</td>
+                  <td class="number">3.75</td>
+                  <td class="number">1</td>
                   <td>
                     <div class="progress-label">Высокая</div>
                     <div class="progress-track"><div class="progress-fill" style="--stability-width: 78%;"></div></div>
@@ -1100,8 +1123,8 @@
                 </tr>
                 <tr>
                   <td><strong>Венский вальс</strong></td>
-                  <td class="number">3.750</td>
-                  <td class="number">1.000</td>
+                  <td class="number">3.75</td>
+                  <td class="number">1</td>
                   <td>
                     <div class="progress-label">Средняя</div>
                     <div class="progress-track"><div class="progress-fill" style="--stability-width: 59%;"></div></div>
@@ -1109,8 +1132,8 @@
                 </tr>
                 <tr>
                   <td><strong>Медленный вальс</strong></td>
-                  <td class="number">3.500</td>
-                  <td class="number">1.000</td>
+                  <td class="number">3.5</td>
+                  <td class="number">1</td>
                   <td>
                     <div class="progress-label">Очень высокая</div>
                     <div class="progress-track"><div class="progress-fill" style="--stability-width: 95%;"></div></div>
@@ -1128,7 +1151,7 @@
             <div class="insight-card">
               <h3>Лучший танец</h3>
               <ul class="plain-list">
-                  <li><strong>Медленный вальс</strong><span class="muted">2.500</span></li>
+                  <li><strong>Медленный вальс</strong><span class="muted">2.5</span></li>
               </ul>
             </div>
             <div class="insight-card">
@@ -1153,14 +1176,14 @@
 
           <h3 class="dance-table-heading">Танцы</h3>
           <p class="section-kicker">Стабильность показывает, насколько сильно меняется итоговое место танца от турнира к турниру. Чем меньше колебания, тем выше стабильность.</p>
-          <div class="table-wrap">
+          <div class="table-wrap table-scroll">
             <table>
               <thead><tr><th>Танец</th><th class="number">Среднее место</th><th class="number">Лучшее место</th><th>Стабильность</th></tr></thead>
               <tbody>
                 <tr>
                   <td><strong>Фокстрот</strong></td>
-                  <td class="number">3.500</td>
-                  <td class="number">1.000</td>
+                  <td class="number">3.5</td>
+                  <td class="number">1</td>
                   <td>
                     <div class="progress-label">Очень низкая</div>
                     <div class="progress-track"><div class="progress-fill" style="--stability-width: 25%;"></div></div>
@@ -1168,8 +1191,8 @@
                 </tr>
                 <tr>
                   <td><strong>Квикстеп</strong></td>
-                  <td class="number">3.500</td>
-                  <td class="number">1.000</td>
+                  <td class="number">3.5</td>
+                  <td class="number">1</td>
                   <td>
                     <div class="progress-label">Очень низкая</div>
                     <div class="progress-track"><div class="progress-fill" style="--stability-width: 25%;"></div></div>
@@ -1177,8 +1200,8 @@
                 </tr>
                 <tr>
                   <td><strong>Танго</strong></td>
-                  <td class="number">3.000</td>
-                  <td class="number">1.000</td>
+                  <td class="number">3</td>
+                  <td class="number">1</td>
                   <td>
                     <div class="progress-label">Средняя</div>
                     <div class="progress-track"><div class="progress-fill" style="--stability-width: 60%;"></div></div>
@@ -1186,8 +1209,8 @@
                 </tr>
                 <tr>
                   <td><strong>Венский вальс</strong></td>
-                  <td class="number">3.500</td>
-                  <td class="number">1.000</td>
+                  <td class="number">3.5</td>
+                  <td class="number">1</td>
                   <td>
                     <div class="progress-label">Очень низкая</div>
                     <div class="progress-track"><div class="progress-fill" style="--stability-width: 25%;"></div></div>
@@ -1195,8 +1218,8 @@
                 </tr>
                 <tr>
                   <td><strong>Медленный вальс</strong></td>
-                  <td class="number">2.500</td>
-                  <td class="number">1.000</td>
+                  <td class="number">2.5</td>
+                  <td class="number">1</td>
                   <td>
                     <div class="progress-label">Очень высокая</div>
                     <div class="progress-track"><div class="progress-fill" style="--stability-width: 95%;"></div></div>
@@ -1214,8 +1237,8 @@
             <div class="insight-card">
               <h3>Лучшие танцы</h3>
               <ul class="plain-list">
-                  <li><strong>Венский вальс</strong><span class="muted">4.000</span></li>
-                  <li><strong>Фокстрот</strong><span class="muted">4.000</span></li>
+                  <li><strong>Венский вальс</strong><span class="muted">4</span></li>
+                  <li><strong>Фокстрот</strong><span class="muted">4</span></li>
               </ul>
             </div>
             <div class="insight-card">
@@ -1240,14 +1263,14 @@
 
           <h3 class="dance-table-heading">Танцы</h3>
           <p class="section-kicker">Стабильность показывает, насколько сильно меняется итоговое место танца от турнира к турниру. Чем меньше колебания, тем выше стабильность.</p>
-          <div class="table-wrap">
+          <div class="table-wrap table-scroll">
             <table>
               <thead><tr><th>Танец</th><th class="number">Среднее место</th><th class="number">Лучшее место</th><th>Стабильность</th></tr></thead>
               <tbody>
                 <tr>
                   <td><strong>Фокстрот</strong></td>
-                  <td class="number">4.000</td>
-                  <td class="number">4.000</td>
+                  <td class="number">4</td>
+                  <td class="number">4</td>
                   <td>
                     <div class="progress-label">Очень высокая</div>
                     <div class="progress-track"><div class="progress-fill" style="--stability-width: 95%;"></div></div>
@@ -1255,8 +1278,8 @@
                 </tr>
                 <tr>
                   <td><strong>Квикстеп</strong></td>
-                  <td class="number">5.500</td>
-                  <td class="number">5.000</td>
+                  <td class="number">5.5</td>
+                  <td class="number">5</td>
                   <td>
                     <div class="progress-label">Очень низкая</div>
                     <div class="progress-track"><div class="progress-fill" style="--stability-width: 25%;"></div></div>
@@ -1264,8 +1287,8 @@
                 </tr>
                 <tr>
                   <td><strong>Танго</strong></td>
-                  <td class="number">4.500</td>
-                  <td class="number">4.000</td>
+                  <td class="number">4.5</td>
+                  <td class="number">4</td>
                   <td>
                     <div class="progress-label">Очень низкая</div>
                     <div class="progress-track"><div class="progress-fill" style="--stability-width: 25%;"></div></div>
@@ -1273,8 +1296,8 @@
                 </tr>
                 <tr>
                   <td><strong>Венский вальс</strong></td>
-                  <td class="number">4.000</td>
-                  <td class="number">4.000</td>
+                  <td class="number">4</td>
+                  <td class="number">4</td>
                   <td>
                     <div class="progress-label">Очень высокая</div>
                     <div class="progress-track"><div class="progress-fill" style="--stability-width: 95%;"></div></div>
@@ -1282,8 +1305,8 @@
                 </tr>
                 <tr>
                   <td><strong>Медленный вальс</strong></td>
-                  <td class="number">4.500</td>
-                  <td class="number">4.000</td>
+                  <td class="number">4.5</td>
+                  <td class="number">4</td>
                   <td>
                     <div class="progress-label">Очень низкая</div>
                     <div class="progress-track"><div class="progress-fill" style="--stability-width: 25%;"></div></div>
@@ -1347,14 +1370,14 @@
 
           <h3 class="dance-table-heading">Танцы</h3>
           <p class="section-kicker">Стабильность показывает, насколько сильно меняется итоговое место танца от турнира к турниру. Чем меньше колебания, тем выше стабильность.</p>
-          <div class="table-wrap">
+          <div class="table-wrap table-scroll">
             <table>
               <thead><tr><th>Танец</th><th class="number">Среднее место</th><th class="number">Лучшее место</th><th>Стабильность</th></tr></thead>
               <tbody>
                 <tr>
                   <td><strong>Ча-ча-ча</strong></td>
                   <td class="number">2.667</td>
-                  <td class="number">1.000</td>
+                  <td class="number">1</td>
                   <td>
                     <div class="progress-label">Низкая</div>
                     <div class="progress-track"><div class="progress-fill" style="--stability-width: 34%;"></div></div>
@@ -1362,8 +1385,8 @@
                 </tr>
                 <tr>
                   <td><strong>Джайв</strong></td>
-                  <td class="number">4.500</td>
-                  <td class="number">2.000</td>
+                  <td class="number">4.5</td>
+                  <td class="number">2</td>
                   <td>
                     <div class="progress-label">Средняя</div>
                     <div class="progress-track"><div class="progress-fill" style="--stability-width: 57%;"></div></div>
@@ -1371,8 +1394,8 @@
                 </tr>
                 <tr>
                   <td><strong>Пасодобль</strong></td>
-                  <td class="number">4.250</td>
-                  <td class="number">1.000</td>
+                  <td class="number">4.25</td>
+                  <td class="number">1</td>
                   <td>
                     <div class="progress-label">Очень низкая</div>
                     <div class="progress-track"><div class="progress-fill" style="--stability-width: 25%;"></div></div>
@@ -1381,7 +1404,7 @@
                 <tr>
                   <td><strong>Румба</strong></td>
                   <td class="number">3.333</td>
-                  <td class="number">2.000</td>
+                  <td class="number">2</td>
                   <td>
                     <div class="progress-label">Очень высокая</div>
                     <div class="progress-track"><div class="progress-fill" style="--stability-width: 95%;"></div></div>
@@ -1389,8 +1412,8 @@
                 </tr>
                 <tr>
                   <td><strong>Самба</strong></td>
-                  <td class="number">4.750</td>
-                  <td class="number">2.000</td>
+                  <td class="number">4.75</td>
+                  <td class="number">2</td>
                   <td>
                     <div class="progress-label">Низкая</div>
                     <div class="progress-track"><div class="progress-fill" style="--stability-width: 46%;"></div></div>
@@ -1408,8 +1431,8 @@
             <div class="insight-card">
               <h3>Лучшие танцы</h3>
               <ul class="plain-list">
-                  <li><strong>Ча-ча-ча</strong><span class="muted">3.000</span></li>
-                  <li><strong>Румба</strong><span class="muted">3.000</span></li>
+                  <li><strong>Ча-ча-ча</strong><span class="muted">3</span></li>
+                  <li><strong>Румба</strong><span class="muted">3</span></li>
               </ul>
             </div>
             <div class="insight-card">
@@ -1434,14 +1457,14 @@
 
           <h3 class="dance-table-heading">Танцы</h3>
           <p class="section-kicker">Стабильность показывает, насколько сильно меняется итоговое место танца от турнира к турниру. Чем меньше колебания, тем выше стабильность.</p>
-          <div class="table-wrap">
+          <div class="table-wrap table-scroll">
             <table>
               <thead><tr><th>Танец</th><th class="number">Среднее место</th><th class="number">Лучшее место</th><th>Стабильность</th></tr></thead>
               <tbody>
                 <tr>
                   <td><strong>Ча-ча-ча</strong></td>
-                  <td class="number">3.000</td>
-                  <td class="number">1.000</td>
+                  <td class="number">3</td>
+                  <td class="number">1</td>
                   <td>
                     <div class="progress-label">Средняя</div>
                     <div class="progress-track"><div class="progress-fill" style="--stability-width: 48%;"></div></div>
@@ -1449,8 +1472,8 @@
                 </tr>
                 <tr>
                   <td><strong>Джайв</strong></td>
-                  <td class="number">4.000</td>
-                  <td class="number">2.000</td>
+                  <td class="number">4</td>
+                  <td class="number">2</td>
                   <td>
                     <div class="progress-label">Средняя</div>
                     <div class="progress-track"><div class="progress-fill" style="--stability-width: 48%;"></div></div>
@@ -1458,8 +1481,8 @@
                 </tr>
                 <tr>
                   <td><strong>Пасодобль</strong></td>
-                  <td class="number">3.500</td>
-                  <td class="number">1.000</td>
+                  <td class="number">3.5</td>
+                  <td class="number">1</td>
                   <td>
                     <div class="progress-label">Очень низкая</div>
                     <div class="progress-track"><div class="progress-fill" style="--stability-width: 25%;"></div></div>
@@ -1467,8 +1490,8 @@
                 </tr>
                 <tr>
                   <td><strong>Румба</strong></td>
-                  <td class="number">3.000</td>
-                  <td class="number">2.000</td>
+                  <td class="number">3</td>
+                  <td class="number">2</td>
                   <td>
                     <div class="progress-label">Очень высокая</div>
                     <div class="progress-track"><div class="progress-fill" style="--stability-width: 95%;"></div></div>
@@ -1476,8 +1499,8 @@
                 </tr>
                 <tr>
                   <td><strong>Самба</strong></td>
-                  <td class="number">4.000</td>
-                  <td class="number">2.000</td>
+                  <td class="number">4</td>
+                  <td class="number">2</td>
                   <td>
                     <div class="progress-label">Средняя</div>
                     <div class="progress-track"><div class="progress-fill" style="--stability-width: 48%;"></div></div>
@@ -1495,7 +1518,7 @@
             <div class="insight-card">
               <h3>Лучший танец</h3>
               <ul class="plain-list">
-                  <li><strong>Ча-ча-ча</strong><span class="muted">2.000</span></li>
+                  <li><strong>Ча-ча-ча</strong><span class="muted">2</span></li>
               </ul>
             </div>
             <div class="insight-card">
@@ -1520,14 +1543,14 @@
 
           <h3 class="dance-table-heading">Танцы</h3>
           <p class="section-kicker">Стабильность показывает, насколько сильно меняется итоговое место танца от турнира к турниру. Чем меньше колебания, тем выше стабильность.</p>
-          <div class="table-wrap">
+          <div class="table-wrap table-scroll">
             <table>
               <thead><tr><th>Танец</th><th class="number">Среднее место</th><th class="number">Лучшее место</th><th>Стабильность</th></tr></thead>
               <tbody>
                 <tr>
                   <td><strong>Ча-ча-ча</strong></td>
-                  <td class="number">2.000</td>
-                  <td class="number">2.000</td>
+                  <td class="number">2</td>
+                  <td class="number">2</td>
                   <td>
                     <div class="progress-label">Средняя</div>
                     <div class="progress-track"><div class="progress-fill" style="--stability-width: 50%;"></div></div>
@@ -1535,8 +1558,8 @@
                 </tr>
                 <tr>
                   <td><strong>Джайв</strong></td>
-                  <td class="number">5.000</td>
-                  <td class="number">5.000</td>
+                  <td class="number">5</td>
+                  <td class="number">5</td>
                   <td>
                     <div class="progress-label">Очень высокая</div>
                     <div class="progress-track"><div class="progress-fill" style="--stability-width: 95%;"></div></div>
@@ -1544,8 +1567,8 @@
                 </tr>
                 <tr>
                   <td><strong>Пасодобль</strong></td>
-                  <td class="number">5.000</td>
-                  <td class="number">5.000</td>
+                  <td class="number">5</td>
+                  <td class="number">5</td>
                   <td>
                     <div class="progress-label">Очень высокая</div>
                     <div class="progress-track"><div class="progress-fill" style="--stability-width: 95%;"></div></div>
@@ -1553,8 +1576,8 @@
                 </tr>
                 <tr>
                   <td><strong>Румба</strong></td>
-                  <td class="number">4.000</td>
-                  <td class="number">4.000</td>
+                  <td class="number">4</td>
+                  <td class="number">4</td>
                   <td>
                     <div class="progress-label">Средняя</div>
                     <div class="progress-track"><div class="progress-fill" style="--stability-width: 50%;"></div></div>
@@ -1562,8 +1585,8 @@
                 </tr>
                 <tr>
                   <td><strong>Самба</strong></td>
-                  <td class="number">5.500</td>
-                  <td class="number">5.000</td>
+                  <td class="number">5.5</td>
+                  <td class="number">5</td>
                   <td>
                     <div class="progress-label">Очень низкая</div>
                     <div class="progress-track"><div class="progress-fill" style="--stability-width: 25%;"></div></div>
@@ -1585,19 +1608,19 @@
         <div class="two-column">
           <div>
             <h3>Более строгие судьи</h3>
-            <div class="table-wrap">
+            <div class="table-wrap table-scroll">
               <table>
                 <thead><tr><th>Судья</th><th>Интерпретация</th><th class="number">Оценок</th></tr></thead>
                 <tbody>
-                  <tr><td>Чубарова Влада</td><td><div class="interpretation">Значительно строже среднего</div><div class="tiny">отклонение от панели: 2.200</div></td><td class="number">10 оценок</td></tr>
+                  <tr><td>Чубарова Влада</td><td><div class="interpretation">Значительно строже среднего</div><div class="tiny">отклонение от панели: 2.2</div></td><td class="number">10 оценок</td></tr>
                   <tr><td>Огаркова Оксана</td><td><div class="interpretation">Значительно строже среднего</div><div class="tiny">отклонение от панели: 1.154</div></td><td class="number">18 оценок</td></tr>
                   <tr><td>Миронова Любовь</td><td><div class="interpretation">Значительно строже среднего</div><div class="tiny">отклонение от панели: 1.116</div></td><td class="number">10 оценок</td></tr>
                   <tr><td>Авенирова Алина</td><td><div class="interpretation">Значительно строже среднего</div><div class="tiny">отклонение от панели: 1.095</div></td><td class="number">13 оценок</td></tr>
                   <tr><td>Агеева Наталья</td><td><div class="interpretation">Строже среднего</div><div class="tiny">отклонение от панели: 0.821</div></td><td class="number">18 оценок</td></tr>
-                  <tr><td>Бондаренко Елизавета</td><td><div class="interpretation">Строже среднего</div><div class="tiny">отклонение от панели: 0.600</div></td><td class="number">10 оценок</td></tr>
+                  <tr><td>Бондаренко Елизавета</td><td><div class="interpretation">Строже среднего</div><div class="tiny">отклонение от панели: 0.6</div></td><td class="number">10 оценок</td></tr>
                   <tr><td>Жаворонкова Екатерина</td><td><div class="interpretation">Строже среднего</div><div class="tiny">отклонение от панели: 0.479</div></td><td class="number">13 оценок</td></tr>
                   <tr><td>Курило Иван</td><td><div class="interpretation">Строже среднего</div><div class="tiny">отклонение от панели: 0.457</div></td><td class="number">10 оценок</td></tr>
-                  <tr><td>Мажирин Герман</td><td><div class="interpretation">Близко к среднему</div><div class="tiny">отклонение от панели: 0.400</div></td><td class="number">10 оценок</td></tr>
+                  <tr><td>Мажирин Герман</td><td><div class="interpretation">Близко к среднему</div><div class="tiny">отклонение от панели: 0.4</div></td><td class="number">10 оценок</td></tr>
                   <tr><td>Ахрамеева Виктория</td><td><div class="interpretation">Близко к среднему</div><div class="tiny">отклонение от панели: 0.357</div></td><td class="number">10 оценок</td></tr>
                 </tbody>
               </table>
@@ -1605,19 +1628,19 @@
           </div>
           <div>
             <h3>Более мягкие судьи</h3>
-            <div class="table-wrap">
+            <div class="table-wrap table-scroll">
               <table>
                 <thead><tr><th>Судья</th><th>Интерпретация</th><th class="number">Оценок</th></tr></thead>
                 <tbody>
                   <tr><td>Шанкина Светлана</td><td><div class="interpretation">Значительно мягче среднего</div><div class="tiny">отклонение от панели: -1.243</div></td><td class="number">10 оценок</td></tr>
                   <tr><td>Степовой Сергей</td><td><div class="interpretation">Значительно мягче среднего</div><div class="tiny">отклонение от панели: -1.159</div></td><td class="number">15 оценок</td></tr>
                   <tr><td>Федоров Влад</td><td><div class="interpretation">Значительно мягче среднего</div><div class="tiny">отклонение от панели: -0.784</div></td><td class="number">10 оценок</td></tr>
-                  <tr><td>Порохина Мария</td><td><div class="interpretation">Мягче среднего</div><div class="tiny">отклонение от панели: -0.700</div></td><td class="number">10 оценок</td></tr>
-                  <tr><td>Тищенко Петр</td><td><div class="interpretation">Мягче среднего</div><div class="tiny">отклонение от панели: -0.700</div></td><td class="number">10 оценок</td></tr>
+                  <tr><td>Порохина Мария</td><td><div class="interpretation">Мягче среднего</div><div class="tiny">отклонение от панели: -0.7</div></td><td class="number">10 оценок</td></tr>
+                  <tr><td>Тищенко Петр</td><td><div class="interpretation">Мягче среднего</div><div class="tiny">отклонение от панели: -0.7</div></td><td class="number">10 оценок</td></tr>
                   <tr><td>Оскольских Татьяна</td><td><div class="interpretation">Мягче среднего</div><div class="tiny">отклонение от панели: -0.584</div></td><td class="number">10 оценок</td></tr>
                   <tr><td>Попова Алиса</td><td><div class="interpretation">Мягче среднего</div><div class="tiny">отклонение от панели: -0.443</div></td><td class="number">10 оценок</td></tr>
                   <tr><td>Кинареев Михаил</td><td><div class="interpretation">Мягче среднего</div><div class="tiny">отклонение от панели: -0.271</div></td><td class="number">20 оценок</td></tr>
-                  <tr><td>Дюков Юрий</td><td><div class="interpretation">Близко к среднему</div><div class="tiny">отклонение от панели: -0.200</div></td><td class="number">10 оценок</td></tr>
+                  <tr><td>Дюков Юрий</td><td><div class="interpretation">Близко к среднему</div><div class="tiny">отклонение от панели: -0.2</div></td><td class="number">10 оценок</td></tr>
                   <tr><td>Сокович Светлана</td><td><div class="interpretation">Близко к среднему</div><div class="tiny">отклонение от панели: -0.184</div></td><td class="number">10 оценок</td></tr>
                 </tbody>
               </table>
@@ -1633,14 +1656,14 @@
         <div class="insight-card">
           <h3>Лучшие турниры</h3>
           <ul class="plain-list">
-              <li class="filterable-tournament" data-city="Санкт-Петербург" data-date="2025-09-28"><span><strong>2025-09-28</strong> · Северный кубок 2025 (Санкт-Петербург)</span><span class="muted">2.800</span></li>
-              <li class="filterable-tournament" data-city="Санкт-Петербург" data-date="2025-11-09"><span><strong>2025-11-09</strong> · Кубок Лиги 2025 (Санкт-Петербург)</span><span class="muted">4.200</span></li>
+              <li class="filterable-tournament" data-city="Санкт-Петербург" data-date="2025-09-28"><span><strong>2025-09-28</strong> · Северный кубок 2025 (Санкт-Петербург)</span><span class="muted">2.8</span></li>
+              <li class="filterable-tournament" data-city="Санкт-Петербург" data-date="2025-11-09"><span><strong>2025-11-09</strong> · Кубок Лиги 2025 (Санкт-Петербург)</span><span class="muted">4.2</span></li>
           </ul>
         </div>
         <div class="insight-card">
           <h3>Наиболее сложные турниры</h3>
           <ul class="plain-list">
-              <li class="filterable-tournament" data-city="Санкт-Петербург" data-date="2026-01-18"><span><strong>2026-01-18</strong> · Lider Cup 2026 (Санкт-Петербург)</span><span class="muted">5.400</span></li>
+              <li class="filterable-tournament" data-city="Санкт-Петербург" data-date="2026-01-18"><span><strong>2026-01-18</strong> · Lider Cup 2026 (Санкт-Петербург)</span><span class="muted">5.4</span></li>
           </ul>
         </div>
       </div>
@@ -1662,142 +1685,138 @@
                 <div class="summary-meta">EADC Юниоры-1 RS Соло Ж La; EADC Юниоры-1 RS Соло Ж St; Юниоры-1+2 D+C Соло Ж La; Юниоры-1+2 D+C Соло Ж St</div>
                 <div class="summary-meta">латина, стандарт</div>
               </div>
-              <div>
-                <div class="label">Итоговый результат</div>
-                <div class="summary-title">4 протокола</div>
-              </div>
             </div>
           </summary>
           <div class="tournament-detail-grid">
-              <div class="insight-card">
+              <div class="insight-card tournament-program-summary">
                 <h3>Стандарт</h3>
                 <p class="muted">
                   Общий итог:
-                    среднее место 2.900 · W, T, V, F, Q
+                    среднее место 2.9 · W, T, V, F, Q
                 </p>
-                    <p><strong>Лучшие танцы:</strong> V, F <span class="muted">место 2.500</span></p>
-                    <p><strong>Требует внимания:</strong> Q <span class="muted">место 3.500</span></p>
+                    <p><strong>Лучшие танцы:</strong> V, F <span class="muted">место 2.5</span></p>
+                    <p><strong>Требует внимания:</strong> Q <span class="muted">место 3.5</span></p>
               </div>
-              <div class="insight-card">
+              <div class="insight-card tournament-program-summary">
                 <h3>Латина</h3>
                 <p class="muted">
                   Общий итог:
-                    среднее место 3.000 · S, Ch, R, P, J
+                    среднее место 3 · S, Ch, R, P, J
                 </p>
-                    <p><strong>Лучший танец:</strong> Ch <span class="muted">место 1.000</span></p>
-                    <p><strong>Требует внимания:</strong> S <span class="muted">место 4.000</span></p>
+                    <p><strong>Лучший танец:</strong> Ch <span class="muted">место 1</span></p>
+                    <p><strong>Требует внимания:</strong> S <span class="muted">место 4</span></p>
               </div>
           </div>
-          <div class="table-wrap">
+          <div class="table-wrap table-scroll">
             <table>
               <thead><tr><th>Танец</th><th>Программа</th><th class="number">Итоговое место</th><th class="number">Протоколов</th></tr></thead>
               <tbody>
                 <tr>
                   <td><strong>W</strong></td>
                   <td>стандарт</td>
-                  <td class="number">1.000</td>
+                  <td class="number">1</td>
                   <td class="number">1 протокол</td>
                 </tr>
                 <tr>
                   <td><strong>T</strong></td>
                   <td>стандарт</td>
-                  <td class="number">1.000</td>
+                  <td class="number">1</td>
                   <td class="number">1 протокол</td>
                 </tr>
                 <tr>
                   <td><strong>V</strong></td>
                   <td>стандарт</td>
-                  <td class="number">1.000</td>
+                  <td class="number">1</td>
                   <td class="number">1 протокол</td>
                 </tr>
                 <tr>
                   <td><strong>F</strong></td>
                   <td>стандарт</td>
-                  <td class="number">1.000</td>
+                  <td class="number">1</td>
                   <td class="number">1 протокол</td>
                 </tr>
                 <tr>
                   <td><strong>Q</strong></td>
                   <td>стандарт</td>
-                  <td class="number">1.000</td>
+                  <td class="number">1</td>
                   <td class="number">1 протокол</td>
                 </tr>
                 <tr>
                   <td><strong>S</strong></td>
                   <td>латина</td>
-                  <td class="number">2.000</td>
+                  <td class="number">2</td>
                   <td class="number">1 протокол</td>
                 </tr>
                 <tr>
                   <td><strong>Ch</strong></td>
                   <td>латина</td>
-                  <td class="number">1.000</td>
+                  <td class="number">1</td>
                   <td class="number">1 протокол</td>
                 </tr>
                 <tr>
                   <td><strong>R</strong></td>
                   <td>латина</td>
-                  <td class="number">2.000</td>
+                  <td class="number">2</td>
                   <td class="number">1 протокол</td>
                 </tr>
                 <tr>
                   <td><strong>P</strong></td>
                   <td>латина</td>
-                  <td class="number">1.000</td>
+                  <td class="number">1</td>
                   <td class="number">1 протокол</td>
                 </tr>
                 <tr>
                   <td><strong>J</strong></td>
                   <td>латина</td>
-                  <td class="number">2.000</td>
+                  <td class="number">2</td>
                   <td class="number">1 протокол</td>
                 </tr>
                 <tr>
                   <td><strong>W</strong></td>
                   <td>стандарт</td>
-                  <td class="number">5.000</td>
+                  <td class="number">5</td>
                   <td class="number">1 протокол</td>
                 </tr>
                 <tr>
                   <td><strong>T</strong></td>
                   <td>стандарт</td>
-                  <td class="number">5.000</td>
+                  <td class="number">5</td>
                   <td class="number">1 протокол</td>
                 </tr>
                 <tr>
                   <td><strong>V</strong></td>
                   <td>стандарт</td>
-                  <td class="number">4.000</td>
+                  <td class="number">4</td>
                   <td class="number">1 протокол</td>
                 </tr>
                 <tr>
                   <td><strong>F</strong></td>
                   <td>стандарт</td>
-                  <td class="number">4.000</td>
+                  <td class="number">4</td>
                   <td class="number">1 протокол</td>
                 </tr>
                 <tr>
                   <td><strong>Q</strong></td>
                   <td>стандарт</td>
-                  <td class="number">6.000</td>
+                  <td class="number">6</td>
                   <td class="number">1 протокол</td>
                 </tr>
                 <tr>
                   <td><strong>S</strong></td>
                   <td>латина</td>
-                  <td class="number">6.000</td>
+                  <td class="number">6</td>
                   <td class="number">1 протокол</td>
                 </tr>
                 <tr>
                   <td><strong>P</strong></td>
                   <td>латина</td>
-                  <td class="number">5.000</td>
+                  <td class="number">5</td>
                   <td class="number">1 протокол</td>
                 </tr>
                 <tr>
                   <td><strong>J</strong></td>
                   <td>латина</td>
-                  <td class="number">5.000</td>
+                  <td class="number">5</td>
                   <td class="number">1 протокол</td>
                 </tr>
               </tbody>
@@ -1820,94 +1839,90 @@
                 <div class="summary-meta">EADC Юниоры-2 Соло Ж La; EADC Юниоры-2 Соло Ж St</div>
                 <div class="summary-meta">латина, стандарт</div>
               </div>
-              <div>
-                <div class="label">Итоговый результат</div>
-                <div class="summary-title">2 протокола</div>
-              </div>
             </div>
           </summary>
           <div class="tournament-detail-grid">
-              <div class="insight-card">
+              <div class="insight-card tournament-program-summary">
                 <h3>Стандарт</h3>
                 <p class="muted">
                   Общий итог:
-                    среднее место 4.200 · W, T, V, F, Q
+                    среднее место 4.2 · W, T, V, F, Q
                 </p>
-                    <p><strong>Лучшие танцы:</strong> W, T, V, F <span class="muted">место 4.000</span></p>
-                    <p><strong>Требует внимания:</strong> Q <span class="muted">место 5.000</span></p>
+                    <p><strong>Лучшие танцы:</strong> W, T, V, F <span class="muted">место 4</span></p>
+                    <p><strong>Требует внимания:</strong> Q <span class="muted">место 5</span></p>
               </div>
-              <div class="insight-card">
+              <div class="insight-card tournament-program-summary">
                 <h3>Латина</h3>
                 <p class="muted">
                   Общий итог:
-                    среднее место 4.200 · S, Ch, R, P, J
+                    среднее место 4.2 · S, Ch, R, P, J
                 </p>
-                    <p><strong>Лучший танец:</strong> Ch <span class="muted">место 2.000</span></p>
-                    <p><strong>Требуют внимания:</strong> S, P, J <span class="muted">место 5.000</span></p>
+                    <p><strong>Лучший танец:</strong> Ch <span class="muted">место 2</span></p>
+                    <p><strong>Требуют внимания:</strong> S, P, J <span class="muted">место 5</span></p>
               </div>
           </div>
-          <div class="table-wrap">
+          <div class="table-wrap table-scroll">
             <table>
               <thead><tr><th>Танец</th><th>Программа</th><th class="number">Итоговое место</th><th class="number">Протоколов</th></tr></thead>
               <tbody>
                 <tr>
                   <td><strong>W</strong></td>
                   <td>стандарт</td>
-                  <td class="number">4.000</td>
+                  <td class="number">4</td>
                   <td class="number">1 протокол</td>
                 </tr>
                 <tr>
                   <td><strong>T</strong></td>
                   <td>стандарт</td>
-                  <td class="number">4.000</td>
+                  <td class="number">4</td>
                   <td class="number">1 протокол</td>
                 </tr>
                 <tr>
                   <td><strong>V</strong></td>
                   <td>стандарт</td>
-                  <td class="number">4.000</td>
+                  <td class="number">4</td>
                   <td class="number">1 протокол</td>
                 </tr>
                 <tr>
                   <td><strong>F</strong></td>
                   <td>стандарт</td>
-                  <td class="number">4.000</td>
+                  <td class="number">4</td>
                   <td class="number">1 протокол</td>
                 </tr>
                 <tr>
                   <td><strong>Q</strong></td>
                   <td>стандарт</td>
-                  <td class="number">5.000</td>
+                  <td class="number">5</td>
                   <td class="number">1 протокол</td>
                 </tr>
                 <tr>
                   <td><strong>S</strong></td>
                   <td>латина</td>
-                  <td class="number">5.000</td>
+                  <td class="number">5</td>
                   <td class="number">1 протокол</td>
                 </tr>
                 <tr>
                   <td><strong>Ch</strong></td>
                   <td>латина</td>
-                  <td class="number">2.000</td>
+                  <td class="number">2</td>
                   <td class="number">1 протокол</td>
                 </tr>
                 <tr>
                   <td><strong>R</strong></td>
                   <td>латина</td>
-                  <td class="number">4.000</td>
+                  <td class="number">4</td>
                   <td class="number">1 протокол</td>
                 </tr>
                 <tr>
                   <td><strong>P</strong></td>
                   <td>латина</td>
-                  <td class="number">5.000</td>
+                  <td class="number">5</td>
                   <td class="number">1 протокол</td>
                 </tr>
                 <tr>
                   <td><strong>J</strong></td>
                   <td>латина</td>
-                  <td class="number">5.000</td>
+                  <td class="number">5</td>
                   <td class="number">1 протокол</td>
                 </tr>
               </tbody>
@@ -1930,94 +1945,90 @@
                 <div class="summary-meta">Юниоры-1+2 D+C соло Ж La; Юниоры-1+2 D+C соло Ж St</div>
                 <div class="summary-meta">латина, стандарт</div>
               </div>
-              <div>
-                <div class="label">Итоговый результат</div>
-                <div class="summary-title">2 протокола</div>
-              </div>
             </div>
           </summary>
           <div class="tournament-detail-grid">
-              <div class="insight-card">
+              <div class="insight-card tournament-program-summary">
                 <h3>Стандарт</h3>
                 <p class="muted">
                   Общий итог:
-                    среднее место 5.400 · W, T, V, F, Q
+                    среднее место 5.4 · W, T, V, F, Q
                 </p>
-                    <p><strong>Лучший танец:</strong> W <span class="muted">место 4.000</span></p>
-                    <p><strong>Требуют внимания:</strong> V, F, Q <span class="muted">место 6.000</span></p>
+                    <p><strong>Лучший танец:</strong> W <span class="muted">место 4</span></p>
+                    <p><strong>Требуют внимания:</strong> V, F, Q <span class="muted">место 6</span></p>
               </div>
-              <div class="insight-card">
+              <div class="insight-card tournament-program-summary">
                 <h3>Латина</h3>
                 <p class="muted">
                   Общий итог:
-                    среднее место 5.400 · S, Ch, R, P, J
+                    среднее место 5.4 · S, Ch, R, P, J
                 </p>
-                    <p><strong>Лучший танец:</strong> R <span class="muted">место 4.000</span></p>
-                    <p><strong>Требуют внимания:</strong> S, P, J <span class="muted">место 6.000</span></p>
+                    <p><strong>Лучший танец:</strong> R <span class="muted">место 4</span></p>
+                    <p><strong>Требуют внимания:</strong> S, P, J <span class="muted">место 6</span></p>
               </div>
           </div>
-          <div class="table-wrap">
+          <div class="table-wrap table-scroll">
             <table>
               <thead><tr><th>Танец</th><th>Программа</th><th class="number">Итоговое место</th><th class="number">Протоколов</th></tr></thead>
               <tbody>
                 <tr>
                   <td><strong>W</strong></td>
                   <td>стандарт</td>
-                  <td class="number">4.000</td>
+                  <td class="number">4</td>
                   <td class="number">1 протокол</td>
                 </tr>
                 <tr>
                   <td><strong>T</strong></td>
                   <td>стандарт</td>
-                  <td class="number">5.000</td>
+                  <td class="number">5</td>
                   <td class="number">1 протокол</td>
                 </tr>
                 <tr>
                   <td><strong>V</strong></td>
                   <td>стандарт</td>
-                  <td class="number">6.000</td>
+                  <td class="number">6</td>
                   <td class="number">1 протокол</td>
                 </tr>
                 <tr>
                   <td><strong>F</strong></td>
                   <td>стандарт</td>
-                  <td class="number">6.000</td>
+                  <td class="number">6</td>
                   <td class="number">1 протокол</td>
                 </tr>
                 <tr>
                   <td><strong>Q</strong></td>
                   <td>стандарт</td>
-                  <td class="number">6.000</td>
+                  <td class="number">6</td>
                   <td class="number">1 протокол</td>
                 </tr>
                 <tr>
                   <td><strong>S</strong></td>
                   <td>латина</td>
-                  <td class="number">6.000</td>
+                  <td class="number">6</td>
                   <td class="number">1 протокол</td>
                 </tr>
                 <tr>
                   <td><strong>Ch</strong></td>
                   <td>латина</td>
-                  <td class="number">5.000</td>
+                  <td class="number">5</td>
                   <td class="number">1 протокол</td>
                 </tr>
                 <tr>
                   <td><strong>R</strong></td>
                   <td>латина</td>
-                  <td class="number">4.000</td>
+                  <td class="number">4</td>
                   <td class="number">1 протокол</td>
                 </tr>
                 <tr>
                   <td><strong>P</strong></td>
                   <td>латина</td>
-                  <td class="number">6.000</td>
+                  <td class="number">6</td>
                   <td class="number">1 протокол</td>
                 </tr>
                 <tr>
                   <td><strong>J</strong></td>
                   <td>латина</td>
-                  <td class="number">6.000</td>
+                  <td class="number">6</td>
                   <td class="number">1 протокол</td>
                 </tr>
               </tbody>
