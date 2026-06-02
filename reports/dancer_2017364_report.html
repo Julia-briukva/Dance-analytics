@@ -20,6 +20,14 @@
       --accent-light: #FAF8FF;
       --note-soft: #F6F4FC;
       --success-soft: #EAF6F1;
+      --accent-positive: #2F8F6B;
+      --accent-positive-bg: #EAF7F1;
+      --accent-warning: #9A6A18;
+      --accent-warning-bg: #FFF4D8;
+      --accent-attention: #B65F5B;
+      --accent-attention-bg: #FBEDEC;
+      --accent-neutral: #6F6887;
+      --accent-neutral-bg: #F1EEF8;
       --shadow: 0 10px 26px rgba(49, 42, 96, .055);
     }
 
@@ -69,6 +77,33 @@
       margin-top: 8px;
     }
 
+    .header-filter-panel {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(260px, auto);
+      gap: 14px;
+      align-items: center;
+      margin-top: 22px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(233, 229, 244, .78);
+    }
+
+    .header-city-filter {
+      min-width: 0;
+    }
+
+    .header-date-filter {
+      display: grid;
+      grid-template-columns: minmax(136px, 1fr) auto minmax(136px, 1fr);
+      gap: 8px;
+      align-items: center;
+      justify-self: end;
+    }
+
+    .date-separator {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
     .profile-grid,
     .kpi-grid,
     .insight-grid,
@@ -100,6 +135,37 @@
 
     .insight-card {
       border: 0;
+    }
+
+    .insight-card.positive,
+    .insight-card.attention,
+    .insight-card.neutral {
+      border-left: 3px solid transparent;
+    }
+
+    .insight-card.positive {
+      background: linear-gradient(90deg, var(--accent-positive-bg), var(--accent-light));
+      border-left-color: var(--accent-positive);
+    }
+
+    .insight-card.attention {
+      background: linear-gradient(90deg, var(--accent-attention-bg), var(--accent-light));
+      border-left-color: var(--accent-attention);
+    }
+
+    .insight-card.neutral {
+      background: linear-gradient(90deg, var(--accent-neutral-bg), var(--accent-light));
+      border-left-color: var(--accent-neutral);
+    }
+
+    .status-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 1.15em;
+      margin-right: 5px;
+      color: currentColor;
+      font-weight: 650;
     }
 
     .label {
@@ -241,7 +307,8 @@
       gap: 10px;
     }
 
-    .date-filter-grid input {
+    .date-filter-grid input,
+    .header-date-filter input {
       width: 100%;
       border: 1px solid var(--line);
       border-radius: 10px;
@@ -413,9 +480,9 @@
     }
 
     .category-tab.limited {
-      color: #6E687B;
-      background: #FBFAFD;
-      border-color: #DED9EA;
+      color: var(--accent-neutral);
+      background: var(--accent-neutral-bg);
+      border-color: #DCD6EA;
       border-style: dashed;
       font-weight: 520;
     }
@@ -424,8 +491,8 @@
       display: inline-flex;
       margin-left: 6px;
       border-radius: 999px;
-      background: #F0EDF7;
-      color: #6E687B;
+      background: #E4DFF0;
+      color: var(--accent-neutral);
       font-size: 10px;
       font-weight: 560;
       padding: 2px 6px;
@@ -561,6 +628,11 @@
       color: var(--ink-soft);
     }
 
+    .note-box.limited-note {
+      background: var(--accent-neutral-bg);
+      border-left-color: var(--accent-neutral);
+    }
+
     .program-story {
       display: grid;
       gap: 16px;
@@ -580,16 +652,23 @@
     }
 
     .story-card {
-      background: #fff;
-      border-radius: 12px;
-      padding: 14px;
+      background: transparent;
+      border-radius: 0;
+      padding: 0;
     }
 
-    .story-card h3 {
+    .story-card h3,
+    .story-card h4 {
       color: var(--ink-soft);
       font-size: 14px;
       font-weight: 560;
       margin-bottom: 8px;
+    }
+
+    .story-card p {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.58;
     }
 
     .program-heading {
@@ -603,7 +682,7 @@
       background: transparent;
       border: 0;
       border-radius: 14px;
-      padding: 18px 18px 10px;
+      padding: 12px 0 0;
       color: var(--ink-soft);
     }
 
@@ -743,9 +822,10 @@
     .tournament-badge {
       display: inline-flex;
       align-items: center;
+      gap: 4px;
       border-radius: 999px;
-      background: var(--note-soft);
-      color: var(--accent-dark);
+      background: var(--accent-positive-bg);
+      color: var(--accent-positive);
       font-size: 10.5px;
       font-weight: 560;
       line-height: 1.2;
@@ -754,8 +834,8 @@
     }
 
     .tournament-badge.hardest {
-      color: #6D617A;
-      background: #F2EFF8;
+      color: var(--accent-attention);
+      background: var(--accent-attention-bg);
     }
 
     .summary-title {
@@ -825,6 +905,7 @@
       .report { width: min(100% - 24px, 1080px); padding-top: 18px; }
       .cover, .section { padding: 18px; border-radius: 14px; }
       h1 { font-size: 26px; }
+      .cover-subtitle { font-size: 14px; }
       .profile-grid,
       .kpi-grid,
       .insight-grid,
@@ -839,6 +920,17 @@
       .tabs { position: static; }
       .filter-grid,
       .date-filter-grid { grid-template-columns: 1fr; }
+      .header-filter-panel {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+      .header-date-filter {
+        grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+        justify-self: stretch;
+      }
+      .header-date-filter input {
+        min-width: 0;
+      }
       .tournament-summary-row {
         grid-template-columns: minmax(0, 1fr) auto;
       }
@@ -888,11 +980,23 @@
   <header class="cover">
     <div class="eyebrow">Отчёт по спортивным бальным танцам</div>
     <h1>Немчинова Екатерина</h1>
-    <p class="cover-subtitle">солистка · Compreg IDD 2017364</p>
-    <div class="profile-grid">
-      <div class="profile-item"><div class="label">Клуб</div><div class="value">Триумф</div></div>
-      <div class="profile-item"><div class="label">Город</div><div class="value">Санкт-Петербург</div></div>
-      <div class="profile-item"><div class="label">Период</div><div class="value">2025-09-28 — 2026-04-26</div></div>
+    <p class="cover-subtitle">
+Клуб Триумф · Санкт-Петербург · IDD 2017364
+    </p>
+    <div class="header-filter-panel" aria-label="Фильтры отчёта">
+      <div class="header-city-filter">
+        <div class="filter-chips" role="group" aria-label="Фильтр городов">
+          <button class="city-chip report-filter-city-all" type="button" aria-pressed="true" aria-label="Показать все города">Все города</button>
+            <button class="city-chip report-filter-city" type="button" data-city="Санкт-Петербург" aria-pressed="true" aria-label="Фильтр города: Санкт-Петербург">
+              Санкт-Петербург
+            </button>
+        </div>
+      </div>
+      <div class="header-date-filter" role="group" aria-label="Фильтр периода">
+        <input id="report-filter-date-from" type="date" value="2025-09-28" aria-label="Дата начала периода">
+        <span class="date-separator" aria-hidden="true">—</span>
+        <input id="report-filter-date-to" type="date" value="2026-04-26" aria-label="Дата окончания периода">
+      </div>
     </div>
   </header>
 
@@ -909,28 +1013,6 @@
       <span class="tab-help">Кратко и понятно о прогрессе</span>
     </label>
   </nav>
-
-  <section class="report-filters" aria-label="Фильтры отчёта">
-    <div class="filter-grid">
-      <div>
-        <div class="filter-title">Города</div>
-        <div class="filter-chips" role="group" aria-label="Фильтр городов">
-          <button class="city-chip report-filter-city-all" type="button" aria-pressed="true" aria-label="Показать все города">Все города</button>
-            <button class="city-chip report-filter-city" type="button" data-city="Санкт-Петербург" aria-pressed="true" aria-label="Фильтр города: Санкт-Петербург">
-              Санкт-Петербург
-            </button>
-        </div>
-      </div>
-      <div>
-        <div class="filter-title">Период</div>
-        <div class="date-filter-grid">
-          <input id="report-filter-date-from" type="date" value="2025-09-28" aria-label="Дата начала периода">
-          <input id="report-filter-date-to" type="date" value="2026-04-26" aria-label="Дата окончания периода">
-        </div>
-      </div>
-    </div>
-    <p class="filter-note">Агрегированные выводы рассчитаны по полной выборке. Сейчас фильтр применяется к турнирам и турнирным сводкам.</p>
-  </section>
 
   <section class="mode-panel parent-panel">
     <section class="section">
@@ -1133,11 +1215,11 @@
             <p class="section-kicker">по оценкам судей, без финального результата</p>
 
           <div class="three-column">
-            <div class="insight-card">
-              <h3>Лучший танец</h3>
+            <div class="insight-card positive">
+              <h3><span class="status-icon">★</span>Лучший танец</h3>
 <p class="muted">Ограниченная выборка.</p>            </div>
-            <div class="insight-card">
-              <h3>Требуют внимания</h3>
+            <div class="insight-card attention">
+              <h3><span class="status-icon">!</span>Требуют внимания</h3>
 <p class="muted">Ограниченная выборка.</p>            </div>
             <div class="insight-card">
               <h3>Наиболее стабильные</h3>
@@ -1145,11 +1227,11 @@
           </div>
 
           <div class="three-column">
-            <div class="insight-card">
-              <h3>Улучшается</h3>
+            <div class="insight-card positive">
+              <h3><span class="status-icon">↑</span>Улучшается</h3>
 <p class="muted">Для уверенного вывода пока мало наблюдений.</p>            </div>
-            <div class="insight-card">
-              <h3>Требует внимания по динамике</h3>
+            <div class="insight-card attention">
+              <h3><span class="status-icon">↓</span>Требует внимания по динамике</h3>
 <p class="muted">Для уверенного вывода пока мало наблюдений.</p>            </div>
             <div class="insight-card">
               <h3>Стабильно</h3>
@@ -1172,11 +1254,11 @@
             <p class="section-kicker">по оценкам судей, без финального результата</p>
 
           <div class="three-column">
-            <div class="insight-card">
-              <h3>Лучший танец</h3>
+            <div class="insight-card positive">
+              <h3><span class="status-icon">★</span>Лучший танец</h3>
 <p class="muted">Ограниченная выборка.</p>            </div>
-            <div class="insight-card">
-              <h3>Требуют внимания</h3>
+            <div class="insight-card attention">
+              <h3><span class="status-icon">!</span>Требуют внимания</h3>
 <p class="muted">Ограниченная выборка.</p>            </div>
             <div class="insight-card">
               <h3>Наиболее стабильные</h3>
@@ -1184,11 +1266,11 @@
           </div>
 
           <div class="three-column">
-            <div class="insight-card">
-              <h3>Улучшается</h3>
+            <div class="insight-card positive">
+              <h3><span class="status-icon">↑</span>Улучшается</h3>
 <p class="muted">Для уверенного вывода пока мало наблюдений.</p>            </div>
-            <div class="insight-card">
-              <h3>Требует внимания по динамике</h3>
+            <div class="insight-card attention">
+              <h3><span class="status-icon">↓</span>Требует внимания по динамике</h3>
 <p class="muted">Для уверенного вывода пока мало наблюдений.</p>            </div>
             <div class="insight-card">
               <h3>Стабильно</h3>
@@ -1230,14 +1312,14 @@
         <div class="category-panel panel-latin-all">
 
           <div class="three-column">
-            <div class="insight-card">
-              <h3>Лучший танец</h3>
+            <div class="insight-card positive">
+              <h3><span class="status-icon">★</span>Лучший танец</h3>
               <ul class="plain-list">
                   <li><strong>Джайв</strong><span class="muted">2</span></li>
               </ul>
             </div>
-            <div class="insight-card">
-              <h3>Требуют внимания</h3>
+            <div class="insight-card attention">
+              <h3><span class="status-icon">!</span>Требуют внимания</h3>
 <p class="muted">Ограниченная выборка.</p>            </div>
             <div class="insight-card">
               <h3>Наиболее стабильные</h3>
@@ -1245,11 +1327,11 @@
           </div>
 
           <div class="three-column">
-            <div class="insight-card">
-              <h3>Улучшается</h3>
+            <div class="insight-card positive">
+              <h3><span class="status-icon">↑</span>Улучшается</h3>
 <p class="muted">Для уверенного вывода пока мало наблюдений.</p>            </div>
-            <div class="insight-card">
-              <h3>Требует внимания по динамике</h3>
+            <div class="insight-card attention">
+              <h3><span class="status-icon">↓</span>Требует внимания по динамике</h3>
 <p class="muted">Для уверенного вывода пока мало наблюдений.</p>            </div>
             <div class="insight-card">
               <h3>Стабильно</h3>
@@ -1306,14 +1388,14 @@
         <div class="category-panel panel-latin-e_d">
 
           <div class="three-column">
-            <div class="insight-card">
-              <h3>Лучший танец</h3>
+            <div class="insight-card positive">
+              <h3><span class="status-icon">★</span>Лучший танец</h3>
               <ul class="plain-list">
                   <li><strong>Джайв</strong><span class="muted">2</span></li>
               </ul>
             </div>
-            <div class="insight-card">
-              <h3>Требуют внимания</h3>
+            <div class="insight-card attention">
+              <h3><span class="status-icon">!</span>Требуют внимания</h3>
 <p class="muted">Ограниченная выборка.</p>            </div>
             <div class="insight-card">
               <h3>Наиболее стабильные</h3>
@@ -1321,11 +1403,11 @@
           </div>
 
           <div class="three-column">
-            <div class="insight-card">
-              <h3>Улучшается</h3>
+            <div class="insight-card positive">
+              <h3><span class="status-icon">↑</span>Улучшается</h3>
 <p class="muted">Для уверенного вывода пока мало наблюдений.</p>            </div>
-            <div class="insight-card">
-              <h3>Требует внимания по динамике</h3>
+            <div class="insight-card attention">
+              <h3><span class="status-icon">↓</span>Требует внимания по динамике</h3>
 <p class="muted">Для уверенного вывода пока мало наблюдений.</p>            </div>
             <div class="insight-card">
               <h3>Стабильно</h3>
@@ -1448,8 +1530,8 @@
                   Общий итог:
                     W, T, F, Q · по крестам судей
                 </p>
-                    <p><strong>Лучший танец:</strong> T <span class="muted">— выше всего оценивался судьями · 3 крестов</span></p>
-                    <p><strong>Требуют внимания:</strong> W, F, Q <span class="muted">— ниже всего оценивался судьями · 2 крестов</span></p>
+                    <p><strong><span class="status-icon">★</span>Лучший танец:</strong> T <span class="muted">— выше всего оценивался судьями · 3 крестов</span></p>
+                    <p><strong><span class="status-icon">!</span>Требуют внимания:</strong> W, F, Q <span class="muted">— ниже всего оценивался судьями · 2 крестов</span></p>
               </div>
               <div class="insight-card tournament-program-summary">
                 <h3>Латина</h3>
@@ -1457,8 +1539,8 @@
                   Общий итог:
                     S, Ch, R, J · по крестам судей
                 </p>
-                    <p><strong>Лучший танец:</strong> R <span class="muted">— выше всего оценивался судьями · 6 крестов</span></p>
-                    <p><strong>Требует внимания:</strong> J <span class="muted">— ниже всего оценивался судьями · 1 крестов</span></p>
+                    <p><strong><span class="status-icon">★</span>Лучший танец:</strong> R <span class="muted">— выше всего оценивался судьями · 6 крестов</span></p>
+                    <p><strong><span class="status-icon">!</span>Требует внимания:</strong> J <span class="muted">— ниже всего оценивался судьями · 1 крестов</span></p>
               </div>
           </div>
           <div class="table-wrap table-scroll">
@@ -1499,8 +1581,8 @@
                   Общий итог:
                     W, T, F, Q · по крестам судей
                 </p>
-                    <p><strong>Лучшие танцы:</strong> W, Q <span class="muted">— выше всего оценивался судьями · 4 крестов</span></p>
-                    <p><strong>Требует внимания:</strong> T <span class="muted">— ниже всего оценивался судьями · 1 крестов</span></p>
+                    <p><strong><span class="status-icon">★</span>Лучшие танцы:</strong> W, Q <span class="muted">— выше всего оценивался судьями · 4 крестов</span></p>
+                    <p><strong><span class="status-icon">!</span>Требует внимания:</strong> T <span class="muted">— ниже всего оценивался судьями · 1 крестов</span></p>
               </div>
               <div class="insight-card tournament-program-summary">
                 <h3>Латина</h3>
@@ -1508,8 +1590,8 @@
                   Общий итог:
                     S, Ch, R, J · по крестам судей
                 </p>
-                    <p><strong>Лучший танец:</strong> R <span class="muted">— выше всего оценивался судьями · 4 крестов</span></p>
-                    <p><strong>Требуют внимания:</strong> Ch, J <span class="muted">— ниже всего оценивался судьями · 2 крестов</span></p>
+                    <p><strong><span class="status-icon">★</span>Лучший танец:</strong> R <span class="muted">— выше всего оценивался судьями · 4 крестов</span></p>
+                    <p><strong><span class="status-icon">!</span>Требуют внимания:</strong> Ch, J <span class="muted">— ниже всего оценивался судьями · 2 крестов</span></p>
               </div>
           </div>
           <div class="table-wrap table-scroll">
@@ -1550,8 +1632,8 @@
                   Общий итог:
                     W, T · по крестам судей
                 </p>
-                    <p><strong>Лучший танец:</strong> T <span class="muted">— выше всего оценивался судьями · 2 крестов</span></p>
-                    <p><strong>Требует внимания:</strong> W <span class="muted">— ниже всего оценивался судьями · 1 крестов</span></p>
+                    <p><strong><span class="status-icon">★</span>Лучший танец:</strong> T <span class="muted">— выше всего оценивался судьями · 2 крестов</span></p>
+                    <p><strong><span class="status-icon">!</span>Требует внимания:</strong> W <span class="muted">— ниже всего оценивался судьями · 1 крестов</span></p>
               </div>
               <div class="insight-card tournament-program-summary">
                 <h3>Латина</h3>
@@ -1559,8 +1641,8 @@
                   Общий итог:
                     S, Ch, R, J · по крестам судей
                 </p>
-                    <p><strong>Лучшие танцы:</strong> Ch, J <span class="muted">— выше всего оценивался судьями · 5 крестов</span></p>
-                    <p><strong>Требует внимания:</strong> R <span class="muted">— ниже всего оценивался судьями · 2 крестов</span></p>
+                    <p><strong><span class="status-icon">★</span>Лучшие танцы:</strong> Ch, J <span class="muted">— выше всего оценивался судьями · 5 крестов</span></p>
+                    <p><strong><span class="status-icon">!</span>Требует внимания:</strong> R <span class="muted">— ниже всего оценивался судьями · 2 крестов</span></p>
               </div>
           </div>
           <div class="table-wrap table-scroll">
@@ -1583,7 +1665,7 @@
                   <div class="label">Турнир</div>
                   <div class="tournament-title-line">
                     <div class="summary-title">Карнавал 2026 (Санкт-Петербург)</div>
-                      <span class="tournament-badge best">лучший результат</span>
+                      <span class="tournament-badge best"><span aria-hidden="true">★</span>лучший результат</span>
                   </div>
                 </div>
                 <div>
@@ -1602,8 +1684,8 @@
                   Общий итог:
                     W, T, F, Q · по крестам судей
                 </p>
-                    <p><strong>Лучшие танцы:</strong> W, F <span class="muted">— выше всего оценивался судьями · 3 крестов</span></p>
-                    <p><strong>Требуют внимания:</strong> T, Q <span class="muted">— ниже всего оценивался судьями · 2 крестов</span></p>
+                    <p><strong><span class="status-icon">★</span>Лучшие танцы:</strong> W, F <span class="muted">— выше всего оценивался судьями · 3 крестов</span></p>
+                    <p><strong><span class="status-icon">!</span>Требуют внимания:</strong> T, Q <span class="muted">— ниже всего оценивался судьями · 2 крестов</span></p>
               </div>
               <div class="insight-card tournament-program-summary">
                 <h3>Латина</h3>
@@ -1611,8 +1693,8 @@
                   Общий итог:
                     среднее место 2.75 · S, Ch, R, J
                 </p>
-                    <p><strong>Лучший танец:</strong> J <span class="muted">место 2</span></p>
-                    <p><strong>Требуют внимания:</strong> S, Ch, R <span class="muted">место 3</span></p>
+                    <p><strong><span class="status-icon">★</span>Лучший танец:</strong> J <span class="muted">место 2</span></p>
+                    <p><strong><span class="status-icon">!</span>Требуют внимания:</strong> S, Ch, R <span class="muted">место 3</span></p>
               </div>
           </div>
           <div class="table-wrap table-scroll">
