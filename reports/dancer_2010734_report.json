@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-06-02T06:02:40.591267+00:00",
+    "generated_at": "2026-06-02T12:57:33.717549+00:00",
     "analytics_version": "report_layer_v1",
     "database": "database/compreg_spb_2025_2026.sqlite"
   },
@@ -25,6 +25,12 @@
   "programs": {
     "standard": {
       "metrics": [],
+      "display_mode": "insufficient_data",
+      "best_dances": [],
+      "worst_dances": [],
+      "evaluated_dance": null,
+      "tied_dances": [],
+      "tied_metric_value": null,
       "best_by_final_average": null,
       "best_by_median": null,
       "most_stable_dance": null,
@@ -37,6 +43,12 @@
     },
     "latin": {
       "metrics": [],
+      "display_mode": "insufficient_data",
+      "best_dances": [],
+      "worst_dances": [],
+      "evaluated_dance": null,
+      "tied_dances": [],
+      "tied_metric_value": null,
       "best_by_final_average": null,
       "best_by_median": null,
       "most_stable_dance": null,
@@ -72,6 +84,12 @@
     "standard": {
       "all": {
         "metrics": [],
+        "display_mode": "insufficient_data",
+        "best_dances": [],
+        "worst_dances": [],
+        "evaluated_dance": null,
+        "tied_dances": [],
+        "tied_metric_value": null,
         "best_by_final_average": null,
         "best_by_median": null,
         "most_stable_dance": null,
@@ -91,20 +109,71 @@
         "source_categories": [
           "Юниоры-1+2 E+D Соло Ж St"
         ],
-        "protocol_count": 0,
-        "tournament_count": 0,
+        "protocol_count": 1,
+        "tournament_count": 1,
         "evidence": {
           "tournaments": 1,
           "protocols": 1,
           "marks": 12,
           "results": 0
         },
+        "visibility": {
+          "marks_count": 12,
+          "results_count": 0,
+          "dance_metrics_count": 0,
+          "protocols_count": 1,
+          "tournaments_count": 1,
+          "trainer_summaries_count": 1,
+          "trend_items_count": 0,
+          "marks_derived_metrics_count": 3
+        },
+        "marks_derived_dance_metrics": [
+          {
+            "program": "standard",
+            "dance": "T",
+            "marks_count": 3,
+            "protocols_count": 1,
+            "tournaments_count": 1,
+            "cross_marks": 3,
+            "numeric_marks": 0,
+            "dance_code": "T"
+          },
+          {
+            "program": "standard",
+            "dance": "F",
+            "marks_count": 5,
+            "protocols_count": 1,
+            "tournaments_count": 1,
+            "cross_marks": 5,
+            "numeric_marks": 0,
+            "dance_code": "F"
+          },
+          {
+            "program": "standard",
+            "dance": "Q",
+            "marks_count": 4,
+            "protocols_count": 1,
+            "tournaments_count": 1,
+            "cross_marks": 4,
+            "numeric_marks": 0,
+            "dance_code": "Q"
+          }
+        ],
+        "is_visible_chip": true,
+        "visibility_status": "limited",
+        "visibility_reason": "limited: 12 marks, marks-derived reference only",
         "dynamics_by_date": [],
         "trends": [],
         "tournament_dance_results": []
       },
       "e_d": {
         "metrics": [],
+        "display_mode": "insufficient_data",
+        "best_dances": [],
+        "worst_dances": [],
+        "evaluated_dance": null,
+        "tied_dances": [],
+        "tied_metric_value": null,
         "best_by_final_average": null,
         "best_by_median": null,
         "most_stable_dance": null,
@@ -124,14 +193,59 @@
         "source_categories": [
           "Юниоры-1+2 E+D Соло Ж St"
         ],
-        "protocol_count": 0,
-        "tournament_count": 0,
+        "protocol_count": 1,
+        "tournament_count": 1,
         "evidence": {
           "tournaments": 1,
           "protocols": 1,
           "marks": 12,
           "results": 0
         },
+        "visibility": {
+          "marks_count": 12,
+          "results_count": 0,
+          "dance_metrics_count": 0,
+          "protocols_count": 1,
+          "tournaments_count": 1,
+          "trainer_summaries_count": 1,
+          "trend_items_count": 0,
+          "marks_derived_metrics_count": 3
+        },
+        "marks_derived_dance_metrics": [
+          {
+            "program": "standard",
+            "dance": "T",
+            "marks_count": 3,
+            "protocols_count": 1,
+            "tournaments_count": 1,
+            "cross_marks": 3,
+            "numeric_marks": 0,
+            "dance_code": "T"
+          },
+          {
+            "program": "standard",
+            "dance": "F",
+            "marks_count": 5,
+            "protocols_count": 1,
+            "tournaments_count": 1,
+            "cross_marks": 5,
+            "numeric_marks": 0,
+            "dance_code": "F"
+          },
+          {
+            "program": "standard",
+            "dance": "Q",
+            "marks_count": 4,
+            "protocols_count": 1,
+            "tournaments_count": 1,
+            "cross_marks": 4,
+            "numeric_marks": 0,
+            "dance_code": "Q"
+          }
+        ],
+        "is_visible_chip": true,
+        "visibility_status": "limited",
+        "visibility_reason": "limited: 12 marks, marks-derived reference only",
         "dynamics_by_date": [],
         "trends": [],
         "tournament_dance_results": []
@@ -140,6 +254,12 @@
     "latin": {
       "all": {
         "metrics": [],
+        "display_mode": "insufficient_data",
+        "best_dances": [],
+        "worst_dances": [],
+        "evaluated_dance": null,
+        "tied_dances": [],
+        "tied_metric_value": null,
         "best_by_final_average": null,
         "best_by_median": null,
         "most_stable_dance": null,
@@ -159,20 +279,81 @@
         "source_categories": [
           "Юниоры-1+2 E+D Соло Ж La"
         ],
-        "protocol_count": 0,
-        "tournament_count": 0,
+        "protocol_count": 1,
+        "tournament_count": 1,
         "evidence": {
           "tournaments": 1,
           "protocols": 1,
           "marks": 16,
           "results": 0
         },
+        "visibility": {
+          "marks_count": 16,
+          "results_count": 0,
+          "dance_metrics_count": 0,
+          "protocols_count": 1,
+          "tournaments_count": 1,
+          "trainer_summaries_count": 1,
+          "trend_items_count": 0,
+          "marks_derived_metrics_count": 4
+        },
+        "marks_derived_dance_metrics": [
+          {
+            "program": "latin",
+            "dance": "S",
+            "marks_count": 4,
+            "protocols_count": 1,
+            "tournaments_count": 1,
+            "cross_marks": 4,
+            "numeric_marks": 0,
+            "dance_code": "S"
+          },
+          {
+            "program": "latin",
+            "dance": "C",
+            "marks_count": 5,
+            "protocols_count": 1,
+            "tournaments_count": 1,
+            "cross_marks": 5,
+            "numeric_marks": 0,
+            "dance_code": "Ch"
+          },
+          {
+            "program": "latin",
+            "dance": "R",
+            "marks_count": 2,
+            "protocols_count": 1,
+            "tournaments_count": 1,
+            "cross_marks": 2,
+            "numeric_marks": 0,
+            "dance_code": "R"
+          },
+          {
+            "program": "latin",
+            "dance": "J",
+            "marks_count": 5,
+            "protocols_count": 1,
+            "tournaments_count": 1,
+            "cross_marks": 5,
+            "numeric_marks": 0,
+            "dance_code": "J"
+          }
+        ],
+        "is_visible_chip": true,
+        "visibility_status": "limited",
+        "visibility_reason": "limited: 16 marks, marks-derived reference only",
         "dynamics_by_date": [],
         "trends": [],
         "tournament_dance_results": []
       },
       "e_d": {
         "metrics": [],
+        "display_mode": "insufficient_data",
+        "best_dances": [],
+        "worst_dances": [],
+        "evaluated_dance": null,
+        "tied_dances": [],
+        "tied_metric_value": null,
         "best_by_final_average": null,
         "best_by_median": null,
         "most_stable_dance": null,
@@ -192,8 +373,181 @@
         "source_categories": [
           "Юниоры-1+2 E+D Соло Ж La"
         ],
-        "protocol_count": 0,
-        "tournament_count": 0,
+        "protocol_count": 1,
+        "tournament_count": 1,
+        "evidence": {
+          "tournaments": 1,
+          "protocols": 1,
+          "marks": 16,
+          "results": 0
+        },
+        "visibility": {
+          "marks_count": 16,
+          "results_count": 0,
+          "dance_metrics_count": 0,
+          "protocols_count": 1,
+          "tournaments_count": 1,
+          "trainer_summaries_count": 1,
+          "trend_items_count": 0,
+          "marks_derived_metrics_count": 4
+        },
+        "marks_derived_dance_metrics": [
+          {
+            "program": "latin",
+            "dance": "S",
+            "marks_count": 4,
+            "protocols_count": 1,
+            "tournaments_count": 1,
+            "cross_marks": 4,
+            "numeric_marks": 0,
+            "dance_code": "S"
+          },
+          {
+            "program": "latin",
+            "dance": "C",
+            "marks_count": 5,
+            "protocols_count": 1,
+            "tournaments_count": 1,
+            "cross_marks": 5,
+            "numeric_marks": 0,
+            "dance_code": "Ch"
+          },
+          {
+            "program": "latin",
+            "dance": "R",
+            "marks_count": 2,
+            "protocols_count": 1,
+            "tournaments_count": 1,
+            "cross_marks": 2,
+            "numeric_marks": 0,
+            "dance_code": "R"
+          },
+          {
+            "program": "latin",
+            "dance": "J",
+            "marks_count": 5,
+            "protocols_count": 1,
+            "tournaments_count": 1,
+            "cross_marks": 5,
+            "numeric_marks": 0,
+            "dance_code": "J"
+          }
+        ],
+        "is_visible_chip": true,
+        "visibility_status": "limited",
+        "visibility_reason": "limited: 16 marks, marks-derived reference only",
+        "dynamics_by_date": [],
+        "trends": [],
+        "tournament_dance_results": []
+      }
+    }
+  },
+  "parent_category_groups": {
+    "standard": {
+      "all": {
+        "metrics": [],
+        "display_mode": "insufficient_data",
+        "best_dances": [],
+        "worst_dances": [],
+        "evaluated_dance": null,
+        "tied_dances": [],
+        "tied_metric_value": null,
+        "best_by_final_average": null,
+        "best_by_median": null,
+        "most_stable_dance": null,
+        "best_peak": null,
+        "worst_by_final_average": null,
+        "judge_level_best": null,
+        "strongest_dance": null,
+        "weakest_dance": null,
+        "most_improved_dance": null,
+        "key": "all",
+        "label": "Все категории",
+        "source": "parent_category_aggregation",
+        "included_categories": [
+          "E+D"
+        ],
+        "source_categories": [
+          "Юниоры-1+2 E+D Соло Ж St"
+        ],
+        "protocol_count": 1,
+        "tournament_count": 1,
+        "evidence": {
+          "tournaments": 1,
+          "protocols": 1,
+          "marks": 12,
+          "results": 0
+        },
+        "dynamics_by_date": [],
+        "trends": []
+      },
+      "e_d": {
+        "metrics": [],
+        "display_mode": "insufficient_data",
+        "best_dances": [],
+        "worst_dances": [],
+        "evaluated_dance": null,
+        "tied_dances": [],
+        "tied_metric_value": null,
+        "best_by_final_average": null,
+        "best_by_median": null,
+        "most_stable_dance": null,
+        "best_peak": null,
+        "worst_by_final_average": null,
+        "judge_level_best": null,
+        "strongest_dance": null,
+        "weakest_dance": null,
+        "most_improved_dance": null,
+        "key": "e_d",
+        "label": "E+D",
+        "source": "parent_category_aggregation",
+        "included_categories": [
+          "E+D"
+        ],
+        "source_categories": [
+          "Юниоры-1+2 E+D Соло Ж St"
+        ],
+        "protocol_count": 1,
+        "tournament_count": 1,
+        "evidence": {
+          "tournaments": 1,
+          "protocols": 1,
+          "marks": 12,
+          "results": 0
+        },
+        "dynamics_by_date": [],
+        "trends": []
+      }
+    },
+    "latin": {
+      "all": {
+        "metrics": [],
+        "display_mode": "insufficient_data",
+        "best_dances": [],
+        "worst_dances": [],
+        "evaluated_dance": null,
+        "tied_dances": [],
+        "tied_metric_value": null,
+        "best_by_final_average": null,
+        "best_by_median": null,
+        "most_stable_dance": null,
+        "best_peak": null,
+        "worst_by_final_average": null,
+        "judge_level_best": null,
+        "strongest_dance": null,
+        "weakest_dance": null,
+        "most_improved_dance": null,
+        "key": "all",
+        "label": "Все категории",
+        "source": "parent_category_aggregation",
+        "included_categories": [
+          "E+D"
+        ],
+        "source_categories": [
+          "Юниоры-1+2 E+D Соло Ж La"
+        ],
+        "protocol_count": 1,
+        "tournament_count": 1,
         "evidence": {
           "tournaments": 1,
           "protocols": 1,
@@ -201,8 +555,44 @@
           "results": 0
         },
         "dynamics_by_date": [],
-        "trends": [],
-        "tournament_dance_results": []
+        "trends": []
+      },
+      "e_d": {
+        "metrics": [],
+        "display_mode": "insufficient_data",
+        "best_dances": [],
+        "worst_dances": [],
+        "evaluated_dance": null,
+        "tied_dances": [],
+        "tied_metric_value": null,
+        "best_by_final_average": null,
+        "best_by_median": null,
+        "most_stable_dance": null,
+        "best_peak": null,
+        "worst_by_final_average": null,
+        "judge_level_best": null,
+        "strongest_dance": null,
+        "weakest_dance": null,
+        "most_improved_dance": null,
+        "key": "e_d",
+        "label": "E+D",
+        "source": "parent_category_aggregation",
+        "included_categories": [
+          "E+D"
+        ],
+        "source_categories": [
+          "Юниоры-1+2 E+D Соло Ж La"
+        ],
+        "protocol_count": 1,
+        "tournament_count": 1,
+        "evidence": {
+          "tournaments": 1,
+          "protocols": 1,
+          "marks": 16,
+          "results": 0
+        },
+        "dynamics_by_date": [],
+        "trends": []
       }
     }
   },
@@ -214,6 +604,7 @@
         "event_date": "2026-05-17",
         "tournament_id": 2026051601,
         "tournament_title": "Чемпионат СПТС 2026 (Санкт-Петербург)",
+        "city": "Санкт-Петербург",
         "protocols": 2,
         "categories": [
           "Юниоры-1+2 E+D Соло Ж La",
@@ -233,7 +624,8 @@
           "J"
         ],
         "tournament_rank": null,
-        "rank_direction": ""
+        "rank_direction": "",
+        "date": "2026-05-17"
       }
     ],
     "protocols": [
@@ -241,19 +633,23 @@
         "event_date": "2026-05-17",
         "tournament_id": 2026051601,
         "tournament_title": "Чемпионат СПТС 2026 (Санкт-Петербург)",
+        "city": "Санкт-Петербург",
         "protocol_id": 80279,
         "category": "Юниоры-1+2 E+D Соло Ж St",
         "program": "standard",
-        "entry_type": "solo"
+        "entry_type": "solo",
+        "date": "2026-05-17"
       },
       {
         "event_date": "2026-05-17",
         "tournament_id": 2026051601,
         "tournament_title": "Чемпионат СПТС 2026 (Санкт-Петербург)",
+        "city": "Санкт-Петербург",
         "protocol_id": 80288,
         "category": "Юниоры-1+2 E+D Соло Ж La",
         "program": "latin",
-        "entry_type": "solo"
+        "entry_type": "solo",
+        "date": "2026-05-17"
       }
     ],
     "dance_results": []
@@ -262,8 +658,10 @@
     "tournament_summaries": [
       {
         "event_date": "2026-05-17",
+        "date": "2026-05-17",
         "tournament_id": 2026051601,
         "tournament_title": "Чемпионат СПТС 2026 (Санкт-Петербург)",
+        "city": "Санкт-Петербург",
         "categories": [
           "Юниоры-1+2 E+D Соло Ж La",
           "Юниоры-1+2 E+D Соло Ж St"

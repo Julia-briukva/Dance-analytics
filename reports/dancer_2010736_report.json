@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-06-02T06:01:43.739460+00:00",
+    "generated_at": "2026-06-02T12:56:22.538675+00:00",
     "analytics_version": "report_layer_v1",
     "database": "database/compreg_spb_2025_2026.sqlite"
   },
@@ -122,6 +122,46 @@
           "confidence": "low confidence"
         }
       ],
+      "display_mode": "best_worst",
+      "best_dances": [
+        {
+          "dance": "F",
+          "dance_code": "F",
+          "metric_value": 5.6,
+          "metric_type": "final_avg_place",
+          "metric_label": "среднее место",
+          "final_avg_place": 5.6
+        }
+      ],
+      "worst_dances": [
+        {
+          "dance": "W",
+          "dance_code": "W",
+          "metric_value": 6.4,
+          "metric_type": "final_avg_place",
+          "metric_label": "среднее место",
+          "final_avg_place": 6.4
+        }
+      ],
+      "evaluated_dance": null,
+      "tied_dances": [],
+      "tied_metric_value": null,
+      "best_dance": {
+        "dance": "F",
+        "dance_code": "F",
+        "metric_value": 5.6,
+        "metric_type": "final_avg_place",
+        "metric_label": "среднее место",
+        "final_avg_place": 5.6
+      },
+      "worst_dance": {
+        "dance": "W",
+        "dance_code": "W",
+        "metric_value": 6.4,
+        "metric_type": "final_avg_place",
+        "metric_label": "среднее место",
+        "final_avg_place": 6.4
+      },
       "best_by_final_average": null,
       "best_by_median": null,
       "most_stable_dance": null,
@@ -146,6 +186,12 @@
     },
     "latin": {
       "metrics": [],
+      "display_mode": "insufficient_data",
+      "best_dances": [],
+      "worst_dances": [],
+      "evaluated_dance": null,
+      "tied_dances": [],
+      "tied_metric_value": null,
       "best_by_final_average": null,
       "best_by_median": null,
       "most_stable_dance": null,
@@ -1151,6 +1197,46 @@
             "confidence": "low confidence"
           }
         ],
+        "display_mode": "best_worst",
+        "best_dances": [
+          {
+            "dance": "F",
+            "dance_code": "F",
+            "metric_value": 5.6,
+            "metric_type": "final_avg_place",
+            "metric_label": "среднее место",
+            "final_avg_place": 5.6
+          }
+        ],
+        "worst_dances": [
+          {
+            "dance": "W",
+            "dance_code": "W",
+            "metric_value": 6.4,
+            "metric_type": "final_avg_place",
+            "metric_label": "среднее место",
+            "final_avg_place": 6.4
+          }
+        ],
+        "evaluated_dance": null,
+        "tied_dances": [],
+        "tied_metric_value": null,
+        "best_dance": {
+          "dance": "F",
+          "dance_code": "F",
+          "metric_value": 5.6,
+          "metric_type": "final_avg_place",
+          "metric_label": "среднее место",
+          "final_avg_place": 5.6
+        },
+        "worst_dance": {
+          "dance": "W",
+          "dance_code": "W",
+          "metric_value": 6.4,
+          "metric_type": "final_avg_place",
+          "metric_label": "среднее место",
+          "final_avg_place": 6.4
+        },
         "best_by_final_average": null,
         "best_by_median": null,
         "most_stable_dance": null,
@@ -1184,8 +1270,2140 @@
           "Юниоры-1+2 E+D Соло Ж St",
           "Юниоры-1+2 E+D соло Ж St"
         ],
-        "protocol_count": 5,
-        "tournament_count": 5,
+        "protocol_count": 7,
+        "tournament_count": 7,
+        "evidence": {
+          "tournaments": 7,
+          "protocols": 7,
+          "marks": 344,
+          "results": 20
+        },
+        "visibility": {
+          "marks_count": 344,
+          "results_count": 20,
+          "dance_metrics_count": 4,
+          "protocols_count": 7,
+          "tournaments_count": 7,
+          "trainer_summaries_count": 7,
+          "trend_items_count": 4,
+          "marks_derived_metrics_count": 4
+        },
+        "marks_derived_dance_metrics": [
+          {
+            "program": "standard",
+            "dance": "W",
+            "marks_count": 85,
+            "protocols_count": 7,
+            "tournaments_count": 7,
+            "cross_marks": 38,
+            "numeric_marks": 47,
+            "dance_code": "W"
+          },
+          {
+            "program": "standard",
+            "dance": "T",
+            "marks_count": 88,
+            "protocols_count": 7,
+            "tournaments_count": 7,
+            "cross_marks": 41,
+            "numeric_marks": 47,
+            "dance_code": "T"
+          },
+          {
+            "program": "standard",
+            "dance": "F",
+            "marks_count": 85,
+            "protocols_count": 7,
+            "tournaments_count": 7,
+            "cross_marks": 38,
+            "numeric_marks": 47,
+            "dance_code": "F"
+          },
+          {
+            "program": "standard",
+            "dance": "Q",
+            "marks_count": 86,
+            "protocols_count": 7,
+            "tournaments_count": 7,
+            "cross_marks": 39,
+            "numeric_marks": 47,
+            "dance_code": "Q"
+          }
+        ],
+        "is_visible_chip": true,
+        "visibility_status": "primary",
+        "visibility_reason": "primary: dance metrics available",
+        "dynamics_by_date": [
+          {
+            "program": "standard",
+            "dance": "F",
+            "event_date": "2025-09-28",
+            "avg_place": 3.0,
+            "final_avg_place": 3.0,
+            "median_place": 3.0,
+            "n_marks": 1,
+            "n_protocols": 1,
+            "rolling_average": 3.0,
+            "tournament_to_tournament_delta": null
+          },
+          {
+            "program": "standard",
+            "dance": "F",
+            "event_date": "2025-10-12",
+            "avg_place": 7.0,
+            "final_avg_place": 7.0,
+            "median_place": 7.0,
+            "n_marks": 1,
+            "n_protocols": 1,
+            "rolling_average": 5.0,
+            "tournament_to_tournament_delta": 4.0
+          },
+          {
+            "program": "standard",
+            "dance": "F",
+            "event_date": "2025-11-09",
+            "avg_place": 6.0,
+            "final_avg_place": 6.0,
+            "median_place": 6.0,
+            "n_marks": 1,
+            "n_protocols": 1,
+            "rolling_average": 5.333,
+            "tournament_to_tournament_delta": -1.0
+          },
+          {
+            "program": "standard",
+            "dance": "F",
+            "event_date": "2026-03-01",
+            "avg_place": 6.0,
+            "final_avg_place": 6.0,
+            "median_place": 6.0,
+            "n_marks": 1,
+            "n_protocols": 1,
+            "rolling_average": 6.333,
+            "tournament_to_tournament_delta": 0.0
+          },
+          {
+            "program": "standard",
+            "dance": "F",
+            "event_date": "2026-03-08",
+            "avg_place": 6.0,
+            "final_avg_place": 6.0,
+            "median_place": 6.0,
+            "n_marks": 1,
+            "n_protocols": 1,
+            "rolling_average": 6.0,
+            "tournament_to_tournament_delta": 0.0
+          },
+          {
+            "program": "standard",
+            "dance": "Q",
+            "event_date": "2025-09-28",
+            "avg_place": 3.0,
+            "final_avg_place": 3.0,
+            "median_place": 3.0,
+            "n_marks": 1,
+            "n_protocols": 1,
+            "rolling_average": 3.0,
+            "tournament_to_tournament_delta": null
+          },
+          {
+            "program": "standard",
+            "dance": "Q",
+            "event_date": "2025-10-12",
+            "avg_place": 7.0,
+            "final_avg_place": 7.0,
+            "median_place": 7.0,
+            "n_marks": 1,
+            "n_protocols": 1,
+            "rolling_average": 5.0,
+            "tournament_to_tournament_delta": 4.0
+          },
+          {
+            "program": "standard",
+            "dance": "Q",
+            "event_date": "2025-11-09",
+            "avg_place": 6.0,
+            "final_avg_place": 6.0,
+            "median_place": 6.0,
+            "n_marks": 1,
+            "n_protocols": 1,
+            "rolling_average": 5.333,
+            "tournament_to_tournament_delta": -1.0
+          },
+          {
+            "program": "standard",
+            "dance": "Q",
+            "event_date": "2026-03-01",
+            "avg_place": 6.0,
+            "final_avg_place": 6.0,
+            "median_place": 6.0,
+            "n_marks": 1,
+            "n_protocols": 1,
+            "rolling_average": 6.333,
+            "tournament_to_tournament_delta": 0.0
+          },
+          {
+            "program": "standard",
+            "dance": "Q",
+            "event_date": "2026-03-08",
+            "avg_place": 8.0,
+            "final_avg_place": 8.0,
+            "median_place": 8.0,
+            "n_marks": 1,
+            "n_protocols": 1,
+            "rolling_average": 6.667,
+            "tournament_to_tournament_delta": 2.0
+          },
+          {
+            "program": "standard",
+            "dance": "T",
+            "event_date": "2025-09-28",
+            "avg_place": 4.0,
+            "final_avg_place": 4.0,
+            "median_place": 4.0,
+            "n_marks": 1,
+            "n_protocols": 1,
+            "rolling_average": 4.0,
+            "tournament_to_tournament_delta": null
+          },
+          {
+            "program": "standard",
+            "dance": "T",
+            "event_date": "2025-10-12",
+            "avg_place": 7.0,
+            "final_avg_place": 7.0,
+            "median_place": 7.0,
+            "n_marks": 1,
+            "n_protocols": 1,
+            "rolling_average": 5.5,
+            "tournament_to_tournament_delta": 3.0
+          },
+          {
+            "program": "standard",
+            "dance": "T",
+            "event_date": "2025-11-09",
+            "avg_place": 6.5,
+            "final_avg_place": 6.5,
+            "median_place": 6.5,
+            "n_marks": 1,
+            "n_protocols": 1,
+            "rolling_average": 5.833,
+            "tournament_to_tournament_delta": -0.5
+          },
+          {
+            "program": "standard",
+            "dance": "T",
+            "event_date": "2026-03-01",
+            "avg_place": 4.0,
+            "final_avg_place": 4.0,
+            "median_place": 4.0,
+            "n_marks": 1,
+            "n_protocols": 1,
+            "rolling_average": 5.833,
+            "tournament_to_tournament_delta": -2.5
+          },
+          {
+            "program": "standard",
+            "dance": "T",
+            "event_date": "2026-03-08",
+            "avg_place": 7.0,
+            "final_avg_place": 7.0,
+            "median_place": 7.0,
+            "n_marks": 1,
+            "n_protocols": 1,
+            "rolling_average": 5.833,
+            "tournament_to_tournament_delta": 3.0
+          },
+          {
+            "program": "standard",
+            "dance": "W",
+            "event_date": "2025-09-28",
+            "avg_place": 4.0,
+            "final_avg_place": 4.0,
+            "median_place": 4.0,
+            "n_marks": 1,
+            "n_protocols": 1,
+            "rolling_average": 4.0,
+            "tournament_to_tournament_delta": null
+          },
+          {
+            "program": "standard",
+            "dance": "W",
+            "event_date": "2025-10-12",
+            "avg_place": 7.0,
+            "final_avg_place": 7.0,
+            "median_place": 7.0,
+            "n_marks": 1,
+            "n_protocols": 1,
+            "rolling_average": 5.5,
+            "tournament_to_tournament_delta": 3.0
+          },
+          {
+            "program": "standard",
+            "dance": "W",
+            "event_date": "2025-11-09",
+            "avg_place": 7.0,
+            "final_avg_place": 7.0,
+            "median_place": 7.0,
+            "n_marks": 1,
+            "n_protocols": 1,
+            "rolling_average": 6.0,
+            "tournament_to_tournament_delta": 0.0
+          },
+          {
+            "program": "standard",
+            "dance": "W",
+            "event_date": "2026-03-01",
+            "avg_place": 6.0,
+            "final_avg_place": 6.0,
+            "median_place": 6.0,
+            "n_marks": 1,
+            "n_protocols": 1,
+            "rolling_average": 6.667,
+            "tournament_to_tournament_delta": -1.0
+          },
+          {
+            "program": "standard",
+            "dance": "W",
+            "event_date": "2026-03-08",
+            "avg_place": 8.0,
+            "final_avg_place": 8.0,
+            "median_place": 8.0,
+            "n_marks": 1,
+            "n_protocols": 1,
+            "rolling_average": 7.0,
+            "tournament_to_tournament_delta": 2.0
+          }
+        ],
+        "trends": [
+          {
+            "program": "standard",
+            "dance": "T",
+            "trend_over_time": 0.3,
+            "first_date": "2025-09-28",
+            "first_avg_place": 4.0,
+            "last_date": "2026-03-08",
+            "last_avg_place": 7.0,
+            "first_to_last_delta": 3.0,
+            "n_dates": 5,
+            "confidence": "ok",
+            "trend_status": "declining"
+          },
+          {
+            "program": "standard",
+            "dance": "F",
+            "trend_over_time": 0.5,
+            "first_date": "2025-09-28",
+            "first_avg_place": 3.0,
+            "last_date": "2026-03-08",
+            "last_avg_place": 6.0,
+            "first_to_last_delta": 3.0,
+            "n_dates": 5,
+            "confidence": "ok",
+            "trend_status": "declining"
+          },
+          {
+            "program": "standard",
+            "dance": "W",
+            "trend_over_time": 0.7,
+            "first_date": "2025-09-28",
+            "first_avg_place": 4.0,
+            "last_date": "2026-03-08",
+            "last_avg_place": 8.0,
+            "first_to_last_delta": 4.0,
+            "n_dates": 5,
+            "confidence": "ok",
+            "trend_status": "declining"
+          },
+          {
+            "program": "standard",
+            "dance": "Q",
+            "trend_over_time": 0.9,
+            "first_date": "2025-09-28",
+            "first_avg_place": 3.0,
+            "last_date": "2026-03-08",
+            "last_avg_place": 8.0,
+            "first_to_last_delta": 5.0,
+            "n_dates": 5,
+            "confidence": "ok",
+            "trend_status": "declining"
+          }
+        ],
+        "tournament_dance_results": [
+          {
+            "event_date": "2025-09-28",
+            "tournament_id": 2025092800,
+            "tournament_title": "Северный кубок 2025 (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
+            "protocol_id": 73074,
+            "category": "Юниоры-1+2 E+D Соло Ж St",
+            "program": "standard",
+            "dance": "W",
+            "final_place": 4.0,
+            "best_place": 4.0,
+            "worst_place": 4.0,
+            "n_results": 1,
+            "judge_marks": 11,
+            "dance_code": "W",
+            "date": "2025-09-28"
+          },
+          {
+            "event_date": "2025-09-28",
+            "tournament_id": 2025092800,
+            "tournament_title": "Северный кубок 2025 (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
+            "protocol_id": 73074,
+            "category": "Юниоры-1+2 E+D Соло Ж St",
+            "program": "standard",
+            "dance": "T",
+            "final_place": 4.0,
+            "best_place": 4.0,
+            "worst_place": 4.0,
+            "n_results": 1,
+            "judge_marks": 11,
+            "dance_code": "T",
+            "date": "2025-09-28"
+          },
+          {
+            "event_date": "2025-09-28",
+            "tournament_id": 2025092800,
+            "tournament_title": "Северный кубок 2025 (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
+            "protocol_id": 73074,
+            "category": "Юниоры-1+2 E+D Соло Ж St",
+            "program": "standard",
+            "dance": "F",
+            "final_place": 3.0,
+            "best_place": 3.0,
+            "worst_place": 3.0,
+            "n_results": 1,
+            "judge_marks": 11,
+            "dance_code": "F",
+            "date": "2025-09-28"
+          },
+          {
+            "event_date": "2025-09-28",
+            "tournament_id": 2025092800,
+            "tournament_title": "Северный кубок 2025 (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
+            "protocol_id": 73074,
+            "category": "Юниоры-1+2 E+D Соло Ж St",
+            "program": "standard",
+            "dance": "Q",
+            "final_place": 3.0,
+            "best_place": 3.0,
+            "worst_place": 3.0,
+            "n_results": 1,
+            "judge_marks": 11,
+            "dance_code": "Q",
+            "date": "2025-09-28"
+          },
+          {
+            "event_date": "2025-10-12",
+            "tournament_id": 2025101200,
+            "tournament_title": "Балтийская Звезда - 2025 (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
+            "protocol_id": 73641,
+            "category": "Юниоры-1+2 E+D соло Ж St",
+            "program": "standard",
+            "dance": "W",
+            "final_place": 7.0,
+            "best_place": 7.0,
+            "worst_place": 7.0,
+            "n_results": 1,
+            "judge_marks": 11,
+            "dance_code": "W",
+            "date": "2025-10-12"
+          },
+          {
+            "event_date": "2025-10-12",
+            "tournament_id": 2025101200,
+            "tournament_title": "Балтийская Звезда - 2025 (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
+            "protocol_id": 73641,
+            "category": "Юниоры-1+2 E+D соло Ж St",
+            "program": "standard",
+            "dance": "T",
+            "final_place": 7.0,
+            "best_place": 7.0,
+            "worst_place": 7.0,
+            "n_results": 1,
+            "judge_marks": 11,
+            "dance_code": "T",
+            "date": "2025-10-12"
+          },
+          {
+            "event_date": "2025-10-12",
+            "tournament_id": 2025101200,
+            "tournament_title": "Балтийская Звезда - 2025 (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
+            "protocol_id": 73641,
+            "category": "Юниоры-1+2 E+D соло Ж St",
+            "program": "standard",
+            "dance": "F",
+            "final_place": 7.0,
+            "best_place": 7.0,
+            "worst_place": 7.0,
+            "n_results": 1,
+            "judge_marks": 11,
+            "dance_code": "F",
+            "date": "2025-10-12"
+          },
+          {
+            "event_date": "2025-10-12",
+            "tournament_id": 2025101200,
+            "tournament_title": "Балтийская Звезда - 2025 (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
+            "protocol_id": 73641,
+            "category": "Юниоры-1+2 E+D соло Ж St",
+            "program": "standard",
+            "dance": "Q",
+            "final_place": 7.0,
+            "best_place": 7.0,
+            "worst_place": 7.0,
+            "n_results": 1,
+            "judge_marks": 11,
+            "dance_code": "Q",
+            "date": "2025-10-12"
+          },
+          {
+            "event_date": "2025-11-09",
+            "tournament_id": 2025110901,
+            "tournament_title": "Кубок Лиги 2025 (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
+            "protocol_id": 74566,
+            "category": "Юниоры-1+2 E+D Соло Ж St",
+            "program": "standard",
+            "dance": "W",
+            "final_place": 7.0,
+            "best_place": 7.0,
+            "worst_place": 7.0,
+            "n_results": 1,
+            "judge_marks": 7,
+            "dance_code": "W",
+            "date": "2025-11-09"
+          },
+          {
+            "event_date": "2025-11-09",
+            "tournament_id": 2025110901,
+            "tournament_title": "Кубок Лиги 2025 (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
+            "protocol_id": 74566,
+            "category": "Юниоры-1+2 E+D Соло Ж St",
+            "program": "standard",
+            "dance": "T",
+            "final_place": 6.5,
+            "best_place": 6.5,
+            "worst_place": 6.5,
+            "n_results": 1,
+            "judge_marks": 7,
+            "dance_code": "T",
+            "date": "2025-11-09"
+          },
+          {
+            "event_date": "2025-11-09",
+            "tournament_id": 2025110901,
+            "tournament_title": "Кубок Лиги 2025 (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
+            "protocol_id": 74566,
+            "category": "Юниоры-1+2 E+D Соло Ж St",
+            "program": "standard",
+            "dance": "F",
+            "final_place": 6.0,
+            "best_place": 6.0,
+            "worst_place": 6.0,
+            "n_results": 1,
+            "judge_marks": 7,
+            "dance_code": "F",
+            "date": "2025-11-09"
+          },
+          {
+            "event_date": "2025-11-09",
+            "tournament_id": 2025110901,
+            "tournament_title": "Кубок Лиги 2025 (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
+            "protocol_id": 74566,
+            "category": "Юниоры-1+2 E+D Соло Ж St",
+            "program": "standard",
+            "dance": "Q",
+            "final_place": 6.0,
+            "best_place": 6.0,
+            "worst_place": 6.0,
+            "n_results": 1,
+            "judge_marks": 7,
+            "dance_code": "Q",
+            "date": "2025-11-09"
+          },
+          {
+            "event_date": "2026-03-01",
+            "tournament_id": 2026030102,
+            "tournament_title": "Танцевальное Свидание 2026 - Dance Date Cup (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
+            "protocol_id": 77797,
+            "category": "Юниоры-1+2 E+D Соло Ж St",
+            "program": "standard",
+            "dance": "W",
+            "final_place": 6.0,
+            "best_place": 6.0,
+            "worst_place": 6.0,
+            "n_results": 1,
+            "judge_marks": 9,
+            "dance_code": "W",
+            "date": "2026-03-01"
+          },
+          {
+            "event_date": "2026-03-01",
+            "tournament_id": 2026030102,
+            "tournament_title": "Танцевальное Свидание 2026 - Dance Date Cup (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
+            "protocol_id": 77797,
+            "category": "Юниоры-1+2 E+D Соло Ж St",
+            "program": "standard",
+            "dance": "T",
+            "final_place": 4.0,
+            "best_place": 4.0,
+            "worst_place": 4.0,
+            "n_results": 1,
+            "judge_marks": 9,
+            "dance_code": "T",
+            "date": "2026-03-01"
+          },
+          {
+            "event_date": "2026-03-01",
+            "tournament_id": 2026030102,
+            "tournament_title": "Танцевальное Свидание 2026 - Dance Date Cup (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
+            "protocol_id": 77797,
+            "category": "Юниоры-1+2 E+D Соло Ж St",
+            "program": "standard",
+            "dance": "F",
+            "final_place": 6.0,
+            "best_place": 6.0,
+            "worst_place": 6.0,
+            "n_results": 1,
+            "judge_marks": 9,
+            "dance_code": "F",
+            "date": "2026-03-01"
+          },
+          {
+            "event_date": "2026-03-01",
+            "tournament_id": 2026030102,
+            "tournament_title": "Танцевальное Свидание 2026 - Dance Date Cup (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
+            "protocol_id": 77797,
+            "category": "Юниоры-1+2 E+D Соло Ж St",
+            "program": "standard",
+            "dance": "Q",
+            "final_place": 6.0,
+            "best_place": 6.0,
+            "worst_place": 6.0,
+            "n_results": 1,
+            "judge_marks": 9,
+            "dance_code": "Q",
+            "date": "2026-03-01"
+          },
+          {
+            "event_date": "2026-03-08",
+            "tournament_id": 2026030800,
+            "tournament_title": "Амбассадор 2026 (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
+            "protocol_id": 77966,
+            "category": "Юниоры-1+2 E+D Соло Ж St",
+            "program": "standard",
+            "dance": "W",
+            "final_place": 8.0,
+            "best_place": 8.0,
+            "worst_place": 8.0,
+            "n_results": 1,
+            "judge_marks": 9,
+            "dance_code": "W",
+            "date": "2026-03-08"
+          },
+          {
+            "event_date": "2026-03-08",
+            "tournament_id": 2026030800,
+            "tournament_title": "Амбассадор 2026 (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
+            "protocol_id": 77966,
+            "category": "Юниоры-1+2 E+D Соло Ж St",
+            "program": "standard",
+            "dance": "T",
+            "final_place": 7.0,
+            "best_place": 7.0,
+            "worst_place": 7.0,
+            "n_results": 1,
+            "judge_marks": 9,
+            "dance_code": "T",
+            "date": "2026-03-08"
+          },
+          {
+            "event_date": "2026-03-08",
+            "tournament_id": 2026030800,
+            "tournament_title": "Амбассадор 2026 (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
+            "protocol_id": 77966,
+            "category": "Юниоры-1+2 E+D Соло Ж St",
+            "program": "standard",
+            "dance": "F",
+            "final_place": 6.0,
+            "best_place": 6.0,
+            "worst_place": 6.0,
+            "n_results": 1,
+            "judge_marks": 9,
+            "dance_code": "F",
+            "date": "2026-03-08"
+          },
+          {
+            "event_date": "2026-03-08",
+            "tournament_id": 2026030800,
+            "tournament_title": "Амбассадор 2026 (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
+            "protocol_id": 77966,
+            "category": "Юниоры-1+2 E+D Соло Ж St",
+            "program": "standard",
+            "dance": "Q",
+            "final_place": 8.0,
+            "best_place": 8.0,
+            "worst_place": 8.0,
+            "n_results": 1,
+            "judge_marks": 9,
+            "dance_code": "Q",
+            "date": "2026-03-08"
+          }
+        ]
+      },
+      "e_d": {
+        "metrics": [
+          {
+            "program": "standard",
+            "dance": "F",
+            "final_avg_place": 5.6,
+            "median_place": 6.0,
+            "std_deviation": 1.517,
+            "variance": 2.3,
+            "n_marks": 5,
+            "n_protocols": 5,
+            "n_dates": 5,
+            "best_place": 3.0,
+            "worst_place": 7.0,
+            "categories": "Юниоры-1+2 E+D Соло Ж St; Юниоры-1+2 E+D соло Ж St",
+            "judge_avg_place": 5.489,
+            "judge_std_deviation": 1.804,
+            "judge_variance": 3.255,
+            "judge_marks": 47,
+            "avg_place": 5.6,
+            "final_median_place": 6.0,
+            "final_std_deviation": 1.517,
+            "consistency_score": 0.397,
+            "volatility_score": 1.517,
+            "confidence": "low confidence"
+          },
+          {
+            "program": "standard",
+            "dance": "Q",
+            "final_avg_place": 6.0,
+            "median_place": 6.0,
+            "std_deviation": 1.871,
+            "variance": 3.5,
+            "n_marks": 5,
+            "n_protocols": 5,
+            "n_dates": 5,
+            "best_place": 3.0,
+            "worst_place": 8.0,
+            "categories": "Юниоры-1+2 E+D Соло Ж St; Юниоры-1+2 E+D соло Ж St",
+            "judge_avg_place": 5.404,
+            "judge_std_deviation": 1.826,
+            "judge_variance": 3.333,
+            "judge_marks": 47,
+            "avg_place": 6.0,
+            "final_median_place": 6.0,
+            "final_std_deviation": 1.871,
+            "consistency_score": 0.348,
+            "volatility_score": 1.871,
+            "confidence": "low confidence"
+          },
+          {
+            "program": "standard",
+            "dance": "T",
+            "final_avg_place": 5.7,
+            "median_place": 6.5,
+            "std_deviation": 1.565,
+            "variance": 2.45,
+            "n_marks": 5,
+            "n_protocols": 5,
+            "n_dates": 5,
+            "best_place": 4.0,
+            "worst_place": 7.0,
+            "categories": "Юниоры-1+2 E+D Соло Ж St; Юниоры-1+2 E+D соло Ж St",
+            "judge_avg_place": 5.447,
+            "judge_std_deviation": 1.863,
+            "judge_variance": 3.47,
+            "judge_marks": 47,
+            "avg_place": 5.7,
+            "final_median_place": 6.5,
+            "final_std_deviation": 1.565,
+            "consistency_score": 0.39,
+            "volatility_score": 1.565,
+            "confidence": "low confidence"
+          },
+          {
+            "program": "standard",
+            "dance": "W",
+            "final_avg_place": 6.4,
+            "median_place": 7.0,
+            "std_deviation": 1.517,
+            "variance": 2.3,
+            "n_marks": 5,
+            "n_protocols": 5,
+            "n_dates": 5,
+            "best_place": 4.0,
+            "worst_place": 8.0,
+            "categories": "Юниоры-1+2 E+D Соло Ж St; Юниоры-1+2 E+D соло Ж St",
+            "judge_avg_place": 5.723,
+            "judge_std_deviation": 1.611,
+            "judge_variance": 2.596,
+            "judge_marks": 47,
+            "avg_place": 6.4,
+            "final_median_place": 7.0,
+            "final_std_deviation": 1.517,
+            "consistency_score": 0.397,
+            "volatility_score": 1.517,
+            "confidence": "low confidence"
+          }
+        ],
+        "display_mode": "best_worst",
+        "best_dances": [
+          {
+            "dance": "F",
+            "dance_code": "F",
+            "metric_value": 5.6,
+            "metric_type": "final_avg_place",
+            "metric_label": "среднее место",
+            "final_avg_place": 5.6
+          }
+        ],
+        "worst_dances": [
+          {
+            "dance": "W",
+            "dance_code": "W",
+            "metric_value": 6.4,
+            "metric_type": "final_avg_place",
+            "metric_label": "среднее место",
+            "final_avg_place": 6.4
+          }
+        ],
+        "evaluated_dance": null,
+        "tied_dances": [],
+        "tied_metric_value": null,
+        "best_dance": {
+          "dance": "F",
+          "dance_code": "F",
+          "metric_value": 5.6,
+          "metric_type": "final_avg_place",
+          "metric_label": "среднее место",
+          "final_avg_place": 5.6
+        },
+        "worst_dance": {
+          "dance": "W",
+          "dance_code": "W",
+          "metric_value": 6.4,
+          "metric_type": "final_avg_place",
+          "metric_label": "среднее место",
+          "final_avg_place": 6.4
+        },
+        "best_by_final_average": null,
+        "best_by_median": null,
+        "most_stable_dance": null,
+        "best_peak": null,
+        "worst_by_final_average": null,
+        "judge_level_best": null,
+        "strongest_dance": null,
+        "weakest_dance": null,
+        "most_improved_dance": {
+          "program": "standard",
+          "dance": "T",
+          "trend_over_time": 0.3,
+          "first_date": "2025-09-28",
+          "first_avg_place": 4.0,
+          "last_date": "2026-03-08",
+          "last_avg_place": 7.0,
+          "first_to_last_delta": 3.0,
+          "n_dates": 5,
+          "confidence": "ok",
+          "trend_status": "declining"
+        },
+        "key": "e_d",
+        "label": "E+D",
+        "source": "selected_dancer_marks_and_results",
+        "class_group": "E+D",
+        "age_groups": [
+          "Юниоры-1+2"
+        ],
+        "source_categories": [
+          "Юниоры-1+2 E+D Соло Ж St",
+          "Юниоры-1+2 E+D соло Ж St"
+        ],
+        "protocol_count": 6,
+        "tournament_count": 6,
+        "evidence": {
+          "tournaments": 6,
+          "protocols": 6,
+          "marks": 321,
+          "results": 20
+        },
+        "visibility": {
+          "marks_count": 321,
+          "results_count": 20,
+          "dance_metrics_count": 4,
+          "protocols_count": 6,
+          "tournaments_count": 6,
+          "trainer_summaries_count": 6,
+          "trend_items_count": 4,
+          "marks_derived_metrics_count": 4
+        },
+        "marks_derived_dance_metrics": [
+          {
+            "program": "standard",
+            "dance": "W",
+            "marks_count": 76,
+            "protocols_count": 6,
+            "tournaments_count": 6,
+            "cross_marks": 29,
+            "numeric_marks": 47,
+            "dance_code": "W"
+          },
+          {
+            "program": "standard",
+            "dance": "T",
+            "marks_count": 81,
+            "protocols_count": 6,
+            "tournaments_count": 6,
+            "cross_marks": 34,
+            "numeric_marks": 47,
+            "dance_code": "T"
+          },
+          {
+            "program": "standard",
+            "dance": "F",
+            "marks_count": 82,
+            "protocols_count": 6,
+            "tournaments_count": 6,
+            "cross_marks": 35,
+            "numeric_marks": 47,
+            "dance_code": "F"
+          },
+          {
+            "program": "standard",
+            "dance": "Q",
+            "marks_count": 82,
+            "protocols_count": 6,
+            "tournaments_count": 6,
+            "cross_marks": 35,
+            "numeric_marks": 47,
+            "dance_code": "Q"
+          }
+        ],
+        "is_visible_chip": true,
+        "visibility_status": "primary",
+        "visibility_reason": "primary: dance metrics available",
+        "dynamics_by_date": [
+          {
+            "program": "standard",
+            "dance": "F",
+            "event_date": "2025-09-28",
+            "avg_place": 3.0,
+            "final_avg_place": 3.0,
+            "median_place": 3.0,
+            "n_marks": 1,
+            "n_protocols": 1,
+            "rolling_average": 3.0,
+            "tournament_to_tournament_delta": null
+          },
+          {
+            "program": "standard",
+            "dance": "F",
+            "event_date": "2025-10-12",
+            "avg_place": 7.0,
+            "final_avg_place": 7.0,
+            "median_place": 7.0,
+            "n_marks": 1,
+            "n_protocols": 1,
+            "rolling_average": 5.0,
+            "tournament_to_tournament_delta": 4.0
+          },
+          {
+            "program": "standard",
+            "dance": "F",
+            "event_date": "2025-11-09",
+            "avg_place": 6.0,
+            "final_avg_place": 6.0,
+            "median_place": 6.0,
+            "n_marks": 1,
+            "n_protocols": 1,
+            "rolling_average": 5.333,
+            "tournament_to_tournament_delta": -1.0
+          },
+          {
+            "program": "standard",
+            "dance": "F",
+            "event_date": "2026-03-01",
+            "avg_place": 6.0,
+            "final_avg_place": 6.0,
+            "median_place": 6.0,
+            "n_marks": 1,
+            "n_protocols": 1,
+            "rolling_average": 6.333,
+            "tournament_to_tournament_delta": 0.0
+          },
+          {
+            "program": "standard",
+            "dance": "F",
+            "event_date": "2026-03-08",
+            "avg_place": 6.0,
+            "final_avg_place": 6.0,
+            "median_place": 6.0,
+            "n_marks": 1,
+            "n_protocols": 1,
+            "rolling_average": 6.0,
+            "tournament_to_tournament_delta": 0.0
+          },
+          {
+            "program": "standard",
+            "dance": "Q",
+            "event_date": "2025-09-28",
+            "avg_place": 3.0,
+            "final_avg_place": 3.0,
+            "median_place": 3.0,
+            "n_marks": 1,
+            "n_protocols": 1,
+            "rolling_average": 3.0,
+            "tournament_to_tournament_delta": null
+          },
+          {
+            "program": "standard",
+            "dance": "Q",
+            "event_date": "2025-10-12",
+            "avg_place": 7.0,
+            "final_avg_place": 7.0,
+            "median_place": 7.0,
+            "n_marks": 1,
+            "n_protocols": 1,
+            "rolling_average": 5.0,
+            "tournament_to_tournament_delta": 4.0
+          },
+          {
+            "program": "standard",
+            "dance": "Q",
+            "event_date": "2025-11-09",
+            "avg_place": 6.0,
+            "final_avg_place": 6.0,
+            "median_place": 6.0,
+            "n_marks": 1,
+            "n_protocols": 1,
+            "rolling_average": 5.333,
+            "tournament_to_tournament_delta": -1.0
+          },
+          {
+            "program": "standard",
+            "dance": "Q",
+            "event_date": "2026-03-01",
+            "avg_place": 6.0,
+            "final_avg_place": 6.0,
+            "median_place": 6.0,
+            "n_marks": 1,
+            "n_protocols": 1,
+            "rolling_average": 6.333,
+            "tournament_to_tournament_delta": 0.0
+          },
+          {
+            "program": "standard",
+            "dance": "Q",
+            "event_date": "2026-03-08",
+            "avg_place": 8.0,
+            "final_avg_place": 8.0,
+            "median_place": 8.0,
+            "n_marks": 1,
+            "n_protocols": 1,
+            "rolling_average": 6.667,
+            "tournament_to_tournament_delta": 2.0
+          },
+          {
+            "program": "standard",
+            "dance": "T",
+            "event_date": "2025-09-28",
+            "avg_place": 4.0,
+            "final_avg_place": 4.0,
+            "median_place": 4.0,
+            "n_marks": 1,
+            "n_protocols": 1,
+            "rolling_average": 4.0,
+            "tournament_to_tournament_delta": null
+          },
+          {
+            "program": "standard",
+            "dance": "T",
+            "event_date": "2025-10-12",
+            "avg_place": 7.0,
+            "final_avg_place": 7.0,
+            "median_place": 7.0,
+            "n_marks": 1,
+            "n_protocols": 1,
+            "rolling_average": 5.5,
+            "tournament_to_tournament_delta": 3.0
+          },
+          {
+            "program": "standard",
+            "dance": "T",
+            "event_date": "2025-11-09",
+            "avg_place": 6.5,
+            "final_avg_place": 6.5,
+            "median_place": 6.5,
+            "n_marks": 1,
+            "n_protocols": 1,
+            "rolling_average": 5.833,
+            "tournament_to_tournament_delta": -0.5
+          },
+          {
+            "program": "standard",
+            "dance": "T",
+            "event_date": "2026-03-01",
+            "avg_place": 4.0,
+            "final_avg_place": 4.0,
+            "median_place": 4.0,
+            "n_marks": 1,
+            "n_protocols": 1,
+            "rolling_average": 5.833,
+            "tournament_to_tournament_delta": -2.5
+          },
+          {
+            "program": "standard",
+            "dance": "T",
+            "event_date": "2026-03-08",
+            "avg_place": 7.0,
+            "final_avg_place": 7.0,
+            "median_place": 7.0,
+            "n_marks": 1,
+            "n_protocols": 1,
+            "rolling_average": 5.833,
+            "tournament_to_tournament_delta": 3.0
+          },
+          {
+            "program": "standard",
+            "dance": "W",
+            "event_date": "2025-09-28",
+            "avg_place": 4.0,
+            "final_avg_place": 4.0,
+            "median_place": 4.0,
+            "n_marks": 1,
+            "n_protocols": 1,
+            "rolling_average": 4.0,
+            "tournament_to_tournament_delta": null
+          },
+          {
+            "program": "standard",
+            "dance": "W",
+            "event_date": "2025-10-12",
+            "avg_place": 7.0,
+            "final_avg_place": 7.0,
+            "median_place": 7.0,
+            "n_marks": 1,
+            "n_protocols": 1,
+            "rolling_average": 5.5,
+            "tournament_to_tournament_delta": 3.0
+          },
+          {
+            "program": "standard",
+            "dance": "W",
+            "event_date": "2025-11-09",
+            "avg_place": 7.0,
+            "final_avg_place": 7.0,
+            "median_place": 7.0,
+            "n_marks": 1,
+            "n_protocols": 1,
+            "rolling_average": 6.0,
+            "tournament_to_tournament_delta": 0.0
+          },
+          {
+            "program": "standard",
+            "dance": "W",
+            "event_date": "2026-03-01",
+            "avg_place": 6.0,
+            "final_avg_place": 6.0,
+            "median_place": 6.0,
+            "n_marks": 1,
+            "n_protocols": 1,
+            "rolling_average": 6.667,
+            "tournament_to_tournament_delta": -1.0
+          },
+          {
+            "program": "standard",
+            "dance": "W",
+            "event_date": "2026-03-08",
+            "avg_place": 8.0,
+            "final_avg_place": 8.0,
+            "median_place": 8.0,
+            "n_marks": 1,
+            "n_protocols": 1,
+            "rolling_average": 7.0,
+            "tournament_to_tournament_delta": 2.0
+          }
+        ],
+        "trends": [
+          {
+            "program": "standard",
+            "dance": "T",
+            "trend_over_time": 0.3,
+            "first_date": "2025-09-28",
+            "first_avg_place": 4.0,
+            "last_date": "2026-03-08",
+            "last_avg_place": 7.0,
+            "first_to_last_delta": 3.0,
+            "n_dates": 5,
+            "confidence": "ok",
+            "trend_status": "declining"
+          },
+          {
+            "program": "standard",
+            "dance": "F",
+            "trend_over_time": 0.5,
+            "first_date": "2025-09-28",
+            "first_avg_place": 3.0,
+            "last_date": "2026-03-08",
+            "last_avg_place": 6.0,
+            "first_to_last_delta": 3.0,
+            "n_dates": 5,
+            "confidence": "ok",
+            "trend_status": "declining"
+          },
+          {
+            "program": "standard",
+            "dance": "W",
+            "trend_over_time": 0.7,
+            "first_date": "2025-09-28",
+            "first_avg_place": 4.0,
+            "last_date": "2026-03-08",
+            "last_avg_place": 8.0,
+            "first_to_last_delta": 4.0,
+            "n_dates": 5,
+            "confidence": "ok",
+            "trend_status": "declining"
+          },
+          {
+            "program": "standard",
+            "dance": "Q",
+            "trend_over_time": 0.9,
+            "first_date": "2025-09-28",
+            "first_avg_place": 3.0,
+            "last_date": "2026-03-08",
+            "last_avg_place": 8.0,
+            "first_to_last_delta": 5.0,
+            "n_dates": 5,
+            "confidence": "ok",
+            "trend_status": "declining"
+          }
+        ],
+        "tournament_dance_results": [
+          {
+            "event_date": "2025-09-28",
+            "tournament_id": 2025092800,
+            "tournament_title": "Северный кубок 2025 (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
+            "protocol_id": 73074,
+            "category": "Юниоры-1+2 E+D Соло Ж St",
+            "program": "standard",
+            "dance": "W",
+            "final_place": 4.0,
+            "best_place": 4.0,
+            "worst_place": 4.0,
+            "n_results": 1,
+            "judge_marks": 11,
+            "dance_code": "W",
+            "date": "2025-09-28"
+          },
+          {
+            "event_date": "2025-09-28",
+            "tournament_id": 2025092800,
+            "tournament_title": "Северный кубок 2025 (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
+            "protocol_id": 73074,
+            "category": "Юниоры-1+2 E+D Соло Ж St",
+            "program": "standard",
+            "dance": "T",
+            "final_place": 4.0,
+            "best_place": 4.0,
+            "worst_place": 4.0,
+            "n_results": 1,
+            "judge_marks": 11,
+            "dance_code": "T",
+            "date": "2025-09-28"
+          },
+          {
+            "event_date": "2025-09-28",
+            "tournament_id": 2025092800,
+            "tournament_title": "Северный кубок 2025 (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
+            "protocol_id": 73074,
+            "category": "Юниоры-1+2 E+D Соло Ж St",
+            "program": "standard",
+            "dance": "F",
+            "final_place": 3.0,
+            "best_place": 3.0,
+            "worst_place": 3.0,
+            "n_results": 1,
+            "judge_marks": 11,
+            "dance_code": "F",
+            "date": "2025-09-28"
+          },
+          {
+            "event_date": "2025-09-28",
+            "tournament_id": 2025092800,
+            "tournament_title": "Северный кубок 2025 (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
+            "protocol_id": 73074,
+            "category": "Юниоры-1+2 E+D Соло Ж St",
+            "program": "standard",
+            "dance": "Q",
+            "final_place": 3.0,
+            "best_place": 3.0,
+            "worst_place": 3.0,
+            "n_results": 1,
+            "judge_marks": 11,
+            "dance_code": "Q",
+            "date": "2025-09-28"
+          },
+          {
+            "event_date": "2025-10-12",
+            "tournament_id": 2025101200,
+            "tournament_title": "Балтийская Звезда - 2025 (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
+            "protocol_id": 73641,
+            "category": "Юниоры-1+2 E+D соло Ж St",
+            "program": "standard",
+            "dance": "W",
+            "final_place": 7.0,
+            "best_place": 7.0,
+            "worst_place": 7.0,
+            "n_results": 1,
+            "judge_marks": 11,
+            "dance_code": "W",
+            "date": "2025-10-12"
+          },
+          {
+            "event_date": "2025-10-12",
+            "tournament_id": 2025101200,
+            "tournament_title": "Балтийская Звезда - 2025 (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
+            "protocol_id": 73641,
+            "category": "Юниоры-1+2 E+D соло Ж St",
+            "program": "standard",
+            "dance": "T",
+            "final_place": 7.0,
+            "best_place": 7.0,
+            "worst_place": 7.0,
+            "n_results": 1,
+            "judge_marks": 11,
+            "dance_code": "T",
+            "date": "2025-10-12"
+          },
+          {
+            "event_date": "2025-10-12",
+            "tournament_id": 2025101200,
+            "tournament_title": "Балтийская Звезда - 2025 (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
+            "protocol_id": 73641,
+            "category": "Юниоры-1+2 E+D соло Ж St",
+            "program": "standard",
+            "dance": "F",
+            "final_place": 7.0,
+            "best_place": 7.0,
+            "worst_place": 7.0,
+            "n_results": 1,
+            "judge_marks": 11,
+            "dance_code": "F",
+            "date": "2025-10-12"
+          },
+          {
+            "event_date": "2025-10-12",
+            "tournament_id": 2025101200,
+            "tournament_title": "Балтийская Звезда - 2025 (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
+            "protocol_id": 73641,
+            "category": "Юниоры-1+2 E+D соло Ж St",
+            "program": "standard",
+            "dance": "Q",
+            "final_place": 7.0,
+            "best_place": 7.0,
+            "worst_place": 7.0,
+            "n_results": 1,
+            "judge_marks": 11,
+            "dance_code": "Q",
+            "date": "2025-10-12"
+          },
+          {
+            "event_date": "2025-11-09",
+            "tournament_id": 2025110901,
+            "tournament_title": "Кубок Лиги 2025 (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
+            "protocol_id": 74566,
+            "category": "Юниоры-1+2 E+D Соло Ж St",
+            "program": "standard",
+            "dance": "W",
+            "final_place": 7.0,
+            "best_place": 7.0,
+            "worst_place": 7.0,
+            "n_results": 1,
+            "judge_marks": 7,
+            "dance_code": "W",
+            "date": "2025-11-09"
+          },
+          {
+            "event_date": "2025-11-09",
+            "tournament_id": 2025110901,
+            "tournament_title": "Кубок Лиги 2025 (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
+            "protocol_id": 74566,
+            "category": "Юниоры-1+2 E+D Соло Ж St",
+            "program": "standard",
+            "dance": "T",
+            "final_place": 6.5,
+            "best_place": 6.5,
+            "worst_place": 6.5,
+            "n_results": 1,
+            "judge_marks": 7,
+            "dance_code": "T",
+            "date": "2025-11-09"
+          },
+          {
+            "event_date": "2025-11-09",
+            "tournament_id": 2025110901,
+            "tournament_title": "Кубок Лиги 2025 (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
+            "protocol_id": 74566,
+            "category": "Юниоры-1+2 E+D Соло Ж St",
+            "program": "standard",
+            "dance": "F",
+            "final_place": 6.0,
+            "best_place": 6.0,
+            "worst_place": 6.0,
+            "n_results": 1,
+            "judge_marks": 7,
+            "dance_code": "F",
+            "date": "2025-11-09"
+          },
+          {
+            "event_date": "2025-11-09",
+            "tournament_id": 2025110901,
+            "tournament_title": "Кубок Лиги 2025 (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
+            "protocol_id": 74566,
+            "category": "Юниоры-1+2 E+D Соло Ж St",
+            "program": "standard",
+            "dance": "Q",
+            "final_place": 6.0,
+            "best_place": 6.0,
+            "worst_place": 6.0,
+            "n_results": 1,
+            "judge_marks": 7,
+            "dance_code": "Q",
+            "date": "2025-11-09"
+          },
+          {
+            "event_date": "2026-03-01",
+            "tournament_id": 2026030102,
+            "tournament_title": "Танцевальное Свидание 2026 - Dance Date Cup (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
+            "protocol_id": 77797,
+            "category": "Юниоры-1+2 E+D Соло Ж St",
+            "program": "standard",
+            "dance": "W",
+            "final_place": 6.0,
+            "best_place": 6.0,
+            "worst_place": 6.0,
+            "n_results": 1,
+            "judge_marks": 9,
+            "dance_code": "W",
+            "date": "2026-03-01"
+          },
+          {
+            "event_date": "2026-03-01",
+            "tournament_id": 2026030102,
+            "tournament_title": "Танцевальное Свидание 2026 - Dance Date Cup (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
+            "protocol_id": 77797,
+            "category": "Юниоры-1+2 E+D Соло Ж St",
+            "program": "standard",
+            "dance": "T",
+            "final_place": 4.0,
+            "best_place": 4.0,
+            "worst_place": 4.0,
+            "n_results": 1,
+            "judge_marks": 9,
+            "dance_code": "T",
+            "date": "2026-03-01"
+          },
+          {
+            "event_date": "2026-03-01",
+            "tournament_id": 2026030102,
+            "tournament_title": "Танцевальное Свидание 2026 - Dance Date Cup (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
+            "protocol_id": 77797,
+            "category": "Юниоры-1+2 E+D Соло Ж St",
+            "program": "standard",
+            "dance": "F",
+            "final_place": 6.0,
+            "best_place": 6.0,
+            "worst_place": 6.0,
+            "n_results": 1,
+            "judge_marks": 9,
+            "dance_code": "F",
+            "date": "2026-03-01"
+          },
+          {
+            "event_date": "2026-03-01",
+            "tournament_id": 2026030102,
+            "tournament_title": "Танцевальное Свидание 2026 - Dance Date Cup (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
+            "protocol_id": 77797,
+            "category": "Юниоры-1+2 E+D Соло Ж St",
+            "program": "standard",
+            "dance": "Q",
+            "final_place": 6.0,
+            "best_place": 6.0,
+            "worst_place": 6.0,
+            "n_results": 1,
+            "judge_marks": 9,
+            "dance_code": "Q",
+            "date": "2026-03-01"
+          },
+          {
+            "event_date": "2026-03-08",
+            "tournament_id": 2026030800,
+            "tournament_title": "Амбассадор 2026 (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
+            "protocol_id": 77966,
+            "category": "Юниоры-1+2 E+D Соло Ж St",
+            "program": "standard",
+            "dance": "W",
+            "final_place": 8.0,
+            "best_place": 8.0,
+            "worst_place": 8.0,
+            "n_results": 1,
+            "judge_marks": 9,
+            "dance_code": "W",
+            "date": "2026-03-08"
+          },
+          {
+            "event_date": "2026-03-08",
+            "tournament_id": 2026030800,
+            "tournament_title": "Амбассадор 2026 (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
+            "protocol_id": 77966,
+            "category": "Юниоры-1+2 E+D Соло Ж St",
+            "program": "standard",
+            "dance": "T",
+            "final_place": 7.0,
+            "best_place": 7.0,
+            "worst_place": 7.0,
+            "n_results": 1,
+            "judge_marks": 9,
+            "dance_code": "T",
+            "date": "2026-03-08"
+          },
+          {
+            "event_date": "2026-03-08",
+            "tournament_id": 2026030800,
+            "tournament_title": "Амбассадор 2026 (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
+            "protocol_id": 77966,
+            "category": "Юниоры-1+2 E+D Соло Ж St",
+            "program": "standard",
+            "dance": "F",
+            "final_place": 6.0,
+            "best_place": 6.0,
+            "worst_place": 6.0,
+            "n_results": 1,
+            "judge_marks": 9,
+            "dance_code": "F",
+            "date": "2026-03-08"
+          },
+          {
+            "event_date": "2026-03-08",
+            "tournament_id": 2026030800,
+            "tournament_title": "Амбассадор 2026 (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
+            "protocol_id": 77966,
+            "category": "Юниоры-1+2 E+D Соло Ж St",
+            "program": "standard",
+            "dance": "Q",
+            "final_place": 8.0,
+            "best_place": 8.0,
+            "worst_place": 8.0,
+            "n_results": 1,
+            "judge_marks": 9,
+            "dance_code": "Q",
+            "date": "2026-03-08"
+          }
+        ]
+      },
+      "d": {
+        "metrics": [],
+        "display_mode": "insufficient_data",
+        "best_dances": [],
+        "worst_dances": [],
+        "evaluated_dance": null,
+        "tied_dances": [],
+        "tied_metric_value": null,
+        "best_by_final_average": null,
+        "best_by_median": null,
+        "most_stable_dance": null,
+        "best_peak": null,
+        "worst_by_final_average": null,
+        "judge_level_best": null,
+        "strongest_dance": null,
+        "weakest_dance": null,
+        "most_improved_dance": null,
+        "key": "d",
+        "label": "D",
+        "source": "selected_dancer_marks_and_results",
+        "class_group": "D",
+        "age_groups": [
+          "Юниоры-1+2"
+        ],
+        "source_categories": [
+          "Юниоры-1+2 D Соло Ж St"
+        ],
+        "protocol_count": 1,
+        "tournament_count": 1,
+        "evidence": {
+          "tournaments": 1,
+          "protocols": 1,
+          "marks": 23,
+          "results": 0
+        },
+        "visibility": {
+          "marks_count": 23,
+          "results_count": 0,
+          "dance_metrics_count": 0,
+          "protocols_count": 1,
+          "tournaments_count": 1,
+          "trainer_summaries_count": 1,
+          "trend_items_count": 0,
+          "marks_derived_metrics_count": 4
+        },
+        "marks_derived_dance_metrics": [
+          {
+            "program": "standard",
+            "dance": "W",
+            "marks_count": 9,
+            "protocols_count": 1,
+            "tournaments_count": 1,
+            "cross_marks": 9,
+            "numeric_marks": 0,
+            "dance_code": "W"
+          },
+          {
+            "program": "standard",
+            "dance": "T",
+            "marks_count": 7,
+            "protocols_count": 1,
+            "tournaments_count": 1,
+            "cross_marks": 7,
+            "numeric_marks": 0,
+            "dance_code": "T"
+          },
+          {
+            "program": "standard",
+            "dance": "F",
+            "marks_count": 3,
+            "protocols_count": 1,
+            "tournaments_count": 1,
+            "cross_marks": 3,
+            "numeric_marks": 0,
+            "dance_code": "F"
+          },
+          {
+            "program": "standard",
+            "dance": "Q",
+            "marks_count": 4,
+            "protocols_count": 1,
+            "tournaments_count": 1,
+            "cross_marks": 4,
+            "numeric_marks": 0,
+            "dance_code": "Q"
+          }
+        ],
+        "is_visible_chip": true,
+        "visibility_status": "primary",
+        "visibility_reason": "primary: marks-derived dance analysis available",
+        "dynamics_by_date": [],
+        "trends": [],
+        "tournament_dance_results": []
+      }
+    },
+    "latin": {
+      "all": {
+        "metrics": [],
+        "display_mode": "insufficient_data",
+        "best_dances": [],
+        "worst_dances": [],
+        "evaluated_dance": null,
+        "tied_dances": [],
+        "tied_metric_value": null,
+        "best_by_final_average": null,
+        "best_by_median": null,
+        "most_stable_dance": null,
+        "best_peak": null,
+        "worst_by_final_average": null,
+        "judge_level_best": null,
+        "strongest_dance": null,
+        "weakest_dance": null,
+        "most_improved_dance": null,
+        "key": "all",
+        "label": "Все категории",
+        "source": "selected_dancer_marks_and_results",
+        "class_group": null,
+        "age_groups": [
+          "Юниоры-1+2"
+        ],
+        "source_categories": [
+          "Юниоры-1+2 D Соло Ж La",
+          "Юниоры-1+2 E+D Соло Ж La",
+          "Юниоры-1+2 E+D соло Ж La"
+        ],
+        "protocol_count": 7,
+        "tournament_count": 7,
+        "evidence": {
+          "tournaments": 7,
+          "protocols": 7,
+          "marks": 95,
+          "results": 0
+        },
+        "visibility": {
+          "marks_count": 95,
+          "results_count": 0,
+          "dance_metrics_count": 0,
+          "protocols_count": 7,
+          "tournaments_count": 7,
+          "trainer_summaries_count": 7,
+          "trend_items_count": 0,
+          "marks_derived_metrics_count": 4
+        },
+        "marks_derived_dance_metrics": [
+          {
+            "program": "latin",
+            "dance": "S",
+            "marks_count": 27,
+            "protocols_count": 7,
+            "tournaments_count": 7,
+            "cross_marks": 27,
+            "numeric_marks": 0,
+            "dance_code": "S"
+          },
+          {
+            "program": "latin",
+            "dance": "C",
+            "marks_count": 24,
+            "protocols_count": 7,
+            "tournaments_count": 7,
+            "cross_marks": 24,
+            "numeric_marks": 0,
+            "dance_code": "Ch"
+          },
+          {
+            "program": "latin",
+            "dance": "R",
+            "marks_count": 17,
+            "protocols_count": 7,
+            "tournaments_count": 7,
+            "cross_marks": 17,
+            "numeric_marks": 0,
+            "dance_code": "R"
+          },
+          {
+            "program": "latin",
+            "dance": "J",
+            "marks_count": 27,
+            "protocols_count": 6,
+            "tournaments_count": 6,
+            "cross_marks": 27,
+            "numeric_marks": 0,
+            "dance_code": "J"
+          }
+        ],
+        "is_visible_chip": true,
+        "visibility_status": "primary",
+        "visibility_reason": "primary: marks-derived dance analysis available",
+        "dynamics_by_date": [],
+        "trends": [],
+        "tournament_dance_results": []
+      },
+      "e_d": {
+        "metrics": [],
+        "display_mode": "insufficient_data",
+        "best_dances": [],
+        "worst_dances": [],
+        "evaluated_dance": null,
+        "tied_dances": [],
+        "tied_metric_value": null,
+        "best_by_final_average": null,
+        "best_by_median": null,
+        "most_stable_dance": null,
+        "best_peak": null,
+        "worst_by_final_average": null,
+        "judge_level_best": null,
+        "strongest_dance": null,
+        "weakest_dance": null,
+        "most_improved_dance": null,
+        "key": "e_d",
+        "label": "E+D",
+        "source": "selected_dancer_marks_and_results",
+        "class_group": "E+D",
+        "age_groups": [
+          "Юниоры-1+2"
+        ],
+        "source_categories": [
+          "Юниоры-1+2 E+D Соло Ж La",
+          "Юниоры-1+2 E+D соло Ж La"
+        ],
+        "protocol_count": 6,
+        "tournament_count": 6,
+        "evidence": {
+          "tournaments": 6,
+          "protocols": 6,
+          "marks": 91,
+          "results": 0
+        },
+        "visibility": {
+          "marks_count": 91,
+          "results_count": 0,
+          "dance_metrics_count": 0,
+          "protocols_count": 6,
+          "tournaments_count": 6,
+          "trainer_summaries_count": 6,
+          "trend_items_count": 0,
+          "marks_derived_metrics_count": 4
+        },
+        "marks_derived_dance_metrics": [
+          {
+            "program": "latin",
+            "dance": "S",
+            "marks_count": 26,
+            "protocols_count": 6,
+            "tournaments_count": 6,
+            "cross_marks": 26,
+            "numeric_marks": 0,
+            "dance_code": "S"
+          },
+          {
+            "program": "latin",
+            "dance": "C",
+            "marks_count": 23,
+            "protocols_count": 6,
+            "tournaments_count": 6,
+            "cross_marks": 23,
+            "numeric_marks": 0,
+            "dance_code": "Ch"
+          },
+          {
+            "program": "latin",
+            "dance": "R",
+            "marks_count": 16,
+            "protocols_count": 6,
+            "tournaments_count": 6,
+            "cross_marks": 16,
+            "numeric_marks": 0,
+            "dance_code": "R"
+          },
+          {
+            "program": "latin",
+            "dance": "J",
+            "marks_count": 26,
+            "protocols_count": 5,
+            "tournaments_count": 5,
+            "cross_marks": 26,
+            "numeric_marks": 0,
+            "dance_code": "J"
+          }
+        ],
+        "is_visible_chip": true,
+        "visibility_status": "primary",
+        "visibility_reason": "primary: marks-derived dance analysis available",
+        "dynamics_by_date": [],
+        "trends": [],
+        "tournament_dance_results": []
+      },
+      "d": {
+        "metrics": [],
+        "display_mode": "insufficient_data",
+        "best_dances": [],
+        "worst_dances": [],
+        "evaluated_dance": null,
+        "tied_dances": [],
+        "tied_metric_value": null,
+        "best_by_final_average": null,
+        "best_by_median": null,
+        "most_stable_dance": null,
+        "best_peak": null,
+        "worst_by_final_average": null,
+        "judge_level_best": null,
+        "strongest_dance": null,
+        "weakest_dance": null,
+        "most_improved_dance": null,
+        "key": "d",
+        "label": "D",
+        "source": "selected_dancer_marks_and_results",
+        "class_group": "D",
+        "age_groups": [
+          "Юниоры-1+2"
+        ],
+        "source_categories": [
+          "Юниоры-1+2 D Соло Ж La"
+        ],
+        "protocol_count": 1,
+        "tournament_count": 1,
+        "evidence": {
+          "tournaments": 1,
+          "protocols": 1,
+          "marks": 4,
+          "results": 0
+        },
+        "visibility": {
+          "marks_count": 4,
+          "results_count": 0,
+          "dance_metrics_count": 0,
+          "protocols_count": 1,
+          "tournaments_count": 1,
+          "trainer_summaries_count": 1,
+          "trend_items_count": 0,
+          "marks_derived_metrics_count": 4
+        },
+        "marks_derived_dance_metrics": [
+          {
+            "program": "latin",
+            "dance": "S",
+            "marks_count": 1,
+            "protocols_count": 1,
+            "tournaments_count": 1,
+            "cross_marks": 1,
+            "numeric_marks": 0,
+            "dance_code": "S"
+          },
+          {
+            "program": "latin",
+            "dance": "C",
+            "marks_count": 1,
+            "protocols_count": 1,
+            "tournaments_count": 1,
+            "cross_marks": 1,
+            "numeric_marks": 0,
+            "dance_code": "Ch"
+          },
+          {
+            "program": "latin",
+            "dance": "R",
+            "marks_count": 1,
+            "protocols_count": 1,
+            "tournaments_count": 1,
+            "cross_marks": 1,
+            "numeric_marks": 0,
+            "dance_code": "R"
+          },
+          {
+            "program": "latin",
+            "dance": "J",
+            "marks_count": 1,
+            "protocols_count": 1,
+            "tournaments_count": 1,
+            "cross_marks": 1,
+            "numeric_marks": 0,
+            "dance_code": "J"
+          }
+        ],
+        "is_visible_chip": true,
+        "visibility_status": "limited",
+        "visibility_reason": "limited: 4 marks, marks-derived reference only",
+        "dynamics_by_date": [],
+        "trends": [],
+        "tournament_dance_results": []
+      }
+    }
+  },
+  "parent_category_groups": {
+    "standard": {
+      "all": {
+        "metrics": [
+          {
+            "program": "standard",
+            "dance": "F",
+            "final_avg_place": 5.6,
+            "median_place": 6.0,
+            "std_deviation": 1.517,
+            "variance": 2.3,
+            "n_marks": 5,
+            "n_protocols": 5,
+            "n_dates": 5,
+            "best_place": 3.0,
+            "worst_place": 7.0,
+            "categories": "Юниоры-1+2 E+D Соло Ж St; Юниоры-1+2 E+D соло Ж St",
+            "judge_avg_place": 5.489,
+            "judge_std_deviation": 1.804,
+            "judge_variance": 3.255,
+            "judge_marks": 47,
+            "avg_place": 5.6,
+            "final_median_place": 6.0,
+            "final_std_deviation": 1.517,
+            "consistency_score": 0.397,
+            "volatility_score": 1.517,
+            "confidence": "low confidence"
+          },
+          {
+            "program": "standard",
+            "dance": "Q",
+            "final_avg_place": 6.0,
+            "median_place": 6.0,
+            "std_deviation": 1.871,
+            "variance": 3.5,
+            "n_marks": 5,
+            "n_protocols": 5,
+            "n_dates": 5,
+            "best_place": 3.0,
+            "worst_place": 8.0,
+            "categories": "Юниоры-1+2 E+D Соло Ж St; Юниоры-1+2 E+D соло Ж St",
+            "judge_avg_place": 5.404,
+            "judge_std_deviation": 1.826,
+            "judge_variance": 3.333,
+            "judge_marks": 47,
+            "avg_place": 6.0,
+            "final_median_place": 6.0,
+            "final_std_deviation": 1.871,
+            "consistency_score": 0.348,
+            "volatility_score": 1.871,
+            "confidence": "low confidence"
+          },
+          {
+            "program": "standard",
+            "dance": "T",
+            "final_avg_place": 5.7,
+            "median_place": 6.5,
+            "std_deviation": 1.565,
+            "variance": 2.45,
+            "n_marks": 5,
+            "n_protocols": 5,
+            "n_dates": 5,
+            "best_place": 4.0,
+            "worst_place": 7.0,
+            "categories": "Юниоры-1+2 E+D Соло Ж St; Юниоры-1+2 E+D соло Ж St",
+            "judge_avg_place": 5.447,
+            "judge_std_deviation": 1.863,
+            "judge_variance": 3.47,
+            "judge_marks": 47,
+            "avg_place": 5.7,
+            "final_median_place": 6.5,
+            "final_std_deviation": 1.565,
+            "consistency_score": 0.39,
+            "volatility_score": 1.565,
+            "confidence": "low confidence"
+          },
+          {
+            "program": "standard",
+            "dance": "W",
+            "final_avg_place": 6.4,
+            "median_place": 7.0,
+            "std_deviation": 1.517,
+            "variance": 2.3,
+            "n_marks": 5,
+            "n_protocols": 5,
+            "n_dates": 5,
+            "best_place": 4.0,
+            "worst_place": 8.0,
+            "categories": "Юниоры-1+2 E+D Соло Ж St; Юниоры-1+2 E+D соло Ж St",
+            "judge_avg_place": 5.723,
+            "judge_std_deviation": 1.611,
+            "judge_variance": 2.596,
+            "judge_marks": 47,
+            "avg_place": 6.4,
+            "final_median_place": 7.0,
+            "final_std_deviation": 1.517,
+            "consistency_score": 0.397,
+            "volatility_score": 1.517,
+            "confidence": "low confidence"
+          }
+        ],
+        "display_mode": "best_worst",
+        "best_dances": [
+          {
+            "dance": "F",
+            "dance_code": "F",
+            "metric_value": 5.6,
+            "metric_type": "final_avg_place",
+            "metric_label": "среднее место",
+            "final_avg_place": 5.6
+          }
+        ],
+        "worst_dances": [
+          {
+            "dance": "W",
+            "dance_code": "W",
+            "metric_value": 6.4,
+            "metric_type": "final_avg_place",
+            "metric_label": "среднее место",
+            "final_avg_place": 6.4
+          }
+        ],
+        "evaluated_dance": null,
+        "tied_dances": [],
+        "tied_metric_value": null,
+        "best_dance": {
+          "dance": "F",
+          "dance_code": "F",
+          "metric_value": 5.6,
+          "metric_type": "final_avg_place",
+          "metric_label": "среднее место",
+          "final_avg_place": 5.6
+        },
+        "worst_dance": {
+          "dance": "W",
+          "dance_code": "W",
+          "metric_value": 6.4,
+          "metric_type": "final_avg_place",
+          "metric_label": "среднее место",
+          "final_avg_place": 6.4
+        },
+        "best_by_final_average": null,
+        "best_by_median": null,
+        "most_stable_dance": null,
+        "best_peak": null,
+        "worst_by_final_average": null,
+        "judge_level_best": null,
+        "strongest_dance": null,
+        "weakest_dance": null,
+        "most_improved_dance": {
+          "program": "standard",
+          "dance": "T",
+          "trend_over_time": 0.3,
+          "first_date": "2025-09-28",
+          "first_avg_place": 4.0,
+          "last_date": "2026-03-08",
+          "last_avg_place": 7.0,
+          "first_to_last_delta": 3.0,
+          "n_dates": 5,
+          "confidence": "ok",
+          "trend_status": "declining"
+        },
+        "key": "all",
+        "label": "Все категории",
+        "source": "parent_category_aggregation",
+        "included_categories": [
+          "E+D",
+          "D"
+        ],
+        "source_categories": [
+          "Юниоры-1+2 D Соло Ж St",
+          "Юниоры-1+2 E+D Соло Ж St",
+          "Юниоры-1+2 E+D соло Ж St"
+        ],
+        "protocol_count": 7,
+        "tournament_count": 7,
         "evidence": {
           "tournaments": 7,
           "protocols": 7,
@@ -1487,308 +3705,6 @@
             "confidence": "ok",
             "trend_status": "declining"
           }
-        ],
-        "tournament_dance_results": [
-          {
-            "event_date": "2025-09-28",
-            "tournament_id": 2025092800,
-            "tournament_title": "Северный кубок 2025 (Санкт-Петербург)",
-            "protocol_id": 73074,
-            "category": "Юниоры-1+2 E+D Соло Ж St",
-            "program": "standard",
-            "dance": "W",
-            "final_place": 4.0,
-            "best_place": 4.0,
-            "worst_place": 4.0,
-            "n_results": 1,
-            "judge_marks": 11,
-            "dance_code": "W"
-          },
-          {
-            "event_date": "2025-09-28",
-            "tournament_id": 2025092800,
-            "tournament_title": "Северный кубок 2025 (Санкт-Петербург)",
-            "protocol_id": 73074,
-            "category": "Юниоры-1+2 E+D Соло Ж St",
-            "program": "standard",
-            "dance": "T",
-            "final_place": 4.0,
-            "best_place": 4.0,
-            "worst_place": 4.0,
-            "n_results": 1,
-            "judge_marks": 11,
-            "dance_code": "T"
-          },
-          {
-            "event_date": "2025-09-28",
-            "tournament_id": 2025092800,
-            "tournament_title": "Северный кубок 2025 (Санкт-Петербург)",
-            "protocol_id": 73074,
-            "category": "Юниоры-1+2 E+D Соло Ж St",
-            "program": "standard",
-            "dance": "F",
-            "final_place": 3.0,
-            "best_place": 3.0,
-            "worst_place": 3.0,
-            "n_results": 1,
-            "judge_marks": 11,
-            "dance_code": "F"
-          },
-          {
-            "event_date": "2025-09-28",
-            "tournament_id": 2025092800,
-            "tournament_title": "Северный кубок 2025 (Санкт-Петербург)",
-            "protocol_id": 73074,
-            "category": "Юниоры-1+2 E+D Соло Ж St",
-            "program": "standard",
-            "dance": "Q",
-            "final_place": 3.0,
-            "best_place": 3.0,
-            "worst_place": 3.0,
-            "n_results": 1,
-            "judge_marks": 11,
-            "dance_code": "Q"
-          },
-          {
-            "event_date": "2025-10-12",
-            "tournament_id": 2025101200,
-            "tournament_title": "Балтийская Звезда - 2025 (Санкт-Петербург)",
-            "protocol_id": 73641,
-            "category": "Юниоры-1+2 E+D соло Ж St",
-            "program": "standard",
-            "dance": "W",
-            "final_place": 7.0,
-            "best_place": 7.0,
-            "worst_place": 7.0,
-            "n_results": 1,
-            "judge_marks": 11,
-            "dance_code": "W"
-          },
-          {
-            "event_date": "2025-10-12",
-            "tournament_id": 2025101200,
-            "tournament_title": "Балтийская Звезда - 2025 (Санкт-Петербург)",
-            "protocol_id": 73641,
-            "category": "Юниоры-1+2 E+D соло Ж St",
-            "program": "standard",
-            "dance": "T",
-            "final_place": 7.0,
-            "best_place": 7.0,
-            "worst_place": 7.0,
-            "n_results": 1,
-            "judge_marks": 11,
-            "dance_code": "T"
-          },
-          {
-            "event_date": "2025-10-12",
-            "tournament_id": 2025101200,
-            "tournament_title": "Балтийская Звезда - 2025 (Санкт-Петербург)",
-            "protocol_id": 73641,
-            "category": "Юниоры-1+2 E+D соло Ж St",
-            "program": "standard",
-            "dance": "F",
-            "final_place": 7.0,
-            "best_place": 7.0,
-            "worst_place": 7.0,
-            "n_results": 1,
-            "judge_marks": 11,
-            "dance_code": "F"
-          },
-          {
-            "event_date": "2025-10-12",
-            "tournament_id": 2025101200,
-            "tournament_title": "Балтийская Звезда - 2025 (Санкт-Петербург)",
-            "protocol_id": 73641,
-            "category": "Юниоры-1+2 E+D соло Ж St",
-            "program": "standard",
-            "dance": "Q",
-            "final_place": 7.0,
-            "best_place": 7.0,
-            "worst_place": 7.0,
-            "n_results": 1,
-            "judge_marks": 11,
-            "dance_code": "Q"
-          },
-          {
-            "event_date": "2025-11-09",
-            "tournament_id": 2025110901,
-            "tournament_title": "Кубок Лиги 2025 (Санкт-Петербург)",
-            "protocol_id": 74566,
-            "category": "Юниоры-1+2 E+D Соло Ж St",
-            "program": "standard",
-            "dance": "W",
-            "final_place": 7.0,
-            "best_place": 7.0,
-            "worst_place": 7.0,
-            "n_results": 1,
-            "judge_marks": 7,
-            "dance_code": "W"
-          },
-          {
-            "event_date": "2025-11-09",
-            "tournament_id": 2025110901,
-            "tournament_title": "Кубок Лиги 2025 (Санкт-Петербург)",
-            "protocol_id": 74566,
-            "category": "Юниоры-1+2 E+D Соло Ж St",
-            "program": "standard",
-            "dance": "T",
-            "final_place": 6.5,
-            "best_place": 6.5,
-            "worst_place": 6.5,
-            "n_results": 1,
-            "judge_marks": 7,
-            "dance_code": "T"
-          },
-          {
-            "event_date": "2025-11-09",
-            "tournament_id": 2025110901,
-            "tournament_title": "Кубок Лиги 2025 (Санкт-Петербург)",
-            "protocol_id": 74566,
-            "category": "Юниоры-1+2 E+D Соло Ж St",
-            "program": "standard",
-            "dance": "F",
-            "final_place": 6.0,
-            "best_place": 6.0,
-            "worst_place": 6.0,
-            "n_results": 1,
-            "judge_marks": 7,
-            "dance_code": "F"
-          },
-          {
-            "event_date": "2025-11-09",
-            "tournament_id": 2025110901,
-            "tournament_title": "Кубок Лиги 2025 (Санкт-Петербург)",
-            "protocol_id": 74566,
-            "category": "Юниоры-1+2 E+D Соло Ж St",
-            "program": "standard",
-            "dance": "Q",
-            "final_place": 6.0,
-            "best_place": 6.0,
-            "worst_place": 6.0,
-            "n_results": 1,
-            "judge_marks": 7,
-            "dance_code": "Q"
-          },
-          {
-            "event_date": "2026-03-01",
-            "tournament_id": 2026030102,
-            "tournament_title": "Танцевальное Свидание 2026 - Dance Date Cup (Санкт-Петербург)",
-            "protocol_id": 77797,
-            "category": "Юниоры-1+2 E+D Соло Ж St",
-            "program": "standard",
-            "dance": "W",
-            "final_place": 6.0,
-            "best_place": 6.0,
-            "worst_place": 6.0,
-            "n_results": 1,
-            "judge_marks": 9,
-            "dance_code": "W"
-          },
-          {
-            "event_date": "2026-03-01",
-            "tournament_id": 2026030102,
-            "tournament_title": "Танцевальное Свидание 2026 - Dance Date Cup (Санкт-Петербург)",
-            "protocol_id": 77797,
-            "category": "Юниоры-1+2 E+D Соло Ж St",
-            "program": "standard",
-            "dance": "T",
-            "final_place": 4.0,
-            "best_place": 4.0,
-            "worst_place": 4.0,
-            "n_results": 1,
-            "judge_marks": 9,
-            "dance_code": "T"
-          },
-          {
-            "event_date": "2026-03-01",
-            "tournament_id": 2026030102,
-            "tournament_title": "Танцевальное Свидание 2026 - Dance Date Cup (Санкт-Петербург)",
-            "protocol_id": 77797,
-            "category": "Юниоры-1+2 E+D Соло Ж St",
-            "program": "standard",
-            "dance": "F",
-            "final_place": 6.0,
-            "best_place": 6.0,
-            "worst_place": 6.0,
-            "n_results": 1,
-            "judge_marks": 9,
-            "dance_code": "F"
-          },
-          {
-            "event_date": "2026-03-01",
-            "tournament_id": 2026030102,
-            "tournament_title": "Танцевальное Свидание 2026 - Dance Date Cup (Санкт-Петербург)",
-            "protocol_id": 77797,
-            "category": "Юниоры-1+2 E+D Соло Ж St",
-            "program": "standard",
-            "dance": "Q",
-            "final_place": 6.0,
-            "best_place": 6.0,
-            "worst_place": 6.0,
-            "n_results": 1,
-            "judge_marks": 9,
-            "dance_code": "Q"
-          },
-          {
-            "event_date": "2026-03-08",
-            "tournament_id": 2026030800,
-            "tournament_title": "Амбассадор 2026 (Санкт-Петербург)",
-            "protocol_id": 77966,
-            "category": "Юниоры-1+2 E+D Соло Ж St",
-            "program": "standard",
-            "dance": "W",
-            "final_place": 8.0,
-            "best_place": 8.0,
-            "worst_place": 8.0,
-            "n_results": 1,
-            "judge_marks": 9,
-            "dance_code": "W"
-          },
-          {
-            "event_date": "2026-03-08",
-            "tournament_id": 2026030800,
-            "tournament_title": "Амбассадор 2026 (Санкт-Петербург)",
-            "protocol_id": 77966,
-            "category": "Юниоры-1+2 E+D Соло Ж St",
-            "program": "standard",
-            "dance": "T",
-            "final_place": 7.0,
-            "best_place": 7.0,
-            "worst_place": 7.0,
-            "n_results": 1,
-            "judge_marks": 9,
-            "dance_code": "T"
-          },
-          {
-            "event_date": "2026-03-08",
-            "tournament_id": 2026030800,
-            "tournament_title": "Амбассадор 2026 (Санкт-Петербург)",
-            "protocol_id": 77966,
-            "category": "Юниоры-1+2 E+D Соло Ж St",
-            "program": "standard",
-            "dance": "F",
-            "final_place": 6.0,
-            "best_place": 6.0,
-            "worst_place": 6.0,
-            "n_results": 1,
-            "judge_marks": 9,
-            "dance_code": "F"
-          },
-          {
-            "event_date": "2026-03-08",
-            "tournament_id": 2026030800,
-            "tournament_title": "Амбассадор 2026 (Санкт-Петербург)",
-            "protocol_id": 77966,
-            "category": "Юниоры-1+2 E+D Соло Ж St",
-            "program": "standard",
-            "dance": "Q",
-            "final_place": 8.0,
-            "best_place": 8.0,
-            "worst_place": 8.0,
-            "n_results": 1,
-            "judge_marks": 9,
-            "dance_code": "Q"
-          }
         ]
       },
       "e_d": {
@@ -1890,6 +3806,46 @@
             "confidence": "low confidence"
           }
         ],
+        "display_mode": "best_worst",
+        "best_dances": [
+          {
+            "dance": "F",
+            "dance_code": "F",
+            "metric_value": 5.6,
+            "metric_type": "final_avg_place",
+            "metric_label": "среднее место",
+            "final_avg_place": 5.6
+          }
+        ],
+        "worst_dances": [
+          {
+            "dance": "W",
+            "dance_code": "W",
+            "metric_value": 6.4,
+            "metric_type": "final_avg_place",
+            "metric_label": "среднее место",
+            "final_avg_place": 6.4
+          }
+        ],
+        "evaluated_dance": null,
+        "tied_dances": [],
+        "tied_metric_value": null,
+        "best_dance": {
+          "dance": "F",
+          "dance_code": "F",
+          "metric_value": 5.6,
+          "metric_type": "final_avg_place",
+          "metric_label": "среднее место",
+          "final_avg_place": 5.6
+        },
+        "worst_dance": {
+          "dance": "W",
+          "dance_code": "W",
+          "metric_value": 6.4,
+          "metric_type": "final_avg_place",
+          "metric_label": "среднее место",
+          "final_avg_place": 6.4
+        },
         "best_by_final_average": null,
         "best_by_median": null,
         "most_stable_dance": null,
@@ -1913,21 +3869,22 @@
         },
         "key": "e_d",
         "label": "E+D",
-        "source": "selected_dancer_marks_and_results",
-        "class_group": "E+D",
-        "age_groups": [
-          "Юниоры-1+2"
+        "source": "parent_category_aggregation",
+        "included_categories": [
+          "E+D",
+          "D"
         ],
         "source_categories": [
+          "Юниоры-1+2 D Соло Ж St",
           "Юниоры-1+2 E+D Соло Ж St",
           "Юниоры-1+2 E+D соло Ж St"
         ],
-        "protocol_count": 5,
-        "tournament_count": 5,
+        "protocol_count": 7,
+        "tournament_count": 7,
         "evidence": {
-          "tournaments": 6,
-          "protocols": 6,
-          "marks": 321,
+          "tournaments": 7,
+          "protocols": 7,
+          "marks": 344,
           "results": 20
         },
         "dynamics_by_date": [
@@ -2225,347 +4182,18 @@
             "confidence": "ok",
             "trend_status": "declining"
           }
-        ],
-        "tournament_dance_results": [
-          {
-            "event_date": "2025-09-28",
-            "tournament_id": 2025092800,
-            "tournament_title": "Северный кубок 2025 (Санкт-Петербург)",
-            "protocol_id": 73074,
-            "category": "Юниоры-1+2 E+D Соло Ж St",
-            "program": "standard",
-            "dance": "W",
-            "final_place": 4.0,
-            "best_place": 4.0,
-            "worst_place": 4.0,
-            "n_results": 1,
-            "judge_marks": 11,
-            "dance_code": "W"
-          },
-          {
-            "event_date": "2025-09-28",
-            "tournament_id": 2025092800,
-            "tournament_title": "Северный кубок 2025 (Санкт-Петербург)",
-            "protocol_id": 73074,
-            "category": "Юниоры-1+2 E+D Соло Ж St",
-            "program": "standard",
-            "dance": "T",
-            "final_place": 4.0,
-            "best_place": 4.0,
-            "worst_place": 4.0,
-            "n_results": 1,
-            "judge_marks": 11,
-            "dance_code": "T"
-          },
-          {
-            "event_date": "2025-09-28",
-            "tournament_id": 2025092800,
-            "tournament_title": "Северный кубок 2025 (Санкт-Петербург)",
-            "protocol_id": 73074,
-            "category": "Юниоры-1+2 E+D Соло Ж St",
-            "program": "standard",
-            "dance": "F",
-            "final_place": 3.0,
-            "best_place": 3.0,
-            "worst_place": 3.0,
-            "n_results": 1,
-            "judge_marks": 11,
-            "dance_code": "F"
-          },
-          {
-            "event_date": "2025-09-28",
-            "tournament_id": 2025092800,
-            "tournament_title": "Северный кубок 2025 (Санкт-Петербург)",
-            "protocol_id": 73074,
-            "category": "Юниоры-1+2 E+D Соло Ж St",
-            "program": "standard",
-            "dance": "Q",
-            "final_place": 3.0,
-            "best_place": 3.0,
-            "worst_place": 3.0,
-            "n_results": 1,
-            "judge_marks": 11,
-            "dance_code": "Q"
-          },
-          {
-            "event_date": "2025-10-12",
-            "tournament_id": 2025101200,
-            "tournament_title": "Балтийская Звезда - 2025 (Санкт-Петербург)",
-            "protocol_id": 73641,
-            "category": "Юниоры-1+2 E+D соло Ж St",
-            "program": "standard",
-            "dance": "W",
-            "final_place": 7.0,
-            "best_place": 7.0,
-            "worst_place": 7.0,
-            "n_results": 1,
-            "judge_marks": 11,
-            "dance_code": "W"
-          },
-          {
-            "event_date": "2025-10-12",
-            "tournament_id": 2025101200,
-            "tournament_title": "Балтийская Звезда - 2025 (Санкт-Петербург)",
-            "protocol_id": 73641,
-            "category": "Юниоры-1+2 E+D соло Ж St",
-            "program": "standard",
-            "dance": "T",
-            "final_place": 7.0,
-            "best_place": 7.0,
-            "worst_place": 7.0,
-            "n_results": 1,
-            "judge_marks": 11,
-            "dance_code": "T"
-          },
-          {
-            "event_date": "2025-10-12",
-            "tournament_id": 2025101200,
-            "tournament_title": "Балтийская Звезда - 2025 (Санкт-Петербург)",
-            "protocol_id": 73641,
-            "category": "Юниоры-1+2 E+D соло Ж St",
-            "program": "standard",
-            "dance": "F",
-            "final_place": 7.0,
-            "best_place": 7.0,
-            "worst_place": 7.0,
-            "n_results": 1,
-            "judge_marks": 11,
-            "dance_code": "F"
-          },
-          {
-            "event_date": "2025-10-12",
-            "tournament_id": 2025101200,
-            "tournament_title": "Балтийская Звезда - 2025 (Санкт-Петербург)",
-            "protocol_id": 73641,
-            "category": "Юниоры-1+2 E+D соло Ж St",
-            "program": "standard",
-            "dance": "Q",
-            "final_place": 7.0,
-            "best_place": 7.0,
-            "worst_place": 7.0,
-            "n_results": 1,
-            "judge_marks": 11,
-            "dance_code": "Q"
-          },
-          {
-            "event_date": "2025-11-09",
-            "tournament_id": 2025110901,
-            "tournament_title": "Кубок Лиги 2025 (Санкт-Петербург)",
-            "protocol_id": 74566,
-            "category": "Юниоры-1+2 E+D Соло Ж St",
-            "program": "standard",
-            "dance": "W",
-            "final_place": 7.0,
-            "best_place": 7.0,
-            "worst_place": 7.0,
-            "n_results": 1,
-            "judge_marks": 7,
-            "dance_code": "W"
-          },
-          {
-            "event_date": "2025-11-09",
-            "tournament_id": 2025110901,
-            "tournament_title": "Кубок Лиги 2025 (Санкт-Петербург)",
-            "protocol_id": 74566,
-            "category": "Юниоры-1+2 E+D Соло Ж St",
-            "program": "standard",
-            "dance": "T",
-            "final_place": 6.5,
-            "best_place": 6.5,
-            "worst_place": 6.5,
-            "n_results": 1,
-            "judge_marks": 7,
-            "dance_code": "T"
-          },
-          {
-            "event_date": "2025-11-09",
-            "tournament_id": 2025110901,
-            "tournament_title": "Кубок Лиги 2025 (Санкт-Петербург)",
-            "protocol_id": 74566,
-            "category": "Юниоры-1+2 E+D Соло Ж St",
-            "program": "standard",
-            "dance": "F",
-            "final_place": 6.0,
-            "best_place": 6.0,
-            "worst_place": 6.0,
-            "n_results": 1,
-            "judge_marks": 7,
-            "dance_code": "F"
-          },
-          {
-            "event_date": "2025-11-09",
-            "tournament_id": 2025110901,
-            "tournament_title": "Кубок Лиги 2025 (Санкт-Петербург)",
-            "protocol_id": 74566,
-            "category": "Юниоры-1+2 E+D Соло Ж St",
-            "program": "standard",
-            "dance": "Q",
-            "final_place": 6.0,
-            "best_place": 6.0,
-            "worst_place": 6.0,
-            "n_results": 1,
-            "judge_marks": 7,
-            "dance_code": "Q"
-          },
-          {
-            "event_date": "2026-03-01",
-            "tournament_id": 2026030102,
-            "tournament_title": "Танцевальное Свидание 2026 - Dance Date Cup (Санкт-Петербург)",
-            "protocol_id": 77797,
-            "category": "Юниоры-1+2 E+D Соло Ж St",
-            "program": "standard",
-            "dance": "W",
-            "final_place": 6.0,
-            "best_place": 6.0,
-            "worst_place": 6.0,
-            "n_results": 1,
-            "judge_marks": 9,
-            "dance_code": "W"
-          },
-          {
-            "event_date": "2026-03-01",
-            "tournament_id": 2026030102,
-            "tournament_title": "Танцевальное Свидание 2026 - Dance Date Cup (Санкт-Петербург)",
-            "protocol_id": 77797,
-            "category": "Юниоры-1+2 E+D Соло Ж St",
-            "program": "standard",
-            "dance": "T",
-            "final_place": 4.0,
-            "best_place": 4.0,
-            "worst_place": 4.0,
-            "n_results": 1,
-            "judge_marks": 9,
-            "dance_code": "T"
-          },
-          {
-            "event_date": "2026-03-01",
-            "tournament_id": 2026030102,
-            "tournament_title": "Танцевальное Свидание 2026 - Dance Date Cup (Санкт-Петербург)",
-            "protocol_id": 77797,
-            "category": "Юниоры-1+2 E+D Соло Ж St",
-            "program": "standard",
-            "dance": "F",
-            "final_place": 6.0,
-            "best_place": 6.0,
-            "worst_place": 6.0,
-            "n_results": 1,
-            "judge_marks": 9,
-            "dance_code": "F"
-          },
-          {
-            "event_date": "2026-03-01",
-            "tournament_id": 2026030102,
-            "tournament_title": "Танцевальное Свидание 2026 - Dance Date Cup (Санкт-Петербург)",
-            "protocol_id": 77797,
-            "category": "Юниоры-1+2 E+D Соло Ж St",
-            "program": "standard",
-            "dance": "Q",
-            "final_place": 6.0,
-            "best_place": 6.0,
-            "worst_place": 6.0,
-            "n_results": 1,
-            "judge_marks": 9,
-            "dance_code": "Q"
-          },
-          {
-            "event_date": "2026-03-08",
-            "tournament_id": 2026030800,
-            "tournament_title": "Амбассадор 2026 (Санкт-Петербург)",
-            "protocol_id": 77966,
-            "category": "Юниоры-1+2 E+D Соло Ж St",
-            "program": "standard",
-            "dance": "W",
-            "final_place": 8.0,
-            "best_place": 8.0,
-            "worst_place": 8.0,
-            "n_results": 1,
-            "judge_marks": 9,
-            "dance_code": "W"
-          },
-          {
-            "event_date": "2026-03-08",
-            "tournament_id": 2026030800,
-            "tournament_title": "Амбассадор 2026 (Санкт-Петербург)",
-            "protocol_id": 77966,
-            "category": "Юниоры-1+2 E+D Соло Ж St",
-            "program": "standard",
-            "dance": "T",
-            "final_place": 7.0,
-            "best_place": 7.0,
-            "worst_place": 7.0,
-            "n_results": 1,
-            "judge_marks": 9,
-            "dance_code": "T"
-          },
-          {
-            "event_date": "2026-03-08",
-            "tournament_id": 2026030800,
-            "tournament_title": "Амбассадор 2026 (Санкт-Петербург)",
-            "protocol_id": 77966,
-            "category": "Юниоры-1+2 E+D Соло Ж St",
-            "program": "standard",
-            "dance": "F",
-            "final_place": 6.0,
-            "best_place": 6.0,
-            "worst_place": 6.0,
-            "n_results": 1,
-            "judge_marks": 9,
-            "dance_code": "F"
-          },
-          {
-            "event_date": "2026-03-08",
-            "tournament_id": 2026030800,
-            "tournament_title": "Амбассадор 2026 (Санкт-Петербург)",
-            "protocol_id": 77966,
-            "category": "Юниоры-1+2 E+D Соло Ж St",
-            "program": "standard",
-            "dance": "Q",
-            "final_place": 8.0,
-            "best_place": 8.0,
-            "worst_place": 8.0,
-            "n_results": 1,
-            "judge_marks": 9,
-            "dance_code": "Q"
-          }
         ]
-      },
-      "d": {
-        "metrics": [],
-        "best_by_final_average": null,
-        "best_by_median": null,
-        "most_stable_dance": null,
-        "best_peak": null,
-        "worst_by_final_average": null,
-        "judge_level_best": null,
-        "strongest_dance": null,
-        "weakest_dance": null,
-        "most_improved_dance": null,
-        "key": "d",
-        "label": "D",
-        "source": "selected_dancer_marks_and_results",
-        "class_group": "D",
-        "age_groups": [
-          "Юниоры-1+2"
-        ],
-        "source_categories": [
-          "Юниоры-1+2 D Соло Ж St"
-        ],
-        "protocol_count": 0,
-        "tournament_count": 0,
-        "evidence": {
-          "tournaments": 1,
-          "protocols": 1,
-          "marks": 23,
-          "results": 0
-        },
-        "dynamics_by_date": [],
-        "trends": [],
-        "tournament_dance_results": []
       }
     },
     "latin": {
       "all": {
         "metrics": [],
+        "display_mode": "insufficient_data",
+        "best_dances": [],
+        "worst_dances": [],
+        "evaluated_dance": null,
+        "tied_dances": [],
+        "tied_metric_value": null,
         "best_by_final_average": null,
         "best_by_median": null,
         "most_stable_dance": null,
@@ -2577,18 +4205,18 @@
         "most_improved_dance": null,
         "key": "all",
         "label": "Все категории",
-        "source": "selected_dancer_marks_and_results",
-        "class_group": null,
-        "age_groups": [
-          "Юниоры-1+2"
+        "source": "parent_category_aggregation",
+        "included_categories": [
+          "E+D",
+          "D"
         ],
         "source_categories": [
           "Юниоры-1+2 D Соло Ж La",
           "Юниоры-1+2 E+D Соло Ж La",
           "Юниоры-1+2 E+D соло Ж La"
         ],
-        "protocol_count": 0,
-        "tournament_count": 0,
+        "protocol_count": 7,
+        "tournament_count": 7,
         "evidence": {
           "tournaments": 7,
           "protocols": 7,
@@ -2596,11 +4224,16 @@
           "results": 0
         },
         "dynamics_by_date": [],
-        "trends": [],
-        "tournament_dance_results": []
+        "trends": []
       },
       "e_d": {
         "metrics": [],
+        "display_mode": "insufficient_data",
+        "best_dances": [],
+        "worst_dances": [],
+        "evaluated_dance": null,
+        "tied_dances": [],
+        "tied_metric_value": null,
         "best_by_final_average": null,
         "best_by_median": null,
         "most_stable_dance": null,
@@ -2612,59 +4245,26 @@
         "most_improved_dance": null,
         "key": "e_d",
         "label": "E+D",
-        "source": "selected_dancer_marks_and_results",
-        "class_group": "E+D",
-        "age_groups": [
-          "Юниоры-1+2"
+        "source": "parent_category_aggregation",
+        "included_categories": [
+          "E+D",
+          "D"
         ],
         "source_categories": [
+          "Юниоры-1+2 D Соло Ж La",
           "Юниоры-1+2 E+D Соло Ж La",
           "Юниоры-1+2 E+D соло Ж La"
         ],
-        "protocol_count": 0,
-        "tournament_count": 0,
+        "protocol_count": 7,
+        "tournament_count": 7,
         "evidence": {
-          "tournaments": 6,
-          "protocols": 6,
-          "marks": 91,
+          "tournaments": 7,
+          "protocols": 7,
+          "marks": 95,
           "results": 0
         },
         "dynamics_by_date": [],
-        "trends": [],
-        "tournament_dance_results": []
-      },
-      "d": {
-        "metrics": [],
-        "best_by_final_average": null,
-        "best_by_median": null,
-        "most_stable_dance": null,
-        "best_peak": null,
-        "worst_by_final_average": null,
-        "judge_level_best": null,
-        "strongest_dance": null,
-        "weakest_dance": null,
-        "most_improved_dance": null,
-        "key": "d",
-        "label": "D",
-        "source": "selected_dancer_marks_and_results",
-        "class_group": "D",
-        "age_groups": [
-          "Юниоры-1+2"
-        ],
-        "source_categories": [
-          "Юниоры-1+2 D Соло Ж La"
-        ],
-        "protocol_count": 0,
-        "tournament_count": 0,
-        "evidence": {
-          "tournaments": 1,
-          "protocols": 1,
-          "marks": 4,
-          "results": 0
-        },
-        "dynamics_by_date": [],
-        "trends": [],
-        "tournament_dance_results": []
+        "trends": []
       }
     }
   },
@@ -2676,6 +4276,7 @@
         "event_date": "2025-09-28",
         "tournament_id": 2025092800,
         "tournament_title": "Северный кубок 2025 (Санкт-Петербург)",
+        "city": "Санкт-Петербург",
         "protocols": 2,
         "categories": [
           "Юниоры-1+2 E+D Соло Ж La",
@@ -2696,12 +4297,14 @@
           "J"
         ],
         "tournament_rank": 1.0,
-        "rank_direction": "best"
+        "rank_direction": "best",
+        "date": "2025-09-28"
       },
       {
         "event_date": "2025-10-12",
         "tournament_id": 2025101200,
         "tournament_title": "Балтийская Звезда - 2025 (Санкт-Петербург)",
+        "city": "Санкт-Петербург",
         "protocols": 2,
         "categories": [
           "Юниоры-1+2 E+D соло Ж La",
@@ -2722,12 +4325,14 @@
           "J"
         ],
         "tournament_rank": 4.0,
-        "rank_direction": "hardest"
+        "rank_direction": "hardest",
+        "date": "2025-10-12"
       },
       {
         "event_date": "2025-11-09",
         "tournament_id": 2025110901,
         "tournament_title": "Кубок Лиги 2025 (Санкт-Петербург)",
+        "city": "Санкт-Петербург",
         "protocols": 2,
         "categories": [
           "Юниоры-1+2 E+D Соло Ж La",
@@ -2748,12 +4353,14 @@
           "J"
         ],
         "tournament_rank": 3.0,
-        "rank_direction": ""
+        "rank_direction": "",
+        "date": "2025-11-09"
       },
       {
         "event_date": "2025-11-22",
         "tournament_id": 2025112201,
         "tournament_title": "Большой Кубок Содружества 2025 (Санкт-Петербург)",
+        "city": "Санкт-Петербург",
         "protocols": 2,
         "categories": [
           "Юниоры-1+2 D Соло Ж La",
@@ -2774,12 +4381,14 @@
           "J"
         ],
         "tournament_rank": null,
-        "rank_direction": ""
+        "rank_direction": "",
+        "date": "2025-11-22"
       },
       {
         "event_date": "2026-03-01",
         "tournament_id": 2026030102,
         "tournament_title": "Танцевальное Свидание 2026 - Dance Date Cup (Санкт-Петербург)",
+        "city": "Санкт-Петербург",
         "protocols": 2,
         "categories": [
           "Юниоры-1+2 E+D Соло Ж La",
@@ -2800,12 +4409,14 @@
           "J"
         ],
         "tournament_rank": 2.0,
-        "rank_direction": "best"
+        "rank_direction": "best",
+        "date": "2026-03-01"
       },
       {
         "event_date": "2026-03-08",
         "tournament_id": 2026030800,
         "tournament_title": "Амбассадор 2026 (Санкт-Петербург)",
+        "city": "Санкт-Петербург",
         "protocols": 2,
         "categories": [
           "Юниоры-1+2 E+D Соло Ж La",
@@ -2826,12 +4437,14 @@
           "J"
         ],
         "tournament_rank": 5.0,
-        "rank_direction": "hardest"
+        "rank_direction": "hardest",
+        "date": "2026-03-08"
       },
       {
         "event_date": "2026-05-24",
         "tournament_id": 2026052402,
         "tournament_title": "Чемпионат СПТЛ 2026 (Санкт-Петербург)",
+        "city": "Санкт-Петербург",
         "protocols": 2,
         "categories": [
           "Юниоры-1+2 E+D Соло Ж La",
@@ -2851,7 +4464,8 @@
           "R"
         ],
         "tournament_rank": null,
-        "rank_direction": ""
+        "rank_direction": "",
+        "date": "2026-05-24"
       }
     ],
     "protocols": [
@@ -2859,127 +4473,155 @@
         "event_date": "2025-09-28",
         "tournament_id": 2025092800,
         "tournament_title": "Северный кубок 2025 (Санкт-Петербург)",
+        "city": "Санкт-Петербург",
         "protocol_id": 73074,
         "category": "Юниоры-1+2 E+D Соло Ж St",
         "program": "standard",
-        "entry_type": "solo"
+        "entry_type": "solo",
+        "date": "2025-09-28"
       },
       {
         "event_date": "2025-09-28",
         "tournament_id": 2025092800,
         "tournament_title": "Северный кубок 2025 (Санкт-Петербург)",
+        "city": "Санкт-Петербург",
         "protocol_id": 73097,
         "category": "Юниоры-1+2 E+D Соло Ж La",
         "program": "latin",
-        "entry_type": "solo"
+        "entry_type": "solo",
+        "date": "2025-09-28"
       },
       {
         "event_date": "2025-10-12",
         "tournament_id": 2025101200,
         "tournament_title": "Балтийская Звезда - 2025 (Санкт-Петербург)",
+        "city": "Санкт-Петербург",
         "protocol_id": 73641,
         "category": "Юниоры-1+2 E+D соло Ж St",
         "program": "standard",
-        "entry_type": "solo"
+        "entry_type": "solo",
+        "date": "2025-10-12"
       },
       {
         "event_date": "2025-10-12",
         "tournament_id": 2025101200,
         "tournament_title": "Балтийская Звезда - 2025 (Санкт-Петербург)",
+        "city": "Санкт-Петербург",
         "protocol_id": 73649,
         "category": "Юниоры-1+2 E+D соло Ж La",
         "program": "latin",
-        "entry_type": "solo"
+        "entry_type": "solo",
+        "date": "2025-10-12"
       },
       {
         "event_date": "2025-11-09",
         "tournament_id": 2025110901,
         "tournament_title": "Кубок Лиги 2025 (Санкт-Петербург)",
+        "city": "Санкт-Петербург",
         "protocol_id": 74566,
         "category": "Юниоры-1+2 E+D Соло Ж St",
         "program": "standard",
-        "entry_type": "solo"
+        "entry_type": "solo",
+        "date": "2025-11-09"
       },
       {
         "event_date": "2025-11-09",
         "tournament_id": 2025110901,
         "tournament_title": "Кубок Лиги 2025 (Санкт-Петербург)",
+        "city": "Санкт-Петербург",
         "protocol_id": 74577,
         "category": "Юниоры-1+2 E+D Соло Ж La",
         "program": "latin",
-        "entry_type": "solo"
+        "entry_type": "solo",
+        "date": "2025-11-09"
       },
       {
         "event_date": "2025-11-22",
         "tournament_id": 2025112201,
         "tournament_title": "Большой Кубок Содружества 2025 (Санкт-Петербург)",
+        "city": "Санкт-Петербург",
         "protocol_id": 74916,
         "category": "Юниоры-1+2 D Соло Ж St",
         "program": "standard",
-        "entry_type": "solo"
+        "entry_type": "solo",
+        "date": "2025-11-22"
       },
       {
         "event_date": "2025-11-22",
         "tournament_id": 2025112201,
         "tournament_title": "Большой Кубок Содружества 2025 (Санкт-Петербург)",
+        "city": "Санкт-Петербург",
         "protocol_id": 74918,
         "category": "Юниоры-1+2 D Соло Ж La",
         "program": "latin",
-        "entry_type": "solo"
+        "entry_type": "solo",
+        "date": "2025-11-22"
       },
       {
         "event_date": "2026-03-01",
         "tournament_id": 2026030102,
         "tournament_title": "Танцевальное Свидание 2026 - Dance Date Cup (Санкт-Петербург)",
+        "city": "Санкт-Петербург",
         "protocol_id": 77797,
         "category": "Юниоры-1+2 E+D Соло Ж St",
         "program": "standard",
-        "entry_type": "solo"
+        "entry_type": "solo",
+        "date": "2026-03-01"
       },
       {
         "event_date": "2026-03-01",
         "tournament_id": 2026030102,
         "tournament_title": "Танцевальное Свидание 2026 - Dance Date Cup (Санкт-Петербург)",
+        "city": "Санкт-Петербург",
         "protocol_id": 77806,
         "category": "Юниоры-1+2 E+D Соло Ж La",
         "program": "latin",
-        "entry_type": "solo"
+        "entry_type": "solo",
+        "date": "2026-03-01"
       },
       {
         "event_date": "2026-03-08",
         "tournament_id": 2026030800,
         "tournament_title": "Амбассадор 2026 (Санкт-Петербург)",
+        "city": "Санкт-Петербург",
         "protocol_id": 77966,
         "category": "Юниоры-1+2 E+D Соло Ж St",
         "program": "standard",
-        "entry_type": "solo"
+        "entry_type": "solo",
+        "date": "2026-03-08"
       },
       {
         "event_date": "2026-03-08",
         "tournament_id": 2026030800,
         "tournament_title": "Амбассадор 2026 (Санкт-Петербург)",
+        "city": "Санкт-Петербург",
         "protocol_id": 77980,
         "category": "Юниоры-1+2 E+D Соло Ж La",
         "program": "latin",
-        "entry_type": "solo"
+        "entry_type": "solo",
+        "date": "2026-03-08"
       },
       {
         "event_date": "2026-05-24",
         "tournament_id": 2026052402,
         "tournament_title": "Чемпионат СПТЛ 2026 (Санкт-Петербург)",
+        "city": "Санкт-Петербург",
         "protocol_id": 80594,
         "category": "Юниоры-1+2 E+D Соло Ж St",
         "program": "standard",
-        "entry_type": "solo"
+        "entry_type": "solo",
+        "date": "2026-05-24"
       },
       {
         "event_date": "2026-05-24",
         "tournament_id": 2026052402,
         "tournament_title": "Чемпионат СПТЛ 2026 (Санкт-Петербург)",
+        "city": "Санкт-Петербург",
         "protocol_id": 80606,
         "category": "Юниоры-1+2 E+D Соло Ж La",
         "program": "latin",
-        "entry_type": "solo"
+        "entry_type": "solo",
+        "date": "2026-05-24"
       }
     ],
     "dance_results": [
@@ -2987,6 +4629,7 @@
         "event_date": "2025-09-28",
         "tournament_id": 2025092800,
         "tournament_title": "Северный кубок 2025 (Санкт-Петербург)",
+        "city": "Санкт-Петербург",
         "protocol_id": 73074,
         "category": "Юниоры-1+2 E+D Соло Ж St",
         "program": "standard",
@@ -2996,12 +4639,14 @@
         "worst_place": 4.0,
         "n_results": 1,
         "judge_marks": 11,
-        "dance_code": "W"
+        "dance_code": "W",
+        "date": "2025-09-28"
       },
       {
         "event_date": "2025-09-28",
         "tournament_id": 2025092800,
         "tournament_title": "Северный кубок 2025 (Санкт-Петербург)",
+        "city": "Санкт-Петербург",
         "protocol_id": 73074,
         "category": "Юниоры-1+2 E+D Соло Ж St",
         "program": "standard",
@@ -3011,12 +4656,14 @@
         "worst_place": 4.0,
         "n_results": 1,
         "judge_marks": 11,
-        "dance_code": "T"
+        "dance_code": "T",
+        "date": "2025-09-28"
       },
       {
         "event_date": "2025-09-28",
         "tournament_id": 2025092800,
         "tournament_title": "Северный кубок 2025 (Санкт-Петербург)",
+        "city": "Санкт-Петербург",
         "protocol_id": 73074,
         "category": "Юниоры-1+2 E+D Соло Ж St",
         "program": "standard",
@@ -3026,12 +4673,14 @@
         "worst_place": 3.0,
         "n_results": 1,
         "judge_marks": 11,
-        "dance_code": "F"
+        "dance_code": "F",
+        "date": "2025-09-28"
       },
       {
         "event_date": "2025-09-28",
         "tournament_id": 2025092800,
         "tournament_title": "Северный кубок 2025 (Санкт-Петербург)",
+        "city": "Санкт-Петербург",
         "protocol_id": 73074,
         "category": "Юниоры-1+2 E+D Соло Ж St",
         "program": "standard",
@@ -3041,12 +4690,14 @@
         "worst_place": 3.0,
         "n_results": 1,
         "judge_marks": 11,
-        "dance_code": "Q"
+        "dance_code": "Q",
+        "date": "2025-09-28"
       },
       {
         "event_date": "2025-10-12",
         "tournament_id": 2025101200,
         "tournament_title": "Балтийская Звезда - 2025 (Санкт-Петербург)",
+        "city": "Санкт-Петербург",
         "protocol_id": 73641,
         "category": "Юниоры-1+2 E+D соло Ж St",
         "program": "standard",
@@ -3056,12 +4707,14 @@
         "worst_place": 7.0,
         "n_results": 1,
         "judge_marks": 11,
-        "dance_code": "W"
+        "dance_code": "W",
+        "date": "2025-10-12"
       },
       {
         "event_date": "2025-10-12",
         "tournament_id": 2025101200,
         "tournament_title": "Балтийская Звезда - 2025 (Санкт-Петербург)",
+        "city": "Санкт-Петербург",
         "protocol_id": 73641,
         "category": "Юниоры-1+2 E+D соло Ж St",
         "program": "standard",
@@ -3071,12 +4724,14 @@
         "worst_place": 7.0,
         "n_results": 1,
         "judge_marks": 11,
-        "dance_code": "T"
+        "dance_code": "T",
+        "date": "2025-10-12"
       },
       {
         "event_date": "2025-10-12",
         "tournament_id": 2025101200,
         "tournament_title": "Балтийская Звезда - 2025 (Санкт-Петербург)",
+        "city": "Санкт-Петербург",
         "protocol_id": 73641,
         "category": "Юниоры-1+2 E+D соло Ж St",
         "program": "standard",
@@ -3086,12 +4741,14 @@
         "worst_place": 7.0,
         "n_results": 1,
         "judge_marks": 11,
-        "dance_code": "F"
+        "dance_code": "F",
+        "date": "2025-10-12"
       },
       {
         "event_date": "2025-10-12",
         "tournament_id": 2025101200,
         "tournament_title": "Балтийская Звезда - 2025 (Санкт-Петербург)",
+        "city": "Санкт-Петербург",
         "protocol_id": 73641,
         "category": "Юниоры-1+2 E+D соло Ж St",
         "program": "standard",
@@ -3101,12 +4758,14 @@
         "worst_place": 7.0,
         "n_results": 1,
         "judge_marks": 11,
-        "dance_code": "Q"
+        "dance_code": "Q",
+        "date": "2025-10-12"
       },
       {
         "event_date": "2025-11-09",
         "tournament_id": 2025110901,
         "tournament_title": "Кубок Лиги 2025 (Санкт-Петербург)",
+        "city": "Санкт-Петербург",
         "protocol_id": 74566,
         "category": "Юниоры-1+2 E+D Соло Ж St",
         "program": "standard",
@@ -3116,12 +4775,14 @@
         "worst_place": 7.0,
         "n_results": 1,
         "judge_marks": 7,
-        "dance_code": "W"
+        "dance_code": "W",
+        "date": "2025-11-09"
       },
       {
         "event_date": "2025-11-09",
         "tournament_id": 2025110901,
         "tournament_title": "Кубок Лиги 2025 (Санкт-Петербург)",
+        "city": "Санкт-Петербург",
         "protocol_id": 74566,
         "category": "Юниоры-1+2 E+D Соло Ж St",
         "program": "standard",
@@ -3131,12 +4792,14 @@
         "worst_place": 6.5,
         "n_results": 1,
         "judge_marks": 7,
-        "dance_code": "T"
+        "dance_code": "T",
+        "date": "2025-11-09"
       },
       {
         "event_date": "2025-11-09",
         "tournament_id": 2025110901,
         "tournament_title": "Кубок Лиги 2025 (Санкт-Петербург)",
+        "city": "Санкт-Петербург",
         "protocol_id": 74566,
         "category": "Юниоры-1+2 E+D Соло Ж St",
         "program": "standard",
@@ -3146,12 +4809,14 @@
         "worst_place": 6.0,
         "n_results": 1,
         "judge_marks": 7,
-        "dance_code": "F"
+        "dance_code": "F",
+        "date": "2025-11-09"
       },
       {
         "event_date": "2025-11-09",
         "tournament_id": 2025110901,
         "tournament_title": "Кубок Лиги 2025 (Санкт-Петербург)",
+        "city": "Санкт-Петербург",
         "protocol_id": 74566,
         "category": "Юниоры-1+2 E+D Соло Ж St",
         "program": "standard",
@@ -3161,12 +4826,14 @@
         "worst_place": 6.0,
         "n_results": 1,
         "judge_marks": 7,
-        "dance_code": "Q"
+        "dance_code": "Q",
+        "date": "2025-11-09"
       },
       {
         "event_date": "2026-03-01",
         "tournament_id": 2026030102,
         "tournament_title": "Танцевальное Свидание 2026 - Dance Date Cup (Санкт-Петербург)",
+        "city": "Санкт-Петербург",
         "protocol_id": 77797,
         "category": "Юниоры-1+2 E+D Соло Ж St",
         "program": "standard",
@@ -3176,12 +4843,14 @@
         "worst_place": 6.0,
         "n_results": 1,
         "judge_marks": 9,
-        "dance_code": "W"
+        "dance_code": "W",
+        "date": "2026-03-01"
       },
       {
         "event_date": "2026-03-01",
         "tournament_id": 2026030102,
         "tournament_title": "Танцевальное Свидание 2026 - Dance Date Cup (Санкт-Петербург)",
+        "city": "Санкт-Петербург",
         "protocol_id": 77797,
         "category": "Юниоры-1+2 E+D Соло Ж St",
         "program": "standard",
@@ -3191,12 +4860,14 @@
         "worst_place": 4.0,
         "n_results": 1,
         "judge_marks": 9,
-        "dance_code": "T"
+        "dance_code": "T",
+        "date": "2026-03-01"
       },
       {
         "event_date": "2026-03-01",
         "tournament_id": 2026030102,
         "tournament_title": "Танцевальное Свидание 2026 - Dance Date Cup (Санкт-Петербург)",
+        "city": "Санкт-Петербург",
         "protocol_id": 77797,
         "category": "Юниоры-1+2 E+D Соло Ж St",
         "program": "standard",
@@ -3206,12 +4877,14 @@
         "worst_place": 6.0,
         "n_results": 1,
         "judge_marks": 9,
-        "dance_code": "F"
+        "dance_code": "F",
+        "date": "2026-03-01"
       },
       {
         "event_date": "2026-03-01",
         "tournament_id": 2026030102,
         "tournament_title": "Танцевальное Свидание 2026 - Dance Date Cup (Санкт-Петербург)",
+        "city": "Санкт-Петербург",
         "protocol_id": 77797,
         "category": "Юниоры-1+2 E+D Соло Ж St",
         "program": "standard",
@@ -3221,12 +4894,14 @@
         "worst_place": 6.0,
         "n_results": 1,
         "judge_marks": 9,
-        "dance_code": "Q"
+        "dance_code": "Q",
+        "date": "2026-03-01"
       },
       {
         "event_date": "2026-03-08",
         "tournament_id": 2026030800,
         "tournament_title": "Амбассадор 2026 (Санкт-Петербург)",
+        "city": "Санкт-Петербург",
         "protocol_id": 77966,
         "category": "Юниоры-1+2 E+D Соло Ж St",
         "program": "standard",
@@ -3236,12 +4911,14 @@
         "worst_place": 8.0,
         "n_results": 1,
         "judge_marks": 9,
-        "dance_code": "W"
+        "dance_code": "W",
+        "date": "2026-03-08"
       },
       {
         "event_date": "2026-03-08",
         "tournament_id": 2026030800,
         "tournament_title": "Амбассадор 2026 (Санкт-Петербург)",
+        "city": "Санкт-Петербург",
         "protocol_id": 77966,
         "category": "Юниоры-1+2 E+D Соло Ж St",
         "program": "standard",
@@ -3251,12 +4928,14 @@
         "worst_place": 7.0,
         "n_results": 1,
         "judge_marks": 9,
-        "dance_code": "T"
+        "dance_code": "T",
+        "date": "2026-03-08"
       },
       {
         "event_date": "2026-03-08",
         "tournament_id": 2026030800,
         "tournament_title": "Амбассадор 2026 (Санкт-Петербург)",
+        "city": "Санкт-Петербург",
         "protocol_id": 77966,
         "category": "Юниоры-1+2 E+D Соло Ж St",
         "program": "standard",
@@ -3266,12 +4945,14 @@
         "worst_place": 6.0,
         "n_results": 1,
         "judge_marks": 9,
-        "dance_code": "F"
+        "dance_code": "F",
+        "date": "2026-03-08"
       },
       {
         "event_date": "2026-03-08",
         "tournament_id": 2026030800,
         "tournament_title": "Амбассадор 2026 (Санкт-Петербург)",
+        "city": "Санкт-Петербург",
         "protocol_id": 77966,
         "category": "Юниоры-1+2 E+D Соло Ж St",
         "program": "standard",
@@ -3281,7 +4962,8 @@
         "worst_place": 8.0,
         "n_results": 1,
         "judge_marks": 9,
-        "dance_code": "Q"
+        "dance_code": "Q",
+        "date": "2026-03-08"
       }
     ]
   },
@@ -3289,8 +4971,10 @@
     "tournament_summaries": [
       {
         "event_date": "2025-09-28",
+        "date": "2025-09-28",
         "tournament_id": 2025092800,
         "tournament_title": "Северный кубок 2025 (Санкт-Петербург)",
+        "city": "Санкт-Петербург",
         "categories": [
           "Юниоры-1+2 E+D Соло Ж La",
           "Юниоры-1+2 E+D Соло Ж St"
@@ -3502,6 +5186,7 @@
             "event_date": "2025-09-28",
             "tournament_id": 2025092800,
             "tournament_title": "Северный кубок 2025 (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
             "protocol_id": 73074,
             "category": "Юниоры-1+2 E+D Соло Ж St",
             "program": "standard",
@@ -3511,12 +5196,14 @@
             "worst_place": 4.0,
             "n_results": 1,
             "judge_marks": 11,
-            "dance_code": "W"
+            "dance_code": "W",
+            "date": "2025-09-28"
           },
           {
             "event_date": "2025-09-28",
             "tournament_id": 2025092800,
             "tournament_title": "Северный кубок 2025 (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
             "protocol_id": 73074,
             "category": "Юниоры-1+2 E+D Соло Ж St",
             "program": "standard",
@@ -3526,12 +5213,14 @@
             "worst_place": 4.0,
             "n_results": 1,
             "judge_marks": 11,
-            "dance_code": "T"
+            "dance_code": "T",
+            "date": "2025-09-28"
           },
           {
             "event_date": "2025-09-28",
             "tournament_id": 2025092800,
             "tournament_title": "Северный кубок 2025 (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
             "protocol_id": 73074,
             "category": "Юниоры-1+2 E+D Соло Ж St",
             "program": "standard",
@@ -3541,12 +5230,14 @@
             "worst_place": 3.0,
             "n_results": 1,
             "judge_marks": 11,
-            "dance_code": "F"
+            "dance_code": "F",
+            "date": "2025-09-28"
           },
           {
             "event_date": "2025-09-28",
             "tournament_id": 2025092800,
             "tournament_title": "Северный кубок 2025 (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
             "protocol_id": 73074,
             "category": "Юниоры-1+2 E+D Соло Ж St",
             "program": "standard",
@@ -3556,14 +5247,17 @@
             "worst_place": 3.0,
             "n_results": 1,
             "judge_marks": 11,
-            "dance_code": "Q"
+            "dance_code": "Q",
+            "date": "2025-09-28"
           }
         ]
       },
       {
         "event_date": "2025-10-12",
+        "date": "2025-10-12",
         "tournament_id": 2025101200,
         "tournament_title": "Балтийская Звезда - 2025 (Санкт-Петербург)",
+        "city": "Санкт-Петербург",
         "categories": [
           "Юниоры-1+2 E+D соло Ж La",
           "Юниоры-1+2 E+D соло Ж St"
@@ -3714,6 +5408,7 @@
             "event_date": "2025-10-12",
             "tournament_id": 2025101200,
             "tournament_title": "Балтийская Звезда - 2025 (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
             "protocol_id": 73641,
             "category": "Юниоры-1+2 E+D соло Ж St",
             "program": "standard",
@@ -3723,12 +5418,14 @@
             "worst_place": 7.0,
             "n_results": 1,
             "judge_marks": 11,
-            "dance_code": "W"
+            "dance_code": "W",
+            "date": "2025-10-12"
           },
           {
             "event_date": "2025-10-12",
             "tournament_id": 2025101200,
             "tournament_title": "Балтийская Звезда - 2025 (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
             "protocol_id": 73641,
             "category": "Юниоры-1+2 E+D соло Ж St",
             "program": "standard",
@@ -3738,12 +5435,14 @@
             "worst_place": 7.0,
             "n_results": 1,
             "judge_marks": 11,
-            "dance_code": "T"
+            "dance_code": "T",
+            "date": "2025-10-12"
           },
           {
             "event_date": "2025-10-12",
             "tournament_id": 2025101200,
             "tournament_title": "Балтийская Звезда - 2025 (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
             "protocol_id": 73641,
             "category": "Юниоры-1+2 E+D соло Ж St",
             "program": "standard",
@@ -3753,12 +5452,14 @@
             "worst_place": 7.0,
             "n_results": 1,
             "judge_marks": 11,
-            "dance_code": "F"
+            "dance_code": "F",
+            "date": "2025-10-12"
           },
           {
             "event_date": "2025-10-12",
             "tournament_id": 2025101200,
             "tournament_title": "Балтийская Звезда - 2025 (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
             "protocol_id": 73641,
             "category": "Юниоры-1+2 E+D соло Ж St",
             "program": "standard",
@@ -3768,14 +5469,17 @@
             "worst_place": 7.0,
             "n_results": 1,
             "judge_marks": 11,
-            "dance_code": "Q"
+            "dance_code": "Q",
+            "date": "2025-10-12"
           }
         ]
       },
       {
         "event_date": "2025-11-09",
+        "date": "2025-11-09",
         "tournament_id": 2025110901,
         "tournament_title": "Кубок Лиги 2025 (Санкт-Петербург)",
+        "city": "Санкт-Петербург",
         "categories": [
           "Юниоры-1+2 E+D Соло Ж La",
           "Юниоры-1+2 E+D Соло Ж St"
@@ -3965,6 +5669,7 @@
             "event_date": "2025-11-09",
             "tournament_id": 2025110901,
             "tournament_title": "Кубок Лиги 2025 (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
             "protocol_id": 74566,
             "category": "Юниоры-1+2 E+D Соло Ж St",
             "program": "standard",
@@ -3974,12 +5679,14 @@
             "worst_place": 7.0,
             "n_results": 1,
             "judge_marks": 7,
-            "dance_code": "W"
+            "dance_code": "W",
+            "date": "2025-11-09"
           },
           {
             "event_date": "2025-11-09",
             "tournament_id": 2025110901,
             "tournament_title": "Кубок Лиги 2025 (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
             "protocol_id": 74566,
             "category": "Юниоры-1+2 E+D Соло Ж St",
             "program": "standard",
@@ -3989,12 +5696,14 @@
             "worst_place": 6.5,
             "n_results": 1,
             "judge_marks": 7,
-            "dance_code": "T"
+            "dance_code": "T",
+            "date": "2025-11-09"
           },
           {
             "event_date": "2025-11-09",
             "tournament_id": 2025110901,
             "tournament_title": "Кубок Лиги 2025 (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
             "protocol_id": 74566,
             "category": "Юниоры-1+2 E+D Соло Ж St",
             "program": "standard",
@@ -4004,12 +5713,14 @@
             "worst_place": 6.0,
             "n_results": 1,
             "judge_marks": 7,
-            "dance_code": "F"
+            "dance_code": "F",
+            "date": "2025-11-09"
           },
           {
             "event_date": "2025-11-09",
             "tournament_id": 2025110901,
             "tournament_title": "Кубок Лиги 2025 (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
             "protocol_id": 74566,
             "category": "Юниоры-1+2 E+D Соло Ж St",
             "program": "standard",
@@ -4019,14 +5730,17 @@
             "worst_place": 6.0,
             "n_results": 1,
             "judge_marks": 7,
-            "dance_code": "Q"
+            "dance_code": "Q",
+            "date": "2025-11-09"
           }
         ]
       },
       {
         "event_date": "2025-11-22",
+        "date": "2025-11-22",
         "tournament_id": 2025112201,
         "tournament_title": "Большой Кубок Содружества 2025 (Санкт-Петербург)",
+        "city": "Санкт-Петербург",
         "categories": [
           "Юниоры-1+2 D Соло Ж La",
           "Юниоры-1+2 D Соло Ж St"
@@ -4165,8 +5879,10 @@
       },
       {
         "event_date": "2026-03-01",
+        "date": "2026-03-01",
         "tournament_id": 2026030102,
         "tournament_title": "Танцевальное Свидание 2026 - Dance Date Cup (Санкт-Петербург)",
+        "city": "Санкт-Петербург",
         "categories": [
           "Юниоры-1+2 E+D Соло Ж La",
           "Юниоры-1+2 E+D Соло Ж St"
@@ -4367,6 +6083,7 @@
             "event_date": "2026-03-01",
             "tournament_id": 2026030102,
             "tournament_title": "Танцевальное Свидание 2026 - Dance Date Cup (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
             "protocol_id": 77797,
             "category": "Юниоры-1+2 E+D Соло Ж St",
             "program": "standard",
@@ -4376,12 +6093,14 @@
             "worst_place": 6.0,
             "n_results": 1,
             "judge_marks": 9,
-            "dance_code": "W"
+            "dance_code": "W",
+            "date": "2026-03-01"
           },
           {
             "event_date": "2026-03-01",
             "tournament_id": 2026030102,
             "tournament_title": "Танцевальное Свидание 2026 - Dance Date Cup (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
             "protocol_id": 77797,
             "category": "Юниоры-1+2 E+D Соло Ж St",
             "program": "standard",
@@ -4391,12 +6110,14 @@
             "worst_place": 4.0,
             "n_results": 1,
             "judge_marks": 9,
-            "dance_code": "T"
+            "dance_code": "T",
+            "date": "2026-03-01"
           },
           {
             "event_date": "2026-03-01",
             "tournament_id": 2026030102,
             "tournament_title": "Танцевальное Свидание 2026 - Dance Date Cup (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
             "protocol_id": 77797,
             "category": "Юниоры-1+2 E+D Соло Ж St",
             "program": "standard",
@@ -4406,12 +6127,14 @@
             "worst_place": 6.0,
             "n_results": 1,
             "judge_marks": 9,
-            "dance_code": "F"
+            "dance_code": "F",
+            "date": "2026-03-01"
           },
           {
             "event_date": "2026-03-01",
             "tournament_id": 2026030102,
             "tournament_title": "Танцевальное Свидание 2026 - Dance Date Cup (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
             "protocol_id": 77797,
             "category": "Юниоры-1+2 E+D Соло Ж St",
             "program": "standard",
@@ -4421,14 +6144,17 @@
             "worst_place": 6.0,
             "n_results": 1,
             "judge_marks": 9,
-            "dance_code": "Q"
+            "dance_code": "Q",
+            "date": "2026-03-01"
           }
         ]
       },
       {
         "event_date": "2026-03-08",
+        "date": "2026-03-08",
         "tournament_id": 2026030800,
         "tournament_title": "Амбассадор 2026 (Санкт-Петербург)",
+        "city": "Санкт-Петербург",
         "categories": [
           "Юниоры-1+2 E+D Соло Ж La",
           "Юниоры-1+2 E+D Соло Ж St"
@@ -4640,6 +6366,7 @@
             "event_date": "2026-03-08",
             "tournament_id": 2026030800,
             "tournament_title": "Амбассадор 2026 (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
             "protocol_id": 77966,
             "category": "Юниоры-1+2 E+D Соло Ж St",
             "program": "standard",
@@ -4649,12 +6376,14 @@
             "worst_place": 8.0,
             "n_results": 1,
             "judge_marks": 9,
-            "dance_code": "W"
+            "dance_code": "W",
+            "date": "2026-03-08"
           },
           {
             "event_date": "2026-03-08",
             "tournament_id": 2026030800,
             "tournament_title": "Амбассадор 2026 (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
             "protocol_id": 77966,
             "category": "Юниоры-1+2 E+D Соло Ж St",
             "program": "standard",
@@ -4664,12 +6393,14 @@
             "worst_place": 7.0,
             "n_results": 1,
             "judge_marks": 9,
-            "dance_code": "T"
+            "dance_code": "T",
+            "date": "2026-03-08"
           },
           {
             "event_date": "2026-03-08",
             "tournament_id": 2026030800,
             "tournament_title": "Амбассадор 2026 (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
             "protocol_id": 77966,
             "category": "Юниоры-1+2 E+D Соло Ж St",
             "program": "standard",
@@ -4679,12 +6410,14 @@
             "worst_place": 6.0,
             "n_results": 1,
             "judge_marks": 9,
-            "dance_code": "F"
+            "dance_code": "F",
+            "date": "2026-03-08"
           },
           {
             "event_date": "2026-03-08",
             "tournament_id": 2026030800,
             "tournament_title": "Амбассадор 2026 (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
             "protocol_id": 77966,
             "category": "Юниоры-1+2 E+D Соло Ж St",
             "program": "standard",
@@ -4694,14 +6427,17 @@
             "worst_place": 8.0,
             "n_results": 1,
             "judge_marks": 9,
-            "dance_code": "Q"
+            "dance_code": "Q",
+            "date": "2026-03-08"
           }
         ]
       },
       {
         "event_date": "2026-05-24",
+        "date": "2026-05-24",
         "tournament_id": 2026052402,
         "tournament_title": "Чемпионат СПТЛ 2026 (Санкт-Петербург)",
+        "city": "Санкт-Петербург",
         "categories": [
           "Юниоры-1+2 E+D Соло Ж La",
           "Юниоры-1+2 E+D Соло Ж St"

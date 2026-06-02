@@ -1,0 +1,150 @@
+idd,name,program,category,marks_count,results_count,dance_metrics_count,tournaments_count,trainer_summaries_count,trend_items_count,is_visible_chip,visibility_status,visibility_reason,visible_in_html
+2023028,Аббясова Амина,standard,N,191,8,2,4,4,2,True,primary,primary: dance metrics available,True
+2023028,Аббясова Амина,standard,N+E,41,0,0,2,2,0,True,primary,primary: marks-derived dance analysis available,True
+2023028,Аббясова Амина,latin,N,106,4,2,4,4,2,True,primary,primary: dance metrics available,True
+2023028,Аббясова Амина,latin,N+E,18,0,0,2,2,0,True,limited,"limited: 18 marks, marks-derived reference only",True
+2010683,Агапитов Ярослав / Дмитриева Анна,standard,D+C,334,25,5,5,5,5,True,primary,primary: dance metrics available,True
+2010683,Агапитов Ярослав / Дмитриева Анна,standard,C+B,55,5,5,1,1,5,True,primary,primary: dance metrics available,True
+2010683,Агапитов Ярослав / Дмитриева Анна,latin,D+C,322,25,5,5,5,5,True,primary,primary: dance metrics available,True
+2010683,Агапитов Ярослав / Дмитриева Анна,latin,C+B,55,5,5,1,1,5,True,primary,primary: dance metrics available,True
+2010736,Антонова Александра,standard,E+D,321,20,4,6,6,4,True,primary,primary: dance metrics available,True
+2010736,Антонова Александра,standard,D,23,0,0,1,1,0,True,primary,primary: marks-derived dance analysis available,True
+2010736,Антонова Александра,latin,E+D,91,0,0,6,6,0,True,primary,primary: marks-derived dance analysis available,True
+2010736,Антонова Александра,latin,D,4,0,0,1,1,0,True,limited,"limited: 4 marks, marks-derived reference only",True
+2015745,Бедина Эльмира,standard,E+D,416,15,4,13,13,4,True,primary,primary: dance metrics available,True
+2015745,Бедина Эльмира,latin,E+D,733,20,4,13,13,4,True,primary,primary: dance metrics available,True
+2015747,Вегера Артем / Яхимович Любовь,standard,D+C,251,20,5,4,4,5,True,primary,primary: dance metrics available,True
+2015747,Вегера Артем / Яхимович Любовь,standard,Open,5,0,0,1,1,0,True,limited,"limited: 5 marks, marks-derived reference only",True
+2015747,Вегера Артем / Яхимович Любовь,latin,E+D,481,32,4,9,9,4,True,primary,primary: dance metrics available,True
+2015747,Вегера Артем / Яхимович Любовь,latin,D+C,401,30,5,7,7,5,True,primary,primary: dance metrics available,True
+2013211,Векслер Майя,standard,N+E,33,3,3,1,1,3,True,primary,primary: dance metrics available,True
+2013211,Векслер Майя,standard,E+D,27,0,0,3,3,0,True,primary,primary: marks-derived dance analysis available,True
+2013211,Векслер Майя,latin,E+D,64,0,0,3,3,0,True,primary,primary: marks-derived dance analysis available,True
+2013211,Векслер Майя,latin,EADC,69,1,1,3,3,1,True,primary,primary: dance metrics available,True
+2017576,Галактионова Анна,standard,D+C,277,20,5,4,4,5,True,primary,primary: dance metrics available,True
+2017576,Галактионова Анна,standard,EADC,124,10,5,4,4,5,True,primary,primary: dance metrics available,True
+2017576,Галактионова Анна,latin,D+C,280,20,5,4,4,5,True,primary,primary: dance metrics available,True
+2017576,Галактионова Анна,latin,EADC,115,5,5,3,3,5,True,primary,primary: dance metrics available,True
+2016461,Груздева Александра,standard,E+D,678,36,4,8,8,4,True,primary,primary: dance metrics available,True
+2016461,Груздева Александра,standard,D,97,4,4,1,1,4,True,primary,primary: dance metrics available,True
+2016461,Груздева Александра,standard,D+C,45,5,5,1,1,5,True,primary,primary: dance metrics available,True
+2016461,Груздева Александра,standard,EADC,47,3,3,1,1,3,True,primary,primary: dance metrics available,True
+2016461,Груздева Александра,latin,E+D,427,20,4,8,8,4,True,primary,primary: dance metrics available,True
+2016461,Груздева Александра,latin,D,97,4,4,1,1,4,True,primary,primary: dance metrics available,True
+2016461,Груздева Александра,latin,D+C,75,5,5,1,1,5,True,primary,primary: dance metrics available,True
+2016461,Груздева Александра,latin,EADC,38,1,1,1,1,1,True,primary,primary: dance metrics available,True
+2010737,Агапитов Ярослав / Дмитриева Анна,standard,D+C,334,25,5,5,5,5,True,primary,primary: dance metrics available,True
+2010737,Агапитов Ярослав / Дмитриева Анна,standard,C+B,55,5,5,1,1,5,True,primary,primary: dance metrics available,True
+2010737,Агапитов Ярослав / Дмитриева Анна,latin,D+C,322,25,5,5,5,5,True,primary,primary: dance metrics available,True
+2010737,Агапитов Ярослав / Дмитриева Анна,latin,C+B,55,5,5,1,1,5,True,primary,primary: dance metrics available,True
+2019417,Ившина Ксения,standard,N+E,106,0,0,10,10,0,True,primary,primary: marks-derived dance analysis available,True
+2019417,Ившина Ксения,latin,N+E,259,9,3,10,10,3,True,primary,primary: dance metrics available,True
+2014552,Козлова Полина,standard,D+C,168,10,5,2,2,5,True,primary,primary: dance metrics available,True
+2014552,Козлова Полина,standard,EADC,219,10,5,2,2,5,True,primary,primary: dance metrics available,True
+2014552,Козлова Полина,latin,D+C,116,10,5,2,2,5,True,primary,primary: dance metrics available,True
+2014552,Козлова Полина,latin,EADC,136,8,5,2,2,5,True,primary,primary: dance metrics available,True
+2019414,Козлова София,standard,N+E,1186,45,3,19,19,3,True,primary,primary: dance metrics available,True
+2019414,Козлова София,standard,E,56,3,3,1,1,3,True,primary,primary: dance metrics available,True
+2019414,Козлова София,standard,E+D,627,16,4,12,12,4,True,primary,primary: dance metrics available,True
+2019414,Козлова София,latin,N+E,1379,54,3,19,19,3,True,primary,primary: dance metrics available,True
+2019414,Козлова София,latin,E,30,0,0,1,1,0,True,primary,primary: marks-derived dance analysis available,True
+2019414,Козлова София,latin,E+D,685,20,4,12,12,4,True,primary,primary: dance metrics available,True
+2019312,Костина Ксения,standard,N+E,417,18,3,9,9,3,True,primary,primary: dance metrics available,True
+2019312,Костина Ксения,standard,E+D,80,4,4,2,2,4,True,primary,primary: dance metrics available,True
+2019312,Костина Ксения,latin,N+E,473,24,3,9,9,3,True,primary,primary: dance metrics available,True
+2019312,Костина Ксения,latin,E+D,32,0,0,2,2,0,True,primary,primary: marks-derived dance analysis available,True
+2018378,Лютых Алиса,standard,N+E,517,18,3,8,8,3,True,primary,primary: dance metrics available,True
+2018378,Лютых Алиса,standard,E+D,208,4,4,5,5,4,True,primary,primary: dance metrics available,True
+2018378,Лютых Алиса,latin,N+E,413,12,3,8,8,3,True,primary,primary: dance metrics available,True
+2018378,Лютых Алиса,latin,E+D,98,0,0,5,5,0,True,primary,primary: marks-derived dance analysis available,True
+2006823,Лютых Данила / Мазурина Анна,standard,D+C,226,15,5,3,3,5,True,primary,primary: dance metrics available,True
+2006823,Лютых Данила / Мазурина Анна,standard,Open,117,5,5,1,1,5,True,primary,primary: dance metrics available,True
+2006823,Лютых Данила / Мазурина Анна,latin,D+C,273,20,5,4,4,5,True,primary,primary: dance metrics available,True
+2006823,Лютых Данила / Мазурина Анна,latin,Open,19,0,0,1,1,0,True,limited,"limited: 19 marks, marks-derived reference only",True
+2012523,Лютых Данила / Мазурина Анна,standard,D+C,226,15,5,3,3,5,True,primary,primary: dance metrics available,True
+2012523,Лютых Данила / Мазурина Анна,standard,Open,117,5,5,1,1,5,True,primary,primary: dance metrics available,True
+2012523,Лютых Данила / Мазурина Анна,latin,D+C,273,20,5,4,4,5,True,primary,primary: dance metrics available,True
+2012523,Лютых Данила / Мазурина Анна,latin,Open,19,0,0,1,1,0,True,limited,"limited: 19 marks, marks-derived reference only",True
+2019421,Маркелов Дмитрий / Посыпайко Вероника,standard,N+E,388,36,3,12,12,3,True,primary,primary: dance metrics available,True
+2019421,Маркелов Дмитрий / Посыпайко Вероника,latin,N+E,439,36,3,12,12,3,True,primary,primary: dance metrics available,True
+2019644,Матюхина Василиса,standard,N+E,706,21,3,15,15,3,True,primary,primary: dance metrics available,True
+2019644,Матюхина Василиса,standard,E,30,0,0,1,1,0,True,primary,primary: marks-derived dance analysis available,True
+2019644,Матюхина Василиса,standard,E+D,163,0,0,7,7,0,True,primary,primary: marks-derived dance analysis available,True
+2019644,Матюхина Василиса,latin,N+E,947,36,3,15,15,3,True,primary,primary: dance metrics available,True
+2019644,Матюхина Василиса,latin,E,33,0,0,1,1,0,True,primary,primary: marks-derived dance analysis available,True
+2019644,Матюхина Василиса,latin,E+D,345,8,4,7,7,4,True,primary,primary: dance metrics available,True
+2013956,Меркулова София,standard,D+C,303,20,5,4,4,5,True,primary,primary: dance metrics available,True
+2013956,Меркулова София,standard,EADC,1279,67,5,11,11,5,True,primary,primary: dance metrics available,True
+2013956,Меркулова София,latin,D+C,303,20,5,4,4,5,True,primary,primary: dance metrics available,True
+2013956,Меркулова София,latin,EADC,1217,62,5,11,11,5,True,primary,primary: dance metrics available,True
+2017364,Немчинова Екатерина,standard,E+D,34,0,0,4,4,0,True,primary,primary: marks-derived dance analysis available,True
+2017364,Немчинова Екатерина,latin,E+D,93,4,4,4,4,4,True,primary,primary: dance metrics available,True
+2016890,Нестерова Елизавета,standard,E+D,1236,56,4,13,13,4,True,primary,primary: dance metrics available,True
+2016890,Нестерова Елизавета,standard,D+C,45,5,5,1,1,5,True,primary,primary: dance metrics available,True
+2016890,Нестерова Елизавета,standard,EADC,184,9,5,2,2,5,True,primary,primary: dance metrics available,True
+2016890,Нестерова Елизавета,latin,E+D,1280,56,4,13,13,4,True,primary,primary: dance metrics available,True
+2016890,Нестерова Елизавета,latin,D+C,88,5,5,1,1,5,True,primary,primary: dance metrics available,True
+2016890,Нестерова Елизавета,latin,EADC,155,10,5,2,2,5,True,primary,primary: dance metrics available,True
+2011924,Попов Егор / Чистова Анна,standard,N+E,188,15,3,5,5,3,True,primary,primary: dance metrics available,True
+2011924,Попов Егор / Чистова Анна,standard,E+D,152,12,4,5,5,4,True,primary,primary: dance metrics available,True
+2011924,Попов Егор / Чистова Анна,latin,N+E,227,15,3,5,5,3,True,primary,primary: dance metrics available,True
+2011924,Попов Егор / Чистова Анна,latin,E+D,87,4,4,5,5,4,True,primary,primary: dance metrics available,True
+2019422,Маркелов Дмитрий / Посыпайко Вероника,standard,N+E,388,36,3,12,12,3,True,primary,primary: dance metrics available,True
+2019422,Маркелов Дмитрий / Посыпайко Вероника,latin,N+E,439,36,3,12,12,3,True,primary,primary: dance metrics available,True
+2013921,Привалова Виктория,standard,E+D,655,35,4,9,9,4,True,primary,primary: dance metrics available,True
+2013921,Привалова Виктория,standard,D,95,4,4,1,1,4,True,primary,primary: dance metrics available,True
+2013921,Привалова Виктория,standard,D+C,296,15,5,4,4,5,True,primary,primary: dance metrics available,True
+2013921,Привалова Виктория,standard,EADC,514,22,5,10,10,5,True,primary,primary: dance metrics available,True
+2013921,Привалова Виктория,latin,E+D,568,20,4,9,9,4,True,primary,primary: dance metrics available,True
+2013921,Привалова Виктория,latin,D,89,4,4,1,1,4,True,primary,primary: dance metrics available,True
+2013921,Привалова Виктория,latin,D+C,206,15,5,5,5,5,True,primary,primary: dance metrics available,True
+2013921,Привалова Виктория,latin,EADC,376,7,5,9,9,5,True,primary,primary: dance metrics available,True
+2016913,Рикунова Ксения,standard,E+D,193,4,4,7,7,4,True,primary,primary: dance metrics available,True
+2016913,Рикунова Ксения,latin,E+D,299,8,4,6,6,4,True,primary,primary: dance metrics available,True
+2020091,Россошанская Дарья,standard,N+E,743,30,3,10,10,3,True,primary,primary: dance metrics available,True
+2020091,Россошанская Дарья,standard,E,79,3,3,1,1,3,True,primary,primary: dance metrics available,True
+2020091,Россошанская Дарья,standard,E+D,340,20,4,5,5,4,True,primary,primary: dance metrics available,True
+2020091,Россошанская Дарья,standard,EADC,69,4,4,1,1,4,True,primary,primary: dance metrics available,True
+2020091,Россошанская Дарья,latin,N+E,740,30,3,10,10,3,True,primary,primary: dance metrics available,True
+2020091,Россошанская Дарья,latin,E,77,3,3,1,1,3,True,primary,primary: dance metrics available,True
+2020091,Россошанская Дарья,latin,E+D,364,20,4,5,5,4,True,primary,primary: dance metrics available,True
+2020091,Россошанская Дарья,latin,EADC,68,4,4,1,1,4,True,primary,primary: dance metrics available,True
+2022547,Самуленко Анита,standard,N,160,2,2,7,7,2,True,primary,primary: dance metrics available,True
+2022547,Самуленко Анита,standard,N+E,16,0,0,1,1,0,True,limited,"limited: 16 marks, marks-derived reference only",True
+2022547,Самуленко Анита,latin,N,90,2,2,7,7,2,True,primary,primary: dance metrics available,True
+2022547,Самуленко Анита,latin,N+E,8,0,0,1,1,0,True,limited,"limited: 8 marks, marks-derived reference only",True
+2017958,Сапего Алиса,standard,N+E,814,33,3,13,13,3,True,primary,primary: dance metrics available,True
+2017958,Сапего Алиса,standard,E+D,240,8,4,5,5,4,True,primary,primary: dance metrics available,True
+2017958,Сапего Алиса,latin,N+E,707,24,3,13,13,3,True,primary,primary: dance metrics available,True
+2017958,Сапего Алиса,latin,E+D,242,4,4,5,5,4,True,primary,primary: dance metrics available,True
+2015740,Сейдахметова Таисия,standard,E+D,1238,60,4,15,15,4,True,primary,primary: dance metrics available,True
+2015740,Сейдахметова Таисия,standard,D,102,4,4,1,1,4,True,primary,primary: dance metrics available,True
+2015740,Сейдахметова Таисия,standard,D+C,805,50,5,10,10,5,True,primary,primary: dance metrics available,True
+2015740,Сейдахметова Таисия,standard,EADC,409,20,5,4,4,5,True,primary,primary: dance metrics available,True
+2015740,Сейдахметова Таисия,latin,E+D,1428,56,4,14,14,4,True,primary,primary: dance metrics available,True
+2015740,Сейдахметова Таисия,latin,D,92,4,4,1,1,4,True,primary,primary: dance metrics available,True
+2015740,Сейдахметова Таисия,latin,D+C,582,35,5,7,7,5,True,primary,primary: dance metrics available,True
+2015740,Сейдахметова Таисия,latin,EADC,143,7,5,2,2,5,True,primary,primary: dance metrics available,True
+2022546,Соломаткина Алиса,standard,N,221,10,2,5,5,2,True,primary,primary: dance metrics available,True
+2022546,Соломаткина Алиса,standard,N+E,144,6,3,2,2,3,True,primary,primary: dance metrics available,True
+2022546,Соломаткина Алиса,latin,N,90,4,2,5,5,2,True,primary,primary: dance metrics available,True
+2022546,Соломаткина Алиса,latin,N+E,65,0,0,2,2,0,True,primary,primary: marks-derived dance analysis available,True
+2023484,Сорокина София,standard,N,91,4,2,2,2,2,True,primary,primary: dance metrics available,True
+2023484,Сорокина София,latin,N,47,2,2,2,2,2,True,primary,primary: dance metrics available,True
+2017365,Федотова Арина,standard,E+D,475,20,4,13,13,4,True,primary,primary: dance metrics available,True
+2017365,Федотова Арина,standard,EADC,68,4,4,1,1,4,True,primary,primary: dance metrics available,True
+2017365,Федотова Арина,latin,E+D,454,12,4,13,13,4,True,primary,primary: dance metrics available,True
+2017365,Федотова Арина,latin,EADC,65,4,4,1,1,4,True,primary,primary: dance metrics available,True
+2010734,Чистова Анна,standard,E+D,12,0,0,1,1,0,True,limited,"limited: 12 marks, marks-derived reference only",True
+2010734,Чистова Анна,latin,E+D,16,0,0,1,1,0,True,limited,"limited: 16 marks, marks-derived reference only",True
+2015743,Юнцова Милана,latin,D+C,453,25,5,5,5,5,True,primary,primary: dance metrics available,True
+2015743,Юнцова Милана,latin,C+B,55,5,5,1,1,5,True,primary,primary: dance metrics available,True
+2015743,Юнцова Милана,latin,EADC,315,15,5,3,3,5,True,primary,primary: dance metrics available,True
+2013957,Яковлева Людмила,standard,D+C,298,20,5,4,4,5,True,primary,primary: dance metrics available,True
+2013957,Яковлева Людмила,standard,EADC,925,43,5,12,12,5,True,primary,primary: dance metrics available,True
+2013957,Яковлева Людмила,latin,D+C,245,15,5,4,4,5,True,primary,primary: dance metrics available,True
+2013957,Яковлева Людмила,latin,EADC,869,42,5,12,12,5,True,primary,primary: dance metrics available,True
+2018763,Вегера Артем / Яхимович Любовь,standard,D+C,251,20,5,4,4,5,True,primary,primary: dance metrics available,True
+2018763,Вегера Артем / Яхимович Любовь,standard,Open,5,0,0,1,1,0,True,limited,"limited: 5 marks, marks-derived reference only",True
+2018763,Вегера Артем / Яхимович Любовь,latin,E+D,481,32,4,9,9,4,True,primary,primary: dance metrics available,True
+2018763,Вегера Артем / Яхимович Любовь,latin,D+C,401,30,5,7,7,5,True,primary,primary: dance metrics available,True

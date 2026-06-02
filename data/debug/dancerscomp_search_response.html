@@ -1,0 +1,158 @@
+<!-- includes/header.php -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Информация о танцорах-любителях</title>
+  <link rel="stylesheet" href="https://compreg.ru/css/font-awesome.css" /> 
+  <link rel="stylesheet" href="https://compreg.ru/project/css/style.css" />
+  <link rel="stylesheet" type="text/css" href="style.css" /> 
+  <link rel="stylesheet" type="text/css" href="fonts/oswald/stylesheet.css" />
+  <link rel="stylesheet" type="text/css" href="images/styleBase.css" />
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+
+
+</head>
+<body class="">
+
+<!-- Кнопка "Наверх" -->
+<button id="scrollToTop" title="Наверх" onclick="scrollToTop()">
+  ↑
+</button>
+
+<!-- Кнопка "Вниз" -->
+<button id="scrollToBottom" title="Вниз" onclick="scrollToBottom()">
+  ↓
+</button>
+
+
+
+<script type="text/javascript" src="scripts/tabs.js?ver=61"></script>
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();
+   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(92595587, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true
+   });
+
+	function df(i) {
+		document.getElementById('ci').value=i;
+		document.getElementById('bi').click();
+
+	}	
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/92595587" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+<!-- Боковое меню -->
+<nav id="sidebar" class="sidebar">
+  <ul>
+
+<!--    <li><a href="landing.php"><i class="fa fa-home"></i> Фестивали</a></li> -->
+
+    <li class="has-submenu">
+      <a href="#" class="submenu-toggle">
+        <i class="fa fa-info-circle"></i> Фестивали
+        <i class="fa fa-chevron-down submenu-icon"></i>
+      </a>
+      <ul class="submenu">
+        <li><a href="https://compreg.ru">Фестивали 2025/2026</a></li>
+        <li><a href="https://compreg.ru/region-fests">Региональные фестивали 2025/2026</a></li>
+      </ul>
+    </li>
+
+    <li><a href="https://compreg.ru/professional.php"><i class="fa fa-info-circle"></i>Гран-При Профессионалы 2025/2026</a></li>
+
+    <li><a href="https://compreg.ru/pro-am.php"><i class="fa fa-info-circle"></i> Фестивали ProAm</a></li>
+
+    <li><a href="https://compreg.ru/reg-show.php"><i class="fa fa-info-circle"></i> Фестивали Шоу</a></li>
+
+    <li><a href="https://compreg.ru/results.php"><i class="fa fa-info-circle"></i>Результаты фестивалей</a></li>
+
+    <li><a href="https://compreg.ru/dancerscup.php"><i class="fa fa-info-circle"></i>Рейтинги сезона 2025/2026</a></li>
+
+    <li><a href="https://compreg.ru/dancerscomp"><i class="fa fa-search"></i>Поиск танцоров</a></li>
+
+
+
+    <li><a href="https://compreg.ru/privacy.php"><i class="fa fa-shield"></i> Политика конфиденциальности</a></li>
+  </ul>
+</nav>
+
+<!-- Overlay -->
+<div id="overlay" class="overlay"></div>
+<!-- Кнопка-ярлык -->
+<button id="menu-toggle" class="menu-toggle">
+  <i class="fa fa-bars"></i> Меню
+</button>
+
+
+
+<div class="page-content">
+
+<h1>Информация о танцорах-любителях</h1>
+
+   <!-- Begin Wrapper -->
+ <div class="wrapper">
+<!--     -->
+    <!-- Begin Left Column -->
+	<!-- <div id="leftcolumn"> -->
+<!--    <div class='dancers-wrapper'> -->
+
+<!-- <div  style="padding: 2% 0; background-color: white !important;"> -->
+
+        <div class="placebase"> 
+
+    <div align='mw-80 margin-center'>    	
+
+
+<!--	<div class='ref-table-container'> -->
+
+    <div class='dancers-form-wrapper'><div class='ref-form-container mw-60'><form  method='POST' action='/dancerscomp' id='searchform'><div class='ref-form-tr'><div class='ref-form-label'>IDD:</div><div class='ref-form-td'><input class='ref-form-input-text' type='text' name='idd' value=''></div></div><div class='ref-form-tr'><div class='ref-form-label'>Фамилия, Имя:</div><div class='ref-form-td'><input class='ref-form-input-text' type='text' name='n' value=''></div></div><div class='ref-form-tr'><div class='ref-form-label'>Клуб:</div><div class='ref-form-td'><input class='ref-form-input-text' type='text' name='c' value='Триумф'></div></div><div class='ref-form-tr hidediv'><div class='ref-form-label'>РО/Организация:</div><div class='ref-form-td hidediv'><input class='ref-form-input-text' type='text' name='o' value=''></div></div><div class='ref-form-tr'><div class='ref-form-td'>&nbsp;</div><div class='ref-form-td'><input type='submit' class='w-100 btnturquoise padding-vert' value='&nbsp;Искать&nbsp;'></div></div><input type='hidden' name='p' value=''></form></div></div><form  method='POST' action='danceinfo.php' id='cardform'><input type='hidden' id='ci' name='ci' value=''><input type='submit' class='hidediv' id='bi' value='перейти'></form></div>
+</div>
+</div>
+<!-- </div> -->
+
+    <!-- Form -->
+
+	
+    <div align="center">
+    <div class="ref-table-container">
+    <div class='dancers-table'><div class='ref-thr hidediv'><div class='ref-thd-name graycolor'></div></div><div class='ref-tr'><div class='mw-12 nowrap-div-only '><div class='w-65 text-left'>2023028</div><div class='w-30 text-center'>&#10004;</div></div><div class='dancers-td-name ptr  greenfont'  onclick='df(2023028)' >Аббясова Амина</div><div class='dancers-td-club'>Триумф * Санкт-Петербург</div></div><div class='ref-tr'><div class='mw-12 nowrap-div-only '><div class='w-65 text-left'>2014210</div><div class='w-30 text-center'>&#10004;</div></div><div class='dancers-td-name ptr  greenfont'  onclick='df(2014210)' >Аветисян Ева</div><div class='dancers-td-club'>Триумф * Москва</div></div><div class='ref-tr'><div class='mw-12 nowrap-div-only '><div class='w-65 text-left'>2010683</div><div class='w-30 text-center'>&#10004;</div></div><div class='dancers-td-name ptr  greenfont'  onclick='df(2010683)' >Агапитов Ярослав</div><div class='dancers-td-club'>Триумф * Санкт-Петербург</div></div><div class='ref-tr'><div class='mw-12 nowrap-div-only '><div class='w-65 text-left'>2015422</div><div class='w-30 text-center'>&#10004;</div></div><div class='dancers-td-name ptr  greenfont'  onclick='df(2015422)' >Александрова Кира</div><div class='dancers-td-club'>Триумф * Москва</div></div><div class='ref-tr'><div class='mw-12 nowrap-div-only '><div class='w-65 text-left'>2007611</div><div class='w-30 text-center'>&#10004;</div></div><div class='dancers-td-name ptr  greenfont'  onclick='df(2007611)' >Алексеева Анна</div><div class='dancers-td-club'>Триумф * Новочеркасск</div></div><div class='ref-tr'><div class='mw-12 nowrap-div-only '><div class='w-65 text-left'>2010736</div><div class='w-30 text-center'>&#10004;</div></div><div class='dancers-td-name ptr  greenfont'  onclick='df(2010736)' >Антонова Александра</div><div class='dancers-td-club'>Триумф * Санкт-Петербург</div></div><div class='ref-tr'><div class='mw-12 nowrap-div-only '><div class='w-65 text-left'>2011699</div><div class='w-30 text-center'>&#10004;</div></div><div class='dancers-td-name ptr  greenfont'  onclick='df(2011699)' >Бадасян Кристина</div><div class='dancers-td-club'>Триумф * Тула</div></div><div class='ref-tr'><div class='mw-12 nowrap-div-only '><div class='w-65 text-left'>2015745</div><div class='w-30 text-center'>&#10004;</div></div><div class='dancers-td-name ptr  greenfont'  onclick='df(2015745)' >Бедина Эльмира</div><div class='dancers-td-club'>Триумф * Санкт-Петербург</div></div><div class='ref-tr'><div class='mw-12 nowrap-div-only '><div class='w-65 text-left'>2015868</div><div class='w-30 text-center'>&#10004;</div></div><div class='dancers-td-name ptr  greenfont'  onclick='df(2015868)' >Борзенков Константин</div><div class='dancers-td-club'>Триумф * Москва</div></div><div class='ref-tr'><div class='mw-12 nowrap-div-only '><div class='w-65 text-left'>2015747</div><div class='w-30 text-center'>&#10004;</div></div><div class='dancers-td-name ptr  greenfont'  onclick='df(2015747)' >Вегера Артем</div><div class='dancers-td-club'>Триумф * Санкт-Петербург</div></div><div class='ref-tr'><div class='mw-12 nowrap-div-only '><div class='w-65 text-left'>2013211</div><div class='w-30 text-center'>&#10004;</div></div><div class='dancers-td-name ptr  greenfont'  onclick='df(2013211)' >Векслер Майя</div><div class='dancers-td-club'>Триумф * Санкт-Петербург</div></div><div class='ref-tr'><div class='mw-12 nowrap-div-only '><div class='w-65 text-left'>2017576</div><div class='w-30 text-center'>&#10004;</div></div><div class='dancers-td-name ptr  greenfont'  onclick='df(2017576)' >Галактионова Анна</div><div class='dancers-td-club'>Триумф * Санкт-Петербург</div></div><div class='ref-tr'><div class='mw-12 nowrap-div-only '><div class='w-65 text-left'>2020416</div><div class='w-30 text-center'>&#10004;</div></div><div class='dancers-td-name ptr  greenfont'  onclick='df(2020416)' >Гасанова Мирослава</div><div class='dancers-td-club'>Триумф * Москва</div></div><div class='ref-tr'><div class='mw-12 nowrap-div-only '><div class='w-65 text-left'>2014985</div><div class='w-30 text-center'>&#10004;</div></div><div class='dancers-td-name ptr  greenfont'  onclick='df(2014985)' >Глазунова Екатерина</div><div class='dancers-td-club'>Триумф * Москва</div></div><div class='ref-tr'><div class='mw-12 nowrap-div-only '><div class='w-65 text-left'>2012841</div><div class='w-30 text-center'>&#10004;</div></div><div class='dancers-td-name ptr  greenfont'  onclick='df(2012841)' >Головкин Максим</div><div class='dancers-td-club'>Триумф * Москва</div></div><div class='ref-tr'><div class='mw-12 nowrap-div-only '><div class='w-65 text-left'>2007551</div><div class='w-30 text-center'>&#10004;</div></div><div class='dancers-td-name ptr  greenfont'  onclick='df(2007551)' >Гордиенко Дарья</div><div class='dancers-td-club'>Триумф * Новочеркасск</div></div><div class='ref-tr'><div class='mw-12 nowrap-div-only '><div class='w-65 text-left'>2016461</div><div class='w-30 text-center'>&#10004;</div></div><div class='dancers-td-name ptr  greenfont'  onclick='df(2016461)' >Груздева Александра</div><div class='dancers-td-club'>Триумф * Санкт-Петербург</div></div><div class='ref-tr'><div class='mw-12 nowrap-div-only '><div class='w-65 text-left'>2018643</div><div class='w-30 text-center'>&#10004;</div></div><div class='dancers-td-name ptr  greenfont'  onclick='df(2018643)' >Дергалева Ева</div><div class='dancers-td-club'>Триумф * Москва</div></div><div class='ref-tr'><div class='mw-12 nowrap-div-only '><div class='w-65 text-left'>2013148</div><div class='w-30 text-center'>&#10004;</div></div><div class='dancers-td-name ptr  greenfont'  onclick='df(2013148)' >Дергалева Полина</div><div class='dancers-td-club'>Триумф * Москва</div></div><div class='ref-tr'><div class='mw-12 nowrap-div-only '><div class='w-65 text-left'>2010737</div><div class='w-30 text-center'>&#10004;</div></div><div class='dancers-td-name ptr  greenfont'  onclick='df(2010737)' >Дмитриева Анна</div><div class='dancers-td-club'>Триумф * Санкт-Петербург</div></div><div class='ref-tr'><div class='mw-12 nowrap-div-only '><div class='w-65 text-left'>2006812</div><div class='w-30 text-center'>&#10004;</div></div><div class='dancers-td-name ptr  greenfont'  onclick='df(2006812)' >Еремин Григорий</div><div class='dancers-td-club'>Триумф * Санкт-Петербург</div></div><div class='ref-tr'><div class='mw-12 nowrap-div-only '><div class='w-65 text-left'>2013147</div><div class='w-30 text-center'>&#10004;</div></div><div class='dancers-td-name ptr  greenfont'  onclick='df(2013147)' >Иванова Карина</div><div class='dancers-td-club'>Триумф * Москва</div></div><div class='ref-tr'><div class='mw-12 nowrap-div-only '><div class='w-65 text-left'>2019417</div><div class='w-30 text-center'>&#10004;</div></div><div class='dancers-td-name ptr  greenfont'  onclick='df(2019417)' >Ившина Ксения</div><div class='dancers-td-club'>Триумф * Санкт-Петербург</div></div><div class='ref-tr'><div class='mw-12 nowrap-div-only '><div class='w-65 text-left'>2019904</div><div class='w-30 text-center'>&#10004;</div></div><div class='dancers-td-name ptr  greenfont'  onclick='df(2019904)' >Илюхина Ксения</div><div class='dancers-td-club'>Триумф * Тула</div></div><div class='ref-tr'><div class='mw-12 nowrap-div-only '><div class='w-65 text-left'>2014552</div><div class='w-30 text-center'>&#10004;</div></div><div class='dancers-td-name ptr  greenfont'  onclick='df(2014552)' >Козлова Полина</div><div class='dancers-td-club'>Триумф * Санкт-Петербург</div></div><div class='ref-tr'><div class='mw-12 nowrap-div-only '><div class='w-65 text-left'>2019414</div><div class='w-30 text-center'>&#10004;</div></div><div class='dancers-td-name ptr  greenfont'  onclick='df(2019414)' >Козлова София</div><div class='dancers-td-club'>Триумф * Санкт-Петербург</div></div><div class='ref-tr'><div class='mw-12 nowrap-div-only '><div class='w-65 text-left'>2019312</div><div class='w-30 text-center'>&#10004;</div></div><div class='dancers-td-name ptr  greenfont'  onclick='df(2019312)' >Костина Ксения</div><div class='dancers-td-club'>Триумф * Санкт-Петербург</div></div><div class='ref-tr'><div class='mw-12 nowrap-div-only '><div class='w-65 text-left'>2018378</div><div class='w-30 text-center'>&#10004;</div></div><div class='dancers-td-name ptr  greenfont'  onclick='df(2018378)' >Лютых Алиса</div><div class='dancers-td-club'>Триумф * Санкт-Петербург</div></div><div class='ref-tr'><div class='mw-12 nowrap-div-only '><div class='w-65 text-left'>2006823</div><div class='w-30 text-center'>&#10004;</div></div><div class='dancers-td-name ptr  greenfont'  onclick='df(2006823)' >Лютых Данила</div><div class='dancers-td-club'>Триумф * Санкт-Петербург</div></div><div class='ref-tr'><div class='mw-12 nowrap-div-only '><div class='w-65 text-left'>2012523</div><div class='w-30 text-center'>&#10004;</div></div><div class='dancers-td-name ptr  greenfont'  onclick='df(2012523)' >Мазурина Анна</div><div class='dancers-td-club'>Триумф * Санкт-Петербург</div></div><div class='ref-tr'><div class='mw-12 nowrap-div-only '><div class='w-65 text-left'>2019421</div><div class='w-30 text-center'>&#10004;</div></div><div class='dancers-td-name ptr  greenfont'  onclick='df(2019421)' >Маркелов Дмитрий</div><div class='dancers-td-club'>Триумф * Санкт-Петербург</div></div><div class='ref-tr'><div class='mw-12 nowrap-div-only '><div class='w-65 text-left'>2019644</div><div class='w-30 text-center'>&#10004;</div></div><div class='dancers-td-name ptr  greenfont'  onclick='df(2019644)' >Матюхина Василиса</div><div class='dancers-td-club'>Триумф * Санкт-Петербург</div></div><div class='ref-tr'><div class='mw-12 nowrap-div-only '><div class='w-65 text-left'>2013956</div><div class='w-30 text-center'>&#10004;</div></div><div class='dancers-td-name ptr  greenfont'  onclick='df(2013956)' >Меркулова София</div><div class='dancers-td-club'>Триумф * Санкт-Петербург</div></div><div class='ref-tr'><div class='mw-12 nowrap-div-only '><div class='w-65 text-left'>2007446</div><div class='w-30 text-center'>&#10004;</div></div><div class='dancers-td-name ptr  greenfont'  onclick='df(2007446)' >Милованова Мария</div><div class='dancers-td-club'>Триумф * Новочеркасск</div></div><div class='ref-tr'><div class='mw-12 nowrap-div-only '><div class='w-65 text-left'>2017364</div><div class='w-30 text-center'>&#10004;</div></div><div class='dancers-td-name ptr  greenfont'  onclick='df(2017364)' >Немчинова Екатерина</div><div class='dancers-td-club'>Триумф * Санкт-Петербург</div></div><div class='ref-tr'><div class='mw-12 nowrap-div-only '><div class='w-65 text-left'>2016890</div><div class='w-30 text-center'>&#10004;</div></div><div class='dancers-td-name ptr  greenfont'  onclick='df(2016890)' >Нестерова Елизавета</div><div class='dancers-td-club'>Триумф * Санкт-Петербург</div></div><div class='ref-tr'><div class='mw-12 nowrap-div-only '><div class='w-65 text-left'>2019903</div><div class='w-30 text-center'>&#10004;</div></div><div class='dancers-td-name ptr  greenfont'  onclick='df(2019903)' >Овсянников Давид</div><div class='dancers-td-club'>Триумф * Тула</div></div><div class='ref-tr'><div class='mw-12 nowrap-div-only '><div class='w-65 text-left'>2019905</div><div class='w-30 text-center'>&#10004;</div></div><div class='dancers-td-name ptr  greenfont'  onclick='df(2019905)' >Овсянников Игнат</div><div class='dancers-td-club'>Триумф * Тула</div></div><div class='ref-tr'><div class='mw-12 nowrap-div-only '><div class='w-65 text-left'>2019908</div><div class='w-30 text-center'>&#10004;</div></div><div class='dancers-td-name ptr  greenfont'  onclick='df(2019908)' >Овсянникова София</div><div class='dancers-td-club'>Триумф * Тула</div></div><div class='ref-tr'><div class='mw-12 nowrap-div-only '><div class='w-65 text-left'>2020010</div><div class='w-30 text-center'>&#10004;</div></div><div class='dancers-td-name ptr  greenfont'  onclick='df(2020010)' >Ордян Аделина</div><div class='dancers-td-club'>Триумф * Москва</div></div><div class='ref-tr'><div class='mw-12 nowrap-div-only '><div class='w-65 text-left'>2007367</div><div class='w-30 text-center'>&#10004;</div></div><div class='dancers-td-name ptr  greenfont'  onclick='df(2007367)' >Перепелицина София</div><div class='dancers-td-club'>Триумф * Новочеркасск</div></div><div class='ref-tr'><div class='mw-12 nowrap-div-only '><div class='w-65 text-left'>2011924</div><div class='w-30 text-center'>&#10004;</div></div><div class='dancers-td-name ptr  greenfont'  onclick='df(2011924)' >Попов Егор</div><div class='dancers-td-club'>Триумф * Санкт-Петербург</div></div><div class='ref-tr'><div class='mw-12 nowrap-div-only '><div class='w-65 text-left'>2019422</div><div class='w-30 text-center'>&#10004;</div></div><div class='dancers-td-name ptr  greenfont'  onclick='df(2019422)' >Посыпайко Вероника</div><div class='dancers-td-club'>Триумф * Санкт-Петербург</div></div><div class='ref-tr'><div class='mw-12 nowrap-div-only '><div class='w-65 text-left'>2013921</div><div class='w-30 text-center'>&#10004;</div></div><div class='dancers-td-name ptr  greenfont'  onclick='df(2013921)' >Привалова Виктория</div><div class='dancers-td-club'>Триумф * Санкт-Петербург</div></div><div class='ref-tr'><div class='mw-12 nowrap-div-only '><div class='w-65 text-left'>2007453</div><div class='w-30 text-center'>&#10004;</div></div><div class='dancers-td-name ptr  greenfont'  onclick='df(2007453)' >Ракша Сергей</div><div class='dancers-td-club'>Триумф * Новочеркасск</div></div><div class='ref-tr'><div class='mw-12 nowrap-div-only '><div class='w-65 text-left'>2016913</div><div class='w-30 text-center'>&#10004;</div></div><div class='dancers-td-name ptr  greenfont'  onclick='df(2016913)' >Рикунова Ксения</div><div class='dancers-td-club'>Триумф * Санкт-Петербург</div></div><div class='ref-tr'><div class='mw-12 nowrap-div-only '><div class='w-65 text-left'>2019906</div><div class='w-30 text-center'>&#10004;</div></div><div class='dancers-td-name ptr  greenfont'  onclick='df(2019906)' >Романчикова Елизавета</div><div class='dancers-td-club'>Триумф * Тула</div></div><div class='ref-tr'><div class='mw-12 nowrap-div-only '><div class='w-65 text-left'>2020091</div><div class='w-30 text-center'>&#10004;</div></div><div class='dancers-td-name ptr  greenfont'  onclick='df(2020091)' >Россошанская Дарья</div><div class='dancers-td-club'>Триумф * Санкт-Петербург</div></div><div class='ref-tr'><div class='mw-12 nowrap-div-only '><div class='w-65 text-left'>2019911</div><div class='w-30 text-center'>&#10004;</div></div><div class='dancers-td-name ptr  greenfont'  onclick='df(2019911)' >Самарин Илья</div><div class='dancers-td-club'>Триумф * Тула</div></div><div class='ref-tr'><div class='mw-12 nowrap-div-only '><div class='w-65 text-left'>2022547</div><div class='w-30 text-center'>&#10004;</div></div><div class='dancers-td-name ptr  greenfont'  onclick='df(2022547)' >Самуленко Анита</div><div class='dancers-td-club'>Триумф * Санкт-Петербург</div></div><div class='ref-tr'><div class='mw-12 nowrap-div-only '><div class='w-65 text-left'>2017958</div><div class='w-30 text-center'>&#10004;</div></div><div class='dancers-td-name ptr  greenfont'  onclick='df(2017958)' >Сапего Алиса</div><div class='dancers-td-club'>Триумф * Санкт-Петербург</div></div><div class='ref-tr'><div class='mw-12 nowrap-div-only '><div class='w-65 text-left'>2015740</div><div class='w-30 text-center'>&#10004;</div></div><div class='dancers-td-name ptr  greenfont'  onclick='df(2015740)' >Сейдахметова Таисия</div><div class='dancers-td-club'>Триумф * Санкт-Петербург</div></div><div class='ref-tr'><div class='mw-12 nowrap-div-only '><div class='w-65 text-left'>2023704</div><div class='w-30 text-center'>&#10004;</div></div><div class='dancers-td-name ptr  greenfont'  onclick='df(2023704)' >Сидорова Анна</div><div class='dancers-td-club'>Триумф * Москва</div></div><div class='ref-tr'><div class='mw-12 nowrap-div-only '><div class='w-65 text-left'>2012842</div><div class='w-30 text-center'>&#10004;</div></div><div class='dancers-td-name ptr  greenfont'  onclick='df(2012842)' >Смола Анастасия</div><div class='dancers-td-club'>Триумф * Москва</div></div><div class='ref-tr'><div class='mw-12 nowrap-div-only '><div class='w-65 text-left'>2021505</div><div class='w-30 text-center'>&#10004;</div></div><div class='dancers-td-name ptr  greenfont'  onclick='df(2021505)' >Соловьева Владлена</div><div class='dancers-td-club'>Триумф * Москва</div></div><div class='ref-tr'><div class='mw-12 nowrap-div-only '><div class='w-65 text-left'>2022546</div><div class='w-30 text-center'>&#10004;</div></div><div class='dancers-td-name ptr  greenfont'  onclick='df(2022546)' >Соломаткина Алиса</div><div class='dancers-td-club'>Триумф * Санкт-Петербург</div></div><div class='ref-tr'><div class='mw-12 nowrap-div-only '><div class='w-65 text-left'>2023484</div><div class='w-30 text-center'>&#10004;</div></div><div class='dancers-td-name ptr  greenfont'  onclick='df(2023484)' >Сорокина София</div><div class='dancers-td-club'>Триумф * Санкт-Петербург</div></div><div class='ref-tr'><div class='mw-12 nowrap-div-only '><div class='w-65 text-left'>2017365</div><div class='w-30 text-center'>&#10004;</div></div><div class='dancers-td-name ptr  greenfont'  onclick='df(2017365)' >Федотова Арина</div><div class='dancers-td-club'>Триумф * Санкт-Петербург</div></div><div class='ref-tr'><div class='mw-12 nowrap-div-only '><div class='w-65 text-left'>2014138</div><div class='w-30 text-center'>&#10004;</div></div><div class='dancers-td-name ptr  greenfont'  onclick='df(2014138)' >Фоменко Виктория</div><div class='dancers-td-club'>Триумф * Москва</div></div><div class='ref-tr'><div class='mw-12 nowrap-div-only '><div class='w-65 text-left'>2010734</div><div class='w-30 text-center'>&#10004;</div></div><div class='dancers-td-name ptr  greenfont'  onclick='df(2010734)' >Чистова Анна</div><div class='dancers-td-club'>Триумф * Санкт-Петербург</div></div><div class='ref-tr'><div class='mw-12 nowrap-div-only '><div class='w-65 text-left'>2019902</div><div class='w-30 text-center'>&#10004;</div></div><div class='dancers-td-name ptr  greenfont'  onclick='df(2019902)' >Шахов Данил</div><div class='dancers-td-club'>Триумф * Тула</div></div><div class='ref-tr'><div class='mw-12 nowrap-div-only '><div class='w-65 text-left'>2014984</div><div class='w-30 text-center'>&#10004;</div></div><div class='dancers-td-name ptr  greenfont'  onclick='df(2014984)' >Ширяева Мария</div><div class='dancers-td-club'>Триумф * Москва</div></div><div class='ref-tr'><div class='mw-12 nowrap-div-only '><div class='w-65 text-left'>2015743</div><div class='w-30 text-center'>&#10004;</div></div><div class='dancers-td-name ptr  greenfont'  onclick='df(2015743)' >Юнцова Милана</div><div class='dancers-td-club'>Триумф * Санкт-Петербург</div></div><div class='ref-tr'><div class='mw-12 nowrap-div-only '><div class='w-65 text-left'>2015756</div><div class='w-30 text-center'>&#10004;</div></div><div class='dancers-td-name ptr  greenfont'  onclick='df(2015756)' >Юрченко Сергей</div><div class='dancers-td-club'>Триумф * Новочеркасск</div></div><div class='ref-tr'><div class='mw-12 nowrap-div-only '><div class='w-65 text-left'>2013957</div><div class='w-30 text-center'>&#10004;</div></div><div class='dancers-td-name ptr  greenfont'  onclick='df(2013957)' >Яковлева Людмила</div><div class='dancers-td-club'>Триумф * Санкт-Петербург</div></div><div class='ref-tr'><div class='mw-12 nowrap-div-only '><div class='w-65 text-left'>2021504</div><div class='w-30 text-center'>&#10004;</div></div><div class='dancers-td-name ptr  greenfont'  onclick='df(2021504)' >Якушева София</div><div class='dancers-td-club'>Триумф * Москва</div></div><div class='ref-tr'><div class='mw-12 nowrap-div-only '><div class='w-65 text-left'>2018763</div><div class='w-30 text-center'>&#10004;</div></div><div class='dancers-td-name ptr  greenfont'  onclick='df(2018763)' >Яхимович Любовь</div><div class='dancers-td-club'>Триумф * Санкт-Петербург</div></div></div>    </div>
+    </div>
+
+        </div>
+    </div>
+    <!-- End Wrapper -->
+<!-- includes/footer.php -->
+<footer class="site-footer">
+  <div class="footer-content">
+    <p>&copy; 2026 CompRegRu. Все права защищены.</p>
+    <p><a href="privacy.php">Политика конфиденциальности</a></p>
+    <p><a href="/docs/compreg_bunner.zip">Шаблоны баннеров</a></p>
+  </div>
+</footer>
+
+<!-- Баннер о куках -->
+<div id="cookie-banner" style="display: none;">
+  <p>
+    Мы используем файлы cookie, чтобы улучшить работу сайта.
+    Продолжая использовать наш сайт, вы соглашаетесь с использованием файлов cookie.
+  </p>
+  <button onclick="acceptCookies()">Понятно</button>
+</div>
+
+<script src="https://compreg.ru/project/js/script.js"></script>
+</body>
+</html>

@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-06-02T06:01:41.082080+00:00",
+    "generated_at": "2026-06-02T12:56:19.188472+00:00",
     "analytics_version": "report_layer_v1",
     "database": "database/compreg_spb_2025_2026.sqlite"
   },
@@ -74,6 +74,46 @@
           "confidence": "low confidence"
         }
       ],
+      "display_mode": "best_worst",
+      "best_dances": [
+        {
+          "dance": "Q",
+          "dance_code": "Q",
+          "metric_value": 3.75,
+          "metric_type": "final_avg_place",
+          "metric_label": "среднее место",
+          "final_avg_place": 3.75
+        }
+      ],
+      "worst_dances": [
+        {
+          "dance": "W",
+          "dance_code": "W",
+          "metric_value": 4.25,
+          "metric_type": "final_avg_place",
+          "metric_label": "среднее место",
+          "final_avg_place": 4.25
+        }
+      ],
+      "evaluated_dance": null,
+      "tied_dances": [],
+      "tied_metric_value": null,
+      "best_dance": {
+        "dance": "Q",
+        "dance_code": "Q",
+        "metric_value": 3.75,
+        "metric_type": "final_avg_place",
+        "metric_label": "среднее место",
+        "final_avg_place": 3.75
+      },
+      "worst_dance": {
+        "dance": "W",
+        "dance_code": "W",
+        "metric_value": 4.25,
+        "metric_type": "final_avg_place",
+        "metric_label": "среднее место",
+        "final_avg_place": 4.25
+      },
       "best_by_final_average": null,
       "best_by_median": null,
       "most_stable_dance": null,
@@ -147,6 +187,46 @@
           "confidence": "low confidence"
         }
       ],
+      "display_mode": "best_worst",
+      "best_dances": [
+        {
+          "dance": "J",
+          "dance_code": "J",
+          "metric_value": 6.0,
+          "metric_type": "final_avg_place",
+          "metric_label": "среднее место",
+          "final_avg_place": 6.0
+        }
+      ],
+      "worst_dances": [
+        {
+          "dance": "C",
+          "dance_code": "Ch",
+          "metric_value": 6.5,
+          "metric_type": "final_avg_place",
+          "metric_label": "среднее место",
+          "final_avg_place": 6.5
+        }
+      ],
+      "evaluated_dance": null,
+      "tied_dances": [],
+      "tied_metric_value": null,
+      "best_dance": {
+        "dance": "J",
+        "dance_code": "J",
+        "metric_value": 6.0,
+        "metric_type": "final_avg_place",
+        "metric_label": "среднее место",
+        "final_avg_place": 6.0
+      },
+      "worst_dance": {
+        "dance": "C",
+        "dance_code": "Ch",
+        "metric_value": 6.5,
+        "metric_type": "final_avg_place",
+        "metric_label": "среднее место",
+        "final_avg_place": 6.5
+      },
       "best_by_final_average": null,
       "best_by_median": null,
       "most_stable_dance": null,
@@ -924,6 +1004,46 @@
             "confidence": "low confidence"
           }
         ],
+        "display_mode": "best_worst",
+        "best_dances": [
+          {
+            "dance": "Q",
+            "dance_code": "Q",
+            "metric_value": 3.75,
+            "metric_type": "final_avg_place",
+            "metric_label": "среднее место",
+            "final_avg_place": 3.75
+          }
+        ],
+        "worst_dances": [
+          {
+            "dance": "W",
+            "dance_code": "W",
+            "metric_value": 4.25,
+            "metric_type": "final_avg_place",
+            "metric_label": "среднее место",
+            "final_avg_place": 4.25
+          }
+        ],
+        "evaluated_dance": null,
+        "tied_dances": [],
+        "tied_metric_value": null,
+        "best_dance": {
+          "dance": "Q",
+          "dance_code": "Q",
+          "metric_value": 3.75,
+          "metric_type": "final_avg_place",
+          "metric_label": "среднее место",
+          "final_avg_place": 3.75
+        },
+        "worst_dance": {
+          "dance": "W",
+          "dance_code": "W",
+          "metric_value": 4.25,
+          "metric_type": "final_avg_place",
+          "metric_label": "среднее место",
+          "final_avg_place": 4.25
+        },
         "best_by_final_average": null,
         "best_by_median": null,
         "most_stable_dance": null,
@@ -959,7 +1079,1702 @@
           "Ювеналы-2 N соло Ж St",
           "Ювеналы-2 N+E Соло Ж St"
         ],
+        "protocol_count": 6,
+        "tournament_count": 4,
+        "evidence": {
+          "tournaments": 4,
+          "protocols": 6,
+          "marks": 232,
+          "results": 8
+        },
+        "visibility": {
+          "marks_count": 232,
+          "results_count": 8,
+          "dance_metrics_count": 2,
+          "protocols_count": 6,
+          "tournaments_count": 4,
+          "trainer_summaries_count": 4,
+          "trend_items_count": 2,
+          "marks_derived_metrics_count": 3
+        },
+        "marks_derived_dance_metrics": [
+          {
+            "program": "standard",
+            "dance": "W",
+            "marks_count": 103,
+            "protocols_count": 6,
+            "tournaments_count": 4,
+            "cross_marks": 69,
+            "numeric_marks": 34,
+            "dance_code": "W"
+          },
+          {
+            "program": "standard",
+            "dance": "T",
+            "marks_count": 15,
+            "protocols_count": 2,
+            "tournaments_count": 2,
+            "cross_marks": 15,
+            "numeric_marks": 0,
+            "dance_code": "T"
+          },
+          {
+            "program": "standard",
+            "dance": "Q",
+            "marks_count": 114,
+            "protocols_count": 6,
+            "tournaments_count": 4,
+            "cross_marks": 80,
+            "numeric_marks": 34,
+            "dance_code": "Q"
+          }
+        ],
+        "is_visible_chip": true,
+        "visibility_status": "primary",
+        "visibility_reason": "primary: dance metrics available",
+        "dynamics_by_date": [
+          {
+            "program": "standard",
+            "dance": "Q",
+            "event_date": "2026-02-01",
+            "avg_place": 2.0,
+            "final_avg_place": 2.0,
+            "median_place": 2.0,
+            "n_marks": 1,
+            "n_protocols": 1,
+            "rolling_average": 2.0,
+            "tournament_to_tournament_delta": null
+          },
+          {
+            "program": "standard",
+            "dance": "Q",
+            "event_date": "2026-03-08",
+            "avg_place": 3.0,
+            "final_avg_place": 3.0,
+            "median_place": 3.0,
+            "n_marks": 1,
+            "n_protocols": 1,
+            "rolling_average": 2.5,
+            "tournament_to_tournament_delta": 1.0
+          },
+          {
+            "program": "standard",
+            "dance": "Q",
+            "event_date": "2026-04-26",
+            "avg_place": 5.0,
+            "final_avg_place": 5.0,
+            "median_place": 5.0,
+            "n_marks": 1,
+            "n_protocols": 1,
+            "rolling_average": 3.333,
+            "tournament_to_tournament_delta": 2.0
+          },
+          {
+            "program": "standard",
+            "dance": "Q",
+            "event_date": "2026-05-24",
+            "avg_place": 5.0,
+            "final_avg_place": 5.0,
+            "median_place": 5.0,
+            "n_marks": 1,
+            "n_protocols": 1,
+            "rolling_average": 4.333,
+            "tournament_to_tournament_delta": 0.0
+          },
+          {
+            "program": "standard",
+            "dance": "W",
+            "event_date": "2026-02-01",
+            "avg_place": 2.0,
+            "final_avg_place": 2.0,
+            "median_place": 2.0,
+            "n_marks": 1,
+            "n_protocols": 1,
+            "rolling_average": 2.0,
+            "tournament_to_tournament_delta": null
+          },
+          {
+            "program": "standard",
+            "dance": "W",
+            "event_date": "2026-03-08",
+            "avg_place": 3.0,
+            "final_avg_place": 3.0,
+            "median_place": 3.0,
+            "n_marks": 1,
+            "n_protocols": 1,
+            "rolling_average": 2.5,
+            "tournament_to_tournament_delta": 1.0
+          },
+          {
+            "program": "standard",
+            "dance": "W",
+            "event_date": "2026-04-26",
+            "avg_place": 7.0,
+            "final_avg_place": 7.0,
+            "median_place": 7.0,
+            "n_marks": 1,
+            "n_protocols": 1,
+            "rolling_average": 4.0,
+            "tournament_to_tournament_delta": 4.0
+          },
+          {
+            "program": "standard",
+            "dance": "W",
+            "event_date": "2026-05-24",
+            "avg_place": 5.0,
+            "final_avg_place": 5.0,
+            "median_place": 5.0,
+            "n_marks": 1,
+            "n_protocols": 1,
+            "rolling_average": 5.0,
+            "tournament_to_tournament_delta": -2.0
+          }
+        ],
+        "trends": [
+          {
+            "program": "standard",
+            "dance": "Q",
+            "trend_over_time": 1.1,
+            "first_date": "2026-02-01",
+            "first_avg_place": 2.0,
+            "last_date": "2026-05-24",
+            "last_avg_place": 5.0,
+            "first_to_last_delta": 3.0,
+            "n_dates": 4,
+            "confidence": "ok",
+            "trend_status": "declining"
+          },
+          {
+            "program": "standard",
+            "dance": "W",
+            "trend_over_time": 1.3,
+            "first_date": "2026-02-01",
+            "first_avg_place": 2.0,
+            "last_date": "2026-05-24",
+            "last_avg_place": 5.0,
+            "first_to_last_delta": 3.0,
+            "n_dates": 4,
+            "confidence": "ok",
+            "trend_status": "declining"
+          }
+        ],
+        "tournament_dance_results": [
+          {
+            "event_date": "2026-02-01",
+            "tournament_id": 2026020100,
+            "tournament_title": "Tiara Dance Cup (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
+            "protocol_id": 76799,
+            "category": "Ювеналы-2 N соло Ж St",
+            "program": "standard",
+            "dance": "W",
+            "final_place": 2.0,
+            "best_place": 2.0,
+            "worst_place": 2.0,
+            "n_results": 1,
+            "judge_marks": 7,
+            "dance_code": "W",
+            "date": "2026-02-01"
+          },
+          {
+            "event_date": "2026-02-01",
+            "tournament_id": 2026020100,
+            "tournament_title": "Tiara Dance Cup (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
+            "protocol_id": 76799,
+            "category": "Ювеналы-2 N соло Ж St",
+            "program": "standard",
+            "dance": "Q",
+            "final_place": 2.0,
+            "best_place": 2.0,
+            "worst_place": 2.0,
+            "n_results": 1,
+            "judge_marks": 7,
+            "dance_code": "Q",
+            "date": "2026-02-01"
+          },
+          {
+            "event_date": "2026-03-08",
+            "tournament_id": 2026030800,
+            "tournament_title": "Амбассадор 2026 (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
+            "protocol_id": 77937,
+            "category": "Ювеналы-1+2 N Соло Ж St",
+            "program": "standard",
+            "dance": "W",
+            "final_place": 3.0,
+            "best_place": 3.0,
+            "worst_place": 3.0,
+            "n_results": 1,
+            "judge_marks": 7,
+            "dance_code": "W",
+            "date": "2026-03-08"
+          },
+          {
+            "event_date": "2026-03-08",
+            "tournament_id": 2026030800,
+            "tournament_title": "Амбассадор 2026 (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
+            "protocol_id": 77937,
+            "category": "Ювеналы-1+2 N Соло Ж St",
+            "program": "standard",
+            "dance": "Q",
+            "final_place": 3.0,
+            "best_place": 3.0,
+            "worst_place": 3.0,
+            "n_results": 1,
+            "judge_marks": 7,
+            "dance_code": "Q",
+            "date": "2026-03-08"
+          },
+          {
+            "event_date": "2026-04-26",
+            "tournament_id": 2026042600,
+            "tournament_title": "Карнавал 2026 (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
+            "protocol_id": 79400,
+            "category": "Ювеналы-2 N Соло Ж St",
+            "program": "standard",
+            "dance": "W",
+            "final_place": 7.0,
+            "best_place": 7.0,
+            "worst_place": 7.0,
+            "n_results": 1,
+            "judge_marks": 9,
+            "dance_code": "W",
+            "date": "2026-04-26"
+          },
+          {
+            "event_date": "2026-04-26",
+            "tournament_id": 2026042600,
+            "tournament_title": "Карнавал 2026 (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
+            "protocol_id": 79400,
+            "category": "Ювеналы-2 N Соло Ж St",
+            "program": "standard",
+            "dance": "Q",
+            "final_place": 5.0,
+            "best_place": 5.0,
+            "worst_place": 5.0,
+            "n_results": 1,
+            "judge_marks": 9,
+            "dance_code": "Q",
+            "date": "2026-04-26"
+          },
+          {
+            "event_date": "2026-05-24",
+            "tournament_id": 2026052402,
+            "tournament_title": "Чемпионат СПТЛ 2026 (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
+            "protocol_id": 80566,
+            "category": "Ювеналы-2 N Соло Ж St",
+            "program": "standard",
+            "dance": "W",
+            "final_place": 5.0,
+            "best_place": 5.0,
+            "worst_place": 5.0,
+            "n_results": 1,
+            "judge_marks": 11,
+            "dance_code": "W",
+            "date": "2026-05-24"
+          },
+          {
+            "event_date": "2026-05-24",
+            "tournament_id": 2026052402,
+            "tournament_title": "Чемпионат СПТЛ 2026 (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
+            "protocol_id": 80566,
+            "category": "Ювеналы-2 N Соло Ж St",
+            "program": "standard",
+            "dance": "Q",
+            "final_place": 5.0,
+            "best_place": 5.0,
+            "worst_place": 5.0,
+            "n_results": 1,
+            "judge_marks": 11,
+            "dance_code": "Q",
+            "date": "2026-05-24"
+          }
+        ]
+      },
+      "n": {
+        "metrics": [
+          {
+            "program": "standard",
+            "dance": "Q",
+            "final_avg_place": 3.75,
+            "median_place": 4.0,
+            "std_deviation": 1.5,
+            "variance": 2.25,
+            "n_marks": 4,
+            "n_protocols": 4,
+            "n_dates": 4,
+            "best_place": 2.0,
+            "worst_place": 5.0,
+            "categories": "Ювеналы-1+2 N Соло Ж St; Ювеналы-2 N Соло Ж St; Ювеналы-2 N соло Ж St",
+            "judge_avg_place": 4.294,
+            "judge_std_deviation": 2.067,
+            "judge_variance": 4.275,
+            "judge_marks": 34,
+            "avg_place": 3.75,
+            "final_median_place": 4.0,
+            "final_std_deviation": 1.5,
+            "consistency_score": 0.4,
+            "volatility_score": 1.5,
+            "confidence": "low confidence"
+          },
+          {
+            "program": "standard",
+            "dance": "W",
+            "final_avg_place": 4.25,
+            "median_place": 4.0,
+            "std_deviation": 2.217,
+            "variance": 4.917,
+            "n_marks": 4,
+            "n_protocols": 4,
+            "n_dates": 4,
+            "best_place": 2.0,
+            "worst_place": 7.0,
+            "categories": "Ювеналы-1+2 N Соло Ж St; Ювеналы-2 N Соло Ж St; Ювеналы-2 N соло Ж St",
+            "judge_avg_place": 4.059,
+            "judge_std_deviation": 2.131,
+            "judge_variance": 4.542,
+            "judge_marks": 34,
+            "avg_place": 4.25,
+            "final_median_place": 4.0,
+            "final_std_deviation": 2.217,
+            "consistency_score": 0.311,
+            "volatility_score": 2.217,
+            "confidence": "low confidence"
+          }
+        ],
+        "display_mode": "best_worst",
+        "best_dances": [
+          {
+            "dance": "Q",
+            "dance_code": "Q",
+            "metric_value": 3.75,
+            "metric_type": "final_avg_place",
+            "metric_label": "среднее место",
+            "final_avg_place": 3.75
+          }
+        ],
+        "worst_dances": [
+          {
+            "dance": "W",
+            "dance_code": "W",
+            "metric_value": 4.25,
+            "metric_type": "final_avg_place",
+            "metric_label": "среднее место",
+            "final_avg_place": 4.25
+          }
+        ],
+        "evaluated_dance": null,
+        "tied_dances": [],
+        "tied_metric_value": null,
+        "best_dance": {
+          "dance": "Q",
+          "dance_code": "Q",
+          "metric_value": 3.75,
+          "metric_type": "final_avg_place",
+          "metric_label": "среднее место",
+          "final_avg_place": 3.75
+        },
+        "worst_dance": {
+          "dance": "W",
+          "dance_code": "W",
+          "metric_value": 4.25,
+          "metric_type": "final_avg_place",
+          "metric_label": "среднее место",
+          "final_avg_place": 4.25
+        },
+        "best_by_final_average": null,
+        "best_by_median": null,
+        "most_stable_dance": null,
+        "best_peak": null,
+        "worst_by_final_average": null,
+        "judge_level_best": null,
+        "strongest_dance": null,
+        "weakest_dance": null,
+        "most_improved_dance": {
+          "program": "standard",
+          "dance": "Q",
+          "trend_over_time": 1.1,
+          "first_date": "2026-02-01",
+          "first_avg_place": 2.0,
+          "last_date": "2026-05-24",
+          "last_avg_place": 5.0,
+          "first_to_last_delta": 3.0,
+          "n_dates": 4,
+          "confidence": "ok",
+          "trend_status": "declining"
+        },
+        "key": "n",
+        "label": "N",
+        "source": "selected_dancer_marks_and_results",
+        "class_group": "N",
+        "age_groups": [
+          "Ювеналы-1+2",
+          "Ювеналы-2"
+        ],
+        "source_categories": [
+          "Ювеналы-1+2 N Соло Ж St",
+          "Ювеналы-2 N Соло Ж St",
+          "Ювеналы-2 N соло Ж St"
+        ],
         "protocol_count": 4,
+        "tournament_count": 4,
+        "evidence": {
+          "tournaments": 4,
+          "protocols": 4,
+          "marks": 191,
+          "results": 8
+        },
+        "visibility": {
+          "marks_count": 191,
+          "results_count": 8,
+          "dance_metrics_count": 2,
+          "protocols_count": 4,
+          "tournaments_count": 4,
+          "trainer_summaries_count": 4,
+          "trend_items_count": 2,
+          "marks_derived_metrics_count": 2
+        },
+        "marks_derived_dance_metrics": [
+          {
+            "program": "standard",
+            "dance": "W",
+            "marks_count": 91,
+            "protocols_count": 4,
+            "tournaments_count": 4,
+            "cross_marks": 57,
+            "numeric_marks": 34,
+            "dance_code": "W"
+          },
+          {
+            "program": "standard",
+            "dance": "Q",
+            "marks_count": 100,
+            "protocols_count": 4,
+            "tournaments_count": 4,
+            "cross_marks": 66,
+            "numeric_marks": 34,
+            "dance_code": "Q"
+          }
+        ],
+        "is_visible_chip": true,
+        "visibility_status": "primary",
+        "visibility_reason": "primary: dance metrics available",
+        "dynamics_by_date": [
+          {
+            "program": "standard",
+            "dance": "Q",
+            "event_date": "2026-02-01",
+            "avg_place": 2.0,
+            "final_avg_place": 2.0,
+            "median_place": 2.0,
+            "n_marks": 1,
+            "n_protocols": 1,
+            "rolling_average": 2.0,
+            "tournament_to_tournament_delta": null
+          },
+          {
+            "program": "standard",
+            "dance": "Q",
+            "event_date": "2026-03-08",
+            "avg_place": 3.0,
+            "final_avg_place": 3.0,
+            "median_place": 3.0,
+            "n_marks": 1,
+            "n_protocols": 1,
+            "rolling_average": 2.5,
+            "tournament_to_tournament_delta": 1.0
+          },
+          {
+            "program": "standard",
+            "dance": "Q",
+            "event_date": "2026-04-26",
+            "avg_place": 5.0,
+            "final_avg_place": 5.0,
+            "median_place": 5.0,
+            "n_marks": 1,
+            "n_protocols": 1,
+            "rolling_average": 3.333,
+            "tournament_to_tournament_delta": 2.0
+          },
+          {
+            "program": "standard",
+            "dance": "Q",
+            "event_date": "2026-05-24",
+            "avg_place": 5.0,
+            "final_avg_place": 5.0,
+            "median_place": 5.0,
+            "n_marks": 1,
+            "n_protocols": 1,
+            "rolling_average": 4.333,
+            "tournament_to_tournament_delta": 0.0
+          },
+          {
+            "program": "standard",
+            "dance": "W",
+            "event_date": "2026-02-01",
+            "avg_place": 2.0,
+            "final_avg_place": 2.0,
+            "median_place": 2.0,
+            "n_marks": 1,
+            "n_protocols": 1,
+            "rolling_average": 2.0,
+            "tournament_to_tournament_delta": null
+          },
+          {
+            "program": "standard",
+            "dance": "W",
+            "event_date": "2026-03-08",
+            "avg_place": 3.0,
+            "final_avg_place": 3.0,
+            "median_place": 3.0,
+            "n_marks": 1,
+            "n_protocols": 1,
+            "rolling_average": 2.5,
+            "tournament_to_tournament_delta": 1.0
+          },
+          {
+            "program": "standard",
+            "dance": "W",
+            "event_date": "2026-04-26",
+            "avg_place": 7.0,
+            "final_avg_place": 7.0,
+            "median_place": 7.0,
+            "n_marks": 1,
+            "n_protocols": 1,
+            "rolling_average": 4.0,
+            "tournament_to_tournament_delta": 4.0
+          },
+          {
+            "program": "standard",
+            "dance": "W",
+            "event_date": "2026-05-24",
+            "avg_place": 5.0,
+            "final_avg_place": 5.0,
+            "median_place": 5.0,
+            "n_marks": 1,
+            "n_protocols": 1,
+            "rolling_average": 5.0,
+            "tournament_to_tournament_delta": -2.0
+          }
+        ],
+        "trends": [
+          {
+            "program": "standard",
+            "dance": "Q",
+            "trend_over_time": 1.1,
+            "first_date": "2026-02-01",
+            "first_avg_place": 2.0,
+            "last_date": "2026-05-24",
+            "last_avg_place": 5.0,
+            "first_to_last_delta": 3.0,
+            "n_dates": 4,
+            "confidence": "ok",
+            "trend_status": "declining"
+          },
+          {
+            "program": "standard",
+            "dance": "W",
+            "trend_over_time": 1.3,
+            "first_date": "2026-02-01",
+            "first_avg_place": 2.0,
+            "last_date": "2026-05-24",
+            "last_avg_place": 5.0,
+            "first_to_last_delta": 3.0,
+            "n_dates": 4,
+            "confidence": "ok",
+            "trend_status": "declining"
+          }
+        ],
+        "tournament_dance_results": [
+          {
+            "event_date": "2026-02-01",
+            "tournament_id": 2026020100,
+            "tournament_title": "Tiara Dance Cup (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
+            "protocol_id": 76799,
+            "category": "Ювеналы-2 N соло Ж St",
+            "program": "standard",
+            "dance": "W",
+            "final_place": 2.0,
+            "best_place": 2.0,
+            "worst_place": 2.0,
+            "n_results": 1,
+            "judge_marks": 7,
+            "dance_code": "W",
+            "date": "2026-02-01"
+          },
+          {
+            "event_date": "2026-02-01",
+            "tournament_id": 2026020100,
+            "tournament_title": "Tiara Dance Cup (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
+            "protocol_id": 76799,
+            "category": "Ювеналы-2 N соло Ж St",
+            "program": "standard",
+            "dance": "Q",
+            "final_place": 2.0,
+            "best_place": 2.0,
+            "worst_place": 2.0,
+            "n_results": 1,
+            "judge_marks": 7,
+            "dance_code": "Q",
+            "date": "2026-02-01"
+          },
+          {
+            "event_date": "2026-03-08",
+            "tournament_id": 2026030800,
+            "tournament_title": "Амбассадор 2026 (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
+            "protocol_id": 77937,
+            "category": "Ювеналы-1+2 N Соло Ж St",
+            "program": "standard",
+            "dance": "W",
+            "final_place": 3.0,
+            "best_place": 3.0,
+            "worst_place": 3.0,
+            "n_results": 1,
+            "judge_marks": 7,
+            "dance_code": "W",
+            "date": "2026-03-08"
+          },
+          {
+            "event_date": "2026-03-08",
+            "tournament_id": 2026030800,
+            "tournament_title": "Амбассадор 2026 (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
+            "protocol_id": 77937,
+            "category": "Ювеналы-1+2 N Соло Ж St",
+            "program": "standard",
+            "dance": "Q",
+            "final_place": 3.0,
+            "best_place": 3.0,
+            "worst_place": 3.0,
+            "n_results": 1,
+            "judge_marks": 7,
+            "dance_code": "Q",
+            "date": "2026-03-08"
+          },
+          {
+            "event_date": "2026-04-26",
+            "tournament_id": 2026042600,
+            "tournament_title": "Карнавал 2026 (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
+            "protocol_id": 79400,
+            "category": "Ювеналы-2 N Соло Ж St",
+            "program": "standard",
+            "dance": "W",
+            "final_place": 7.0,
+            "best_place": 7.0,
+            "worst_place": 7.0,
+            "n_results": 1,
+            "judge_marks": 9,
+            "dance_code": "W",
+            "date": "2026-04-26"
+          },
+          {
+            "event_date": "2026-04-26",
+            "tournament_id": 2026042600,
+            "tournament_title": "Карнавал 2026 (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
+            "protocol_id": 79400,
+            "category": "Ювеналы-2 N Соло Ж St",
+            "program": "standard",
+            "dance": "Q",
+            "final_place": 5.0,
+            "best_place": 5.0,
+            "worst_place": 5.0,
+            "n_results": 1,
+            "judge_marks": 9,
+            "dance_code": "Q",
+            "date": "2026-04-26"
+          },
+          {
+            "event_date": "2026-05-24",
+            "tournament_id": 2026052402,
+            "tournament_title": "Чемпионат СПТЛ 2026 (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
+            "protocol_id": 80566,
+            "category": "Ювеналы-2 N Соло Ж St",
+            "program": "standard",
+            "dance": "W",
+            "final_place": 5.0,
+            "best_place": 5.0,
+            "worst_place": 5.0,
+            "n_results": 1,
+            "judge_marks": 11,
+            "dance_code": "W",
+            "date": "2026-05-24"
+          },
+          {
+            "event_date": "2026-05-24",
+            "tournament_id": 2026052402,
+            "tournament_title": "Чемпионат СПТЛ 2026 (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
+            "protocol_id": 80566,
+            "category": "Ювеналы-2 N Соло Ж St",
+            "program": "standard",
+            "dance": "Q",
+            "final_place": 5.0,
+            "best_place": 5.0,
+            "worst_place": 5.0,
+            "n_results": 1,
+            "judge_marks": 11,
+            "dance_code": "Q",
+            "date": "2026-05-24"
+          }
+        ]
+      },
+      "n_e": {
+        "metrics": [],
+        "display_mode": "insufficient_data",
+        "best_dances": [],
+        "worst_dances": [],
+        "evaluated_dance": null,
+        "tied_dances": [],
+        "tied_metric_value": null,
+        "best_by_final_average": null,
+        "best_by_median": null,
+        "most_stable_dance": null,
+        "best_peak": null,
+        "worst_by_final_average": null,
+        "judge_level_best": null,
+        "strongest_dance": null,
+        "weakest_dance": null,
+        "most_improved_dance": null,
+        "key": "n_e",
+        "label": "N+E",
+        "source": "selected_dancer_marks_and_results",
+        "class_group": "N+E",
+        "age_groups": [
+          "Ювеналы-2"
+        ],
+        "source_categories": [
+          "Ювеналы-2 N+E Соло Ж St"
+        ],
+        "protocol_count": 2,
+        "tournament_count": 2,
+        "evidence": {
+          "tournaments": 2,
+          "protocols": 2,
+          "marks": 41,
+          "results": 0
+        },
+        "visibility": {
+          "marks_count": 41,
+          "results_count": 0,
+          "dance_metrics_count": 0,
+          "protocols_count": 2,
+          "tournaments_count": 2,
+          "trainer_summaries_count": 2,
+          "trend_items_count": 0,
+          "marks_derived_metrics_count": 3
+        },
+        "marks_derived_dance_metrics": [
+          {
+            "program": "standard",
+            "dance": "W",
+            "marks_count": 12,
+            "protocols_count": 2,
+            "tournaments_count": 2,
+            "cross_marks": 12,
+            "numeric_marks": 0,
+            "dance_code": "W"
+          },
+          {
+            "program": "standard",
+            "dance": "T",
+            "marks_count": 15,
+            "protocols_count": 2,
+            "tournaments_count": 2,
+            "cross_marks": 15,
+            "numeric_marks": 0,
+            "dance_code": "T"
+          },
+          {
+            "program": "standard",
+            "dance": "Q",
+            "marks_count": 14,
+            "protocols_count": 2,
+            "tournaments_count": 2,
+            "cross_marks": 14,
+            "numeric_marks": 0,
+            "dance_code": "Q"
+          }
+        ],
+        "is_visible_chip": true,
+        "visibility_status": "primary",
+        "visibility_reason": "primary: marks-derived dance analysis available",
+        "dynamics_by_date": [],
+        "trends": [],
+        "tournament_dance_results": []
+      }
+    },
+    "latin": {
+      "all": {
+        "metrics": [
+          {
+            "program": "latin",
+            "dance": "C",
+            "final_avg_place": 6.5,
+            "median_place": 6.5,
+            "std_deviation": 0.707,
+            "variance": 0.5,
+            "n_marks": 2,
+            "n_protocols": 2,
+            "n_dates": 2,
+            "best_place": 6.0,
+            "worst_place": 7.0,
+            "categories": "Ювеналы-2 N Соло Ж La; Ювеналы-2 N соло Ж La",
+            "judge_avg_place": 5.85,
+            "judge_std_deviation": 1.137,
+            "judge_variance": 1.292,
+            "judge_marks": 20,
+            "avg_place": 6.5,
+            "final_median_place": 6.5,
+            "final_std_deviation": 0.707,
+            "consistency_score": 0.586,
+            "volatility_score": 0.707,
+            "confidence": "low confidence"
+          },
+          {
+            "program": "latin",
+            "dance": "J",
+            "final_avg_place": 6.0,
+            "median_place": 6.0,
+            "std_deviation": 0.0,
+            "variance": 0.0,
+            "n_marks": 2,
+            "n_protocols": 2,
+            "n_dates": 2,
+            "best_place": 6.0,
+            "worst_place": 6.0,
+            "categories": "Ювеналы-2 N Соло Ж La; Ювеналы-2 N соло Ж La",
+            "judge_avg_place": 5.4,
+            "judge_std_deviation": 1.501,
+            "judge_variance": 2.253,
+            "judge_marks": 20,
+            "avg_place": 6.0,
+            "final_median_place": 6.0,
+            "final_std_deviation": 0.0,
+            "consistency_score": 1.0,
+            "volatility_score": 0.0,
+            "confidence": "low confidence"
+          }
+        ],
+        "display_mode": "best_worst",
+        "best_dances": [
+          {
+            "dance": "J",
+            "dance_code": "J",
+            "metric_value": 6.0,
+            "metric_type": "final_avg_place",
+            "metric_label": "среднее место",
+            "final_avg_place": 6.0
+          }
+        ],
+        "worst_dances": [
+          {
+            "dance": "C",
+            "dance_code": "Ch",
+            "metric_value": 6.5,
+            "metric_type": "final_avg_place",
+            "metric_label": "среднее место",
+            "final_avg_place": 6.5
+          }
+        ],
+        "evaluated_dance": null,
+        "tied_dances": [],
+        "tied_metric_value": null,
+        "best_dance": {
+          "dance": "J",
+          "dance_code": "J",
+          "metric_value": 6.0,
+          "metric_type": "final_avg_place",
+          "metric_label": "среднее место",
+          "final_avg_place": 6.0
+        },
+        "worst_dance": {
+          "dance": "C",
+          "dance_code": "Ch",
+          "metric_value": 6.5,
+          "metric_type": "final_avg_place",
+          "metric_label": "среднее место",
+          "final_avg_place": 6.5
+        },
+        "best_by_final_average": null,
+        "best_by_median": null,
+        "most_stable_dance": null,
+        "best_peak": null,
+        "worst_by_final_average": null,
+        "judge_level_best": null,
+        "strongest_dance": null,
+        "weakest_dance": null,
+        "most_improved_dance": {
+          "program": "latin",
+          "dance": "C",
+          "trend_over_time": -1.0,
+          "first_date": "2026-02-01",
+          "first_avg_place": 7.0,
+          "last_date": "2026-05-24",
+          "last_avg_place": 6.0,
+          "first_to_last_delta": -1.0,
+          "n_dates": 2,
+          "confidence": "low confidence trend",
+          "trend_status": "improving"
+        },
+        "key": "all",
+        "label": "Все категории",
+        "source": "selected_dancer_marks_and_results",
+        "class_group": null,
+        "age_groups": [
+          "Ювеналы-1+2",
+          "Ювеналы-2"
+        ],
+        "source_categories": [
+          "Ювеналы-1+2 N Соло Ж La",
+          "Ювеналы-2 N Соло Ж La",
+          "Ювеналы-2 N соло Ж La",
+          "Ювеналы-2 N+E Соло Ж La"
+        ],
+        "protocol_count": 6,
+        "tournament_count": 4,
+        "evidence": {
+          "tournaments": 4,
+          "protocols": 6,
+          "marks": 124,
+          "results": 4
+        },
+        "visibility": {
+          "marks_count": 124,
+          "results_count": 4,
+          "dance_metrics_count": 2,
+          "protocols_count": 6,
+          "tournaments_count": 4,
+          "trainer_summaries_count": 4,
+          "trend_items_count": 2,
+          "marks_derived_metrics_count": 3
+        },
+        "marks_derived_dance_metrics": [
+          {
+            "program": "latin",
+            "dance": "C",
+            "marks_count": 57,
+            "protocols_count": 6,
+            "tournaments_count": 4,
+            "cross_marks": 37,
+            "numeric_marks": 20,
+            "dance_code": "Ch"
+          },
+          {
+            "program": "latin",
+            "dance": "R",
+            "marks_count": 10,
+            "protocols_count": 2,
+            "tournaments_count": 2,
+            "cross_marks": 10,
+            "numeric_marks": 0,
+            "dance_code": "R"
+          },
+          {
+            "program": "latin",
+            "dance": "J",
+            "marks_count": 57,
+            "protocols_count": 5,
+            "tournaments_count": 4,
+            "cross_marks": 37,
+            "numeric_marks": 20,
+            "dance_code": "J"
+          }
+        ],
+        "is_visible_chip": true,
+        "visibility_status": "primary",
+        "visibility_reason": "primary: dance metrics available",
+        "dynamics_by_date": [
+          {
+            "program": "latin",
+            "dance": "C",
+            "event_date": "2026-02-01",
+            "avg_place": 7.0,
+            "final_avg_place": 7.0,
+            "median_place": 7.0,
+            "n_marks": 1,
+            "n_protocols": 1,
+            "rolling_average": 7.0,
+            "tournament_to_tournament_delta": null
+          },
+          {
+            "program": "latin",
+            "dance": "C",
+            "event_date": "2026-05-24",
+            "avg_place": 6.0,
+            "final_avg_place": 6.0,
+            "median_place": 6.0,
+            "n_marks": 1,
+            "n_protocols": 1,
+            "rolling_average": 6.5,
+            "tournament_to_tournament_delta": -1.0
+          },
+          {
+            "program": "latin",
+            "dance": "J",
+            "event_date": "2026-02-01",
+            "avg_place": 6.0,
+            "final_avg_place": 6.0,
+            "median_place": 6.0,
+            "n_marks": 1,
+            "n_protocols": 1,
+            "rolling_average": 6.0,
+            "tournament_to_tournament_delta": null
+          },
+          {
+            "program": "latin",
+            "dance": "J",
+            "event_date": "2026-05-24",
+            "avg_place": 6.0,
+            "final_avg_place": 6.0,
+            "median_place": 6.0,
+            "n_marks": 1,
+            "n_protocols": 1,
+            "rolling_average": 6.0,
+            "tournament_to_tournament_delta": 0.0
+          }
+        ],
+        "trends": [
+          {
+            "program": "latin",
+            "dance": "C",
+            "trend_over_time": -1.0,
+            "first_date": "2026-02-01",
+            "first_avg_place": 7.0,
+            "last_date": "2026-05-24",
+            "last_avg_place": 6.0,
+            "first_to_last_delta": -1.0,
+            "n_dates": 2,
+            "confidence": "low confidence trend",
+            "trend_status": "improving"
+          },
+          {
+            "program": "latin",
+            "dance": "J",
+            "trend_over_time": 0.0,
+            "first_date": "2026-02-01",
+            "first_avg_place": 6.0,
+            "last_date": "2026-05-24",
+            "last_avg_place": 6.0,
+            "first_to_last_delta": 0.0,
+            "n_dates": 2,
+            "confidence": "low confidence trend",
+            "trend_status": "stable"
+          }
+        ],
+        "tournament_dance_results": [
+          {
+            "event_date": "2026-02-01",
+            "tournament_id": 2026020100,
+            "tournament_title": "Tiara Dance Cup (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
+            "protocol_id": 76814,
+            "category": "Ювеналы-2 N соло Ж La",
+            "program": "latin",
+            "dance": "C",
+            "final_place": 7.0,
+            "best_place": 7.0,
+            "worst_place": 7.0,
+            "n_results": 1,
+            "judge_marks": 9,
+            "dance_code": "Ch",
+            "date": "2026-02-01"
+          },
+          {
+            "event_date": "2026-02-01",
+            "tournament_id": 2026020100,
+            "tournament_title": "Tiara Dance Cup (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
+            "protocol_id": 76814,
+            "category": "Ювеналы-2 N соло Ж La",
+            "program": "latin",
+            "dance": "J",
+            "final_place": 6.0,
+            "best_place": 6.0,
+            "worst_place": 6.0,
+            "n_results": 1,
+            "judge_marks": 9,
+            "dance_code": "J",
+            "date": "2026-02-01"
+          },
+          {
+            "event_date": "2026-05-24",
+            "tournament_id": 2026052402,
+            "tournament_title": "Чемпионат СПТЛ 2026 (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
+            "protocol_id": 80578,
+            "category": "Ювеналы-2 N Соло Ж La",
+            "program": "latin",
+            "dance": "C",
+            "final_place": 6.0,
+            "best_place": 6.0,
+            "worst_place": 6.0,
+            "n_results": 1,
+            "judge_marks": 11,
+            "dance_code": "Ch",
+            "date": "2026-05-24"
+          },
+          {
+            "event_date": "2026-05-24",
+            "tournament_id": 2026052402,
+            "tournament_title": "Чемпионат СПТЛ 2026 (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
+            "protocol_id": 80578,
+            "category": "Ювеналы-2 N Соло Ж La",
+            "program": "latin",
+            "dance": "J",
+            "final_place": 6.0,
+            "best_place": 6.0,
+            "worst_place": 6.0,
+            "n_results": 1,
+            "judge_marks": 11,
+            "dance_code": "J",
+            "date": "2026-05-24"
+          }
+        ]
+      },
+      "n": {
+        "metrics": [
+          {
+            "program": "latin",
+            "dance": "C",
+            "final_avg_place": 6.5,
+            "median_place": 6.5,
+            "std_deviation": 0.707,
+            "variance": 0.5,
+            "n_marks": 2,
+            "n_protocols": 2,
+            "n_dates": 2,
+            "best_place": 6.0,
+            "worst_place": 7.0,
+            "categories": "Ювеналы-2 N Соло Ж La; Ювеналы-2 N соло Ж La",
+            "judge_avg_place": 5.85,
+            "judge_std_deviation": 1.137,
+            "judge_variance": 1.292,
+            "judge_marks": 20,
+            "avg_place": 6.5,
+            "final_median_place": 6.5,
+            "final_std_deviation": 0.707,
+            "consistency_score": 0.586,
+            "volatility_score": 0.707,
+            "confidence": "low confidence"
+          },
+          {
+            "program": "latin",
+            "dance": "J",
+            "final_avg_place": 6.0,
+            "median_place": 6.0,
+            "std_deviation": 0.0,
+            "variance": 0.0,
+            "n_marks": 2,
+            "n_protocols": 2,
+            "n_dates": 2,
+            "best_place": 6.0,
+            "worst_place": 6.0,
+            "categories": "Ювеналы-2 N Соло Ж La; Ювеналы-2 N соло Ж La",
+            "judge_avg_place": 5.4,
+            "judge_std_deviation": 1.501,
+            "judge_variance": 2.253,
+            "judge_marks": 20,
+            "avg_place": 6.0,
+            "final_median_place": 6.0,
+            "final_std_deviation": 0.0,
+            "consistency_score": 1.0,
+            "volatility_score": 0.0,
+            "confidence": "low confidence"
+          }
+        ],
+        "display_mode": "best_worst",
+        "best_dances": [
+          {
+            "dance": "J",
+            "dance_code": "J",
+            "metric_value": 6.0,
+            "metric_type": "final_avg_place",
+            "metric_label": "среднее место",
+            "final_avg_place": 6.0
+          }
+        ],
+        "worst_dances": [
+          {
+            "dance": "C",
+            "dance_code": "Ch",
+            "metric_value": 6.5,
+            "metric_type": "final_avg_place",
+            "metric_label": "среднее место",
+            "final_avg_place": 6.5
+          }
+        ],
+        "evaluated_dance": null,
+        "tied_dances": [],
+        "tied_metric_value": null,
+        "best_dance": {
+          "dance": "J",
+          "dance_code": "J",
+          "metric_value": 6.0,
+          "metric_type": "final_avg_place",
+          "metric_label": "среднее место",
+          "final_avg_place": 6.0
+        },
+        "worst_dance": {
+          "dance": "C",
+          "dance_code": "Ch",
+          "metric_value": 6.5,
+          "metric_type": "final_avg_place",
+          "metric_label": "среднее место",
+          "final_avg_place": 6.5
+        },
+        "best_by_final_average": null,
+        "best_by_median": null,
+        "most_stable_dance": null,
+        "best_peak": null,
+        "worst_by_final_average": null,
+        "judge_level_best": null,
+        "strongest_dance": null,
+        "weakest_dance": null,
+        "most_improved_dance": {
+          "program": "latin",
+          "dance": "C",
+          "trend_over_time": -1.0,
+          "first_date": "2026-02-01",
+          "first_avg_place": 7.0,
+          "last_date": "2026-05-24",
+          "last_avg_place": 6.0,
+          "first_to_last_delta": -1.0,
+          "n_dates": 2,
+          "confidence": "low confidence trend",
+          "trend_status": "improving"
+        },
+        "key": "n",
+        "label": "N",
+        "source": "selected_dancer_marks_and_results",
+        "class_group": "N",
+        "age_groups": [
+          "Ювеналы-1+2",
+          "Ювеналы-2"
+        ],
+        "source_categories": [
+          "Ювеналы-1+2 N Соло Ж La",
+          "Ювеналы-2 N Соло Ж La",
+          "Ювеналы-2 N соло Ж La"
+        ],
+        "protocol_count": 4,
+        "tournament_count": 4,
+        "evidence": {
+          "tournaments": 4,
+          "protocols": 4,
+          "marks": 106,
+          "results": 4
+        },
+        "visibility": {
+          "marks_count": 106,
+          "results_count": 4,
+          "dance_metrics_count": 2,
+          "protocols_count": 4,
+          "tournaments_count": 4,
+          "trainer_summaries_count": 4,
+          "trend_items_count": 2,
+          "marks_derived_metrics_count": 2
+        },
+        "marks_derived_dance_metrics": [
+          {
+            "program": "latin",
+            "dance": "C",
+            "marks_count": 52,
+            "protocols_count": 4,
+            "tournaments_count": 4,
+            "cross_marks": 32,
+            "numeric_marks": 20,
+            "dance_code": "Ch"
+          },
+          {
+            "program": "latin",
+            "dance": "J",
+            "marks_count": 54,
+            "protocols_count": 4,
+            "tournaments_count": 4,
+            "cross_marks": 34,
+            "numeric_marks": 20,
+            "dance_code": "J"
+          }
+        ],
+        "is_visible_chip": true,
+        "visibility_status": "primary",
+        "visibility_reason": "primary: dance metrics available",
+        "dynamics_by_date": [
+          {
+            "program": "latin",
+            "dance": "C",
+            "event_date": "2026-02-01",
+            "avg_place": 7.0,
+            "final_avg_place": 7.0,
+            "median_place": 7.0,
+            "n_marks": 1,
+            "n_protocols": 1,
+            "rolling_average": 7.0,
+            "tournament_to_tournament_delta": null
+          },
+          {
+            "program": "latin",
+            "dance": "C",
+            "event_date": "2026-05-24",
+            "avg_place": 6.0,
+            "final_avg_place": 6.0,
+            "median_place": 6.0,
+            "n_marks": 1,
+            "n_protocols": 1,
+            "rolling_average": 6.5,
+            "tournament_to_tournament_delta": -1.0
+          },
+          {
+            "program": "latin",
+            "dance": "J",
+            "event_date": "2026-02-01",
+            "avg_place": 6.0,
+            "final_avg_place": 6.0,
+            "median_place": 6.0,
+            "n_marks": 1,
+            "n_protocols": 1,
+            "rolling_average": 6.0,
+            "tournament_to_tournament_delta": null
+          },
+          {
+            "program": "latin",
+            "dance": "J",
+            "event_date": "2026-05-24",
+            "avg_place": 6.0,
+            "final_avg_place": 6.0,
+            "median_place": 6.0,
+            "n_marks": 1,
+            "n_protocols": 1,
+            "rolling_average": 6.0,
+            "tournament_to_tournament_delta": 0.0
+          }
+        ],
+        "trends": [
+          {
+            "program": "latin",
+            "dance": "C",
+            "trend_over_time": -1.0,
+            "first_date": "2026-02-01",
+            "first_avg_place": 7.0,
+            "last_date": "2026-05-24",
+            "last_avg_place": 6.0,
+            "first_to_last_delta": -1.0,
+            "n_dates": 2,
+            "confidence": "low confidence trend",
+            "trend_status": "improving"
+          },
+          {
+            "program": "latin",
+            "dance": "J",
+            "trend_over_time": 0.0,
+            "first_date": "2026-02-01",
+            "first_avg_place": 6.0,
+            "last_date": "2026-05-24",
+            "last_avg_place": 6.0,
+            "first_to_last_delta": 0.0,
+            "n_dates": 2,
+            "confidence": "low confidence trend",
+            "trend_status": "stable"
+          }
+        ],
+        "tournament_dance_results": [
+          {
+            "event_date": "2026-02-01",
+            "tournament_id": 2026020100,
+            "tournament_title": "Tiara Dance Cup (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
+            "protocol_id": 76814,
+            "category": "Ювеналы-2 N соло Ж La",
+            "program": "latin",
+            "dance": "C",
+            "final_place": 7.0,
+            "best_place": 7.0,
+            "worst_place": 7.0,
+            "n_results": 1,
+            "judge_marks": 9,
+            "dance_code": "Ch",
+            "date": "2026-02-01"
+          },
+          {
+            "event_date": "2026-02-01",
+            "tournament_id": 2026020100,
+            "tournament_title": "Tiara Dance Cup (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
+            "protocol_id": 76814,
+            "category": "Ювеналы-2 N соло Ж La",
+            "program": "latin",
+            "dance": "J",
+            "final_place": 6.0,
+            "best_place": 6.0,
+            "worst_place": 6.0,
+            "n_results": 1,
+            "judge_marks": 9,
+            "dance_code": "J",
+            "date": "2026-02-01"
+          },
+          {
+            "event_date": "2026-05-24",
+            "tournament_id": 2026052402,
+            "tournament_title": "Чемпионат СПТЛ 2026 (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
+            "protocol_id": 80578,
+            "category": "Ювеналы-2 N Соло Ж La",
+            "program": "latin",
+            "dance": "C",
+            "final_place": 6.0,
+            "best_place": 6.0,
+            "worst_place": 6.0,
+            "n_results": 1,
+            "judge_marks": 11,
+            "dance_code": "Ch",
+            "date": "2026-05-24"
+          },
+          {
+            "event_date": "2026-05-24",
+            "tournament_id": 2026052402,
+            "tournament_title": "Чемпионат СПТЛ 2026 (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
+            "protocol_id": 80578,
+            "category": "Ювеналы-2 N Соло Ж La",
+            "program": "latin",
+            "dance": "J",
+            "final_place": 6.0,
+            "best_place": 6.0,
+            "worst_place": 6.0,
+            "n_results": 1,
+            "judge_marks": 11,
+            "dance_code": "J",
+            "date": "2026-05-24"
+          }
+        ]
+      },
+      "n_e": {
+        "metrics": [],
+        "display_mode": "insufficient_data",
+        "best_dances": [],
+        "worst_dances": [],
+        "evaluated_dance": null,
+        "tied_dances": [],
+        "tied_metric_value": null,
+        "best_by_final_average": null,
+        "best_by_median": null,
+        "most_stable_dance": null,
+        "best_peak": null,
+        "worst_by_final_average": null,
+        "judge_level_best": null,
+        "strongest_dance": null,
+        "weakest_dance": null,
+        "most_improved_dance": null,
+        "key": "n_e",
+        "label": "N+E",
+        "source": "selected_dancer_marks_and_results",
+        "class_group": "N+E",
+        "age_groups": [
+          "Ювеналы-2"
+        ],
+        "source_categories": [
+          "Ювеналы-2 N+E Соло Ж La"
+        ],
+        "protocol_count": 2,
+        "tournament_count": 2,
+        "evidence": {
+          "tournaments": 2,
+          "protocols": 2,
+          "marks": 18,
+          "results": 0
+        },
+        "visibility": {
+          "marks_count": 18,
+          "results_count": 0,
+          "dance_metrics_count": 0,
+          "protocols_count": 2,
+          "tournaments_count": 2,
+          "trainer_summaries_count": 2,
+          "trend_items_count": 0,
+          "marks_derived_metrics_count": 3
+        },
+        "marks_derived_dance_metrics": [
+          {
+            "program": "latin",
+            "dance": "C",
+            "marks_count": 5,
+            "protocols_count": 2,
+            "tournaments_count": 2,
+            "cross_marks": 5,
+            "numeric_marks": 0,
+            "dance_code": "Ch"
+          },
+          {
+            "program": "latin",
+            "dance": "R",
+            "marks_count": 10,
+            "protocols_count": 2,
+            "tournaments_count": 2,
+            "cross_marks": 10,
+            "numeric_marks": 0,
+            "dance_code": "R"
+          },
+          {
+            "program": "latin",
+            "dance": "J",
+            "marks_count": 3,
+            "protocols_count": 1,
+            "tournaments_count": 1,
+            "cross_marks": 3,
+            "numeric_marks": 0,
+            "dance_code": "J"
+          }
+        ],
+        "is_visible_chip": true,
+        "visibility_status": "limited",
+        "visibility_reason": "limited: 18 marks, marks-derived reference only",
+        "dynamics_by_date": [],
+        "trends": [],
+        "tournament_dance_results": []
+      }
+    }
+  },
+  "parent_category_groups": {
+    "standard": {
+      "all": {
+        "metrics": [
+          {
+            "program": "standard",
+            "dance": "Q",
+            "final_avg_place": 3.75,
+            "median_place": 4.0,
+            "std_deviation": 1.5,
+            "variance": 2.25,
+            "n_marks": 4,
+            "n_protocols": 4,
+            "n_dates": 4,
+            "best_place": 2.0,
+            "worst_place": 5.0,
+            "categories": "Ювеналы-1+2 N Соло Ж St; Ювеналы-2 N Соло Ж St; Ювеналы-2 N соло Ж St",
+            "judge_avg_place": 4.294,
+            "judge_std_deviation": 2.067,
+            "judge_variance": 4.275,
+            "judge_marks": 34,
+            "avg_place": 3.75,
+            "final_median_place": 4.0,
+            "final_std_deviation": 1.5,
+            "consistency_score": 0.4,
+            "volatility_score": 1.5,
+            "confidence": "low confidence"
+          },
+          {
+            "program": "standard",
+            "dance": "W",
+            "final_avg_place": 4.25,
+            "median_place": 4.0,
+            "std_deviation": 2.217,
+            "variance": 4.917,
+            "n_marks": 4,
+            "n_protocols": 4,
+            "n_dates": 4,
+            "best_place": 2.0,
+            "worst_place": 7.0,
+            "categories": "Ювеналы-1+2 N Соло Ж St; Ювеналы-2 N Соло Ж St; Ювеналы-2 N соло Ж St",
+            "judge_avg_place": 4.059,
+            "judge_std_deviation": 2.131,
+            "judge_variance": 4.542,
+            "judge_marks": 34,
+            "avg_place": 4.25,
+            "final_median_place": 4.0,
+            "final_std_deviation": 2.217,
+            "consistency_score": 0.311,
+            "volatility_score": 2.217,
+            "confidence": "low confidence"
+          }
+        ],
+        "display_mode": "best_worst",
+        "best_dances": [
+          {
+            "dance": "Q",
+            "dance_code": "Q",
+            "metric_value": 3.75,
+            "metric_type": "final_avg_place",
+            "metric_label": "среднее место",
+            "final_avg_place": 3.75
+          }
+        ],
+        "worst_dances": [
+          {
+            "dance": "W",
+            "dance_code": "W",
+            "metric_value": 4.25,
+            "metric_type": "final_avg_place",
+            "metric_label": "среднее место",
+            "final_avg_place": 4.25
+          }
+        ],
+        "evaluated_dance": null,
+        "tied_dances": [],
+        "tied_metric_value": null,
+        "best_dance": {
+          "dance": "Q",
+          "dance_code": "Q",
+          "metric_value": 3.75,
+          "metric_type": "final_avg_place",
+          "metric_label": "среднее место",
+          "final_avg_place": 3.75
+        },
+        "worst_dance": {
+          "dance": "W",
+          "dance_code": "W",
+          "metric_value": 4.25,
+          "metric_type": "final_avg_place",
+          "metric_label": "среднее место",
+          "final_avg_place": 4.25
+        },
+        "best_by_final_average": null,
+        "best_by_median": null,
+        "most_stable_dance": null,
+        "best_peak": null,
+        "worst_by_final_average": null,
+        "judge_level_best": null,
+        "strongest_dance": null,
+        "weakest_dance": null,
+        "most_improved_dance": {
+          "program": "standard",
+          "dance": "Q",
+          "trend_over_time": 1.1,
+          "first_date": "2026-02-01",
+          "first_avg_place": 2.0,
+          "last_date": "2026-05-24",
+          "last_avg_place": 5.0,
+          "first_to_last_delta": 3.0,
+          "n_dates": 4,
+          "confidence": "ok",
+          "trend_status": "declining"
+        },
+        "key": "all",
+        "label": "Все категории",
+        "source": "parent_category_aggregation",
+        "included_categories": [
+          "N",
+          "N+E"
+        ],
+        "source_categories": [
+          "Ювеналы-1+2 N Соло Ж St",
+          "Ювеналы-2 N Соло Ж St",
+          "Ювеналы-2 N соло Ж St",
+          "Ювеналы-2 N+E Соло Ж St"
+        ],
+        "protocol_count": 6,
         "tournament_count": 4,
         "evidence": {
           "tournaments": 4,
@@ -1092,131 +2907,9 @@
             "confidence": "ok",
             "trend_status": "declining"
           }
-        ],
-        "tournament_dance_results": [
-          {
-            "event_date": "2026-02-01",
-            "tournament_id": 2026020100,
-            "tournament_title": "Tiara Dance Cup (Санкт-Петербург)",
-            "protocol_id": 76799,
-            "category": "Ювеналы-2 N соло Ж St",
-            "program": "standard",
-            "dance": "W",
-            "final_place": 2.0,
-            "best_place": 2.0,
-            "worst_place": 2.0,
-            "n_results": 1,
-            "judge_marks": 7,
-            "dance_code": "W"
-          },
-          {
-            "event_date": "2026-02-01",
-            "tournament_id": 2026020100,
-            "tournament_title": "Tiara Dance Cup (Санкт-Петербург)",
-            "protocol_id": 76799,
-            "category": "Ювеналы-2 N соло Ж St",
-            "program": "standard",
-            "dance": "Q",
-            "final_place": 2.0,
-            "best_place": 2.0,
-            "worst_place": 2.0,
-            "n_results": 1,
-            "judge_marks": 7,
-            "dance_code": "Q"
-          },
-          {
-            "event_date": "2026-03-08",
-            "tournament_id": 2026030800,
-            "tournament_title": "Амбассадор 2026 (Санкт-Петербург)",
-            "protocol_id": 77937,
-            "category": "Ювеналы-1+2 N Соло Ж St",
-            "program": "standard",
-            "dance": "W",
-            "final_place": 3.0,
-            "best_place": 3.0,
-            "worst_place": 3.0,
-            "n_results": 1,
-            "judge_marks": 7,
-            "dance_code": "W"
-          },
-          {
-            "event_date": "2026-03-08",
-            "tournament_id": 2026030800,
-            "tournament_title": "Амбассадор 2026 (Санкт-Петербург)",
-            "protocol_id": 77937,
-            "category": "Ювеналы-1+2 N Соло Ж St",
-            "program": "standard",
-            "dance": "Q",
-            "final_place": 3.0,
-            "best_place": 3.0,
-            "worst_place": 3.0,
-            "n_results": 1,
-            "judge_marks": 7,
-            "dance_code": "Q"
-          },
-          {
-            "event_date": "2026-04-26",
-            "tournament_id": 2026042600,
-            "tournament_title": "Карнавал 2026 (Санкт-Петербург)",
-            "protocol_id": 79400,
-            "category": "Ювеналы-2 N Соло Ж St",
-            "program": "standard",
-            "dance": "W",
-            "final_place": 7.0,
-            "best_place": 7.0,
-            "worst_place": 7.0,
-            "n_results": 1,
-            "judge_marks": 9,
-            "dance_code": "W"
-          },
-          {
-            "event_date": "2026-04-26",
-            "tournament_id": 2026042600,
-            "tournament_title": "Карнавал 2026 (Санкт-Петербург)",
-            "protocol_id": 79400,
-            "category": "Ювеналы-2 N Соло Ж St",
-            "program": "standard",
-            "dance": "Q",
-            "final_place": 5.0,
-            "best_place": 5.0,
-            "worst_place": 5.0,
-            "n_results": 1,
-            "judge_marks": 9,
-            "dance_code": "Q"
-          },
-          {
-            "event_date": "2026-05-24",
-            "tournament_id": 2026052402,
-            "tournament_title": "Чемпионат СПТЛ 2026 (Санкт-Петербург)",
-            "protocol_id": 80566,
-            "category": "Ювеналы-2 N Соло Ж St",
-            "program": "standard",
-            "dance": "W",
-            "final_place": 5.0,
-            "best_place": 5.0,
-            "worst_place": 5.0,
-            "n_results": 1,
-            "judge_marks": 11,
-            "dance_code": "W"
-          },
-          {
-            "event_date": "2026-05-24",
-            "tournament_id": 2026052402,
-            "tournament_title": "Чемпионат СПТЛ 2026 (Санкт-Петербург)",
-            "protocol_id": 80566,
-            "category": "Ювеналы-2 N Соло Ж St",
-            "program": "standard",
-            "dance": "Q",
-            "final_place": 5.0,
-            "best_place": 5.0,
-            "worst_place": 5.0,
-            "n_results": 1,
-            "judge_marks": 11,
-            "dance_code": "Q"
-          }
         ]
       },
-      "n": {
+      "n_e": {
         "metrics": [
           {
             "program": "standard",
@@ -1267,6 +2960,46 @@
             "confidence": "low confidence"
           }
         ],
+        "display_mode": "best_worst",
+        "best_dances": [
+          {
+            "dance": "Q",
+            "dance_code": "Q",
+            "metric_value": 3.75,
+            "metric_type": "final_avg_place",
+            "metric_label": "среднее место",
+            "final_avg_place": 3.75
+          }
+        ],
+        "worst_dances": [
+          {
+            "dance": "W",
+            "dance_code": "W",
+            "metric_value": 4.25,
+            "metric_type": "final_avg_place",
+            "metric_label": "среднее место",
+            "final_avg_place": 4.25
+          }
+        ],
+        "evaluated_dance": null,
+        "tied_dances": [],
+        "tied_metric_value": null,
+        "best_dance": {
+          "dance": "Q",
+          "dance_code": "Q",
+          "metric_value": 3.75,
+          "metric_type": "final_avg_place",
+          "metric_label": "среднее место",
+          "final_avg_place": 3.75
+        },
+        "worst_dance": {
+          "dance": "W",
+          "dance_code": "W",
+          "metric_value": 4.25,
+          "metric_type": "final_avg_place",
+          "metric_label": "среднее место",
+          "final_avg_place": 4.25
+        },
         "best_by_final_average": null,
         "best_by_median": null,
         "most_stable_dance": null,
@@ -1288,25 +3021,25 @@
           "confidence": "ok",
           "trend_status": "declining"
         },
-        "key": "n",
-        "label": "N",
-        "source": "selected_dancer_marks_and_results",
-        "class_group": "N",
-        "age_groups": [
-          "Ювеналы-1+2",
-          "Ювеналы-2"
+        "key": "n_e",
+        "label": "N+E",
+        "source": "parent_category_aggregation",
+        "included_categories": [
+          "N",
+          "N+E"
         ],
         "source_categories": [
           "Ювеналы-1+2 N Соло Ж St",
           "Ювеналы-2 N Соло Ж St",
-          "Ювеналы-2 N соло Ж St"
+          "Ювеналы-2 N соло Ж St",
+          "Ювеналы-2 N+E Соло Ж St"
         ],
-        "protocol_count": 4,
+        "protocol_count": 6,
         "tournament_count": 4,
         "evidence": {
           "tournaments": 4,
-          "protocols": 4,
-          "marks": 191,
+          "protocols": 6,
+          "marks": 232,
           "results": 8
         },
         "dynamics_by_date": [
@@ -1434,162 +3167,7 @@
             "confidence": "ok",
             "trend_status": "declining"
           }
-        ],
-        "tournament_dance_results": [
-          {
-            "event_date": "2026-02-01",
-            "tournament_id": 2026020100,
-            "tournament_title": "Tiara Dance Cup (Санкт-Петербург)",
-            "protocol_id": 76799,
-            "category": "Ювеналы-2 N соло Ж St",
-            "program": "standard",
-            "dance": "W",
-            "final_place": 2.0,
-            "best_place": 2.0,
-            "worst_place": 2.0,
-            "n_results": 1,
-            "judge_marks": 7,
-            "dance_code": "W"
-          },
-          {
-            "event_date": "2026-02-01",
-            "tournament_id": 2026020100,
-            "tournament_title": "Tiara Dance Cup (Санкт-Петербург)",
-            "protocol_id": 76799,
-            "category": "Ювеналы-2 N соло Ж St",
-            "program": "standard",
-            "dance": "Q",
-            "final_place": 2.0,
-            "best_place": 2.0,
-            "worst_place": 2.0,
-            "n_results": 1,
-            "judge_marks": 7,
-            "dance_code": "Q"
-          },
-          {
-            "event_date": "2026-03-08",
-            "tournament_id": 2026030800,
-            "tournament_title": "Амбассадор 2026 (Санкт-Петербург)",
-            "protocol_id": 77937,
-            "category": "Ювеналы-1+2 N Соло Ж St",
-            "program": "standard",
-            "dance": "W",
-            "final_place": 3.0,
-            "best_place": 3.0,
-            "worst_place": 3.0,
-            "n_results": 1,
-            "judge_marks": 7,
-            "dance_code": "W"
-          },
-          {
-            "event_date": "2026-03-08",
-            "tournament_id": 2026030800,
-            "tournament_title": "Амбассадор 2026 (Санкт-Петербург)",
-            "protocol_id": 77937,
-            "category": "Ювеналы-1+2 N Соло Ж St",
-            "program": "standard",
-            "dance": "Q",
-            "final_place": 3.0,
-            "best_place": 3.0,
-            "worst_place": 3.0,
-            "n_results": 1,
-            "judge_marks": 7,
-            "dance_code": "Q"
-          },
-          {
-            "event_date": "2026-04-26",
-            "tournament_id": 2026042600,
-            "tournament_title": "Карнавал 2026 (Санкт-Петербург)",
-            "protocol_id": 79400,
-            "category": "Ювеналы-2 N Соло Ж St",
-            "program": "standard",
-            "dance": "W",
-            "final_place": 7.0,
-            "best_place": 7.0,
-            "worst_place": 7.0,
-            "n_results": 1,
-            "judge_marks": 9,
-            "dance_code": "W"
-          },
-          {
-            "event_date": "2026-04-26",
-            "tournament_id": 2026042600,
-            "tournament_title": "Карнавал 2026 (Санкт-Петербург)",
-            "protocol_id": 79400,
-            "category": "Ювеналы-2 N Соло Ж St",
-            "program": "standard",
-            "dance": "Q",
-            "final_place": 5.0,
-            "best_place": 5.0,
-            "worst_place": 5.0,
-            "n_results": 1,
-            "judge_marks": 9,
-            "dance_code": "Q"
-          },
-          {
-            "event_date": "2026-05-24",
-            "tournament_id": 2026052402,
-            "tournament_title": "Чемпионат СПТЛ 2026 (Санкт-Петербург)",
-            "protocol_id": 80566,
-            "category": "Ювеналы-2 N Соло Ж St",
-            "program": "standard",
-            "dance": "W",
-            "final_place": 5.0,
-            "best_place": 5.0,
-            "worst_place": 5.0,
-            "n_results": 1,
-            "judge_marks": 11,
-            "dance_code": "W"
-          },
-          {
-            "event_date": "2026-05-24",
-            "tournament_id": 2026052402,
-            "tournament_title": "Чемпионат СПТЛ 2026 (Санкт-Петербург)",
-            "protocol_id": 80566,
-            "category": "Ювеналы-2 N Соло Ж St",
-            "program": "standard",
-            "dance": "Q",
-            "final_place": 5.0,
-            "best_place": 5.0,
-            "worst_place": 5.0,
-            "n_results": 1,
-            "judge_marks": 11,
-            "dance_code": "Q"
-          }
         ]
-      },
-      "n_e": {
-        "metrics": [],
-        "best_by_final_average": null,
-        "best_by_median": null,
-        "most_stable_dance": null,
-        "best_peak": null,
-        "worst_by_final_average": null,
-        "judge_level_best": null,
-        "strongest_dance": null,
-        "weakest_dance": null,
-        "most_improved_dance": null,
-        "key": "n_e",
-        "label": "N+E",
-        "source": "selected_dancer_marks_and_results",
-        "class_group": "N+E",
-        "age_groups": [
-          "Ювеналы-2"
-        ],
-        "source_categories": [
-          "Ювеналы-2 N+E Соло Ж St"
-        ],
-        "protocol_count": 0,
-        "tournament_count": 0,
-        "evidence": {
-          "tournaments": 2,
-          "protocols": 2,
-          "marks": 41,
-          "results": 0
-        },
-        "dynamics_by_date": [],
-        "trends": [],
-        "tournament_dance_results": []
       }
     },
     "latin": {
@@ -1644,6 +3222,46 @@
             "confidence": "low confidence"
           }
         ],
+        "display_mode": "best_worst",
+        "best_dances": [
+          {
+            "dance": "J",
+            "dance_code": "J",
+            "metric_value": 6.0,
+            "metric_type": "final_avg_place",
+            "metric_label": "среднее место",
+            "final_avg_place": 6.0
+          }
+        ],
+        "worst_dances": [
+          {
+            "dance": "C",
+            "dance_code": "Ch",
+            "metric_value": 6.5,
+            "metric_type": "final_avg_place",
+            "metric_label": "среднее место",
+            "final_avg_place": 6.5
+          }
+        ],
+        "evaluated_dance": null,
+        "tied_dances": [],
+        "tied_metric_value": null,
+        "best_dance": {
+          "dance": "J",
+          "dance_code": "J",
+          "metric_value": 6.0,
+          "metric_type": "final_avg_place",
+          "metric_label": "среднее место",
+          "final_avg_place": 6.0
+        },
+        "worst_dance": {
+          "dance": "C",
+          "dance_code": "Ch",
+          "metric_value": 6.5,
+          "metric_type": "final_avg_place",
+          "metric_label": "среднее место",
+          "final_avg_place": 6.5
+        },
         "best_by_final_average": null,
         "best_by_median": null,
         "most_stable_dance": null,
@@ -1667,11 +3285,10 @@
         },
         "key": "all",
         "label": "Все категории",
-        "source": "selected_dancer_marks_and_results",
-        "class_group": null,
-        "age_groups": [
-          "Ювеналы-1+2",
-          "Ювеналы-2"
+        "source": "parent_category_aggregation",
+        "included_categories": [
+          "N",
+          "N+E"
         ],
         "source_categories": [
           "Ювеналы-1+2 N Соло Ж La",
@@ -1679,8 +3296,8 @@
           "Ювеналы-2 N соло Ж La",
           "Ювеналы-2 N+E Соло Ж La"
         ],
-        "protocol_count": 2,
-        "tournament_count": 2,
+        "protocol_count": 6,
+        "tournament_count": 4,
         "evidence": {
           "tournaments": 4,
           "protocols": 6,
@@ -1764,71 +3381,9 @@
             "confidence": "low confidence trend",
             "trend_status": "stable"
           }
-        ],
-        "tournament_dance_results": [
-          {
-            "event_date": "2026-02-01",
-            "tournament_id": 2026020100,
-            "tournament_title": "Tiara Dance Cup (Санкт-Петербург)",
-            "protocol_id": 76814,
-            "category": "Ювеналы-2 N соло Ж La",
-            "program": "latin",
-            "dance": "C",
-            "final_place": 7.0,
-            "best_place": 7.0,
-            "worst_place": 7.0,
-            "n_results": 1,
-            "judge_marks": 9,
-            "dance_code": "Ch"
-          },
-          {
-            "event_date": "2026-02-01",
-            "tournament_id": 2026020100,
-            "tournament_title": "Tiara Dance Cup (Санкт-Петербург)",
-            "protocol_id": 76814,
-            "category": "Ювеналы-2 N соло Ж La",
-            "program": "latin",
-            "dance": "J",
-            "final_place": 6.0,
-            "best_place": 6.0,
-            "worst_place": 6.0,
-            "n_results": 1,
-            "judge_marks": 9,
-            "dance_code": "J"
-          },
-          {
-            "event_date": "2026-05-24",
-            "tournament_id": 2026052402,
-            "tournament_title": "Чемпионат СПТЛ 2026 (Санкт-Петербург)",
-            "protocol_id": 80578,
-            "category": "Ювеналы-2 N Соло Ж La",
-            "program": "latin",
-            "dance": "C",
-            "final_place": 6.0,
-            "best_place": 6.0,
-            "worst_place": 6.0,
-            "n_results": 1,
-            "judge_marks": 11,
-            "dance_code": "Ch"
-          },
-          {
-            "event_date": "2026-05-24",
-            "tournament_id": 2026052402,
-            "tournament_title": "Чемпионат СПТЛ 2026 (Санкт-Петербург)",
-            "protocol_id": 80578,
-            "category": "Ювеналы-2 N Соло Ж La",
-            "program": "latin",
-            "dance": "J",
-            "final_place": 6.0,
-            "best_place": 6.0,
-            "worst_place": 6.0,
-            "n_results": 1,
-            "judge_marks": 11,
-            "dance_code": "J"
-          }
         ]
       },
-      "n": {
+      "n_e": {
         "metrics": [
           {
             "program": "latin",
@@ -1879,6 +3434,46 @@
             "confidence": "low confidence"
           }
         ],
+        "display_mode": "best_worst",
+        "best_dances": [
+          {
+            "dance": "J",
+            "dance_code": "J",
+            "metric_value": 6.0,
+            "metric_type": "final_avg_place",
+            "metric_label": "среднее место",
+            "final_avg_place": 6.0
+          }
+        ],
+        "worst_dances": [
+          {
+            "dance": "C",
+            "dance_code": "Ch",
+            "metric_value": 6.5,
+            "metric_type": "final_avg_place",
+            "metric_label": "среднее место",
+            "final_avg_place": 6.5
+          }
+        ],
+        "evaluated_dance": null,
+        "tied_dances": [],
+        "tied_metric_value": null,
+        "best_dance": {
+          "dance": "J",
+          "dance_code": "J",
+          "metric_value": 6.0,
+          "metric_type": "final_avg_place",
+          "metric_label": "среднее место",
+          "final_avg_place": 6.0
+        },
+        "worst_dance": {
+          "dance": "C",
+          "dance_code": "Ch",
+          "metric_value": 6.5,
+          "metric_type": "final_avg_place",
+          "metric_label": "среднее место",
+          "final_avg_place": 6.5
+        },
         "best_by_final_average": null,
         "best_by_median": null,
         "most_stable_dance": null,
@@ -1900,25 +3495,25 @@
           "confidence": "low confidence trend",
           "trend_status": "improving"
         },
-        "key": "n",
-        "label": "N",
-        "source": "selected_dancer_marks_and_results",
-        "class_group": "N",
-        "age_groups": [
-          "Ювеналы-1+2",
-          "Ювеналы-2"
+        "key": "n_e",
+        "label": "N+E",
+        "source": "parent_category_aggregation",
+        "included_categories": [
+          "N",
+          "N+E"
         ],
         "source_categories": [
           "Ювеналы-1+2 N Соло Ж La",
           "Ювеналы-2 N Соло Ж La",
-          "Ювеналы-2 N соло Ж La"
+          "Ювеналы-2 N соло Ж La",
+          "Ювеналы-2 N+E Соло Ж La"
         ],
-        "protocol_count": 2,
-        "tournament_count": 2,
+        "protocol_count": 6,
+        "tournament_count": 4,
         "evidence": {
           "tournaments": 4,
-          "protocols": 4,
-          "marks": 106,
+          "protocols": 6,
+          "marks": 124,
           "results": 4
         },
         "dynamics_by_date": [
@@ -1998,102 +3593,7 @@
             "confidence": "low confidence trend",
             "trend_status": "stable"
           }
-        ],
-        "tournament_dance_results": [
-          {
-            "event_date": "2026-02-01",
-            "tournament_id": 2026020100,
-            "tournament_title": "Tiara Dance Cup (Санкт-Петербург)",
-            "protocol_id": 76814,
-            "category": "Ювеналы-2 N соло Ж La",
-            "program": "latin",
-            "dance": "C",
-            "final_place": 7.0,
-            "best_place": 7.0,
-            "worst_place": 7.0,
-            "n_results": 1,
-            "judge_marks": 9,
-            "dance_code": "Ch"
-          },
-          {
-            "event_date": "2026-02-01",
-            "tournament_id": 2026020100,
-            "tournament_title": "Tiara Dance Cup (Санкт-Петербург)",
-            "protocol_id": 76814,
-            "category": "Ювеналы-2 N соло Ж La",
-            "program": "latin",
-            "dance": "J",
-            "final_place": 6.0,
-            "best_place": 6.0,
-            "worst_place": 6.0,
-            "n_results": 1,
-            "judge_marks": 9,
-            "dance_code": "J"
-          },
-          {
-            "event_date": "2026-05-24",
-            "tournament_id": 2026052402,
-            "tournament_title": "Чемпионат СПТЛ 2026 (Санкт-Петербург)",
-            "protocol_id": 80578,
-            "category": "Ювеналы-2 N Соло Ж La",
-            "program": "latin",
-            "dance": "C",
-            "final_place": 6.0,
-            "best_place": 6.0,
-            "worst_place": 6.0,
-            "n_results": 1,
-            "judge_marks": 11,
-            "dance_code": "Ch"
-          },
-          {
-            "event_date": "2026-05-24",
-            "tournament_id": 2026052402,
-            "tournament_title": "Чемпионат СПТЛ 2026 (Санкт-Петербург)",
-            "protocol_id": 80578,
-            "category": "Ювеналы-2 N Соло Ж La",
-            "program": "latin",
-            "dance": "J",
-            "final_place": 6.0,
-            "best_place": 6.0,
-            "worst_place": 6.0,
-            "n_results": 1,
-            "judge_marks": 11,
-            "dance_code": "J"
-          }
         ]
-      },
-      "n_e": {
-        "metrics": [],
-        "best_by_final_average": null,
-        "best_by_median": null,
-        "most_stable_dance": null,
-        "best_peak": null,
-        "worst_by_final_average": null,
-        "judge_level_best": null,
-        "strongest_dance": null,
-        "weakest_dance": null,
-        "most_improved_dance": null,
-        "key": "n_e",
-        "label": "N+E",
-        "source": "selected_dancer_marks_and_results",
-        "class_group": "N+E",
-        "age_groups": [
-          "Ювеналы-2"
-        ],
-        "source_categories": [
-          "Ювеналы-2 N+E Соло Ж La"
-        ],
-        "protocol_count": 0,
-        "tournament_count": 0,
-        "evidence": {
-          "tournaments": 2,
-          "protocols": 2,
-          "marks": 18,
-          "results": 0
-        },
-        "dynamics_by_date": [],
-        "trends": [],
-        "tournament_dance_results": []
       }
     }
   },
@@ -2105,6 +3605,7 @@
         "event_date": "2026-02-01",
         "tournament_id": 2026020100,
         "tournament_title": "Tiara Dance Cup (Санкт-Петербург)",
+        "city": "Санкт-Петербург",
         "protocols": 2,
         "categories": [
           "Ювеналы-2 N соло Ж La",
@@ -2121,12 +3622,14 @@
           "J"
         ],
         "tournament_rank": 2,
-        "rank_direction": "best"
+        "rank_direction": "best",
+        "date": "2026-02-01"
       },
       {
         "event_date": "2026-03-08",
         "tournament_id": 2026030800,
         "tournament_title": "Амбассадор 2026 (Санкт-Петербург)",
+        "city": "Санкт-Петербург",
         "protocols": 2,
         "categories": [
           "Ювеналы-1+2 N Соло Ж La",
@@ -2143,12 +3646,14 @@
           "J"
         ],
         "tournament_rank": 1,
-        "rank_direction": "best"
+        "rank_direction": "best",
+        "date": "2026-03-08"
       },
       {
         "event_date": "2026-04-26",
         "tournament_id": 2026042600,
         "tournament_title": "Карнавал 2026 (Санкт-Петербург)",
+        "city": "Санкт-Петербург",
         "protocols": 4,
         "categories": [
           "Ювеналы-2 N Соло Ж La",
@@ -2169,12 +3674,14 @@
           "J"
         ],
         "tournament_rank": 4,
-        "rank_direction": "hardest"
+        "rank_direction": "hardest",
+        "date": "2026-04-26"
       },
       {
         "event_date": "2026-05-24",
         "tournament_id": 2026052402,
         "tournament_title": "Чемпионат СПТЛ 2026 (Санкт-Петербург)",
+        "city": "Санкт-Петербург",
         "protocols": 4,
         "categories": [
           "Ювеналы-2 N Соло Ж La",
@@ -2195,7 +3702,8 @@
           "J"
         ],
         "tournament_rank": 3,
-        "rank_direction": "hardest"
+        "rank_direction": "hardest",
+        "date": "2026-05-24"
       }
     ],
     "protocols": [
@@ -2203,109 +3711,133 @@
         "event_date": "2026-02-01",
         "tournament_id": 2026020100,
         "tournament_title": "Tiara Dance Cup (Санкт-Петербург)",
+        "city": "Санкт-Петербург",
         "protocol_id": 76799,
         "category": "Ювеналы-2 N соло Ж St",
         "program": "standard",
-        "entry_type": "solo"
+        "entry_type": "solo",
+        "date": "2026-02-01"
       },
       {
         "event_date": "2026-02-01",
         "tournament_id": 2026020100,
         "tournament_title": "Tiara Dance Cup (Санкт-Петербург)",
+        "city": "Санкт-Петербург",
         "protocol_id": 76814,
         "category": "Ювеналы-2 N соло Ж La",
         "program": "latin",
-        "entry_type": "solo"
+        "entry_type": "solo",
+        "date": "2026-02-01"
       },
       {
         "event_date": "2026-03-08",
         "tournament_id": 2026030800,
         "tournament_title": "Амбассадор 2026 (Санкт-Петербург)",
+        "city": "Санкт-Петербург",
         "protocol_id": 77937,
         "category": "Ювеналы-1+2 N Соло Ж St",
         "program": "standard",
-        "entry_type": "solo"
+        "entry_type": "solo",
+        "date": "2026-03-08"
       },
       {
         "event_date": "2026-03-08",
         "tournament_id": 2026030800,
         "tournament_title": "Амбассадор 2026 (Санкт-Петербург)",
+        "city": "Санкт-Петербург",
         "protocol_id": 77949,
         "category": "Ювеналы-1+2 N Соло Ж La",
         "program": "latin",
-        "entry_type": "solo"
+        "entry_type": "solo",
+        "date": "2026-03-08"
       },
       {
         "event_date": "2026-04-26",
         "tournament_id": 2026042600,
         "tournament_title": "Карнавал 2026 (Санкт-Петербург)",
+        "city": "Санкт-Петербург",
         "protocol_id": 79400,
         "category": "Ювеналы-2 N Соло Ж St",
         "program": "standard",
-        "entry_type": "solo"
+        "entry_type": "solo",
+        "date": "2026-04-26"
       },
       {
         "event_date": "2026-04-26",
         "tournament_id": 2026042600,
         "tournament_title": "Карнавал 2026 (Санкт-Петербург)",
+        "city": "Санкт-Петербург",
         "protocol_id": 79404,
         "category": "Ювеналы-2 N+E Соло Ж St",
         "program": "standard",
-        "entry_type": "solo"
+        "entry_type": "solo",
+        "date": "2026-04-26"
       },
       {
         "event_date": "2026-04-26",
         "tournament_id": 2026042600,
         "tournament_title": "Карнавал 2026 (Санкт-Петербург)",
+        "city": "Санкт-Петербург",
         "protocol_id": 79415,
         "category": "Ювеналы-2 N Соло Ж La",
         "program": "latin",
-        "entry_type": "solo"
+        "entry_type": "solo",
+        "date": "2026-04-26"
       },
       {
         "event_date": "2026-04-26",
         "tournament_id": 2026042600,
         "tournament_title": "Карнавал 2026 (Санкт-Петербург)",
+        "city": "Санкт-Петербург",
         "protocol_id": 79419,
         "category": "Ювеналы-2 N+E Соло Ж La",
         "program": "latin",
-        "entry_type": "solo"
+        "entry_type": "solo",
+        "date": "2026-04-26"
       },
       {
         "event_date": "2026-05-24",
         "tournament_id": 2026052402,
         "tournament_title": "Чемпионат СПТЛ 2026 (Санкт-Петербург)",
+        "city": "Санкт-Петербург",
         "protocol_id": 80566,
         "category": "Ювеналы-2 N Соло Ж St",
         "program": "standard",
-        "entry_type": "solo"
+        "entry_type": "solo",
+        "date": "2026-05-24"
       },
       {
         "event_date": "2026-05-24",
         "tournament_id": 2026052402,
         "tournament_title": "Чемпионат СПТЛ 2026 (Санкт-Петербург)",
+        "city": "Санкт-Петербург",
         "protocol_id": 80570,
         "category": "Ювеналы-2 N+E Соло Ж St",
         "program": "standard",
-        "entry_type": "solo"
+        "entry_type": "solo",
+        "date": "2026-05-24"
       },
       {
         "event_date": "2026-05-24",
         "tournament_id": 2026052402,
         "tournament_title": "Чемпионат СПТЛ 2026 (Санкт-Петербург)",
+        "city": "Санкт-Петербург",
         "protocol_id": 80578,
         "category": "Ювеналы-2 N Соло Ж La",
         "program": "latin",
-        "entry_type": "solo"
+        "entry_type": "solo",
+        "date": "2026-05-24"
       },
       {
         "event_date": "2026-05-24",
         "tournament_id": 2026052402,
         "tournament_title": "Чемпионат СПТЛ 2026 (Санкт-Петербург)",
+        "city": "Санкт-Петербург",
         "protocol_id": 80582,
         "category": "Ювеналы-2 N+E Соло Ж La",
         "program": "latin",
-        "entry_type": "solo"
+        "entry_type": "solo",
+        "date": "2026-05-24"
       }
     ],
     "dance_results": [
@@ -2313,6 +3845,7 @@
         "event_date": "2026-02-01",
         "tournament_id": 2026020100,
         "tournament_title": "Tiara Dance Cup (Санкт-Петербург)",
+        "city": "Санкт-Петербург",
         "protocol_id": 76799,
         "category": "Ювеналы-2 N соло Ж St",
         "program": "standard",
@@ -2322,12 +3855,14 @@
         "worst_place": 2.0,
         "n_results": 1,
         "judge_marks": 7,
-        "dance_code": "W"
+        "dance_code": "W",
+        "date": "2026-02-01"
       },
       {
         "event_date": "2026-02-01",
         "tournament_id": 2026020100,
         "tournament_title": "Tiara Dance Cup (Санкт-Петербург)",
+        "city": "Санкт-Петербург",
         "protocol_id": 76799,
         "category": "Ювеналы-2 N соло Ж St",
         "program": "standard",
@@ -2337,12 +3872,14 @@
         "worst_place": 2.0,
         "n_results": 1,
         "judge_marks": 7,
-        "dance_code": "Q"
+        "dance_code": "Q",
+        "date": "2026-02-01"
       },
       {
         "event_date": "2026-02-01",
         "tournament_id": 2026020100,
         "tournament_title": "Tiara Dance Cup (Санкт-Петербург)",
+        "city": "Санкт-Петербург",
         "protocol_id": 76814,
         "category": "Ювеналы-2 N соло Ж La",
         "program": "latin",
@@ -2352,12 +3889,14 @@
         "worst_place": 7.0,
         "n_results": 1,
         "judge_marks": 9,
-        "dance_code": "Ch"
+        "dance_code": "Ch",
+        "date": "2026-02-01"
       },
       {
         "event_date": "2026-02-01",
         "tournament_id": 2026020100,
         "tournament_title": "Tiara Dance Cup (Санкт-Петербург)",
+        "city": "Санкт-Петербург",
         "protocol_id": 76814,
         "category": "Ювеналы-2 N соло Ж La",
         "program": "latin",
@@ -2367,12 +3906,14 @@
         "worst_place": 6.0,
         "n_results": 1,
         "judge_marks": 9,
-        "dance_code": "J"
+        "dance_code": "J",
+        "date": "2026-02-01"
       },
       {
         "event_date": "2026-03-08",
         "tournament_id": 2026030800,
         "tournament_title": "Амбассадор 2026 (Санкт-Петербург)",
+        "city": "Санкт-Петербург",
         "protocol_id": 77937,
         "category": "Ювеналы-1+2 N Соло Ж St",
         "program": "standard",
@@ -2382,12 +3923,14 @@
         "worst_place": 3.0,
         "n_results": 1,
         "judge_marks": 7,
-        "dance_code": "W"
+        "dance_code": "W",
+        "date": "2026-03-08"
       },
       {
         "event_date": "2026-03-08",
         "tournament_id": 2026030800,
         "tournament_title": "Амбассадор 2026 (Санкт-Петербург)",
+        "city": "Санкт-Петербург",
         "protocol_id": 77937,
         "category": "Ювеналы-1+2 N Соло Ж St",
         "program": "standard",
@@ -2397,12 +3940,14 @@
         "worst_place": 3.0,
         "n_results": 1,
         "judge_marks": 7,
-        "dance_code": "Q"
+        "dance_code": "Q",
+        "date": "2026-03-08"
       },
       {
         "event_date": "2026-04-26",
         "tournament_id": 2026042600,
         "tournament_title": "Карнавал 2026 (Санкт-Петербург)",
+        "city": "Санкт-Петербург",
         "protocol_id": 79400,
         "category": "Ювеналы-2 N Соло Ж St",
         "program": "standard",
@@ -2412,12 +3957,14 @@
         "worst_place": 7.0,
         "n_results": 1,
         "judge_marks": 9,
-        "dance_code": "W"
+        "dance_code": "W",
+        "date": "2026-04-26"
       },
       {
         "event_date": "2026-04-26",
         "tournament_id": 2026042600,
         "tournament_title": "Карнавал 2026 (Санкт-Петербург)",
+        "city": "Санкт-Петербург",
         "protocol_id": 79400,
         "category": "Ювеналы-2 N Соло Ж St",
         "program": "standard",
@@ -2427,12 +3974,14 @@
         "worst_place": 5.0,
         "n_results": 1,
         "judge_marks": 9,
-        "dance_code": "Q"
+        "dance_code": "Q",
+        "date": "2026-04-26"
       },
       {
         "event_date": "2026-05-24",
         "tournament_id": 2026052402,
         "tournament_title": "Чемпионат СПТЛ 2026 (Санкт-Петербург)",
+        "city": "Санкт-Петербург",
         "protocol_id": 80566,
         "category": "Ювеналы-2 N Соло Ж St",
         "program": "standard",
@@ -2442,12 +3991,14 @@
         "worst_place": 5.0,
         "n_results": 1,
         "judge_marks": 11,
-        "dance_code": "W"
+        "dance_code": "W",
+        "date": "2026-05-24"
       },
       {
         "event_date": "2026-05-24",
         "tournament_id": 2026052402,
         "tournament_title": "Чемпионат СПТЛ 2026 (Санкт-Петербург)",
+        "city": "Санкт-Петербург",
         "protocol_id": 80566,
         "category": "Ювеналы-2 N Соло Ж St",
         "program": "standard",
@@ -2457,12 +4008,14 @@
         "worst_place": 5.0,
         "n_results": 1,
         "judge_marks": 11,
-        "dance_code": "Q"
+        "dance_code": "Q",
+        "date": "2026-05-24"
       },
       {
         "event_date": "2026-05-24",
         "tournament_id": 2026052402,
         "tournament_title": "Чемпионат СПТЛ 2026 (Санкт-Петербург)",
+        "city": "Санкт-Петербург",
         "protocol_id": 80578,
         "category": "Ювеналы-2 N Соло Ж La",
         "program": "latin",
@@ -2472,12 +4025,14 @@
         "worst_place": 6.0,
         "n_results": 1,
         "judge_marks": 11,
-        "dance_code": "Ch"
+        "dance_code": "Ch",
+        "date": "2026-05-24"
       },
       {
         "event_date": "2026-05-24",
         "tournament_id": 2026052402,
         "tournament_title": "Чемпионат СПТЛ 2026 (Санкт-Петербург)",
+        "city": "Санкт-Петербург",
         "protocol_id": 80578,
         "category": "Ювеналы-2 N Соло Ж La",
         "program": "latin",
@@ -2487,7 +4042,8 @@
         "worst_place": 6.0,
         "n_results": 1,
         "judge_marks": 11,
-        "dance_code": "J"
+        "dance_code": "J",
+        "date": "2026-05-24"
       }
     ]
   },
@@ -2495,8 +4051,10 @@
     "tournament_summaries": [
       {
         "event_date": "2026-02-01",
+        "date": "2026-02-01",
         "tournament_id": 2026020100,
         "tournament_title": "Tiara Dance Cup (Санкт-Петербург)",
+        "city": "Санкт-Петербург",
         "categories": [
           "Ювеналы-2 N соло Ж La",
           "Ювеналы-2 N соло Ж St"
@@ -2622,6 +4180,7 @@
             "event_date": "2026-02-01",
             "tournament_id": 2026020100,
             "tournament_title": "Tiara Dance Cup (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
             "protocol_id": 76799,
             "category": "Ювеналы-2 N соло Ж St",
             "program": "standard",
@@ -2631,12 +4190,14 @@
             "worst_place": 2.0,
             "n_results": 1,
             "judge_marks": 7,
-            "dance_code": "W"
+            "dance_code": "W",
+            "date": "2026-02-01"
           },
           {
             "event_date": "2026-02-01",
             "tournament_id": 2026020100,
             "tournament_title": "Tiara Dance Cup (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
             "protocol_id": 76799,
             "category": "Ювеналы-2 N соло Ж St",
             "program": "standard",
@@ -2646,12 +4207,14 @@
             "worst_place": 2.0,
             "n_results": 1,
             "judge_marks": 7,
-            "dance_code": "Q"
+            "dance_code": "Q",
+            "date": "2026-02-01"
           },
           {
             "event_date": "2026-02-01",
             "tournament_id": 2026020100,
             "tournament_title": "Tiara Dance Cup (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
             "protocol_id": 76814,
             "category": "Ювеналы-2 N соло Ж La",
             "program": "latin",
@@ -2661,12 +4224,14 @@
             "worst_place": 7.0,
             "n_results": 1,
             "judge_marks": 9,
-            "dance_code": "Ch"
+            "dance_code": "Ch",
+            "date": "2026-02-01"
           },
           {
             "event_date": "2026-02-01",
             "tournament_id": 2026020100,
             "tournament_title": "Tiara Dance Cup (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
             "protocol_id": 76814,
             "category": "Ювеналы-2 N соло Ж La",
             "program": "latin",
@@ -2676,14 +4241,17 @@
             "worst_place": 6.0,
             "n_results": 1,
             "judge_marks": 9,
-            "dance_code": "J"
+            "dance_code": "J",
+            "date": "2026-02-01"
           }
         ]
       },
       {
         "event_date": "2026-03-08",
+        "date": "2026-03-08",
         "tournament_id": 2026030800,
         "tournament_title": "Амбассадор 2026 (Санкт-Петербург)",
+        "city": "Санкт-Петербург",
         "categories": [
           "Ювеналы-1+2 N Соло Ж La",
           "Ювеналы-1+2 N Соло Ж St"
@@ -2809,6 +4377,7 @@
             "event_date": "2026-03-08",
             "tournament_id": 2026030800,
             "tournament_title": "Амбассадор 2026 (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
             "protocol_id": 77937,
             "category": "Ювеналы-1+2 N Соло Ж St",
             "program": "standard",
@@ -2818,12 +4387,14 @@
             "worst_place": 3.0,
             "n_results": 1,
             "judge_marks": 7,
-            "dance_code": "W"
+            "dance_code": "W",
+            "date": "2026-03-08"
           },
           {
             "event_date": "2026-03-08",
             "tournament_id": 2026030800,
             "tournament_title": "Амбассадор 2026 (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
             "protocol_id": 77937,
             "category": "Ювеналы-1+2 N Соло Ж St",
             "program": "standard",
@@ -2833,14 +4404,17 @@
             "worst_place": 3.0,
             "n_results": 1,
             "judge_marks": 7,
-            "dance_code": "Q"
+            "dance_code": "Q",
+            "date": "2026-03-08"
           }
         ]
       },
       {
         "event_date": "2026-04-26",
+        "date": "2026-04-26",
         "tournament_id": 2026042600,
         "tournament_title": "Карнавал 2026 (Санкт-Петербург)",
+        "city": "Санкт-Петербург",
         "categories": [
           "Ювеналы-2 N Соло Ж La",
           "Ювеналы-2 N Соло Ж St",
@@ -3026,6 +4600,7 @@
             "event_date": "2026-04-26",
             "tournament_id": 2026042600,
             "tournament_title": "Карнавал 2026 (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
             "protocol_id": 79400,
             "category": "Ювеналы-2 N Соло Ж St",
             "program": "standard",
@@ -3035,12 +4610,14 @@
             "worst_place": 7.0,
             "n_results": 1,
             "judge_marks": 9,
-            "dance_code": "W"
+            "dance_code": "W",
+            "date": "2026-04-26"
           },
           {
             "event_date": "2026-04-26",
             "tournament_id": 2026042600,
             "tournament_title": "Карнавал 2026 (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
             "protocol_id": 79400,
             "category": "Ювеналы-2 N Соло Ж St",
             "program": "standard",
@@ -3050,14 +4627,17 @@
             "worst_place": 5.0,
             "n_results": 1,
             "judge_marks": 9,
-            "dance_code": "Q"
+            "dance_code": "Q",
+            "date": "2026-04-26"
           }
         ]
       },
       {
         "event_date": "2026-05-24",
+        "date": "2026-05-24",
         "tournament_id": 2026052402,
         "tournament_title": "Чемпионат СПТЛ 2026 (Санкт-Петербург)",
+        "city": "Санкт-Петербург",
         "categories": [
           "Ювеналы-2 N Соло Ж La",
           "Ювеналы-2 N Соло Ж St",
@@ -3150,6 +4730,7 @@
             "event_date": "2026-05-24",
             "tournament_id": 2026052402,
             "tournament_title": "Чемпионат СПТЛ 2026 (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
             "protocol_id": 80566,
             "category": "Ювеналы-2 N Соло Ж St",
             "program": "standard",
@@ -3159,12 +4740,14 @@
             "worst_place": 5.0,
             "n_results": 1,
             "judge_marks": 11,
-            "dance_code": "W"
+            "dance_code": "W",
+            "date": "2026-05-24"
           },
           {
             "event_date": "2026-05-24",
             "tournament_id": 2026052402,
             "tournament_title": "Чемпионат СПТЛ 2026 (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
             "protocol_id": 80566,
             "category": "Ювеналы-2 N Соло Ж St",
             "program": "standard",
@@ -3174,12 +4757,14 @@
             "worst_place": 5.0,
             "n_results": 1,
             "judge_marks": 11,
-            "dance_code": "Q"
+            "dance_code": "Q",
+            "date": "2026-05-24"
           },
           {
             "event_date": "2026-05-24",
             "tournament_id": 2026052402,
             "tournament_title": "Чемпионат СПТЛ 2026 (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
             "protocol_id": 80578,
             "category": "Ювеналы-2 N Соло Ж La",
             "program": "latin",
@@ -3189,12 +4774,14 @@
             "worst_place": 6.0,
             "n_results": 1,
             "judge_marks": 11,
-            "dance_code": "Ch"
+            "dance_code": "Ch",
+            "date": "2026-05-24"
           },
           {
             "event_date": "2026-05-24",
             "tournament_id": 2026052402,
             "tournament_title": "Чемпионат СПТЛ 2026 (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
             "protocol_id": 80578,
             "category": "Ювеналы-2 N Соло Ж La",
             "program": "latin",
@@ -3204,7 +4791,8 @@
             "worst_place": 6.0,
             "n_results": 1,
             "judge_marks": 11,
-            "dance_code": "J"
+            "dance_code": "J",
+            "date": "2026-05-24"
           }
         ]
       }

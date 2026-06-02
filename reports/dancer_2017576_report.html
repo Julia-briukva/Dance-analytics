@@ -174,6 +174,88 @@
     #tab-parent:checked ~ .parent-panel { display: block; }
     #tab-trainer:checked ~ .trainer-panel { display: block; }
 
+    .report-filters {
+      background: var(--paper);
+      border: 1px solid rgba(233, 229, 244, .78);
+      border-radius: 16px;
+      box-shadow: 0 6px 18px rgba(49, 42, 96, .03);
+      margin: 0 0 24px;
+      padding: 18px;
+    }
+
+    .filter-grid {
+      display: grid;
+      grid-template-columns: minmax(220px, 1.4fr) minmax(220px, 1fr);
+      gap: 18px;
+      align-items: start;
+    }
+
+    .filter-title {
+      color: var(--ink-soft);
+      font-size: 13px;
+      font-weight: 560;
+      margin-bottom: 8px;
+    }
+
+    .filter-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .filter-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--accent-light);
+      color: var(--ink-soft);
+      cursor: pointer;
+      font-size: 12px;
+      padding: 7px 10px;
+    }
+
+    .filter-chip input {
+      accent-color: var(--accent);
+      margin: 0;
+    }
+
+    .date-filter-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .date-filter-grid label {
+      display: grid;
+      gap: 5px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .date-filter-grid input {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      color: var(--ink-soft);
+      font: inherit;
+      font-size: 13px;
+      padding: 8px 9px;
+    }
+
+    .filter-note {
+      margin: 12px 0 0;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .filter-empty {
+      display: none;
+      color: var(--muted);
+      margin-top: 12px;
+    }
+
     .section {
       background: var(--paper);
       border: 1px solid rgba(233, 229, 244, .78);
@@ -286,11 +368,30 @@
       background: linear-gradient(90deg, var(--accent-dark), var(--accent));
     }
 
+    .category-chip-groups {
+      display: grid;
+      gap: 13px;
+      margin: 16px 0 22px;
+    }
+
+    .category-chip-group {
+      display: grid;
+      gap: 7px;
+    }
+
+    .category-group-title {
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 560;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+
     .category-tabs {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
-      margin: 14px 0 16px;
+      margin: 0;
     }
 
     .category-tab {
@@ -304,38 +405,98 @@
       font-weight: 560;
     }
 
-    .category-panel { display: none; }
+    .category-tab.limited {
+      color: #6E687B;
+      background: #FBFAFD;
+      border-color: #DED9EA;
+      border-style: dashed;
+      font-weight: 520;
+    }
 
-    #cat-standard-all:checked ~ .category-tabs label[for="cat-standard-all"],
-    #cat-standard-n:checked ~ .category-tabs label[for="cat-standard-n"],
-    #cat-standard-n_e:checked ~ .category-tabs label[for="cat-standard-n_e"],
-    #cat-standard-e:checked ~ .category-tabs label[for="cat-standard-e"],
-    #cat-standard-e_d:checked ~ .category-tabs label[for="cat-standard-e_d"],
-    #cat-standard-d:checked ~ .category-tabs label[for="cat-standard-d"],
-    #cat-standard-d_c:checked ~ .category-tabs label[for="cat-standard-d_c"],
-    #cat-standard-c:checked ~ .category-tabs label[for="cat-standard-c"],
-    #cat-standard-c_b:checked ~ .category-tabs label[for="cat-standard-c_b"],
-    #cat-standard-b:checked ~ .category-tabs label[for="cat-standard-b"],
-    #cat-standard-a:checked ~ .category-tabs label[for="cat-standard-a"],
-    #cat-standard-s:checked ~ .category-tabs label[for="cat-standard-s"],
-    #cat-standard-m:checked ~ .category-tabs label[for="cat-standard-m"],
-    #cat-standard-eadc:checked ~ .category-tabs label[for="cat-standard-eadc"],
-    #cat-standard-open:checked ~ .category-tabs label[for="cat-standard-open"],
-    #cat-latin-all:checked ~ .category-tabs label[for="cat-latin-all"],
-    #cat-latin-n:checked ~ .category-tabs label[for="cat-latin-n"],
-    #cat-latin-n_e:checked ~ .category-tabs label[for="cat-latin-n_e"],
-    #cat-latin-e:checked ~ .category-tabs label[for="cat-latin-e"],
-    #cat-latin-e_d:checked ~ .category-tabs label[for="cat-latin-e_d"],
-    #cat-latin-d:checked ~ .category-tabs label[for="cat-latin-d"],
-    #cat-latin-d_c:checked ~ .category-tabs label[for="cat-latin-d_c"],
-    #cat-latin-c:checked ~ .category-tabs label[for="cat-latin-c"],
-    #cat-latin-c_b:checked ~ .category-tabs label[for="cat-latin-c_b"],
-    #cat-latin-b:checked ~ .category-tabs label[for="cat-latin-b"],
-    #cat-latin-a:checked ~ .category-tabs label[for="cat-latin-a"],
-    #cat-latin-s:checked ~ .category-tabs label[for="cat-latin-s"],
-    #cat-latin-m:checked ~ .category-tabs label[for="cat-latin-m"],
-    #cat-latin-eadc:checked ~ .category-tabs label[for="cat-latin-eadc"],
-    #cat-latin-open:checked ~ .category-tabs label[for="cat-latin-open"] {
+    .chip-badge {
+      display: inline-flex;
+      margin-left: 6px;
+      border-radius: 999px;
+      background: #F0EDF7;
+      color: #6E687B;
+      font-size: 10px;
+      font-weight: 560;
+      padding: 2px 6px;
+      vertical-align: middle;
+    }
+
+    .category-panel { display: none; padding-top: 2px; }
+    .parent-category-panel { display: none; padding-top: 2px; }
+
+    .category-panel > .note-box:first-child,
+    .category-panel > .section-kicker:first-child {
+      margin-top: 0;
+    }
+
+    .note-box + .three-column,
+    .section-kicker + .note-box,
+    .category-panel .three-column + .three-column {
+      margin-top: 14px;
+    }
+
+    .dance-table-heading {
+      margin-top: 22px;
+    }
+
+    #parent-cat-standard-all:checked ~ .category-chip-groups label[for="parent-cat-standard-all"],
+    #parent-cat-standard-n_e:checked ~ .category-chip-groups label[for="parent-cat-standard-n_e"],
+    #parent-cat-standard-e_d:checked ~ .category-chip-groups label[for="parent-cat-standard-e_d"],
+    #parent-cat-standard-eadc:checked ~ .category-chip-groups label[for="parent-cat-standard-eadc"],
+    #parent-cat-latin-all:checked ~ .category-chip-groups label[for="parent-cat-latin-all"],
+    #parent-cat-latin-n_e:checked ~ .category-chip-groups label[for="parent-cat-latin-n_e"],
+    #parent-cat-latin-e_d:checked ~ .category-chip-groups label[for="parent-cat-latin-e_d"],
+    #parent-cat-latin-eadc:checked ~ .category-chip-groups label[for="parent-cat-latin-eadc"] {
+      background: var(--accent-soft);
+      border-color: rgba(94, 81, 184, .38);
+      color: var(--accent-dark);
+    }
+
+    #parent-cat-standard-all:checked ~ .parent-category-panels .parent-panel-standard-all,
+    #parent-cat-standard-n_e:checked ~ .parent-category-panels .parent-panel-standard-n_e,
+    #parent-cat-standard-e_d:checked ~ .parent-category-panels .parent-panel-standard-e_d,
+    #parent-cat-standard-eadc:checked ~ .parent-category-panels .parent-panel-standard-eadc,
+    #parent-cat-latin-all:checked ~ .parent-category-panels .parent-panel-latin-all,
+    #parent-cat-latin-n_e:checked ~ .parent-category-panels .parent-panel-latin-n_e,
+    #parent-cat-latin-e_d:checked ~ .parent-category-panels .parent-panel-latin-e_d,
+    #parent-cat-latin-eadc:checked ~ .parent-category-panels .parent-panel-latin-eadc {
+      display: block;
+    }
+
+    #cat-standard-all:checked ~ .category-chip-groups label[for="cat-standard-all"],
+    #cat-standard-n:checked ~ .category-chip-groups label[for="cat-standard-n"],
+    #cat-standard-n_e:checked ~ .category-chip-groups label[for="cat-standard-n_e"],
+    #cat-standard-e:checked ~ .category-chip-groups label[for="cat-standard-e"],
+    #cat-standard-e_d:checked ~ .category-chip-groups label[for="cat-standard-e_d"],
+    #cat-standard-d:checked ~ .category-chip-groups label[for="cat-standard-d"],
+    #cat-standard-d_c:checked ~ .category-chip-groups label[for="cat-standard-d_c"],
+    #cat-standard-c:checked ~ .category-chip-groups label[for="cat-standard-c"],
+    #cat-standard-c_b:checked ~ .category-chip-groups label[for="cat-standard-c_b"],
+    #cat-standard-b:checked ~ .category-chip-groups label[for="cat-standard-b"],
+    #cat-standard-a:checked ~ .category-chip-groups label[for="cat-standard-a"],
+    #cat-standard-s:checked ~ .category-chip-groups label[for="cat-standard-s"],
+    #cat-standard-m:checked ~ .category-chip-groups label[for="cat-standard-m"],
+    #cat-standard-eadc:checked ~ .category-chip-groups label[for="cat-standard-eadc"],
+    #cat-standard-open:checked ~ .category-chip-groups label[for="cat-standard-open"],
+    #cat-latin-all:checked ~ .category-chip-groups label[for="cat-latin-all"],
+    #cat-latin-n:checked ~ .category-chip-groups label[for="cat-latin-n"],
+    #cat-latin-n_e:checked ~ .category-chip-groups label[for="cat-latin-n_e"],
+    #cat-latin-e:checked ~ .category-chip-groups label[for="cat-latin-e"],
+    #cat-latin-e_d:checked ~ .category-chip-groups label[for="cat-latin-e_d"],
+    #cat-latin-d:checked ~ .category-chip-groups label[for="cat-latin-d"],
+    #cat-latin-d_c:checked ~ .category-chip-groups label[for="cat-latin-d_c"],
+    #cat-latin-c:checked ~ .category-chip-groups label[for="cat-latin-c"],
+    #cat-latin-c_b:checked ~ .category-chip-groups label[for="cat-latin-c_b"],
+    #cat-latin-b:checked ~ .category-chip-groups label[for="cat-latin-b"],
+    #cat-latin-a:checked ~ .category-chip-groups label[for="cat-latin-a"],
+    #cat-latin-s:checked ~ .category-chip-groups label[for="cat-latin-s"],
+    #cat-latin-m:checked ~ .category-chip-groups label[for="cat-latin-m"],
+    #cat-latin-eadc:checked ~ .category-chip-groups label[for="cat-latin-eadc"],
+    #cat-latin-open:checked ~ .category-chip-groups label[for="cat-latin-open"] {
       background: var(--accent-soft);
       border-color: rgba(94, 81, 184, .38);
       color: var(--accent-dark);
@@ -595,6 +756,8 @@
         grid-template-columns: 1fr;
       }
       .tabs { position: static; }
+      .filter-grid,
+      .date-filter-grid { grid-template-columns: 1fr; }
     }
 
     @media print {
@@ -645,6 +808,34 @@
     </label>
   </nav>
 
+  <section class="report-filters" aria-label="Фильтры отчёта">
+    <div class="filter-grid">
+      <div>
+        <div class="filter-title">Города</div>
+        <div class="filter-chips">
+            <label class="filter-chip">
+              <input class="report-filter-city" type="checkbox" value="Санкт-Петербург" checked>
+              Санкт-Петербург
+            </label>
+        </div>
+      </div>
+      <div>
+        <div class="filter-title">Период</div>
+        <div class="date-filter-grid">
+          <label>
+            Дата начала
+            <input id="report-filter-date-from" type="date" value="2025-09-28">
+          </label>
+          <label>
+            Дата окончания
+            <input id="report-filter-date-to" type="date" value="2026-04-26">
+          </label>
+        </div>
+      </div>
+    </div>
+    <p class="filter-note">Агрегированные выводы рассчитаны по полной выборке. Сейчас фильтр применяется к турнирам и турнирным сводкам.</p>
+  </section>
+
   <section class="mode-panel parent-panel">
     <section class="section">
       <h2>Общая оценка сезона</h2>
@@ -666,59 +857,126 @@
       <p class="section-kicker">Стандарт и латина показаны отдельно, чтобы не смешивать разные программы.</p>
       <div class="program-story">
         <h3 class="program-heading">Стандарт</h3>
-        <div class="story-grid">
-          <div class="story-card">
-            <h4>Что получается лучше всего</h4>
-            <p>В стандартной программе наиболее уверенно выглядит медленный вальс: именно этот танец чаще даёт лучшие итоговые места. Фокстрот остаётся самым стабильным танцем, но стабильность не всегда означает лучшее среднее место.</p>
-            <ul class="plain-list">
-                <li><strong>Медленный вальс</strong><span class="muted">среднее место 4.083</span></li>
-            </ul>
-          </div>
-          <div class="story-card">
-            <h4>Что требует внимания</h4>
-            <p>Больше внимания сейчас требует венский вальс: здесь заметнее всего потенциал для роста по итоговым местам или по динамике последних турниров.</p>
-            <ul class="plain-list">
-                <li><strong>Венский вальс</strong><span class="muted">среднее место 5.500</span></li>
-                <li><strong>Фокстрот</strong><span class="muted">среднее место 5.167</span></li>
-                <li><strong>Квикстеп</strong><span class="muted">среднее место 5.000</span></li>
-            </ul>
+          <input class="category-input" type="radio" name="parent-cat-standard" id="parent-cat-standard-all" checked>
+          <input class="category-input" type="radio" name="parent-cat-standard" id="parent-cat-standard-eadc" >
+        <div class="category-chip-groups">
+          <div class="category-chip-group">
+            <div class="category-group-title">Категории для родителя</div>
+            <div class="category-tabs category-tabs-primary">
+                <label class="category-tab" for="parent-cat-standard-all">Все категории</label>
+                <label class="category-tab" for="parent-cat-standard-eadc">EADC</label>
+            </div>
           </div>
         </div>
-        <div class="story-card">
-          <h4>Динамика</h4>
-          <p>По динамике лучше всего выглядят медленный вальс и танго: итоговые места там постепенно улучшаются.</p>
-        </div>
-        <div class="parent-conclusion">
-          <h2>Общий вывод</h2>
-            <p>В стандартной программе есть достаточно наблюдений, чтобы смотреть не на отдельный турнир, а на общую картину.</p>
-            <p>В стандартной программе наиболее уверенно выглядит медленный вальс: именно этот танец чаще даёт лучшие итоговые места. Фокстрот остаётся самым стабильным танцем, но стабильность не всегда означает лучшее среднее место.</p>
-            <p>Больше внимания сейчас требует венский вальс: здесь заметнее всего потенциал для роста по итоговым местам или по динамике последних турниров.</p>
-            <p>По динамике лучше всего выглядят медленный вальс и танго: итоговые места там постепенно улучшаются.</p>
+
+        <div class="parent-category-panels">
+          <div class="parent-category-panel parent-panel-standard-all">
+              <p class="section-kicker">В анализ включены старты: D+C, EADC</p>
+            <div class="story-grid">
+              <div class="story-card">
+                <h4>Что получается лучше всего</h4>
+                <p>Сильная сторона программы сейчас — медленный вальс. В этом танце чаще всего достигаются лучшие результаты.</p>
+              </div>
+              <div class="story-card">
+                <h4>Что требует внимания</h4>
+                <p>Сейчас больше всего внимания стоит уделить венскому вальсу. Здесь результат пока менее устойчив, чем в остальных танцах программы.</p>
+              </div>
+            </div>
+            <div class="story-card">
+              <h4>Динамика</h4>
+              <p>В последних турнирах заметен прогресс в танго.</p>
+            </div>
+            <div class="parent-conclusion">
+              <h2>Общий вывод</h2>
+                <p>Стандартная программа: лучше всего сейчас получается медленный вальс, а главный фокус развития — венский вальс. В динамике тоже есть положительный сигнал.</p>
+            </div>
+          </div>
+          <div class="parent-category-panel parent-panel-standard-eadc">
+              <p class="section-kicker">В анализ включены старты: D+C, EADC</p>
+            <div class="story-grid">
+              <div class="story-card">
+                <h4>Что получается лучше всего</h4>
+                <p>Сильная сторона программы сейчас — медленный вальс. В этом танце чаще всего достигаются лучшие результаты.</p>
+              </div>
+              <div class="story-card">
+                <h4>Что требует внимания</h4>
+                <p>Сейчас больше всего внимания стоит уделить венскому вальсу. Здесь результат пока менее устойчив, чем в остальных танцах программы.</p>
+              </div>
+            </div>
+            <div class="story-card">
+              <h4>Динамика</h4>
+              <p>В последних турнирах заметен прогресс в танго.</p>
+            </div>
+            <div class="parent-conclusion">
+              <h2>Общий вывод</h2>
+                <p>Стандартная программа: лучше всего сейчас получается медленный вальс, а главный фокус развития — венский вальс. В динамике тоже есть положительный сигнал.</p>
+            </div>
+          </div>
         </div>
       </div>
       <div class="program-story">
         <h3 class="program-heading">Латина</h3>
-        <div class="story-grid">
-          <div class="story-card">
-            <h4>Что получается лучше всего</h4>
-            <p>В латинской программе уже есть первые результаты, но основных наблюдений пока меньше рабочего порога.</p>
-          </div>
-          <div class="story-card">
-            <h4>Что требует внимания</h4>
-            <p>Выводы лучше читать как предварительные: отдельные турниры могут заметно менять картину.</p>
+          <input class="category-input" type="radio" name="parent-cat-latin" id="parent-cat-latin-all" checked>
+          <input class="category-input" type="radio" name="parent-cat-latin" id="parent-cat-latin-eadc" >
+        <div class="category-chip-groups">
+          <div class="category-chip-group">
+            <div class="category-group-title">Категории для родителя</div>
+            <div class="category-tabs category-tabs-primary">
+                <label class="category-tab" for="parent-cat-latin-all">Все категории</label>
+                <label class="category-tab" for="parent-cat-latin-eadc">EADC</label>
+            </div>
           </div>
         </div>
-        <div class="story-card">
-          <h4>Динамика</h4>
-          <p>Для уверенного вывода по динамике пока мало наблюдений.</p>
-            <p class="muted">Отдельные танцы пока имеют ограниченную выборку и не влияют на основной вывод.</p>
-        </div>
-        <div class="parent-conclusion">
-          <h2>Общий вывод</h2>
-            <p>В латинской программе уже есть первые результаты, но основных наблюдений пока меньше рабочего порога.</p>
-            <p>Выводы лучше читать как предварительные: отдельные турниры могут заметно менять картину.</p>
-            <p>Для уверенного вывода по динамике пока мало наблюдений.</p>
-            <p>Танцы с ограниченной выборкой: Ча-ча-ча (5 протоколов), Джайв (5 протоколов), Пасодобль (5 протоколов), Румба (5 протоколов), Самба (5 протоколов).</p>
+
+        <div class="parent-category-panels">
+          <div class="parent-category-panel parent-panel-latin-all">
+              <p class="section-kicker">В анализ включены старты: D+C, EADC</p>
+            <div class="story-grid">
+              <div class="story-card">
+                <h4>Что получается лучше всего</h4>
+                <p>По латинской программе пока есть только первые наблюдения, поэтому сильные стороны лучше оценивать осторожно.</p>
+              </div>
+              <div class="story-card">
+                <h4>Что требует внимания</h4>
+                <p>Основной фокус развития пока лучше определять по ближайшим турнирам: выборка ещё небольшая.</p>
+              </div>
+            </div>
+            <div class="story-card">
+              <h4>Динамика</h4>
+              <p>Для уверенного вывода по динамике пока мало наблюдений.</p>
+                <p class="muted">Для некоторых танцев пока недостаточно данных для устойчивых выводов.</p>
+            </div>
+            <div class="parent-conclusion">
+              <h2>Общий вывод</h2>
+                <p>По латинской программе пока рано делать устойчивый вывод.</p>
+                <p>Данные можно использовать как ориентир, но основная картина станет понятнее после нескольких следующих выступлений.</p>
+                <p>Для некоторых танцев пока недостаточно данных для устойчивых выводов.</p>
+            </div>
+          </div>
+          <div class="parent-category-panel parent-panel-latin-eadc">
+              <p class="section-kicker">В анализ включены старты: D+C, EADC</p>
+            <div class="story-grid">
+              <div class="story-card">
+                <h4>Что получается лучше всего</h4>
+                <p>По латинской программе пока есть только первые наблюдения, поэтому сильные стороны лучше оценивать осторожно.</p>
+              </div>
+              <div class="story-card">
+                <h4>Что требует внимания</h4>
+                <p>Основной фокус развития пока лучше определять по ближайшим турнирам: выборка ещё небольшая.</p>
+              </div>
+            </div>
+            <div class="story-card">
+              <h4>Динамика</h4>
+              <p>Для уверенного вывода по динамике пока мало наблюдений.</p>
+                <p class="muted">Для некоторых танцев пока недостаточно данных для устойчивых выводов.</p>
+            </div>
+            <div class="parent-conclusion">
+              <h2>Общий вывод</h2>
+                <p>По латинской программе пока рано делать устойчивый вывод.</p>
+                <p>Данные можно использовать как ориентир, но основная картина станет понятнее после нескольких следующих выступлений.</p>
+                <p>Для некоторых танцев пока недостаточно данных для устойчивых выводов.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -726,28 +984,28 @@
     <section class="section">
       <h2>Последние турниры</h2>
       <div class="plain-list">
-          <li>
+          <li class="filterable-tournament" data-city="Санкт-Петербург" data-date="2025-09-28">
             <span>
               <strong>2025-09-28</strong> · Северный кубок 2025 (Санкт-Петербург)
                 <span class="muted">· W, T, V, F, Q, S, Ch, R, P, J</span>
             </span>
             <span class="muted">4 выступления</span>
           </li>
-          <li>
+          <li class="filterable-tournament" data-city="Санкт-Петербург" data-date="2026-03-01">
             <span>
               <strong>2026-03-01</strong> · Танцевальное Свидание 2026 - Dance Date Cup (Санкт-Петербург)
                 <span class="muted">· W, T, V, F, Q, S, Ch, R, P, J</span>
             </span>
             <span class="muted">3 выступления</span>
           </li>
-          <li>
+          <li class="filterable-tournament" data-city="Санкт-Петербург" data-date="2026-03-08">
             <span>
               <strong>2026-03-08</strong> · Амбассадор 2026 (Санкт-Петербург)
                 <span class="muted">· W, T, V, F, Q, S, Ch, R, P, J</span>
             </span>
             <span class="muted">4 выступления</span>
           </li>
-          <li>
+          <li class="filterable-tournament" data-city="Санкт-Петербург" data-date="2026-04-26">
             <span>
               <strong>2026-04-26</strong> · Карнавал 2026 (Санкт-Петербург)
                 <span class="muted">· W, T, V, F, Q, S, Ch, R, P, J</span>
@@ -767,10 +1025,15 @@
         <input class="category-input" type="radio" name="cat-standard" id="cat-standard-all" checked>
         <input class="category-input" type="radio" name="cat-standard" id="cat-standard-d_c" >
         <input class="category-input" type="radio" name="cat-standard" id="cat-standard-eadc" >
-      <div class="category-tabs">
-          <label class="category-tab" for="cat-standard-all">Все категории</label>
-          <label class="category-tab" for="cat-standard-d_c">D+C</label>
-          <label class="category-tab" for="cat-standard-eadc">EADC</label>
+      <div class="category-chip-groups">
+        <div class="category-chip-group">
+          <div class="category-group-title">Основные категории</div>
+          <div class="category-tabs category-tabs-primary">
+              <label class="category-tab" for="cat-standard-all">Все категории</label>
+              <label class="category-tab" for="cat-standard-d_c">D+C</label>
+              <label class="category-tab" for="cat-standard-eadc">EADC</label>
+          </div>
+        </div>
       </div>
 
       <div class="category-panels">
@@ -778,7 +1041,7 @@
 
           <div class="three-column">
             <div class="insight-card">
-              <h3>Лучше по среднему месту</h3>
+              <h3>Лучший танец</h3>
               <ul class="plain-list">
                   <li><strong>Медленный вальс</strong><span class="muted">4.083</span></li>
               </ul>
@@ -787,8 +1050,6 @@
               <h3>Требуют внимания</h3>
               <ul class="plain-list">
                   <li><strong>Венский вальс</strong><span class="muted">5.500</span></li>
-                  <li><strong>Фокстрот</strong><span class="muted">5.167</span></li>
-                  <li><strong>Квикстеп</strong><span class="muted">5.000</span></li>
               </ul>
             </div>
             <div class="insight-card">
@@ -819,7 +1080,7 @@
             </div>
           </div>
 
-          <div class="three-column" style="margin-top:12px">
+          <div class="three-column">
             <div class="insight-card">
               <h3>Улучшается</h3>
                 <ul class="plain-list"><li><strong>Медленный вальс</strong><span class="muted">6.000 → 3.000</span></li><li><strong>Танго</strong><span class="muted">6.000 → 4.000</span></li></ul>
@@ -833,7 +1094,7 @@
             </div>
           </div>
 
-          <h3 style="margin-top:18px">Танцы</h3>
+          <h3 class="dance-table-heading">Танцы</h3>
           <p class="section-kicker">Стабильность показывает, насколько сильно меняется итоговое место танца от турнира к турниру. Чем меньше колебания, тем выше стабильность.</p>
           <div class="table-wrap">
             <table>
@@ -893,8 +1154,11 @@
 
           <div class="three-column">
             <div class="insight-card">
-              <h3>Лучше по среднему месту</h3>
-<p class="muted">Ограниченная выборка.</p>            </div>
+              <h3>Лучший танец</h3>
+              <ul class="plain-list">
+                  <li><strong>Медленный вальс</strong><span class="muted">4.000</span></li>
+              </ul>
+            </div>
             <div class="insight-card">
               <h3>Требуют внимания</h3>
 <p class="muted">Ограниченная выборка.</p>            </div>
@@ -903,7 +1167,7 @@
 <p class="muted">Ограниченная выборка.</p>            </div>
           </div>
 
-          <div class="three-column" style="margin-top:12px">
+          <div class="three-column">
             <div class="insight-card">
               <h3>Улучшается</h3>
 <p class="muted">Для уверенного вывода пока мало наблюдений.</p>            </div>
@@ -915,7 +1179,7 @@
 <p class="muted">Для уверенного вывода пока мало наблюдений.</p>            </div>
           </div>
 
-          <h3 style="margin-top:18px">Танцы</h3>
+          <h3 class="dance-table-heading">Танцы</h3>
           <p class="section-kicker">Стабильность показывает, насколько сильно меняется итоговое место танца от турнира к турниру. Чем меньше колебания, тем выше стабильность.</p>
           <div class="table-wrap">
             <table>
@@ -972,12 +1236,14 @@
 
         </div>
         <div class="category-panel panel-standard-eadc">
-            <div class="note-box">Ограниченная выборка: 2 протокола в этом срезе.</div>
 
           <div class="three-column">
             <div class="insight-card">
-              <h3>Лучше по среднему месту</h3>
-<p class="muted">Ограниченная выборка.</p>            </div>
+              <h3>Лучший танец</h3>
+              <ul class="plain-list">
+                  <li><strong>Танго</strong><span class="muted">3.500</span></li>
+              </ul>
+            </div>
             <div class="insight-card">
               <h3>Требуют внимания</h3>
 <p class="muted">Ограниченная выборка.</p>            </div>
@@ -986,7 +1252,7 @@
 <p class="muted">Ограниченная выборка.</p>            </div>
           </div>
 
-          <div class="three-column" style="margin-top:12px">
+          <div class="three-column">
             <div class="insight-card">
               <h3>Улучшается</h3>
 <p class="muted">Для уверенного вывода пока мало наблюдений.</p>            </div>
@@ -998,7 +1264,7 @@
 <p class="muted">Для уверенного вывода пока мало наблюдений.</p>            </div>
           </div>
 
-          <h3 style="margin-top:18px">Танцы</h3>
+          <h3 class="dance-table-heading">Танцы</h3>
           <p class="section-kicker">Стабильность показывает, насколько сильно меняется итоговое место танца от турнира к турниру. Чем меньше колебания, тем выше стабильность.</p>
           <div class="table-wrap">
             <table>
@@ -1064,10 +1330,15 @@
         <input class="category-input" type="radio" name="cat-latin" id="cat-latin-all" checked>
         <input class="category-input" type="radio" name="cat-latin" id="cat-latin-d_c" >
         <input class="category-input" type="radio" name="cat-latin" id="cat-latin-eadc" >
-      <div class="category-tabs">
-          <label class="category-tab" for="cat-latin-all">Все категории</label>
-          <label class="category-tab" for="cat-latin-d_c">D+C</label>
-          <label class="category-tab" for="cat-latin-eadc">EADC</label>
+      <div class="category-chip-groups">
+        <div class="category-chip-group">
+          <div class="category-group-title">Основные категории</div>
+          <div class="category-tabs category-tabs-primary">
+              <label class="category-tab" for="cat-latin-all">Все категории</label>
+              <label class="category-tab" for="cat-latin-d_c">D+C</label>
+              <label class="category-tab" for="cat-latin-eadc">EADC</label>
+          </div>
+        </div>
       </div>
 
       <div class="category-panels">
@@ -1075,8 +1346,13 @@
 
           <div class="three-column">
             <div class="insight-card">
-              <h3>Лучше по среднему месту</h3>
-<p class="muted">Ограниченная выборка.</p>            </div>
+              <h3>Лучшие танцы</h3>
+              <ul class="plain-list">
+                  <li><strong>Самба</strong><span class="muted">4.600</span></li>
+                  <li><strong>Ча-ча-ча</strong><span class="muted">4.600</span></li>
+                  <li><strong>Джайв</strong><span class="muted">4.600</span></li>
+              </ul>
+            </div>
             <div class="insight-card">
               <h3>Требуют внимания</h3>
 <p class="muted">Ограниченная выборка.</p>            </div>
@@ -1085,7 +1361,7 @@
 <p class="muted">Ограниченная выборка.</p>            </div>
           </div>
 
-          <div class="three-column" style="margin-top:12px">
+          <div class="three-column">
             <div class="insight-card">
               <h3>Улучшается</h3>
 <p class="muted">Для уверенного вывода пока мало наблюдений.</p>            </div>
@@ -1097,7 +1373,7 @@
 <p class="muted">Для уверенного вывода пока мало наблюдений.</p>            </div>
           </div>
 
-          <h3 style="margin-top:18px">Танцы</h3>
+          <h3 class="dance-table-heading">Танцы</h3>
           <p class="section-kicker">Стабильность показывает, насколько сильно меняется итоговое место танца от турнира к турниру. Чем меньше колебания, тем выше стабильность.</p>
           <div class="table-wrap">
             <table>
@@ -1157,8 +1433,13 @@
 
           <div class="three-column">
             <div class="insight-card">
-              <h3>Лучше по среднему месту</h3>
-<p class="muted">Ограниченная выборка.</p>            </div>
+              <h3>Лучшие танцы</h3>
+              <ul class="plain-list">
+                  <li><strong>Самба</strong><span class="muted">4.250</span></li>
+                  <li><strong>Ча-ча-ча</strong><span class="muted">4.250</span></li>
+                  <li><strong>Джайв</strong><span class="muted">4.250</span></li>
+              </ul>
+            </div>
             <div class="insight-card">
               <h3>Требуют внимания</h3>
 <p class="muted">Ограниченная выборка.</p>            </div>
@@ -1167,7 +1448,7 @@
 <p class="muted">Ограниченная выборка.</p>            </div>
           </div>
 
-          <div class="three-column" style="margin-top:12px">
+          <div class="three-column">
             <div class="insight-card">
               <h3>Улучшается</h3>
 <p class="muted">Для уверенного вывода пока мало наблюдений.</p>            </div>
@@ -1179,7 +1460,7 @@
 <p class="muted">Для уверенного вывода пока мало наблюдений.</p>            </div>
           </div>
 
-          <h3 style="margin-top:18px">Танцы</h3>
+          <h3 class="dance-table-heading">Танцы</h3>
           <p class="section-kicker">Стабильность показывает, насколько сильно меняется итоговое место танца от турнира к турниру. Чем меньше колебания, тем выше стабильность.</p>
           <div class="table-wrap">
             <table>
@@ -1236,21 +1517,18 @@
 
         </div>
         <div class="category-panel panel-latin-eadc">
-            <div class="note-box">Ограниченная выборка: 1 протокол в этом срезе.</div>
 
           <div class="three-column">
             <div class="insight-card">
-              <h3>Лучше по среднему месту</h3>
-<p class="muted">Ограниченная выборка.</p>            </div>
-            <div class="insight-card">
-              <h3>Требуют внимания</h3>
-<p class="muted">Ограниченная выборка.</p>            </div>
+              <h3>Сравнение танцев</h3>
+              <p>Танцы показали одинаковый результат: Самба, Ча-ча-ча, Румба, Пасодобль, Джайв — место 6.000.</p>
+            </div>
             <div class="insight-card">
               <h3>Наиболее стабильные</h3>
 <p class="muted">Ограниченная выборка.</p>            </div>
           </div>
 
-          <div class="three-column" style="margin-top:12px">
+          <div class="three-column">
             <div class="insight-card">
               <h3>Улучшается</h3>
 <p class="muted">Для уверенного вывода пока мало наблюдений.</p>            </div>
@@ -1262,7 +1540,7 @@
 <p class="muted">Для уверенного вывода пока мало наблюдений.</p>            </div>
           </div>
 
-          <h3 style="margin-top:18px">Танцы</h3>
+          <h3 class="dance-table-heading">Танцы</h3>
           <p class="section-kicker">Стабильность показывает, насколько сильно меняется итоговое место танца от турнира к турниру. Чем меньше колебания, тем выше стабильность.</p>
           <div class="table-wrap">
             <table>
@@ -1377,27 +1655,27 @@
         <div class="insight-card">
           <h3>Лучшие турниры</h3>
           <ul class="plain-list">
-              <li><span><strong>2025-09-28</strong> · Северный кубок 2025 (Санкт-Петербург)</span><span class="muted">4.600</span></li>
-              <li><span><strong>2026-03-08</strong> · Амбассадор 2026 (Санкт-Петербург)</span><span class="muted">4.625</span></li>
+              <li class="filterable-tournament" data-city="Санкт-Петербург" data-date="2025-09-28"><span><strong>2025-09-28</strong> · Северный кубок 2025 (Санкт-Петербург)</span><span class="muted">4.600</span></li>
+              <li class="filterable-tournament" data-city="Санкт-Петербург" data-date="2026-03-08"><span><strong>2026-03-08</strong> · Амбассадор 2026 (Санкт-Петербург)</span><span class="muted">4.625</span></li>
           </ul>
         </div>
         <div class="insight-card">
           <h3>Наиболее сложные турниры</h3>
           <ul class="plain-list">
-              <li><span><strong>2026-04-26</strong> · Карнавал 2026 (Санкт-Петербург)</span><span class="muted">5.200</span></li>
-              <li><span><strong>2026-03-01</strong> · Танцевальное Свидание 2026 - Dance Date Cup (Санкт-Петербург)</span><span class="muted">4.850</span></li>
+              <li class="filterable-tournament" data-city="Санкт-Петербург" data-date="2026-04-26"><span><strong>2026-04-26</strong> · Карнавал 2026 (Санкт-Петербург)</span><span class="muted">5.200</span></li>
+              <li class="filterable-tournament" data-city="Санкт-Петербург" data-date="2026-03-01"><span><strong>2026-03-01</strong> · Танцевальное Свидание 2026 - Dance Date Cup (Санкт-Петербург)</span><span class="muted">4.850</span></li>
           </ul>
         </div>
       </div>
       <h3 style="margin-top:18px">Полный список турниров</h3>
       <div class="tournament-list">
-        <details>
+        <details class="filterable-tournament" data-city="Санкт-Петербург" data-date="2025-09-28">
           <summary>
             <div class="tournament-summary">
               <div>
                 <div class="label">Дата</div>
                 <div class="summary-title">2025-09-28</div>
-              </div>
+<div class="summary-meta">Санкт-Петербург</div>              </div>
               <div>
                 <div class="label">Турнир</div>
                 <div class="summary-title">Северный кубок 2025 (Санкт-Петербург)</div>
@@ -1500,13 +1778,13 @@
             </table>
           </div>
         </details>
-        <details>
+        <details class="filterable-tournament" data-city="Санкт-Петербург" data-date="2026-03-01">
           <summary>
             <div class="tournament-summary">
               <div>
                 <div class="label">Дата</div>
                 <div class="summary-title">2026-03-01</div>
-              </div>
+<div class="summary-meta">Санкт-Петербург</div>              </div>
               <div>
                 <div class="label">Турнир</div>
                 <div class="summary-title">Танцевальное Свидание 2026 - Dance Date Cup (Санкт-Петербург)</div>
@@ -1640,13 +1918,13 @@
             </table>
           </div>
         </details>
-        <details>
+        <details class="filterable-tournament" data-city="Санкт-Петербург" data-date="2026-03-08">
           <summary>
             <div class="tournament-summary">
               <div>
                 <div class="label">Дата</div>
                 <div class="summary-title">2026-03-08</div>
-              </div>
+<div class="summary-meta">Санкт-Петербург</div>              </div>
               <div>
                 <div class="label">Турнир</div>
                 <div class="summary-title">Амбассадор 2026 (Санкт-Петербург)</div>
@@ -1810,13 +2088,13 @@
             </table>
           </div>
         </details>
-        <details>
+        <details class="filterable-tournament" data-city="Санкт-Петербург" data-date="2026-04-26">
           <summary>
             <div class="tournament-summary">
               <div>
                 <div class="label">Дата</div>
                 <div class="summary-title">2026-04-26</div>
-              </div>
+<div class="summary-meta">Санкт-Петербург</div>              </div>
               <div>
                 <div class="label">Турнир</div>
                 <div class="summary-title">Карнавал 2026 (Санкт-Петербург)</div>
@@ -1925,5 +2203,42 @@
 
   </section>
 </main>
+<script>
+  (function () {
+    var cityInputs = Array.prototype.slice.call(document.querySelectorAll(".report-filter-city"));
+    var dateFrom = document.getElementById("report-filter-date-from");
+    var dateTo = document.getElementById("report-filter-date-to");
+    var items = Array.prototype.slice.call(document.querySelectorAll(".filterable-tournament"));
+
+    function selectedCities() {
+      return cityInputs.filter(function (input) { return input.checked; }).map(function (input) { return input.value; });
+    }
+
+    function inDateRange(value, from, to) {
+      if (!value) return true;
+      if (from && value < from) return false;
+      if (to && value > to) return false;
+      return true;
+    }
+
+    function applyFilters() {
+      var cities = selectedCities();
+      var from = dateFrom ? dateFrom.value : "";
+      var to = dateTo ? dateTo.value : "";
+      items.forEach(function (item) {
+        var city = item.getAttribute("data-city") || "";
+        var date = item.getAttribute("data-date") || "";
+        var cityOk = !city || cities.indexOf(city) !== -1;
+        var dateOk = inDateRange(date, from, to);
+        item.hidden = !(cityOk && dateOk);
+      });
+    }
+
+    cityInputs.forEach(function (input) { input.addEventListener("change", applyFilters); });
+    if (dateFrom) dateFrom.addEventListener("change", applyFilters);
+    if (dateTo) dateTo.addEventListener("change", applyFilters);
+    applyFilters();
+  }());
+</script>
 </body>
 </html>

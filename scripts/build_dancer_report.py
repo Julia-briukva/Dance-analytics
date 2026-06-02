@@ -41,10 +41,22 @@ PROJECT_ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_REPORTS_DIR = PROJECT_ROOT / "reports"
 ANALYTICS_VERSION = "report_layer_v1"
 JUDGE_REPORT_MIN_MARKS = 10
+VISIBLE_CATEGORY_MIN_MARKS = 20
 CATEGORY_SLICE_LABELS = {"all": "Все категории"}
 CLASS_GROUP_ORDER = ["N", "N+E", "E", "E+D", "D", "D+C", "C", "C+B", "B", "A", "S", "M", "EADC", "Open"]
 CLASS_GROUP_KEYS = {label: label.lower().replace("+", "_") for label in CLASS_GROUP_ORDER}
 CLASS_GROUP_LABELS = {key: label for label, key in CLASS_GROUP_KEYS.items()}
+PARENT_CATEGORY_GROUPS = {
+    "n_e": ["n_e", "n"],
+    "e_d": ["e_d", "d"],
+    "eadc": ["eadc", "d_c"],
+}
+PARENT_CATEGORY_GROUP_LABELS = {
+    "all": "Все категории",
+    "n_e": "N+E",
+    "e_d": "E+D",
+    "eadc": "EADC",
+}
 AGE_GROUP_PATTERNS = [
     r"Дети-\d(?:\+\d)?",
     r"Ювеналы-\d(?:\+\d)?",
@@ -121,6 +133,7 @@ def build_tournament_payload(marks: pd.DataFrame, dance_results: pd.DataFrame | 
                 "event_date",
                 "tournament_id",
                 "tournament_title",
+                "tournament_city",
                 "protocol_id",
                 "category",
                 "program",
@@ -130,9 +143,11 @@ def build_tournament_payload(marks: pd.DataFrame, dance_results: pd.DataFrame | 
         .drop_duplicates()
         .sort_values(["event_date", "protocol_id"])
     )
+    tournaments = tournaments.rename(columns={"tournament_city": "city"})
     by_tournament = (
         tournaments.groupby(["event_date", "tournament_id", "tournament_title"], dropna=False)
         .agg(
+            city=("city", lambda items: next((str(item) for item in items if pd.notna(item) and str(item).strip()), "")),
             protocols=("protocol_id", "nunique"),
             categories=("category", lambda items: sorted(set(str(item) for item in items if pd.notna(item)))),
             programs=("program", lambda items: sorted(set(str(item) for item in items if pd.notna(item)))),
@@ -189,12 +204,32 @@ def build_tournament_payload(marks: pd.DataFrame, dance_results: pd.DataFrame | 
     else:
         by_tournament["tournament_rank"] = None
         by_tournament["rank_direction"] = ""
+    by_tournament["date"] = by_tournament["event_date"]
+    tournaments["date"] = tournaments["event_date"]
     return {
         "count": int(marks["tournament_id"].nunique()),
         "protocol_count": int(marks["protocol_id"].nunique()),
         "items": df_records(by_tournament),
         "protocols": df_records(tournaments),
     }
+
+
+def add_tournament_city_to_results(dance_results: pd.DataFrame, marks: pd.DataFrame) -> pd.DataFrame:
+    if dance_results.empty or marks.empty or "tournament_city" not in marks.columns:
+        return dance_results
+    city_map = (
+        marks[["event_date", "tournament_id", "tournament_title", "protocol_id", "tournament_city"]]
+        .dropna(subset=["tournament_city"])
+        .drop_duplicates(["event_date", "tournament_id", "tournament_title", "protocol_id"])
+    )
+    if city_map.empty:
+        return dance_results
+    result = dance_results.copy()
+    merge_keys = ["event_date", "tournament_id", "tournament_title", "protocol_id"]
+    result = result.merge(city_map, on=merge_keys, how="left")
+    result["city"] = result["tournament_city"]
+    result = result.drop(columns=["tournament_city"])
+    return result
 
 
 def safe_trend_ranking(dynamics: pd.DataFrame) -> pd.DataFrame:
@@ -290,6 +325,12 @@ def program_payload(program: str, summary: pd.DataFrame, trends: pd.DataFrame) -
     if program_summary.empty:
         return {
             "metrics": [],
+            "display_mode": "insufficient_data",
+            "best_dances": [],
+            "worst_dances": [],
+            "evaluated_dance": None,
+            "tied_dances": [],
+            "tied_metric_value": None,
             "best_by_final_average": None,
             "best_by_median": None,
             "most_stable_dance": None,
@@ -301,8 +342,10 @@ def program_payload(program: str, summary: pd.DataFrame, trends: pd.DataFrame) -
             "most_improved_dance": None,
         }
     tables = ranking_tables(program_summary, program_trends)
+    comparison = dance_comparison_payload(program_summary)
     return {
         "metrics": df_records(program_summary),
+        **comparison,
         "best_by_final_average": first_record(tables["best_by_final_average"]),
         "best_by_median": first_record(tables["best_by_median"]),
         "most_stable_dance": first_record(tables["most_stable"]),
@@ -313,6 +356,138 @@ def program_payload(program: str, summary: pd.DataFrame, trends: pd.DataFrame) -
         "weakest_dance": first_record(tables["worst_by_final_average"]),
         "most_improved_dance": first_record(tables["improvement"]),
     }
+
+
+def dance_comparison_record(row: pd.Series) -> dict[str, Any]:
+    value = row.get("final_avg_place")
+    return {
+        "dance": clean_value(row.get("dance")),
+        "dance_code": clean_value(normalize_dance_code(row.get("dance"))),
+        "metric_value": clean_value(round(float(value), 3)) if pd.notna(value) else None,
+        "metric_type": "final_avg_place",
+        "metric_label": "среднее место",
+        "final_avg_place": clean_value(round(float(value), 3)) if pd.notna(value) else None,
+    }
+
+
+def dance_comparison_payload(summary: pd.DataFrame, value_column: str = "final_avg_place") -> dict[str, Any]:
+    if summary.empty or value_column not in summary.columns:
+        return {
+            "display_mode": "insufficient_data",
+            "best_dances": [],
+            "worst_dances": [],
+            "evaluated_dance": None,
+            "tied_dances": [],
+            "tied_metric_value": None,
+            "best_dance": None,
+            "worst_dance": None,
+        }
+    metrics = summary.dropna(subset=[value_column]).copy()
+    if metrics.empty:
+        return {
+            "display_mode": "insufficient_data",
+            "best_dances": [],
+            "worst_dances": [],
+            "evaluated_dance": None,
+            "tied_dances": [],
+            "tied_metric_value": None,
+            "best_dance": None,
+            "worst_dance": None,
+        }
+    metrics["dance_code"] = metrics["dance"].map(normalize_dance_code)
+    metrics["_dance_order"] = metrics["dance_code"].map(lambda code: DANCE_CODE_ORDER.get(code, 999))
+    metrics = metrics.sort_values(["_dance_order", "dance_code"])
+    values = [float(item) for item in metrics[value_column].tolist()]
+
+    if len(metrics) == 1:
+        record = dance_comparison_record(metrics.iloc[0])
+        return {
+            "display_mode": "single_dance",
+            "best_dances": [],
+            "worst_dances": [],
+            "evaluated_dance": record,
+            "tied_dances": [],
+            "tied_metric_value": None,
+            "best_dance": record,
+            "worst_dance": None,
+        }
+
+    best_value = min(values)
+    worst_value = max(values)
+    if abs(best_value - worst_value) < 0.001:
+        records = [dance_comparison_record(row) for _, row in metrics.iterrows()]
+        return {
+            "display_mode": "all_equal",
+            "best_dances": [],
+            "worst_dances": [],
+            "evaluated_dance": None,
+            "tied_dances": records,
+            "tied_metric_value": clean_value(round(float(best_value), 3)),
+            "best_dance": None,
+            "worst_dance": None,
+        }
+
+    best_rows = metrics[(metrics[value_column] - best_value).abs() < 0.001]
+    worst_rows = metrics[(metrics[value_column] - worst_value).abs() < 0.001]
+    best_records = [dance_comparison_record(row) for _, row in best_rows.iterrows()]
+    worst_records = [dance_comparison_record(row) for _, row in worst_rows.iterrows()]
+    return {
+        "display_mode": "best_worst",
+        "best_dances": best_records,
+        "worst_dances": worst_records,
+        "evaluated_dance": None,
+        "tied_dances": [],
+        "tied_metric_value": None,
+        "best_dance": best_records[0] if best_records else None,
+        "worst_dance": worst_records[0] if worst_records else None,
+    }
+
+
+def marks_derived_dance_metrics(mark_rows: pd.DataFrame) -> list[dict[str, Any]]:
+    if mark_rows.empty or "dance" not in mark_rows.columns:
+        return []
+    rows = mark_rows.dropna(subset=["dance"]).copy()
+    if rows.empty:
+        return []
+    grouped = (
+        rows.groupby(["program", "dance"], dropna=False, as_index=False)
+        .agg(
+            marks_count=("mark_id", "count"),
+            protocols_count=("protocol_id", "nunique"),
+            tournaments_count=("tournament_id", "nunique"),
+            cross_marks=("mark_type", lambda items: int(sum(str(item) == "cross" for item in items))),
+            numeric_marks=("mark_type", lambda items: int(sum(str(item) == "numeric_place" for item in items))),
+        )
+    )
+    grouped["dance_code"] = grouped["dance"].map(normalize_dance_code)
+    grouped["_dance_order"] = grouped["dance_code"].map(lambda code: DANCE_CODE_ORDER.get(code, 999))
+    grouped = grouped.sort_values(["_dance_order", "dance_code"]).drop(columns=["_dance_order"])
+    return df_records(grouped)
+
+
+def category_chip_visibility(
+    marks_count: int,
+    results_count: int,
+    dance_metrics_count: int,
+    tournaments_count: int,
+    trainer_summaries_count: int,
+    trend_items_count: int,
+    marks_derived_metrics_count: int,
+) -> tuple[bool, str, str]:
+    has_participation = marks_count > 0 or results_count > 0
+    if not has_participation:
+        return False, "hidden", "hidden: no selected dancer marks or results"
+    if dance_metrics_count > 0:
+        return True, "primary", "primary: dance metrics available"
+    if results_count > 0:
+        return True, "primary", "primary: dance results available"
+    if trend_items_count > 0:
+        return True, "primary", "primary: trend items available"
+    if marks_derived_metrics_count > 0:
+        if marks_count >= VISIBLE_CATEGORY_MIN_MARKS:
+            return True, "primary", "primary: marks-derived dance analysis available"
+        return True, "limited", f"limited: {marks_count} marks, marks-derived reference only"
+    return True, "limited", "limited: participation is confirmed but analytical blocks are sparse"
 
 
 def build_category_slices(numeric: pd.DataFrame, dance_results: pd.DataFrame, marks: pd.DataFrame) -> dict[str, dict[str, Any]]:
@@ -372,6 +547,51 @@ def build_category_slices(numeric: pd.DataFrame, dance_results: pd.DataFrame, ma
                 slice_dynamics = dynamics_by_date(slice_results)
                 slice_trends = safe_trend_ranking(slice_dynamics)
                 program_data = program_payload(program, slice_summary, slice_trends)
+            slice_tournament_results = build_tournament_dance_results(slice_results)
+            marks_derived_metrics = marks_derived_dance_metrics(slice_marks)
+            marks_count = int(len(slice_marks))
+            results_count = int(len(slice_results))
+            dance_metrics_count = int(len(program_data.get("metrics") or []))
+            protocols_count = int(
+                len(
+                    set(
+                        [
+                            *([] if slice_marks.empty else slice_marks["protocol_id"].dropna().tolist()),
+                            *([] if slice_results.empty else slice_results["protocol_id"].dropna().tolist()),
+                        ]
+                    )
+                )
+            )
+            tournaments_count = int(
+                len(
+                    set(
+                        [
+                            *([] if slice_marks.empty else slice_marks["tournament_id"].dropna().tolist()),
+                            *([] if slice_results.empty else slice_results["tournament_id"].dropna().tolist()),
+                        ]
+                    )
+                )
+            )
+            trainer_summaries_count = (
+                int(
+                    slice_marks.dropna(subset=["dance"])
+                    .groupby(["event_date", "tournament_id", "tournament_title"], dropna=False)
+                    .size()
+                    .shape[0]
+                )
+                if not slice_marks.empty
+                else 0
+            )
+            trend_items_count = int(len(slice_trends))
+            is_visible_chip, visibility_status, visibility_reason = category_chip_visibility(
+                marks_count,
+                results_count,
+                dance_metrics_count,
+                tournaments_count,
+                trainer_summaries_count,
+                trend_items_count,
+                len(marks_derived_metrics),
+            )
 
             program_data.update(
                 {
@@ -381,37 +601,154 @@ def build_category_slices(numeric: pd.DataFrame, dance_results: pd.DataFrame, ma
                     "class_group": None if slice_key == "all" else label,
                     "age_groups": sorted(set(str(item) for item in slice_marks["age_group"].dropna())) if not slice_marks.empty and "age_group" in slice_marks.columns else [],
                     "source_categories": sorted(set(str(item) for item in slice_marks["category"].dropna())) if not slice_marks.empty else [],
-                    "protocol_count": int(slice_results["protocol_id"].nunique()) if not slice_results.empty else 0,
-                    "tournament_count": int(slice_results["tournament_id"].nunique()) if not slice_results.empty else 0,
+                    "protocol_count": protocols_count,
+                    "tournament_count": tournaments_count,
                     "evidence": {
                         "tournaments": int(slice_marks["tournament_id"].nunique()) if not slice_marks.empty else 0,
                         "protocols": int(slice_marks["protocol_id"].nunique()) if not slice_marks.empty else 0,
-                        "marks": int(len(slice_marks)),
-                        "results": int(len(slice_results)),
+                        "marks": marks_count,
+                        "results": results_count,
                     },
+                    "visibility": {
+                        "marks_count": marks_count,
+                        "results_count": results_count,
+                        "dance_metrics_count": dance_metrics_count,
+                        "protocols_count": protocols_count,
+                        "tournaments_count": tournaments_count,
+                        "trainer_summaries_count": trainer_summaries_count,
+                        "trend_items_count": trend_items_count,
+                        "marks_derived_metrics_count": len(marks_derived_metrics),
+                    },
+                    "marks_derived_dance_metrics": marks_derived_metrics,
+                    "is_visible_chip": is_visible_chip,
+                    "visibility_status": visibility_status,
+                    "visibility_reason": visibility_reason,
                     "dynamics_by_date": df_records(slice_dynamics),
                     "trends": df_records(slice_trends),
-                    "tournament_dance_results": df_records(build_tournament_dance_results(slice_results)),
+                    "tournament_dance_results": df_records(slice_tournament_results),
                 }
             )
             payload[program][slice_key] = program_data
     return payload
 
 
+def build_parent_category_groups(numeric: pd.DataFrame, dance_results: pd.DataFrame, marks: pd.DataFrame) -> dict[str, dict[str, Any]]:
+    numeric_with_slices = with_category_slice(numeric)
+    results_with_slices = with_category_slice(dance_results)
+    marks_with_slices = with_category_slice(marks)
+    payload: dict[str, dict[str, Any]] = {"standard": {}, "latin": {}}
+
+    def program_subset(df: pd.DataFrame, program: str) -> pd.DataFrame:
+        if df.empty or "program" not in df.columns:
+            return pd.DataFrame()
+        return df[df["program"] == program].copy()
+
+    def group_subset(df: pd.DataFrame, program: str, group_keys: list[str]) -> pd.DataFrame:
+        subset = program_subset(df, program)
+        if subset.empty or "category_slice" not in subset.columns:
+            return pd.DataFrame()
+        return subset[subset["category_slice"].isin(group_keys)].copy()
+
+    def present_labels(*frames: pd.DataFrame) -> list[str]:
+        present: set[str] = set()
+        for frame in frames:
+            if not frame.empty and "class_group" in frame.columns:
+                present.update(str(item) for item in frame["class_group"].dropna().tolist() if str(item))
+        ordered = []
+        for label in CLASS_GROUP_ORDER:
+            if label in present:
+                ordered.append(label)
+        return ordered
+
+    def build_payload_for_group(program: str, group_key: str, label: str, group_keys: list[str]) -> dict[str, Any] | None:
+        if group_key == "all":
+            group_numeric = program_subset(numeric_with_slices, program)
+            group_results = program_subset(results_with_slices, program)
+            group_marks = program_subset(marks_with_slices, program)
+        else:
+            group_numeric = group_subset(numeric_with_slices, program, group_keys)
+            group_results = group_subset(results_with_slices, program, group_keys)
+            group_marks = group_subset(marks_with_slices, program, group_keys)
+        if group_marks.empty and group_results.empty:
+            return None
+
+        if group_numeric.empty or group_results.empty:
+            group_summary = pd.DataFrame()
+            group_dynamics = pd.DataFrame()
+            group_trends = pd.DataFrame()
+            group_data = program_payload(program, group_summary, group_trends)
+        else:
+            group_summary = dance_summary(group_numeric, group_results)
+            group_dynamics = dynamics_by_date(group_results)
+            group_trends = safe_trend_ranking(group_dynamics)
+            group_data = program_payload(program, group_summary, group_trends)
+
+        marks_count = int(len(group_marks))
+        results_count = int(len(group_results))
+        protocol_ids = set()
+        tournament_ids = set()
+        for frame in [group_marks, group_results]:
+            if not frame.empty:
+                protocol_ids.update(frame["protocol_id"].dropna().tolist())
+                tournament_ids.update(frame["tournament_id"].dropna().tolist())
+        included_categories = present_labels(group_marks, group_results)
+        source_categories = sorted(
+            {
+                str(item)
+                for frame in [group_marks, group_results]
+                if not frame.empty and "category" in frame.columns
+                for item in frame["category"].dropna().tolist()
+            }
+        )
+        group_data.update(
+            {
+                "key": group_key,
+                "label": label,
+                "source": "parent_category_aggregation",
+                "included_categories": included_categories,
+                "source_categories": source_categories,
+                "protocol_count": int(len(protocol_ids)),
+                "tournament_count": int(len(tournament_ids)),
+                "evidence": {
+                    "tournaments": int(len(tournament_ids)),
+                    "protocols": int(len(protocol_ids)),
+                    "marks": marks_count,
+                    "results": results_count,
+                },
+                "dynamics_by_date": df_records(group_dynamics),
+                "trends": df_records(group_trends),
+            }
+        )
+        return group_data
+
+    for program in ["standard", "latin"]:
+        all_payload = build_payload_for_group(program, "all", "Все категории", [])
+        if all_payload:
+            payload[program]["all"] = all_payload
+        for group_key, group_keys in PARENT_CATEGORY_GROUPS.items():
+            group_payload = build_payload_for_group(program, group_key, PARENT_CATEGORY_GROUP_LABELS[group_key], group_keys)
+            if group_payload:
+                payload[program][group_key] = group_payload
+    return payload
+
+
 def build_tournament_dance_results(dance_results: pd.DataFrame) -> pd.DataFrame:
     if dance_results.empty:
         return pd.DataFrame()
+    group_columns = [
+        "event_date",
+        "tournament_id",
+        "tournament_title",
+        "protocol_id",
+        "category",
+        "program",
+        "dance",
+    ]
+    if "city" in dance_results.columns:
+        group_columns.insert(3, "city")
     result = (
         dance_results.groupby(
-            [
-                "event_date",
-                "tournament_id",
-                "tournament_title",
-                "protocol_id",
-                "category",
-                "program",
-                "dance",
-            ],
+            group_columns,
             dropna=False,
             as_index=False,
         )
@@ -428,6 +765,7 @@ def build_tournament_dance_results(dance_results: pd.DataFrame) -> pd.DataFrame:
     result["dance_code"] = result["dance"].map(normalize_dance_code)
     result["_dance_order"] = result["dance_code"].map(lambda code: DANCE_CODE_ORDER.get(code, 999))
     result = result.sort_values(["event_date", "protocol_id", "program", "_dance_order", "dance_code"]).drop(columns=["_dance_order"])
+    result["date"] = result["event_date"]
     return result
 
 
@@ -612,8 +950,10 @@ def build_trainer_mode_payload(tournament_dance_results: pd.DataFrame, marks: pd
         summaries.append(
             {
                 "event_date": clean_value(event_date),
+                "date": clean_value(event_date),
                 "tournament_id": clean_value(tournament_id),
                 "tournament_title": clean_value(tournament_title),
+                "city": clean_value(next((item for item in tournament_marks["tournament_city"].dropna().tolist() if str(item).strip()), "")) if "tournament_city" in tournament_marks.columns else "",
                 "categories": sorted(set(str(item) for item in tournament_marks["category"].dropna())),
                 "programs": sorted(set(str(item) for item in tournament_marks["program"].dropna())),
                 "protocols": int(tournament_marks["protocol_id"].nunique()),
@@ -715,6 +1055,7 @@ def build_report(conn: sqlite3.Connection, compreg_idd: str | int) -> dict[str, 
 
     numeric = selected_numeric_marks_by_internal_id(conn, identity.internal_dancer_id)
     dance_results = selected_dance_results_by_internal_id(conn, identity.internal_dancer_id)
+    dance_results = add_tournament_city_to_results(dance_results, marks)
     summary = dance_summary(numeric, dance_results)
     dynamics = dynamics_by_date(dance_results)
     trends = safe_trend_ranking(dynamics)
@@ -758,6 +1099,7 @@ def build_report(conn: sqlite3.Connection, compreg_idd: str | int) -> dict[str, 
             "dynamics_by_date": df_records(dynamics),
         },
         "category_slices": build_category_slices(numeric, dance_results, marks),
+        "parent_category_groups": build_parent_category_groups(numeric, dance_results, marks),
         "tournaments": {
             **build_tournament_payload(marks, dance_results),
             "dance_results": df_records(tournament_dance_results),

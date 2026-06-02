@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Dance Analytics · построить отчёт</title>
+  <title>Dance Analytics · Триумф</title>
   <style>
     :root {
       color-scheme: light;
@@ -17,7 +17,7 @@
       --accent-dark: #5E51B8;
       --accent-soft: #F0EDFB;
       --accent-light: #FAF8FF;
-      --shadow: 0 18px 42px rgba(49, 42, 96, .08);
+      --shadow: 0 12px 32px rgba(49, 42, 96, .06);
     }
 
     * { box-sizing: border-box; }
@@ -27,130 +27,47 @@
       min-height: 100vh;
       background: var(--bg);
       color: var(--ink);
-      font: 15px/1.6 Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      font: 15px/1.55 Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
     }
 
     .page {
-      width: min(960px, calc(100% - 32px));
+      width: min(1040px, calc(100% - 32px));
       margin: 0 auto;
-      padding: 56px 0;
+      padding: 42px 0 56px;
     }
 
     .hero {
-      display: grid;
-      grid-template-columns: 1fr minmax(320px, 420px);
-      gap: 28px;
-      align-items: start;
-    }
-
-    .intro {
-      padding: 28px 0;
+      background: var(--paper);
+      border: 1px solid rgba(233, 229, 244, .8);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      padding: 26px;
     }
 
     .eyebrow {
       color: var(--accent-dark);
       font-size: 12px;
-      font-weight: 700;
+      font-weight: 650;
       letter-spacing: .08em;
       text-transform: uppercase;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
 
     h1 {
       margin: 0;
-      max-width: 560px;
-      font-size: 38px;
-      line-height: 1.12;
-      font-weight: 720;
+      font-size: 34px;
+      line-height: 1.15;
+      font-weight: 680;
       letter-spacing: 0;
     }
 
     p {
-      margin: 14px 0 0;
+      margin: 10px 0 0;
       color: var(--ink-soft);
-      max-width: 620px;
+      max-width: 720px;
     }
 
-    .card {
-      background: var(--paper);
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      box-shadow: var(--shadow);
-      padding: 24px;
-    }
-
-    .form-grid {
-      display: grid;
-      gap: 16px;
-    }
-
-    label {
-      display: grid;
-      gap: 7px;
-      color: var(--ink-soft);
-      font-size: 13px;
-      font-weight: 650;
-    }
-
-    input {
-      width: 100%;
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      background: #fff;
-      color: var(--ink);
-      font: inherit;
-      padding: 11px 12px;
-      outline: none;
-    }
-
-    input:focus {
-      border-color: rgba(123, 110, 214, .62);
-      box-shadow: 0 0 0 3px rgba(123, 110, 214, .12);
-    }
-
-    .date-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 12px;
-    }
-
-    .button {
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      border: 0;
-      border-radius: 12px;
-      background: var(--accent);
-      color: white;
-      font-weight: 700;
-      text-decoration: none;
-      padding: 12px 16px;
-      margin-top: 4px;
-    }
-
-    .button:hover { background: var(--accent-dark); }
-
-    .hint {
-      color: var(--muted);
-      font-size: 12px;
-      margin-top: 10px;
-    }
-
-    .steps {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 22px;
-    }
-
-    .pill {
-      background: var(--accent-light);
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      color: var(--ink-soft);
-      font-size: 12px;
-      padding: 6px 10px;
-    }
+    .muted { color: var(--muted); }
 
 
 
@@ -163,10 +80,32 @@
       padding: 24px;
     }
 
-    .club-section h2 {
-      margin: 0 0 8px;
-      font-size: 22px;
+    .club-summary-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .club-summary-grid > div {
+      background: var(--accent-light);
+      border-radius: 14px;
+      padding: 14px;
+    }
+
+    .summary-value {
+      display: block;
+      color: var(--accent-dark);
+      font-size: 25px;
+      line-height: 1;
       font-weight: 650;
+    }
+
+    .summary-label {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 6px;
     }
 
     .club-group {
@@ -222,18 +161,26 @@
       font-weight: 560;
     }
 
+    .club-name-link {
+      color: var(--ink);
+      font-weight: 560;
+      text-decoration: none;
+    }
+
+    .club-name-link:hover {
+      color: var(--accent-dark);
+      text-decoration: underline;
+    }
+
+    .club-name-disabled {
+      color: var(--muted);
+      font-weight: 520;
+    }
+
     .idd-value {
       color: var(--ink-soft);
       font-variant-numeric: tabular-nums;
     }
-
-    .club-report-link {
-      color: var(--accent-dark);
-      font-weight: 600;
-      text-decoration: none;
-    }
-
-    .club-report-link:hover { text-decoration: underline; }
 
     .status-pill {
       display: inline-flex;
@@ -273,239 +220,177 @@
     .muted { color: var(--muted); }
 
     @media (max-width: 760px) {
+      .club-summary-grid { grid-template-columns: 1fr; }
       .club-group-head { align-items: flex-start; flex-direction: column; gap: 4px; }
-      .club-table { min-width: 680px; }
+      .club-table { min-width: 560px; }
     }
 
     @media (max-width: 760px) {
-      .page { padding: 28px 0; }
-      .hero { grid-template-columns: 1fr; }
-      .intro { padding: 0; }
-      h1 { font-size: 30px; }
-      .date-grid { grid-template-columns: 1fr; }
+      .page { padding: 24px 0 42px; }
+      .hero { padding: 20px; border-radius: 14px; }
+      h1 { font-size: 27px; }
     }
   </style>
 </head>
 <body>
   <main class="page">
     <section class="hero">
-      <div class="intro">
-        <div class="eyebrow">Dance Analytics</div>
-        <h1>Построить отчёт по танцору</h1>
-        <p>Введите IDD танцора, выберите период и город выступлений. Система соберёт результаты и сформирует отчёт в двух режимах: для родителя и для тренера.</p>
-        <div class="steps">
-          <span class="pill">IDD</span>
-          <span class="pill">Период</span>
-          <span class="pill">Город</span>
-          <span class="pill">Отчёт</span>
-        </div>
-      </div>
-
-      <form class="card" action="dancer_2016461_report.html" method="get">
-        <div class="form-grid">
-          <label>
-            IDD танцора
-            <input name="idd" inputmode="numeric" placeholder="Например, 2016461">
-          </label>
-
-          <div class="date-grid">
-            <label>
-              Дата начала
-              <input name="date_from" type="date">
-            </label>
-            <label>
-              Дата окончания
-              <input name="date_to" type="date">
-            </label>
-          </div>
-
-          <label>
-            Город выступления
-            <input name="city" value="Санкт-Петербург">
-          </label>
-
-          <a class="button" href="dancer_2016461_report.html">Построить отчёт</a>
-          <p class="hint">Пока это статический прототип: кнопка открывает пример готового отчёта.</p>
-        </div>
-      </form>
+      <div class="eyebrow">Dance Analytics</div>
+      <h1>Танцоры клуба «Триумф»</h1>
+      <p>Готовые отчёты по танцорам и парам клуба. Нажмите на имя, чтобы открыть отчёт; IDD можно скопировать рядом со строкой.</p>
     </section>
   <!-- club-reports:start -->
     <section class="club-section">
-      <h2>Танцоры клуба Триумф</h2>
-      <p>Список построен по данным Compreg и локальной базы. Соло и пары показаны отдельно; IDD в строках не объединяются.</p>
+      <div class="club-summary-grid">
+        <div><span class="summary-value">37</span><span class="summary-label">всего танцоров и пар</span></div>
+        <div><span class="summary-value">36</span><span class="summary-label">отчётов готово</span></div>
+        <div><span class="summary-value">1</span><span class="summary-label">данных пока нет</span></div>
+      </div>
       <section class="club-group">
         <div class="club-group-head"><h3>Соло</h3><span>28 записей · 27 отчётов</span></div>
         <div class="club-table-wrap">
         <table class="club-table">
-          <thead><tr><th>Имя</th><th>IDD</th><th>Статус</th><th>Отчёт</th></tr></thead>
+          <thead><tr><th>ФИО</th><th>IDD</th><th>Статус</th></tr></thead>
           <tbody>
           <tr>
-            <td class="club-name">Аббясова Амина</td>
+            <td class="club-name"><a class="club-name-link" href="dancer_2023028_report.html">Аббясова Амина</a></td>
             <td><span class="idd-value">2023028</span> <button class="copy-idd" type="button" data-copy="2023028" title="Скопировать IDD" aria-label="Скопировать IDD 2023028">⧉</button></td>
             <td><span class="status-pill status-ready">отчёт готов</span></td>
-            <td><a class="club-report-link" href="dancer_2023028_report.html">Открыть отчёт</a></td>
           </tr>
           <tr>
-            <td class="club-name">Антонова Александра</td>
+            <td class="club-name"><a class="club-name-link" href="dancer_2010736_report.html">Антонова Александра</a></td>
             <td><span class="idd-value">2010736</span> <button class="copy-idd" type="button" data-copy="2010736" title="Скопировать IDD" aria-label="Скопировать IDD 2010736">⧉</button></td>
             <td><span class="status-pill status-ready">отчёт готов</span></td>
-            <td><a class="club-report-link" href="dancer_2010736_report.html">Открыть отчёт</a></td>
           </tr>
           <tr>
-            <td class="club-name">Бедина Эльмира</td>
+            <td class="club-name"><a class="club-name-link" href="dancer_2015745_report.html">Бедина Эльмира</a></td>
             <td><span class="idd-value">2015745</span> <button class="copy-idd" type="button" data-copy="2015745" title="Скопировать IDD" aria-label="Скопировать IDD 2015745">⧉</button></td>
             <td><span class="status-pill status-ready">отчёт готов</span></td>
-            <td><a class="club-report-link" href="dancer_2015745_report.html">Открыть отчёт</a></td>
           </tr>
           <tr>
-            <td class="club-name">Векслер Майя</td>
+            <td class="club-name"><a class="club-name-link" href="dancer_2013211_report.html">Векслер Майя</a></td>
             <td><span class="idd-value">2013211</span> <button class="copy-idd" type="button" data-copy="2013211" title="Скопировать IDD" aria-label="Скопировать IDD 2013211">⧉</button></td>
             <td><span class="status-pill status-ready">отчёт готов</span></td>
-            <td><a class="club-report-link" href="dancer_2013211_report.html">Открыть отчёт</a></td>
           </tr>
           <tr>
-            <td class="club-name">Галактионова Анна</td>
+            <td class="club-name"><a class="club-name-link" href="dancer_2017576_report.html">Галактионова Анна</a></td>
             <td><span class="idd-value">2017576</span> <button class="copy-idd" type="button" data-copy="2017576" title="Скопировать IDD" aria-label="Скопировать IDD 2017576">⧉</button></td>
             <td><span class="status-pill status-ready">отчёт готов</span></td>
-            <td><a class="club-report-link" href="dancer_2017576_report.html">Открыть отчёт</a></td>
           </tr>
           <tr>
-            <td class="club-name">Груздева Александра</td>
+            <td class="club-name"><a class="club-name-link" href="dancer_2016461_report.html">Груздева Александра</a></td>
             <td><span class="idd-value">2016461</span> <button class="copy-idd" type="button" data-copy="2016461" title="Скопировать IDD" aria-label="Скопировать IDD 2016461">⧉</button></td>
             <td><span class="status-pill status-ready">отчёт готов</span></td>
-            <td><a class="club-report-link" href="dancer_2016461_report.html">Открыть отчёт</a></td>
           </tr>
           <tr>
-            <td class="club-name">Еремин Григорий</td>
+            <td class="club-name"><span class="club-name-disabled">Еремин Григорий</span></td>
             <td><span class="idd-value">2006812</span> <button class="copy-idd" type="button" data-copy="2006812" title="Скопировать IDD" aria-label="Скопировать IDD 2006812">⧉</button></td>
             <td><span class="status-pill status-empty">данных пока нет</span></td>
-            <td><span class="muted">данных пока нет</span></td>
           </tr>
           <tr>
-            <td class="club-name">Ившина Ксения</td>
+            <td class="club-name"><a class="club-name-link" href="dancer_2019417_report.html">Ившина Ксения</a></td>
             <td><span class="idd-value">2019417</span> <button class="copy-idd" type="button" data-copy="2019417" title="Скопировать IDD" aria-label="Скопировать IDD 2019417">⧉</button></td>
             <td><span class="status-pill status-ready">отчёт готов</span></td>
-            <td><a class="club-report-link" href="dancer_2019417_report.html">Открыть отчёт</a></td>
           </tr>
           <tr>
-            <td class="club-name">Козлова Полина</td>
+            <td class="club-name"><a class="club-name-link" href="dancer_2014552_report.html">Козлова Полина</a></td>
             <td><span class="idd-value">2014552</span> <button class="copy-idd" type="button" data-copy="2014552" title="Скопировать IDD" aria-label="Скопировать IDD 2014552">⧉</button></td>
             <td><span class="status-pill status-ready">отчёт готов</span></td>
-            <td><a class="club-report-link" href="dancer_2014552_report.html">Открыть отчёт</a></td>
           </tr>
           <tr>
-            <td class="club-name">Козлова София</td>
+            <td class="club-name"><a class="club-name-link" href="dancer_2019414_report.html">Козлова София</a></td>
             <td><span class="idd-value">2019414</span> <button class="copy-idd" type="button" data-copy="2019414" title="Скопировать IDD" aria-label="Скопировать IDD 2019414">⧉</button></td>
             <td><span class="status-pill status-ready">отчёт готов</span></td>
-            <td><a class="club-report-link" href="dancer_2019414_report.html">Открыть отчёт</a></td>
           </tr>
           <tr>
-            <td class="club-name">Костина Ксения</td>
+            <td class="club-name"><a class="club-name-link" href="dancer_2019312_report.html">Костина Ксения</a></td>
             <td><span class="idd-value">2019312</span> <button class="copy-idd" type="button" data-copy="2019312" title="Скопировать IDD" aria-label="Скопировать IDD 2019312">⧉</button></td>
             <td><span class="status-pill status-ready">отчёт готов</span></td>
-            <td><a class="club-report-link" href="dancer_2019312_report.html">Открыть отчёт</a></td>
           </tr>
           <tr>
-            <td class="club-name">Лютых Алиса</td>
+            <td class="club-name"><a class="club-name-link" href="dancer_2018378_report.html">Лютых Алиса</a></td>
             <td><span class="idd-value">2018378</span> <button class="copy-idd" type="button" data-copy="2018378" title="Скопировать IDD" aria-label="Скопировать IDD 2018378">⧉</button></td>
             <td><span class="status-pill status-ready">отчёт готов</span></td>
-            <td><a class="club-report-link" href="dancer_2018378_report.html">Открыть отчёт</a></td>
           </tr>
           <tr>
-            <td class="club-name">Матюхина Василиса</td>
+            <td class="club-name"><a class="club-name-link" href="dancer_2019644_report.html">Матюхина Василиса</a></td>
             <td><span class="idd-value">2019644</span> <button class="copy-idd" type="button" data-copy="2019644" title="Скопировать IDD" aria-label="Скопировать IDD 2019644">⧉</button></td>
             <td><span class="status-pill status-ready">отчёт готов</span></td>
-            <td><a class="club-report-link" href="dancer_2019644_report.html">Открыть отчёт</a></td>
           </tr>
           <tr>
-            <td class="club-name">Меркулова София</td>
+            <td class="club-name"><a class="club-name-link" href="dancer_2013956_report.html">Меркулова София</a></td>
             <td><span class="idd-value">2013956</span> <button class="copy-idd" type="button" data-copy="2013956" title="Скопировать IDD" aria-label="Скопировать IDD 2013956">⧉</button></td>
             <td><span class="status-pill status-ready">отчёт готов</span></td>
-            <td><a class="club-report-link" href="dancer_2013956_report.html">Открыть отчёт</a></td>
           </tr>
           <tr>
-            <td class="club-name">Немчинова Екатерина</td>
+            <td class="club-name"><a class="club-name-link" href="dancer_2017364_report.html">Немчинова Екатерина</a></td>
             <td><span class="idd-value">2017364</span> <button class="copy-idd" type="button" data-copy="2017364" title="Скопировать IDD" aria-label="Скопировать IDD 2017364">⧉</button></td>
             <td><span class="status-pill status-ready">отчёт готов</span></td>
-            <td><a class="club-report-link" href="dancer_2017364_report.html">Открыть отчёт</a></td>
           </tr>
           <tr>
-            <td class="club-name">Нестерова Елизавета</td>
+            <td class="club-name"><a class="club-name-link" href="dancer_2016890_report.html">Нестерова Елизавета</a></td>
             <td><span class="idd-value">2016890</span> <button class="copy-idd" type="button" data-copy="2016890" title="Скопировать IDD" aria-label="Скопировать IDD 2016890">⧉</button></td>
             <td><span class="status-pill status-ready">отчёт готов</span></td>
-            <td><a class="club-report-link" href="dancer_2016890_report.html">Открыть отчёт</a></td>
           </tr>
           <tr>
-            <td class="club-name">Привалова Виктория</td>
+            <td class="club-name"><a class="club-name-link" href="dancer_2013921_report.html">Привалова Виктория</a></td>
             <td><span class="idd-value">2013921</span> <button class="copy-idd" type="button" data-copy="2013921" title="Скопировать IDD" aria-label="Скопировать IDD 2013921">⧉</button></td>
             <td><span class="status-pill status-ready">отчёт готов</span></td>
-            <td><a class="club-report-link" href="dancer_2013921_report.html">Открыть отчёт</a></td>
           </tr>
           <tr>
-            <td class="club-name">Рикунова Ксения</td>
+            <td class="club-name"><a class="club-name-link" href="dancer_2016913_report.html">Рикунова Ксения</a></td>
             <td><span class="idd-value">2016913</span> <button class="copy-idd" type="button" data-copy="2016913" title="Скопировать IDD" aria-label="Скопировать IDD 2016913">⧉</button></td>
             <td><span class="status-pill status-ready">отчёт готов</span></td>
-            <td><a class="club-report-link" href="dancer_2016913_report.html">Открыть отчёт</a></td>
           </tr>
           <tr>
-            <td class="club-name">Россошанская Дарья</td>
+            <td class="club-name"><a class="club-name-link" href="dancer_2020091_report.html">Россошанская Дарья</a></td>
             <td><span class="idd-value">2020091</span> <button class="copy-idd" type="button" data-copy="2020091" title="Скопировать IDD" aria-label="Скопировать IDD 2020091">⧉</button></td>
             <td><span class="status-pill status-ready">отчёт готов</span></td>
-            <td><a class="club-report-link" href="dancer_2020091_report.html">Открыть отчёт</a></td>
           </tr>
           <tr>
-            <td class="club-name">Самуленко Анита</td>
+            <td class="club-name"><a class="club-name-link" href="dancer_2022547_report.html">Самуленко Анита</a></td>
             <td><span class="idd-value">2022547</span> <button class="copy-idd" type="button" data-copy="2022547" title="Скопировать IDD" aria-label="Скопировать IDD 2022547">⧉</button></td>
             <td><span class="status-pill status-ready">отчёт готов</span></td>
-            <td><a class="club-report-link" href="dancer_2022547_report.html">Открыть отчёт</a></td>
           </tr>
           <tr>
-            <td class="club-name">Сапего Алиса</td>
+            <td class="club-name"><a class="club-name-link" href="dancer_2017958_report.html">Сапего Алиса</a></td>
             <td><span class="idd-value">2017958</span> <button class="copy-idd" type="button" data-copy="2017958" title="Скопировать IDD" aria-label="Скопировать IDD 2017958">⧉</button></td>
             <td><span class="status-pill status-ready">отчёт готов</span></td>
-            <td><a class="club-report-link" href="dancer_2017958_report.html">Открыть отчёт</a></td>
           </tr>
           <tr>
-            <td class="club-name">Сейдахметова Таисия</td>
+            <td class="club-name"><a class="club-name-link" href="dancer_2015740_report.html">Сейдахметова Таисия</a></td>
             <td><span class="idd-value">2015740</span> <button class="copy-idd" type="button" data-copy="2015740" title="Скопировать IDD" aria-label="Скопировать IDD 2015740">⧉</button></td>
             <td><span class="status-pill status-ready">отчёт готов</span></td>
-            <td><a class="club-report-link" href="dancer_2015740_report.html">Открыть отчёт</a></td>
           </tr>
           <tr>
-            <td class="club-name">Соломаткина Алиса</td>
+            <td class="club-name"><a class="club-name-link" href="dancer_2022546_report.html">Соломаткина Алиса</a></td>
             <td><span class="idd-value">2022546</span> <button class="copy-idd" type="button" data-copy="2022546" title="Скопировать IDD" aria-label="Скопировать IDD 2022546">⧉</button></td>
             <td><span class="status-pill status-ready">отчёт готов</span></td>
-            <td><a class="club-report-link" href="dancer_2022546_report.html">Открыть отчёт</a></td>
           </tr>
           <tr>
-            <td class="club-name">Сорокина София</td>
+            <td class="club-name"><a class="club-name-link" href="dancer_2023484_report.html">Сорокина София</a></td>
             <td><span class="idd-value">2023484</span> <button class="copy-idd" type="button" data-copy="2023484" title="Скопировать IDD" aria-label="Скопировать IDD 2023484">⧉</button></td>
             <td><span class="status-pill status-ready">отчёт готов</span></td>
-            <td><a class="club-report-link" href="dancer_2023484_report.html">Открыть отчёт</a></td>
           </tr>
           <tr>
-            <td class="club-name">Федотова Арина</td>
+            <td class="club-name"><a class="club-name-link" href="dancer_2017365_report.html">Федотова Арина</a></td>
             <td><span class="idd-value">2017365</span> <button class="copy-idd" type="button" data-copy="2017365" title="Скопировать IDD" aria-label="Скопировать IDD 2017365">⧉</button></td>
             <td><span class="status-pill status-ready">отчёт готов</span></td>
-            <td><a class="club-report-link" href="dancer_2017365_report.html">Открыть отчёт</a></td>
           </tr>
           <tr>
-            <td class="club-name">Чистова Анна</td>
+            <td class="club-name"><a class="club-name-link" href="dancer_2010734_report.html">Чистова Анна</a></td>
             <td><span class="idd-value">2010734</span> <button class="copy-idd" type="button" data-copy="2010734" title="Скопировать IDD" aria-label="Скопировать IDD 2010734">⧉</button></td>
             <td><span class="status-pill status-ready">отчёт готов</span></td>
-            <td><a class="club-report-link" href="dancer_2010734_report.html">Открыть отчёт</a></td>
           </tr>
           <tr>
-            <td class="club-name">Юнцова Милана</td>
+            <td class="club-name"><a class="club-name-link" href="dancer_2015743_report.html">Юнцова Милана</a></td>
             <td><span class="idd-value">2015743</span> <button class="copy-idd" type="button" data-copy="2015743" title="Скопировать IDD" aria-label="Скопировать IDD 2015743">⧉</button></td>
             <td><span class="status-pill status-ready">отчёт готов</span></td>
-            <td><a class="club-report-link" href="dancer_2015743_report.html">Открыть отчёт</a></td>
           </tr>
           <tr>
-            <td class="club-name">Яковлева Людмила</td>
+            <td class="club-name"><a class="club-name-link" href="dancer_2013957_report.html">Яковлева Людмила</a></td>
             <td><span class="idd-value">2013957</span> <button class="copy-idd" type="button" data-copy="2013957" title="Скопировать IDD" aria-label="Скопировать IDD 2013957">⧉</button></td>
             <td><span class="status-pill status-ready">отчёт готов</span></td>
-            <td><a class="club-report-link" href="dancer_2013957_report.html">Открыть отчёт</a></td>
           </tr>
           </tbody>
         </table>
@@ -515,61 +400,52 @@
         <div class="club-group-head"><h3>Пары</h3><span>9 записей · 9 отчётов</span></div>
         <div class="club-table-wrap">
         <table class="club-table">
-          <thead><tr><th>Имя</th><th>IDD</th><th>Статус</th><th>Отчёт</th></tr></thead>
+          <thead><tr><th>ФИО</th><th>IDD</th><th>Статус</th></tr></thead>
           <tbody>
           <tr>
-            <td class="club-name">Агапитов Ярослав / Дмитриева Анна</td>
+            <td class="club-name"><a class="club-name-link" href="dancer_2010683_report.html">Агапитов Ярослав / Дмитриева Анна</a></td>
             <td><span class="idd-value">2010683</span> <button class="copy-idd" type="button" data-copy="2010683" title="Скопировать IDD" aria-label="Скопировать IDD 2010683">⧉</button></td>
             <td><span class="status-pill status-ready">отчёт готов</span></td>
-            <td><a class="club-report-link" href="dancer_2010683_report.html">Открыть отчёт</a></td>
           </tr>
           <tr>
-            <td class="club-name">Вегера Артем / Яхимович Любовь</td>
+            <td class="club-name"><a class="club-name-link" href="dancer_2015747_report.html">Вегера Артем / Яхимович Любовь</a></td>
             <td><span class="idd-value">2015747</span> <button class="copy-idd" type="button" data-copy="2015747" title="Скопировать IDD" aria-label="Скопировать IDD 2015747">⧉</button></td>
             <td><span class="status-pill status-ready">отчёт готов</span></td>
-            <td><a class="club-report-link" href="dancer_2015747_report.html">Открыть отчёт</a></td>
           </tr>
           <tr>
-            <td class="club-name">Агапитов Ярослав / Дмитриева Анна</td>
+            <td class="club-name"><a class="club-name-link" href="dancer_2010737_report.html">Агапитов Ярослав / Дмитриева Анна</a></td>
             <td><span class="idd-value">2010737</span> <button class="copy-idd" type="button" data-copy="2010737" title="Скопировать IDD" aria-label="Скопировать IDD 2010737">⧉</button></td>
             <td><span class="status-pill status-ready">отчёт готов</span></td>
-            <td><a class="club-report-link" href="dancer_2010737_report.html">Открыть отчёт</a></td>
           </tr>
           <tr>
-            <td class="club-name">Лютых Данила / Мазурина Анна</td>
+            <td class="club-name"><a class="club-name-link" href="dancer_2006823_report.html">Лютых Данила / Мазурина Анна</a></td>
             <td><span class="idd-value">2006823</span> <button class="copy-idd" type="button" data-copy="2006823" title="Скопировать IDD" aria-label="Скопировать IDD 2006823">⧉</button></td>
             <td><span class="status-pill status-ready">отчёт готов</span></td>
-            <td><a class="club-report-link" href="dancer_2006823_report.html">Открыть отчёт</a></td>
           </tr>
           <tr>
-            <td class="club-name">Лютых Данила / Мазурина Анна</td>
+            <td class="club-name"><a class="club-name-link" href="dancer_2012523_report.html">Лютых Данила / Мазурина Анна</a></td>
             <td><span class="idd-value">2012523</span> <button class="copy-idd" type="button" data-copy="2012523" title="Скопировать IDD" aria-label="Скопировать IDD 2012523">⧉</button></td>
             <td><span class="status-pill status-ready">отчёт готов</span></td>
-            <td><a class="club-report-link" href="dancer_2012523_report.html">Открыть отчёт</a></td>
           </tr>
           <tr>
-            <td class="club-name">Маркелов Дмитрий / Посыпайко Вероника</td>
+            <td class="club-name"><a class="club-name-link" href="dancer_2019421_report.html">Маркелов Дмитрий / Посыпайко Вероника</a></td>
             <td><span class="idd-value">2019421</span> <button class="copy-idd" type="button" data-copy="2019421" title="Скопировать IDD" aria-label="Скопировать IDD 2019421">⧉</button></td>
             <td><span class="status-pill status-ready">отчёт готов</span></td>
-            <td><a class="club-report-link" href="dancer_2019421_report.html">Открыть отчёт</a></td>
           </tr>
           <tr>
-            <td class="club-name">Попов Егор / Чистова Анна</td>
+            <td class="club-name"><a class="club-name-link" href="dancer_2011924_report.html">Попов Егор / Чистова Анна</a></td>
             <td><span class="idd-value">2011924</span> <button class="copy-idd" type="button" data-copy="2011924" title="Скопировать IDD" aria-label="Скопировать IDD 2011924">⧉</button></td>
             <td><span class="status-pill status-ready">отчёт готов</span></td>
-            <td><a class="club-report-link" href="dancer_2011924_report.html">Открыть отчёт</a></td>
           </tr>
           <tr>
-            <td class="club-name">Маркелов Дмитрий / Посыпайко Вероника</td>
+            <td class="club-name"><a class="club-name-link" href="dancer_2019422_report.html">Маркелов Дмитрий / Посыпайко Вероника</a></td>
             <td><span class="idd-value">2019422</span> <button class="copy-idd" type="button" data-copy="2019422" title="Скопировать IDD" aria-label="Скопировать IDD 2019422">⧉</button></td>
             <td><span class="status-pill status-ready">отчёт готов</span></td>
-            <td><a class="club-report-link" href="dancer_2019422_report.html">Открыть отчёт</a></td>
           </tr>
           <tr>
-            <td class="club-name">Вегера Артем / Яхимович Любовь</td>
+            <td class="club-name"><a class="club-name-link" href="dancer_2018763_report.html">Вегера Артем / Яхимович Любовь</a></td>
             <td><span class="idd-value">2018763</span> <button class="copy-idd" type="button" data-copy="2018763" title="Скопировать IDD" aria-label="Скопировать IDD 2018763">⧉</button></td>
             <td><span class="status-pill status-ready">отчёт готов</span></td>
-            <td><a class="club-report-link" href="dancer_2018763_report.html">Открыть отчёт</a></td>
           </tr>
           </tbody>
         </table>

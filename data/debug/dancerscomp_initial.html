@@ -1,0 +1,158 @@
+<!-- includes/header.php -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Информация о танцорах-любителях</title>
+  <link rel="stylesheet" href="https://compreg.ru/css/font-awesome.css" /> 
+  <link rel="stylesheet" href="https://compreg.ru/project/css/style.css" />
+  <link rel="stylesheet" type="text/css" href="style.css" /> 
+  <link rel="stylesheet" type="text/css" href="fonts/oswald/stylesheet.css" />
+  <link rel="stylesheet" type="text/css" href="images/styleBase.css" />
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+
+
+</head>
+<body class="">
+
+<!-- Кнопка "Наверх" -->
+<button id="scrollToTop" title="Наверх" onclick="scrollToTop()">
+  ↑
+</button>
+
+<!-- Кнопка "Вниз" -->
+<button id="scrollToBottom" title="Вниз" onclick="scrollToBottom()">
+  ↓
+</button>
+
+
+
+<script type="text/javascript" src="scripts/tabs.js?ver=61"></script>
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();
+   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(92595587, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true
+   });
+
+	function df(i) {
+		document.getElementById('ci').value=i;
+		document.getElementById('bi').click();
+
+	}	
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/92595587" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+<!-- Боковое меню -->
+<nav id="sidebar" class="sidebar">
+  <ul>
+
+<!--    <li><a href="landing.php"><i class="fa fa-home"></i> Фестивали</a></li> -->
+
+    <li class="has-submenu">
+      <a href="#" class="submenu-toggle">
+        <i class="fa fa-info-circle"></i> Фестивали
+        <i class="fa fa-chevron-down submenu-icon"></i>
+      </a>
+      <ul class="submenu">
+        <li><a href="https://compreg.ru">Фестивали 2025/2026</a></li>
+        <li><a href="https://compreg.ru/region-fests">Региональные фестивали 2025/2026</a></li>
+      </ul>
+    </li>
+
+    <li><a href="https://compreg.ru/professional.php"><i class="fa fa-info-circle"></i>Гран-При Профессионалы 2025/2026</a></li>
+
+    <li><a href="https://compreg.ru/pro-am.php"><i class="fa fa-info-circle"></i> Фестивали ProAm</a></li>
+
+    <li><a href="https://compreg.ru/reg-show.php"><i class="fa fa-info-circle"></i> Фестивали Шоу</a></li>
+
+    <li><a href="https://compreg.ru/results.php"><i class="fa fa-info-circle"></i>Результаты фестивалей</a></li>
+
+    <li><a href="https://compreg.ru/dancerscup.php"><i class="fa fa-info-circle"></i>Рейтинги сезона 2025/2026</a></li>
+
+    <li><a href="https://compreg.ru/dancerscomp"><i class="fa fa-search"></i>Поиск танцоров</a></li>
+
+
+
+    <li><a href="https://compreg.ru/privacy.php"><i class="fa fa-shield"></i> Политика конфиденциальности</a></li>
+  </ul>
+</nav>
+
+<!-- Overlay -->
+<div id="overlay" class="overlay"></div>
+<!-- Кнопка-ярлык -->
+<button id="menu-toggle" class="menu-toggle">
+  <i class="fa fa-bars"></i> Меню
+</button>
+
+
+
+<div class="page-content">
+
+<h1>Информация о танцорах-любителях</h1>
+
+   <!-- Begin Wrapper -->
+ <div class="wrapper">
+<!--     -->
+    <!-- Begin Left Column -->
+	<!-- <div id="leftcolumn"> -->
+<!--    <div class='dancers-wrapper'> -->
+
+<!-- <div  style="padding: 2% 0; background-color: white !important;"> -->
+
+        <div class="placebase"> 
+
+    <div align='mw-80 margin-center'>    	
+
+
+<!--	<div class='ref-table-container'> -->
+
+    <div class='dancers-form-wrapper'><div class='ref-form-container mw-60'><form  method='POST' action='/dancerscomp' id='searchform'><div class='ref-form-tr'><div class='ref-form-label'>IDD:</div><div class='ref-form-td'><input class='ref-form-input-text' type='text' name='idd' value=''></div></div><div class='ref-form-tr'><div class='ref-form-label'>Фамилия, Имя:</div><div class='ref-form-td'><input class='ref-form-input-text' type='text' name='n' value=''></div></div><div class='ref-form-tr'><div class='ref-form-label'>Клуб:</div><div class='ref-form-td'><input class='ref-form-input-text' type='text' name='c' value=''></div></div><div class='ref-form-tr hidediv'><div class='ref-form-label'>РО/Организация:</div><div class='ref-form-td hidediv'><input class='ref-form-input-text' type='text' name='o' value=''></div></div><div class='ref-form-tr'><div class='ref-form-td'>&nbsp;</div><div class='ref-form-td'><input type='submit' class='w-100 btnturquoise padding-vert' value='&nbsp;Искать&nbsp;'></div></div><input type='hidden' name='p' value=''></form></div></div><form  method='POST' action='danceinfo.php' id='cardform'><input type='hidden' id='ci' name='ci' value=''><input type='submit' class='hidediv' id='bi' value='перейти'></form></div>
+</div>
+</div>
+<!-- </div> -->
+
+    <!-- Form -->
+
+	
+    <div align="center">
+    <div class="ref-table-container">
+    <div>Пожалуйста, укажите IDD, часть имени танцора или названия клуба</div>    </div>
+    </div>
+
+        </div>
+    </div>
+    <!-- End Wrapper -->
+<!-- includes/footer.php -->
+<footer class="site-footer">
+  <div class="footer-content">
+    <p>&copy; 2026 CompRegRu. Все права защищены.</p>
+    <p><a href="privacy.php">Политика конфиденциальности</a></p>
+    <p><a href="/docs/compreg_bunner.zip">Шаблоны баннеров</a></p>
+  </div>
+</footer>
+
+<!-- Баннер о куках -->
+<div id="cookie-banner" style="display: none;">
+  <p>
+    Мы используем файлы cookie, чтобы улучшить работу сайта.
+    Продолжая использовать наш сайт, вы соглашаетесь с использованием файлов cookie.
+  </p>
+  <button onclick="acceptCookies()">Понятно</button>
+</div>
+
+<script src="https://compreg.ru/project/js/script.js"></script>
+</body>
+</html>

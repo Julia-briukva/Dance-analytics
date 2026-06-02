@@ -109,27 +109,56 @@ def ensure_mark_type_column(conn: sqlite3.Connection) -> None:
     )
 
 
+def ensure_dancer_external_refs(conn: sqlite3.Connection) -> None:
+    conn.execute(
+        """
+        CREATE TABLE IF NOT EXISTS dancer_external_refs (
+            external_ref TEXT PRIMARY KEY,
+            dancer_id INTEGER NOT NULL,
+            source TEXT,
+            created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            FOREIGN KEY (dancer_id) REFERENCES dancers(id)
+        );
+        """
+    )
+    conn.execute(
+        """
+        INSERT OR IGNORE INTO dancer_external_refs (external_ref, dancer_id, source)
+        SELECT TRIM(external_ref), id, 'dancers.external_ref'
+        FROM dancers
+        WHERE external_ref IS NOT NULL AND TRIM(external_ref) <> '';
+        """
+    )
+
+
 def resolve_dancer_by_idd(conn: sqlite3.Connection, compreg_idd: str | int) -> DancerIdentity:
     ensure_analytics_view(conn)
+    ensure_dancer_external_refs(conn)
     idd = str(compreg_idd).strip()
     rows = conn.execute(
         """
-        SELECT id, external_ref, name, club, city
-        FROM dancers
-        WHERE external_ref = ?
-        ORDER BY id;
+        SELECT d.id, ? AS requested_external_ref, d.name, d.club, d.city, 0 AS priority
+        FROM dancers d
+        WHERE d.external_ref = ?
+        UNION
+        SELECT d.id, der.external_ref AS requested_external_ref, d.name, d.club, d.city, 1 AS priority
+        FROM dancer_external_refs der
+        JOIN dancers d ON d.id = der.dancer_id
+        WHERE der.external_ref = ?
+        ORDER BY priority, id;
         """,
-        (idd,),
+        (idd, idd, idd),
     ).fetchall()
     if not rows:
         raise ValueError(f"Танцор с Compreg IDD {idd} не найден в базе.")
-    if len(rows) > 1:
+    unique_ids = {int(row[0]) for row in rows}
+    if len(unique_ids) > 1:
         matches = ", ".join(f"{row[0]}:{row[2]}" for row in rows[:10])
         raise ValueError(f"Compreg IDD {idd} неоднозначен в базе: {matches}")
     row = rows[0]
     return DancerIdentity(
         internal_dancer_id=int(row[0]),
-        compreg_idd=str(row[1]),
+        compreg_idd=idd,
         name=str(row[2]),
         club=row[3],
         city=row[4],

@@ -17,6 +17,7 @@ from urllib.parse import urljoin
 import requests
 from bs4 import BeautifulSoup
 
+from analyze_dancer import ensure_dancer_external_refs
 from compreg_encoding import write_compreg_html_file
 from parse_protocols import DEFAULT_DB_PATH, PROJECT_ROOT, ProtocolRecord, init_schema, parse_protocol, setup_logging
 
@@ -57,6 +58,17 @@ class ProtocolLink:
 
 def clean_text(value: str | None) -> str:
     return re.sub(r"\s+", " ", (value or "").replace("\xa0", " ")).strip()
+
+
+def normalize_lookup_text(value: str | None) -> str:
+    return clean_text(value).casefold().replace("ё", "е")
+
+
+def pair_name_parts(value: str | None) -> list[str]:
+    text = clean_text(value)
+    if not text:
+        return []
+    return [clean_text(part) for part in re.split(r"\s*/\s*", text) if clean_text(part)]
 
 
 def read_club_rows(path: Path) -> list[dict[str, str]]:
@@ -182,22 +194,74 @@ def fetch_protocol(session: requests.Session, link: ProtocolLink) -> int:
     return response.status_code
 
 
+def link_external_ref(conn: sqlite3.Connection, dancer_id: int, idd: str, source: str) -> None:
+    ensure_dancer_external_refs(conn)
+    row = conn.execute("SELECT dancer_id FROM dancer_external_refs WHERE external_ref = ?", (idd,)).fetchone()
+    if row:
+        if int(row[0]) != int(dancer_id):
+            raise ValueError(f"IDD {idd} уже связан с другим dancers.id={row[0]}")
+        return
+    conn.execute(
+        """
+        INSERT INTO dancer_external_refs (external_ref, dancer_id, source)
+        VALUES (?, ?, ?)
+        """,
+        (idd, dancer_id, source),
+    )
+    current = conn.execute("SELECT external_ref FROM dancers WHERE id = ?", (dancer_id,)).fetchone()
+    if current and not clean_text(current[0]):
+        conn.execute("UPDATE dancers SET external_ref = ? WHERE id = ?", (idd, dancer_id))
+
+
+def find_pair_name_matches(conn: sqlite3.Connection, name: str, club: str, city: str) -> list[int]:
+    target = normalize_lookup_text(name)
+    if not target:
+        return []
+    rows = conn.execute(
+        """
+        SELECT id, name
+        FROM dancers
+        WHERE club = ?
+          AND city = ?
+          AND name LIKE '%/%'
+        ORDER BY id
+        """,
+        (club, city),
+    ).fetchall()
+    matches: list[int] = []
+    for row in rows:
+        parts = [normalize_lookup_text(part) for part in pair_name_parts(row[1])]
+        if target in parts:
+            matches.append(int(row[0]))
+    return matches
+
+
 def safe_link_dancer(conn: sqlite3.Connection, idd: str, name: str, club: str, city: str) -> None:
+    ensure_dancer_external_refs(conn)
     if conn.execute("SELECT 1 FROM dancers WHERE external_ref = ?", (idd,)).fetchone():
+        dancer_id = int(conn.execute("SELECT id FROM dancers WHERE external_ref = ?", (idd,)).fetchone()[0])
+        link_external_ref(conn, dancer_id, idd, "dancers.external_ref")
+        return
+    existing_alias = conn.execute("SELECT dancer_id FROM dancer_external_refs WHERE external_ref = ?", (idd,)).fetchone()
+    if existing_alias:
         return
     rows = conn.execute(
         """
-        SELECT id
+        SELECT id, external_ref
         FROM dancers
         WHERE name = ?
           AND club = ?
           AND city = ?
-          AND (external_ref IS NULL OR TRIM(external_ref) = '')
         """,
         (name, club, city),
     ).fetchall()
     if len(rows) == 1:
-        conn.execute("UPDATE dancers SET external_ref = ? WHERE id = ?", (idd, rows[0][0]))
+        link_external_ref(conn, int(rows[0][0]), idd, "club_backfill_exact_name")
+        return
+
+    pair_matches = find_pair_name_matches(conn, name, club, city)
+    if len(pair_matches) == 1:
+        link_external_ref(conn, pair_matches[0], idd, "club_backfill_pair_name")
 
 
 def backfill_one(conn: sqlite3.Connection, session: requests.Session, row: dict[str, str]) -> tuple[dict[str, str], list[int]]:
