@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-06-02T19:42:51.920713+00:00",
+    "generated_at": "2026-06-04T12:54:45.774502+00:00",
     "analytics_version": "report_layer_v1",
     "database": "database/compreg_spb_2025_2026.sqlite"
   },
@@ -205,7 +205,12 @@
         "first_to_last_delta": 1.0,
         "n_dates": 3,
         "confidence": "ok",
-        "trend_status": "declining"
+        "trend_status": "declining",
+        "trend_metric_label": "среднее место",
+        "trend_explanation": "Сравнивается среднее место на ранней и последней доступной дате выбранного периода.",
+        "trend_period_from": "2025-09-28",
+        "trend_period_to": "2026-01-18",
+        "trend_direction_rule": "меньшее место означает лучший результат"
       }
     },
     "latin": {
@@ -390,7 +395,12 @@
         "first_to_last_delta": 2.0,
         "n_dates": 3,
         "confidence": "ok",
-        "trend_status": "declining"
+        "trend_status": "declining",
+        "trend_metric_label": "среднее место",
+        "trend_explanation": "Сравнивается среднее место на ранней и последней доступной дате выбранного периода.",
+        "trend_period_from": "2025-09-28",
+        "trend_period_to": "2026-01-18",
+        "trend_direction_rule": "меньшее место означает лучший результат"
       }
     }
   },
@@ -932,6 +942,96 @@
       }
     }
   },
+  "judge_panel_reaction": {
+    "panel_spread_by_tournament": [
+      {
+        "tournament_id": 2025092800,
+        "tournament_title": "Северный кубок 2025 (Санкт-Петербург)",
+        "event_date": "2025-09-28",
+        "city": "Санкт-Петербург",
+        "panel_spread": 1.711167471314328,
+        "protocol_count": 4,
+        "protocol_dance_round_groups": 18,
+        "numeric_marks": 214,
+        "dances": [
+          "W",
+          "T",
+          "V",
+          "F",
+          "Q",
+          "S",
+          "Ch",
+          "R",
+          "P",
+          "J"
+        ],
+        "programs": [
+          "latin",
+          "standard"
+        ]
+      },
+      {
+        "tournament_id": 2025110901,
+        "tournament_title": "Кубок Лиги 2025 (Санкт-Петербург)",
+        "event_date": "2025-11-09",
+        "city": "Санкт-Петербург",
+        "panel_spread": 1.5624690382807782,
+        "protocol_count": 2,
+        "protocol_dance_round_groups": 10,
+        "numeric_marks": 120,
+        "dances": [
+          "W",
+          "T",
+          "V",
+          "F",
+          "Q",
+          "S",
+          "Ch",
+          "R",
+          "P",
+          "J"
+        ],
+        "programs": [
+          "latin",
+          "standard"
+        ]
+      },
+      {
+        "tournament_id": 2026011801,
+        "tournament_title": "Lider Cup 2026 (Санкт-Петербург)",
+        "event_date": "2026-01-18",
+        "city": "Санкт-Петербург",
+        "panel_spread": 1.334994696467431,
+        "protocol_count": 2,
+        "protocol_dance_round_groups": 10,
+        "numeric_marks": 70,
+        "dances": [
+          "W",
+          "T",
+          "V",
+          "F",
+          "Q",
+          "S",
+          "Ch",
+          "R",
+          "P",
+          "J"
+        ],
+        "programs": [
+          "latin",
+          "standard"
+        ]
+      }
+    ],
+    "panel_spread_first": 1.711167471314328,
+    "panel_spread_last": 1.334994696467431,
+    "panel_spread_delta": -0.3761727748468968,
+    "panel_spread_trend": "more_consistent",
+    "early_late_window_tournaments": 1,
+    "tournament_count": 3,
+    "threshold": 0.15,
+    "method": "numeric_place marks only; spread by protocol+round+dance; tournament mean; first 40% vs last 40%"
+  },
   "dances": {
     "metrics": [
       {
@@ -1187,7 +1287,12 @@
         "first_to_last_delta": 2.0,
         "n_dates": 3,
         "confidence": "ok",
-        "trend_status": "declining"
+        "trend_status": "declining",
+        "trend_metric_label": "среднее место",
+        "trend_explanation": "Сравнивается среднее место на ранней и последней доступной дате выбранного периода.",
+        "trend_period_from": "2025-09-28",
+        "trend_period_to": "2026-01-18",
+        "trend_direction_rule": "меньшее место означает лучший результат"
       },
       {
         "program": "latin",
@@ -1200,7 +1305,12 @@
         "first_to_last_delta": 2.0,
         "n_dates": 3,
         "confidence": "ok",
-        "trend_status": "declining"
+        "trend_status": "declining",
+        "trend_metric_label": "среднее место",
+        "trend_explanation": "Сравнивается среднее место на ранней и последней доступной дате выбранного периода.",
+        "trend_period_from": "2025-09-28",
+        "trend_period_to": "2026-01-18",
+        "trend_direction_rule": "меньшее место означает лучший результат"
       },
       {
         "program": "latin",
@@ -1213,7 +1323,12 @@
         "first_to_last_delta": 2.5,
         "n_dates": 3,
         "confidence": "ok",
-        "trend_status": "declining"
+        "trend_status": "declining",
+        "trend_metric_label": "среднее место",
+        "trend_explanation": "Сравнивается среднее место на ранней и последней доступной дате выбранного периода.",
+        "trend_period_from": "2025-09-28",
+        "trend_period_to": "2026-01-18",
+        "trend_direction_rule": "меньшее место означает лучший результат"
       },
       {
         "program": "latin",
@@ -1226,7 +1341,12 @@
         "first_to_last_delta": 3.0,
         "n_dates": 3,
         "confidence": "ok",
-        "trend_status": "declining"
+        "trend_status": "declining",
+        "trend_metric_label": "среднее место",
+        "trend_explanation": "Сравнивается среднее место на ранней и последней доступной дате выбранного периода.",
+        "trend_period_from": "2025-09-28",
+        "trend_period_to": "2026-01-18",
+        "trend_direction_rule": "меньшее место означает лучший результат"
       },
       {
         "program": "latin",
@@ -1239,7 +1359,12 @@
         "first_to_last_delta": 4.0,
         "n_dates": 3,
         "confidence": "ok",
-        "trend_status": "declining"
+        "trend_status": "declining",
+        "trend_metric_label": "среднее место",
+        "trend_explanation": "Сравнивается среднее место на ранней и последней доступной дате выбранного периода.",
+        "trend_period_from": "2025-09-28",
+        "trend_period_to": "2026-01-18",
+        "trend_direction_rule": "меньшее место означает лучший результат"
       },
       {
         "program": "standard",
@@ -1252,7 +1377,12 @@
         "first_to_last_delta": 1.0,
         "n_dates": 3,
         "confidence": "ok",
-        "trend_status": "declining"
+        "trend_status": "declining",
+        "trend_metric_label": "среднее место",
+        "trend_explanation": "Сравнивается среднее место на ранней и последней доступной дате выбранного периода.",
+        "trend_period_from": "2025-09-28",
+        "trend_period_to": "2026-01-18",
+        "trend_direction_rule": "меньшее место означает лучший результат"
       },
       {
         "program": "standard",
@@ -1265,7 +1395,12 @@
         "first_to_last_delta": 2.0,
         "n_dates": 3,
         "confidence": "ok",
-        "trend_status": "declining"
+        "trend_status": "declining",
+        "trend_metric_label": "среднее место",
+        "trend_explanation": "Сравнивается среднее место на ранней и последней доступной дате выбранного периода.",
+        "trend_period_from": "2025-09-28",
+        "trend_period_to": "2026-01-18",
+        "trend_direction_rule": "меньшее место означает лучший результат"
       },
       {
         "program": "standard",
@@ -1278,7 +1413,12 @@
         "first_to_last_delta": 2.5,
         "n_dates": 3,
         "confidence": "ok",
-        "trend_status": "declining"
+        "trend_status": "declining",
+        "trend_metric_label": "среднее место",
+        "trend_explanation": "Сравнивается среднее место на ранней и последней доступной дате выбранного периода.",
+        "trend_period_from": "2025-09-28",
+        "trend_period_to": "2026-01-18",
+        "trend_direction_rule": "меньшее место означает лучший результат"
       },
       {
         "program": "standard",
@@ -1291,7 +1431,12 @@
         "first_to_last_delta": 3.5,
         "n_dates": 3,
         "confidence": "ok",
-        "trend_status": "declining"
+        "trend_status": "declining",
+        "trend_metric_label": "среднее место",
+        "trend_explanation": "Сравнивается среднее место на ранней и последней доступной дате выбранного периода.",
+        "trend_period_from": "2025-09-28",
+        "trend_period_to": "2026-01-18",
+        "trend_direction_rule": "меньшее место означает лучший результат"
       },
       {
         "program": "standard",
@@ -1304,7 +1449,12 @@
         "first_to_last_delta": 3.5,
         "n_dates": 3,
         "confidence": "ok",
-        "trend_status": "declining"
+        "trend_status": "declining",
+        "trend_metric_label": "среднее место",
+        "trend_explanation": "Сравнивается среднее место на ранней и последней доступной дате выбранного периода.",
+        "trend_period_from": "2025-09-28",
+        "trend_period_to": "2026-01-18",
+        "trend_direction_rule": "меньшее место означает лучший результат"
       }
     ],
     "dynamics_by_date": [
@@ -1854,7 +2004,12 @@
           "first_to_last_delta": 1.0,
           "n_dates": 3,
           "confidence": "ok",
-          "trend_status": "declining"
+          "trend_status": "declining",
+          "trend_metric_label": "среднее место",
+          "trend_explanation": "Сравнивается среднее место на ранней и последней доступной дате выбранного периода.",
+          "trend_period_from": "2025-09-28",
+          "trend_period_to": "2026-01-18",
+          "trend_direction_rule": "меньшее место означает лучший результат"
         },
         "key": "all",
         "label": "Все категории",
@@ -2138,7 +2293,12 @@
             "first_to_last_delta": 1.0,
             "n_dates": 3,
             "confidence": "ok",
-            "trend_status": "declining"
+            "trend_status": "declining",
+            "trend_metric_label": "среднее место",
+            "trend_explanation": "Сравнивается среднее место на ранней и последней доступной дате выбранного периода.",
+            "trend_period_from": "2025-09-28",
+            "trend_period_to": "2026-01-18",
+            "trend_direction_rule": "меньшее место означает лучший результат"
           },
           {
             "program": "standard",
@@ -2151,7 +2311,12 @@
             "first_to_last_delta": 2.0,
             "n_dates": 3,
             "confidence": "ok",
-            "trend_status": "declining"
+            "trend_status": "declining",
+            "trend_metric_label": "среднее место",
+            "trend_explanation": "Сравнивается среднее место на ранней и последней доступной дате выбранного периода.",
+            "trend_period_from": "2025-09-28",
+            "trend_period_to": "2026-01-18",
+            "trend_direction_rule": "меньшее место означает лучший результат"
           },
           {
             "program": "standard",
@@ -2164,7 +2329,12 @@
             "first_to_last_delta": 2.5,
             "n_dates": 3,
             "confidence": "ok",
-            "trend_status": "declining"
+            "trend_status": "declining",
+            "trend_metric_label": "среднее место",
+            "trend_explanation": "Сравнивается среднее место на ранней и последней доступной дате выбранного периода.",
+            "trend_period_from": "2025-09-28",
+            "trend_period_to": "2026-01-18",
+            "trend_direction_rule": "меньшее место означает лучший результат"
           },
           {
             "program": "standard",
@@ -2177,7 +2347,12 @@
             "first_to_last_delta": 3.5,
             "n_dates": 3,
             "confidence": "ok",
-            "trend_status": "declining"
+            "trend_status": "declining",
+            "trend_metric_label": "среднее место",
+            "trend_explanation": "Сравнивается среднее место на ранней и последней доступной дате выбранного периода.",
+            "trend_period_from": "2025-09-28",
+            "trend_period_to": "2026-01-18",
+            "trend_direction_rule": "меньшее место означает лучший результат"
           },
           {
             "program": "standard",
@@ -2190,7 +2365,12 @@
             "first_to_last_delta": 3.5,
             "n_dates": 3,
             "confidence": "ok",
-            "trend_status": "declining"
+            "trend_status": "declining",
+            "trend_metric_label": "среднее место",
+            "trend_explanation": "Сравнивается среднее место на ранней и последней доступной дате выбранного периода.",
+            "trend_period_from": "2025-09-28",
+            "trend_period_to": "2026-01-18",
+            "trend_direction_rule": "меньшее место означает лучший результат"
           }
         ],
         "tournament_dance_results": [
@@ -2734,7 +2914,12 @@
           "first_to_last_delta": 3.0,
           "n_dates": 2,
           "confidence": "low confidence trend",
-          "trend_status": "declining"
+          "trend_status": "declining",
+          "trend_metric_label": "среднее место",
+          "trend_explanation": "Сравнивается среднее место на ранней и последней доступной дате выбранного периода.",
+          "trend_period_from": "2025-09-28",
+          "trend_period_to": "2026-01-18",
+          "trend_direction_rule": "меньшее место означает лучший результат"
         },
         "key": "d_c",
         "label": "D+C",
@@ -2954,7 +3139,12 @@
             "first_to_last_delta": 3.0,
             "n_dates": 2,
             "confidence": "low confidence trend",
-            "trend_status": "declining"
+            "trend_status": "declining",
+            "trend_metric_label": "среднее место",
+            "trend_explanation": "Сравнивается среднее место на ранней и последней доступной дате выбранного периода.",
+            "trend_period_from": "2025-09-28",
+            "trend_period_to": "2026-01-18",
+            "trend_direction_rule": "меньшее место означает лучший результат"
           },
           {
             "program": "standard",
@@ -2967,7 +3157,12 @@
             "first_to_last_delta": 4.0,
             "n_dates": 2,
             "confidence": "low confidence trend",
-            "trend_status": "declining"
+            "trend_status": "declining",
+            "trend_metric_label": "среднее место",
+            "trend_explanation": "Сравнивается среднее место на ранней и последней доступной дате выбранного периода.",
+            "trend_period_from": "2025-09-28",
+            "trend_period_to": "2026-01-18",
+            "trend_direction_rule": "меньшее место означает лучший результат"
           },
           {
             "program": "standard",
@@ -2980,7 +3175,12 @@
             "first_to_last_delta": 5.0,
             "n_dates": 2,
             "confidence": "low confidence trend",
-            "trend_status": "declining"
+            "trend_status": "declining",
+            "trend_metric_label": "среднее место",
+            "trend_explanation": "Сравнивается среднее место на ранней и последней доступной дате выбранного периода.",
+            "trend_period_from": "2025-09-28",
+            "trend_period_to": "2026-01-18",
+            "trend_direction_rule": "меньшее место означает лучший результат"
           },
           {
             "program": "standard",
@@ -2993,7 +3193,12 @@
             "first_to_last_delta": 5.0,
             "n_dates": 2,
             "confidence": "low confidence trend",
-            "trend_status": "declining"
+            "trend_status": "declining",
+            "trend_metric_label": "среднее место",
+            "trend_explanation": "Сравнивается среднее место на ранней и последней доступной дате выбранного периода.",
+            "trend_period_from": "2025-09-28",
+            "trend_period_to": "2026-01-18",
+            "trend_direction_rule": "меньшее место означает лучший результат"
           },
           {
             "program": "standard",
@@ -3006,7 +3211,12 @@
             "first_to_last_delta": 5.0,
             "n_dates": 2,
             "confidence": "low confidence trend",
-            "trend_status": "declining"
+            "trend_status": "declining",
+            "trend_metric_label": "среднее место",
+            "trend_explanation": "Сравнивается среднее место на ранней и последней доступной дате выбранного периода.",
+            "trend_period_from": "2025-09-28",
+            "trend_period_to": "2026-01-18",
+            "trend_direction_rule": "меньшее место означает лучший результат"
           }
         ],
         "tournament_dance_results": [
@@ -3372,7 +3582,12 @@
           "first_to_last_delta": -1.0,
           "n_dates": 2,
           "confidence": "low confidence trend",
-          "trend_status": "improving"
+          "trend_status": "improving",
+          "trend_metric_label": "среднее место",
+          "trend_explanation": "Сравнивается среднее место на ранней и последней доступной дате выбранного периода.",
+          "trend_period_from": "2025-09-28",
+          "trend_period_to": "2025-11-09",
+          "trend_direction_rule": "меньшее место означает лучший результат"
         },
         "key": "eadc",
         "label": "EADC",
@@ -3593,7 +3808,12 @@
             "first_to_last_delta": -1.0,
             "n_dates": 2,
             "confidence": "low confidence trend",
-            "trend_status": "improving"
+            "trend_status": "improving",
+            "trend_metric_label": "среднее место",
+            "trend_explanation": "Сравнивается среднее место на ранней и последней доступной дате выбранного периода.",
+            "trend_period_from": "2025-09-28",
+            "trend_period_to": "2025-11-09",
+            "trend_direction_rule": "меньшее место означает лучший результат"
           },
           {
             "program": "standard",
@@ -3606,7 +3826,12 @@
             "first_to_last_delta": -1.0,
             "n_dates": 2,
             "confidence": "low confidence trend",
-            "trend_status": "improving"
+            "trend_status": "improving",
+            "trend_metric_label": "среднее место",
+            "trend_explanation": "Сравнивается среднее место на ранней и последней доступной дате выбранного периода.",
+            "trend_period_from": "2025-09-28",
+            "trend_period_to": "2025-11-09",
+            "trend_direction_rule": "меньшее место означает лучший результат"
           },
           {
             "program": "standard",
@@ -3619,7 +3844,12 @@
             "first_to_last_delta": -1.0,
             "n_dates": 2,
             "confidence": "low confidence trend",
-            "trend_status": "improving"
+            "trend_status": "improving",
+            "trend_metric_label": "среднее место",
+            "trend_explanation": "Сравнивается среднее место на ранней и последней доступной дате выбранного периода.",
+            "trend_period_from": "2025-09-28",
+            "trend_period_to": "2025-11-09",
+            "trend_direction_rule": "меньшее место означает лучший результат"
           },
           {
             "program": "standard",
@@ -3632,7 +3862,12 @@
             "first_to_last_delta": 0.0,
             "n_dates": 2,
             "confidence": "low confidence trend",
-            "trend_status": "stable"
+            "trend_status": "stable",
+            "trend_metric_label": "среднее место",
+            "trend_explanation": "Сравнивается среднее место на ранней и последней доступной дате выбранного периода.",
+            "trend_period_from": "2025-09-28",
+            "trend_period_to": "2025-11-09",
+            "trend_direction_rule": "меньшее место означает лучший результат"
           },
           {
             "program": "standard",
@@ -3645,7 +3880,12 @@
             "first_to_last_delta": 0.0,
             "n_dates": 2,
             "confidence": "low confidence trend",
-            "trend_status": "stable"
+            "trend_status": "stable",
+            "trend_metric_label": "среднее место",
+            "trend_explanation": "Сравнивается среднее место на ранней и последней доступной дате выбранного периода.",
+            "trend_period_from": "2025-09-28",
+            "trend_period_to": "2025-11-09",
+            "trend_direction_rule": "меньшее место означает лучший результат"
           }
         ],
         "tournament_dance_results": [
@@ -4005,7 +4245,12 @@
           "first_to_last_delta": 2.0,
           "n_dates": 3,
           "confidence": "ok",
-          "trend_status": "declining"
+          "trend_status": "declining",
+          "trend_metric_label": "среднее место",
+          "trend_explanation": "Сравнивается среднее место на ранней и последней доступной дате выбранного периода.",
+          "trend_period_from": "2025-09-28",
+          "trend_period_to": "2026-01-18",
+          "trend_direction_rule": "меньшее место означает лучший результат"
         },
         "key": "all",
         "label": "Все категории",
@@ -4289,7 +4534,12 @@
             "first_to_last_delta": 2.0,
             "n_dates": 3,
             "confidence": "ok",
-            "trend_status": "declining"
+            "trend_status": "declining",
+            "trend_metric_label": "среднее место",
+            "trend_explanation": "Сравнивается среднее место на ранней и последней доступной дате выбранного периода.",
+            "trend_period_from": "2025-09-28",
+            "trend_period_to": "2026-01-18",
+            "trend_direction_rule": "меньшее место означает лучший результат"
           },
           {
             "program": "latin",
@@ -4302,7 +4552,12 @@
             "first_to_last_delta": 2.0,
             "n_dates": 3,
             "confidence": "ok",
-            "trend_status": "declining"
+            "trend_status": "declining",
+            "trend_metric_label": "среднее место",
+            "trend_explanation": "Сравнивается среднее место на ранней и последней доступной дате выбранного периода.",
+            "trend_period_from": "2025-09-28",
+            "trend_period_to": "2026-01-18",
+            "trend_direction_rule": "меньшее место означает лучший результат"
           },
           {
             "program": "latin",
@@ -4315,7 +4570,12 @@
             "first_to_last_delta": 2.5,
             "n_dates": 3,
             "confidence": "ok",
-            "trend_status": "declining"
+            "trend_status": "declining",
+            "trend_metric_label": "среднее место",
+            "trend_explanation": "Сравнивается среднее место на ранней и последней доступной дате выбранного периода.",
+            "trend_period_from": "2025-09-28",
+            "trend_period_to": "2026-01-18",
+            "trend_direction_rule": "меньшее место означает лучший результат"
           },
           {
             "program": "latin",
@@ -4328,7 +4588,12 @@
             "first_to_last_delta": 3.0,
             "n_dates": 3,
             "confidence": "ok",
-            "trend_status": "declining"
+            "trend_status": "declining",
+            "trend_metric_label": "среднее место",
+            "trend_explanation": "Сравнивается среднее место на ранней и последней доступной дате выбранного периода.",
+            "trend_period_from": "2025-09-28",
+            "trend_period_to": "2026-01-18",
+            "trend_direction_rule": "меньшее место означает лучший результат"
           },
           {
             "program": "latin",
@@ -4341,7 +4606,12 @@
             "first_to_last_delta": 4.0,
             "n_dates": 3,
             "confidence": "ok",
-            "trend_status": "declining"
+            "trend_status": "declining",
+            "trend_metric_label": "среднее место",
+            "trend_explanation": "Сравнивается среднее место на ранней и последней доступной дате выбранного периода.",
+            "trend_period_from": "2025-09-28",
+            "trend_period_to": "2026-01-18",
+            "trend_direction_rule": "меньшее место означает лучший результат"
           }
         ],
         "tournament_dance_results": [
@@ -4851,7 +5121,12 @@
           "first_to_last_delta": 2.0,
           "n_dates": 2,
           "confidence": "low confidence trend",
-          "trend_status": "declining"
+          "trend_status": "declining",
+          "trend_metric_label": "среднее место",
+          "trend_explanation": "Сравнивается среднее место на ранней и последней доступной дате выбранного периода.",
+          "trend_period_from": "2025-09-28",
+          "trend_period_to": "2026-01-18",
+          "trend_direction_rule": "меньшее место означает лучший результат"
         },
         "key": "d_c",
         "label": "D+C",
@@ -5071,7 +5346,12 @@
             "first_to_last_delta": 2.0,
             "n_dates": 2,
             "confidence": "low confidence trend",
-            "trend_status": "declining"
+            "trend_status": "declining",
+            "trend_metric_label": "среднее место",
+            "trend_explanation": "Сравнивается среднее место на ранней и последней доступной дате выбранного периода.",
+            "trend_period_from": "2025-09-28",
+            "trend_period_to": "2026-01-18",
+            "trend_direction_rule": "меньшее место означает лучший результат"
           },
           {
             "program": "latin",
@@ -5084,7 +5364,12 @@
             "first_to_last_delta": 4.0,
             "n_dates": 2,
             "confidence": "low confidence trend",
-            "trend_status": "declining"
+            "trend_status": "declining",
+            "trend_metric_label": "среднее место",
+            "trend_explanation": "Сравнивается среднее место на ранней и последней доступной дате выбранного периода.",
+            "trend_period_from": "2025-09-28",
+            "trend_period_to": "2026-01-18",
+            "trend_direction_rule": "меньшее место означает лучший результат"
           },
           {
             "program": "latin",
@@ -5097,7 +5382,12 @@
             "first_to_last_delta": 4.0,
             "n_dates": 2,
             "confidence": "low confidence trend",
-            "trend_status": "declining"
+            "trend_status": "declining",
+            "trend_metric_label": "среднее место",
+            "trend_explanation": "Сравнивается среднее место на ранней и последней доступной дате выбранного периода.",
+            "trend_period_from": "2025-09-28",
+            "trend_period_to": "2026-01-18",
+            "trend_direction_rule": "меньшее место означает лучший результат"
           },
           {
             "program": "latin",
@@ -5110,7 +5400,12 @@
             "first_to_last_delta": 4.0,
             "n_dates": 2,
             "confidence": "low confidence trend",
-            "trend_status": "declining"
+            "trend_status": "declining",
+            "trend_metric_label": "среднее место",
+            "trend_explanation": "Сравнивается среднее место на ранней и последней доступной дате выбранного периода.",
+            "trend_period_from": "2025-09-28",
+            "trend_period_to": "2026-01-18",
+            "trend_direction_rule": "меньшее место означает лучший результат"
           },
           {
             "program": "latin",
@@ -5123,7 +5418,12 @@
             "first_to_last_delta": 5.0,
             "n_dates": 2,
             "confidence": "low confidence trend",
-            "trend_status": "declining"
+            "trend_status": "declining",
+            "trend_metric_label": "среднее место",
+            "trend_explanation": "Сравнивается среднее место на ранней и последней доступной дате выбранного периода.",
+            "trend_period_from": "2025-09-28",
+            "trend_period_to": "2026-01-18",
+            "trend_direction_rule": "меньшее место означает лучший результат"
           }
         ],
         "tournament_dance_results": [
@@ -5481,7 +5781,12 @@
           "first_to_last_delta": -1.0,
           "n_dates": 2,
           "confidence": "low confidence trend",
-          "trend_status": "improving"
+          "trend_status": "improving",
+          "trend_metric_label": "среднее место",
+          "trend_explanation": "Сравнивается среднее место на ранней и последней доступной дате выбранного периода.",
+          "trend_period_from": "2025-09-28",
+          "trend_period_to": "2025-11-09",
+          "trend_direction_rule": "меньшее место означает лучший результат"
         },
         "key": "eadc",
         "label": "EADC",
@@ -5678,7 +5983,12 @@
             "first_to_last_delta": -1.0,
             "n_dates": 2,
             "confidence": "low confidence trend",
-            "trend_status": "improving"
+            "trend_status": "improving",
+            "trend_metric_label": "среднее место",
+            "trend_explanation": "Сравнивается среднее место на ранней и последней доступной дате выбранного периода.",
+            "trend_period_from": "2025-09-28",
+            "trend_period_to": "2025-11-09",
+            "trend_direction_rule": "меньшее место означает лучший результат"
           },
           {
             "program": "latin",
@@ -5691,7 +6001,12 @@
             "first_to_last_delta": 0.0,
             "n_dates": 2,
             "confidence": "low confidence trend",
-            "trend_status": "stable"
+            "trend_status": "stable",
+            "trend_metric_label": "среднее место",
+            "trend_explanation": "Сравнивается среднее место на ранней и последней доступной дате выбранного периода.",
+            "trend_period_from": "2025-09-28",
+            "trend_period_to": "2025-11-09",
+            "trend_direction_rule": "меньшее место означает лучший результат"
           },
           {
             "program": "latin",
@@ -5704,7 +6019,12 @@
             "first_to_last_delta": 0.0,
             "n_dates": 2,
             "confidence": "low confidence trend",
-            "trend_status": "stable"
+            "trend_status": "stable",
+            "trend_metric_label": "среднее место",
+            "trend_explanation": "Сравнивается среднее место на ранней и последней доступной дате выбранного периода.",
+            "trend_period_from": "2025-09-28",
+            "trend_period_to": "2025-11-09",
+            "trend_direction_rule": "меньшее место означает лучший результат"
           },
           {
             "program": "latin",
@@ -5717,7 +6037,12 @@
             "first_to_last_delta": 0.0,
             "n_dates": 1,
             "confidence": "insufficient trend",
-            "trend_status": "stable"
+            "trend_status": "stable",
+            "trend_metric_label": "среднее место",
+            "trend_explanation": "Сравнивается среднее место на ранней и последней доступной дате выбранного периода.",
+            "trend_period_from": "2025-11-09",
+            "trend_period_to": "2025-11-09",
+            "trend_direction_rule": "меньшее место означает лучший результат"
           },
           {
             "program": "latin",
@@ -5730,7 +6055,12 @@
             "first_to_last_delta": 0.0,
             "n_dates": 1,
             "confidence": "insufficient trend",
-            "trend_status": "stable"
+            "trend_status": "stable",
+            "trend_metric_label": "среднее место",
+            "trend_explanation": "Сравнивается среднее место на ранней и последней доступной дате выбранного периода.",
+            "trend_period_from": "2025-11-09",
+            "trend_period_to": "2025-11-09",
+            "trend_direction_rule": "меньшее место означает лучший результат"
           }
         ],
         "tournament_dance_results": [
@@ -6058,7 +6388,12 @@
           "first_to_last_delta": 1.0,
           "n_dates": 3,
           "confidence": "ok",
-          "trend_status": "declining"
+          "trend_status": "declining",
+          "trend_metric_label": "среднее место",
+          "trend_explanation": "Сравнивается среднее место на ранней и последней доступной дате выбранного периода.",
+          "trend_period_from": "2025-09-28",
+          "trend_period_to": "2026-01-18",
+          "trend_direction_rule": "меньшее место означает лучший результат"
         },
         "key": "all",
         "label": "Все категории",
@@ -6275,7 +6610,12 @@
             "first_to_last_delta": 1.0,
             "n_dates": 3,
             "confidence": "ok",
-            "trend_status": "declining"
+            "trend_status": "declining",
+            "trend_metric_label": "среднее место",
+            "trend_explanation": "Сравнивается среднее место на ранней и последней доступной дате выбранного периода.",
+            "trend_period_from": "2025-09-28",
+            "trend_period_to": "2026-01-18",
+            "trend_direction_rule": "меньшее место означает лучший результат"
           },
           {
             "program": "standard",
@@ -6288,7 +6628,12 @@
             "first_to_last_delta": 2.0,
             "n_dates": 3,
             "confidence": "ok",
-            "trend_status": "declining"
+            "trend_status": "declining",
+            "trend_metric_label": "среднее место",
+            "trend_explanation": "Сравнивается среднее место на ранней и последней доступной дате выбранного периода.",
+            "trend_period_from": "2025-09-28",
+            "trend_period_to": "2026-01-18",
+            "trend_direction_rule": "меньшее место означает лучший результат"
           },
           {
             "program": "standard",
@@ -6301,7 +6646,12 @@
             "first_to_last_delta": 2.5,
             "n_dates": 3,
             "confidence": "ok",
-            "trend_status": "declining"
+            "trend_status": "declining",
+            "trend_metric_label": "среднее место",
+            "trend_explanation": "Сравнивается среднее место на ранней и последней доступной дате выбранного периода.",
+            "trend_period_from": "2025-09-28",
+            "trend_period_to": "2026-01-18",
+            "trend_direction_rule": "меньшее место означает лучший результат"
           },
           {
             "program": "standard",
@@ -6314,7 +6664,12 @@
             "first_to_last_delta": 3.5,
             "n_dates": 3,
             "confidence": "ok",
-            "trend_status": "declining"
+            "trend_status": "declining",
+            "trend_metric_label": "среднее место",
+            "trend_explanation": "Сравнивается среднее место на ранней и последней доступной дате выбранного периода.",
+            "trend_period_from": "2025-09-28",
+            "trend_period_to": "2026-01-18",
+            "trend_direction_rule": "меньшее место означает лучший результат"
           },
           {
             "program": "standard",
@@ -6327,7 +6682,12 @@
             "first_to_last_delta": 3.5,
             "n_dates": 3,
             "confidence": "ok",
-            "trend_status": "declining"
+            "trend_status": "declining",
+            "trend_metric_label": "среднее место",
+            "trend_explanation": "Сравнивается среднее место на ранней и последней доступной дате выбранного периода.",
+            "trend_period_from": "2025-09-28",
+            "trend_period_to": "2026-01-18",
+            "trend_direction_rule": "меньшее место означает лучший результат"
           }
         ]
       },
@@ -6513,7 +6873,12 @@
           "first_to_last_delta": 1.0,
           "n_dates": 3,
           "confidence": "ok",
-          "trend_status": "declining"
+          "trend_status": "declining",
+          "trend_metric_label": "среднее место",
+          "trend_explanation": "Сравнивается среднее место на ранней и последней доступной дате выбранного периода.",
+          "trend_period_from": "2025-09-28",
+          "trend_period_to": "2026-01-18",
+          "trend_direction_rule": "меньшее место означает лучший результат"
         },
         "key": "eadc",
         "label": "EADC",
@@ -6730,7 +7095,12 @@
             "first_to_last_delta": 1.0,
             "n_dates": 3,
             "confidence": "ok",
-            "trend_status": "declining"
+            "trend_status": "declining",
+            "trend_metric_label": "среднее место",
+            "trend_explanation": "Сравнивается среднее место на ранней и последней доступной дате выбранного периода.",
+            "trend_period_from": "2025-09-28",
+            "trend_period_to": "2026-01-18",
+            "trend_direction_rule": "меньшее место означает лучший результат"
           },
           {
             "program": "standard",
@@ -6743,7 +7113,12 @@
             "first_to_last_delta": 2.0,
             "n_dates": 3,
             "confidence": "ok",
-            "trend_status": "declining"
+            "trend_status": "declining",
+            "trend_metric_label": "среднее место",
+            "trend_explanation": "Сравнивается среднее место на ранней и последней доступной дате выбранного периода.",
+            "trend_period_from": "2025-09-28",
+            "trend_period_to": "2026-01-18",
+            "trend_direction_rule": "меньшее место означает лучший результат"
           },
           {
             "program": "standard",
@@ -6756,7 +7131,12 @@
             "first_to_last_delta": 2.5,
             "n_dates": 3,
             "confidence": "ok",
-            "trend_status": "declining"
+            "trend_status": "declining",
+            "trend_metric_label": "среднее место",
+            "trend_explanation": "Сравнивается среднее место на ранней и последней доступной дате выбранного периода.",
+            "trend_period_from": "2025-09-28",
+            "trend_period_to": "2026-01-18",
+            "trend_direction_rule": "меньшее место означает лучший результат"
           },
           {
             "program": "standard",
@@ -6769,7 +7149,12 @@
             "first_to_last_delta": 3.5,
             "n_dates": 3,
             "confidence": "ok",
-            "trend_status": "declining"
+            "trend_status": "declining",
+            "trend_metric_label": "среднее место",
+            "trend_explanation": "Сравнивается среднее место на ранней и последней доступной дате выбранного периода.",
+            "trend_period_from": "2025-09-28",
+            "trend_period_to": "2026-01-18",
+            "trend_direction_rule": "меньшее место означает лучший результат"
           },
           {
             "program": "standard",
@@ -6782,7 +7167,12 @@
             "first_to_last_delta": 3.5,
             "n_dates": 3,
             "confidence": "ok",
-            "trend_status": "declining"
+            "trend_status": "declining",
+            "trend_metric_label": "среднее место",
+            "trend_explanation": "Сравнивается среднее место на ранней и последней доступной дате выбранного периода.",
+            "trend_period_from": "2025-09-28",
+            "trend_period_to": "2026-01-18",
+            "trend_direction_rule": "меньшее место означает лучший результат"
           }
         ]
       }
@@ -6970,7 +7360,12 @@
           "first_to_last_delta": 2.0,
           "n_dates": 3,
           "confidence": "ok",
-          "trend_status": "declining"
+          "trend_status": "declining",
+          "trend_metric_label": "среднее место",
+          "trend_explanation": "Сравнивается среднее место на ранней и последней доступной дате выбранного периода.",
+          "trend_period_from": "2025-09-28",
+          "trend_period_to": "2026-01-18",
+          "trend_direction_rule": "меньшее место означает лучший результат"
         },
         "key": "all",
         "label": "Все категории",
@@ -7187,7 +7582,12 @@
             "first_to_last_delta": 2.0,
             "n_dates": 3,
             "confidence": "ok",
-            "trend_status": "declining"
+            "trend_status": "declining",
+            "trend_metric_label": "среднее место",
+            "trend_explanation": "Сравнивается среднее место на ранней и последней доступной дате выбранного периода.",
+            "trend_period_from": "2025-09-28",
+            "trend_period_to": "2026-01-18",
+            "trend_direction_rule": "меньшее место означает лучший результат"
           },
           {
             "program": "latin",
@@ -7200,7 +7600,12 @@
             "first_to_last_delta": 2.0,
             "n_dates": 3,
             "confidence": "ok",
-            "trend_status": "declining"
+            "trend_status": "declining",
+            "trend_metric_label": "среднее место",
+            "trend_explanation": "Сравнивается среднее место на ранней и последней доступной дате выбранного периода.",
+            "trend_period_from": "2025-09-28",
+            "trend_period_to": "2026-01-18",
+            "trend_direction_rule": "меньшее место означает лучший результат"
           },
           {
             "program": "latin",
@@ -7213,7 +7618,12 @@
             "first_to_last_delta": 2.5,
             "n_dates": 3,
             "confidence": "ok",
-            "trend_status": "declining"
+            "trend_status": "declining",
+            "trend_metric_label": "среднее место",
+            "trend_explanation": "Сравнивается среднее место на ранней и последней доступной дате выбранного периода.",
+            "trend_period_from": "2025-09-28",
+            "trend_period_to": "2026-01-18",
+            "trend_direction_rule": "меньшее место означает лучший результат"
           },
           {
             "program": "latin",
@@ -7226,7 +7636,12 @@
             "first_to_last_delta": 3.0,
             "n_dates": 3,
             "confidence": "ok",
-            "trend_status": "declining"
+            "trend_status": "declining",
+            "trend_metric_label": "среднее место",
+            "trend_explanation": "Сравнивается среднее место на ранней и последней доступной дате выбранного периода.",
+            "trend_period_from": "2025-09-28",
+            "trend_period_to": "2026-01-18",
+            "trend_direction_rule": "меньшее место означает лучший результат"
           },
           {
             "program": "latin",
@@ -7239,7 +7654,12 @@
             "first_to_last_delta": 4.0,
             "n_dates": 3,
             "confidence": "ok",
-            "trend_status": "declining"
+            "trend_status": "declining",
+            "trend_metric_label": "среднее место",
+            "trend_explanation": "Сравнивается среднее место на ранней и последней доступной дате выбранного периода.",
+            "trend_period_from": "2025-09-28",
+            "trend_period_to": "2026-01-18",
+            "trend_direction_rule": "меньшее место означает лучший результат"
           }
         ]
       },
@@ -7425,7 +7845,12 @@
           "first_to_last_delta": 2.0,
           "n_dates": 3,
           "confidence": "ok",
-          "trend_status": "declining"
+          "trend_status": "declining",
+          "trend_metric_label": "среднее место",
+          "trend_explanation": "Сравнивается среднее место на ранней и последней доступной дате выбранного периода.",
+          "trend_period_from": "2025-09-28",
+          "trend_period_to": "2026-01-18",
+          "trend_direction_rule": "меньшее место означает лучший результат"
         },
         "key": "eadc",
         "label": "EADC",
@@ -7642,7 +8067,12 @@
             "first_to_last_delta": 2.0,
             "n_dates": 3,
             "confidence": "ok",
-            "trend_status": "declining"
+            "trend_status": "declining",
+            "trend_metric_label": "среднее место",
+            "trend_explanation": "Сравнивается среднее место на ранней и последней доступной дате выбранного периода.",
+            "trend_period_from": "2025-09-28",
+            "trend_period_to": "2026-01-18",
+            "trend_direction_rule": "меньшее место означает лучший результат"
           },
           {
             "program": "latin",
@@ -7655,7 +8085,12 @@
             "first_to_last_delta": 2.0,
             "n_dates": 3,
             "confidence": "ok",
-            "trend_status": "declining"
+            "trend_status": "declining",
+            "trend_metric_label": "среднее место",
+            "trend_explanation": "Сравнивается среднее место на ранней и последней доступной дате выбранного периода.",
+            "trend_period_from": "2025-09-28",
+            "trend_period_to": "2026-01-18",
+            "trend_direction_rule": "меньшее место означает лучший результат"
           },
           {
             "program": "latin",
@@ -7668,7 +8103,12 @@
             "first_to_last_delta": 2.5,
             "n_dates": 3,
             "confidence": "ok",
-            "trend_status": "declining"
+            "trend_status": "declining",
+            "trend_metric_label": "среднее место",
+            "trend_explanation": "Сравнивается среднее место на ранней и последней доступной дате выбранного периода.",
+            "trend_period_from": "2025-09-28",
+            "trend_period_to": "2026-01-18",
+            "trend_direction_rule": "меньшее место означает лучший результат"
           },
           {
             "program": "latin",
@@ -7681,7 +8121,12 @@
             "first_to_last_delta": 3.0,
             "n_dates": 3,
             "confidence": "ok",
-            "trend_status": "declining"
+            "trend_status": "declining",
+            "trend_metric_label": "среднее место",
+            "trend_explanation": "Сравнивается среднее место на ранней и последней доступной дате выбранного периода.",
+            "trend_period_from": "2025-09-28",
+            "trend_period_to": "2026-01-18",
+            "trend_direction_rule": "меньшее место означает лучший результат"
           },
           {
             "program": "latin",
@@ -7694,7 +8139,12 @@
             "first_to_last_delta": 4.0,
             "n_dates": 3,
             "confidence": "ok",
-            "trend_status": "declining"
+            "trend_status": "declining",
+            "trend_metric_label": "среднее место",
+            "trend_explanation": "Сравнивается среднее место на ранней и последней доступной дате выбранного периода.",
+            "trend_period_from": "2025-09-28",
+            "trend_period_to": "2026-01-18",
+            "trend_direction_rule": "меньшее место означает лучший результат"
           }
         ]
       }

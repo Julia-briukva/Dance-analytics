@@ -42,6 +42,7 @@ DEFAULT_REPORTS_DIR = PROJECT_ROOT / "reports"
 ANALYTICS_VERSION = "report_layer_v1"
 JUDGE_REPORT_MIN_MARKS = 10
 VISIBLE_CATEGORY_MIN_MARKS = 20
+PANEL_REACTION_SPREAD_THRESHOLD = 0.15
 CATEGORY_SLICE_LABELS = {"all": "Все категории"}
 CLASS_GROUP_ORDER = ["N", "N+E", "E", "E+D", "D", "D+C", "C", "C+B", "B", "A", "S", "M", "EADC", "Open"]
 CLASS_GROUP_KEYS = {label: label.lower().replace("+", "_") for label in CLASS_GROUP_ORDER}
@@ -233,6 +234,9 @@ def add_tournament_city_to_results(dance_results: pd.DataFrame, marks: pd.DataFr
 
 
 def safe_trend_ranking(dynamics: pd.DataFrame) -> pd.DataFrame:
+    trend_metric_label = "среднее место"
+    trend_explanation = "Сравнивается среднее место на ранней и последней доступной дате выбранного периода."
+    trend_direction_rule = "меньшее место означает лучший результат"
     if dynamics.empty:
         return pd.DataFrame()
     try:
@@ -279,6 +283,11 @@ def safe_trend_ranking(dynamics: pd.DataFrame) -> pd.DataFrame:
             return "improving" if delta < 0 else "declining"
 
         trends["trend_status"] = trends.apply(trend_status, axis=1)
+        trends["trend_metric_label"] = trend_metric_label
+        trends["trend_explanation"] = trend_explanation
+        trends["trend_period_from"] = trends["first_date"] if "first_date" in trends.columns else None
+        trends["trend_period_to"] = trends["last_date"] if "last_date" in trends.columns else None
+        trends["trend_direction_rule"] = trend_direction_rule
     return trends
 
 
@@ -1022,6 +1031,116 @@ def ranking_mismatch_warnings(summary: pd.DataFrame) -> list[dict[str, Any]]:
     return warnings
 
 
+def build_judge_panel_reaction(marks: pd.DataFrame) -> dict[str, Any]:
+    if marks.empty:
+        return {}
+    required_columns = {
+        "mark_type",
+        "numeric_mark",
+        "tournament_id",
+        "tournament_title",
+        "event_date",
+        "tournament_city",
+        "protocol_id",
+        "round",
+        "dance",
+        "program",
+        "judge_id",
+    }
+    if not required_columns.issubset(set(marks.columns)):
+        return {}
+
+    numeric = marks[(marks["mark_type"] == "numeric_place") & marks["numeric_mark"].notna()].copy()
+    if numeric.empty:
+        return {}
+    numeric["event_date_dt"] = pd.to_datetime(numeric["event_date"], errors="coerce")
+
+    group_columns = [
+        "tournament_id",
+        "tournament_title",
+        "event_date",
+        "event_date_dt",
+        "tournament_city",
+        "protocol_id",
+        "round",
+        "dance",
+        "program",
+    ]
+    protocol_dance_spread = (
+        numeric.groupby(group_columns, dropna=False)
+        .agg(
+            judge_marks=("numeric_mark", "count"),
+            judge_count=("judge_id", "nunique"),
+            panel_spread=("numeric_mark", lambda values: float(values.std(ddof=0)) if len(values.dropna()) >= 2 else None),
+            panel_mean=("numeric_mark", "mean"),
+        )
+        .reset_index()
+    )
+    protocol_dance_spread = protocol_dance_spread[protocol_dance_spread["panel_spread"].notna()].copy()
+    if protocol_dance_spread.empty:
+        return {}
+
+    by_tournament = (
+        protocol_dance_spread.groupby(
+            ["tournament_id", "tournament_title", "event_date", "event_date_dt", "tournament_city"],
+            dropna=False,
+        )
+        .agg(
+            panel_spread=("panel_spread", "mean"),
+            protocol_count=("protocol_id", "nunique"),
+            protocol_dance_round_groups=("panel_spread", "count"),
+            numeric_marks=("judge_marks", "sum"),
+            dances=("dance", lambda items: sort_dance_codes([normalize_dance_code(item) for item in items if pd.notna(item)])),
+            programs=("program", lambda items: sorted(set(str(item) for item in items if pd.notna(item)))),
+        )
+        .reset_index()
+        .sort_values(["event_date_dt", "tournament_id"])
+    )
+    tournament_count = len(by_tournament)
+    if tournament_count == 0:
+        return {}
+
+    window_size = max(1, round(tournament_count * 0.4))
+    first = float(by_tournament.head(window_size)["panel_spread"].mean())
+    last = float(by_tournament.tail(window_size)["panel_spread"].mean())
+    delta = last - first
+    if abs(delta) < PANEL_REACTION_SPREAD_THRESHOLD:
+        trend = "stable"
+    elif delta < 0:
+        trend = "more_consistent"
+    else:
+        trend = "less_consistent"
+
+    rows = []
+    for _, row in by_tournament.iterrows():
+        rows.append(
+            {
+                "tournament_id": clean_value(row["tournament_id"]),
+                "tournament_title": clean_value(row["tournament_title"]),
+                "event_date": clean_value(row["event_date"]),
+                "city": clean_value(row["tournament_city"]),
+                "panel_spread": clean_value(float(row["panel_spread"])),
+                "protocol_count": clean_value(row["protocol_count"]),
+                "protocol_dance_round_groups": clean_value(row["protocol_dance_round_groups"]),
+                "numeric_marks": clean_value(row["numeric_marks"]),
+                "dances": clean_value(row["dances"]),
+                "programs": clean_value(row["programs"]),
+            }
+        )
+
+    return {
+        "panel_spread_by_tournament": rows,
+        "panel_spread_first": first,
+        "panel_spread_last": last,
+        "panel_spread_delta": delta,
+        "panel_spread_trend": trend,
+        "early_late_window_tournaments": window_size,
+        "tournament_count": tournament_count,
+        "threshold": PANEL_REACTION_SPREAD_THRESHOLD,
+        "method": "numeric_place marks only; spread by protocol+round+dance; tournament mean; first 40% vs last 40%",
+    }
+
+
 def build_warnings_payload(conn: sqlite3.Connection, marks: pd.DataFrame, summary: pd.DataFrame, numeric: pd.DataFrame) -> dict[str, Any]:
     low_confidence_dances = summary[summary["confidence"] != "ok"].copy() if not summary.empty else pd.DataFrame()
     category_mix = (
@@ -1093,6 +1212,7 @@ def build_report(conn: sqlite3.Connection, compreg_idd: str | int) -> dict[str, 
             "latin": program_payload("latin", summary, trends),
         },
         "judges": build_judges_payload(numeric),
+        "judge_panel_reaction": build_judge_panel_reaction(marks),
         "dances": {
             "metrics": df_records(summary),
             "trends": df_records(trends),

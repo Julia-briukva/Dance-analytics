@@ -53,6 +53,24 @@
       --radius-panel: 12px;
       --radius-section: 18px;
       --radius-circle: 999px;
+      --chip-radius: var(--radius-control);
+      --control-large-font-size: 13px;
+      --control-large-font-weight: 560;
+      --control-large-min-height: 34px;
+      --control-large-padding-y: 7px;
+      --control-large-padding-x: 12px;
+      --chip-small-font-size: 12px;
+      --chip-small-font-weight: 560;
+      --chip-small-line-height: 1.2;
+      --chip-small-min-height: 28px;
+      --chip-small-padding-y: 5px;
+      --chip-small-padding-x: 10px;
+      --chip-gap: 6px;
+      --chip-badge-font-size: 10px;
+      --chip-badge-font-weight: 560;
+      --chip-badge-min-height: 18px;
+      --chip-badge-padding-y: 2px;
+      --chip-badge-padding-x: 6px;
     }
 
     * { box-sizing: border-box; }
@@ -215,6 +233,104 @@
       height: 18px;
     }
 
+    .dance-comparison {
+      background: transparent;
+      border: 0;
+      border-radius: 0;
+      padding: 8px 0 2px;
+      margin: 18px 0 18px;
+      break-inside: avoid;
+    }
+
+    .dance-comparison-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .dance-comparison-header h3 {
+      color: var(--ink);
+      font-size: 15px;
+      font-weight: 600;
+      margin: 0;
+    }
+
+    .dance-comparison-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .dance-comparison-zone {
+      border-radius: var(--radius-panel);
+      padding: 14px 15px;
+      background: rgba(255, 255, 255, .72);
+    }
+
+    .dance-comparison-zone.positive {
+      background: color-mix(in srgb, var(--accent-positive-bg) 68%, #fff);
+    }
+
+    .dance-comparison-zone.attention {
+      background: color-mix(in srgb, var(--accent-attention-bg) 68%, #fff);
+    }
+
+    .dance-comparison-zone.neutral {
+      background: color-mix(in srgb, var(--accent-neutral-bg) 72%, #fff);
+    }
+
+    .dance-comparison-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 560;
+      margin-bottom: 8px;
+    }
+
+    .dance-name-list {
+      color: var(--ink);
+      font-size: 14px;
+      font-weight: 580;
+      line-height: 1.45;
+      margin-bottom: 5px;
+    }
+
+    .dance-name-line {
+      color: var(--ink);
+      font-size: 13px;
+      font-weight: 560;
+      line-height: 1.45;
+    }
+
+    .dance-comparison-value {
+      color: var(--muted);
+      font-size: 12.5px;
+    }
+
+    .dance-metric-list {
+      display: grid;
+      gap: 8px;
+    }
+
+    .dance-metric-row {
+      display: grid;
+      grid-template-columns: minmax(0, auto) minmax(120px, 1fr);
+      gap: 8px;
+      align-items: center;
+    }
+
+    .dance-comparison-message {
+      color: var(--ink-soft);
+      font-size: 14px;
+      line-height: 1.55;
+      margin: 0;
+    }
+
     .status-icon.positive,
     .positive .status-icon {
       background: var(--accent-positive-bg);
@@ -249,62 +365,10 @@
       overflow-wrap: anywhere;
     }
 
-    .tabs {
-      position: sticky;
-      top: 0;
-      z-index: 5;
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 12px;
-      background: rgba(248, 247, 252, .94);
-      backdrop-filter: blur(8px);
-      padding: 10px 0 18px;
-      margin-bottom: 12px;
-    }
-
-    .tab-input { position: absolute; opacity: 0; pointer-events: none; }
     .category-input { position: absolute; opacity: 0; pointer-events: none; }
 
-    .tab-label {
-      display: flex;
-      flex-direction: column;
-      gap: 3px;
-      cursor: pointer;
-      border: 1px solid var(--line);
-      border-radius: var(--radius-card);
-      background: var(--paper);
-      color: var(--ink-soft);
-      padding: 15px 18px;
-      box-shadow: 0 6px 18px rgba(49, 42, 96, .04);
-      transition: all .18s ease;
-    }
-
-    .tab-title {
-      font-size: 16px;
-      font-weight: 600;
-    }
-
-    .tab-help {
-      color: var(--muted);
-      font-size: 12px;
-    }
-
-    #tab-parent:checked ~ .tabs label[for="tab-parent"],
-    #tab-trainer:checked ~ .tabs label[for="tab-trainer"] {
-      background: var(--accent-soft);
-      border-color: rgba(94, 81, 184, .42);
-      color: var(--accent-dark);
-      box-shadow: 0 6px 16px rgba(77, 61, 181, .07);
-    }
-
-    #tab-parent:checked ~ .tabs label[for="tab-parent"] .tab-help,
-    #tab-trainer:checked ~ .tabs label[for="tab-trainer"] .tab-help {
-      color: var(--muted);
-    }
-
-    .mode-panel { display: none; }
-    #tab-parent:checked ~ .parent-panel { display: block; }
-    #tab-trainer:checked ~ .trainer-panel { display: block; }
+    .mode-panel { display: block; }
+    .parent-panel { display: none; }
 
     .report-filters {
       background: var(--paper);
@@ -339,20 +403,24 @@
     .city-chip {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
+      justify-content: center;
+      gap: var(--chip-gap);
+      min-height: var(--control-large-min-height);
       border: 1px solid var(--line);
-      border-radius: var(--radius-control);
+      border-radius: var(--chip-radius);
       background: var(--accent-light);
       color: var(--ink-soft);
       cursor: pointer;
-      font-size: 12px;
-      padding: 7px 10px;
+      font-size: var(--control-large-font-size);
+      font-weight: var(--control-large-font-weight);
+      line-height: var(--chip-small-line-height);
+      letter-spacing: 0;
+      padding: var(--control-large-padding-y) var(--control-large-padding-x);
     }
 
     .city-chip {
       appearance: none;
-      font: inherit;
-      line-height: 1.2;
+      font-family: inherit;
       transition: background .16s ease, border-color .16s ease, color .16s ease;
     }
 
@@ -380,9 +448,10 @@
       border-radius: var(--radius-control);
       color: var(--ink-soft);
       font: inherit;
-      font-size: 13px;
-      min-height: 34px;
-      padding: 7px 12px;
+      font-size: var(--control-large-font-size);
+      font-weight: var(--control-large-font-weight);
+      min-height: var(--control-large-min-height);
+      padding: var(--control-large-padding-y) var(--control-large-padding-x);
     }
 
     .filter-note {
@@ -412,6 +481,15 @@
       font-size: 13px;
       max-width: 720px;
       margin-bottom: 14px;
+    }
+
+    .helper-text {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 1.5;
+      max-width: 760px;
+      margin: 8px 0 12px;
     }
 
     .kpi-value,
@@ -457,6 +535,14 @@
     .rank-list li + li,
     .plain-list li + li {
       border-top: 1px solid rgba(233, 229, 244, .68);
+    }
+
+    .trend-help {
+      color: var(--muted);
+      font-size: 12.5px;
+      line-height: 1.55;
+      margin: 16px 0 12px;
+      max-width: 780px;
     }
 
     .rank {
@@ -536,14 +622,21 @@
     }
 
     .category-tab {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--chip-gap);
+      min-height: var(--chip-small-min-height);
       cursor: pointer;
       border: 1px solid var(--line);
-      border-radius: var(--radius-control);
+      border-radius: var(--chip-radius);
       background: var(--paper);
       color: var(--ink-soft);
-      padding: 8px 12px;
-      font-size: 12px;
-      font-weight: 560;
+      padding: var(--chip-small-padding-y) var(--chip-small-padding-x);
+      font-size: var(--chip-small-font-size);
+      font-weight: var(--chip-small-font-weight);
+      line-height: var(--chip-small-line-height);
+      letter-spacing: 0;
     }
 
     .category-tab.limited {
@@ -551,18 +644,22 @@
       background: var(--accent-neutral-bg);
       border-color: #DCD6EA;
       border-style: dashed;
-      font-weight: 520;
+      font-weight: var(--chip-small-font-weight);
     }
 
     .chip-badge {
       display: inline-flex;
-      margin-left: 6px;
-      border-radius: var(--radius-control);
+      align-items: center;
+      justify-content: center;
+      min-height: var(--chip-badge-min-height);
+      border-radius: var(--chip-radius);
       background: #E4DFF0;
       color: var(--accent-neutral);
-      font-size: 10px;
-      font-weight: 560;
-      padding: 2px 6px;
+      font-size: var(--chip-badge-font-size);
+      font-weight: var(--chip-badge-font-weight);
+      line-height: var(--chip-small-line-height);
+      letter-spacing: 0;
+      padding: var(--chip-badge-padding-y) var(--chip-badge-padding-x);
       vertical-align: middle;
     }
 
@@ -682,6 +779,141 @@
       margin-top: 2px;
     }
 
+    .judge-table-stack {
+      display: grid;
+      gap: 22px;
+      margin-top: 12px;
+    }
+
+    .judge-table-block h3 {
+      margin-bottom: 10px;
+    }
+
+    .judge-mobile-note {
+      display: none;
+    }
+
+    .judge-insight-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    .judge-insight-card {
+      background: var(--paper-soft);
+      border: 1px solid rgba(233, 229, 244, .82);
+      border-radius: var(--radius-card);
+      padding: 15px;
+      break-inside: avoid;
+    }
+
+    .judge-insight-card h3 {
+      color: var(--ink);
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 1.3;
+      margin-bottom: 10px;
+    }
+
+    .judge-insight-card h3 + .judge-insight-description {
+      margin-top: 0;
+      margin-bottom: 12px;
+    }
+
+    .judge-consensus-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .judge-consensus-item {
+      display: grid;
+      gap: 6px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(233, 229, 244, .72);
+    }
+
+    .judge-consensus-item:first-child {
+      padding-top: 0;
+      border-top: 0;
+    }
+
+    .judge-consensus-name {
+      color: var(--ink);
+      font-size: 14.5px;
+      font-weight: 560;
+      line-height: 1.4;
+    }
+
+    .judge-consensus-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: fit-content;
+      min-height: var(--chip-small-min-height);
+      border-radius: var(--chip-radius);
+      background: var(--accent-neutral-bg);
+      color: var(--accent-neutral);
+      font-size: var(--chip-small-font-size);
+      font-weight: var(--chip-small-font-weight);
+      line-height: var(--chip-small-line-height);
+      padding: var(--chip-small-padding-y) var(--chip-small-padding-x);
+    }
+
+    .judge-consensus-badge.positive {
+      background: var(--accent-positive-bg);
+      color: var(--accent-positive);
+    }
+
+    .judge-consensus-badge.attention {
+      background: var(--accent-attention-bg);
+      color: var(--accent-attention);
+    }
+
+    .judge-insight-item + .judge-insight-item {
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(233, 229, 244, .72);
+    }
+
+    .judge-insight-title {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 500;
+      margin-bottom: 4px;
+    }
+
+    .judge-insight-headline {
+      color: var(--ink);
+      font-size: 14.5px;
+      font-weight: 560;
+      line-height: 1.4;
+    }
+
+    .judge-list-name {
+      color: var(--ink);
+      font-size: 12.5px;
+      font-weight: 520;
+      line-height: 1.4;
+    }
+
+    .judge-insight-meta {
+      color: var(--muted);
+      font-size: 12.5px;
+      font-weight: 400;
+      line-height: 1.45;
+      margin-top: 3px;
+    }
+
+    .judge-insight-description {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 1.5;
+      margin-top: 12px;
+    }
+
     .note-box {
       border-radius: var(--radius-panel);
       padding: 12px 14px;
@@ -767,13 +999,6 @@
       border: 1px solid var(--line);
       border-radius: var(--radius-panel);
       margin-top: 10px;
-    }
-
-    .tournament-list .table-wrap,
-    .tournament-list .table-scroll {
-      border: 0;
-      border-radius: 0;
-      margin-top: 16px;
     }
 
     table {
@@ -913,41 +1138,45 @@
       background: var(--accent-soft);
     }
 
-    .tournament-title-line {
-      display: flex;
+    .section-accordion summary {
+      font-size: 21px;
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .section-summary-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 12px;
       align-items: center;
-      gap: 8px;
-      flex-wrap: wrap;
+    }
+
+    .tournament-title-line {
       min-width: 0;
+    }
+
+    .tournament-badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 6px;
     }
 
     .tournament-badge {
       display: inline-flex;
       align-items: center;
-      gap: 4px;
-      border-radius: var(--radius-control);
+      justify-content: center;
+      gap: var(--chip-gap);
+      min-height: var(--chip-small-min-height);
+      border-radius: var(--chip-radius);
       background: var(--accent-positive-bg);
       color: var(--accent-positive);
-      font-size: 10.5px;
-      font-weight: 560;
-      line-height: 1.2;
-      padding: 3px 7px;
+      font-size: var(--chip-small-font-size);
+      font-weight: var(--chip-small-font-weight);
+      line-height: var(--chip-small-line-height);
+      letter-spacing: 0;
+      padding: var(--chip-small-padding-y) var(--chip-small-padding-x);
       white-space: nowrap;
-    }
-
-    .tournament-badge .status-icon {
-      width: 15px;
-      height: 15px;
-      flex-basis: 15px;
-      margin: 0;
-      background: transparent;
-      color: currentColor;
-    }
-
-    .tournament-badge .status-icon svg {
-      width: 13px;
-      height: 13px;
-      stroke-width: 2;
     }
 
     .tournament-badge.hardest {
@@ -976,18 +1205,22 @@
 
     .tournament-program-summary {
       min-width: 0;
+      background: var(--paper-soft);
+      border: 1px solid rgba(233, 229, 244, .82);
+      border-radius: var(--radius-card);
+      padding: 14px 15px;
     }
 
     .tournament-detail-grid .insight-card {
-      background: transparent;
-      border-radius: 0;
-      padding: 0 18px 0 0;
+      background: var(--paper-soft);
+      border-radius: var(--radius-card);
+      padding: 14px 15px;
       min-height: 0;
     }
 
     .tournament-detail-grid .insight-card + .insight-card {
-      padding-left: 18px;
-      border-left: 1px solid rgba(233, 229, 244, .9);
+      padding-left: 15px;
+      border-left: 1px solid rgba(233, 229, 244, .82);
     }
 
     .tournament-detail-grid h3 {
@@ -1003,6 +1236,25 @@
 
     .tournament-detail-grid strong {
       font-weight: 600;
+    }
+
+    .tournament-program-metrics {
+      display: grid;
+      gap: 7px;
+      margin-top: 10px;
+    }
+
+    .tournament-program-row {
+      display: grid;
+      grid-template-columns: minmax(112px, auto) minmax(0, 1fr);
+      gap: 10px;
+      align-items: baseline;
+      color: var(--ink-soft);
+      font-size: 12.5px;
+    }
+
+    .tournament-program-label {
+      color: var(--muted);
     }
 
     @media (max-width: 900px) {
@@ -1031,10 +1283,9 @@
       .story-grid,
       .tournament-summary,
       .tournament-detail-grid,
-      .tabs {
+      .judge-insight-grid {
         grid-template-columns: 1fr;
       }
-      .tabs { position: static; }
       .filter-grid,
       .date-filter-grid { grid-template-columns: 1fr; }
       .header-filter-panel {
@@ -1056,6 +1307,80 @@
         margin-left: 0;
         margin-right: 0;
       }
+      .table-wrap.mobile-card-table,
+      .table-scroll.mobile-card-table {
+        border: 0;
+        overflow: visible;
+      }
+      .mobile-card-table table,
+      .mobile-card-table thead,
+      .mobile-card-table tbody,
+      .mobile-card-table tr,
+      .mobile-card-table th,
+      .mobile-card-table td {
+        display: block;
+        width: 100%;
+      }
+      .mobile-card-table table {
+        min-width: 0;
+        background: transparent;
+      }
+      .mobile-card-table thead {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+      }
+      .mobile-card-table tbody {
+        display: grid;
+        gap: 10px;
+      }
+      .mobile-card-table tr {
+        background: var(--paper-soft);
+        border: 1px solid rgba(233, 229, 244, .82);
+        border-radius: var(--radius-card);
+        padding: 10px 12px;
+      }
+      .mobile-card-table td {
+        border: 0;
+        padding: 7px 0;
+        display: grid;
+        grid-template-columns: minmax(112px, .9fr) minmax(0, 1fr);
+        gap: 12px;
+        align-items: start;
+        text-align: right;
+      }
+      .mobile-card-table td + td {
+        border-top: 1px solid rgba(233, 229, 244, .66);
+      }
+      .mobile-card-table td::before {
+        content: attr(data-label);
+        color: var(--muted);
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: .04em;
+        text-align: left;
+      }
+      .mobile-card-table td:first-child {
+        display: block;
+        text-align: left;
+        font-size: 15px;
+        padding-bottom: 9px;
+      }
+      .mobile-card-table td:first-child::before {
+        display: none;
+      }
+      .mobile-card-table td[colspan] {
+        display: block;
+        text-align: left;
+      }
+      .mobile-card-table td[colspan]::before {
+        display: none;
+      }
+      .mobile-card-table .col-stability .progress-track {
+        margin-left: auto;
+      }
       .tournament-detail-grid .insight-card {
         padding: 0;
       }
@@ -1069,20 +1394,29 @@
       .plain-list li {
         align-items: flex-start;
       }
+      .dance-comparison {
+        padding: 8px 0 2px;
+      }
+      .dance-comparison-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+      .dance-metric-row {
+        grid-template-columns: 1fr;
+        gap: 4px;
+      }
     }
 
     @media print {
       @page { size: A4; margin: 12mm; }
       body { background: #fff; font-size: 11px; }
       .report { width: 100%; padding: 0; }
-      .tabs { position: static; padding: 0 0 10px; }
       .cover, .section {
         box-shadow: none;
         break-inside: avoid;
         page-break-inside: avoid;
         border-radius: var(--radius-panel);
       }
-      .tab-label { box-shadow: none; }
       h1 { font-size: 24px; }
       h2, summary { font-size: 17px; }
       table { font-size: 10px; }
@@ -1118,20 +1452,6 @@
       </div>
     </div>
   </header>
-
-  <input class="tab-input" type="radio" name="report-mode" id="tab-trainer" checked>
-  <input class="tab-input" type="radio" name="report-mode" id="tab-parent">
-
-  <nav class="tabs" aria-label="Режим просмотра отчёта">
-    <label class="tab-label" for="tab-trainer">
-      <span class="tab-title">Тренеру</span>
-      <span class="tab-help">Разбор программ, динамики, танцев и турниров</span>
-    </label>
-    <label class="tab-label" for="tab-parent">
-      <span class="tab-title">Родителю</span>
-      <span class="tab-help">Кратко и понятно о прогрессе</span>
-    </label>
-  </nav>
 
   <section class="mode-panel parent-panel">
     <section class="section">
@@ -1208,30 +1528,12 @@
       {% endfor %}
     </section>
 
-    <section class="section">
-      <h2>Последние турниры</h2>
-      <div class="plain-list">
-        {% for item in role_views.parent.latest_tournaments %}
-          <li class="filterable-tournament" data-city="{{ item.city or '' }}" data-date="{{ item.event_date or '' }}">
-            <span>
-              <strong>{{ item.event_date }}</strong> · {{ item.tournament_title }}
-              {% if item.dance_codes %}
-                <span class="muted">· {{ item.dance_codes|join(", ") }}</span>
-              {% endif %}
-            </span>
-            <span class="muted">{{ item.protocols|pluralize("выступление", "выступления", "выступлений") }}</span>
-          </li>
-        {% endfor %}
-      </div>
-    </section>
-
   </section>
 
   <section class="mode-panel trainer-panel">
     {% for key, program in programs.items() %}
     <section class="section">
       <h2>{{ program.title|capitalize }}</h2>
-      <p class="section-kicker">Категории переключаются отдельно для каждой программы. Меньшее место означает лучший результат.</p>
 
       {% for slice in program.category_slices %}
         <input class="category-input" type="radio" name="cat-{{ key }}" id="cat-{{ key }}-{{ slice.key }}" {{ "checked" if loop.first else "" }}>
@@ -1239,7 +1541,6 @@
       <div class="category-chip-groups">
         {% if program.category_primary_slices %}
         <div class="category-chip-group">
-          <div class="category-group-title">Основные категории</div>
           <div class="category-tabs category-tabs-primary">
             {% for slice in program.category_primary_slices %}
               <label class="category-tab" for="cat-{{ key }}-{{ slice.key }}">{{ slice.label }}</label>
@@ -1293,98 +1594,118 @@
             </div>
           </div>
           {% else %}
-          <div class="three-column">
-            {% if slice.display_mode == "all_equal" %}
-            <div class="insight-card neutral">
+          <div class="dance-comparison">
+            <div class="dance-comparison-header">
               <h3>Сравнение танцев</h3>
-              <p>{{ icon("equal", "neutral") }}Танцы показали одинаковый результат: {{ slice.tied_dances|map(attribute="dance")|map("dance_label")|join(", ") }} — место {{ slice.tied_metric_value|fmt }}.</p>
+              {{ icon("equal", "neutral") }}
             </div>
+            {% if slice.display_mode == "all_equal" %}
+              <div class="dance-comparison-zone neutral">
+                <div class="dance-comparison-title"><span>Равный результат</span>{{ icon("equal", "neutral") }}</div>
+                <p class="dance-comparison-message">Танцы показали одинаковый результат: {{ slice.tied_dances|map(attribute="dance")|map("dance_label")|join(", ") }} — место {{ slice.tied_metric_value|fmt }}.</p>
+              </div>
             {% elif slice.display_mode == "single_dance" and slice.evaluated_dance %}
-            <div class="insight-card">
-              <h3>Оценённый танец</h3>
-              <p>{{ slice.evaluated_dance.dance|dance_label }} — место {{ slice.evaluated_dance.final_avg_place|fmt }}.</p>
-            </div>
+              <div class="dance-comparison-zone neutral">
+                <div class="dance-comparison-title"><span>Оценённый танец</span>{{ icon("info", "neutral") }}</div>
+                <div class="dance-name-list">{{ slice.evaluated_dance.dance|dance_label }}</div>
+                <div class="dance-comparison-value">среднее место {{ slice.evaluated_dance.final_avg_place|fmt }}</div>
+              </div>
+            {% elif not slice.best and not slice.attention %}
+              <div class="dance-comparison-zone neutral">
+                <div class="dance-comparison-title"><span>Сравнение недоступно</span>{{ icon("info", "neutral") }}</div>
+                <p class="dance-comparison-message">В этом срезе пока недостаточно данных для выделения сильной зоны и зоны внимания.</p>
+              </div>
             {% else %}
-            <div class="insight-card positive">
-              <h3><span>{{ "Лучшие танцы" if slice.best|length > 1 else "Лучший танец" }}</span>{{ icon("star") }}</h3>
-              {% if slice.best %}
-              <ul class="plain-list">
-                {% for item in slice.best %}
-                  <li><strong>{{ item.dance|dance_label }}</strong><span class="muted">{{ item.final_avg_place|fmt }}</span></li>
-                {% endfor %}
-              </ul>
-              {% else %}<p class="muted">Ограниченная выборка.</p>{% endif %}
-            </div>
-            <div class="insight-card attention">
-              <h3><span>Требуют внимания</span>{{ icon("alert") }}</h3>
-              {% if slice.attention %}
-              <ul class="plain-list">
-                {% for item in slice.attention %}
-                  <li><strong>{{ item.dance|dance_label }}</strong><span class="muted">{{ item.final_avg_place|fmt }}</span></li>
-                {% endfor %}
-              </ul>
-              {% else %}<p class="muted">Ограниченная выборка.</p>{% endif %}
-            </div>
+              <div class="dance-comparison-grid">
+                <div class="dance-comparison-zone positive">
+                  <div class="dance-comparison-title"><span>Сильнее сейчас</span>{{ icon("star", "positive") }}</div>
+                  {% if slice.best %}
+                    <div class="dance-name-list">{{ slice.best|map(attribute="dance")|map("dance_label")|join(", ") }}</div>
+                    <div class="dance-comparison-value">среднее место {{ slice.best[0].final_avg_place|fmt }}</div>
+                  {% else %}
+                    <p class="muted">Сильная зона в этом срезе не выделяется.</p>
+                  {% endif %}
+                </div>
+                <div class="dance-comparison-zone attention">
+                  <div class="dance-comparison-title"><span>Зона внимания</span>{{ icon("alert", "attention") }}</div>
+                  {% if slice.attention %}
+                    <div class="dance-name-list">{{ slice.attention|map(attribute="dance")|map("dance_label")|join(", ") }}</div>
+                    <div class="dance-comparison-value">среднее место {{ slice.attention[0].final_avg_place|fmt }}</div>
+                  {% else %}
+                    <p class="muted">Зона внимания в этом срезе не выделяется.</p>
+                  {% endif %}
+                </div>
+              </div>
             {% endif %}
-            <div class="insight-card">
-              <h3>Наиболее стабильные</h3>
-              {% if slice.stable %}
-              <ul class="plain-list">
-                {% for item in slice.stable %}
-                  <li>
-                    <strong>{{ item.dance|dance_label }}</strong>
-                    <span class="stability-meter">
-                      <span class="progress-label">{{ item.stability_label }}</span>
-                      <span class="progress-track"><span class="progress-fill" style="{{ item.stability_style }}"></span></span>
-                    </span>
-                  </li>
-                {% endfor %}
-              </ul>
-              {% else %}<p class="muted">Ограниченная выборка.</p>{% endif %}
-            </div>
           </div>
 
-          <div class="three-column">
-            <div class="insight-card positive">
-              <h3><span>Улучшается</span>{{ icon("up") }}</h3>
-              {% if slice.improving %}
-                <ul class="plain-list">{% for item in slice.improving %}<li><strong>{{ item.dance|dance_label }}</strong><span class="muted">{{ item.first_avg_place|fmt }} → {{ item.last_avg_place|fmt }}</span></li>{% endfor %}</ul>
-              {% else %}<p class="muted">{{ "Для уверенного вывода пока мало наблюдений." if not slice.enough_data else "Явного улучшения по тренду сейчас не видно." }}</p>{% endif %}
+          <div class="dance-comparison dance-dynamics">
+            <div class="dance-comparison-header">
+              <h3>Динамика танцев</h3>
+              {{ icon("up", "neutral") }}
             </div>
-            <div class="insight-card attention">
-              <h3><span>Требует внимания по динамике</span>{{ icon("down") }}</h3>
-              {% if slice.declining %}
-                <ul class="plain-list">{% for item in slice.declining %}<li><strong>{{ item.dance|dance_label }}</strong><span class="muted">{{ item.first_avg_place|fmt }} → {{ item.last_avg_place|fmt }}</span></li>{% endfor %}</ul>
-              {% else %}<p class="muted">{{ "Для уверенного вывода пока мало наблюдений." if not slice.enough_data else "Тревожной динамики по тренду сейчас не видно." }}</p>{% endif %}
-            </div>
-            <div class="insight-card">
-              <h3>Стабильно</h3>
-              {% if slice.stable_trends %}
-                <ul class="plain-list">{% for item in slice.stable_trends %}<li><strong>{{ item.dance|dance_label }}</strong><span class="muted">{{ item.first_avg_place|fmt }} → {{ item.last_avg_place|fmt }}</span></li>{% endfor %}</ul>
-              {% else %}<p class="muted">{{ "Для уверенного вывода пока мало наблюдений." if not slice.enough_data else "Отдельной группы стабильной динамики сейчас не выделяется." }}</p>{% endif %}
-            </div>
+            <p class="trend-help">Динамика считается по изменению среднего места между ранней и последней доступной датой выбранного периода. Меньшее место означает лучший результат.</p>
+            {% if not slice.improving and not slice.declining %}
+              <div class="dance-comparison-zone neutral">
+                <div class="dance-comparison-title"><span>Без заметных изменений</span>{{ icon("equal", "neutral") }}</div>
+                <p class="dance-comparison-message">{{ "Динамика неустойчива из-за ограниченной выборки." if not slice.enough_data else "Заметных изменений по динамике пока нет." }}</p>
+              </div>
+            {% else %}
+              <div class="dance-comparison-grid">
+                <div class="dance-comparison-zone positive">
+                  <div class="dance-comparison-title"><span>Улучшается</span>{{ icon("up", "positive") }}</div>
+                  {% if slice.improving %}
+                    <div class="dance-metric-list">
+                    {% for item in slice.improving %}
+                      <div class="dance-metric-row">
+                        <span class="dance-name-line">{{ item.dance|dance_label }}</span>
+                        <span class="dance-comparison-value">среднее место: {{ item.first_avg_place|fmt }} → {{ item.last_avg_place|fmt }}</span>
+                      </div>
+                    {% endfor %}
+                    </div>
+                  {% else %}
+                    <p class="muted">{{ "Динамика неустойчива из-за ограниченной выборки." if not slice.enough_data else "Явного улучшения по тренду сейчас не видно." }}</p>
+                  {% endif %}
+                </div>
+                <div class="dance-comparison-zone attention">
+                  <div class="dance-comparison-title"><span>Требует внимания</span>{{ icon("down", "attention") }}</div>
+                  {% if slice.declining %}
+                    <div class="dance-metric-list">
+                    {% for item in slice.declining %}
+                      <div class="dance-metric-row">
+                        <span class="dance-name-line">{{ item.dance|dance_label }}</span>
+                        <span class="dance-comparison-value">среднее место: {{ item.first_avg_place|fmt }} → {{ item.last_avg_place|fmt }}</span>
+                      </div>
+                    {% endfor %}
+                    </div>
+                  {% else %}
+                    <p class="muted">{{ "Динамика неустойчива из-за ограниченной выборки." if not slice.enough_data else "Тревожной динамики по тренду сейчас не видно." }}</p>
+                  {% endif %}
+                </div>
+              </div>
+            {% endif %}
           </div>
           {% endif %}
 
-          <h3 class="dance-table-heading">Танцы</h3>
-          <p class="section-kicker">Стабильность показывает, насколько сильно меняется итоговое место танца от турнира к турниру. Чем меньше колебания, тем выше стабильность.</p>
-          <div class="table-wrap table-scroll">
+          <h3 class="dance-table-heading">Стабильность танцев</h3>
+          <p class="helper-text">Стабильность показывает, насколько сильно меняется итоговое место танца от турнира к турниру. Чем меньше колебания, тем выше стабильность.</p>
+          <div class="table-wrap table-scroll mobile-card-table">
             <table>
               <thead><tr><th class="col-dance">Танец</th><th class="number col-avg">Среднее место</th><th class="number col-best">Лучшее</th><th class="col-stability">Стабильность</th></tr></thead>
               <tbody>
               {% for item in slice.metrics %}
                 <tr>
-                  <td class="col-dance"><strong>{{ item.dance|dance_label }}</strong></td>
-                  <td class="number col-avg">{{ item.final_avg_place|fmt }}</td>
-                  <td class="number col-best">{{ item.best_place|fmt }}</td>
-                  <td class="col-stability">
+                  <td class="col-dance" data-label="Танец"><strong>{{ item.dance|dance_label }}</strong></td>
+                  <td class="number col-avg" data-label="Среднее место">{{ item.final_avg_place|fmt }}</td>
+                  <td class="number col-best" data-label="Лучшее">{{ item.best_place|fmt }}</td>
+                  <td class="col-stability" data-label="Стабильность">
                     <div class="progress-label">{{ item.stability_label }}</div>
                     <div class="progress-track"><div class="progress-fill" style="{{ item.stability_style }}"></div></div>
                   </td>
                 </tr>
               {% endfor %}
               {% if not slice.metrics %}
-                <tr><td colspan="4">{{ "Нет устойчивых метрик по танцам в этом срезе." if slice.visibility_status == "limited" else "Ограниченная выборка." }}</td></tr>
+                <tr><td colspan="4" data-label="Статус">{{ "Нет устойчивых метрик по танцам в этом срезе." if slice.visibility_status == "limited" else "Ограниченная выборка." }}</td></tr>
               {% endif %}
               </tbody>
             </table>
@@ -1393,52 +1714,9 @@
         </div>
       {% endfor %}
       </div>
-      <div class="note-box">Расчёт стабильности основан на разбросе итоговых мест по турнирам. Полная шкала означает очень устойчивый результат, короткая шкала — сильные колебания.</div>
+      <p class="helper-text">Расчёт стабильности основан на разбросе итоговых мест по турнирам. Полная шкала означает очень устойчивый результат, короткая шкала — сильные колебания.</p>
     </section>
     {% endfor %}
-
-    <section class="section">
-      <details>
-        <summary>Дополнительная аналитика судей</summary>
-        <p class="section-kicker">В рейтинг включены только судьи, по которым доступно не менее 10 оценок.</p>
-        <div class="two-column">
-          <div>
-            <h3>Более строгие судьи</h3>
-            <div class="table-wrap table-scroll">
-              <table>
-                <thead><tr><th>Судья</th><th>Интерпретация</th><th class="number">Оценок</th></tr></thead>
-                <tbody>
-                {% if judges.strictest %}
-                {% for item in judges.strictest %}
-                  <tr><td>{{ item.judge }}</td><td><div class="interpretation">{{ item.judge_label }}</div><div class="tiny">отклонение от панели: {{ item.avg_deviation|fmt }}</div></td><td class="number">{{ item.n_marks|pluralize("оценка", "оценки", "оценок") }}</td></tr>
-                {% endfor %}
-                {% else %}
-                  <tr><td colspan="3">Недостаточно данных для формирования рейтинга судей.</td></tr>
-                {% endif %}
-                </tbody>
-              </table>
-            </div>
-          </div>
-          <div>
-            <h3>Более мягкие судьи</h3>
-            <div class="table-wrap table-scroll">
-              <table>
-                <thead><tr><th>Судья</th><th>Интерпретация</th><th class="number">Оценок</th></tr></thead>
-                <tbody>
-                {% if judges.softest %}
-                {% for item in judges.softest %}
-                  <tr><td>{{ item.judge }}</td><td><div class="interpretation">{{ item.judge_label }}</div><div class="tiny">отклонение от панели: {{ item.avg_deviation|fmt }}</div></td><td class="number">{{ item.n_marks|pluralize("оценка", "оценки", "оценок") }}</td></tr>
-                {% endfor %}
-                {% else %}
-                  <tr><td colspan="3">Недостаточно данных для формирования рейтинга судей.</td></tr>
-                {% endif %}
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-      </details>
-    </section>
 
     <section class="section">
       <h2>Турниры</h2>
@@ -1450,23 +1728,24 @@
             <div class="tournament-summary-row">
               <div class="tournament-summary">
                 <div>
-                  <div class="label">Дата</div>
                   <div class="summary-title">{{ item.event_date }}</div>
                   {% if item.city %}<div class="summary-meta">{{ item.city }}</div>{% endif %}
                 </div>
                 <div>
-                  <div class="label">Турнир</div>
                   <div class="tournament-title-line">
                     <div class="summary-title">{{ item.tournament_title }}</div>
+                  </div>
+                  {% if item.rank_direction == "best" or item.rank_direction == "hardest" %}
+                  <div class="tournament-badge-row">
                     {% if item.rank_direction == "best" %}
-                      <span class="tournament-badge best">{{ icon("star") }}лучший результат</span>
+                      <span class="tournament-badge best">Лучший результат</span>
                     {% elif item.rank_direction == "hardest" %}
-                      <span class="tournament-badge hardest">{{ icon("alert", "attention") }}сложное выступление</span>
+                      <span class="tournament-badge hardest">Сложное выступление</span>
                     {% endif %}
                   </div>
+                  {% endif %}
                 </div>
                 <div>
-                  <div class="label">Категория / программа</div>
                   <div class="summary-meta">{{ item.categories|join("; ") }}</div>
                   <div class="summary-meta">{{ item.programs|map("program_label")|join(", ") }}</div>
                 </div>
@@ -1478,50 +1757,54 @@
             {% for program in item.program_summaries %}
               <div class="insight-card tournament-program-summary">
                 <h3>{{ program.program_label }}</h3>
-                <p class="muted">
-                  Общий итог:
-                  {% if program.overall.avg_place is not none %}
-                    среднее место {{ program.overall.avg_place|fmt }} · {{ program.overall.dance_codes|join(", ") }}
-                  {% else %}
-                    {{ program.overall.dance_codes|join(", ") }} · {{ program.metric_label or "по оценкам судей" }}
-                  {% endif %}
-                </p>
+                <div class="tournament-program-metrics">
+                  <div class="tournament-program-row">
+                    <span class="tournament-program-label">Общий итог</span>
+                    <span>
+                      {% if program.overall.avg_place is not none %}
+                        среднее место {{ program.overall.avg_place|fmt }} · {{ program.overall.dance_codes|join(", ") }}
+                      {% else %}
+                        {{ program.overall.dance_codes|join(", ") }} · {{ program.metric_label or "по оценкам судей" }}
+                      {% endif %}
+                    </span>
+                  </div>
                 {% if program.display_mode == "best_worst" %}
                   {% if program.metric_type == "cross_count" %}
-                    <p><strong>{{ icon("star", "positive") }}{% if program.best_dances|length > 1 %}Лучшие танцы{% else %}Лучший танец{% endif %}:</strong> {{ program.best_dances|map(attribute="dance_code")|join(", ") }} <span class="muted">— {{ program.best_dance.interpretation }} · {{ program.best_dance.cross_count }} крестов</span></p>
-                    <p><strong>{{ icon("alert", "attention") }}{% if program.worst_dances|length > 1 %}Требуют внимания{% else %}Требует внимания{% endif %}:</strong> {{ program.worst_dances|map(attribute="dance_code")|join(", ") }} <span class="muted">— {{ program.worst_dance.interpretation }} · {{ program.worst_dance.cross_count }} крестов</span></p>
+                    <div class="tournament-program-row"><span class="tournament-program-label">{% if program.best_dances|length > 1 %}Лучшие танцы{% else %}Лучший танец{% endif %}</span><span>{{ program.best_dances|map(attribute="dance_code")|join(", ") }} · {{ program.best_dance.interpretation }} · {{ program.best_dance.cross_count }} крестов</span></div>
+                    <div class="tournament-program-row"><span class="tournament-program-label">{% if program.worst_dances|length > 1 %}Зоны внимания{% else %}Зона внимания{% endif %}</span><span>{{ program.worst_dances|map(attribute="dance_code")|join(", ") }} · {{ program.worst_dance.interpretation }} · {{ program.worst_dance.cross_count }} крестов</span></div>
                   {% else %}
-                    <p><strong>{{ icon("star", "positive") }}{% if program.best_dances|length > 1 %}Лучшие танцы{% else %}Лучший танец{% endif %}:</strong> {{ program.best_dances|map(attribute="dance_code")|join(", ") }} <span class="muted">место {{ program.best_dance.final_place|fmt }}</span></p>
-                    <p><strong>{{ icon("alert", "attention") }}{% if program.worst_dances|length > 1 %}Требуют внимания{% else %}Требует внимания{% endif %}:</strong> {{ program.worst_dances|map(attribute="dance_code")|join(", ") }} <span class="muted">место {{ program.worst_dance.final_place|fmt }}</span></p>
+                    <div class="tournament-program-row"><span class="tournament-program-label">{% if program.best_dances|length > 1 %}Лучшие танцы{% else %}Лучший танец{% endif %}</span><span>{{ program.best_dances|map(attribute="dance_code")|join(", ") }} · место {{ program.best_dance.final_place|fmt }}</span></div>
+                    <div class="tournament-program-row"><span class="tournament-program-label">{% if program.worst_dances|length > 1 %}Зоны внимания{% else %}Зона внимания{% endif %}</span><span>{{ program.worst_dances|map(attribute="dance_code")|join(", ") }} · место {{ program.worst_dance.final_place|fmt }}</span></div>
                   {% endif %}
                 {% elif program.display_mode == "single_dance" and program.evaluated_dance %}
                   {% if program.metric_type == "cross_count" %}
-                    <p><strong>Оценённый танец:</strong> {{ program.evaluated_dance.dance_code }} <span class="muted">— {{ program.evaluated_dance.cross_count }} крестов</span></p>
+                    <div class="tournament-program-row"><span class="tournament-program-label">Оценённый танец</span><span>{{ program.evaluated_dance.dance_code }} · {{ program.evaluated_dance.cross_count }} крестов</span></div>
                   {% else %}
-                    <p><strong>Оценённый танец:</strong> {{ program.evaluated_dance.dance_code }} <span class="muted">— место {{ program.evaluated_dance.final_place|fmt }}</span></p>
+                    <div class="tournament-program-row"><span class="tournament-program-label">Оценённый танец</span><span>{{ program.evaluated_dance.dance_code }} · место {{ program.evaluated_dance.final_place|fmt }}</span></div>
                   {% endif %}
                 {% elif program.display_mode == "tied" %}
                   {% if program.metric_type == "cross_count" %}
-                    <p><strong>{{ icon("equal", "neutral") }}Танцы оценены примерно одинаково:</strong> {{ program.tied_dances|join(", ") }} <span class="muted">— {{ program.tied_metric_value }} крестов</span></p>
+                    <div class="tournament-program-row"><span class="tournament-program-label">Равный результат</span><span>{{ program.tied_dances|join(", ") }} · {{ program.tied_metric_value }} крестов</span></div>
                   {% else %}
-                    <p><strong>{{ icon("equal", "neutral") }}Танцы оценены примерно одинаково:</strong> {{ program.tied_dances|join(", ") }} <span class="muted">— среднее место {{ program.tied_metric_value|fmt }}</span></p>
+                    <div class="tournament-program-row"><span class="tournament-program-label">Равный результат</span><span>{{ program.tied_dances|join(", ") }} · среднее место {{ program.tied_metric_value|fmt }}</span></div>
                   {% endif %}
                 {% else %}
-                  <p class="muted">Недостаточно данных для лучшего и худшего танца.</p>
+                  <div class="tournament-program-row"><span class="tournament-program-label">Сравнение</span><span>Недостаточно данных для лучшего и худшего танца.</span></div>
                 {% endif %}
+                </div>
               </div>
             {% endfor %}
           </div>
-          <div class="table-wrap table-scroll">
+          <div class="table-wrap table-scroll mobile-card-table">
             <table>
               <thead><tr><th class="col-dance">Танец</th><th class="col-program">Программа</th><th class="number col-place">Итоговое место</th><th class="number col-protocols">Протоколов</th></tr></thead>
               <tbody>
               {% for result in item.dance_results %}
                 <tr>
-                  <td class="col-dance"><strong>{{ result.dance_code or (result.dance|dance_code) }}</strong></td>
-                  <td class="col-program">{{ result.program|program_label }}</td>
-                  <td class="number col-place">{{ result.final_place|fmt }}</td>
-                  <td class="number col-protocols">{{ result.n_results|pluralize("протокол", "протокола", "протоколов") }}</td>
+                  <td class="col-dance" data-label="Танец"><strong>{{ result.dance_code or (result.dance|dance_code) }}</strong></td>
+                  <td class="col-program" data-label="Программа">{{ result.program|program_label }}</td>
+                  <td class="number col-place" data-label="Итоговое место">{{ result.final_place|fmt }}</td>
+                  <td class="number col-protocols" data-label="Протоколов">{{ result.n_results|pluralize("протокол", "протокола", "протоколов") }}</td>
                 </tr>
               {% endfor %}
               </tbody>
@@ -1530,6 +1813,132 @@
         </details>
         {% endfor %}
       </div>
+    </section>
+
+    <section class="section">
+      <h2>Что видят судьи</h2>
+      <p class="section-kicker">Экспериментальный тренерский взгляд: не список всех судей, а то, где панель сходится, расходится и кто сильнее влияет на восприятие результата.</p>
+      {% set consistency_metrics = dances.metrics|default([])|selectattr("judge_std_deviation")|list|sort(attribute="judge_std_deviation") %}
+      <div class="judge-insight-grid">
+        {% if consistency_metrics %}
+        <div class="judge-insight-card">
+          <h3>Согласованность оценок</h3>
+            {% set consistent_dance = consistency_metrics|first %}
+            {% set disputed_dance = consistency_metrics|last %}
+            <div class="judge-consensus-list">
+              <div class="judge-consensus-item">
+                <div class="judge-consensus-name">{{ consistent_dance.dance|dance_label }}</div>
+                <div><span class="judge-consensus-badge positive">Согласованный танец</span></div>
+                <div class="judge-insight-meta">Разброс оценок низкий: {{ consistent_dance.judge_std_deviation|fmt }}</div>
+              </div>
+              <div class="judge-consensus-item">
+                <div class="judge-consensus-name">{{ disputed_dance.dance|dance_label }}</div>
+                <div><span class="judge-consensus-badge attention">Спорный танец</span></div>
+                <div class="judge-insight-meta">Разброс оценок высокий: {{ disputed_dance.judge_std_deviation|fmt }}</div>
+              </div>
+            </div>
+        </div>
+        {% endif %}
+        <div class="judge-insight-card">
+          <h3>Судьи с наибольшим влиянием</h3>
+          <p class="judge-insight-description">Эти судьи чаще остальных отклоняются от среднего результата танцора.</p>
+          {% if judges.strictest or judges.softest %}
+            {% for item in judges.strictest %}
+              {% if loop.index <= 2 %}
+              <div class="judge-insight-item">
+                <div class="judge-list-name">{{ item.judge }}</div>
+                <div class="judge-insight-meta">отклонение {{ item.avg_deviation|fmt }} · {{ item.n_marks|pluralize("оценка", "оценки", "оценок") }}</div>
+              </div>
+              {% endif %}
+            {% endfor %}
+            {% for item in judges.softest %}
+              {% if loop.index <= 1 %}
+              <div class="judge-insight-item">
+                <div class="judge-list-name">{{ item.judge }}</div>
+                <div class="judge-insight-meta">отклонение {{ item.avg_deviation|fmt }} · {{ item.n_marks|pluralize("оценка", "оценки", "оценок") }}</div>
+              </div>
+              {% endif %}
+            {% endfor %}
+          {% else %}
+            <p class="muted">Недостаточно данных для выделения судей с наибольшим влиянием.</p>
+          {% endif %}
+        </div>
+        {% if judge_panel_reaction and judge_panel_reaction.panel_spread_trend %}
+        <div class="judge-insight-card">
+          <h3>Реакция судейской панели</h3>
+          {% if judge_panel_reaction.panel_spread_trend == "more_consistent" %}
+            <div class="judge-insight-headline">Оценки судей становятся согласованнее</div>
+          {% elif judge_panel_reaction.panel_spread_trend == "less_consistent" %}
+            <div class="judge-insight-headline">Оценки судей стали менее согласованными</div>
+          {% else %}
+            <div class="judge-insight-headline">Без заметных изменений</div>
+          {% endif %}
+          <div class="judge-insight-meta">
+            Разброс судей: {{ judge_panel_reaction.panel_spread_first|fmt }} → {{ judge_panel_reaction.panel_spread_last|fmt }}
+          </div>
+        </div>
+        {% endif %}
+      </div>
+    </section>
+
+    <section class="section">
+      <details class="section-accordion">
+        <summary>
+          <span class="section-summary-row">
+            <span>Дополнительная аналитика судей</span>
+            <span class="accordion-icon" aria-hidden="true">{{ icon("chevron") }}</span>
+          </span>
+        </summary>
+        <p class="section-kicker">В рейтинг включены только судьи, по которым доступно не менее 10 оценок.</p>
+        <div class="judge-table-stack">
+          <div class="judge-table-block">
+            <h3>Более строгие судьи</h3>
+            <div class="table-wrap table-scroll mobile-card-table">
+              <table>
+                <thead><tr><th>Судья</th><th>Интерпретация</th><th class="number">Отклонение</th><th class="number">Оценок</th><th class="number">Протоколов</th></tr></thead>
+                <tbody>
+              {% if judges.strictest %}
+              {% for item in judges.strictest %}
+                <tr>
+                  <td data-label="Судья"><strong>{{ item.judge }}</strong></td>
+                  <td data-label="Интерпретация"><div class="interpretation">{{ item.judge_label }}</div></td>
+                  <td class="number" data-label="Отклонение">{{ item.avg_deviation|fmt }}</td>
+                  <td class="number" data-label="Оценок">{{ item.n_marks|pluralize("оценка", "оценки", "оценок") }}</td>
+                  <td class="number" data-label="Протоколов">{{ item.protocols|pluralize("протокол", "протокола", "протоколов") }}</td>
+                </tr>
+              {% endfor %}
+              {% else %}
+                <tr><td colspan="5" data-label="Статус">Недостаточно данных для формирования рейтинга судей.</td></tr>
+              {% endif %}
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="judge-table-block">
+            <h3>Более мягкие судьи</h3>
+            <div class="table-wrap table-scroll mobile-card-table">
+              <table>
+                <thead><tr><th>Судья</th><th>Интерпретация</th><th class="number">Отклонение</th><th class="number">Оценок</th><th class="number">Протоколов</th></tr></thead>
+                <tbody>
+              {% if judges.softest %}
+              {% for item in judges.softest %}
+                <tr>
+                  <td data-label="Судья"><strong>{{ item.judge }}</strong></td>
+                  <td data-label="Интерпретация"><div class="interpretation">{{ item.judge_label }}</div></td>
+                  <td class="number" data-label="Отклонение">{{ item.avg_deviation|fmt }}</td>
+                  <td class="number" data-label="Оценок">{{ item.n_marks|pluralize("оценка", "оценки", "оценок") }}</td>
+                  <td class="number" data-label="Протоколов">{{ item.protocols|pluralize("протокол", "протокола", "протоколов") }}</td>
+                </tr>
+              {% endfor %}
+              {% else %}
+                <tr><td colspan="5" data-label="Статус">Недостаточно данных для формирования рейтинга судей.</td></tr>
+              {% endif %}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </details>
     </section>
 
   </section>

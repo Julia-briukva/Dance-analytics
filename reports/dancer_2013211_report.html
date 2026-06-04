@@ -34,6 +34,24 @@
       --radius-panel: 12px;
       --radius-section: 18px;
       --radius-circle: 999px;
+      --chip-radius: var(--radius-control);
+      --control-large-font-size: 13px;
+      --control-large-font-weight: 560;
+      --control-large-min-height: 34px;
+      --control-large-padding-y: 7px;
+      --control-large-padding-x: 12px;
+      --chip-small-font-size: 12px;
+      --chip-small-font-weight: 560;
+      --chip-small-line-height: 1.2;
+      --chip-small-min-height: 28px;
+      --chip-small-padding-y: 5px;
+      --chip-small-padding-x: 10px;
+      --chip-gap: 6px;
+      --chip-badge-font-size: 10px;
+      --chip-badge-font-weight: 560;
+      --chip-badge-min-height: 18px;
+      --chip-badge-padding-y: 2px;
+      --chip-badge-padding-x: 6px;
     }
 
     * { box-sizing: border-box; }
@@ -196,6 +214,104 @@
       height: 18px;
     }
 
+    .dance-comparison {
+      background: transparent;
+      border: 0;
+      border-radius: 0;
+      padding: 8px 0 2px;
+      margin: 18px 0 18px;
+      break-inside: avoid;
+    }
+
+    .dance-comparison-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .dance-comparison-header h3 {
+      color: var(--ink);
+      font-size: 15px;
+      font-weight: 600;
+      margin: 0;
+    }
+
+    .dance-comparison-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .dance-comparison-zone {
+      border-radius: var(--radius-panel);
+      padding: 14px 15px;
+      background: rgba(255, 255, 255, .72);
+    }
+
+    .dance-comparison-zone.positive {
+      background: color-mix(in srgb, var(--accent-positive-bg) 68%, #fff);
+    }
+
+    .dance-comparison-zone.attention {
+      background: color-mix(in srgb, var(--accent-attention-bg) 68%, #fff);
+    }
+
+    .dance-comparison-zone.neutral {
+      background: color-mix(in srgb, var(--accent-neutral-bg) 72%, #fff);
+    }
+
+    .dance-comparison-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 560;
+      margin-bottom: 8px;
+    }
+
+    .dance-name-list {
+      color: var(--ink);
+      font-size: 14px;
+      font-weight: 580;
+      line-height: 1.45;
+      margin-bottom: 5px;
+    }
+
+    .dance-name-line {
+      color: var(--ink);
+      font-size: 13px;
+      font-weight: 560;
+      line-height: 1.45;
+    }
+
+    .dance-comparison-value {
+      color: var(--muted);
+      font-size: 12.5px;
+    }
+
+    .dance-metric-list {
+      display: grid;
+      gap: 8px;
+    }
+
+    .dance-metric-row {
+      display: grid;
+      grid-template-columns: minmax(0, auto) minmax(120px, 1fr);
+      gap: 8px;
+      align-items: center;
+    }
+
+    .dance-comparison-message {
+      color: var(--ink-soft);
+      font-size: 14px;
+      line-height: 1.55;
+      margin: 0;
+    }
+
     .status-icon.positive,
     .positive .status-icon {
       background: var(--accent-positive-bg);
@@ -230,62 +346,10 @@
       overflow-wrap: anywhere;
     }
 
-    .tabs {
-      position: sticky;
-      top: 0;
-      z-index: 5;
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 12px;
-      background: rgba(248, 247, 252, .94);
-      backdrop-filter: blur(8px);
-      padding: 10px 0 18px;
-      margin-bottom: 12px;
-    }
-
-    .tab-input { position: absolute; opacity: 0; pointer-events: none; }
     .category-input { position: absolute; opacity: 0; pointer-events: none; }
 
-    .tab-label {
-      display: flex;
-      flex-direction: column;
-      gap: 3px;
-      cursor: pointer;
-      border: 1px solid var(--line);
-      border-radius: var(--radius-card);
-      background: var(--paper);
-      color: var(--ink-soft);
-      padding: 15px 18px;
-      box-shadow: 0 6px 18px rgba(49, 42, 96, .04);
-      transition: all .18s ease;
-    }
-
-    .tab-title {
-      font-size: 16px;
-      font-weight: 600;
-    }
-
-    .tab-help {
-      color: var(--muted);
-      font-size: 12px;
-    }
-
-    #tab-parent:checked ~ .tabs label[for="tab-parent"],
-    #tab-trainer:checked ~ .tabs label[for="tab-trainer"] {
-      background: var(--accent-soft);
-      border-color: rgba(94, 81, 184, .42);
-      color: var(--accent-dark);
-      box-shadow: 0 6px 16px rgba(77, 61, 181, .07);
-    }
-
-    #tab-parent:checked ~ .tabs label[for="tab-parent"] .tab-help,
-    #tab-trainer:checked ~ .tabs label[for="tab-trainer"] .tab-help {
-      color: var(--muted);
-    }
-
-    .mode-panel { display: none; }
-    #tab-parent:checked ~ .parent-panel { display: block; }
-    #tab-trainer:checked ~ .trainer-panel { display: block; }
+    .mode-panel { display: block; }
+    .parent-panel { display: none; }
 
     .report-filters {
       background: var(--paper);
@@ -320,20 +384,24 @@
     .city-chip {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
+      justify-content: center;
+      gap: var(--chip-gap);
+      min-height: var(--control-large-min-height);
       border: 1px solid var(--line);
-      border-radius: var(--radius-control);
+      border-radius: var(--chip-radius);
       background: var(--accent-light);
       color: var(--ink-soft);
       cursor: pointer;
-      font-size: 12px;
-      padding: 7px 10px;
+      font-size: var(--control-large-font-size);
+      font-weight: var(--control-large-font-weight);
+      line-height: var(--chip-small-line-height);
+      letter-spacing: 0;
+      padding: var(--control-large-padding-y) var(--control-large-padding-x);
     }
 
     .city-chip {
       appearance: none;
-      font: inherit;
-      line-height: 1.2;
+      font-family: inherit;
       transition: background .16s ease, border-color .16s ease, color .16s ease;
     }
 
@@ -361,9 +429,10 @@
       border-radius: var(--radius-control);
       color: var(--ink-soft);
       font: inherit;
-      font-size: 13px;
-      min-height: 34px;
-      padding: 7px 12px;
+      font-size: var(--control-large-font-size);
+      font-weight: var(--control-large-font-weight);
+      min-height: var(--control-large-min-height);
+      padding: var(--control-large-padding-y) var(--control-large-padding-x);
     }
 
     .filter-note {
@@ -393,6 +462,15 @@
       font-size: 13px;
       max-width: 720px;
       margin-bottom: 14px;
+    }
+
+    .helper-text {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 1.5;
+      max-width: 760px;
+      margin: 8px 0 12px;
     }
 
     .kpi-value,
@@ -438,6 +516,14 @@
     .rank-list li + li,
     .plain-list li + li {
       border-top: 1px solid rgba(233, 229, 244, .68);
+    }
+
+    .trend-help {
+      color: var(--muted);
+      font-size: 12.5px;
+      line-height: 1.55;
+      margin: 16px 0 12px;
+      max-width: 780px;
     }
 
     .rank {
@@ -517,14 +603,21 @@
     }
 
     .category-tab {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--chip-gap);
+      min-height: var(--chip-small-min-height);
       cursor: pointer;
       border: 1px solid var(--line);
-      border-radius: var(--radius-control);
+      border-radius: var(--chip-radius);
       background: var(--paper);
       color: var(--ink-soft);
-      padding: 8px 12px;
-      font-size: 12px;
-      font-weight: 560;
+      padding: var(--chip-small-padding-y) var(--chip-small-padding-x);
+      font-size: var(--chip-small-font-size);
+      font-weight: var(--chip-small-font-weight);
+      line-height: var(--chip-small-line-height);
+      letter-spacing: 0;
     }
 
     .category-tab.limited {
@@ -532,18 +625,22 @@
       background: var(--accent-neutral-bg);
       border-color: #DCD6EA;
       border-style: dashed;
-      font-weight: 520;
+      font-weight: var(--chip-small-font-weight);
     }
 
     .chip-badge {
       display: inline-flex;
-      margin-left: 6px;
-      border-radius: var(--radius-control);
+      align-items: center;
+      justify-content: center;
+      min-height: var(--chip-badge-min-height);
+      border-radius: var(--chip-radius);
       background: #E4DFF0;
       color: var(--accent-neutral);
-      font-size: 10px;
-      font-weight: 560;
-      padding: 2px 6px;
+      font-size: var(--chip-badge-font-size);
+      font-weight: var(--chip-badge-font-weight);
+      line-height: var(--chip-small-line-height);
+      letter-spacing: 0;
+      padding: var(--chip-badge-padding-y) var(--chip-badge-padding-x);
       vertical-align: middle;
     }
 
@@ -663,6 +760,141 @@
       margin-top: 2px;
     }
 
+    .judge-table-stack {
+      display: grid;
+      gap: 22px;
+      margin-top: 12px;
+    }
+
+    .judge-table-block h3 {
+      margin-bottom: 10px;
+    }
+
+    .judge-mobile-note {
+      display: none;
+    }
+
+    .judge-insight-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    .judge-insight-card {
+      background: var(--paper-soft);
+      border: 1px solid rgba(233, 229, 244, .82);
+      border-radius: var(--radius-card);
+      padding: 15px;
+      break-inside: avoid;
+    }
+
+    .judge-insight-card h3 {
+      color: var(--ink);
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 1.3;
+      margin-bottom: 10px;
+    }
+
+    .judge-insight-card h3 + .judge-insight-description {
+      margin-top: 0;
+      margin-bottom: 12px;
+    }
+
+    .judge-consensus-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .judge-consensus-item {
+      display: grid;
+      gap: 6px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(233, 229, 244, .72);
+    }
+
+    .judge-consensus-item:first-child {
+      padding-top: 0;
+      border-top: 0;
+    }
+
+    .judge-consensus-name {
+      color: var(--ink);
+      font-size: 14.5px;
+      font-weight: 560;
+      line-height: 1.4;
+    }
+
+    .judge-consensus-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: fit-content;
+      min-height: var(--chip-small-min-height);
+      border-radius: var(--chip-radius);
+      background: var(--accent-neutral-bg);
+      color: var(--accent-neutral);
+      font-size: var(--chip-small-font-size);
+      font-weight: var(--chip-small-font-weight);
+      line-height: var(--chip-small-line-height);
+      padding: var(--chip-small-padding-y) var(--chip-small-padding-x);
+    }
+
+    .judge-consensus-badge.positive {
+      background: var(--accent-positive-bg);
+      color: var(--accent-positive);
+    }
+
+    .judge-consensus-badge.attention {
+      background: var(--accent-attention-bg);
+      color: var(--accent-attention);
+    }
+
+    .judge-insight-item + .judge-insight-item {
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(233, 229, 244, .72);
+    }
+
+    .judge-insight-title {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 500;
+      margin-bottom: 4px;
+    }
+
+    .judge-insight-headline {
+      color: var(--ink);
+      font-size: 14.5px;
+      font-weight: 560;
+      line-height: 1.4;
+    }
+
+    .judge-list-name {
+      color: var(--ink);
+      font-size: 12.5px;
+      font-weight: 520;
+      line-height: 1.4;
+    }
+
+    .judge-insight-meta {
+      color: var(--muted);
+      font-size: 12.5px;
+      font-weight: 400;
+      line-height: 1.45;
+      margin-top: 3px;
+    }
+
+    .judge-insight-description {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 1.5;
+      margin-top: 12px;
+    }
+
     .note-box {
       border-radius: var(--radius-panel);
       padding: 12px 14px;
@@ -748,13 +980,6 @@
       border: 1px solid var(--line);
       border-radius: var(--radius-panel);
       margin-top: 10px;
-    }
-
-    .tournament-list .table-wrap,
-    .tournament-list .table-scroll {
-      border: 0;
-      border-radius: 0;
-      margin-top: 16px;
     }
 
     table {
@@ -894,41 +1119,45 @@
       background: var(--accent-soft);
     }
 
-    .tournament-title-line {
-      display: flex;
+    .section-accordion summary {
+      font-size: 21px;
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .section-summary-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 12px;
       align-items: center;
-      gap: 8px;
-      flex-wrap: wrap;
+    }
+
+    .tournament-title-line {
       min-width: 0;
+    }
+
+    .tournament-badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 6px;
     }
 
     .tournament-badge {
       display: inline-flex;
       align-items: center;
-      gap: 4px;
-      border-radius: var(--radius-control);
+      justify-content: center;
+      gap: var(--chip-gap);
+      min-height: var(--chip-small-min-height);
+      border-radius: var(--chip-radius);
       background: var(--accent-positive-bg);
       color: var(--accent-positive);
-      font-size: 10.5px;
-      font-weight: 560;
-      line-height: 1.2;
-      padding: 3px 7px;
+      font-size: var(--chip-small-font-size);
+      font-weight: var(--chip-small-font-weight);
+      line-height: var(--chip-small-line-height);
+      letter-spacing: 0;
+      padding: var(--chip-small-padding-y) var(--chip-small-padding-x);
       white-space: nowrap;
-    }
-
-    .tournament-badge .status-icon {
-      width: 15px;
-      height: 15px;
-      flex-basis: 15px;
-      margin: 0;
-      background: transparent;
-      color: currentColor;
-    }
-
-    .tournament-badge .status-icon svg {
-      width: 13px;
-      height: 13px;
-      stroke-width: 2;
     }
 
     .tournament-badge.hardest {
@@ -957,18 +1186,22 @@
 
     .tournament-program-summary {
       min-width: 0;
+      background: var(--paper-soft);
+      border: 1px solid rgba(233, 229, 244, .82);
+      border-radius: var(--radius-card);
+      padding: 14px 15px;
     }
 
     .tournament-detail-grid .insight-card {
-      background: transparent;
-      border-radius: 0;
-      padding: 0 18px 0 0;
+      background: var(--paper-soft);
+      border-radius: var(--radius-card);
+      padding: 14px 15px;
       min-height: 0;
     }
 
     .tournament-detail-grid .insight-card + .insight-card {
-      padding-left: 18px;
-      border-left: 1px solid rgba(233, 229, 244, .9);
+      padding-left: 15px;
+      border-left: 1px solid rgba(233, 229, 244, .82);
     }
 
     .tournament-detail-grid h3 {
@@ -984,6 +1217,25 @@
 
     .tournament-detail-grid strong {
       font-weight: 600;
+    }
+
+    .tournament-program-metrics {
+      display: grid;
+      gap: 7px;
+      margin-top: 10px;
+    }
+
+    .tournament-program-row {
+      display: grid;
+      grid-template-columns: minmax(112px, auto) minmax(0, 1fr);
+      gap: 10px;
+      align-items: baseline;
+      color: var(--ink-soft);
+      font-size: 12.5px;
+    }
+
+    .tournament-program-label {
+      color: var(--muted);
     }
 
     @media (max-width: 900px) {
@@ -1012,10 +1264,9 @@
       .story-grid,
       .tournament-summary,
       .tournament-detail-grid,
-      .tabs {
+      .judge-insight-grid {
         grid-template-columns: 1fr;
       }
-      .tabs { position: static; }
       .filter-grid,
       .date-filter-grid { grid-template-columns: 1fr; }
       .header-filter-panel {
@@ -1037,6 +1288,80 @@
         margin-left: 0;
         margin-right: 0;
       }
+      .table-wrap.mobile-card-table,
+      .table-scroll.mobile-card-table {
+        border: 0;
+        overflow: visible;
+      }
+      .mobile-card-table table,
+      .mobile-card-table thead,
+      .mobile-card-table tbody,
+      .mobile-card-table tr,
+      .mobile-card-table th,
+      .mobile-card-table td {
+        display: block;
+        width: 100%;
+      }
+      .mobile-card-table table {
+        min-width: 0;
+        background: transparent;
+      }
+      .mobile-card-table thead {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+      }
+      .mobile-card-table tbody {
+        display: grid;
+        gap: 10px;
+      }
+      .mobile-card-table tr {
+        background: var(--paper-soft);
+        border: 1px solid rgba(233, 229, 244, .82);
+        border-radius: var(--radius-card);
+        padding: 10px 12px;
+      }
+      .mobile-card-table td {
+        border: 0;
+        padding: 7px 0;
+        display: grid;
+        grid-template-columns: minmax(112px, .9fr) minmax(0, 1fr);
+        gap: 12px;
+        align-items: start;
+        text-align: right;
+      }
+      .mobile-card-table td + td {
+        border-top: 1px solid rgba(233, 229, 244, .66);
+      }
+      .mobile-card-table td::before {
+        content: attr(data-label);
+        color: var(--muted);
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: .04em;
+        text-align: left;
+      }
+      .mobile-card-table td:first-child {
+        display: block;
+        text-align: left;
+        font-size: 15px;
+        padding-bottom: 9px;
+      }
+      .mobile-card-table td:first-child::before {
+        display: none;
+      }
+      .mobile-card-table td[colspan] {
+        display: block;
+        text-align: left;
+      }
+      .mobile-card-table td[colspan]::before {
+        display: none;
+      }
+      .mobile-card-table .col-stability .progress-track {
+        margin-left: auto;
+      }
       .tournament-detail-grid .insight-card {
         padding: 0;
       }
@@ -1050,20 +1375,29 @@
       .plain-list li {
         align-items: flex-start;
       }
+      .dance-comparison {
+        padding: 8px 0 2px;
+      }
+      .dance-comparison-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+      .dance-metric-row {
+        grid-template-columns: 1fr;
+        gap: 4px;
+      }
     }
 
     @media print {
       @page { size: A4; margin: 12mm; }
       body { background: #fff; font-size: 11px; }
       .report { width: 100%; padding: 0; }
-      .tabs { position: static; padding: 0 0 10px; }
       .cover, .section {
         box-shadow: none;
         break-inside: avoid;
         page-break-inside: avoid;
         border-radius: var(--radius-panel);
       }
-      .tab-label { box-shadow: none; }
       h1 { font-size: 24px; }
       h2, summary { font-size: 17px; }
       table { font-size: 10px; }
@@ -1097,20 +1431,6 @@
       </div>
     </div>
   </header>
-
-  <input class="tab-input" type="radio" name="report-mode" id="tab-trainer" checked>
-  <input class="tab-input" type="radio" name="report-mode" id="tab-parent">
-
-  <nav class="tabs" aria-label="Режим просмотра отчёта">
-    <label class="tab-label" for="tab-trainer">
-      <span class="tab-title">Тренеру</span>
-      <span class="tab-help">Разбор программ, динамики, танцев и турниров</span>
-    </label>
-    <label class="tab-label" for="tab-parent">
-      <span class="tab-title">Родителю</span>
-      <span class="tab-help">Кратко и понятно о прогрессе</span>
-    </label>
-  </nav>
 
   <section class="mode-panel parent-panel">
     <section class="section">
@@ -1307,46 +1627,17 @@
       </div>
     </section>
 
-    <section class="section">
-      <h2>Последние турниры</h2>
-      <div class="plain-list">
-          <li class="filterable-tournament" data-city="Санкт-Петербург" data-date="2025-09-28">
-            <span>
-              <strong>2025-09-28</strong> · Северный кубок 2025 (Санкт-Петербург)
-                <span class="muted">· W, T, F, Q, S, Ch, R, P, J</span>
-            </span>
-            <span class="muted">4 выступления</span>
-          </li>
-          <li class="filterable-tournament" data-city="Санкт-Петербург" data-date="2025-11-09">
-            <span>
-              <strong>2025-11-09</strong> · Кубок Лиги 2025 (Санкт-Петербург)
-                <span class="muted">· F, Q, S, Ch, R, P, J</span>
-            </span>
-            <span class="muted">3 выступления</span>
-          </li>
-          <li class="filterable-tournament" data-city="Санкт-Петербург" data-date="2026-03-08">
-            <span>
-              <strong>2026-03-08</strong> · Амбассадор 2026 (Санкт-Петербург)
-                <span class="muted">· W, T, F, Q, S, Ch, R, P, J</span>
-            </span>
-            <span class="muted">3 выступления</span>
-          </li>
-      </div>
-    </section>
-
   </section>
 
   <section class="mode-panel trainer-panel">
     <section class="section">
       <h2>Стандарт</h2>
-      <p class="section-kicker">Категории переключаются отдельно для каждой программы. Меньшее место означает лучший результат.</p>
 
         <input class="category-input" type="radio" name="cat-standard" id="cat-standard-all" checked>
         <input class="category-input" type="radio" name="cat-standard" id="cat-standard-n_e" >
         <input class="category-input" type="radio" name="cat-standard" id="cat-standard-e_d" >
       <div class="category-chip-groups">
         <div class="category-chip-group">
-          <div class="category-group-title">Основные категории</div>
           <div class="category-tabs category-tabs-primary">
               <label class="category-tab" for="cat-standard-all">Все категории</label>
               <label class="category-tab" for="cat-standard-n_e">N+E</label>
@@ -1358,63 +1649,66 @@
       <div class="category-panels">
         <div class="category-panel panel-standard-all">
 
-          <div class="three-column">
-            <div class="insight-card neutral">
+          <div class="dance-comparison">
+            <div class="dance-comparison-header">
               <h3>Сравнение танцев</h3>
-              <p><span class="status-icon neutral" aria-hidden="true">
+              <span class="status-icon neutral" aria-hidden="true">
   <svg viewBox="0 0 24 24" fill="none"><path d="M6 9h12"/><path d="M6 15h12"/></svg>
-</span>Танцы показали одинаковый результат: Медленный вальс, Танго, Квикстеп — место 5.</p>
+</span>
             </div>
-            <div class="insight-card">
-              <h3>Наиболее стабильные</h3>
-<p class="muted">Ограниченная выборка.</p>            </div>
+              <div class="dance-comparison-zone neutral">
+                <div class="dance-comparison-title"><span>Равный результат</span><span class="status-icon neutral" aria-hidden="true">
+  <svg viewBox="0 0 24 24" fill="none"><path d="M6 9h12"/><path d="M6 15h12"/></svg>
+</span></div>
+                <p class="dance-comparison-message">Танцы показали одинаковый результат: Медленный вальс, Танго, Квикстеп — место 5.</p>
+              </div>
           </div>
 
-          <div class="three-column">
-            <div class="insight-card positive">
-              <h3><span>Улучшается</span><span class="status-icon " aria-hidden="true">
+          <div class="dance-comparison dance-dynamics">
+            <div class="dance-comparison-header">
+              <h3>Динамика танцев</h3>
+              <span class="status-icon neutral" aria-hidden="true">
   <svg viewBox="0 0 24 24" fill="none"><path d="M12 19V5"/><path d="m6 11 6-6 6 6"/></svg>
-</span></h3>
-<p class="muted">Для уверенного вывода пока мало наблюдений.</p>            </div>
-            <div class="insight-card attention">
-              <h3><span>Требует внимания по динамике</span><span class="status-icon " aria-hidden="true">
-  <svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14"/><path d="m18 13-6 6-6-6"/></svg>
-</span></h3>
-<p class="muted">Для уверенного вывода пока мало наблюдений.</p>            </div>
-            <div class="insight-card">
-              <h3>Стабильно</h3>
-<p class="muted">Для уверенного вывода пока мало наблюдений.</p>            </div>
+</span>
+            </div>
+            <p class="trend-help">Динамика считается по изменению среднего места между ранней и последней доступной датой выбранного периода. Меньшее место означает лучший результат.</p>
+              <div class="dance-comparison-zone neutral">
+                <div class="dance-comparison-title"><span>Без заметных изменений</span><span class="status-icon neutral" aria-hidden="true">
+  <svg viewBox="0 0 24 24" fill="none"><path d="M6 9h12"/><path d="M6 15h12"/></svg>
+</span></div>
+                <p class="dance-comparison-message">Динамика неустойчива из-за ограниченной выборки.</p>
+              </div>
           </div>
 
-          <h3 class="dance-table-heading">Танцы</h3>
-          <p class="section-kicker">Стабильность показывает, насколько сильно меняется итоговое место танца от турнира к турниру. Чем меньше колебания, тем выше стабильность.</p>
-          <div class="table-wrap table-scroll">
+          <h3 class="dance-table-heading">Стабильность танцев</h3>
+          <p class="helper-text">Стабильность показывает, насколько сильно меняется итоговое место танца от турнира к турниру. Чем меньше колебания, тем выше стабильность.</p>
+          <div class="table-wrap table-scroll mobile-card-table">
             <table>
               <thead><tr><th class="col-dance">Танец</th><th class="number col-avg">Среднее место</th><th class="number col-best">Лучшее</th><th class="col-stability">Стабильность</th></tr></thead>
               <tbody>
                 <tr>
-                  <td class="col-dance"><strong>Квикстеп</strong></td>
-                  <td class="number col-avg">5</td>
-                  <td class="number col-best">5</td>
-                  <td class="col-stability">
+                  <td class="col-dance" data-label="Танец"><strong>Квикстеп</strong></td>
+                  <td class="number col-avg" data-label="Среднее место">5</td>
+                  <td class="number col-best" data-label="Лучшее">5</td>
+                  <td class="col-stability" data-label="Стабильность">
                     <div class="progress-label">Средняя</div>
                     <div class="progress-track"><div class="progress-fill" style="--stability-width: 50%;"></div></div>
                   </td>
                 </tr>
                 <tr>
-                  <td class="col-dance"><strong>Танго</strong></td>
-                  <td class="number col-avg">5</td>
-                  <td class="number col-best">5</td>
-                  <td class="col-stability">
+                  <td class="col-dance" data-label="Танец"><strong>Танго</strong></td>
+                  <td class="number col-avg" data-label="Среднее место">5</td>
+                  <td class="number col-best" data-label="Лучшее">5</td>
+                  <td class="col-stability" data-label="Стабильность">
                     <div class="progress-label">Средняя</div>
                     <div class="progress-track"><div class="progress-fill" style="--stability-width: 50%;"></div></div>
                   </td>
                 </tr>
                 <tr>
-                  <td class="col-dance"><strong>Медленный вальс</strong></td>
-                  <td class="number col-avg">5</td>
-                  <td class="number col-best">5</td>
-                  <td class="col-stability">
+                  <td class="col-dance" data-label="Танец"><strong>Медленный вальс</strong></td>
+                  <td class="number col-avg" data-label="Среднее место">5</td>
+                  <td class="number col-best" data-label="Лучшее">5</td>
+                  <td class="col-stability" data-label="Стабильность">
                     <div class="progress-label">Средняя</div>
                     <div class="progress-track"><div class="progress-fill" style="--stability-width: 50%;"></div></div>
                   </td>
@@ -1429,63 +1723,66 @@
   <svg viewBox="0 0 24 24" fill="none"><path d="M12 11v5"/><path d="M12 8h.01"/><circle cx="12" cy="12" r="9"/></svg>
 </span>Ограниченная выборка: 1 протокол в этом срезе.</div>
 
-          <div class="three-column">
-            <div class="insight-card neutral">
+          <div class="dance-comparison">
+            <div class="dance-comparison-header">
               <h3>Сравнение танцев</h3>
-              <p><span class="status-icon neutral" aria-hidden="true">
+              <span class="status-icon neutral" aria-hidden="true">
   <svg viewBox="0 0 24 24" fill="none"><path d="M6 9h12"/><path d="M6 15h12"/></svg>
-</span>Танцы показали одинаковый результат: Медленный вальс, Танго, Квикстеп — место 5.</p>
+</span>
             </div>
-            <div class="insight-card">
-              <h3>Наиболее стабильные</h3>
-<p class="muted">Ограниченная выборка.</p>            </div>
+              <div class="dance-comparison-zone neutral">
+                <div class="dance-comparison-title"><span>Равный результат</span><span class="status-icon neutral" aria-hidden="true">
+  <svg viewBox="0 0 24 24" fill="none"><path d="M6 9h12"/><path d="M6 15h12"/></svg>
+</span></div>
+                <p class="dance-comparison-message">Танцы показали одинаковый результат: Медленный вальс, Танго, Квикстеп — место 5.</p>
+              </div>
           </div>
 
-          <div class="three-column">
-            <div class="insight-card positive">
-              <h3><span>Улучшается</span><span class="status-icon " aria-hidden="true">
+          <div class="dance-comparison dance-dynamics">
+            <div class="dance-comparison-header">
+              <h3>Динамика танцев</h3>
+              <span class="status-icon neutral" aria-hidden="true">
   <svg viewBox="0 0 24 24" fill="none"><path d="M12 19V5"/><path d="m6 11 6-6 6 6"/></svg>
-</span></h3>
-<p class="muted">Для уверенного вывода пока мало наблюдений.</p>            </div>
-            <div class="insight-card attention">
-              <h3><span>Требует внимания по динамике</span><span class="status-icon " aria-hidden="true">
-  <svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14"/><path d="m18 13-6 6-6-6"/></svg>
-</span></h3>
-<p class="muted">Для уверенного вывода пока мало наблюдений.</p>            </div>
-            <div class="insight-card">
-              <h3>Стабильно</h3>
-<p class="muted">Для уверенного вывода пока мало наблюдений.</p>            </div>
+</span>
+            </div>
+            <p class="trend-help">Динамика считается по изменению среднего места между ранней и последней доступной датой выбранного периода. Меньшее место означает лучший результат.</p>
+              <div class="dance-comparison-zone neutral">
+                <div class="dance-comparison-title"><span>Без заметных изменений</span><span class="status-icon neutral" aria-hidden="true">
+  <svg viewBox="0 0 24 24" fill="none"><path d="M6 9h12"/><path d="M6 15h12"/></svg>
+</span></div>
+                <p class="dance-comparison-message">Динамика неустойчива из-за ограниченной выборки.</p>
+              </div>
           </div>
 
-          <h3 class="dance-table-heading">Танцы</h3>
-          <p class="section-kicker">Стабильность показывает, насколько сильно меняется итоговое место танца от турнира к турниру. Чем меньше колебания, тем выше стабильность.</p>
-          <div class="table-wrap table-scroll">
+          <h3 class="dance-table-heading">Стабильность танцев</h3>
+          <p class="helper-text">Стабильность показывает, насколько сильно меняется итоговое место танца от турнира к турниру. Чем меньше колебания, тем выше стабильность.</p>
+          <div class="table-wrap table-scroll mobile-card-table">
             <table>
               <thead><tr><th class="col-dance">Танец</th><th class="number col-avg">Среднее место</th><th class="number col-best">Лучшее</th><th class="col-stability">Стабильность</th></tr></thead>
               <tbody>
                 <tr>
-                  <td class="col-dance"><strong>Квикстеп</strong></td>
-                  <td class="number col-avg">5</td>
-                  <td class="number col-best">5</td>
-                  <td class="col-stability">
+                  <td class="col-dance" data-label="Танец"><strong>Квикстеп</strong></td>
+                  <td class="number col-avg" data-label="Среднее место">5</td>
+                  <td class="number col-best" data-label="Лучшее">5</td>
+                  <td class="col-stability" data-label="Стабильность">
                     <div class="progress-label">Средняя</div>
                     <div class="progress-track"><div class="progress-fill" style="--stability-width: 50%;"></div></div>
                   </td>
                 </tr>
                 <tr>
-                  <td class="col-dance"><strong>Танго</strong></td>
-                  <td class="number col-avg">5</td>
-                  <td class="number col-best">5</td>
-                  <td class="col-stability">
+                  <td class="col-dance" data-label="Танец"><strong>Танго</strong></td>
+                  <td class="number col-avg" data-label="Среднее место">5</td>
+                  <td class="number col-best" data-label="Лучшее">5</td>
+                  <td class="col-stability" data-label="Стабильность">
                     <div class="progress-label">Средняя</div>
                     <div class="progress-track"><div class="progress-fill" style="--stability-width: 50%;"></div></div>
                   </td>
                 </tr>
                 <tr>
-                  <td class="col-dance"><strong>Медленный вальс</strong></td>
-                  <td class="number col-avg">5</td>
-                  <td class="number col-best">5</td>
-                  <td class="col-stability">
+                  <td class="col-dance" data-label="Танец"><strong>Медленный вальс</strong></td>
+                  <td class="number col-avg" data-label="Среднее место">5</td>
+                  <td class="number col-best" data-label="Лучшее">5</td>
+                  <td class="col-stability" data-label="Стабильность">
                     <div class="progress-label">Средняя</div>
                     <div class="progress-track"><div class="progress-fill" style="--stability-width: 50%;"></div></div>
                   </td>
@@ -1498,63 +1795,60 @@
         <div class="category-panel panel-standard-e_d">
             <p class="section-kicker">по оценкам судей, без финального результата</p>
 
-          <div class="three-column">
-            <div class="insight-card positive">
-              <h3><span>Лучший танец</span><span class="status-icon " aria-hidden="true">
-  <svg viewBox="0 0 24 24" fill="none"><path d="m12 3 2.7 5.47 6.03.88-4.36 4.25 1.03 6-5.4-2.84-5.4 2.84 1.03-6-4.36-4.25 6.03-.88L12 3Z"/></svg>
-</span></h3>
-<p class="muted">Ограниченная выборка.</p>            </div>
-            <div class="insight-card attention">
-              <h3><span>Требуют внимания</span><span class="status-icon " aria-hidden="true">
-  <svg viewBox="0 0 24 24" fill="none"><path d="M12 9v4"/><path d="M12 17h.01"/><path d="M10.3 4.2 2.8 17.4A2 2 0 0 0 4.5 20h15a2 2 0 0 0 1.7-2.6L13.7 4.2a2 2 0 0 0-3.4 0Z"/></svg>
-</span></h3>
-<p class="muted">Ограниченная выборка.</p>            </div>
-            <div class="insight-card">
-              <h3>Наиболее стабильные</h3>
-<p class="muted">Ограниченная выборка.</p>            </div>
+          <div class="dance-comparison">
+            <div class="dance-comparison-header">
+              <h3>Сравнение танцев</h3>
+              <span class="status-icon neutral" aria-hidden="true">
+  <svg viewBox="0 0 24 24" fill="none"><path d="M6 9h12"/><path d="M6 15h12"/></svg>
+</span>
+            </div>
+              <div class="dance-comparison-zone neutral">
+                <div class="dance-comparison-title"><span>Сравнение недоступно</span><span class="status-icon neutral" aria-hidden="true">
+  <svg viewBox="0 0 24 24" fill="none"><path d="M12 11v5"/><path d="M12 8h.01"/><circle cx="12" cy="12" r="9"/></svg>
+</span></div>
+                <p class="dance-comparison-message">В этом срезе пока недостаточно данных для выделения сильной зоны и зоны внимания.</p>
+              </div>
           </div>
 
-          <div class="three-column">
-            <div class="insight-card positive">
-              <h3><span>Улучшается</span><span class="status-icon " aria-hidden="true">
+          <div class="dance-comparison dance-dynamics">
+            <div class="dance-comparison-header">
+              <h3>Динамика танцев</h3>
+              <span class="status-icon neutral" aria-hidden="true">
   <svg viewBox="0 0 24 24" fill="none"><path d="M12 19V5"/><path d="m6 11 6-6 6 6"/></svg>
-</span></h3>
-<p class="muted">Для уверенного вывода пока мало наблюдений.</p>            </div>
-            <div class="insight-card attention">
-              <h3><span>Требует внимания по динамике</span><span class="status-icon " aria-hidden="true">
-  <svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14"/><path d="m18 13-6 6-6-6"/></svg>
-</span></h3>
-<p class="muted">Для уверенного вывода пока мало наблюдений.</p>            </div>
-            <div class="insight-card">
-              <h3>Стабильно</h3>
-<p class="muted">Для уверенного вывода пока мало наблюдений.</p>            </div>
+</span>
+            </div>
+            <p class="trend-help">Динамика считается по изменению среднего места между ранней и последней доступной датой выбранного периода. Меньшее место означает лучший результат.</p>
+              <div class="dance-comparison-zone neutral">
+                <div class="dance-comparison-title"><span>Без заметных изменений</span><span class="status-icon neutral" aria-hidden="true">
+  <svg viewBox="0 0 24 24" fill="none"><path d="M6 9h12"/><path d="M6 15h12"/></svg>
+</span></div>
+                <p class="dance-comparison-message">Динамика неустойчива из-за ограниченной выборки.</p>
+              </div>
           </div>
 
-          <h3 class="dance-table-heading">Танцы</h3>
-          <p class="section-kicker">Стабильность показывает, насколько сильно меняется итоговое место танца от турнира к турниру. Чем меньше колебания, тем выше стабильность.</p>
-          <div class="table-wrap table-scroll">
+          <h3 class="dance-table-heading">Стабильность танцев</h3>
+          <p class="helper-text">Стабильность показывает, насколько сильно меняется итоговое место танца от турнира к турниру. Чем меньше колебания, тем выше стабильность.</p>
+          <div class="table-wrap table-scroll mobile-card-table">
             <table>
               <thead><tr><th class="col-dance">Танец</th><th class="number col-avg">Среднее место</th><th class="number col-best">Лучшее</th><th class="col-stability">Стабильность</th></tr></thead>
               <tbody>
-                <tr><td colspan="4">Ограниченная выборка.</td></tr>
+                <tr><td colspan="4" data-label="Статус">Ограниченная выборка.</td></tr>
               </tbody>
             </table>
           </div>
 
         </div>
       </div>
-      <div class="note-box">Расчёт стабильности основан на разбросе итоговых мест по турнирам. Полная шкала означает очень устойчивый результат, короткая шкала — сильные колебания.</div>
+      <p class="helper-text">Расчёт стабильности основан на разбросе итоговых мест по турнирам. Полная шкала означает очень устойчивый результат, короткая шкала — сильные колебания.</p>
     </section>
     <section class="section">
       <h2>Латина</h2>
-      <p class="section-kicker">Категории переключаются отдельно для каждой программы. Меньшее место означает лучший результат.</p>
 
         <input class="category-input" type="radio" name="cat-latin" id="cat-latin-all" checked>
         <input class="category-input" type="radio" name="cat-latin" id="cat-latin-e_d" >
         <input class="category-input" type="radio" name="cat-latin" id="cat-latin-eadc" >
       <div class="category-chip-groups">
         <div class="category-chip-group">
-          <div class="category-group-title">Основные категории</div>
           <div class="category-tabs category-tabs-primary">
               <label class="category-tab" for="cat-latin-all">Все категории</label>
               <label class="category-tab" for="cat-latin-e_d">E+D</label>
@@ -1566,43 +1860,49 @@
       <div class="category-panels">
         <div class="category-panel panel-latin-all">
 
-          <div class="three-column">
-            <div class="insight-card">
-              <h3>Оценённый танец</h3>
-              <p>Самба — место 5.</p>
+          <div class="dance-comparison">
+            <div class="dance-comparison-header">
+              <h3>Сравнение танцев</h3>
+              <span class="status-icon neutral" aria-hidden="true">
+  <svg viewBox="0 0 24 24" fill="none"><path d="M6 9h12"/><path d="M6 15h12"/></svg>
+</span>
             </div>
-            <div class="insight-card">
-              <h3>Наиболее стабильные</h3>
-<p class="muted">Ограниченная выборка.</p>            </div>
+              <div class="dance-comparison-zone neutral">
+                <div class="dance-comparison-title"><span>Оценённый танец</span><span class="status-icon neutral" aria-hidden="true">
+  <svg viewBox="0 0 24 24" fill="none"><path d="M12 11v5"/><path d="M12 8h.01"/><circle cx="12" cy="12" r="9"/></svg>
+</span></div>
+                <div class="dance-name-list">Самба</div>
+                <div class="dance-comparison-value">среднее место 5</div>
+              </div>
           </div>
 
-          <div class="three-column">
-            <div class="insight-card positive">
-              <h3><span>Улучшается</span><span class="status-icon " aria-hidden="true">
+          <div class="dance-comparison dance-dynamics">
+            <div class="dance-comparison-header">
+              <h3>Динамика танцев</h3>
+              <span class="status-icon neutral" aria-hidden="true">
   <svg viewBox="0 0 24 24" fill="none"><path d="M12 19V5"/><path d="m6 11 6-6 6 6"/></svg>
-</span></h3>
-<p class="muted">Для уверенного вывода пока мало наблюдений.</p>            </div>
-            <div class="insight-card attention">
-              <h3><span>Требует внимания по динамике</span><span class="status-icon " aria-hidden="true">
-  <svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14"/><path d="m18 13-6 6-6-6"/></svg>
-</span></h3>
-<p class="muted">Для уверенного вывода пока мало наблюдений.</p>            </div>
-            <div class="insight-card">
-              <h3>Стабильно</h3>
-<p class="muted">Для уверенного вывода пока мало наблюдений.</p>            </div>
+</span>
+            </div>
+            <p class="trend-help">Динамика считается по изменению среднего места между ранней и последней доступной датой выбранного периода. Меньшее место означает лучший результат.</p>
+              <div class="dance-comparison-zone neutral">
+                <div class="dance-comparison-title"><span>Без заметных изменений</span><span class="status-icon neutral" aria-hidden="true">
+  <svg viewBox="0 0 24 24" fill="none"><path d="M6 9h12"/><path d="M6 15h12"/></svg>
+</span></div>
+                <p class="dance-comparison-message">Динамика неустойчива из-за ограниченной выборки.</p>
+              </div>
           </div>
 
-          <h3 class="dance-table-heading">Танцы</h3>
-          <p class="section-kicker">Стабильность показывает, насколько сильно меняется итоговое место танца от турнира к турниру. Чем меньше колебания, тем выше стабильность.</p>
-          <div class="table-wrap table-scroll">
+          <h3 class="dance-table-heading">Стабильность танцев</h3>
+          <p class="helper-text">Стабильность показывает, насколько сильно меняется итоговое место танца от турнира к турниру. Чем меньше колебания, тем выше стабильность.</p>
+          <div class="table-wrap table-scroll mobile-card-table">
             <table>
               <thead><tr><th class="col-dance">Танец</th><th class="number col-avg">Среднее место</th><th class="number col-best">Лучшее</th><th class="col-stability">Стабильность</th></tr></thead>
               <tbody>
                 <tr>
-                  <td class="col-dance"><strong>Самба</strong></td>
-                  <td class="number col-avg">5</td>
-                  <td class="number col-best">5</td>
-                  <td class="col-stability">
+                  <td class="col-dance" data-label="Танец"><strong>Самба</strong></td>
+                  <td class="number col-avg" data-label="Среднее место">5</td>
+                  <td class="number col-best" data-label="Лучшее">5</td>
+                  <td class="col-stability" data-label="Стабильность">
                     <div class="progress-label">Средняя</div>
                     <div class="progress-track"><div class="progress-fill" style="--stability-width: 50%;"></div></div>
                   </td>
@@ -1615,45 +1915,44 @@
         <div class="category-panel panel-latin-e_d">
             <p class="section-kicker">по оценкам судей, без финального результата</p>
 
-          <div class="three-column">
-            <div class="insight-card positive">
-              <h3><span>Лучший танец</span><span class="status-icon " aria-hidden="true">
-  <svg viewBox="0 0 24 24" fill="none"><path d="m12 3 2.7 5.47 6.03.88-4.36 4.25 1.03 6-5.4-2.84-5.4 2.84 1.03-6-4.36-4.25 6.03-.88L12 3Z"/></svg>
-</span></h3>
-<p class="muted">Ограниченная выборка.</p>            </div>
-            <div class="insight-card attention">
-              <h3><span>Требуют внимания</span><span class="status-icon " aria-hidden="true">
-  <svg viewBox="0 0 24 24" fill="none"><path d="M12 9v4"/><path d="M12 17h.01"/><path d="M10.3 4.2 2.8 17.4A2 2 0 0 0 4.5 20h15a2 2 0 0 0 1.7-2.6L13.7 4.2a2 2 0 0 0-3.4 0Z"/></svg>
-</span></h3>
-<p class="muted">Ограниченная выборка.</p>            </div>
-            <div class="insight-card">
-              <h3>Наиболее стабильные</h3>
-<p class="muted">Ограниченная выборка.</p>            </div>
+          <div class="dance-comparison">
+            <div class="dance-comparison-header">
+              <h3>Сравнение танцев</h3>
+              <span class="status-icon neutral" aria-hidden="true">
+  <svg viewBox="0 0 24 24" fill="none"><path d="M6 9h12"/><path d="M6 15h12"/></svg>
+</span>
+            </div>
+              <div class="dance-comparison-zone neutral">
+                <div class="dance-comparison-title"><span>Сравнение недоступно</span><span class="status-icon neutral" aria-hidden="true">
+  <svg viewBox="0 0 24 24" fill="none"><path d="M12 11v5"/><path d="M12 8h.01"/><circle cx="12" cy="12" r="9"/></svg>
+</span></div>
+                <p class="dance-comparison-message">В этом срезе пока недостаточно данных для выделения сильной зоны и зоны внимания.</p>
+              </div>
           </div>
 
-          <div class="three-column">
-            <div class="insight-card positive">
-              <h3><span>Улучшается</span><span class="status-icon " aria-hidden="true">
+          <div class="dance-comparison dance-dynamics">
+            <div class="dance-comparison-header">
+              <h3>Динамика танцев</h3>
+              <span class="status-icon neutral" aria-hidden="true">
   <svg viewBox="0 0 24 24" fill="none"><path d="M12 19V5"/><path d="m6 11 6-6 6 6"/></svg>
-</span></h3>
-<p class="muted">Для уверенного вывода пока мало наблюдений.</p>            </div>
-            <div class="insight-card attention">
-              <h3><span>Требует внимания по динамике</span><span class="status-icon " aria-hidden="true">
-  <svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14"/><path d="m18 13-6 6-6-6"/></svg>
-</span></h3>
-<p class="muted">Для уверенного вывода пока мало наблюдений.</p>            </div>
-            <div class="insight-card">
-              <h3>Стабильно</h3>
-<p class="muted">Для уверенного вывода пока мало наблюдений.</p>            </div>
+</span>
+            </div>
+            <p class="trend-help">Динамика считается по изменению среднего места между ранней и последней доступной датой выбранного периода. Меньшее место означает лучший результат.</p>
+              <div class="dance-comparison-zone neutral">
+                <div class="dance-comparison-title"><span>Без заметных изменений</span><span class="status-icon neutral" aria-hidden="true">
+  <svg viewBox="0 0 24 24" fill="none"><path d="M6 9h12"/><path d="M6 15h12"/></svg>
+</span></div>
+                <p class="dance-comparison-message">Динамика неустойчива из-за ограниченной выборки.</p>
+              </div>
           </div>
 
-          <h3 class="dance-table-heading">Танцы</h3>
-          <p class="section-kicker">Стабильность показывает, насколько сильно меняется итоговое место танца от турнира к турниру. Чем меньше колебания, тем выше стабильность.</p>
-          <div class="table-wrap table-scroll">
+          <h3 class="dance-table-heading">Стабильность танцев</h3>
+          <p class="helper-text">Стабильность показывает, насколько сильно меняется итоговое место танца от турнира к турниру. Чем меньше колебания, тем выше стабильность.</p>
+          <div class="table-wrap table-scroll mobile-card-table">
             <table>
               <thead><tr><th class="col-dance">Танец</th><th class="number col-avg">Среднее место</th><th class="number col-best">Лучшее</th><th class="col-stability">Стабильность</th></tr></thead>
               <tbody>
-                <tr><td colspan="4">Ограниченная выборка.</td></tr>
+                <tr><td colspan="4" data-label="Статус">Ограниченная выборка.</td></tr>
               </tbody>
             </table>
           </div>
@@ -1661,43 +1960,49 @@
         </div>
         <div class="category-panel panel-latin-eadc">
 
-          <div class="three-column">
-            <div class="insight-card">
-              <h3>Оценённый танец</h3>
-              <p>Самба — место 5.</p>
+          <div class="dance-comparison">
+            <div class="dance-comparison-header">
+              <h3>Сравнение танцев</h3>
+              <span class="status-icon neutral" aria-hidden="true">
+  <svg viewBox="0 0 24 24" fill="none"><path d="M6 9h12"/><path d="M6 15h12"/></svg>
+</span>
             </div>
-            <div class="insight-card">
-              <h3>Наиболее стабильные</h3>
-<p class="muted">Ограниченная выборка.</p>            </div>
+              <div class="dance-comparison-zone neutral">
+                <div class="dance-comparison-title"><span>Оценённый танец</span><span class="status-icon neutral" aria-hidden="true">
+  <svg viewBox="0 0 24 24" fill="none"><path d="M12 11v5"/><path d="M12 8h.01"/><circle cx="12" cy="12" r="9"/></svg>
+</span></div>
+                <div class="dance-name-list">Самба</div>
+                <div class="dance-comparison-value">среднее место 5</div>
+              </div>
           </div>
 
-          <div class="three-column">
-            <div class="insight-card positive">
-              <h3><span>Улучшается</span><span class="status-icon " aria-hidden="true">
+          <div class="dance-comparison dance-dynamics">
+            <div class="dance-comparison-header">
+              <h3>Динамика танцев</h3>
+              <span class="status-icon neutral" aria-hidden="true">
   <svg viewBox="0 0 24 24" fill="none"><path d="M12 19V5"/><path d="m6 11 6-6 6 6"/></svg>
-</span></h3>
-<p class="muted">Для уверенного вывода пока мало наблюдений.</p>            </div>
-            <div class="insight-card attention">
-              <h3><span>Требует внимания по динамике</span><span class="status-icon " aria-hidden="true">
-  <svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14"/><path d="m18 13-6 6-6-6"/></svg>
-</span></h3>
-<p class="muted">Для уверенного вывода пока мало наблюдений.</p>            </div>
-            <div class="insight-card">
-              <h3>Стабильно</h3>
-<p class="muted">Для уверенного вывода пока мало наблюдений.</p>            </div>
+</span>
+            </div>
+            <p class="trend-help">Динамика считается по изменению среднего места между ранней и последней доступной датой выбранного периода. Меньшее место означает лучший результат.</p>
+              <div class="dance-comparison-zone neutral">
+                <div class="dance-comparison-title"><span>Без заметных изменений</span><span class="status-icon neutral" aria-hidden="true">
+  <svg viewBox="0 0 24 24" fill="none"><path d="M6 9h12"/><path d="M6 15h12"/></svg>
+</span></div>
+                <p class="dance-comparison-message">Динамика неустойчива из-за ограниченной выборки.</p>
+              </div>
           </div>
 
-          <h3 class="dance-table-heading">Танцы</h3>
-          <p class="section-kicker">Стабильность показывает, насколько сильно меняется итоговое место танца от турнира к турниру. Чем меньше колебания, тем выше стабильность.</p>
-          <div class="table-wrap table-scroll">
+          <h3 class="dance-table-heading">Стабильность танцев</h3>
+          <p class="helper-text">Стабильность показывает, насколько сильно меняется итоговое место танца от турнира к турниру. Чем меньше колебания, тем выше стабильность.</p>
+          <div class="table-wrap table-scroll mobile-card-table">
             <table>
               <thead><tr><th class="col-dance">Танец</th><th class="number col-avg">Среднее место</th><th class="number col-best">Лучшее</th><th class="col-stability">Стабильность</th></tr></thead>
               <tbody>
                 <tr>
-                  <td class="col-dance"><strong>Самба</strong></td>
-                  <td class="number col-avg">5</td>
-                  <td class="number col-best">5</td>
-                  <td class="col-stability">
+                  <td class="col-dance" data-label="Танец"><strong>Самба</strong></td>
+                  <td class="number col-avg" data-label="Среднее место">5</td>
+                  <td class="number col-best" data-label="Лучшее">5</td>
+                  <td class="col-stability" data-label="Стабильность">
                     <div class="progress-label">Средняя</div>
                     <div class="progress-track"><div class="progress-fill" style="--stability-width: 50%;"></div></div>
                   </td>
@@ -1708,38 +2013,7 @@
 
         </div>
       </div>
-      <div class="note-box">Расчёт стабильности основан на разбросе итоговых мест по турнирам. Полная шкала означает очень устойчивый результат, короткая шкала — сильные колебания.</div>
-    </section>
-
-    <section class="section">
-      <details>
-        <summary>Дополнительная аналитика судей</summary>
-        <p class="section-kicker">В рейтинг включены только судьи, по которым доступно не менее 10 оценок.</p>
-        <div class="two-column">
-          <div>
-            <h3>Более строгие судьи</h3>
-            <div class="table-wrap table-scroll">
-              <table>
-                <thead><tr><th>Судья</th><th>Интерпретация</th><th class="number">Оценок</th></tr></thead>
-                <tbody>
-                  <tr><td colspan="3">Недостаточно данных для формирования рейтинга судей.</td></tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-          <div>
-            <h3>Более мягкие судьи</h3>
-            <div class="table-wrap table-scroll">
-              <table>
-                <thead><tr><th>Судья</th><th>Интерпретация</th><th class="number">Оценок</th></tr></thead>
-                <tbody>
-                  <tr><td colspan="3">Недостаточно данных для формирования рейтинга судей.</td></tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-      </details>
+      <p class="helper-text">Расчёт стабильности основан на разбросе итоговых мест по турнирам. Полная шкала означает очень устойчивый результат, короткая шкала — сильные колебания.</p>
     </section>
 
     <section class="section">
@@ -1751,20 +2025,17 @@
             <div class="tournament-summary-row">
               <div class="tournament-summary">
                 <div>
-                  <div class="label">Дата</div>
                   <div class="summary-title">2025-09-28</div>
 <div class="summary-meta">Санкт-Петербург</div>                </div>
                 <div>
-                  <div class="label">Турнир</div>
                   <div class="tournament-title-line">
                     <div class="summary-title">Северный кубок 2025 (Санкт-Петербург)</div>
-                      <span class="tournament-badge best"><span class="status-icon " aria-hidden="true">
-  <svg viewBox="0 0 24 24" fill="none"><path d="m12 3 2.7 5.47 6.03.88-4.36 4.25 1.03 6-5.4-2.84-5.4 2.84 1.03-6-4.36-4.25 6.03-.88L12 3Z"/></svg>
-</span>лучший результат</span>
+                  </div>
+                  <div class="tournament-badge-row">
+                      <span class="tournament-badge best">Лучший результат</span>
                   </div>
                 </div>
                 <div>
-                  <div class="label">Категория / программа</div>
                   <div class="summary-meta">EADC Юниоры-1 RS Соло Ж La; Юниоры-1+2 E+D Соло Ж La; Юниоры-1+2 E+D Соло Ж St; Юниоры-1+2 N+E Соло Ж St</div>
                   <div class="summary-meta">латина, стандарт</div>
                 </div>
@@ -1777,49 +2048,51 @@
           <div class="tournament-detail-grid">
               <div class="insight-card tournament-program-summary">
                 <h3>Стандарт</h3>
-                <p class="muted">
-                  Общий итог:
-                    среднее место 5 · W, T, F, Q
-                </p>
-                    <p><strong><span class="status-icon neutral" aria-hidden="true">
-  <svg viewBox="0 0 24 24" fill="none"><path d="M6 9h12"/><path d="M6 15h12"/></svg>
-</span>Танцы оценены примерно одинаково:</strong> W, T, Q <span class="muted">— среднее место 5</span></p>
+                <div class="tournament-program-metrics">
+                  <div class="tournament-program-row">
+                    <span class="tournament-program-label">Общий итог</span>
+                    <span>
+                        среднее место 5 · W, T, F, Q
+                    </span>
+                  </div>
+                    <div class="tournament-program-row"><span class="tournament-program-label">Равный результат</span><span>W, T, Q · среднее место 5</span></div>
+                </div>
               </div>
               <div class="insight-card tournament-program-summary">
                 <h3>Латина</h3>
-                <p class="muted">
-                  Общий итог:
-                    S, Ch, R, P, J · по крестам судей
-                </p>
-                    <p><strong><span class="status-icon positive" aria-hidden="true">
-  <svg viewBox="0 0 24 24" fill="none"><path d="m12 3 2.7 5.47 6.03.88-4.36 4.25 1.03 6-5.4-2.84-5.4 2.84 1.03-6-4.36-4.25 6.03-.88L12 3Z"/></svg>
-</span>Лучший танец:</strong> R <span class="muted">— выше всего оценивался судьями · 7 крестов</span></p>
-                    <p><strong><span class="status-icon attention" aria-hidden="true">
-  <svg viewBox="0 0 24 24" fill="none"><path d="M12 9v4"/><path d="M12 17h.01"/><path d="M10.3 4.2 2.8 17.4A2 2 0 0 0 4.5 20h15a2 2 0 0 0 1.7-2.6L13.7 4.2a2 2 0 0 0-3.4 0Z"/></svg>
-</span>Требуют внимания:</strong> Ch, P <span class="muted">— ниже всего оценивался судьями · 4 крестов</span></p>
+                <div class="tournament-program-metrics">
+                  <div class="tournament-program-row">
+                    <span class="tournament-program-label">Общий итог</span>
+                    <span>
+                        S, Ch, R, P, J · по крестам судей
+                    </span>
+                  </div>
+                    <div class="tournament-program-row"><span class="tournament-program-label">Лучший танец</span><span>R · выше всего оценивался судьями · 7 крестов</span></div>
+                    <div class="tournament-program-row"><span class="tournament-program-label">Зоны внимания</span><span>Ch, P · ниже всего оценивался судьями · 4 крестов</span></div>
+                </div>
               </div>
           </div>
-          <div class="table-wrap table-scroll">
+          <div class="table-wrap table-scroll mobile-card-table">
             <table>
               <thead><tr><th class="col-dance">Танец</th><th class="col-program">Программа</th><th class="number col-place">Итоговое место</th><th class="number col-protocols">Протоколов</th></tr></thead>
               <tbody>
                 <tr>
-                  <td class="col-dance"><strong>W</strong></td>
-                  <td class="col-program">стандарт</td>
-                  <td class="number col-place">5</td>
-                  <td class="number col-protocols">1 протокол</td>
+                  <td class="col-dance" data-label="Танец"><strong>W</strong></td>
+                  <td class="col-program" data-label="Программа">стандарт</td>
+                  <td class="number col-place" data-label="Итоговое место">5</td>
+                  <td class="number col-protocols" data-label="Протоколов">1 протокол</td>
                 </tr>
                 <tr>
-                  <td class="col-dance"><strong>T</strong></td>
-                  <td class="col-program">стандарт</td>
-                  <td class="number col-place">5</td>
-                  <td class="number col-protocols">1 протокол</td>
+                  <td class="col-dance" data-label="Танец"><strong>T</strong></td>
+                  <td class="col-program" data-label="Программа">стандарт</td>
+                  <td class="number col-place" data-label="Итоговое место">5</td>
+                  <td class="number col-protocols" data-label="Протоколов">1 протокол</td>
                 </tr>
                 <tr>
-                  <td class="col-dance"><strong>Q</strong></td>
-                  <td class="col-program">стандарт</td>
-                  <td class="number col-place">5</td>
-                  <td class="number col-protocols">1 протокол</td>
+                  <td class="col-dance" data-label="Танец"><strong>Q</strong></td>
+                  <td class="col-program" data-label="Программа">стандарт</td>
+                  <td class="number col-place" data-label="Итоговое место">5</td>
+                  <td class="number col-protocols" data-label="Протоколов">1 протокол</td>
                 </tr>
               </tbody>
             </table>
@@ -1830,20 +2103,17 @@
             <div class="tournament-summary-row">
               <div class="tournament-summary">
                 <div>
-                  <div class="label">Дата</div>
                   <div class="summary-title">2025-11-09</div>
 <div class="summary-meta">Санкт-Петербург</div>                </div>
                 <div>
-                  <div class="label">Турнир</div>
                   <div class="tournament-title-line">
                     <div class="summary-title">Кубок Лиги 2025 (Санкт-Петербург)</div>
-                      <span class="tournament-badge best"><span class="status-icon " aria-hidden="true">
-  <svg viewBox="0 0 24 24" fill="none"><path d="m12 3 2.7 5.47 6.03.88-4.36 4.25 1.03 6-5.4-2.84-5.4 2.84 1.03-6-4.36-4.25 6.03-.88L12 3Z"/></svg>
-</span>лучший результат</span>
+                  </div>
+                  <div class="tournament-badge-row">
+                      <span class="tournament-badge best">Лучший результат</span>
                   </div>
                 </div>
                 <div>
-                  <div class="label">Категория / программа</div>
                   <div class="summary-meta">EADC Юниоры-1 RS Соло Ж La; Юниоры-1+2 E+D Соло Ж La; Юниоры-1+2 E+D Соло Ж St</div>
                   <div class="summary-meta">латина, стандарт</div>
                 </div>
@@ -1856,35 +2126,39 @@
           <div class="tournament-detail-grid">
               <div class="insight-card tournament-program-summary">
                 <h3>Стандарт</h3>
-                <p class="muted">
-                  Общий итог:
-                    F, Q · по крестам судей
-                </p>
-                    <p><strong><span class="status-icon positive" aria-hidden="true">
-  <svg viewBox="0 0 24 24" fill="none"><path d="m12 3 2.7 5.47 6.03.88-4.36 4.25 1.03 6-5.4-2.84-5.4 2.84 1.03-6-4.36-4.25 6.03-.88L12 3Z"/></svg>
-</span>Лучший танец:</strong> F <span class="muted">— выше всего оценивался судьями · 2 крестов</span></p>
-                    <p><strong><span class="status-icon attention" aria-hidden="true">
-  <svg viewBox="0 0 24 24" fill="none"><path d="M12 9v4"/><path d="M12 17h.01"/><path d="M10.3 4.2 2.8 17.4A2 2 0 0 0 4.5 20h15a2 2 0 0 0 1.7-2.6L13.7 4.2a2 2 0 0 0-3.4 0Z"/></svg>
-</span>Требует внимания:</strong> Q <span class="muted">— ниже всего оценивался судьями · 1 крестов</span></p>
+                <div class="tournament-program-metrics">
+                  <div class="tournament-program-row">
+                    <span class="tournament-program-label">Общий итог</span>
+                    <span>
+                        F, Q · по крестам судей
+                    </span>
+                  </div>
+                    <div class="tournament-program-row"><span class="tournament-program-label">Лучший танец</span><span>F · выше всего оценивался судьями · 2 крестов</span></div>
+                    <div class="tournament-program-row"><span class="tournament-program-label">Зона внимания</span><span>Q · ниже всего оценивался судьями · 1 крестов</span></div>
+                </div>
               </div>
               <div class="insight-card tournament-program-summary">
                 <h3>Латина</h3>
-                <p class="muted">
-                  Общий итог:
-                    среднее место 5 · S, Ch, R, P, J
-                </p>
-                    <p><strong>Оценённый танец:</strong> S <span class="muted">— место 5</span></p>
+                <div class="tournament-program-metrics">
+                  <div class="tournament-program-row">
+                    <span class="tournament-program-label">Общий итог</span>
+                    <span>
+                        среднее место 5 · S, Ch, R, P, J
+                    </span>
+                  </div>
+                    <div class="tournament-program-row"><span class="tournament-program-label">Оценённый танец</span><span>S · место 5</span></div>
+                </div>
               </div>
           </div>
-          <div class="table-wrap table-scroll">
+          <div class="table-wrap table-scroll mobile-card-table">
             <table>
               <thead><tr><th class="col-dance">Танец</th><th class="col-program">Программа</th><th class="number col-place">Итоговое место</th><th class="number col-protocols">Протоколов</th></tr></thead>
               <tbody>
                 <tr>
-                  <td class="col-dance"><strong>S</strong></td>
-                  <td class="col-program">латина</td>
-                  <td class="number col-place">5</td>
-                  <td class="number col-protocols">1 протокол</td>
+                  <td class="col-dance" data-label="Танец"><strong>S</strong></td>
+                  <td class="col-program" data-label="Программа">латина</td>
+                  <td class="number col-place" data-label="Итоговое место">5</td>
+                  <td class="number col-protocols" data-label="Протоколов">1 протокол</td>
                 </tr>
               </tbody>
             </table>
@@ -1895,17 +2169,14 @@
             <div class="tournament-summary-row">
               <div class="tournament-summary">
                 <div>
-                  <div class="label">Дата</div>
                   <div class="summary-title">2026-03-08</div>
 <div class="summary-meta">Санкт-Петербург</div>                </div>
                 <div>
-                  <div class="label">Турнир</div>
                   <div class="tournament-title-line">
                     <div class="summary-title">Амбассадор 2026 (Санкт-Петербург)</div>
                   </div>
                 </div>
                 <div>
-                  <div class="label">Категория / программа</div>
                   <div class="summary-meta">EADC Юниоры-1 RS Соло Ж La; Юниоры-1+2 E+D Соло Ж La; Юниоры-1+2 E+D Соло Ж St</div>
                   <div class="summary-meta">латина, стандарт</div>
                 </div>
@@ -1918,32 +2189,32 @@
           <div class="tournament-detail-grid">
               <div class="insight-card tournament-program-summary">
                 <h3>Стандарт</h3>
-                <p class="muted">
-                  Общий итог:
-                    W, T, F, Q · по крестам судей
-                </p>
-                    <p><strong><span class="status-icon positive" aria-hidden="true">
-  <svg viewBox="0 0 24 24" fill="none"><path d="m12 3 2.7 5.47 6.03.88-4.36 4.25 1.03 6-5.4-2.84-5.4 2.84 1.03-6-4.36-4.25 6.03-.88L12 3Z"/></svg>
-</span>Лучшие танцы:</strong> T, Q <span class="muted">— выше всего оценивался судьями · 4 крестов</span></p>
-                    <p><strong><span class="status-icon attention" aria-hidden="true">
-  <svg viewBox="0 0 24 24" fill="none"><path d="M12 9v4"/><path d="M12 17h.01"/><path d="M10.3 4.2 2.8 17.4A2 2 0 0 0 4.5 20h15a2 2 0 0 0 1.7-2.6L13.7 4.2a2 2 0 0 0-3.4 0Z"/></svg>
-</span>Требует внимания:</strong> F <span class="muted">— ниже всего оценивался судьями · 2 крестов</span></p>
+                <div class="tournament-program-metrics">
+                  <div class="tournament-program-row">
+                    <span class="tournament-program-label">Общий итог</span>
+                    <span>
+                        W, T, F, Q · по крестам судей
+                    </span>
+                  </div>
+                    <div class="tournament-program-row"><span class="tournament-program-label">Лучшие танцы</span><span>T, Q · выше всего оценивался судьями · 4 крестов</span></div>
+                    <div class="tournament-program-row"><span class="tournament-program-label">Зона внимания</span><span>F · ниже всего оценивался судьями · 2 крестов</span></div>
+                </div>
               </div>
               <div class="insight-card tournament-program-summary">
                 <h3>Латина</h3>
-                <p class="muted">
-                  Общий итог:
-                    S, Ch, R, P, J · по крестам судей
-                </p>
-                    <p><strong><span class="status-icon positive" aria-hidden="true">
-  <svg viewBox="0 0 24 24" fill="none"><path d="m12 3 2.7 5.47 6.03.88-4.36 4.25 1.03 6-5.4-2.84-5.4 2.84 1.03-6-4.36-4.25 6.03-.88L12 3Z"/></svg>
-</span>Лучший танец:</strong> R <span class="muted">— выше всего оценивался судьями · 18 крестов</span></p>
-                    <p><strong><span class="status-icon attention" aria-hidden="true">
-  <svg viewBox="0 0 24 24" fill="none"><path d="M12 9v4"/><path d="M12 17h.01"/><path d="M10.3 4.2 2.8 17.4A2 2 0 0 0 4.5 20h15a2 2 0 0 0 1.7-2.6L13.7 4.2a2 2 0 0 0-3.4 0Z"/></svg>
-</span>Требует внимания:</strong> P <span class="muted">— ниже всего оценивался судьями · 1 крестов</span></p>
+                <div class="tournament-program-metrics">
+                  <div class="tournament-program-row">
+                    <span class="tournament-program-label">Общий итог</span>
+                    <span>
+                        S, Ch, R, P, J · по крестам судей
+                    </span>
+                  </div>
+                    <div class="tournament-program-row"><span class="tournament-program-label">Лучший танец</span><span>R · выше всего оценивался судьями · 18 крестов</span></div>
+                    <div class="tournament-program-row"><span class="tournament-program-label">Зона внимания</span><span>P · ниже всего оценивался судьями · 1 крестов</span></div>
+                </div>
               </div>
           </div>
-          <div class="table-wrap table-scroll">
+          <div class="table-wrap table-scroll mobile-card-table">
             <table>
               <thead><tr><th class="col-dance">Танец</th><th class="col-program">Программа</th><th class="number col-place">Итоговое место</th><th class="number col-protocols">Протоколов</th></tr></thead>
               <tbody>
@@ -1952,6 +2223,78 @@
           </div>
         </details>
       </div>
+    </section>
+
+    <section class="section">
+      <h2>Что видят судьи</h2>
+      <p class="section-kicker">Экспериментальный тренерский взгляд: не список всех судей, а то, где панель сходится, расходится и кто сильнее влияет на восприятие результата.</p>
+      <div class="judge-insight-grid">
+        <div class="judge-insight-card">
+          <h3>Согласованность оценок</h3>
+            <div class="judge-consensus-list">
+              <div class="judge-consensus-item">
+                <div class="judge-consensus-name">Самба</div>
+                <div><span class="judge-consensus-badge positive">Согласованный танец</span></div>
+                <div class="judge-insight-meta">Разброс оценок низкий: 0.5</div>
+              </div>
+              <div class="judge-consensus-item">
+                <div class="judge-consensus-name">Квикстеп</div>
+                <div><span class="judge-consensus-badge attention">Спорный танец</span></div>
+                <div class="judge-insight-meta">Разброс оценок высокий: 1.868</div>
+              </div>
+            </div>
+        </div>
+        <div class="judge-insight-card">
+          <h3>Судьи с наибольшим влиянием</h3>
+          <p class="judge-insight-description">Эти судьи чаще остальных отклоняются от среднего результата танцора.</p>
+            <p class="muted">Недостаточно данных для выделения судей с наибольшим влиянием.</p>
+        </div>
+        <div class="judge-insight-card">
+          <h3>Реакция судейской панели</h3>
+            <div class="judge-insight-headline">Оценки судей становятся согласованнее</div>
+          <div class="judge-insight-meta">
+            Разброс судей: 1.519 → 0.471
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <details class="section-accordion">
+        <summary>
+          <span class="section-summary-row">
+            <span>Дополнительная аналитика судей</span>
+            <span class="accordion-icon" aria-hidden="true"><span class="status-icon " aria-hidden="true">
+  <svg viewBox="0 0 24 24" fill="none"><path d="m6 9 6 6 6-6"/></svg>
+</span></span>
+          </span>
+        </summary>
+        <p class="section-kicker">В рейтинг включены только судьи, по которым доступно не менее 10 оценок.</p>
+        <div class="judge-table-stack">
+          <div class="judge-table-block">
+            <h3>Более строгие судьи</h3>
+            <div class="table-wrap table-scroll mobile-card-table">
+              <table>
+                <thead><tr><th>Судья</th><th>Интерпретация</th><th class="number">Отклонение</th><th class="number">Оценок</th><th class="number">Протоколов</th></tr></thead>
+                <tbody>
+                <tr><td colspan="5" data-label="Статус">Недостаточно данных для формирования рейтинга судей.</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="judge-table-block">
+            <h3>Более мягкие судьи</h3>
+            <div class="table-wrap table-scroll mobile-card-table">
+              <table>
+                <thead><tr><th>Судья</th><th>Интерпретация</th><th class="number">Отклонение</th><th class="number">Оценок</th><th class="number">Протоколов</th></tr></thead>
+                <tbody>
+                <tr><td colspan="5" data-label="Статус">Недостаточно данных для формирования рейтинга судей.</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </details>
     </section>
 
   </section>

@@ -903,6 +903,7 @@ def build_view_model(report: dict[str, Any], input_path: Path, output_path: Path
         "entry_label": entry_label,
         "programs": programs,
         "judges": judges,
+        "judge_panel_reaction": report.get("judge_panel_reaction", {}) or {},
         "dances": report.get("dances", {}),
         "tournaments": report.get("tournaments", {}),
         "tournament_details": build_tournament_details(report),
