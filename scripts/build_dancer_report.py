@@ -129,13 +129,22 @@ def parse_place_value(value: Any) -> float | None:
     return values[0]
 
 
+def compact_number_text(value: str | float | int) -> str:
+    numeric = float(value)
+    rounded = round(numeric)
+    if abs(numeric - rounded) < 0.001:
+        return str(int(rounded))
+    return f"{numeric:.3f}".rstrip("0").rstrip(".")
+
+
 def place_label(value: Any) -> str | None:
     if value is None or pd.isna(value):
         return None
-    text = str(value).strip().replace("–", "–").replace("—", "–")
+    text = str(value).strip().replace("—", "–")
     if not text:
         return None
     text = re.sub(r"\s*-\s*", "–", text)
+    text = re.sub(r"\d+(?:[.,]\d+)?", lambda match: compact_number_text(match.group(0).replace(",", ".")), text)
     return f"{text} место"
 
 

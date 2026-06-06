@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-06-06T15:40:04.217631+00:00",
+    "generated_at": "2026-06-06T15:55:56.972832+00:00",
     "analytics_version": "report_layer_v1",
     "database": "database/compreg_spb_2025_2026.sqlite"
   },
@@ -19435,7 +19435,7 @@
               "Q"
             ],
             "tied_metric_value": 7.0,
-            "tied_metric_label": "7.0 место"
+            "tied_metric_label": "7 место"
           },
           {
             "program": "latin",
@@ -19480,7 +19480,7 @@
               "J"
             ],
             "tied_metric_value": 6.0,
-            "tied_metric_label": "6.0 место"
+            "tied_metric_label": "6 место"
           }
         ],
         "dance_results": [
@@ -20084,7 +20084,7 @@
               "J"
             ],
             "tied_metric_value": 6.0,
-            "tied_metric_label": "6.0 место"
+            "tied_metric_label": "6 место"
           }
         ],
         "dance_results": [
@@ -20682,7 +20682,7 @@
               "J"
             ],
             "tied_metric_value": 13.0,
-            "tied_metric_label": "13.0 место"
+            "tied_metric_label": "13 место"
           }
         ],
         "dance_results": [
@@ -21097,7 +21097,7 @@
               "Q"
             ],
             "tied_metric_value": 7.0,
-            "tied_metric_label": "7.0 место"
+            "tied_metric_label": "7 место"
           },
           {
             "program": "latin",
@@ -21753,7 +21753,7 @@
               "Q"
             ],
             "tied_metric_value": 4.0,
-            "tied_metric_label": "4.0 место"
+            "tied_metric_label": "4 место"
           },
           {
             "program": "latin",
@@ -21797,7 +21797,7 @@
               "J"
             ],
             "tied_metric_value": 3.0,
-            "tied_metric_label": "3.0 место"
+            "tied_metric_label": "3 место"
           }
         ],
         "dance_results": [
@@ -22357,7 +22357,7 @@
               "Q"
             ],
             "tied_metric_value": 4.0,
-            "tied_metric_label": "4.0 место"
+            "tied_metric_label": "4 место"
           },
           {
             "program": "latin",
@@ -22401,7 +22401,7 @@
               "J"
             ],
             "tied_metric_value": 3.0,
-            "tied_metric_label": "3.0 место"
+            "tied_metric_label": "3 место"
           }
         ],
         "dance_results": [
@@ -22960,7 +22960,7 @@
               "Q"
             ],
             "tied_metric_value": 2.0,
-            "tied_metric_label": "2.0 место"
+            "tied_metric_label": "2 место"
           },
           {
             "program": "latin",
@@ -23005,7 +23005,7 @@
               "J"
             ],
             "tied_metric_value": 2.0,
-            "tied_metric_label": "2.0 место"
+            "tied_metric_label": "2 место"
           }
         ],
         "dance_results": [
@@ -23564,7 +23564,7 @@
               "Q"
             ],
             "tied_metric_value": 6.0,
-            "tied_metric_label": "6.0 место"
+            "tied_metric_label": "6 место"
           },
           {
             "program": "latin",

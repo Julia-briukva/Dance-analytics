@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-06-06T15:40:57.901705+00:00",
+    "generated_at": "2026-06-06T15:56:44.284914+00:00",
     "analytics_version": "report_layer_v1",
     "database": "database/compreg_spb_2025_2026.sqlite"
   },
@@ -15511,7 +15511,7 @@
               "Q"
             ],
             "tied_metric_value": 5.0,
-            "tied_metric_label": "5.0 место"
+            "tied_metric_label": "5 место"
           },
           {
             "program": "latin",
@@ -15549,7 +15549,7 @@
               "J"
             ],
             "tied_metric_value": 6.0,
-            "tied_metric_label": "6.0 место"
+            "tied_metric_label": "6 место"
           }
         ],
         "dance_results": [
@@ -15759,7 +15759,7 @@
               "Q"
             ],
             "tied_metric_value": 4.0,
-            "tied_metric_label": "4.0 место"
+            "tied_metric_label": "4 место"
           },
           {
             "program": "latin",
@@ -15797,7 +15797,7 @@
               "J"
             ],
             "tied_metric_value": 3.0,
-            "tied_metric_label": "3.0 место"
+            "tied_metric_label": "3 место"
           }
         ],
         "dance_results": [
@@ -17180,7 +17180,7 @@
               "Q"
             ],
             "tied_metric_value": 9.0,
-            "tied_metric_label": "9.0 место"
+            "tied_metric_label": "9 место"
           },
           {
             "program": "latin",
@@ -17221,7 +17221,7 @@
               "J"
             ],
             "tied_metric_value": 9.0,
-            "tied_metric_label": "9.0 место"
+            "tied_metric_label": "9 место"
           }
         ],
         "dance_results": [
@@ -17484,7 +17484,7 @@
               "Q"
             ],
             "tied_metric_value": 7.0,
-            "tied_metric_label": "7.0 место"
+            "tied_metric_label": "7 место"
           },
           {
             "program": "latin",
@@ -17525,7 +17525,7 @@
               "J"
             ],
             "tied_metric_value": 11.0,
-            "tied_metric_label": "11.0 место"
+            "tied_metric_label": "11 место"
           }
         ],
         "dance_results": [

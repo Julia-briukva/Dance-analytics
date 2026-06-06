@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-06-06T15:40:14.596458+00:00",
+    "generated_at": "2026-06-06T15:56:06.597662+00:00",
     "analytics_version": "report_layer_v1",
     "database": "database/compreg_spb_2025_2026.sqlite"
   },
@@ -14842,7 +14842,7 @@
               "J"
             ],
             "tied_metric_value": 6.0,
-            "tied_metric_label": "6.0 место"
+            "tied_metric_label": "6 место"
           }
         ],
         "dance_results": [
@@ -15444,7 +15444,7 @@
               "J"
             ],
             "tied_metric_value": 4.0,
-            "tied_metric_label": "4.0 место"
+            "tied_metric_label": "4 место"
           }
         ],
         "dance_results": [
@@ -15928,7 +15928,7 @@
               "J"
             ],
             "tied_metric_value": 5.0,
-            "tied_metric_label": "5.0 место"
+            "tied_metric_label": "5 место"
           }
         ],
         "dance_results": [
