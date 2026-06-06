@@ -1443,8 +1443,8 @@
       </div>
       <div class="note-box">
         <div class="label">Общий вывод</div>
-        <div class="big-status">недостаточно данных</div>
-        <p>Пока недостаточно устойчивых наблюдений, чтобы уверенно описать динамику сезона.</p>
+        <div class="big-status">стабильный уровень</div>
+        <p>Результаты в основном держатся в близком диапазоне от турнира к турниру.</p>
       </div>
     </section>
 
@@ -1480,11 +1480,13 @@
             <div class="story-card">
               <h4>Динамика</h4>
               <p>Для уверенного вывода по динамике пока мало наблюдений.</p>
+                <p class="muted">Для некоторых танцев пока недостаточно данных для устойчивых выводов.</p>
             </div>
             <div class="parent-conclusion">
               <h2>Общий вывод</h2>
                 <p>По стандартной программе пока рано делать устойчивый вывод.</p>
                 <p>Данные можно использовать как ориентир, но основная картина станет понятнее после нескольких следующих выступлений.</p>
+                <p>Для некоторых танцев пока недостаточно данных для устойчивых выводов.</p>
             </div>
           </div>
           <div class="parent-category-panel parent-panel-standard-e_d">
@@ -1501,11 +1503,13 @@
             <div class="story-card">
               <h4>Динамика</h4>
               <p>Для уверенного вывода по динамике пока мало наблюдений.</p>
+                <p class="muted">Для некоторых танцев пока недостаточно данных для устойчивых выводов.</p>
             </div>
             <div class="parent-conclusion">
               <h2>Общий вывод</h2>
                 <p>По стандартной программе пока рано делать устойчивый вывод.</p>
                 <p>Данные можно использовать как ориентир, но основная картина станет понятнее после нескольких следующих выступлений.</p>
+                <p>Для некоторых танцев пока недостаточно данных для устойчивых выводов.</p>
             </div>
           </div>
         </div>
@@ -1539,11 +1543,13 @@
             <div class="story-card">
               <h4>Динамика</h4>
               <p>Для уверенного вывода по динамике пока мало наблюдений.</p>
+                <p class="muted">Для некоторых танцев пока недостаточно данных для устойчивых выводов.</p>
             </div>
             <div class="parent-conclusion">
               <h2>Общий вывод</h2>
                 <p>По латинской программе пока рано делать устойчивый вывод.</p>
                 <p>Данные можно использовать как ориентир, но основная картина станет понятнее после нескольких следующих выступлений.</p>
+                <p>Для некоторых танцев пока недостаточно данных для устойчивых выводов.</p>
             </div>
           </div>
           <div class="parent-category-panel parent-panel-latin-e_d">
@@ -1560,11 +1566,13 @@
             <div class="story-card">
               <h4>Динамика</h4>
               <p>Для уверенного вывода по динамике пока мало наблюдений.</p>
+                <p class="muted">Для некоторых танцев пока недостаточно данных для устойчивых выводов.</p>
             </div>
             <div class="parent-conclusion">
               <h2>Общий вывод</h2>
                 <p>По латинской программе пока рано делать устойчивый вывод.</p>
                 <p>Данные можно использовать как ориентир, но основная картина станет понятнее после нескольких следующих выступлений.</p>
+                <p>Для некоторых танцев пока недостаточно данных для устойчивых выводов.</p>
             </div>
           </div>
         </div>
@@ -1580,41 +1588,49 @@
         <input class="category-input" type="radio" name="cat-standard" id="cat-standard-all" checked>
         <input class="category-input" type="radio" name="cat-standard" id="cat-standard-e_d" >
       <div class="category-chip-groups">
-        <div class="category-chip-group category-chip-group-limited">
-          <div class="category-group-title">Мало данных</div>
-          <div class="category-tabs category-tabs-limited">
-              <label class="category-tab limited" for="cat-standard-all">
-                Все категории<span class="chip-badge">мало данных</span>
-              </label>
-              <label class="category-tab limited" for="cat-standard-e_d">
-                E+D<span class="chip-badge">мало данных</span>
-              </label>
+        <div class="category-chip-group">
+          <div class="category-tabs category-tabs-primary">
+              <label class="category-tab" for="cat-standard-all">Все категории</label>
+              <label class="category-tab" for="cat-standard-e_d">E+D</label>
           </div>
         </div>
       </div>
 
       <div class="category-panels">
         <div class="category-panel panel-standard-all">
-            <p class="section-kicker">по оценкам судей, без финального результата</p>
             <div class="note-box limited-note"><span class="status-icon neutral" aria-hidden="true">
   <svg viewBox="0 0 24 24" fill="none"><path d="M12 11v5"/><path d="M12 8h.01"/><circle cx="12" cy="12" r="9"/></svg>
-</span>Выборка ограничена: 1 протокол. Эти данные можно использовать как справку, но не как устойчивый вывод.</div>
+</span>Ограниченная выборка: 1 протокол в этом срезе.</div>
 
-          <div class="three-column">
-            <div class="insight-card neutral">
-              <h3><span>Справка по участию</span><span class="status-icon " aria-hidden="true">
-  <svg viewBox="0 0 24 24" fill="none"><path d="M12 11v5"/><path d="M12 8h.01"/><circle cx="12" cy="12" r="9"/></svg>
-</span></h3>
-              <p>12 оценок · 1 турнир</p>
+          <div class="dance-comparison">
+            <div class="dance-comparison-header">
+              <h3>Сравнение танцев</h3>
+              <span class="status-icon neutral" aria-hidden="true">
+  <svg viewBox="0 0 24 24" fill="none"><path d="M6 9h12"/><path d="M6 15h12"/></svg>
+</span>
             </div>
-            <div class="insight-card neutral">
-              <h3>Танцы в срезе</h3>
-                <p>T, F, Q</p>
+              <div class="dance-comparison-zone neutral">
+                <div class="dance-comparison-title"><span>Равный результат</span><span class="status-icon neutral" aria-hidden="true">
+  <svg viewBox="0 0 24 24" fill="none"><path d="M6 9h12"/><path d="M6 15h12"/></svg>
+</span></div>
+                <p class="dance-comparison-message">Танцы показали одинаковый результат: Танго, Фокстрот, Квикстеп — место 19.5.</p>
+              </div>
+          </div>
+
+          <div class="dance-comparison dance-dynamics">
+            <div class="dance-comparison-header">
+              <h3>Динамика танцев</h3>
+              <span class="status-icon neutral" aria-hidden="true">
+  <svg viewBox="0 0 24 24" fill="none"><path d="M12 19V5"/><path d="m6 11 6-6 6 6"/></svg>
+</span>
             </div>
-            <div class="insight-card neutral">
-              <h3>Как читать</h3>
-              <p class="muted">Сравнения и динамика не выделяются, потому что выборка слишком мала для устойчивого вывода.</p>
-            </div>
+            <p class="trend-help">Динамика считается по изменению среднего места между ранней и последней доступной датой выбранного периода. Меньшее место означает лучший результат.</p>
+              <div class="dance-comparison-zone neutral">
+                <div class="dance-comparison-title"><span>Без заметных изменений</span><span class="status-icon neutral" aria-hidden="true">
+  <svg viewBox="0 0 24 24" fill="none"><path d="M6 9h12"/><path d="M6 15h12"/></svg>
+</span></div>
+                <p class="dance-comparison-message">Динамика неустойчива из-за ограниченной выборки.</p>
+              </div>
           </div>
 
           <h3 class="dance-table-heading">Стабильность танцев</h3>
@@ -1623,33 +1639,72 @@
             <table>
               <thead><tr><th class="col-dance">Танец</th><th class="number col-avg">Среднее место</th><th class="number col-best">Лучшее</th><th class="col-stability">Стабильность</th></tr></thead>
               <tbody>
-                <tr><td colspan="4" data-label="Статус">Нет устойчивых метрик по танцам в этом срезе.</td></tr>
+                <tr>
+                  <td class="col-dance" data-label="Танец"><strong>Фокстрот</strong></td>
+                  <td class="number col-avg" data-label="Среднее место">19.5</td>
+                  <td class="number col-best" data-label="Лучшее">19.5</td>
+                  <td class="col-stability" data-label="Стабильность">
+                    <div class="progress-label">Средняя</div>
+                    <div class="progress-track"><div class="progress-fill" style="--stability-width: 50%;"></div></div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="col-dance" data-label="Танец"><strong>Квикстеп</strong></td>
+                  <td class="number col-avg" data-label="Среднее место">19.5</td>
+                  <td class="number col-best" data-label="Лучшее">19.5</td>
+                  <td class="col-stability" data-label="Стабильность">
+                    <div class="progress-label">Средняя</div>
+                    <div class="progress-track"><div class="progress-fill" style="--stability-width: 50%;"></div></div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="col-dance" data-label="Танец"><strong>Танго</strong></td>
+                  <td class="number col-avg" data-label="Среднее место">19.5</td>
+                  <td class="number col-best" data-label="Лучшее">19.5</td>
+                  <td class="col-stability" data-label="Стабильность">
+                    <div class="progress-label">Средняя</div>
+                    <div class="progress-track"><div class="progress-fill" style="--stability-width: 50%;"></div></div>
+                  </td>
+                </tr>
               </tbody>
             </table>
           </div>
 
         </div>
         <div class="category-panel panel-standard-e_d">
-            <p class="section-kicker">по оценкам судей, без финального результата</p>
             <div class="note-box limited-note"><span class="status-icon neutral" aria-hidden="true">
   <svg viewBox="0 0 24 24" fill="none"><path d="M12 11v5"/><path d="M12 8h.01"/><circle cx="12" cy="12" r="9"/></svg>
-</span>Выборка ограничена: 1 протокол. Эти данные можно использовать как справку, но не как устойчивый вывод.</div>
+</span>Ограниченная выборка: 1 протокол в этом срезе.</div>
 
-          <div class="three-column">
-            <div class="insight-card neutral">
-              <h3><span>Справка по участию</span><span class="status-icon " aria-hidden="true">
-  <svg viewBox="0 0 24 24" fill="none"><path d="M12 11v5"/><path d="M12 8h.01"/><circle cx="12" cy="12" r="9"/></svg>
-</span></h3>
-              <p>12 оценок · 1 турнир</p>
+          <div class="dance-comparison">
+            <div class="dance-comparison-header">
+              <h3>Сравнение танцев</h3>
+              <span class="status-icon neutral" aria-hidden="true">
+  <svg viewBox="0 0 24 24" fill="none"><path d="M6 9h12"/><path d="M6 15h12"/></svg>
+</span>
             </div>
-            <div class="insight-card neutral">
-              <h3>Танцы в срезе</h3>
-                <p>T, F, Q</p>
+              <div class="dance-comparison-zone neutral">
+                <div class="dance-comparison-title"><span>Равный результат</span><span class="status-icon neutral" aria-hidden="true">
+  <svg viewBox="0 0 24 24" fill="none"><path d="M6 9h12"/><path d="M6 15h12"/></svg>
+</span></div>
+                <p class="dance-comparison-message">Танцы показали одинаковый результат: Танго, Фокстрот, Квикстеп — место 19.5.</p>
+              </div>
+          </div>
+
+          <div class="dance-comparison dance-dynamics">
+            <div class="dance-comparison-header">
+              <h3>Динамика танцев</h3>
+              <span class="status-icon neutral" aria-hidden="true">
+  <svg viewBox="0 0 24 24" fill="none"><path d="M12 19V5"/><path d="m6 11 6-6 6 6"/></svg>
+</span>
             </div>
-            <div class="insight-card neutral">
-              <h3>Как читать</h3>
-              <p class="muted">Сравнения и динамика не выделяются, потому что выборка слишком мала для устойчивого вывода.</p>
-            </div>
+            <p class="trend-help">Динамика считается по изменению среднего места между ранней и последней доступной датой выбранного периода. Меньшее место означает лучший результат.</p>
+              <div class="dance-comparison-zone neutral">
+                <div class="dance-comparison-title"><span>Без заметных изменений</span><span class="status-icon neutral" aria-hidden="true">
+  <svg viewBox="0 0 24 24" fill="none"><path d="M6 9h12"/><path d="M6 15h12"/></svg>
+</span></div>
+                <p class="dance-comparison-message">Динамика неустойчива из-за ограниченной выборки.</p>
+              </div>
           </div>
 
           <h3 class="dance-table-heading">Стабильность танцев</h3>
@@ -1658,7 +1713,33 @@
             <table>
               <thead><tr><th class="col-dance">Танец</th><th class="number col-avg">Среднее место</th><th class="number col-best">Лучшее</th><th class="col-stability">Стабильность</th></tr></thead>
               <tbody>
-                <tr><td colspan="4" data-label="Статус">Нет устойчивых метрик по танцам в этом срезе.</td></tr>
+                <tr>
+                  <td class="col-dance" data-label="Танец"><strong>Фокстрот</strong></td>
+                  <td class="number col-avg" data-label="Среднее место">19.5</td>
+                  <td class="number col-best" data-label="Лучшее">19.5</td>
+                  <td class="col-stability" data-label="Стабильность">
+                    <div class="progress-label">Средняя</div>
+                    <div class="progress-track"><div class="progress-fill" style="--stability-width: 50%;"></div></div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="col-dance" data-label="Танец"><strong>Квикстеп</strong></td>
+                  <td class="number col-avg" data-label="Среднее место">19.5</td>
+                  <td class="number col-best" data-label="Лучшее">19.5</td>
+                  <td class="col-stability" data-label="Стабильность">
+                    <div class="progress-label">Средняя</div>
+                    <div class="progress-track"><div class="progress-fill" style="--stability-width: 50%;"></div></div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="col-dance" data-label="Танец"><strong>Танго</strong></td>
+                  <td class="number col-avg" data-label="Среднее место">19.5</td>
+                  <td class="number col-best" data-label="Лучшее">19.5</td>
+                  <td class="col-stability" data-label="Стабильность">
+                    <div class="progress-label">Средняя</div>
+                    <div class="progress-track"><div class="progress-fill" style="--stability-width: 50%;"></div></div>
+                  </td>
+                </tr>
               </tbody>
             </table>
           </div>
@@ -1673,41 +1754,49 @@
         <input class="category-input" type="radio" name="cat-latin" id="cat-latin-all" checked>
         <input class="category-input" type="radio" name="cat-latin" id="cat-latin-e_d" >
       <div class="category-chip-groups">
-        <div class="category-chip-group category-chip-group-limited">
-          <div class="category-group-title">Мало данных</div>
-          <div class="category-tabs category-tabs-limited">
-              <label class="category-tab limited" for="cat-latin-all">
-                Все категории<span class="chip-badge">мало данных</span>
-              </label>
-              <label class="category-tab limited" for="cat-latin-e_d">
-                E+D<span class="chip-badge">мало данных</span>
-              </label>
+        <div class="category-chip-group">
+          <div class="category-tabs category-tabs-primary">
+              <label class="category-tab" for="cat-latin-all">Все категории</label>
+              <label class="category-tab" for="cat-latin-e_d">E+D</label>
           </div>
         </div>
       </div>
 
       <div class="category-panels">
         <div class="category-panel panel-latin-all">
-            <p class="section-kicker">по оценкам судей, без финального результата</p>
             <div class="note-box limited-note"><span class="status-icon neutral" aria-hidden="true">
   <svg viewBox="0 0 24 24" fill="none"><path d="M12 11v5"/><path d="M12 8h.01"/><circle cx="12" cy="12" r="9"/></svg>
-</span>Выборка ограничена: 1 протокол. Эти данные можно использовать как справку, но не как устойчивый вывод.</div>
+</span>Ограниченная выборка: 1 протокол в этом срезе.</div>
 
-          <div class="three-column">
-            <div class="insight-card neutral">
-              <h3><span>Справка по участию</span><span class="status-icon " aria-hidden="true">
-  <svg viewBox="0 0 24 24" fill="none"><path d="M12 11v5"/><path d="M12 8h.01"/><circle cx="12" cy="12" r="9"/></svg>
-</span></h3>
-              <p>16 оценок · 1 турнир</p>
+          <div class="dance-comparison">
+            <div class="dance-comparison-header">
+              <h3>Сравнение танцев</h3>
+              <span class="status-icon neutral" aria-hidden="true">
+  <svg viewBox="0 0 24 24" fill="none"><path d="M6 9h12"/><path d="M6 15h12"/></svg>
+</span>
             </div>
-            <div class="insight-card neutral">
-              <h3>Танцы в срезе</h3>
-                <p>S, Ch, R, J</p>
+              <div class="dance-comparison-zone neutral">
+                <div class="dance-comparison-title"><span>Равный результат</span><span class="status-icon neutral" aria-hidden="true">
+  <svg viewBox="0 0 24 24" fill="none"><path d="M6 9h12"/><path d="M6 15h12"/></svg>
+</span></div>
+                <p class="dance-comparison-message">Танцы показали одинаковый результат: Самба, Ча-ча-ча, Румба, Джайв — место 20.</p>
+              </div>
+          </div>
+
+          <div class="dance-comparison dance-dynamics">
+            <div class="dance-comparison-header">
+              <h3>Динамика танцев</h3>
+              <span class="status-icon neutral" aria-hidden="true">
+  <svg viewBox="0 0 24 24" fill="none"><path d="M12 19V5"/><path d="m6 11 6-6 6 6"/></svg>
+</span>
             </div>
-            <div class="insight-card neutral">
-              <h3>Как читать</h3>
-              <p class="muted">Сравнения и динамика не выделяются, потому что выборка слишком мала для устойчивого вывода.</p>
-            </div>
+            <p class="trend-help">Динамика считается по изменению среднего места между ранней и последней доступной датой выбранного периода. Меньшее место означает лучший результат.</p>
+              <div class="dance-comparison-zone neutral">
+                <div class="dance-comparison-title"><span>Без заметных изменений</span><span class="status-icon neutral" aria-hidden="true">
+  <svg viewBox="0 0 24 24" fill="none"><path d="M6 9h12"/><path d="M6 15h12"/></svg>
+</span></div>
+                <p class="dance-comparison-message">Динамика неустойчива из-за ограниченной выборки.</p>
+              </div>
           </div>
 
           <h3 class="dance-table-heading">Стабильность танцев</h3>
@@ -1716,33 +1805,81 @@
             <table>
               <thead><tr><th class="col-dance">Танец</th><th class="number col-avg">Среднее место</th><th class="number col-best">Лучшее</th><th class="col-stability">Стабильность</th></tr></thead>
               <tbody>
-                <tr><td colspan="4" data-label="Статус">Нет устойчивых метрик по танцам в этом срезе.</td></tr>
+                <tr>
+                  <td class="col-dance" data-label="Танец"><strong>Ча-ча-ча</strong></td>
+                  <td class="number col-avg" data-label="Среднее место">20</td>
+                  <td class="number col-best" data-label="Лучшее">20</td>
+                  <td class="col-stability" data-label="Стабильность">
+                    <div class="progress-label">Средняя</div>
+                    <div class="progress-track"><div class="progress-fill" style="--stability-width: 50%;"></div></div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="col-dance" data-label="Танец"><strong>Джайв</strong></td>
+                  <td class="number col-avg" data-label="Среднее место">20</td>
+                  <td class="number col-best" data-label="Лучшее">20</td>
+                  <td class="col-stability" data-label="Стабильность">
+                    <div class="progress-label">Средняя</div>
+                    <div class="progress-track"><div class="progress-fill" style="--stability-width: 50%;"></div></div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="col-dance" data-label="Танец"><strong>Румба</strong></td>
+                  <td class="number col-avg" data-label="Среднее место">20</td>
+                  <td class="number col-best" data-label="Лучшее">20</td>
+                  <td class="col-stability" data-label="Стабильность">
+                    <div class="progress-label">Средняя</div>
+                    <div class="progress-track"><div class="progress-fill" style="--stability-width: 50%;"></div></div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="col-dance" data-label="Танец"><strong>Самба</strong></td>
+                  <td class="number col-avg" data-label="Среднее место">20</td>
+                  <td class="number col-best" data-label="Лучшее">20</td>
+                  <td class="col-stability" data-label="Стабильность">
+                    <div class="progress-label">Средняя</div>
+                    <div class="progress-track"><div class="progress-fill" style="--stability-width: 50%;"></div></div>
+                  </td>
+                </tr>
               </tbody>
             </table>
           </div>
 
         </div>
         <div class="category-panel panel-latin-e_d">
-            <p class="section-kicker">по оценкам судей, без финального результата</p>
             <div class="note-box limited-note"><span class="status-icon neutral" aria-hidden="true">
   <svg viewBox="0 0 24 24" fill="none"><path d="M12 11v5"/><path d="M12 8h.01"/><circle cx="12" cy="12" r="9"/></svg>
-</span>Выборка ограничена: 1 протокол. Эти данные можно использовать как справку, но не как устойчивый вывод.</div>
+</span>Ограниченная выборка: 1 протокол в этом срезе.</div>
 
-          <div class="three-column">
-            <div class="insight-card neutral">
-              <h3><span>Справка по участию</span><span class="status-icon " aria-hidden="true">
-  <svg viewBox="0 0 24 24" fill="none"><path d="M12 11v5"/><path d="M12 8h.01"/><circle cx="12" cy="12" r="9"/></svg>
-</span></h3>
-              <p>16 оценок · 1 турнир</p>
+          <div class="dance-comparison">
+            <div class="dance-comparison-header">
+              <h3>Сравнение танцев</h3>
+              <span class="status-icon neutral" aria-hidden="true">
+  <svg viewBox="0 0 24 24" fill="none"><path d="M6 9h12"/><path d="M6 15h12"/></svg>
+</span>
             </div>
-            <div class="insight-card neutral">
-              <h3>Танцы в срезе</h3>
-                <p>S, Ch, R, J</p>
+              <div class="dance-comparison-zone neutral">
+                <div class="dance-comparison-title"><span>Равный результат</span><span class="status-icon neutral" aria-hidden="true">
+  <svg viewBox="0 0 24 24" fill="none"><path d="M6 9h12"/><path d="M6 15h12"/></svg>
+</span></div>
+                <p class="dance-comparison-message">Танцы показали одинаковый результат: Самба, Ча-ча-ча, Румба, Джайв — место 20.</p>
+              </div>
+          </div>
+
+          <div class="dance-comparison dance-dynamics">
+            <div class="dance-comparison-header">
+              <h3>Динамика танцев</h3>
+              <span class="status-icon neutral" aria-hidden="true">
+  <svg viewBox="0 0 24 24" fill="none"><path d="M12 19V5"/><path d="m6 11 6-6 6 6"/></svg>
+</span>
             </div>
-            <div class="insight-card neutral">
-              <h3>Как читать</h3>
-              <p class="muted">Сравнения и динамика не выделяются, потому что выборка слишком мала для устойчивого вывода.</p>
-            </div>
+            <p class="trend-help">Динамика считается по изменению среднего места между ранней и последней доступной датой выбранного периода. Меньшее место означает лучший результат.</p>
+              <div class="dance-comparison-zone neutral">
+                <div class="dance-comparison-title"><span>Без заметных изменений</span><span class="status-icon neutral" aria-hidden="true">
+  <svg viewBox="0 0 24 24" fill="none"><path d="M6 9h12"/><path d="M6 15h12"/></svg>
+</span></div>
+                <p class="dance-comparison-message">Динамика неустойчива из-за ограниченной выборки.</p>
+              </div>
           </div>
 
           <h3 class="dance-table-heading">Стабильность танцев</h3>
@@ -1751,7 +1888,42 @@
             <table>
               <thead><tr><th class="col-dance">Танец</th><th class="number col-avg">Среднее место</th><th class="number col-best">Лучшее</th><th class="col-stability">Стабильность</th></tr></thead>
               <tbody>
-                <tr><td colspan="4" data-label="Статус">Нет устойчивых метрик по танцам в этом срезе.</td></tr>
+                <tr>
+                  <td class="col-dance" data-label="Танец"><strong>Ча-ча-ча</strong></td>
+                  <td class="number col-avg" data-label="Среднее место">20</td>
+                  <td class="number col-best" data-label="Лучшее">20</td>
+                  <td class="col-stability" data-label="Стабильность">
+                    <div class="progress-label">Средняя</div>
+                    <div class="progress-track"><div class="progress-fill" style="--stability-width: 50%;"></div></div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="col-dance" data-label="Танец"><strong>Джайв</strong></td>
+                  <td class="number col-avg" data-label="Среднее место">20</td>
+                  <td class="number col-best" data-label="Лучшее">20</td>
+                  <td class="col-stability" data-label="Стабильность">
+                    <div class="progress-label">Средняя</div>
+                    <div class="progress-track"><div class="progress-fill" style="--stability-width: 50%;"></div></div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="col-dance" data-label="Танец"><strong>Румба</strong></td>
+                  <td class="number col-avg" data-label="Среднее место">20</td>
+                  <td class="number col-best" data-label="Лучшее">20</td>
+                  <td class="col-stability" data-label="Стабильность">
+                    <div class="progress-label">Средняя</div>
+                    <div class="progress-track"><div class="progress-fill" style="--stability-width: 50%;"></div></div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="col-dance" data-label="Танец"><strong>Самба</strong></td>
+                  <td class="number col-avg" data-label="Среднее место">20</td>
+                  <td class="number col-best" data-label="Лучшее">20</td>
+                  <td class="col-stability" data-label="Стабильность">
+                    <div class="progress-label">Средняя</div>
+                    <div class="progress-track"><div class="progress-fill" style="--stability-width: 50%;"></div></div>
+                  </td>
+                </tr>
               </tbody>
             </table>
           </div>
@@ -1776,6 +1948,9 @@
                   <div class="tournament-title-line">
                     <div class="summary-title">Чемпионат СПТС 2026 (Санкт-Петербург)</div>
                   </div>
+                  <div class="tournament-badge-row">
+                      <span class="tournament-badge best">Лучший результат</span>
+                  </div>
                 </div>
                 <div>
                   <div class="summary-meta">Юниоры-1+2 E+D Соло Ж La; Юниоры-1+2 E+D Соло Ж St</div>
@@ -1794,11 +1969,10 @@
                   <div class="tournament-program-row">
                     <span class="tournament-program-label">Общий итог</span>
                     <span>
-                        T, F, Q · по крестам судей
+                        среднее место 19.5 · T, F, Q
                     </span>
                   </div>
-                    <div class="tournament-program-row"><span class="tournament-program-label">Лучший танец</span><span>F · выше всего оценивался судьями · 5 крестов</span></div>
-                    <div class="tournament-program-row"><span class="tournament-program-label">Зона внимания</span><span>T · ниже всего оценивался судьями · 3 крестов</span></div>
+                  <div class="tournament-program-row"><span class="tournament-program-label">Равный результат</span><span>T, F, Q · 19.5 место</span></div>
                 </div>
               </div>
               <div class="insight-card tournament-program-summary">
@@ -1807,11 +1981,10 @@
                   <div class="tournament-program-row">
                     <span class="tournament-program-label">Общий итог</span>
                     <span>
-                        S, Ch, R, J · по крестам судей
+                        среднее место 20 · S, Ch, R, J
                     </span>
                   </div>
-                    <div class="tournament-program-row"><span class="tournament-program-label">Лучшие танцы</span><span>Ch, J · выше всего оценивался судьями · 5 крестов</span></div>
-                    <div class="tournament-program-row"><span class="tournament-program-label">Зона внимания</span><span>R · ниже всего оценивался судьями · 2 крестов</span></div>
+                  <div class="tournament-program-row"><span class="tournament-program-label">Равный результат</span><span>S, Ch, R, J · 20.0 место</span></div>
                 </div>
               </div>
           </div>
@@ -1819,6 +1992,48 @@
             <table>
               <thead><tr><th class="col-dance">Танец</th><th class="col-program">Программа</th><th class="number col-place">Итоговое место</th><th class="number col-protocols">Протоколов</th></tr></thead>
               <tbody>
+                <tr>
+                  <td class="col-dance" data-label="Танец"><strong>T</strong></td>
+                  <td class="col-program" data-label="Программа">стандарт</td>
+                  <td class="number col-place" data-label="Итоговое место">19–20 место</td>
+                  <td class="number col-protocols" data-label="Протоколов">1 протокол</td>
+                </tr>
+                <tr>
+                  <td class="col-dance" data-label="Танец"><strong>F</strong></td>
+                  <td class="col-program" data-label="Программа">стандарт</td>
+                  <td class="number col-place" data-label="Итоговое место">19–20 место</td>
+                  <td class="number col-protocols" data-label="Протоколов">1 протокол</td>
+                </tr>
+                <tr>
+                  <td class="col-dance" data-label="Танец"><strong>Q</strong></td>
+                  <td class="col-program" data-label="Программа">стандарт</td>
+                  <td class="number col-place" data-label="Итоговое место">19–20 место</td>
+                  <td class="number col-protocols" data-label="Протоколов">1 протокол</td>
+                </tr>
+                <tr>
+                  <td class="col-dance" data-label="Танец"><strong>S</strong></td>
+                  <td class="col-program" data-label="Программа">латина</td>
+                  <td class="number col-place" data-label="Итоговое место">20 место</td>
+                  <td class="number col-protocols" data-label="Протоколов">1 протокол</td>
+                </tr>
+                <tr>
+                  <td class="col-dance" data-label="Танец"><strong>Ch</strong></td>
+                  <td class="col-program" data-label="Программа">латина</td>
+                  <td class="number col-place" data-label="Итоговое место">20 место</td>
+                  <td class="number col-protocols" data-label="Протоколов">1 протокол</td>
+                </tr>
+                <tr>
+                  <td class="col-dance" data-label="Танец"><strong>R</strong></td>
+                  <td class="col-program" data-label="Программа">латина</td>
+                  <td class="number col-place" data-label="Итоговое место">20 место</td>
+                  <td class="number col-protocols" data-label="Протоколов">1 протокол</td>
+                </tr>
+                <tr>
+                  <td class="col-dance" data-label="Танец"><strong>J</strong></td>
+                  <td class="col-program" data-label="Программа">латина</td>
+                  <td class="number col-place" data-label="Итоговое место">20 место</td>
+                  <td class="number col-protocols" data-label="Протоколов">1 протокол</td>
+                </tr>
               </tbody>
             </table>
           </div>

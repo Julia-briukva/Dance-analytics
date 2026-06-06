@@ -747,7 +747,7 @@ def prepare_program_view(key: str, title: str, payload: dict[str, Any], fallback
         "visibility_reason": payload.get("visibility_reason", ""),
         "marks_derived_dance_metrics": payload.get("marks_derived_dance_metrics") or [],
         "analysis_note": (
-            "по оценкам судей, без финального результата"
+            "по итоговым местам участника"
             if int((payload.get("evidence") or {}).get("marks") or 0) > 0
             and int((payload.get("evidence") or {}).get("results") or 0) == 0
             else ""

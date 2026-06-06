@@ -1769,27 +1769,14 @@
                     </span>
                   </div>
                 {% if program.display_mode == "best_worst" %}
-                  {% if program.metric_type == "cross_count" %}
-                    <div class="tournament-program-row"><span class="tournament-program-label">{% if program.best_dances|length > 1 %}Лучшие танцы{% else %}Лучший танец{% endif %}</span><span>{{ program.best_dances|map(attribute="dance_code")|join(", ") }} · {{ program.best_dance.interpretation }} · {{ program.best_dance.cross_count }} крестов</span></div>
-                    <div class="tournament-program-row"><span class="tournament-program-label">{% if program.worst_dances|length > 1 %}Зоны внимания{% else %}Зона внимания{% endif %}</span><span>{{ program.worst_dances|map(attribute="dance_code")|join(", ") }} · {{ program.worst_dance.interpretation }} · {{ program.worst_dance.cross_count }} крестов</span></div>
-                  {% else %}
-                    <div class="tournament-program-row"><span class="tournament-program-label">{% if program.best_dances|length > 1 %}Лучшие танцы{% else %}Лучший танец{% endif %}</span><span>{{ program.best_dances|map(attribute="dance_code")|join(", ") }} · место {{ program.best_dance.final_place|fmt }}</span></div>
-                    <div class="tournament-program-row"><span class="tournament-program-label">{% if program.worst_dances|length > 1 %}Зоны внимания{% else %}Зона внимания{% endif %}</span><span>{{ program.worst_dances|map(attribute="dance_code")|join(", ") }} · место {{ program.worst_dance.final_place|fmt }}</span></div>
-                  {% endif %}
+                  <div class="tournament-program-row"><span class="tournament-program-label">{% if program.best_dances|length > 1 %}Лучшие танцы{% else %}Лучший танец{% endif %}</span><span>{{ program.best_dances|map(attribute="dance_code")|join(", ") }} · {{ program.best_dance.result_place_label or ((program.best_dance.final_place|fmt) ~ " место") }}</span></div>
+                  <div class="tournament-program-row"><span class="tournament-program-label">{% if program.worst_dances|length > 1 %}Зоны внимания{% else %}Зона внимания{% endif %}</span><span>{{ program.worst_dances|map(attribute="dance_code")|join(", ") }} · {{ program.worst_dance.result_place_label or ((program.worst_dance.final_place|fmt) ~ " место") }}</span></div>
                 {% elif program.display_mode == "single_dance" and program.evaluated_dance %}
-                  {% if program.metric_type == "cross_count" %}
-                    <div class="tournament-program-row"><span class="tournament-program-label">Оценённый танец</span><span>{{ program.evaluated_dance.dance_code }} · {{ program.evaluated_dance.cross_count }} крестов</span></div>
-                  {% else %}
-                    <div class="tournament-program-row"><span class="tournament-program-label">Оценённый танец</span><span>{{ program.evaluated_dance.dance_code }} · место {{ program.evaluated_dance.final_place|fmt }}</span></div>
-                  {% endif %}
+                  <div class="tournament-program-row"><span class="tournament-program-label">Оценённый танец</span><span>{{ program.evaluated_dance.dance_code }} · {{ program.evaluated_dance.result_place_label or ((program.evaluated_dance.final_place|fmt) ~ " место") }}</span></div>
                 {% elif program.display_mode == "tied" %}
-                  {% if program.metric_type == "cross_count" %}
-                    <div class="tournament-program-row"><span class="tournament-program-label">Равный результат</span><span>{{ program.tied_dances|join(", ") }} · {{ program.tied_metric_value }} крестов</span></div>
-                  {% else %}
-                    <div class="tournament-program-row"><span class="tournament-program-label">Равный результат</span><span>{{ program.tied_dances|join(", ") }} · среднее место {{ program.tied_metric_value|fmt }}</span></div>
-                  {% endif %}
+                  <div class="tournament-program-row"><span class="tournament-program-label">Равный результат</span><span>{{ program.tied_dances|join(", ") }} · {{ program.tied_metric_label or ((program.tied_metric_value|fmt) ~ " место") }}</span></div>
                 {% else %}
-                  <div class="tournament-program-row"><span class="tournament-program-label">Сравнение</span><span>Недостаточно данных для лучшего и худшего танца.</span></div>
+                  <div class="tournament-program-row"><span class="tournament-program-label">Сравнение</span><span>{{ program.message or "Итоговое место участника не найдено." }}</span></div>
                 {% endif %}
                 </div>
               </div>
@@ -1803,7 +1790,7 @@
                 <tr>
                   <td class="col-dance" data-label="Танец"><strong>{{ result.dance_code or (result.dance|dance_code) }}</strong></td>
                   <td class="col-program" data-label="Программа">{{ result.program|program_label }}</td>
-                  <td class="number col-place" data-label="Итоговое место">{{ result.final_place|fmt }}</td>
+                  <td class="number col-place" data-label="Итоговое место">{{ result.result_place_label or ((result.final_place|fmt) ~ " место") }}</td>
                   <td class="number col-protocols" data-label="Протоколов">{{ result.n_results|pluralize("протокол", "протокола", "протоколов") }}</td>
                 </tr>
               {% endfor %}

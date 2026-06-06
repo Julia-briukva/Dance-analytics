@@ -20,11 +20,13 @@ from analyze_dancer import (
     add_derived_columns,
     ensure_analytics_view,
     final_judge_stats,
+    infer_program,
     judge_stats_by_program,
     resolve_dancer_by_idd,
     selected_marks_by_internal_id,
 )
 from analyze_dances import (
+    confidence_for_dance,
     dance_summary,
     dynamics_by_date,
     incomplete_protocol_warnings,
@@ -112,6 +114,111 @@ def selected_all_marks(conn: sqlite3.Connection, internal_dancer_id: int) -> pd.
     return marks
 
 
+def parse_place_value(value: Any) -> float | None:
+    if value is None or pd.isna(value):
+        return None
+    text = str(value).strip().replace("–", "-").replace("—", "-").replace(",", ".")
+    if not text:
+        return None
+    numbers = re.findall(r"\d+(?:\.\d+)?", text)
+    if not numbers:
+        return None
+    values = [float(item) for item in numbers]
+    if len(values) >= 2 and "-" in text:
+        return sum(values[:2]) / 2
+    return values[0]
+
+
+def place_label(value: Any) -> str | None:
+    if value is None or pd.isna(value):
+        return None
+    text = str(value).strip().replace("–", "–").replace("—", "–")
+    if not text:
+        return None
+    text = re.sub(r"\s*-\s*", "–", text)
+    return f"{text} место"
+
+
+def selected_protocol_results(conn: sqlite3.Connection, internal_dancer_id: int) -> pd.DataFrame:
+    rows = pd.read_sql_query(
+        """
+        SELECT
+            p.id AS protocol_db_id,
+            p.protocol_id AS protocol_id,
+            p.tournament_id AS tournament_id,
+            p.tournament_title AS tournament_title,
+            p.event_date AS event_date,
+            p.city AS city,
+            p.category AS category,
+            pd.competitor_number AS competitor_number,
+            pd.place AS protocol_place
+        FROM protocol_dancers pd
+        JOIN protocols p ON p.id = pd.protocol_id
+        WHERE pd.dancer_id = ?
+        ORDER BY p.event_date, p.protocol_id;
+        """,
+        conn,
+        params=(internal_dancer_id,),
+    )
+    if rows.empty:
+        return rows
+    rows["event_date"] = pd.to_datetime(rows["event_date"], errors="coerce")
+    rows["program"] = rows["category"].map(lambda value: infer_program(None, value))
+    rows["protocol_place_value"] = rows["protocol_place"].map(parse_place_value)
+    rows["protocol_place_label"] = rows["protocol_place"].map(place_label)
+    return rows
+
+
+def dance_summary_from_results(numeric: pd.DataFrame, dance_results: pd.DataFrame) -> pd.DataFrame:
+    if dance_results.empty:
+        return pd.DataFrame()
+    if not numeric.empty:
+        return dance_summary(numeric, dance_results)
+    performance = (
+        dance_results.groupby(["program", "dance"], as_index=False)
+        .agg(
+            final_avg_place=("final_place", "mean"),
+            median_place=("final_place", "median"),
+            std_deviation=("final_place", "std"),
+            variance=("final_place", "var"),
+            n_marks=("final_place", "count"),
+            n_protocols=("protocol_id", "nunique"),
+            n_dates=("event_date", "nunique"),
+            best_place=("final_place", "min"),
+            worst_place=("final_place", "max"),
+            categories=("category", lambda items: "; ".join(sorted(set(str(item) for item in items if pd.notna(item))))),
+        )
+        .sort_values(["program", "dance"])
+    )
+    performance["avg_place"] = performance["final_avg_place"]
+    performance["final_median_place"] = performance["median_place"]
+    performance["final_std_deviation"] = performance["std_deviation"]
+    performance["std_deviation"] = performance["std_deviation"].fillna(0)
+    performance["variance"] = performance["variance"].fillna(0)
+    performance["judge_avg_place"] = None
+    performance["judge_std_deviation"] = 0
+    performance["judge_variance"] = 0
+    performance["judge_marks"] = 0
+    performance["consistency_score"] = 1 / (1 + performance["std_deviation"])
+    performance["volatility_score"] = performance["std_deviation"]
+    performance["confidence"] = performance.apply(lambda row: confidence_for_dance(int(row["n_marks"]), int(row["n_dates"])), axis=1)
+    for column in [
+        "final_avg_place",
+        "avg_place",
+        "median_place",
+        "final_median_place",
+        "std_deviation",
+        "final_std_deviation",
+        "variance",
+        "best_place",
+        "worst_place",
+        "consistency_score",
+        "volatility_score",
+    ]:
+        performance[column] = pd.to_numeric(performance[column], errors="coerce").round(3)
+    return performance
+
+
 def protocol_status_warnings(conn: sqlite3.Connection) -> list[dict[str, Any]]:
     return df_records(
         pd.read_sql_query(
@@ -127,7 +234,11 @@ def protocol_status_warnings(conn: sqlite3.Connection) -> list[dict[str, Any]]:
     )
 
 
-def build_tournament_payload(marks: pd.DataFrame, dance_results: pd.DataFrame | None = None) -> dict[str, Any]:
+def build_tournament_payload(
+    marks: pd.DataFrame,
+    dance_results: pd.DataFrame | None = None,
+    protocol_results: pd.DataFrame | None = None,
+) -> dict[str, Any]:
     tournaments = (
         marks[
             [
@@ -168,11 +279,27 @@ def build_tournament_payload(marks: pd.DataFrame, dance_results: pd.DataFrame | 
         by_tournament["dance_codes"] = by_tournament["dance_codes"].apply(lambda value: value if isinstance(value, list) else [])
     else:
         by_tournament["dance_codes"] = [[] for _ in range(len(by_tournament))]
-    if dance_results is not None and not dance_results.empty:
-        perf = (
-            dance_results.dropna(subset=["final_place"])
+    if protocol_results is not None and not protocol_results.empty:
+        result_perf = (
+            protocol_results.dropna(subset=["protocol_place_value"])
             .groupby(["event_date", "tournament_id", "tournament_title"], dropna=False, as_index=False)
-            .agg(avg_final_place=("final_place", "mean"))
+            .agg(
+                avg_result_place=("protocol_place_value", "mean"),
+                best_result_place=("protocol_place_value", "min"),
+                result_places=("protocol_place_label", lambda items: sorted(set(str(item) for item in items if pd.notna(item) and str(item).strip()))),
+            )
+        )
+        by_tournament = by_tournament.merge(result_perf, on=["event_date", "tournament_id", "tournament_title"], how="left")
+    else:
+        by_tournament["avg_result_place"] = None
+        by_tournament["best_result_place"] = None
+        by_tournament["result_places"] = [[] for _ in range(len(by_tournament))]
+
+    if protocol_results is not None and not protocol_results.empty:
+        perf = (
+            protocol_results.dropna(subset=["protocol_place_value"])
+            .groupby(["event_date", "tournament_id", "tournament_title"], dropna=False, as_index=False)
+            .agg(avg_final_place=("protocol_place_value", "mean"))
             .sort_values(["avg_final_place", "event_date", "tournament_id"])
             .reset_index(drop=True)
         )
@@ -546,13 +673,13 @@ def build_category_slices(numeric: pd.DataFrame, dance_results: pd.DataFrame, ma
                 if slice_marks.empty and slice_results.empty:
                     continue
 
-            if slice_numeric.empty or slice_results.empty:
+            if slice_results.empty:
                 slice_summary = pd.DataFrame()
                 slice_dynamics = pd.DataFrame()
                 slice_trends = pd.DataFrame()
                 program_data = program_payload(program, slice_summary, slice_trends)
             else:
-                slice_summary = dance_summary(slice_numeric, slice_results)
+                slice_summary = dance_summary_from_results(slice_numeric, slice_results)
                 slice_dynamics = dynamics_by_date(slice_results)
                 slice_trends = safe_trend_ranking(slice_dynamics)
                 program_data = program_payload(program, slice_summary, slice_trends)
@@ -681,13 +808,13 @@ def build_parent_category_groups(numeric: pd.DataFrame, dance_results: pd.DataFr
         if group_marks.empty and group_results.empty:
             return None
 
-        if group_numeric.empty or group_results.empty:
+        if group_results.empty:
             group_summary = pd.DataFrame()
             group_dynamics = pd.DataFrame()
             group_trends = pd.DataFrame()
             group_data = program_payload(program, group_summary, group_trends)
         else:
-            group_summary = dance_summary(group_numeric, group_results)
+            group_summary = dance_summary_from_results(group_numeric, group_results)
             group_dynamics = dynamics_by_date(group_results)
             group_trends = safe_trend_ranking(group_dynamics)
             group_data = program_payload(program, group_summary, group_trends)
@@ -741,7 +868,62 @@ def build_parent_category_groups(numeric: pd.DataFrame, dance_results: pd.DataFr
     return payload
 
 
-def build_tournament_dance_results(dance_results: pd.DataFrame) -> pd.DataFrame:
+def build_tournament_dance_results(
+    dance_results: pd.DataFrame,
+    marks: pd.DataFrame | None = None,
+    protocol_results: pd.DataFrame | None = None,
+) -> pd.DataFrame:
+    if marks is not None and not marks.empty and protocol_results is not None and not protocol_results.empty:
+        mark_columns = [
+            "protocol_db_id",
+            "protocol_id",
+            "tournament_id",
+            "tournament_title",
+            "event_date",
+            "tournament_city",
+            "category",
+            "program",
+            "dance",
+        ]
+        mark_dances = (
+            marks.dropna(subset=["dance"])[mark_columns]
+            .drop_duplicates(["protocol_db_id", "program", "dance"])
+            .copy()
+        )
+        mark_counts = (
+            marks.dropna(subset=["dance"])
+            .groupby(["protocol_db_id", "program", "dance"], dropna=False)
+            .size()
+            .reset_index(name="judge_marks")
+        )
+        result_columns = [
+            "protocol_db_id",
+            "protocol_place",
+            "protocol_place_value",
+            "protocol_place_label",
+        ]
+        result = mark_dances.merge(protocol_results[result_columns], on="protocol_db_id", how="left")
+        result = result.merge(mark_counts, on=["protocol_db_id", "program", "dance"], how="left")
+        result = result.dropna(subset=["protocol_place_value"]).copy()
+        if result.empty:
+            return pd.DataFrame()
+        result = result.rename(columns={"tournament_city": "city"})
+        result["final_place"] = result["protocol_place_value"]
+        result["best_place"] = result["protocol_place_value"]
+        result["worst_place"] = result["protocol_place_value"]
+        result["n_results"] = 1
+        result["judge_marks"] = result["judge_marks"].fillna(0).astype(int)
+        result["dance_code"] = result["dance"].map(normalize_dance_code)
+        result["result_source"] = "protocol_place"
+        result["result_place"] = result["protocol_place"]
+        result["result_place_label"] = result["protocol_place_label"]
+        result["_dance_order"] = result["dance_code"].map(lambda code: DANCE_CODE_ORDER.get(code, 999))
+        result = result.sort_values(["event_date", "protocol_id", "program", "_dance_order", "dance_code"]).drop(columns=["_dance_order"])
+        result["date"] = result["event_date"]
+        for column in ["final_place", "best_place", "worst_place"]:
+            result[column] = result[column].round(3)
+        return result
+
     if dance_results.empty:
         return pd.DataFrame()
     group_columns = [
@@ -769,9 +951,19 @@ def build_tournament_dance_results(dance_results: pd.DataFrame) -> pd.DataFrame:
             judge_marks=("judge_marks", "sum"),
         )
     )
+    if "result_place_label" in dance_results.columns:
+        labels = (
+            dance_results.groupby(group_columns, dropna=False, as_index=False)
+            .agg(result_place_label=("result_place_label", lambda items: next((str(item) for item in items if pd.notna(item) and str(item).strip()), None)))
+        )
+        result = result.merge(labels, on=group_columns, how="left")
     for column in ["final_place", "best_place", "worst_place"]:
         result[column] = result[column].round(3)
     result["dance_code"] = result["dance"].map(normalize_dance_code)
+    result["result_source"] = "dance_final_place"
+    result["result_place"] = result["final_place"]
+    if "result_place_label" not in result.columns:
+        result["result_place_label"] = result["final_place"].map(place_label)
     result["_dance_order"] = result["dance_code"].map(lambda code: DANCE_CODE_ORDER.get(code, 999))
     result = result.sort_values(["event_date", "protocol_id", "program", "_dance_order", "dance_code"]).drop(columns=["_dance_order"])
     result["date"] = result["event_date"]
@@ -779,28 +971,25 @@ def build_tournament_dance_results(dance_results: pd.DataFrame) -> pd.DataFrame:
 
 
 def tournament_metric_record(row: pd.Series, metric_type: str, role: str | None = None) -> dict[str, Any]:
-    value_key = "cross_count" if metric_type == "cross_count" else "final_place"
+    value_key = "final_place"
     value = row[value_key]
     record: dict[str, Any] = {
         "dance": clean_value(row["dance"]),
         "dance_code": clean_value(row["dance_code"]),
-        "metric_value": clean_value(round(float(value), 3) if metric_type == "final_place" else int(value)),
-        "metric_type": metric_type,
-        "metric_label": "крестов судей" if metric_type == "cross_count" else "итоговое место",
+        "metric_value": clean_value(round(float(value), 3)),
+        "metric_type": "final_place",
+        "metric_label": "итоговое место",
         "category": clean_value(row["category"]),
         "protocol_id": clean_value(row["protocol_id"]),
+        "result_place_label": clean_value(row.get("result_place_label")),
     }
-    if metric_type == "cross_count":
-        record["cross_count"] = clean_value(int(value))
-        record["interpretation"] = "выше всего оценивался судьями" if role == "best" else "ниже всего оценивался судьями"
-    else:
-        record["final_place"] = clean_value(round(float(value), 3))
-        record["interpretation"] = "по итоговым местам"
+    record["final_place"] = clean_value(round(float(value), 3))
+    record["interpretation"] = "по итоговым местам"
     return record
 
 
 def apply_tournament_display_mode(summary: dict[str, Any], metrics: pd.DataFrame, metric_type: str) -> dict[str, Any]:
-    value_column = "cross_count" if metric_type == "cross_count" else "final_place"
+    value_column = "final_place"
     metrics = metrics.dropna(subset=[value_column]).copy()
     if metrics.empty:
         summary["display_mode"] = "insufficient_data"
@@ -824,14 +1013,14 @@ def apply_tournament_display_mode(summary: dict[str, Any], metrics: pd.DataFrame
         summary["data_sufficient"] = True
         summary["display_mode"] = "tied"
         summary["tied_dances"] = clean_value(metrics["dance_code"].tolist())
-        summary["tied_metric_value"] = clean_value(round(float(value), 3) if metric_type == "final_place" else int(value))
+        summary["tied_metric_value"] = clean_value(round(float(value), 3))
+        summary["tied_metric_label"] = place_label(value)
         return summary
 
     summary["data_sufficient"] = True
     summary["display_mode"] = "best_worst"
-    ascending = True if metric_type == "final_place" else False
-    best_value = min(values) if metric_type == "final_place" else max(values)
-    worst_value = max(values) if metric_type == "final_place" else min(values)
+    best_value = min(values)
+    worst_value = max(values)
     best_rows = metrics[metrics[value_column].round(6) == best_value].sort_values(["_dance_order", "dance_code"])
     worst_rows = metrics[metrics[value_column].round(6) == worst_value].sort_values(["_dance_order", "dance_code"])
     best_codes = [clean_value(row["dance_code"]) for _, row in best_rows.iterrows()]
@@ -840,7 +1029,8 @@ def apply_tournament_display_mode(summary: dict[str, Any], metrics: pd.DataFrame
         value = best_value
         summary["display_mode"] = "tied"
         summary["tied_dances"] = clean_value(metrics["dance_code"].tolist())
-        summary["tied_metric_value"] = clean_value(round(float(value), 3) if metric_type == "final_place" else int(value))
+        summary["tied_metric_value"] = clean_value(round(float(value), 3))
+        summary["tied_metric_label"] = place_label(value)
         return summary
     best = best_rows.iloc[0]
     worst = worst_rows.iloc[0]
@@ -870,6 +1060,7 @@ def build_program_tournament_summary(program: str, rows: pd.DataFrame, mark_rows
             "dance_count": scored_dance_count,
             "protocol_count": protocol_count,
             "dance_codes": dance_codes,
+            "result_places": sorted(set(str(item) for item in scored.get("result_place_label", pd.Series(dtype="object")).dropna())) if not scored.empty and "result_place_label" in scored.columns else [],
         },
         "metric_type": "final_place" if scored_dance_count >= 2 else None,
         "metric_label": "по итоговым местам" if scored_dance_count >= 2 else None,
@@ -892,6 +1083,9 @@ def build_program_tournament_summary(program: str, rows: pd.DataFrame, mark_rows
             .agg(
                 dance=("dance", "first"),
                 final_place=("final_place", "mean"),
+                result_place_label=("result_place_label", lambda items: next((str(item) for item in items if pd.notna(item) and str(item).strip()), None))
+                if "result_place_label" in scored.columns
+                else ("final_place", lambda items: place_label(next(iter(items), None))),
                 protocol_id=("protocol_id", "first"),
                 category=("category", "first"),
             )
@@ -899,25 +1093,7 @@ def build_program_tournament_summary(program: str, rows: pd.DataFrame, mark_rows
         final_metrics["final_place"] = final_metrics["final_place"].round(3)
         return apply_tournament_display_mode(summary, final_metrics, "final_place")
 
-    cross_rows = source_rows[source_rows["mark_type"] == "cross"].copy() if not source_rows.empty and "mark_type" in source_rows.columns else pd.DataFrame()
-    if not cross_rows.empty:
-        cross_summary = (
-            cross_rows.groupby(["program", "dance"], as_index=False)
-            .agg(
-                cross_count=("mark", "count"),
-                protocol_id=("protocol_id", "first"),
-                category=("category", "first"),
-            )
-        )
-        cross_summary["dance_code"] = cross_summary["dance"].map(normalize_dance_code)
-        cross_summary["_dance_order"] = cross_summary["dance_code"].map(lambda code: DANCE_CODE_ORDER.get(code, 999))
-        if int(cross_summary["dance"].nunique()) >= 1:
-            summary["metric_type"] = "cross_count"
-            summary["metric_label"] = "по крестам судей"
-            summary["overall"]["dance_count"] = int(cross_summary["dance"].nunique())
-            return apply_tournament_display_mode(summary, cross_summary, "cross_count")
-
-    summary["message"] = "недостаточно данных"
+    summary["message"] = "итоговое место участника не найдено"
     return summary
 
 
@@ -1173,12 +1349,15 @@ def build_report(conn: sqlite3.Connection, compreg_idd: str | int) -> dict[str, 
         raise ValueError(f"Данные по танцору с Compreg IDD {identity.compreg_idd} не найдены.")
 
     numeric = selected_numeric_marks_by_internal_id(conn, identity.internal_dancer_id)
-    dance_results = selected_dance_results_by_internal_id(conn, identity.internal_dancer_id)
-    dance_results = add_tournament_city_to_results(dance_results, marks)
-    summary = dance_summary(numeric, dance_results)
-    dynamics = dynamics_by_date(dance_results)
+    raw_dance_results = selected_dance_results_by_internal_id(conn, identity.internal_dancer_id)
+    raw_dance_results = add_tournament_city_to_results(raw_dance_results, marks)
+    protocol_results = selected_protocol_results(conn, identity.internal_dancer_id)
+    tournament_dance_results = build_tournament_dance_results(raw_dance_results, marks, protocol_results)
+    if tournament_dance_results.empty:
+        tournament_dance_results = build_tournament_dance_results(raw_dance_results)
+    summary = dance_summary_from_results(numeric, tournament_dance_results)
+    dynamics = dynamics_by_date(tournament_dance_results)
     trends = safe_trend_ranking(dynamics)
-    tournament_dance_results = build_tournament_dance_results(dance_results)
 
     numeric_all = marks[marks["mark_type"] == "numeric_place"].dropna(subset=["numeric_mark"]).copy()
     crosses = marks[marks["mark_type"] == "cross"].copy()
@@ -1218,10 +1397,10 @@ def build_report(conn: sqlite3.Connection, compreg_idd: str | int) -> dict[str, 
             "trends": df_records(trends),
             "dynamics_by_date": df_records(dynamics),
         },
-        "category_slices": build_category_slices(numeric, dance_results, marks),
-        "parent_category_groups": build_parent_category_groups(numeric, dance_results, marks),
+        "category_slices": build_category_slices(numeric, tournament_dance_results, marks),
+        "parent_category_groups": build_parent_category_groups(numeric, tournament_dance_results, marks),
         "tournaments": {
-            **build_tournament_payload(marks, dance_results),
+            **build_tournament_payload(marks, tournament_dance_results, protocol_results),
             "dance_results": df_records(tournament_dance_results),
         },
         "trainer_mode": build_trainer_mode_payload(tournament_dance_results, marks),
