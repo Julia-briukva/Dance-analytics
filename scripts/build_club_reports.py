@@ -16,6 +16,7 @@ from pathlib import Path
 from typing import Any
 
 from build_dancer_report import DEFAULT_DB_PATH, DEFAULT_REPORTS_DIR, build_report
+from deploy_pages_reports import deploy_report
 from render_html_report import build_view_model, output_path_for_report, render_report
 
 
@@ -417,7 +418,9 @@ def build_club_reports(club_csv: Path, db_path: Path, status_csv: Path, log_path
                 status["status"] = "success"
                 status["report_json"] = display_path(json_path)
                 status["report_html"] = display_path(html_path)
+                deployed = deploy_report(idd)
                 log.write(f"  success: {display_path(html_path)}\n")
+                log.write(f"  pages: {', '.join(display_path(destination) for _, destination in deployed)}\n")
             statuses.append(status)
         counts = {key: sum(row["status"] == key for row in statuses) for key in ["success", "no_data", "error"]}
         log.write(f"\nsummary={counts}\n")
