@@ -2050,10 +2050,6 @@
       return cityOk && inDateRange(date, filter.from, filter.to);
     }
 
-    function selectedDanceRows(filter) {
-      return danceRows.filter(function (row) { return rowMatches(row, filter) && row.final_place != null; });
-    }
-
     function selectedTournamentItems(filter) {
       return tournamentItems.filter(function (row) { return rowMatches(row, filter); });
     }
@@ -2063,10 +2059,18 @@
     }
 
     function createFilteredDataset(filter) {
+      var filteredTournaments = selectedTournamentItems(filter);
+      var allowedTournamentKeys = {};
+      filteredTournaments.forEach(function (row) {
+        allowedTournamentKeys[tournamentKey(row)] = true;
+      });
+      var filteredDanceRows = danceRows.filter(function (row) {
+        return row.final_place != null && allowedTournamentKeys[tournamentKey(row)];
+      });
       return {
         filter: filter,
-        filteredTournaments: selectedTournamentItems(filter),
-        filteredDanceRows: selectedDanceRows(filter),
+        filteredTournaments: filteredTournaments,
+        filteredDanceRows: filteredDanceRows,
         filteredNumericMarks: selectedNumericRows(filter)
       };
     }
@@ -2439,7 +2443,7 @@
 
     function applyFilters() {
       var filter = selectedFilter();
-      var dataset = createFilteredDataset(filter);
+      var filteredDataset = createFilteredDataset(filter);
       items.forEach(function (item) {
         var city = item.getAttribute("data-city") || "";
         var date = item.getAttribute("data-date") || "";
@@ -2448,11 +2452,11 @@
         item.hidden = !(cityOk && dateOk);
       });
       var tournamentEmpty = document.querySelector("[data-tournament-empty]");
-      if (tournamentEmpty) tournamentEmpty.hidden = dataset.filteredTournaments.length !== 0;
-      updateSummary(dataset);
-      updateProgramPanels(dataset);
-      updateTournamentRanks(dataset);
-      updateJudges(dataset);
+      if (tournamentEmpty) tournamentEmpty.hidden = filteredDataset.filteredTournaments.length !== 0;
+      updateSummary(filteredDataset);
+      updateProgramPanels(filteredDataset);
+      updateTournamentRanks(filteredDataset);
+      updateJudges(filteredDataset);
     }
 
     if (cityAllButton) {
