@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-06-06T20:34:11.386111+00:00",
+    "generated_at": "2026-06-07T19:01:41.591194+00:00",
     "analytics_version": "report_layer_v1",
     "database": "database/compreg_spb_2025_2026.sqlite"
   },
@@ -22812,7 +22812,13 @@
             "message": "итоговое место участника не найдено"
           }
         ],
-        "dance_results": []
+        "dance_results": [],
+        "result_places": [
+          "10–11 место",
+          "9 место"
+        ],
+        "avg_result_place": 9.75,
+        "best_result_place": 9.0
       },
       {
         "event_date": "2025-10-12",
@@ -23026,7 +23032,13 @@
             "result_place_label": "4 место",
             "date": "2025-10-12"
           }
-        ]
+        ],
+        "result_places": [
+          "3 место",
+          "8 место"
+        ],
+        "avg_result_place": 5.5,
+        "best_result_place": 3.0
       },
       {
         "event_date": "2025-11-02",
@@ -23351,7 +23363,13 @@
             "result_place_label": "6 место",
             "date": "2025-11-02"
           }
-        ]
+        ],
+        "result_places": [
+          "2 место",
+          "6 место"
+        ],
+        "avg_result_place": 4.0,
+        "best_result_place": 2.0
       },
       {
         "event_date": "2025-11-09",
@@ -23676,7 +23694,13 @@
             "result_place_label": "6 место",
             "date": "2025-11-09"
           }
-        ]
+        ],
+        "result_places": [
+          "4 место",
+          "5 место"
+        ],
+        "avg_result_place": 4.5,
+        "best_result_place": 4.0
       },
       {
         "event_date": "2025-12-14",
@@ -23879,7 +23903,13 @@
             "result_place_label": "2 место",
             "date": "2025-12-14"
           }
-        ]
+        ],
+        "result_places": [
+          "13–15 место",
+          "6 место"
+        ],
+        "avg_result_place": 10.0,
+        "best_result_place": 6.0
       },
       {
         "event_date": "2025-12-21",
@@ -24093,7 +24123,13 @@
             "result_place_label": "6 место",
             "date": "2025-12-21"
           }
-        ]
+        ],
+        "result_places": [
+          "6 место",
+          "8 место"
+        ],
+        "avg_result_place": 7.0,
+        "best_result_place": 6.0
       },
       {
         "event_date": "2026-01-18",
@@ -24251,7 +24287,13 @@
             "result_place_label": "1 место",
             "date": "2026-01-18"
           }
-        ]
+        ],
+        "result_places": [
+          "1 место",
+          "13–14 место"
+        ],
+        "avg_result_place": 7.25,
+        "best_result_place": 1.0
       },
       {
         "event_date": "2026-01-25",
@@ -24576,7 +24618,13 @@
             "result_place_label": "4 место",
             "date": "2026-01-25"
           }
-        ]
+        ],
+        "result_places": [
+          "1 место",
+          "2 место"
+        ],
+        "avg_result_place": 1.5,
+        "best_result_place": 1.0
       },
       {
         "event_date": "2026-02-23",
@@ -24864,7 +24912,15 @@
             "result_place_label": "4 место",
             "date": "2026-02-23"
           }
-        ]
+        ],
+        "result_places": [
+          "1 место",
+          "13–14 место",
+          "4 место",
+          "8–10 место"
+        ],
+        "avg_result_place": 6.875,
+        "best_result_place": 1.0
       },
       {
         "event_date": "2026-03-08",
@@ -25362,7 +25418,15 @@
             "result_place_label": "5 место",
             "date": "2026-03-08"
           }
-        ]
+        ],
+        "result_places": [
+          "3 место",
+          "4 место",
+          "5 место",
+          "7 место"
+        ],
+        "avg_result_place": 4.75,
+        "best_result_place": 3.0
       },
       {
         "event_date": "2026-04-05",
@@ -25584,7 +25648,15 @@
             "result_place_label": "5 место",
             "date": "2026-04-05"
           }
-        ]
+        ],
+        "result_places": [
+          "10–11 место",
+          "11 место",
+          "14–15 место",
+          "4 место"
+        ],
+        "avg_result_place": 10.0,
+        "best_result_place": 4.0
       },
       {
         "event_date": "2026-04-12",
@@ -25999,7 +26071,14 @@
             "result_place_label": "6 место",
             "date": "2026-04-12"
           }
-        ]
+        ],
+        "result_places": [
+          "17 место",
+          "4 место",
+          "6 место"
+        ],
+        "avg_result_place": 7.75,
+        "best_result_place": 4.0
       },
       {
         "event_date": "2026-05-24",
@@ -26321,7 +26400,15 @@
             "result_place_label": "4 место",
             "date": "2026-05-24"
           }
-        ]
+        ],
+        "result_places": [
+          "14–16 место",
+          "17–19 место",
+          "2 место",
+          "3 место"
+        ],
+        "avg_result_place": 9.5,
+        "best_result_place": 2.0
       }
     ]
   },

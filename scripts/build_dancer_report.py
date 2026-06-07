@@ -1106,7 +1106,11 @@ def build_program_tournament_summary(program: str, rows: pd.DataFrame, mark_rows
     return summary
 
 
-def build_trainer_mode_payload(tournament_dance_results: pd.DataFrame, marks: pd.DataFrame) -> dict[str, Any]:
+def build_trainer_mode_payload(
+    tournament_dance_results: pd.DataFrame,
+    marks: pd.DataFrame,
+    protocol_results: pd.DataFrame | None = None,
+) -> dict[str, Any]:
     if marks.empty:
         return {"tournament_summaries": []}
 
@@ -1130,6 +1134,19 @@ def build_trainer_mode_payload(tournament_dance_results: pd.DataFrame, marks: pd
                 & (result_source["tournament_id"] == tournament_id)
                 & (result_source["tournament_title"] == tournament_title)
             ].copy()
+        if protocol_results is None or protocol_results.empty:
+            tournament_protocol_results = pd.DataFrame()
+        else:
+            tournament_protocol_results = protocol_results[
+                (protocol_results["event_date"] == event_date)
+                & (protocol_results["tournament_id"] == tournament_id)
+                & (protocol_results["tournament_title"] == tournament_title)
+            ].copy()
+        result_places = (
+            sorted(set(str(item) for item in tournament_protocol_results["protocol_place_label"].dropna() if str(item).strip()))
+            if not tournament_protocol_results.empty and "protocol_place_label" in tournament_protocol_results.columns
+            else []
+        )
         program_summaries = []
         for program in ["standard", "latin"]:
             program_mark_rows = tournament_marks[tournament_marks["program"] == program].copy()
@@ -1154,6 +1171,13 @@ def build_trainer_mode_payload(tournament_dance_results: pd.DataFrame, marks: pd
                 "dance_codes": dance_codes,
                 "program_summaries": clean_value(program_summaries),
                 "dance_results": df_records(tournament_rows),
+                "result_places": clean_value(result_places),
+                "avg_result_place": clean_value(round(float(tournament_protocol_results["protocol_place_value"].dropna().mean()), 3))
+                if not tournament_protocol_results.empty and tournament_protocol_results["protocol_place_value"].notna().any()
+                else None,
+                "best_result_place": clean_value(round(float(tournament_protocol_results["protocol_place_value"].dropna().min()), 3))
+                if not tournament_protocol_results.empty and tournament_protocol_results["protocol_place_value"].notna().any()
+                else None,
             }
         )
     return {"tournament_summaries": sorted(summaries, key=lambda item: item.get("event_date") or "")}
@@ -1427,7 +1451,7 @@ def build_report(conn: sqlite3.Connection, compreg_idd: str | int) -> dict[str, 
                 ]
             ),
         },
-        "trainer_mode": build_trainer_mode_payload(tournament_dance_results, marks),
+        "trainer_mode": build_trainer_mode_payload(tournament_dance_results, marks, protocol_results),
         "warnings": build_warnings_payload(conn, marks, summary, numeric),
     }
     return report

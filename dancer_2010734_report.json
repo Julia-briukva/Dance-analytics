@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-06-06T20:34:25.087926+00:00",
+    "generated_at": "2026-06-07T19:01:54.686212+00:00",
     "analytics_version": "report_layer_v1",
     "database": "database/compreg_spb_2025_2026.sqlite"
   },
@@ -758,7 +758,13 @@
             "message": "итоговое место участника не найдено"
           }
         ],
-        "dance_results": []
+        "dance_results": [],
+        "result_places": [
+          "19–20 место",
+          "20 место"
+        ],
+        "avg_result_place": 19.75,
+        "best_result_place": 19.5
       }
     ]
   },

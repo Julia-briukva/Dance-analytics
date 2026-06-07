@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-06-06T20:32:58.213151+00:00",
+    "generated_at": "2026-06-07T19:00:32.484852+00:00",
     "analytics_version": "report_layer_v1",
     "database": "database/compreg_spb_2025_2026.sqlite"
   },
@@ -5832,7 +5832,13 @@
             "result_place_label": "6 место",
             "date": "2026-02-01"
           }
-        ]
+        ],
+        "result_places": [
+          "2 место",
+          "7 место"
+        ],
+        "avg_result_place": 4.5,
+        "best_result_place": 2.0
       },
       {
         "event_date": "2026-03-08",
@@ -5963,7 +5969,13 @@
             "result_place_label": "3 место",
             "date": "2026-03-08"
           }
-        ]
+        ],
+        "result_places": [
+          "12 место",
+          "3 место"
+        ],
+        "avg_result_place": 7.5,
+        "best_result_place": 3.0
       },
       {
         "event_date": "2026-04-26",
@@ -6147,7 +6159,15 @@
             "result_place_label": "5 место",
             "date": "2026-04-26"
           }
-        ]
+        ],
+        "result_places": [
+          "13–14 место",
+          "20 место",
+          "25 место",
+          "6 место"
+        ],
+        "avg_result_place": 16.125,
+        "best_result_place": 6.0
       },
       {
         "event_date": "2026-05-24",
@@ -6331,7 +6351,15 @@
             "result_place_label": "6 место",
             "date": "2026-05-24"
           }
-        ]
+        ],
+        "result_places": [
+          "14 место",
+          "18 место",
+          "5 место",
+          "6 место"
+        ],
+        "avg_result_place": 10.75,
+        "best_result_place": 5.0
       }
     ]
   },

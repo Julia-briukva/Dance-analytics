@@ -1203,6 +1203,35 @@
       overflow-wrap: anywhere;
     }
 
+    details.filterable-tournament,
+    details.filterable-tournament summary {
+      max-width: 100%;
+      min-width: 0;
+      box-sizing: border-box;
+    }
+
+    .tournament-result-summary {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px 10px;
+      align-items: baseline;
+      margin: 14px 0 2px;
+      color: var(--ink-soft);
+      font-size: 13px;
+      min-width: 0;
+    }
+
+    .tournament-result-label {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .tournament-result-value {
+      color: var(--ink);
+      font-weight: 560;
+      overflow-wrap: anywhere;
+    }
+
     .tournament-detail-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1317,6 +1346,21 @@
       .tournament-summary-row {
         grid-template-columns: minmax(0, 1fr) auto;
       }
+      .tournament-badge {
+        white-space: normal;
+        text-align: left;
+      }
+      .tournament-result-summary {
+        display: block;
+        margin-top: 12px;
+      }
+      .tournament-result-label {
+        display: block;
+        margin-bottom: 3px;
+      }
+      .tournament-detail-grid-has-results {
+        display: none;
+      }
       .tournament-program-row {
         grid-template-columns: 1fr;
         gap: 3px;
@@ -1365,10 +1409,15 @@
         border: 0;
         padding: 7px 0;
         display: grid;
-        grid-template-columns: minmax(112px, .9fr) minmax(0, 1fr);
+        grid-template-columns: minmax(86px, .72fr) minmax(0, 1fr);
         gap: 12px;
         align-items: start;
         text-align: right;
+        min-width: 0;
+        overflow-wrap: anywhere;
+      }
+      .mobile-card-table .number {
+        white-space: normal;
       }
       .mobile-card-table td + td {
         border-top: 1px solid rgba(233, 229, 244, .66);
@@ -1768,12 +1817,19 @@
                 <div>
                   <div class="summary-meta">{{ item.categories|join("; ") }}</div>
                   <div class="summary-meta">{{ item.programs|map("program_label")|join(", ") }}</div>
+                  {% if item.result_places %}<div class="summary-meta">{{ item.result_places|join(", ") }}</div>{% endif %}
                 </div>
               </div>
               <span class="accordion-icon" aria-hidden="true">{{ icon("chevron") }}</span>
             </div>
           </summary>
-          <div class="tournament-detail-grid">
+          {% if item.result_places %}
+          <div class="tournament-result-summary">
+            <span class="tournament-result-label">Итоговое место</span>
+            <span class="tournament-result-value">{{ item.result_places|join(", ") }}</span>
+          </div>
+          {% endif %}
+          <div class="tournament-detail-grid{% if item.dance_results %} tournament-detail-grid-has-results{% endif %}">
             {% for program in item.program_summaries %}
               <div class="insight-card tournament-program-summary">
                 <h3>{{ program.program_label }}</h3>
@@ -1796,7 +1852,8 @@
                 {% elif program.display_mode == "tied" %}
                   <div class="tournament-program-row"><span class="tournament-program-label">Равный результат</span><span>{{ program.tied_dances|join(", ") }} · {{ program.tied_metric_label or ((program.tied_metric_value|fmt) ~ " место") }}</span></div>
                 {% else %}
-                  <div class="tournament-program-row"><span class="tournament-program-label">Сравнение</span><span>{{ program.message or "Итоговое место участника не найдено." }}</span></div>
+                  {% set program_fallback_message = "Итоговое место участника показано выше." if item.result_places else "Итоговое место участника не найдено." %}
+                  <div class="tournament-program-row"><span class="tournament-program-label">Сравнение</span><span>{{ program.message if program.message and program.message != "итоговое место участника не найдено" else program_fallback_message }}</span></div>
                 {% endif %}
                 </div>
               </div>

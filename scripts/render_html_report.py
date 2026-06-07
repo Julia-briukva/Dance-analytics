@@ -688,19 +688,26 @@ def trainer_tournament_summaries(report: dict[str, Any]) -> list[dict[str, Any]]
     if not summaries:
         summaries = build_tournament_details(report)
 
-    rank_by_key = {
+    tournament_meta_by_key = {
         (item.get("event_date"), item.get("tournament_id"), item.get("tournament_title")): {
             "tournament_rank": item.get("tournament_rank"),
             "rank_direction": item.get("rank_direction") or "",
+            "result_places": item.get("result_places") or [],
+            "avg_result_place": item.get("avg_result_place"),
+            "best_result_place": item.get("best_result_place"),
         }
         for item in report.get("tournaments", {}).get("items", []) or []
     }
     result = []
     for item in summaries:
         merged = dict(item)
-        rank = rank_by_key.get((item.get("event_date"), item.get("tournament_id"), item.get("tournament_title")), {})
-        merged.setdefault("tournament_rank", rank.get("tournament_rank"))
-        merged.setdefault("rank_direction", rank.get("rank_direction") or "")
+        meta = tournament_meta_by_key.get((item.get("event_date"), item.get("tournament_id"), item.get("tournament_title")), {})
+        merged.setdefault("tournament_rank", meta.get("tournament_rank"))
+        merged.setdefault("rank_direction", meta.get("rank_direction") or "")
+        if not merged.get("result_places"):
+            merged["result_places"] = meta.get("result_places") or []
+        merged.setdefault("avg_result_place", meta.get("avg_result_place"))
+        merged.setdefault("best_result_place", meta.get("best_result_place"))
         result.append(merged)
     return result
 
