@@ -882,7 +882,7 @@ def build_tournament_dance_results(
     marks: pd.DataFrame | None = None,
     protocol_results: pd.DataFrame | None = None,
 ) -> pd.DataFrame:
-    if marks is not None and not marks.empty and protocol_results is not None and not protocol_results.empty:
+    if dance_results.empty and marks is not None and not marks.empty and protocol_results is not None and not protocol_results.empty:
         mark_columns = [
             "protocol_db_id",
             "protocol_id",
@@ -1361,9 +1361,7 @@ def build_report(conn: sqlite3.Connection, compreg_idd: str | int) -> dict[str, 
     raw_dance_results = selected_dance_results_by_internal_id(conn, identity.internal_dancer_id)
     raw_dance_results = add_tournament_city_to_results(raw_dance_results, marks)
     protocol_results = selected_protocol_results(conn, identity.internal_dancer_id)
-    tournament_dance_results = build_tournament_dance_results(raw_dance_results, marks, protocol_results)
-    if tournament_dance_results.empty:
-        tournament_dance_results = build_tournament_dance_results(raw_dance_results)
+    tournament_dance_results = build_tournament_dance_results(raw_dance_results)
     summary = dance_summary_from_results(numeric, tournament_dance_results)
     dynamics = dynamics_by_date(tournament_dance_results)
     trends = safe_trend_ranking(dynamics)
@@ -1411,6 +1409,23 @@ def build_report(conn: sqlite3.Connection, compreg_idd: str | int) -> dict[str, 
         "tournaments": {
             **build_tournament_payload(marks, tournament_dance_results, protocol_results),
             "dance_results": df_records(tournament_dance_results),
+        },
+        "client_data": {
+            "numeric_marks": df_records(
+                numeric_all[
+                    [
+                        "event_date",
+                        "tournament_city",
+                        "protocol_db_id",
+                        "protocol_id",
+                        "round",
+                        "dance",
+                        "program",
+                        "judge",
+                        "numeric_mark",
+                    ]
+                ]
+            ),
         },
         "trainer_mode": build_trainer_mode_payload(tournament_dance_results, marks),
         "warnings": build_warnings_payload(conn, marks, summary, numeric),

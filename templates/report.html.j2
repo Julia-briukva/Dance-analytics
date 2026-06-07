@@ -1092,6 +1092,7 @@
       grid-template-columns: minmax(0, 1fr) auto;
       gap: 12px;
       align-items: center;
+      min-width: 0;
     }
 
     .tournament-summary {
@@ -1100,6 +1101,10 @@
       gap: 12px;
       align-items: start;
       color: var(--ink);
+      min-width: 0;
+    }
+
+    .tournament-summary > div {
       min-width: 0;
     }
 
@@ -1153,6 +1158,7 @@
 
     .tournament-title-line {
       min-width: 0;
+      overflow-wrap: anywhere;
     }
 
     .tournament-badge-row {
@@ -1187,12 +1193,14 @@
     .summary-title {
       font-weight: 600;
       color: var(--ink);
+      overflow-wrap: anywhere;
     }
 
     .summary-meta {
       color: var(--muted);
       font-size: 12px;
       margin-top: 4px;
+      overflow-wrap: anywhere;
     }
 
     .tournament-detail-grid {
@@ -1201,6 +1209,7 @@
       gap: 12px;
       margin: 18px 0 14px;
       padding-top: 4px;
+      min-width: 0;
     }
 
     .tournament-program-summary {
@@ -1251,10 +1260,16 @@
       align-items: baseline;
       color: var(--ink-soft);
       font-size: 12.5px;
+      min-width: 0;
     }
 
     .tournament-program-label {
       color: var(--muted);
+    }
+
+    .tournament-program-row > span {
+      min-width: 0;
+      overflow-wrap: anywhere;
     }
 
     @media (max-width: 900px) {
@@ -1301,6 +1316,10 @@
       }
       .tournament-summary-row {
         grid-template-columns: minmax(0, 1fr) auto;
+      }
+      .tournament-program-row {
+        grid-template-columns: 1fr;
+        gap: 3px;
       }
       .table-scroll {
         width: 100%;
