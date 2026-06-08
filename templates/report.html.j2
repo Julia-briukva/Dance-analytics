@@ -32,6 +32,7 @@
       --ink: #20212A;
       --ink-soft: #3D3F4C;
       --muted: #727488;
+      --muted-soft: #8D8FA0;
       --line: #E9E5F4;
       --accent: #7B6ED6;
       --accent-dark: #5E51B8;
@@ -74,6 +75,10 @@
     }
 
     * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       margin: 0;
@@ -119,6 +124,20 @@
       margin-top: 8px;
     }
 
+    .dancer-profile-lines {
+      display: grid;
+      gap: 4px;
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .dancer-profile-lines strong {
+      color: var(--ink-soft);
+      font-weight: 560;
+    }
+
     .header-filter-panel {
       display: grid;
       grid-template-columns: minmax(0, 1fr) minmax(260px, auto);
@@ -127,6 +146,55 @@
       margin-top: 22px;
       padding-top: 18px;
       border-top: 1px solid rgba(233, 229, 244, .78);
+    }
+
+    .page-nav {
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 8px;
+      align-items: center;
+      position: sticky;
+      top: 10px;
+      z-index: 20;
+      width: max-content;
+      max-width: 100%;
+      margin: -4px 0 18px;
+      padding: 6px;
+      overflow-x: auto;
+      border: 1px solid rgba(233, 229, 244, .86);
+      border-radius: var(--radius-control);
+      background: rgba(255, 255, 255, .86);
+      box-shadow: 0 8px 22px rgba(49, 42, 96, .08);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      scrollbar-width: none;
+    }
+
+    .page-nav::-webkit-scrollbar {
+      display: none;
+    }
+
+    .page-nav a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 30px;
+      padding: 6px 11px;
+      border-radius: var(--radius-control);
+      background: rgba(255, 255, 255, .7);
+      color: var(--muted);
+      border: 1px solid rgba(233, 229, 244, .74);
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 560;
+      line-height: 1.2;
+      white-space: nowrap;
+    }
+
+    .page-nav a:hover,
+    .page-nav a.is-active {
+      color: var(--accent-dark);
+      border-color: rgba(123, 110, 214, .28);
+      background: var(--paper);
     }
 
     .header-city-filter {
@@ -310,6 +378,7 @@
     .dance-comparison-value {
       color: var(--muted);
       font-size: 12.5px;
+      line-height: 1.45;
     }
 
     .dance-metric-list {
@@ -319,9 +388,17 @@
 
     .dance-metric-row {
       display: grid;
-      grid-template-columns: minmax(0, auto) minmax(120px, 1fr);
-      gap: 8px;
+      grid-template-columns: minmax(150px, 180px) minmax(120px, 1fr);
+      column-gap: 16px;
+      row-gap: 4px;
       align-items: center;
+    }
+
+    .trend-empty {
+      color: var(--muted);
+      font-size: 12.5px;
+      line-height: 1.45;
+      margin: 0;
     }
 
     .dance-comparison-message {
@@ -474,10 +551,15 @@
       margin: 24px 0;
       padding: 24px;
       break-inside: avoid;
+      scroll-margin-top: 76px;
+    }
+
+    .mode-panel[id] {
+      scroll-margin-top: 76px;
     }
 
     .section-kicker {
-      color: var(--muted);
+      color: var(--muted-soft);
       font-size: 13px;
       max-width: 720px;
       margin-bottom: 14px;
@@ -1197,10 +1279,38 @@
     }
 
     .summary-meta {
-      color: var(--muted);
+      color: var(--muted-soft);
       font-size: 12px;
       margin-top: 4px;
       overflow-wrap: anywhere;
+    }
+
+    .tournament-program-briefs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 7px;
+    }
+
+    .tournament-program-brief {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 5px;
+      min-width: 0;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.35;
+      font-weight: 400;
+    }
+
+    .tournament-program-brief strong {
+      color: var(--ink-soft);
+      font-size: 13px;
+      font-weight: 620;
+    }
+
+    .tournament-program-brief span {
+      color: var(--muted-soft);
     }
 
     details.filterable-tournament,
@@ -1210,95 +1320,10 @@
       box-sizing: border-box;
     }
 
-    .tournament-result-summary {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 5px 10px;
-      align-items: baseline;
-      margin: 14px 0 2px;
-      color: var(--ink-soft);
-      font-size: 13px;
+    details.filterable-tournament > * {
+      max-width: 100%;
       min-width: 0;
-    }
-
-    .tournament-result-label {
-      color: var(--muted);
-      font-size: 12px;
-    }
-
-    .tournament-result-value {
-      color: var(--ink);
-      font-weight: 560;
-      overflow-wrap: anywhere;
-    }
-
-    .tournament-detail-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 12px;
-      margin: 18px 0 14px;
-      padding-top: 4px;
-      min-width: 0;
-    }
-
-    .tournament-program-summary {
-      min-width: 0;
-      background: var(--paper-soft);
-      border: 1px solid rgba(233, 229, 244, .82);
-      border-radius: var(--radius-card);
-      padding: 14px 15px;
-    }
-
-    .tournament-detail-grid .insight-card {
-      background: var(--paper-soft);
-      border-radius: var(--radius-card);
-      padding: 14px 15px;
-      min-height: 0;
-    }
-
-    .tournament-detail-grid .insight-card + .insight-card {
-      padding-left: 15px;
-      border-left: 1px solid rgba(233, 229, 244, .82);
-    }
-
-    .tournament-detail-grid h3 {
-      color: var(--ink);
-      font-size: 14px;
-      font-weight: 600;
-      margin-bottom: 8px;
-    }
-
-    .tournament-detail-grid p {
-      margin-bottom: 6px;
-    }
-
-    .tournament-detail-grid strong {
-      font-weight: 600;
-    }
-
-    .tournament-program-metrics {
-      display: grid;
-      gap: 7px;
-      margin-top: 10px;
-    }
-
-    .tournament-program-row {
-      display: grid;
-      grid-template-columns: minmax(112px, auto) minmax(0, 1fr);
-      gap: 10px;
-      align-items: baseline;
-      color: var(--ink-soft);
-      font-size: 12.5px;
-      min-width: 0;
-    }
-
-    .tournament-program-label {
-      color: var(--muted);
-    }
-
-    .tournament-program-row > span {
-      min-width: 0;
-      overflow-wrap: anywhere;
+      box-sizing: border-box;
     }
 
     @media (max-width: 900px) {
@@ -1308,8 +1333,7 @@
       .two-column,
       .three-column,
       .story-grid,
-      .tournament-summary,
-      .tournament-detail-grid {
+      .tournament-summary {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
     }
@@ -1326,7 +1350,6 @@
       .three-column,
       .story-grid,
       .tournament-summary,
-      .tournament-detail-grid,
       .judge-insight-grid {
         grid-template-columns: 1fr;
       }
@@ -1345,25 +1368,22 @@
       }
       .tournament-summary-row {
         grid-template-columns: minmax(0, 1fr) auto;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+      }
+      .tournament-summary,
+      .tournament-summary > div,
+      .tournament-title-line,
+      .tournament-program-briefs,
+      .summary-title,
+      .summary-meta {
+        max-width: 100%;
+        min-width: 0;
       }
       .tournament-badge {
         white-space: normal;
         text-align: left;
-      }
-      .tournament-result-summary {
-        display: block;
-        margin-top: 12px;
-      }
-      .tournament-result-label {
-        display: block;
-        margin-bottom: 3px;
-      }
-      .tournament-detail-grid-has-results {
-        display: none;
-      }
-      .tournament-program-row {
-        grid-template-columns: 1fr;
-        gap: 3px;
       }
       .table-scroll {
         width: 100%;
@@ -1374,6 +1394,8 @@
       .table-scroll.mobile-card-table {
         border: 0;
         overflow: visible;
+        max-width: 100%;
+        min-width: 0;
       }
       .mobile-card-table table,
       .mobile-card-table thead,
@@ -1383,10 +1405,18 @@
       .mobile-card-table td {
         display: block;
         width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
       }
       .mobile-card-table table {
         min-width: 0;
         background: transparent;
+        table-layout: fixed;
+      }
+      .tournament-list .table-scroll.mobile-card-table table,
+      .tournament-list .table-scroll.mobile-card-table .tournament-results-table {
+        min-width: 0;
       }
       .mobile-card-table thead {
         position: absolute;
@@ -1404,20 +1434,34 @@
         border: 1px solid rgba(233, 229, 244, .82);
         border-radius: var(--radius-card);
         padding: 10px 12px;
+        overflow-wrap: anywhere;
       }
       .mobile-card-table td {
         border: 0;
         padding: 7px 0;
         display: grid;
-        grid-template-columns: minmax(86px, .72fr) minmax(0, 1fr);
+        grid-template-columns: minmax(72px, .46fr) minmax(0, 1fr);
         gap: 12px;
         align-items: start;
         text-align: right;
         min-width: 0;
         overflow-wrap: anywhere;
+        word-break: normal;
       }
       .mobile-card-table .number {
         white-space: normal;
+      }
+      .mobile-card-table td > * {
+        min-width: 0;
+        max-width: 100%;
+      }
+      .mobile-card-table .col-program,
+      .mobile-card-table .col-dance,
+      .mobile-card-table .col-place,
+      .mobile-card-table strong {
+        min-width: 0;
+        white-space: normal;
+        overflow-wrap: anywhere;
       }
       .mobile-card-table td + td {
         border-top: 1px solid rgba(233, 229, 244, .66);
@@ -1449,14 +1493,62 @@
       .mobile-card-table .col-stability .progress-track {
         margin-left: auto;
       }
-      .tournament-detail-grid .insight-card {
-        padding: 0;
+      .mobile-card-table .tournament-results-table tbody {
+        gap: 8px;
       }
-      .tournament-detail-grid .insight-card + .insight-card {
-        padding-left: 0;
-        border-left: 0;
-        padding-top: 14px;
-        border-top: 1px solid rgba(233, 229, 244, .72);
+      .mobile-card-table .tournament-results-table tr {
+        display: grid;
+        grid-template-columns: auto minmax(0, 1fr) auto auto;
+        gap: 4px 8px;
+        align-items: center;
+      }
+      .mobile-card-table .tournament-results-table td {
+        display: block;
+        padding: 0;
+        border-top: 0;
+        text-align: left;
+      }
+      .mobile-card-table .tournament-results-table td::before {
+        display: none;
+      }
+      .mobile-card-table .tournament-results-table .col-program {
+        grid-column: 1;
+        grid-row: 1;
+        color: var(--muted);
+        font-size: 12px;
+        font-weight: 600;
+      }
+      .mobile-card-table .tournament-results-table .col-dance {
+        grid-column: 2;
+        grid-row: 1;
+        font-size: 15px;
+      }
+      .mobile-card-table .tournament-results-table .col-place {
+        grid-column: 3;
+        grid-row: 1;
+        text-align: right;
+        font-weight: 600;
+      }
+      .mobile-card-table .tournament-results-table td[data-label="Результат"] {
+        grid-column: 4;
+        grid-row: 1;
+        text-align: right;
+        color: var(--ink-soft);
+        white-space: normal;
+      }
+      .mobile-card-table .tournament-results-table td[data-label="Категория"],
+      .mobile-card-table .tournament-results-table td[data-label="Тур"] {
+        grid-column: 1 / -1;
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 1.35;
+      }
+      .mobile-card-table .tournament-results-table td[data-label="Категория"] {
+        grid-row: 2;
+        margin-top: 3px;
+      }
+      .mobile-card-table .tournament-results-table td[data-label="Тур"] {
+        grid-row: 3;
       }
       .rank-list li,
       .plain-list li {
@@ -1500,8 +1592,20 @@
     <div class="eyebrow">Отчёт по спортивным бальным танцам</div>
     <h1>{{ dancer.name }}</h1>
     <p class="cover-subtitle">
-      {% if dancer.club %}Клуб {{ dancer.club }} · {% endif %}{% if dancer.city %}{{ dancer.city }} · {% endif %}IDD {{ dancer.idd }}
+      {% if dancer.club or dancer.city %}{{ dancer.club or "нет данных" }}{% if dancer.city %}, {{ dancer.city }}{% endif %} · {% endif %}IDD {{ dancer.idd }}
     </p>
+    {% if dancer.coaches_st or dancer.coaches_la or dancer.class_st or dancer.class_la or dancer.skr_class_st or dancer.skr_class_la %}
+    <div class="dancer-profile-lines">
+      {% if dancer.coaches_st %}<div><strong>Тренеры St:</strong> {{ dancer.coaches_st }}</div>{% endif %}
+      {% if dancer.coaches_la %}<div><strong>Тренеры La:</strong> {{ dancer.coaches_la }}</div>{% endif %}
+      {% if dancer.class_st or dancer.skr_class_st %}
+        <div><strong>St:</strong>{% if dancer.class_st %} {{ dancer.class_st }}{% endif %}{% if dancer.skr_class_st %}{% if dancer.class_st %} ·{% endif %} СКРкл {{ dancer.skr_class_st }}{% if dancer.norm_status_st %} · {{ dancer.norm_status_st }}{% endif %}{% endif %}</div>
+      {% endif %}
+      {% if dancer.class_la or dancer.skr_class_la %}
+        <div><strong>La:</strong>{% if dancer.class_la %} {{ dancer.class_la }}{% endif %}{% if dancer.skr_class_la %}{% if dancer.class_la %} ·{% endif %} СКРкл {{ dancer.skr_class_la }}{% if dancer.norm_status_la %} · {{ dancer.norm_status_la }}{% endif %}{% endif %}</div>
+      {% endif %}
+    </div>
+    {% endif %}
     <div class="header-filter-panel" aria-label="Фильтры отчёта">
       <div class="header-city-filter">
         <div class="filter-chips" role="group" aria-label="Фильтр городов">
@@ -1520,6 +1624,13 @@
       </div>
     </div>
   </header>
+
+  <nav class="page-nav" aria-label="Навигация по отчёту">
+    <a href="#overview">Обзор</a>
+    <a href="#dances">Танцы</a>
+    <a href="#tournaments">Турниры</a>
+    <a href="#judges">Судьи</a>
+  </nav>
 
   <section class="mode-panel parent-panel">
     <section class="section">
@@ -1598,9 +1709,9 @@
 
   </section>
 
-  <section class="mode-panel trainer-panel">
+  <section class="mode-panel trainer-panel" id="overview">
     {% for key, program in programs.items() %}
-    <section class="section">
+    <section class="section"{% if loop.first %} id="dances"{% endif %}>
       <h2>{{ program.title|capitalize }}</h2>
 
       {% for slice in program.category_slices %}
@@ -1651,7 +1762,7 @@
             <div class="insight-card neutral">
               <h3>Танцы в срезе</h3>
               {% if slice.marks_derived_dance_metrics %}
-                <p>{{ slice.marks_derived_dance_metrics|map(attribute="dance_code")|join(", ") }}</p>
+                <p>{{ slice.marks_derived_dance_metrics|map(attribute="dance_code")|map("dance_label")|join(", ") }}</p>
               {% else %}
                 <p class="muted">Данных по танцам мало.</p>
               {% endif %}
@@ -1732,7 +1843,7 @@
                     {% endfor %}
                     </div>
                   {% else %}
-                    <p class="muted">{{ "Динамика неустойчива из-за ограниченной выборки." if not slice.enough_data else "Явного улучшения по тренду сейчас не видно." }}</p>
+                    <p class="trend-empty">{{ "Динамика неустойчива из-за ограниченной выборки." if not slice.enough_data else "Явного улучшения по тренду сейчас не видно." }}</p>
                   {% endif %}
                 </div>
                 <div class="dance-comparison-zone attention">
@@ -1747,7 +1858,7 @@
                     {% endfor %}
                     </div>
                   {% else %}
-                    <p class="muted">{{ "Динамика неустойчива из-за ограниченной выборки." if not slice.enough_data else "Тревожной динамики по тренду сейчас не видно." }}</p>
+                    <p class="trend-empty">{{ "Динамика неустойчива из-за ограниченной выборки." if not slice.enough_data else "Тревожной динамики по тренду сейчас не видно." }}</p>
                   {% endif %}
                 </div>
               </div>
@@ -1786,7 +1897,7 @@
     </section>
     {% endfor %}
 
-    <section class="section">
+    <section class="section" id="tournaments">
       <h2>Турниры</h2>
       <p class="section-kicker">Лучшие и наиболее сложные выступления отмечены прямо в списке.</p>
       <div class="tournament-list">
@@ -1804,6 +1915,20 @@
                   <div class="tournament-title-line">
                     <div class="summary-title">{{ item.tournament_title }}</div>
                   </div>
+                  {% if item.program_briefs %}
+                  <div class="tournament-program-briefs">
+                    {% for brief in item.program_briefs %}
+                      {% set brief_parts = brief.text.split(":", 1) %}
+                      <div class="tournament-program-brief">
+                        {% if brief_parts|length > 1 %}
+                          <strong>{{ brief_parts[0] }}</strong><span>{{ brief_parts[1]|trim }}</span>
+                        {% else %}
+                          <span>{{ brief.text }}</span>
+                        {% endif %}
+                      </div>
+                    {% endfor %}
+                  </div>
+                  {% endif %}
                   <div class="tournament-badge-row" data-rank-badge>
                   {% if item.rank_direction == "best" or item.rank_direction == "hardest" %}
                     {% if item.rank_direction == "best" %}
@@ -1815,60 +1940,25 @@
                   </div>
                 </div>
                 <div>
-                  <div class="summary-meta">{{ item.categories|join("; ") }}</div>
+                  <div class="summary-meta">{{ (item.categories_display or item.categories)|join("; ") }}</div>
                   <div class="summary-meta">{{ item.programs|map("program_label")|join(", ") }}</div>
-                  {% if item.result_places %}<div class="summary-meta">{{ item.result_places|join(", ") }}</div>{% endif %}
                 </div>
               </div>
               <span class="accordion-icon" aria-hidden="true">{{ icon("chevron") }}</span>
             </div>
           </summary>
-          {% if item.result_places %}
-          <div class="tournament-result-summary">
-            <span class="tournament-result-label">Итоговое место</span>
-            <span class="tournament-result-value">{{ item.result_places|join(", ") }}</span>
-          </div>
-          {% endif %}
-          <div class="tournament-detail-grid{% if item.dance_results %} tournament-detail-grid-has-results{% endif %}">
-            {% for program in item.program_summaries %}
-              <div class="insight-card tournament-program-summary">
-                <h3>{{ program.program_label }}</h3>
-                <div class="tournament-program-metrics">
-                  <div class="tournament-program-row">
-                    <span class="tournament-program-label">Общий итог</span>
-                    <span>
-                      {% if program.overall.avg_place is not none %}
-                        среднее место {{ program.overall.avg_place|fmt }} · {{ program.overall.dance_codes|join(", ") }}
-                      {% else %}
-                        {{ program.overall.dance_codes|join(", ") }} · {{ program.metric_label or "по оценкам судей" }}
-                      {% endif %}
-                    </span>
-                  </div>
-                {% if program.display_mode == "best_worst" %}
-                  <div class="tournament-program-row"><span class="tournament-program-label">{% if program.best_dances|length > 1 %}Лучшие танцы{% else %}Лучший танец{% endif %}</span><span>{{ program.best_dances|map(attribute="dance_code")|join(", ") }} · {{ program.best_dance.result_place_label or ((program.best_dance.final_place|fmt) ~ " место") }}</span></div>
-                  <div class="tournament-program-row"><span class="tournament-program-label">{% if program.worst_dances|length > 1 %}Зоны внимания{% else %}Зона внимания{% endif %}</span><span>{{ program.worst_dances|map(attribute="dance_code")|join(", ") }} · {{ program.worst_dance.result_place_label or ((program.worst_dance.final_place|fmt) ~ " место") }}</span></div>
-                {% elif program.display_mode == "single_dance" and program.evaluated_dance %}
-                  <div class="tournament-program-row"><span class="tournament-program-label">Оценённый танец</span><span>{{ program.evaluated_dance.dance_code }} · {{ program.evaluated_dance.result_place_label or ((program.evaluated_dance.final_place|fmt) ~ " место") }}</span></div>
-                {% elif program.display_mode == "tied" %}
-                  <div class="tournament-program-row"><span class="tournament-program-label">Равный результат</span><span>{{ program.tied_dances|join(", ") }} · {{ program.tied_metric_label or ((program.tied_metric_value|fmt) ~ " место") }}</span></div>
-                {% else %}
-                  {% set program_fallback_message = "Итоговое место участника показано выше." if item.result_places else "Итоговое место участника не найдено." %}
-                  <div class="tournament-program-row"><span class="tournament-program-label">Сравнение</span><span>{{ program.message if program.message and program.message != "итоговое место участника не найдено" else program_fallback_message }}</span></div>
-                {% endif %}
-                </div>
-              </div>
-            {% endfor %}
-          </div>
           <div class="table-wrap table-scroll mobile-card-table">
-            <table>
-              <thead><tr><th class="col-dance">Танец</th><th class="col-program">Программа</th><th class="number col-place">Итоговое место</th><th class="number col-protocols">Протоколов</th></tr></thead>
+            <table class="tournament-results-table">
+              <thead><tr><th class="col-program">Программа</th><th>Категория</th><th class="col-dance">Танец</th><th>Тур</th><th class="number col-place">Место</th><th>Результат</th></tr></thead>
               <tbody>
               {% for result in item.dance_results %}
                 <tr>
-                  <td class="col-dance" data-label="Танец"><strong>{{ result.dance_code or (result.dance|dance_code) }}</strong></td>
-                  <td class="col-program" data-label="Программа">{{ result.program|program_label }}</td>
-                  <td class="number col-place" data-label="Итоговое место">{{ result.result_place_label or ((result.final_place|fmt) ~ " место") }}</td>
-                  <td class="number col-protocols" data-label="Протоколов">{{ result.n_results|pluralize("протокол", "протокола", "протоколов") }}</td>
+                  <td class="col-program" data-label="Программа">{{ "St" if result.program == "standard" else ("La" if result.program == "latin" else (result.program|program_label)) }}</td>
+                  <td data-label="Категория">{{ result.category_display or result.category or "нет данных" }}</td>
+                  <td class="col-dance" data-label="Танец"><strong>{{ (result.dance_code or (result.dance|dance_code))|dance_label }}</strong></td>
+                  <td data-label="Тур">{{ result.round_label or "нет данных" }}</td>
+                  <td class="number col-place" data-label="Место">{{ result.result_place_label or ((result.final_place|fmt) ~ " место" if result.final_place is not none else "нет данных") }}</td>
+                  <td data-label="Результат">{{ result.marks_label or "нет данных" }}</td>
                 </tr>
               {% endfor %}
               </tbody>
@@ -1879,7 +1969,7 @@
       </div>
     </section>
 
-    <section class="section">
+    <section class="section" id="judges">
       <h2>Что видят судьи</h2>
       <p class="section-kicker">Экспериментальный тренерский взгляд: не список всех судей, а то, где панель сходится, расходится и кто сильнее влияет на восприятие результата.</p>
       {% set consistency_metrics = dances.metrics|default([])|selectattr("judge_std_deviation")|list|sort(attribute="judge_std_deviation") %}
@@ -2027,7 +2117,7 @@
     var tournamentItems = (((reportData || {}).tournaments || {}).items || []);
     var danceOrder = { W: 1, T: 2, V: 3, F: 4, Q: 5, S: 6, Ch: 7, C: 7, R: 8, P: 9, J: 10 };
     var danceLabels = {
-      W: "Медленный вальс", T: "Танго", V: "Венский вальс", F: "Фокстрот", Q: "Квикстеп",
+      W: "Медленный вальс", T: "Танго", V: "Венский вальс", VW: "Венский вальс", F: "Медленный фокстрот", Q: "Квикстеп",
       S: "Самба", Ch: "Ча-ча-ча", C: "Ча-ча-ча", R: "Румба", P: "Пасодобль", J: "Джайв"
     };
 
@@ -2127,7 +2217,25 @@
     }
 
     function selectedTournamentItems(filter) {
-      return tournamentItems.filter(function (row) { return rowMatches(row, filter); });
+      return tournamentItems
+        .filter(function (row) { return rowMatches(row, filter); })
+        .sort(function (a, b) {
+          var dateCompare = String(rowDate(b)).localeCompare(String(rowDate(a)));
+          if (dateCompare) return dateCompare;
+          return String(b.tournament_id || "").localeCompare(String(a.tournament_id || ""));
+        });
+    }
+
+    function sortTournamentCards() {
+      var list = document.querySelector(".tournament-list");
+      if (!list) return;
+      items.slice().sort(function (a, b) {
+        var dateCompare = String(b.getAttribute("data-date") || "").localeCompare(String(a.getAttribute("data-date") || ""));
+        if (dateCompare) return dateCompare;
+        return String(b.getAttribute("data-tournament-id") || "").localeCompare(String(a.getAttribute("data-tournament-id") || ""));
+      }).forEach(function (item) {
+        list.appendChild(item);
+      });
     }
 
     function selectedNumericRows(filter) {
@@ -2287,9 +2395,9 @@
         html += '<div class="dance-comparison-zone neutral"><div class="dance-comparison-title"><span>Без заметных изменений</span></div><p class="dance-comparison-message">Заметных изменений по динамике в выбранном периоде пока нет.</p></div>';
       } else {
         html += '<div class="dance-comparison-grid"><div class="dance-comparison-zone positive"><div class="dance-comparison-title"><span>Улучшается</span></div>';
-        html += trends.improving.length ? trends.improving.map(function (item) { return '<div class="dance-metric-row"><span class="dance-name-line">' + escapeHtml(danceLabel(item.dance_code)) + '</span><span class="dance-comparison-value">среднее место: ' + fmt(item.first_avg_place) + ' → ' + fmt(item.last_avg_place) + '</span></div>'; }).join("") : '<p class="muted">Явного улучшения по тренду сейчас не видно.</p>';
+        html += trends.improving.length ? trends.improving.map(function (item) { return '<div class="dance-metric-row"><span class="dance-name-line">' + escapeHtml(danceLabel(item.dance_code)) + '</span><span class="dance-comparison-value">среднее место: ' + fmt(item.first_avg_place) + ' → ' + fmt(item.last_avg_place) + '</span></div>'; }).join("") : '<p class="trend-empty">Явного улучшения по тренду сейчас не видно.</p>';
         html += '</div><div class="dance-comparison-zone attention"><div class="dance-comparison-title"><span>Требует внимания</span></div>';
-        html += trends.declining.length ? trends.declining.map(function (item) { return '<div class="dance-metric-row"><span class="dance-name-line">' + escapeHtml(danceLabel(item.dance_code)) + '</span><span class="dance-comparison-value">среднее место: ' + fmt(item.first_avg_place) + ' → ' + fmt(item.last_avg_place) + '</span></div>'; }).join("") : '<p class="muted">Тревожной динамики по тренду сейчас не видно.</p>';
+        html += trends.declining.length ? trends.declining.map(function (item) { return '<div class="dance-metric-row"><span class="dance-name-line">' + escapeHtml(danceLabel(item.dance_code)) + '</span><span class="dance-comparison-value">среднее место: ' + fmt(item.first_avg_place) + ' → ' + fmt(item.last_avg_place) + '</span></div>'; }).join("") : '<p class="trend-empty">Тревожной динамики по тренду сейчас не видно.</p>';
         html += '</div></div>';
       }
       element.innerHTML = html;
@@ -2520,6 +2628,7 @@
     function applyFilters() {
       var filter = selectedFilter();
       var filteredDataset = createFilteredDataset(filter);
+      sortTournamentCards();
       items.forEach(function (item) {
         var city = item.getAttribute("data-city") || "";
         var date = item.getAttribute("data-date") || "";
@@ -2533,6 +2642,55 @@
       updateProgramPanels(filteredDataset);
       updateTournamentRanks(filteredDataset);
       updateJudges(filteredDataset);
+    }
+
+    function initPageNav() {
+      var links = Array.prototype.slice.call(document.querySelectorAll(".page-nav a"));
+      var sections = links
+        .map(function (link) {
+          var target = document.querySelector(link.getAttribute("href") || "");
+          return target ? { link: link, target: target } : null;
+        })
+        .filter(Boolean);
+      if (!sections.length) return;
+
+      function setActive(id) {
+        sections.forEach(function (item) {
+          item.link.classList.toggle("is-active", item.target.id === id);
+        });
+      }
+
+      function updateActiveFromScroll() {
+        var activeId = sections[0].target.id;
+        var marker = 96;
+        sections.forEach(function (item) {
+          if (item.target.getBoundingClientRect().top <= marker) {
+            activeId = item.target.id;
+          }
+        });
+        setActive(activeId);
+      }
+
+      if ("IntersectionObserver" in window) {
+        var observer = new IntersectionObserver(function (entries) {
+          var visible = entries
+            .filter(function (entry) { return entry.isIntersecting; })
+            .sort(function (a, b) { return b.intersectionRatio - a.intersectionRatio; })[0];
+          if (visible && visible.target && visible.target.id) setActive(visible.target.id);
+        }, { rootMargin: "-84px 0px -60% 0px", threshold: [0.08, 0.2, 0.45] });
+        sections.forEach(function (item) { observer.observe(item.target); });
+      }
+
+      window.addEventListener("scroll", updateActiveFromScroll, { passive: true });
+
+      links.forEach(function (link) {
+        link.addEventListener("click", function () {
+          var targetId = (link.getAttribute("href") || "").replace("#", "");
+          if (targetId) setActive(targetId);
+        });
+      });
+
+      updateActiveFromScroll();
     }
 
     if (cityAllButton) {
@@ -2558,6 +2716,7 @@
       input.addEventListener("change", applyFilters);
     });
     selectAllCities();
+    initPageNav();
     applyFilters();
   }());
 </script>

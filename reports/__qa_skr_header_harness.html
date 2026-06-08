@@ -1,0 +1,67 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>SKR Header QA</title>
+<style>
+  iframe { display: block; border: 0; height: 800px; position: absolute; left: -2400px; top: 0; }
+</style>
+<pre id="results">loading</pre>
+<div id="frames"></div>
+<script>
+const widths = [390, 1440];
+const results = [];
+function parseCsv(text) {
+  const lines = text.trim().split(/\r?\n/);
+  const headers = lines.shift().split(",");
+  return lines.map((line) => {
+    const cells = line.split(",");
+    return Object.fromEntries(headers.map((header, index) => [header, cells[index] || ""]));
+  });
+}
+function render() {
+  const problems = results.filter((item) => item.issue);
+  document.getElementById("results").textContent = JSON.stringify({
+    checked: results.length,
+    problemCount: problems.length,
+    problems,
+    sample: results.slice(0, 6),
+  }, null, 2);
+}
+function collect(frame) {
+  const doc = frame.contentDocument;
+  if (!doc || !doc.body || !doc.querySelector("h1")) return;
+  const lines = Array.from(doc.querySelectorAll(".dancer-profile-lines div")).map((node) => node.innerText.trim());
+  const bad = lines.filter((line) => {
+    const lower = line.toLowerCase();
+    return lower.includes("нет данных") || /^st:\s*$/i.test(line) || /^la:\s*$/i.test(line) || (lower.includes("норматив") && !line.includes("СКРкл"));
+  });
+  const result = {
+    idd: frame.dataset.idd,
+    width: Number(frame.dataset.width),
+    profileLines: lines.length,
+    issue: bad.length ? "bad_header_placeholder_or_norm_without_skr" : "",
+    bad,
+    lines,
+  };
+  const index = results.findIndex((item) => item.idd === result.idd && item.width === result.width);
+  if (index >= 0) results[index] = result;
+  else results.push(result);
+  render();
+}
+fetch("/reports/club_report_build_status.csv?qa=" + Date.now())
+  .then((response) => response.text())
+  .then((text) => parseCsv(text).filter((row) => row.status === "success").map((row) => row.idd))
+  .then((ids) => {
+    for (const id of ids) {
+      for (const width of widths) {
+        const frame = document.createElement("iframe");
+        frame.dataset.idd = id;
+        frame.dataset.width = String(width);
+        frame.style.width = width + "px";
+        frame.src = `/reports/dancer_${id}_report.html?qa=${Date.now()}`;
+        frame.addEventListener("load", () => collect(frame));
+        document.getElementById("frames").appendChild(frame);
+      }
+    }
+    setInterval(() => document.querySelectorAll("iframe").forEach(collect), 1000);
+  });
+</script>

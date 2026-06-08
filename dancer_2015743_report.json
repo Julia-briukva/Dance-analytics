@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-06-07T19:01:55.812884+00:00",
+    "generated_at": "2026-06-08T10:04:54.989568+00:00",
     "analytics_version": "report_layer_v1",
     "database": "database/compreg_spb_2025_2026.sqlite"
   },
@@ -9,7 +9,16 @@
     "idd": "2015743",
     "name": "Юнцова Милана",
     "club": "Триумф",
-    "city": "Санкт-Петербург"
+    "city": "Санкт-Петербург",
+    "coaches_st": "Порохина Мария",
+    "coaches_la": "Порохина Мария",
+    "class_st": "C",
+    "skr_class_st": null,
+    "norm_status_st": null,
+    "class_la": "C",
+    "skr_class_la": "83.522",
+    "norm_status_la": "норматив на B класс выполнен",
+    "profile_source": "data/cache/dancer_profiles/2015743_danceinfo_post_ci_2015743.html"
   },
   "summary": {
     "protocols": 11,
@@ -15328,6 +15337,11 @@
           "Юниоры-1+2 D+C Соло Ж La",
           "Юниоры-2 RS Соло Ж La"
         ],
+        "categories_display": [
+          "Юниоры-1+2 C+B Соло Ж",
+          "Юниоры-1+2 D+C Соло Ж",
+          "Юниоры-2 RS Соло Ж"
+        ],
         "programs": [
           "latin"
         ],
@@ -15464,6 +15478,18 @@
             "tied_metric_value": null
           }
         ],
+        "program_briefs": [
+          {
+            "program": "latin",
+            "program_label": "Латина",
+            "status": "final",
+            "place_labels": [
+              "2 место",
+              "4 место"
+            ],
+            "text": "Латина: 2 место, 4 место · финал"
+          }
+        ],
         "dance_results": [
           {
             "event_date": "2026-02-23",
@@ -15483,7 +15509,15 @@
             "result_source": "dance_final_place",
             "result_place": 2.0,
             "result_place_label": "2 место",
-            "date": "2026-02-23"
+            "date": "2026-02-23",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 0,
+            "numeric_marks": 9,
+            "category_display": "Юниоры-1+2 D+C Соло Ж",
+            "marks_label": "9 оценок",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2026-02-23",
@@ -15503,7 +15537,15 @@
             "result_source": "dance_final_place",
             "result_place": 2.0,
             "result_place_label": "2 место",
-            "date": "2026-02-23"
+            "date": "2026-02-23",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 0,
+            "numeric_marks": 9,
+            "category_display": "Юниоры-1+2 D+C Соло Ж",
+            "marks_label": "9 оценок",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2026-02-23",
@@ -15523,7 +15565,15 @@
             "result_source": "dance_final_place",
             "result_place": 2.0,
             "result_place_label": "2 место",
-            "date": "2026-02-23"
+            "date": "2026-02-23",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 0,
+            "numeric_marks": 9,
+            "category_display": "Юниоры-1+2 D+C Соло Ж",
+            "marks_label": "9 оценок",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2026-02-23",
@@ -15543,7 +15593,15 @@
             "result_source": "dance_final_place",
             "result_place": 1.0,
             "result_place_label": "1 место",
-            "date": "2026-02-23"
+            "date": "2026-02-23",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 0,
+            "numeric_marks": 9,
+            "category_display": "Юниоры-1+2 D+C Соло Ж",
+            "marks_label": "9 оценок",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2026-02-23",
@@ -15563,7 +15621,15 @@
             "result_source": "dance_final_place",
             "result_place": 2.0,
             "result_place_label": "2 место",
-            "date": "2026-02-23"
+            "date": "2026-02-23",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 0,
+            "numeric_marks": 9,
+            "category_display": "Юниоры-1+2 D+C Соло Ж",
+            "marks_label": "9 оценок",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2026-02-23",
@@ -15583,7 +15649,15 @@
             "result_source": "dance_final_place",
             "result_place": 4.0,
             "result_place_label": "4 место",
-            "date": "2026-02-23"
+            "date": "2026-02-23",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 0,
+            "numeric_marks": 11,
+            "category_display": "Юниоры-1+2 C+B Соло Ж",
+            "marks_label": "11 оценок",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2026-02-23",
@@ -15603,7 +15677,15 @@
             "result_source": "dance_final_place",
             "result_place": 4.0,
             "result_place_label": "4 место",
-            "date": "2026-02-23"
+            "date": "2026-02-23",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 0,
+            "numeric_marks": 11,
+            "category_display": "Юниоры-1+2 C+B Соло Ж",
+            "marks_label": "11 оценок",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2026-02-23",
@@ -15623,7 +15705,15 @@
             "result_source": "dance_final_place",
             "result_place": 4.0,
             "result_place_label": "4 место",
-            "date": "2026-02-23"
+            "date": "2026-02-23",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 0,
+            "numeric_marks": 11,
+            "category_display": "Юниоры-1+2 C+B Соло Ж",
+            "marks_label": "11 оценок",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2026-02-23",
@@ -15643,7 +15733,15 @@
             "result_source": "dance_final_place",
             "result_place": 4.0,
             "result_place_label": "4 место",
-            "date": "2026-02-23"
+            "date": "2026-02-23",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 0,
+            "numeric_marks": 11,
+            "category_display": "Юниоры-1+2 C+B Соло Ж",
+            "marks_label": "11 оценок",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2026-02-23",
@@ -15663,7 +15761,15 @@
             "result_source": "dance_final_place",
             "result_place": 4.0,
             "result_place_label": "4 место",
-            "date": "2026-02-23"
+            "date": "2026-02-23",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 0,
+            "numeric_marks": 11,
+            "category_display": "Юниоры-1+2 C+B Соло Ж",
+            "marks_label": "11 оценок",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2026-02-23",
@@ -15683,7 +15789,15 @@
             "result_source": "dance_final_place",
             "result_place": 2.0,
             "result_place_label": "2 место",
-            "date": "2026-02-23"
+            "date": "2026-02-23",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 0,
+            "numeric_marks": 11,
+            "category_display": "Юниоры-2 RS Соло Ж",
+            "marks_label": "11 оценок",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2026-02-23",
@@ -15703,7 +15817,15 @@
             "result_source": "dance_final_place",
             "result_place": 2.0,
             "result_place_label": "2 место",
-            "date": "2026-02-23"
+            "date": "2026-02-23",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 0,
+            "numeric_marks": 11,
+            "category_display": "Юниоры-2 RS Соло Ж",
+            "marks_label": "11 оценок",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2026-02-23",
@@ -15723,7 +15845,15 @@
             "result_source": "dance_final_place",
             "result_place": 2.0,
             "result_place_label": "2 место",
-            "date": "2026-02-23"
+            "date": "2026-02-23",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 0,
+            "numeric_marks": 11,
+            "category_display": "Юниоры-2 RS Соло Ж",
+            "marks_label": "11 оценок",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2026-02-23",
@@ -15743,7 +15873,15 @@
             "result_source": "dance_final_place",
             "result_place": 2.0,
             "result_place_label": "2 место",
-            "date": "2026-02-23"
+            "date": "2026-02-23",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 0,
+            "numeric_marks": 11,
+            "category_display": "Юниоры-2 RS Соло Ж",
+            "marks_label": "11 оценок",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2026-02-23",
@@ -15763,7 +15901,15 @@
             "result_source": "dance_final_place",
             "result_place": 2.0,
             "result_place_label": "2 место",
-            "date": "2026-02-23"
+            "date": "2026-02-23",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 0,
+            "numeric_marks": 11,
+            "category_display": "Юниоры-2 RS Соло Ж",
+            "marks_label": "11 оценок",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           }
         ],
         "result_places": [
@@ -15781,6 +15927,9 @@
         "city": "Санкт-Петербург",
         "categories": [
           "Юниоры-1+2 D+C Соло Ж La"
+        ],
+        "categories_display": [
+          "Юниоры-1+2 D+C Соло Ж"
         ],
         "programs": [
           "latin"
@@ -15917,6 +16066,17 @@
             "tied_metric_value": null
           }
         ],
+        "program_briefs": [
+          {
+            "program": "latin",
+            "program_label": "Латина",
+            "status": "final",
+            "place_labels": [
+              "1 место"
+            ],
+            "text": "Латина: 1 место · финал"
+          }
+        ],
         "dance_results": [
           {
             "event_date": "2026-03-01",
@@ -15936,7 +16096,15 @@
             "result_source": "dance_final_place",
             "result_place": 1.0,
             "result_place_label": "1 место",
-            "date": "2026-03-01"
+            "date": "2026-03-01",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 7,
+            "numeric_marks": 9,
+            "category_display": "Юниоры-1+2 D+C Соло Ж",
+            "marks_label": "7 крестов",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2026-03-01",
@@ -15956,7 +16124,15 @@
             "result_source": "dance_final_place",
             "result_place": 1.5,
             "result_place_label": "1.5 место",
-            "date": "2026-03-01"
+            "date": "2026-03-01",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 8,
+            "numeric_marks": 9,
+            "category_display": "Юниоры-1+2 D+C Соло Ж",
+            "marks_label": "8 крестов",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2026-03-01",
@@ -15976,7 +16152,15 @@
             "result_source": "dance_final_place",
             "result_place": 1.0,
             "result_place_label": "1 место",
-            "date": "2026-03-01"
+            "date": "2026-03-01",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 8,
+            "numeric_marks": 9,
+            "category_display": "Юниоры-1+2 D+C Соло Ж",
+            "marks_label": "8 крестов",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2026-03-01",
@@ -15996,7 +16180,15 @@
             "result_source": "dance_final_place",
             "result_place": 1.0,
             "result_place_label": "1 место",
-            "date": "2026-03-01"
+            "date": "2026-03-01",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 9,
+            "numeric_marks": 9,
+            "category_display": "Юниоры-1+2 D+C Соло Ж",
+            "marks_label": "9 крестов",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2026-03-01",
@@ -16016,7 +16208,15 @@
             "result_source": "dance_final_place",
             "result_place": 1.0,
             "result_place_label": "1 место",
-            "date": "2026-03-01"
+            "date": "2026-03-01",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 8,
+            "numeric_marks": 9,
+            "category_display": "Юниоры-1+2 D+C Соло Ж",
+            "marks_label": "8 крестов",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           }
         ],
         "result_places": [
@@ -16036,6 +16236,11 @@
           "EADC Юниоры-1 Соло Ж La",
           "EADC Юниоры-2 RS Соло Ж La",
           "Юниоры-1+2 D+C Соло Ж La"
+        ],
+        "categories_display": [
+          "EADC Юниоры-1 Соло Ж",
+          "EADC Юниоры-2 RS Соло Ж",
+          "Юниоры-1+2 D+C Соло Ж"
         ],
         "programs": [
           "latin"
@@ -16139,6 +16344,18 @@
             "tied_metric_value": null
           }
         ],
+        "program_briefs": [
+          {
+            "program": "latin",
+            "program_label": "Латина",
+            "status": "final",
+            "place_labels": [
+              "2 место",
+              "3 место"
+            ],
+            "text": "Латина: 2 место, 3 место · финал"
+          }
+        ],
         "dance_results": [
           {
             "event_date": "2026-03-08",
@@ -16158,7 +16375,15 @@
             "result_source": "dance_final_place",
             "result_place": 2.0,
             "result_place_label": "2 место",
-            "date": "2026-03-08"
+            "date": "2026-03-08",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 8,
+            "numeric_marks": 9,
+            "category_display": "Юниоры-1+2 D+C Соло Ж",
+            "marks_label": "8 крестов",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2026-03-08",
@@ -16178,7 +16403,15 @@
             "result_source": "dance_final_place",
             "result_place": 2.0,
             "result_place_label": "2 место",
-            "date": "2026-03-08"
+            "date": "2026-03-08",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 9,
+            "numeric_marks": 9,
+            "category_display": "Юниоры-1+2 D+C Соло Ж",
+            "marks_label": "9 крестов",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2026-03-08",
@@ -16198,7 +16431,15 @@
             "result_source": "dance_final_place",
             "result_place": 2.0,
             "result_place_label": "2 место",
-            "date": "2026-03-08"
+            "date": "2026-03-08",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 8,
+            "numeric_marks": 9,
+            "category_display": "Юниоры-1+2 D+C Соло Ж",
+            "marks_label": "8 крестов",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2026-03-08",
@@ -16218,7 +16459,15 @@
             "result_source": "dance_final_place",
             "result_place": 1.0,
             "result_place_label": "1 место",
-            "date": "2026-03-08"
+            "date": "2026-03-08",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 8,
+            "numeric_marks": 9,
+            "category_display": "Юниоры-1+2 D+C Соло Ж",
+            "marks_label": "8 крестов",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2026-03-08",
@@ -16238,7 +16487,15 @@
             "result_source": "dance_final_place",
             "result_place": 2.0,
             "result_place_label": "2 место",
-            "date": "2026-03-08"
+            "date": "2026-03-08",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 9,
+            "numeric_marks": 9,
+            "category_display": "Юниоры-1+2 D+C Соло Ж",
+            "marks_label": "9 крестов",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2026-03-08",
@@ -16258,7 +16515,15 @@
             "result_source": "dance_final_place",
             "result_place": 3.0,
             "result_place_label": "3 место",
-            "date": "2026-03-08"
+            "date": "2026-03-08",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 10,
+            "numeric_marks": 11,
+            "category_display": "EADC Юниоры-2 RS Соло Ж",
+            "marks_label": "10 крестов",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2026-03-08",
@@ -16278,7 +16543,15 @@
             "result_source": "dance_final_place",
             "result_place": 5.0,
             "result_place_label": "5 место",
-            "date": "2026-03-08"
+            "date": "2026-03-08",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 9,
+            "numeric_marks": 11,
+            "category_display": "EADC Юниоры-2 RS Соло Ж",
+            "marks_label": "9 крестов",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2026-03-08",
@@ -16298,7 +16571,15 @@
             "result_source": "dance_final_place",
             "result_place": 3.0,
             "result_place_label": "3 место",
-            "date": "2026-03-08"
+            "date": "2026-03-08",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 11,
+            "numeric_marks": 11,
+            "category_display": "EADC Юниоры-2 RS Соло Ж",
+            "marks_label": "11 крестов",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2026-03-08",
@@ -16318,7 +16599,15 @@
             "result_source": "dance_final_place",
             "result_place": 4.0,
             "result_place_label": "4 место",
-            "date": "2026-03-08"
+            "date": "2026-03-08",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 10,
+            "numeric_marks": 11,
+            "category_display": "EADC Юниоры-2 RS Соло Ж",
+            "marks_label": "10 крестов",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2026-03-08",
@@ -16338,7 +16627,15 @@
             "result_source": "dance_final_place",
             "result_place": 2.0,
             "result_place_label": "2 место",
-            "date": "2026-03-08"
+            "date": "2026-03-08",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 10,
+            "numeric_marks": 11,
+            "category_display": "EADC Юниоры-2 RS Соло Ж",
+            "marks_label": "10 крестов",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2026-03-08",
@@ -16358,7 +16655,15 @@
             "result_source": "dance_final_place",
             "result_place": 3.0,
             "result_place_label": "3 место",
-            "date": "2026-03-08"
+            "date": "2026-03-08",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 0,
+            "numeric_marks": 9,
+            "category_display": "EADC Юниоры-1 Соло Ж",
+            "marks_label": "9 оценок",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2026-03-08",
@@ -16378,7 +16683,15 @@
             "result_source": "dance_final_place",
             "result_place": 1.0,
             "result_place_label": "1 место",
-            "date": "2026-03-08"
+            "date": "2026-03-08",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 0,
+            "numeric_marks": 9,
+            "category_display": "EADC Юниоры-1 Соло Ж",
+            "marks_label": "9 оценок",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2026-03-08",
@@ -16398,7 +16711,15 @@
             "result_source": "dance_final_place",
             "result_place": 2.0,
             "result_place_label": "2 место",
-            "date": "2026-03-08"
+            "date": "2026-03-08",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 0,
+            "numeric_marks": 9,
+            "category_display": "EADC Юниоры-1 Соло Ж",
+            "marks_label": "9 оценок",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2026-03-08",
@@ -16418,7 +16739,15 @@
             "result_source": "dance_final_place",
             "result_place": 3.0,
             "result_place_label": "3 место",
-            "date": "2026-03-08"
+            "date": "2026-03-08",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 0,
+            "numeric_marks": 9,
+            "category_display": "EADC Юниоры-1 Соло Ж",
+            "marks_label": "9 оценок",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2026-03-08",
@@ -16438,7 +16767,15 @@
             "result_source": "dance_final_place",
             "result_place": 5.0,
             "result_place_label": "5 место",
-            "date": "2026-03-08"
+            "date": "2026-03-08",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 0,
+            "numeric_marks": 9,
+            "category_display": "EADC Юниоры-1 Соло Ж",
+            "marks_label": "9 оценок",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           }
         ],
         "result_places": [
@@ -16456,6 +16793,9 @@
         "city": "Санкт-Петербург",
         "categories": [
           "EADC Юниоры-2 Соло Ж La"
+        ],
+        "categories_display": [
+          "EADC Юниоры-2 Соло Ж"
         ],
         "programs": [
           "latin"
@@ -16592,6 +16932,17 @@
             "tied_metric_value": null
           }
         ],
+        "program_briefs": [
+          {
+            "program": "latin",
+            "program_label": "Латина",
+            "status": "final",
+            "place_labels": [
+              "3 место"
+            ],
+            "text": "Латина: 3 место · финал"
+          }
+        ],
         "dance_results": [
           {
             "event_date": "2026-04-05",
@@ -16611,7 +16962,15 @@
             "result_source": "dance_final_place",
             "result_place": 3.0,
             "result_place_label": "3 место",
-            "date": "2026-04-05"
+            "date": "2026-04-05",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 14,
+            "numeric_marks": 15,
+            "category_display": "EADC Юниоры-2 Соло Ж",
+            "marks_label": "14 крестов",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2026-04-05",
@@ -16631,7 +16990,15 @@
             "result_source": "dance_final_place",
             "result_place": 3.0,
             "result_place_label": "3 место",
-            "date": "2026-04-05"
+            "date": "2026-04-05",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 15,
+            "numeric_marks": 15,
+            "category_display": "EADC Юниоры-2 Соло Ж",
+            "marks_label": "15 крестов",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2026-04-05",
@@ -16651,7 +17018,15 @@
             "result_source": "dance_final_place",
             "result_place": 3.0,
             "result_place_label": "3 место",
-            "date": "2026-04-05"
+            "date": "2026-04-05",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 13,
+            "numeric_marks": 15,
+            "category_display": "EADC Юниоры-2 Соло Ж",
+            "marks_label": "13 крестов",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2026-04-05",
@@ -16671,7 +17046,15 @@
             "result_source": "dance_final_place",
             "result_place": 4.0,
             "result_place_label": "4 место",
-            "date": "2026-04-05"
+            "date": "2026-04-05",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 14,
+            "numeric_marks": 15,
+            "category_display": "EADC Юниоры-2 Соло Ж",
+            "marks_label": "14 крестов",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2026-04-05",
@@ -16691,7 +17074,15 @@
             "result_source": "dance_final_place",
             "result_place": 4.0,
             "result_place_label": "4 место",
-            "date": "2026-04-05"
+            "date": "2026-04-05",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 14,
+            "numeric_marks": 15,
+            "category_display": "EADC Юниоры-2 Соло Ж",
+            "marks_label": "14 крестов",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           }
         ],
         "result_places": [
@@ -16708,6 +17099,9 @@
         "city": "Санкт-Петербург",
         "categories": [
           "Юниоры-1+2 D+C Соло Ж La"
+        ],
+        "categories_display": [
+          "Юниоры-1+2 D+C Соло Ж"
         ],
         "programs": [
           "latin"
@@ -16833,6 +17227,17 @@
             "tied_metric_value": null
           }
         ],
+        "program_briefs": [
+          {
+            "program": "latin",
+            "program_label": "Латина",
+            "status": "final",
+            "place_labels": [
+              "3 место"
+            ],
+            "text": "Латина: 3 место · финал"
+          }
+        ],
         "dance_results": [
           {
             "event_date": "2026-04-12",
@@ -16852,7 +17257,15 @@
             "result_source": "dance_final_place",
             "result_place": 6.0,
             "result_place_label": "6 место",
-            "date": "2026-04-12"
+            "date": "2026-04-12",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 19,
+            "numeric_marks": 11,
+            "category_display": "Юниоры-1+2 D+C Соло Ж",
+            "marks_label": "19 крестов",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2026-04-12",
@@ -16872,7 +17285,15 @@
             "result_source": "dance_final_place",
             "result_place": 4.0,
             "result_place_label": "4 место",
-            "date": "2026-04-12"
+            "date": "2026-04-12",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 16,
+            "numeric_marks": 11,
+            "category_display": "Юниоры-1+2 D+C Соло Ж",
+            "marks_label": "16 крестов",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2026-04-12",
@@ -16892,7 +17313,15 @@
             "result_source": "dance_final_place",
             "result_place": 3.0,
             "result_place_label": "3 место",
-            "date": "2026-04-12"
+            "date": "2026-04-12",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 15,
+            "numeric_marks": 11,
+            "category_display": "Юниоры-1+2 D+C Соло Ж",
+            "marks_label": "15 крестов",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2026-04-12",
@@ -16912,7 +17341,15 @@
             "result_source": "dance_final_place",
             "result_place": 3.0,
             "result_place_label": "3 место",
-            "date": "2026-04-12"
+            "date": "2026-04-12",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 18,
+            "numeric_marks": 11,
+            "category_display": "Юниоры-1+2 D+C Соло Ж",
+            "marks_label": "18 крестов",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2026-04-12",
@@ -16932,7 +17369,15 @@
             "result_source": "dance_final_place",
             "result_place": 3.0,
             "result_place_label": "3 место",
-            "date": "2026-04-12"
+            "date": "2026-04-12",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 17,
+            "numeric_marks": 11,
+            "category_display": "Юниоры-1+2 D+C Соло Ж",
+            "marks_label": "17 крестов",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           }
         ],
         "result_places": [
@@ -16950,6 +17395,10 @@
         "categories": [
           "EADC Юниоры-2 Соло Ж La",
           "Юниоры-1+2 D+C Соло Ж La"
+        ],
+        "categories_display": [
+          "EADC Юниоры-2 Соло Ж",
+          "Юниоры-1+2 D+C Соло Ж"
         ],
         "programs": [
           "latin"
@@ -17086,6 +17535,17 @@
             "tied_metric_value": null
           }
         ],
+        "program_briefs": [
+          {
+            "program": "latin",
+            "program_label": "Латина",
+            "status": "final",
+            "place_labels": [
+              "3 место"
+            ],
+            "text": "Латина: 3 место · финал"
+          }
+        ],
         "dance_results": [
           {
             "event_date": "2026-05-24",
@@ -17105,7 +17565,15 @@
             "result_source": "dance_final_place",
             "result_place": 3.0,
             "result_place_label": "3 место",
-            "date": "2026-05-24"
+            "date": "2026-05-24",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 7,
+            "numeric_marks": 11,
+            "category_display": "Юниоры-1+2 D+C Соло Ж",
+            "marks_label": "7 крестов",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2026-05-24",
@@ -17125,7 +17593,15 @@
             "result_source": "dance_final_place",
             "result_place": 3.0,
             "result_place_label": "3 место",
-            "date": "2026-05-24"
+            "date": "2026-05-24",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 8,
+            "numeric_marks": 11,
+            "category_display": "Юниоры-1+2 D+C Соло Ж",
+            "marks_label": "8 крестов",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2026-05-24",
@@ -17145,7 +17621,15 @@
             "result_source": "dance_final_place",
             "result_place": 2.0,
             "result_place_label": "2 место",
-            "date": "2026-05-24"
+            "date": "2026-05-24",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 8,
+            "numeric_marks": 11,
+            "category_display": "Юниоры-1+2 D+C Соло Ж",
+            "marks_label": "8 крестов",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2026-05-24",
@@ -17165,7 +17649,15 @@
             "result_source": "dance_final_place",
             "result_place": 3.0,
             "result_place_label": "3 место",
-            "date": "2026-05-24"
+            "date": "2026-05-24",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 8,
+            "numeric_marks": 11,
+            "category_display": "Юниоры-1+2 D+C Соло Ж",
+            "marks_label": "8 крестов",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2026-05-24",
@@ -17185,7 +17677,155 @@
             "result_source": "dance_final_place",
             "result_place": 3.0,
             "result_place_label": "3 место",
-            "date": "2026-05-24"
+            "date": "2026-05-24",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 10,
+            "numeric_marks": 11,
+            "category_display": "Юниоры-1+2 D+C Соло Ж",
+            "marks_label": "10 крестов",
+            "protocol_place_value": null,
+            "protocol_place_label": null
+          },
+          {
+            "event_date": "2026-05-24",
+            "tournament_id": 2026052402,
+            "tournament_title": "Чемпионат СПТЛ 2026 (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
+            "protocol_id": 80615,
+            "category": "EADC Юниоры-2 Соло Ж La",
+            "program": "latin",
+            "dance": "S",
+            "final_place": 17.5,
+            "best_place": 17.5,
+            "worst_place": 17.5,
+            "n_results": 1,
+            "judge_marks": 3,
+            "dance_code": "S",
+            "result_source": "protocol_place",
+            "result_place": 17.5,
+            "result_place_label": "17–18 место",
+            "date": "2026-05-24",
+            "round_label": "1-4 финала",
+            "result_detail": "по протоколу",
+            "cross_marks": 3,
+            "numeric_marks": 0,
+            "category_display": "EADC Юниоры-2 Соло Ж",
+            "marks_label": "3 крестов",
+            "protocol_place_value": 17.5,
+            "protocol_place_label": "17–18 место"
+          },
+          {
+            "event_date": "2026-05-24",
+            "tournament_id": 2026052402,
+            "tournament_title": "Чемпионат СПТЛ 2026 (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
+            "protocol_id": 80615,
+            "category": "EADC Юниоры-2 Соло Ж La",
+            "program": "latin",
+            "dance": "C",
+            "final_place": 17.5,
+            "best_place": 17.5,
+            "worst_place": 17.5,
+            "n_results": 1,
+            "judge_marks": 4,
+            "dance_code": "Ch",
+            "result_source": "protocol_place",
+            "result_place": 17.5,
+            "result_place_label": "17–18 место",
+            "date": "2026-05-24",
+            "round_label": "1-4 финала",
+            "result_detail": "по протоколу",
+            "cross_marks": 4,
+            "numeric_marks": 0,
+            "category_display": "EADC Юниоры-2 Соло Ж",
+            "marks_label": "4 крестов",
+            "protocol_place_value": 17.5,
+            "protocol_place_label": "17–18 место"
+          },
+          {
+            "event_date": "2026-05-24",
+            "tournament_id": 2026052402,
+            "tournament_title": "Чемпионат СПТЛ 2026 (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
+            "protocol_id": 80615,
+            "category": "EADC Юниоры-2 Соло Ж La",
+            "program": "latin",
+            "dance": "R",
+            "final_place": 17.5,
+            "best_place": 17.5,
+            "worst_place": 17.5,
+            "n_results": 1,
+            "judge_marks": 2,
+            "dance_code": "R",
+            "result_source": "protocol_place",
+            "result_place": 17.5,
+            "result_place_label": "17–18 место",
+            "date": "2026-05-24",
+            "round_label": "1-4 финала",
+            "result_detail": "по протоколу",
+            "cross_marks": 2,
+            "numeric_marks": 0,
+            "category_display": "EADC Юниоры-2 Соло Ж",
+            "marks_label": "2 крестов",
+            "protocol_place_value": 17.5,
+            "protocol_place_label": "17–18 место"
+          },
+          {
+            "event_date": "2026-05-24",
+            "tournament_id": 2026052402,
+            "tournament_title": "Чемпионат СПТЛ 2026 (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
+            "protocol_id": 80615,
+            "category": "EADC Юниоры-2 Соло Ж La",
+            "program": "latin",
+            "dance": "P",
+            "final_place": 17.5,
+            "best_place": 17.5,
+            "worst_place": 17.5,
+            "n_results": 1,
+            "judge_marks": 6,
+            "dance_code": "P",
+            "result_source": "protocol_place",
+            "result_place": 17.5,
+            "result_place_label": "17–18 место",
+            "date": "2026-05-24",
+            "round_label": "1-4 финала",
+            "result_detail": "по протоколу",
+            "cross_marks": 6,
+            "numeric_marks": 0,
+            "category_display": "EADC Юниоры-2 Соло Ж",
+            "marks_label": "6 крестов",
+            "protocol_place_value": 17.5,
+            "protocol_place_label": "17–18 место"
+          },
+          {
+            "event_date": "2026-05-24",
+            "tournament_id": 2026052402,
+            "tournament_title": "Чемпионат СПТЛ 2026 (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
+            "protocol_id": 80615,
+            "category": "EADC Юниоры-2 Соло Ж La",
+            "program": "latin",
+            "dance": "J",
+            "final_place": 17.5,
+            "best_place": 17.5,
+            "worst_place": 17.5,
+            "n_results": 1,
+            "judge_marks": 5,
+            "dance_code": "J",
+            "result_source": "protocol_place",
+            "result_place": 17.5,
+            "result_place_label": "17–18 место",
+            "date": "2026-05-24",
+            "round_label": "1-4 финала",
+            "result_detail": "по протоколу",
+            "cross_marks": 5,
+            "numeric_marks": 0,
+            "category_display": "EADC Юниоры-2 Соло Ж",
+            "marks_label": "5 крестов",
+            "protocol_place_value": 17.5,
+            "protocol_place_label": "17–18 место"
           }
         ],
         "result_places": [

@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-06-07T19:00:32.484852+00:00",
+    "generated_at": "2026-06-08T10:03:14.482197+00:00",
     "analytics_version": "report_layer_v1",
     "database": "database/compreg_spb_2025_2026.sqlite"
   },
@@ -9,7 +9,16 @@
     "idd": "2023028",
     "name": "Аббясова Амина",
     "club": "Триумф",
-    "city": "Санкт-Петербург"
+    "city": "Санкт-Петербург",
+    "coaches_st": "Маляева Олеся",
+    "coaches_la": "Маляева Олеся",
+    "class_st": "E",
+    "skr_class_st": "22.573",
+    "norm_status_st": "норматив на E класс выполнен",
+    "class_la": "E",
+    "skr_class_la": "16.546",
+    "norm_status_la": "норматив на E класс выполнен",
+    "profile_source": "data/cache/dancer_profiles/2023028_danceinfo_post_ci_2023028.html"
   },
   "summary": {
     "protocols": 12,
@@ -5623,6 +5632,9 @@
           "Ювеналы-2 N соло Ж La",
           "Ювеналы-2 N соло Ж St"
         ],
+        "categories_display": [
+          "Ювеналы-2 N соло Ж"
+        ],
         "programs": [
           "latin",
           "standard"
@@ -5751,6 +5763,26 @@
             "tied_metric_value": null
           }
         ],
+        "program_briefs": [
+          {
+            "program": "standard",
+            "program_label": "Стандарт",
+            "status": "final",
+            "place_labels": [
+              "2 место"
+            ],
+            "text": "Стандарт: 2 место · финал"
+          },
+          {
+            "program": "latin",
+            "program_label": "Латина",
+            "status": "final",
+            "place_labels": [
+              "7 место"
+            ],
+            "text": "Латина: 7 место · финал"
+          }
+        ],
         "dance_results": [
           {
             "event_date": "2026-02-01",
@@ -5770,7 +5802,15 @@
             "result_source": "dance_final_place",
             "result_place": 2.0,
             "result_place_label": "2 место",
-            "date": "2026-02-01"
+            "date": "2026-02-01",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 14,
+            "numeric_marks": 7,
+            "category_display": "Ювеналы-2 N соло Ж",
+            "marks_label": "14 крестов",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2026-02-01",
@@ -5790,7 +5830,15 @@
             "result_source": "dance_final_place",
             "result_place": 2.0,
             "result_place_label": "2 место",
-            "date": "2026-02-01"
+            "date": "2026-02-01",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 13,
+            "numeric_marks": 7,
+            "category_display": "Ювеналы-2 N соло Ж",
+            "marks_label": "13 крестов",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2026-02-01",
@@ -5810,7 +5858,15 @@
             "result_source": "dance_final_place",
             "result_place": 7.0,
             "result_place_label": "7 место",
-            "date": "2026-02-01"
+            "date": "2026-02-01",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 8,
+            "numeric_marks": 9,
+            "category_display": "Ювеналы-2 N соло Ж",
+            "marks_label": "8 крестов",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2026-02-01",
@@ -5830,7 +5886,15 @@
             "result_source": "dance_final_place",
             "result_place": 6.0,
             "result_place_label": "6 место",
-            "date": "2026-02-01"
+            "date": "2026-02-01",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 10,
+            "numeric_marks": 9,
+            "category_display": "Ювеналы-2 N соло Ж",
+            "marks_label": "10 крестов",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           }
         ],
         "result_places": [
@@ -5849,6 +5913,9 @@
         "categories": [
           "Ювеналы-1+2 N Соло Ж La",
           "Ювеналы-1+2 N Соло Ж St"
+        ],
+        "categories_display": [
+          "Ювеналы-1+2 N Соло Ж"
         ],
         "programs": [
           "latin",
@@ -5928,6 +5995,23 @@
             "message": "итоговое место участника не найдено"
           }
         ],
+        "program_briefs": [
+          {
+            "program": "standard",
+            "program_label": "Стандарт",
+            "status": "final",
+            "place_labels": [
+              "3 место"
+            ],
+            "text": "Стандарт: 3 место · финал"
+          },
+          {
+            "program": "latin",
+            "program_label": "Латина",
+            "status": "not_final",
+            "text": "Латина: не прошел в финал"
+          }
+        ],
         "dance_results": [
           {
             "event_date": "2026-03-08",
@@ -5947,7 +6031,15 @@
             "result_source": "dance_final_place",
             "result_place": 3.0,
             "result_place_label": "3 место",
-            "date": "2026-03-08"
+            "date": "2026-03-08",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 14,
+            "numeric_marks": 7,
+            "category_display": "Ювеналы-1+2 N Соло Ж",
+            "marks_label": "14 крестов",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2026-03-08",
@@ -5967,7 +6059,71 @@
             "result_source": "dance_final_place",
             "result_place": 3.0,
             "result_place_label": "3 место",
-            "date": "2026-03-08"
+            "date": "2026-03-08",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 17,
+            "numeric_marks": 7,
+            "category_display": "Ювеналы-1+2 N Соло Ж",
+            "marks_label": "17 крестов",
+            "protocol_place_value": null,
+            "protocol_place_label": null
+          },
+          {
+            "event_date": "2026-03-08",
+            "tournament_id": 2026030800,
+            "tournament_title": "Амбассадор 2026 (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
+            "protocol_id": 77949,
+            "category": "Ювеналы-1+2 N Соло Ж La",
+            "program": "latin",
+            "dance": "C",
+            "final_place": 12.0,
+            "best_place": 12.0,
+            "worst_place": 12.0,
+            "n_results": 1,
+            "judge_marks": 10,
+            "dance_code": "Ch",
+            "result_source": "protocol_place",
+            "result_place": 12.0,
+            "result_place_label": "12 место",
+            "date": "2026-03-08",
+            "round_label": "1-2 финала",
+            "result_detail": "по протоколу",
+            "cross_marks": 10,
+            "numeric_marks": 0,
+            "category_display": "Ювеналы-1+2 N Соло Ж",
+            "marks_label": "10 крестов",
+            "protocol_place_value": 12.0,
+            "protocol_place_label": "12 место"
+          },
+          {
+            "event_date": "2026-03-08",
+            "tournament_id": 2026030800,
+            "tournament_title": "Амбассадор 2026 (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
+            "protocol_id": 77949,
+            "category": "Ювеналы-1+2 N Соло Ж La",
+            "program": "latin",
+            "dance": "J",
+            "final_place": 12.0,
+            "best_place": 12.0,
+            "worst_place": 12.0,
+            "n_results": 1,
+            "judge_marks": 13,
+            "dance_code": "J",
+            "result_source": "protocol_place",
+            "result_place": 12.0,
+            "result_place_label": "12 место",
+            "date": "2026-03-08",
+            "round_label": "1-2 финала",
+            "result_detail": "по протоколу",
+            "cross_marks": 13,
+            "numeric_marks": 0,
+            "category_display": "Ювеналы-1+2 N Соло Ж",
+            "marks_label": "13 крестов",
+            "protocol_place_value": 12.0,
+            "protocol_place_label": "12 место"
           }
         ],
         "result_places": [
@@ -5988,6 +6144,10 @@
           "Ювеналы-2 N Соло Ж St",
           "Ювеналы-2 N+E Соло Ж La",
           "Ювеналы-2 N+E Соло Ж St"
+        ],
+        "categories_display": [
+          "Ювеналы-2 N Соло Ж",
+          "Ювеналы-2 N+E Соло Ж"
         ],
         "programs": [
           "latin",
@@ -6118,6 +6278,23 @@
             "message": "итоговое место участника не найдено"
           }
         ],
+        "program_briefs": [
+          {
+            "program": "standard",
+            "program_label": "Стандарт",
+            "status": "final",
+            "place_labels": [
+              "6 место"
+            ],
+            "text": "Стандарт: 6 место · финал"
+          },
+          {
+            "program": "latin",
+            "program_label": "Латина",
+            "status": "not_final",
+            "text": "Латина: не прошел в финал"
+          }
+        ],
         "dance_results": [
           {
             "event_date": "2026-04-26",
@@ -6137,7 +6314,15 @@
             "result_source": "dance_final_place",
             "result_place": 7.0,
             "result_place_label": "7 место",
-            "date": "2026-04-26"
+            "date": "2026-04-26",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 12,
+            "numeric_marks": 9,
+            "category_display": "Ювеналы-2 N Соло Ж",
+            "marks_label": "12 крестов",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2026-04-26",
@@ -6157,7 +6342,211 @@
             "result_source": "dance_final_place",
             "result_place": 5.0,
             "result_place_label": "5 место",
-            "date": "2026-04-26"
+            "date": "2026-04-26",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 16,
+            "numeric_marks": 9,
+            "category_display": "Ювеналы-2 N Соло Ж",
+            "marks_label": "16 крестов",
+            "protocol_place_value": null,
+            "protocol_place_label": null
+          },
+          {
+            "event_date": "2026-04-26",
+            "tournament_id": 2026042600,
+            "tournament_title": "Карнавал 2026 (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
+            "protocol_id": 79404,
+            "category": "Ювеналы-2 N+E Соло Ж St",
+            "program": "standard",
+            "dance": "W",
+            "final_place": 13.5,
+            "best_place": 13.5,
+            "worst_place": 13.5,
+            "n_results": 1,
+            "judge_marks": 8,
+            "dance_code": "W",
+            "result_source": "protocol_place",
+            "result_place": 13.5,
+            "result_place_label": "13–14 место",
+            "date": "2026-04-26",
+            "round_label": "1-2 финала",
+            "result_detail": "по протоколу",
+            "cross_marks": 8,
+            "numeric_marks": 0,
+            "category_display": "Ювеналы-2 N+E Соло Ж",
+            "marks_label": "8 крестов",
+            "protocol_place_value": 13.5,
+            "protocol_place_label": "13–14 место"
+          },
+          {
+            "event_date": "2026-04-26",
+            "tournament_id": 2026042600,
+            "tournament_title": "Карнавал 2026 (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
+            "protocol_id": 79404,
+            "category": "Ювеналы-2 N+E Соло Ж St",
+            "program": "standard",
+            "dance": "T",
+            "final_place": 13.5,
+            "best_place": 13.5,
+            "worst_place": 13.5,
+            "n_results": 1,
+            "judge_marks": 8,
+            "dance_code": "T",
+            "result_source": "protocol_place",
+            "result_place": 13.5,
+            "result_place_label": "13–14 место",
+            "date": "2026-04-26",
+            "round_label": "1-2 финала",
+            "result_detail": "по протоколу",
+            "cross_marks": 8,
+            "numeric_marks": 0,
+            "category_display": "Ювеналы-2 N+E Соло Ж",
+            "marks_label": "8 крестов",
+            "protocol_place_value": 13.5,
+            "protocol_place_label": "13–14 место"
+          },
+          {
+            "event_date": "2026-04-26",
+            "tournament_id": 2026042600,
+            "tournament_title": "Карнавал 2026 (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
+            "protocol_id": 79404,
+            "category": "Ювеналы-2 N+E Соло Ж St",
+            "program": "standard",
+            "dance": "Q",
+            "final_place": 13.5,
+            "best_place": 13.5,
+            "worst_place": 13.5,
+            "n_results": 1,
+            "judge_marks": 10,
+            "dance_code": "Q",
+            "result_source": "protocol_place",
+            "result_place": 13.5,
+            "result_place_label": "13–14 место",
+            "date": "2026-04-26",
+            "round_label": "1-2 финала",
+            "result_detail": "по протоколу",
+            "cross_marks": 10,
+            "numeric_marks": 0,
+            "category_display": "Ювеналы-2 N+E Соло Ж",
+            "marks_label": "10 крестов",
+            "protocol_place_value": 13.5,
+            "protocol_place_label": "13–14 место"
+          },
+          {
+            "event_date": "2026-04-26",
+            "tournament_id": 2026042600,
+            "tournament_title": "Карнавал 2026 (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
+            "protocol_id": 79415,
+            "category": "Ювеналы-2 N Соло Ж La",
+            "program": "latin",
+            "dance": "C",
+            "final_place": 20.0,
+            "best_place": 20.0,
+            "worst_place": 20.0,
+            "n_results": 1,
+            "judge_marks": 3,
+            "dance_code": "Ch",
+            "result_source": "protocol_place",
+            "result_place": 20.0,
+            "result_place_label": "20 место",
+            "date": "2026-04-26",
+            "round_label": "1-4 финала",
+            "result_detail": "по протоколу",
+            "cross_marks": 3,
+            "numeric_marks": 0,
+            "category_display": "Ювеналы-2 N Соло Ж",
+            "marks_label": "3 крестов",
+            "protocol_place_value": 20.0,
+            "protocol_place_label": "20 место"
+          },
+          {
+            "event_date": "2026-04-26",
+            "tournament_id": 2026042600,
+            "tournament_title": "Карнавал 2026 (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
+            "protocol_id": 79415,
+            "category": "Ювеналы-2 N Соло Ж La",
+            "program": "latin",
+            "dance": "J",
+            "final_place": 20.0,
+            "best_place": 20.0,
+            "worst_place": 20.0,
+            "n_results": 1,
+            "judge_marks": 2,
+            "dance_code": "J",
+            "result_source": "protocol_place",
+            "result_place": 20.0,
+            "result_place_label": "20 место",
+            "date": "2026-04-26",
+            "round_label": "1-4 финала",
+            "result_detail": "по протоколу",
+            "cross_marks": 2,
+            "numeric_marks": 0,
+            "category_display": "Ювеналы-2 N Соло Ж",
+            "marks_label": "2 крестов",
+            "protocol_place_value": 20.0,
+            "protocol_place_label": "20 место"
+          },
+          {
+            "event_date": "2026-04-26",
+            "tournament_id": 2026042600,
+            "tournament_title": "Карнавал 2026 (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
+            "protocol_id": 79419,
+            "category": "Ювеналы-2 N+E Соло Ж La",
+            "program": "latin",
+            "dance": "C",
+            "final_place": 25.0,
+            "best_place": 25.0,
+            "worst_place": 25.0,
+            "n_results": 1,
+            "judge_marks": 2,
+            "dance_code": "Ch",
+            "result_source": "protocol_place",
+            "result_place": 25.0,
+            "result_place_label": "25 место",
+            "date": "2026-04-26",
+            "round_label": "1-4 финала",
+            "result_detail": "по протоколу",
+            "cross_marks": 2,
+            "numeric_marks": 0,
+            "category_display": "Ювеналы-2 N+E Соло Ж",
+            "marks_label": "2 крестов",
+            "protocol_place_value": 25.0,
+            "protocol_place_label": "25 место"
+          },
+          {
+            "event_date": "2026-04-26",
+            "tournament_id": 2026042600,
+            "tournament_title": "Карнавал 2026 (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
+            "protocol_id": 79419,
+            "category": "Ювеналы-2 N+E Соло Ж La",
+            "program": "latin",
+            "dance": "R",
+            "final_place": 25.0,
+            "best_place": 25.0,
+            "worst_place": 25.0,
+            "n_results": 1,
+            "judge_marks": 5,
+            "dance_code": "R",
+            "result_source": "protocol_place",
+            "result_place": 25.0,
+            "result_place_label": "25 место",
+            "date": "2026-04-26",
+            "round_label": "1-4 финала",
+            "result_detail": "по протоколу",
+            "cross_marks": 5,
+            "numeric_marks": 0,
+            "category_display": "Ювеналы-2 N+E Соло Ж",
+            "marks_label": "5 крестов",
+            "protocol_place_value": 25.0,
+            "protocol_place_label": "25 место"
           }
         ],
         "result_places": [
@@ -6180,6 +6569,10 @@
           "Ювеналы-2 N Соло Ж St",
           "Ювеналы-2 N+E Соло Ж La",
           "Ювеналы-2 N+E Соло Ж St"
+        ],
+        "categories_display": [
+          "Ювеналы-2 N Соло Ж",
+          "Ювеналы-2 N+E Соло Ж"
         ],
         "programs": [
           "latin",
@@ -6270,6 +6663,26 @@
             "tied_metric_label": "6 место"
           }
         ],
+        "program_briefs": [
+          {
+            "program": "standard",
+            "program_label": "Стандарт",
+            "status": "final",
+            "place_labels": [
+              "5 место"
+            ],
+            "text": "Стандарт: 5 место · финал"
+          },
+          {
+            "program": "latin",
+            "program_label": "Латина",
+            "status": "final",
+            "place_labels": [
+              "6 место"
+            ],
+            "text": "Латина: 6 место · финал"
+          }
+        ],
         "dance_results": [
           {
             "event_date": "2026-05-24",
@@ -6289,7 +6702,15 @@
             "result_source": "dance_final_place",
             "result_place": 5.0,
             "result_place_label": "5 место",
-            "date": "2026-05-24"
+            "date": "2026-05-24",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 17,
+            "numeric_marks": 11,
+            "category_display": "Ювеналы-2 N Соло Ж",
+            "marks_label": "17 крестов",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2026-05-24",
@@ -6309,7 +6730,99 @@
             "result_source": "dance_final_place",
             "result_place": 5.0,
             "result_place_label": "5 место",
-            "date": "2026-05-24"
+            "date": "2026-05-24",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 20,
+            "numeric_marks": 11,
+            "category_display": "Ювеналы-2 N Соло Ж",
+            "marks_label": "20 крестов",
+            "protocol_place_value": null,
+            "protocol_place_label": null
+          },
+          {
+            "event_date": "2026-05-24",
+            "tournament_id": 2026052402,
+            "tournament_title": "Чемпионат СПТЛ 2026 (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
+            "protocol_id": 80570,
+            "category": "Ювеналы-2 N+E Соло Ж St",
+            "program": "standard",
+            "dance": "W",
+            "final_place": 14.0,
+            "best_place": 14.0,
+            "worst_place": 14.0,
+            "n_results": 1,
+            "judge_marks": 4,
+            "dance_code": "W",
+            "result_source": "protocol_place",
+            "result_place": 14.0,
+            "result_place_label": "14 место",
+            "date": "2026-05-24",
+            "round_label": "1-4 финала",
+            "result_detail": "по протоколу",
+            "cross_marks": 4,
+            "numeric_marks": 0,
+            "category_display": "Ювеналы-2 N+E Соло Ж",
+            "marks_label": "4 крестов",
+            "protocol_place_value": 14.0,
+            "protocol_place_label": "14 место"
+          },
+          {
+            "event_date": "2026-05-24",
+            "tournament_id": 2026052402,
+            "tournament_title": "Чемпионат СПТЛ 2026 (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
+            "protocol_id": 80570,
+            "category": "Ювеналы-2 N+E Соло Ж St",
+            "program": "standard",
+            "dance": "T",
+            "final_place": 14.0,
+            "best_place": 14.0,
+            "worst_place": 14.0,
+            "n_results": 1,
+            "judge_marks": 7,
+            "dance_code": "T",
+            "result_source": "protocol_place",
+            "result_place": 14.0,
+            "result_place_label": "14 место",
+            "date": "2026-05-24",
+            "round_label": "1-4 финала",
+            "result_detail": "по протоколу",
+            "cross_marks": 7,
+            "numeric_marks": 0,
+            "category_display": "Ювеналы-2 N+E Соло Ж",
+            "marks_label": "7 крестов",
+            "protocol_place_value": 14.0,
+            "protocol_place_label": "14 место"
+          },
+          {
+            "event_date": "2026-05-24",
+            "tournament_id": 2026052402,
+            "tournament_title": "Чемпионат СПТЛ 2026 (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
+            "protocol_id": 80570,
+            "category": "Ювеналы-2 N+E Соло Ж St",
+            "program": "standard",
+            "dance": "Q",
+            "final_place": 14.0,
+            "best_place": 14.0,
+            "worst_place": 14.0,
+            "n_results": 1,
+            "judge_marks": 4,
+            "dance_code": "Q",
+            "result_source": "protocol_place",
+            "result_place": 14.0,
+            "result_place_label": "14 место",
+            "date": "2026-05-24",
+            "round_label": "1-4 финала",
+            "result_detail": "по протоколу",
+            "cross_marks": 4,
+            "numeric_marks": 0,
+            "category_display": "Ювеналы-2 N+E Соло Ж",
+            "marks_label": "4 крестов",
+            "protocol_place_value": 14.0,
+            "protocol_place_label": "14 место"
           },
           {
             "event_date": "2026-05-24",
@@ -6329,7 +6842,15 @@
             "result_source": "dance_final_place",
             "result_place": 6.0,
             "result_place_label": "6 место",
-            "date": "2026-05-24"
+            "date": "2026-05-24",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 11,
+            "numeric_marks": 11,
+            "category_display": "Ювеналы-2 N Соло Ж",
+            "marks_label": "11 крестов",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2026-05-24",
@@ -6349,7 +6870,99 @@
             "result_source": "dance_final_place",
             "result_place": 6.0,
             "result_place_label": "6 место",
-            "date": "2026-05-24"
+            "date": "2026-05-24",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 9,
+            "numeric_marks": 11,
+            "category_display": "Ювеналы-2 N Соло Ж",
+            "marks_label": "9 крестов",
+            "protocol_place_value": null,
+            "protocol_place_label": null
+          },
+          {
+            "event_date": "2026-05-24",
+            "tournament_id": 2026052402,
+            "tournament_title": "Чемпионат СПТЛ 2026 (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
+            "protocol_id": 80582,
+            "category": "Ювеналы-2 N+E Соло Ж La",
+            "program": "latin",
+            "dance": "C",
+            "final_place": 18.0,
+            "best_place": 18.0,
+            "worst_place": 18.0,
+            "n_results": 1,
+            "judge_marks": 3,
+            "dance_code": "Ch",
+            "result_source": "protocol_place",
+            "result_place": 18.0,
+            "result_place_label": "18 место",
+            "date": "2026-05-24",
+            "round_label": "1-4 финала",
+            "result_detail": "по протоколу",
+            "cross_marks": 3,
+            "numeric_marks": 0,
+            "category_display": "Ювеналы-2 N+E Соло Ж",
+            "marks_label": "3 крестов",
+            "protocol_place_value": 18.0,
+            "protocol_place_label": "18 место"
+          },
+          {
+            "event_date": "2026-05-24",
+            "tournament_id": 2026052402,
+            "tournament_title": "Чемпионат СПТЛ 2026 (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
+            "protocol_id": 80582,
+            "category": "Ювеналы-2 N+E Соло Ж La",
+            "program": "latin",
+            "dance": "R",
+            "final_place": 18.0,
+            "best_place": 18.0,
+            "worst_place": 18.0,
+            "n_results": 1,
+            "judge_marks": 5,
+            "dance_code": "R",
+            "result_source": "protocol_place",
+            "result_place": 18.0,
+            "result_place_label": "18 место",
+            "date": "2026-05-24",
+            "round_label": "1-4 финала",
+            "result_detail": "по протоколу",
+            "cross_marks": 5,
+            "numeric_marks": 0,
+            "category_display": "Ювеналы-2 N+E Соло Ж",
+            "marks_label": "5 крестов",
+            "protocol_place_value": 18.0,
+            "protocol_place_label": "18 место"
+          },
+          {
+            "event_date": "2026-05-24",
+            "tournament_id": 2026052402,
+            "tournament_title": "Чемпионат СПТЛ 2026 (Санкт-Петербург)",
+            "city": "Санкт-Петербург",
+            "protocol_id": 80582,
+            "category": "Ювеналы-2 N+E Соло Ж La",
+            "program": "latin",
+            "dance": "J",
+            "final_place": 18.0,
+            "best_place": 18.0,
+            "worst_place": 18.0,
+            "n_results": 1,
+            "judge_marks": 3,
+            "dance_code": "J",
+            "result_source": "protocol_place",
+            "result_place": 18.0,
+            "result_place_label": "18 место",
+            "date": "2026-05-24",
+            "round_label": "1-4 финала",
+            "result_detail": "по протоколу",
+            "cross_marks": 3,
+            "numeric_marks": 0,
+            "category_display": "Ювеналы-2 N+E Соло Ж",
+            "marks_label": "3 крестов",
+            "protocol_place_value": 18.0,
+            "protocol_place_label": "18 место"
           }
         ],
         "result_places": [

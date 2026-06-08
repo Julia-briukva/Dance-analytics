@@ -57,12 +57,33 @@ DANCE_CODE_ORDER = {
 }
 
 
+DANCE_RUSSIAN_NAMES = {
+    "W": "Медленный вальс",
+    "T": "Танго",
+    "V": "Венский вальс",
+    "VW": "Венский вальс",
+    "F": "Медленный фокстрот",
+    "Q": "Квикстеп",
+    "S": "Самба",
+    "Ch": "Ча-ча-ча",
+    "C": "Ча-ча-ча",
+    "R": "Румба",
+    "P": "Пасодобль",
+    "J": "Джайв",
+}
+
+
 def normalize_dance_code(value: Any) -> str:
     text = str(value or "").strip()
     if not text:
         return ""
     compact = re.sub(r"[^A-Za-zА-Яа-яЁё]+", "", text).upper().replace("Ё", "Е")
     return DANCE_SHORT_CODES.get(compact, text)
+
+
+def dance_russian_name(value: Any) -> str:
+    code = normalize_dance_code(value)
+    return DANCE_RUSSIAN_NAMES.get(code, str(value or "—"))
 
 
 def sort_dance_codes(codes: list[str]) -> list[str]:

@@ -18,6 +18,8 @@ from typing import Any
 from build_dancer_report import DEFAULT_DB_PATH, DEFAULT_REPORTS_DIR, build_report
 from deploy_pages_reports import deploy_report
 from render_html_report import build_view_model, output_path_for_report, render_report
+from sync_dancer_profiles import DEFAULT_AUDIT_CSV as DEFAULT_PROFILE_AUDIT_CSV
+from sync_dancer_profiles import sync_profiles
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
@@ -379,7 +381,16 @@ def update_index(status_rows: list[dict[str, str]], index_path: Path) -> None:
     index_path.write_text(html, encoding="utf-8")
 
 
-def build_club_reports(club_csv: Path, db_path: Path, status_csv: Path, log_path: Path, index_path: Path) -> list[dict[str, str]]:
+def build_club_reports(
+    club_csv: Path,
+    db_path: Path,
+    status_csv: Path,
+    log_path: Path,
+    index_path: Path,
+    *,
+    sync_profile_cards: bool = True,
+    profile_audit_csv: Path = DEFAULT_PROFILE_AUDIT_CSV,
+) -> list[dict[str, str]]:
     rows = read_club_rows(club_csv)
     statuses: list[dict[str, str]] = []
     log_path.parent.mkdir(parents=True, exist_ok=True)
@@ -387,6 +398,10 @@ def build_club_reports(club_csv: Path, db_path: Path, status_csv: Path, log_path
         log.write(f"build_club_reports started_at={datetime.now(timezone.utc).isoformat()}\n")
         log.write(f"club_csv={club_csv}\n")
         log.write(f"rows_with_idd={len(rows)}\n\n")
+        if sync_profile_cards:
+            log.write("sync_dancer_profiles started\n")
+            sync_profiles(rows, audit_csv=profile_audit_csv, log=log)
+            log.write(f"sync_dancer_profiles audit={profile_audit_csv}\n\n")
         for index, row in enumerate(rows, start=1):
             idd = (row.get("idd") or "").strip()
             name = (row.get("name") or "").strip()
@@ -436,12 +451,22 @@ def parse_args(argv: list[str]) -> argparse.Namespace:
     parser.add_argument("--status-csv", type=Path, default=DEFAULT_STATUS_CSV)
     parser.add_argument("--log", type=Path, default=DEFAULT_LOG_PATH)
     parser.add_argument("--index", type=Path, default=DEFAULT_INDEX_PATH)
+    parser.add_argument("--profile-audit-csv", type=Path, default=DEFAULT_PROFILE_AUDIT_CSV)
+    parser.add_argument("--skip-profile-sync", action="store_true", help="Do not fetch missing Compreg dancer cards before building reports.")
     return parser.parse_args(argv)
 
 
 def main(argv: list[str]) -> int:
     args = parse_args(argv)
-    statuses = build_club_reports(args.club_csv, args.db, args.status_csv, args.log, args.index)
+    statuses = build_club_reports(
+        args.club_csv,
+        args.db,
+        args.status_csv,
+        args.log,
+        args.index,
+        sync_profile_cards=not args.skip_profile_sync,
+        profile_audit_csv=args.profile_audit_csv,
+    )
     counts = {key: sum(row["status"] == key for row in statuses) for key in ["success", "no_data", "error"]}
     print(f"Rows processed: {len(statuses)}")
     print(f"Reports created: {counts['success']}")

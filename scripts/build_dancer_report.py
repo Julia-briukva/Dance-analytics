@@ -14,7 +14,6 @@ from pathlib import Path
 from typing import Any
 
 import pandas as pd
-
 from analyze_dancer import (
     DEFAULT_DB_PATH,
     add_derived_columns,
@@ -36,6 +35,8 @@ from analyze_dances import (
     selected_numeric_marks_by_internal_id,
     trend_ranking,
 )
+from compreg_encoding import read_compreg_html_file
+from compreg_profile import clean_text, parse_profile_html
 from dance_display import DANCE_CODE_ORDER, normalize_dance_code, sort_dance_codes
 
 
@@ -69,6 +70,7 @@ AGE_GROUP_PATTERNS = [
     r"Сеньоры",
 ]
 PROGRAM_LABELS = {"standard": "Стандарт", "latin": "Латина"}
+DANCER_PROFILE_CACHE_DIR = PROJECT_ROOT / "data" / "cache" / "dancer_profiles"
 
 
 def clean_value(value: Any) -> Any:
@@ -146,6 +148,31 @@ def place_label(value: Any) -> str | None:
     text = re.sub(r"\s*-\s*", "–", text)
     text = re.sub(r"\d+(?:[.,]\d+)?", lambda match: compact_number_text(match.group(0).replace(",", ".")), text)
     return f"{text} место"
+
+
+def display_category_label(value: Any) -> str | None:
+    text = clean_text(value)
+    if not text:
+        return None
+    return re.sub(r"\s+(?:St|ST|La)\s*$", "", text).strip()
+
+
+def cached_dancer_profile(compreg_idd: str | int) -> dict[str, Any]:
+    """Read extra dancer card facts from local Compreg cache only."""
+    idd = str(compreg_idd)
+    candidates = [
+        DANCER_PROFILE_CACHE_DIR / f"{idd}_danceinfo_post_ci_{idd}.html",
+        DANCER_PROFILE_CACHE_DIR / f"{idd}_danceinfo_post_ci_{idd}_tab_stp_query.html",
+        DANCER_PROFILE_CACHE_DIR / f"{idd}_dancer_resultsp_post_ci_{idd}.html",
+        DANCER_PROFILE_CACHE_DIR / f"{idd}_dancer_resultsp_post_ci_{idd}_tab_stp_query.html",
+    ]
+    cache_path = next((path for path in candidates if path.exists()), None)
+    if cache_path is None:
+        return {}
+
+    profile: dict[str, Any] = parse_profile_html(read_compreg_html_file(cache_path))
+    profile["source"] = str(cache_path.relative_to(PROJECT_ROOT))
+    return clean_value(profile)
 
 
 def selected_protocol_results(conn: sqlite3.Connection, internal_dancer_id: int) -> pd.DataFrame:
@@ -979,6 +1006,197 @@ def build_tournament_dance_results(
     return result
 
 
+def round_priority(value: Any) -> tuple[int, int]:
+    text = str(value or "").lower()
+    if "финал" in text and not re.search(r"1\s*[-–]\s*\d", text):
+        return (100, 0)
+    match = re.search(r"1\s*[-–]\s*(\d+)", text)
+    if match:
+        return (80, -int(match.group(1)))
+    return (0, 0)
+
+
+def round_display_label(values: pd.Series) -> str | None:
+    rounds = [clean_text(item) for item in values if clean_text(item)]
+    if not rounds:
+        return None
+    selected = sorted(rounds, key=round_priority, reverse=True)[0]
+    parts = [clean_text(part) for part in selected.split(",")]
+    parts = [part for part in parts if part]
+    return parts[-1] if parts else selected
+
+
+def build_tournament_display_results(
+    tournament_rows: pd.DataFrame,
+    mark_rows: pd.DataFrame,
+    protocol_results: pd.DataFrame,
+) -> pd.DataFrame:
+    """Build tournament-card rows without changing season analytics.
+
+    Dance-level final rows are kept as-is. If a dance has marks but no final
+    dance result, the row uses the participant's protocol place for display.
+    """
+    base = tournament_rows.copy() if tournament_rows is not None and not tournament_rows.empty else pd.DataFrame()
+    if not base.empty:
+        base["round_label"] = None
+        base["result_detail"] = "по финалу"
+
+    if mark_rows.empty or protocol_results.empty:
+        display = base
+    else:
+        mark_columns = [
+            "protocol_db_id",
+            "protocol_id",
+            "tournament_id",
+            "tournament_title",
+            "event_date",
+            "tournament_city",
+            "category",
+            "program",
+            "dance",
+        ]
+        available_mark_columns = [column for column in mark_columns if column in mark_rows.columns]
+        mark_dances = (
+            mark_rows.dropna(subset=["dance"])[available_mark_columns]
+            .drop_duplicates(["protocol_db_id", "program", "dance"])
+            .copy()
+        )
+        mark_summary = (
+            mark_rows.dropna(subset=["dance"])
+            .assign(dance_code=lambda frame: frame["dance"].map(normalize_dance_code))
+            .groupby(["protocol_db_id", "protocol_id", "category", "program", "dance", "dance_code"], dropna=False)
+            .agg(
+                judge_marks=("mark_type", "size"),
+                cross_marks=("mark_type", lambda values: int((values == "cross").sum())),
+                numeric_marks=("mark_type", lambda values: int((values == "numeric_place").sum())),
+                round_label=("round", round_display_label),
+            )
+            .reset_index()
+        )
+        result_columns = [
+            "protocol_db_id",
+            "protocol_place",
+            "protocol_place_value",
+            "protocol_place_label",
+        ]
+        mark_display = mark_dances.merge(protocol_results[result_columns], on="protocol_db_id", how="left")
+        mark_display = mark_display.merge(
+            mark_summary[["protocol_db_id", "program", "dance", "judge_marks", "cross_marks", "numeric_marks", "round_label"]],
+            on=["protocol_db_id", "program", "dance"],
+            how="left",
+        )
+        mark_display = mark_display.rename(columns={"tournament_city": "city"})
+        mark_display["dance_code"] = mark_display["dance"].map(normalize_dance_code)
+        mark_display["final_place"] = mark_display["protocol_place_value"]
+        mark_display["best_place"] = mark_display["protocol_place_value"]
+        mark_display["worst_place"] = mark_display["protocol_place_value"]
+        mark_display["n_results"] = 1
+        mark_display["result_source"] = "protocol_place"
+        mark_display["result_place"] = mark_display["protocol_place_value"]
+        mark_display["result_place_label"] = mark_display["protocol_place_label"]
+        mark_display["result_detail"] = "по протоколу"
+        mark_display["category_display"] = mark_display["category"].map(display_category_label)
+        mark_display["marks_label"] = mark_display.apply(
+            lambda row: f"{int(row['cross_marks'])} крестов" if pd.notna(row.get("cross_marks")) and int(row["cross_marks"]) > 0 else f"{int(row['judge_marks'])} оценок",
+            axis=1,
+        )
+        mark_display["date"] = mark_display["event_date"]
+
+        if not base.empty:
+            base["dance_code"] = base["dance_code"].fillna(base["dance"].map(normalize_dance_code))
+            base_rounds = mark_summary[["protocol_id", "category", "program", "dance_code", "round_label", "cross_marks", "numeric_marks"]].drop_duplicates()
+            base = base.merge(base_rounds, on=["protocol_id", "category", "program", "dance_code"], how="left", suffixes=("", "_from_marks"))
+            if "round_label_from_marks" in base.columns:
+                base["round_label"] = base["round_label_from_marks"].combine_first(base["round_label"])
+                base = base.drop(columns=["round_label_from_marks"])
+            base["category_display"] = base["category"].map(display_category_label)
+            base["marks_label"] = base.apply(
+                lambda row: f"{int(row['cross_marks'])} крестов" if pd.notna(row.get("cross_marks")) and int(row["cross_marks"]) > 0 else f"{int(row['judge_marks'])} оценок",
+                axis=1,
+            )
+            base_keys = set(
+                tuple(row)
+                for row in base[["protocol_id", "category", "program", "dance_code"]]
+                .fillna("")
+                .to_numpy()
+                .tolist()
+            )
+            mark_display = mark_display[
+                ~mark_display[["protocol_id", "category", "program", "dance_code"]]
+                .fillna("")
+                .apply(lambda row: tuple(row.tolist()) in base_keys, axis=1)
+            ].copy()
+        display = pd.concat([base, mark_display], ignore_index=True, sort=False)
+
+    if display.empty:
+        return pd.DataFrame()
+    display["dance_code"] = display["dance_code"].fillna(display["dance"].map(normalize_dance_code))
+    if "category_display" not in display.columns:
+        display["category_display"] = display["category"].map(display_category_label)
+    if "marks_label" not in display.columns:
+        display["marks_label"] = display["judge_marks"].fillna(0).astype(int).map(lambda value: f"{value} оценок")
+    display["_program_order"] = display["program"].map({"standard": 0, "latin": 1}).fillna(9)
+    display["_dance_order"] = display["dance_code"].map(lambda code: DANCE_CODE_ORDER.get(code, 999))
+    display = display.sort_values(["event_date", "protocol_id", "_program_order", "_dance_order", "dance_code"])
+    display = display.drop(columns=[column for column in ["_program_order", "_dance_order", "protocol_db_id", "protocol_place"] if column in display.columns])
+    return display
+
+
+def is_final_round_label(value: Any) -> bool:
+    return str(value or "").strip().lower() == "финал"
+
+
+def protocol_place_sort_value(value: Any) -> float:
+    parsed = parse_place_value(value)
+    return parsed if parsed is not None else 9999.0
+
+
+def build_program_briefs(protocol_results: pd.DataFrame, mark_rows: pd.DataFrame) -> list[dict[str, Any]]:
+    if protocol_results.empty:
+        return []
+    final_protocol_ids = (
+        set(mark_rows.loc[mark_rows["mark_type"] == "numeric_place", "protocol_db_id"].dropna().tolist())
+        if not mark_rows.empty and "mark_type" in mark_rows.columns and "protocol_db_id" in mark_rows.columns
+        else set()
+    )
+    briefs: list[dict[str, Any]] = []
+    for program in ["standard", "latin"]:
+        rows = protocol_results[protocol_results["program"] == program].copy()
+        if rows.empty:
+            continue
+        final_rows = rows[rows["protocol_db_id"].isin(final_protocol_ids)].copy()
+        if final_rows.empty:
+            briefs.append(
+                {
+                    "program": program,
+                    "program_label": PROGRAM_LABELS.get(program, program),
+                    "status": "not_final",
+                    "text": f"{PROGRAM_LABELS.get(program, program)}: не прошел в финал",
+                }
+            )
+            continue
+        protocol_places = (
+            final_rows[["protocol_id", "category", "protocol_place_label"]]
+            .dropna(subset=["protocol_place_label"])
+            .drop_duplicates()
+            .copy()
+        )
+        protocol_places["_sort"] = protocol_places["protocol_place_label"].map(protocol_place_sort_value)
+        labels = protocol_places.sort_values(["_sort", "protocol_id"])["protocol_place_label"].dropna().astype(str).tolist()
+        labels = list(dict.fromkeys(labels))
+        place_text = ", ".join(labels) if labels else "нет данных"
+        briefs.append(
+            {
+                "program": program,
+                "program_label": PROGRAM_LABELS.get(program, program),
+                "status": "final",
+                "place_labels": clean_value(labels),
+                "text": f"{PROGRAM_LABELS.get(program, program)}: {place_text} · финал",
+            }
+        )
+    return briefs
+
+
 def tournament_metric_record(row: pd.Series, metric_type: str, role: str | None = None) -> dict[str, Any]:
     value_key = "final_place"
     value = row[value_key]
@@ -1157,7 +1375,9 @@ def build_trainer_mode_payload(
             program_summaries.append(build_program_tournament_summary(program, program_rows, program_full_mark_rows))
         if not program_summaries:
             continue
+        tournament_display_rows = build_tournament_display_results(tournament_rows, tournament_full_marks, tournament_protocol_results)
         dance_codes = sort_dance_codes([normalize_dance_code(item) for item in tournament_marks["dance"].dropna().tolist()])
+        categories = sorted(set(str(item) for item in tournament_marks["category"].dropna()))
         summaries.append(
             {
                 "event_date": clean_value(event_date),
@@ -1165,12 +1385,14 @@ def build_trainer_mode_payload(
                 "tournament_id": clean_value(tournament_id),
                 "tournament_title": clean_value(tournament_title),
                 "city": clean_value(next((item for item in tournament_marks["tournament_city"].dropna().tolist() if str(item).strip()), "")) if "tournament_city" in tournament_marks.columns else "",
-                "categories": sorted(set(str(item) for item in tournament_marks["category"].dropna())),
+                "categories": categories,
+                "categories_display": sorted(set(item for item in (display_category_label(value) for value in categories) if item)),
                 "programs": sorted(set(str(item) for item in tournament_marks["program"].dropna())),
                 "protocols": int(tournament_marks["protocol_id"].nunique()),
                 "dance_codes": dance_codes,
                 "program_summaries": clean_value(program_summaries),
-                "dance_results": df_records(tournament_rows),
+                "program_briefs": clean_value(build_program_briefs(tournament_protocol_results, tournament_full_marks)),
+                "dance_results": df_records(tournament_display_rows),
                 "result_places": clean_value(result_places),
                 "avg_result_place": clean_value(round(float(tournament_protocol_results["protocol_place_value"].dropna().mean()), 3))
                 if not tournament_protocol_results.empty and tournament_protocol_results["protocol_place_value"].notna().any()
@@ -1385,6 +1607,7 @@ def build_report(conn: sqlite3.Connection, compreg_idd: str | int) -> dict[str, 
     raw_dance_results = selected_dance_results_by_internal_id(conn, identity.internal_dancer_id)
     raw_dance_results = add_tournament_city_to_results(raw_dance_results, marks)
     protocol_results = selected_protocol_results(conn, identity.internal_dancer_id)
+    profile = cached_dancer_profile(identity.compreg_idd)
     tournament_dance_results = build_tournament_dance_results(raw_dance_results)
     summary = dance_summary_from_results(numeric, tournament_dance_results)
     dynamics = dynamics_by_date(tournament_dance_results)
@@ -1403,8 +1626,17 @@ def build_report(conn: sqlite3.Connection, compreg_idd: str | int) -> dict[str, 
             "internal_dancer_id": identity.internal_dancer_id,
             "idd": identity.compreg_idd,
             "name": identity.name,
-            "club": clean_value(identity.club),
-            "city": clean_value(identity.city),
+            "club": clean_value(profile.get("club") or identity.club),
+            "city": clean_value(profile.get("city") or identity.city),
+            "coaches_st": clean_value(profile.get("coaches_st")),
+            "coaches_la": clean_value(profile.get("coaches_la")),
+            "class_st": clean_value(profile.get("class_st")),
+            "skr_class_st": clean_value(profile.get("skr_class_st")),
+            "norm_status_st": clean_value(profile.get("norm_status_st")),
+            "class_la": clean_value(profile.get("class_la")),
+            "skr_class_la": clean_value(profile.get("skr_class_la")),
+            "norm_status_la": clean_value(profile.get("norm_status_la")),
+            "profile_source": clean_value(profile.get("source")),
         },
         "summary": {
             "protocols": int(marks["protocol_id"].nunique()),

@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-06-07T19:01:10.288256+00:00",
+    "generated_at": "2026-06-08T10:04:02.753041+00:00",
     "analytics_version": "report_layer_v1",
     "database": "database/compreg_spb_2025_2026.sqlite"
   },
@@ -9,7 +9,16 @@
     "idd": "2019421",
     "name": "Маркелов Дмитрий / Посыпайко Вероника",
     "club": "Триумф",
-    "city": "Санкт-Петербург"
+    "city": "Санкт-Петербург",
+    "coaches_st": "Порохина Мария",
+    "coaches_la": "Порохина Мария",
+    "class_st": null,
+    "skr_class_st": "26.323",
+    "norm_status_st": "норматив на D класс выполнен",
+    "class_la": null,
+    "skr_class_la": "28.314",
+    "norm_status_la": "норматив на D класс выполнен",
+    "profile_source": "data/cache/dancer_profiles/2019421_danceinfo_post_ci_2019421.html"
   },
   "summary": {
     "protocols": 24,
@@ -22271,6 +22280,9 @@
           "Ювеналы-1 N+E La",
           "Ювеналы-1 N+E St"
         ],
+        "categories_display": [
+          "Ювеналы-1 N+E"
+        ],
         "programs": [
           "latin",
           "standard"
@@ -22418,6 +22430,26 @@
             "tied_metric_label": "1 место"
           }
         ],
+        "program_briefs": [
+          {
+            "program": "standard",
+            "program_label": "Стандарт",
+            "status": "final",
+            "place_labels": [
+              "6 место"
+            ],
+            "text": "Стандарт: 6 место · финал"
+          },
+          {
+            "program": "latin",
+            "program_label": "Латина",
+            "status": "final",
+            "place_labels": [
+              "1 место"
+            ],
+            "text": "Латина: 1 место · финал"
+          }
+        ],
         "dance_results": [
           {
             "event_date": "2025-09-28",
@@ -22437,7 +22469,15 @@
             "result_source": "dance_final_place",
             "result_place": 5.0,
             "result_place_label": "5 место",
-            "date": "2025-09-28"
+            "date": "2025-09-28",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 9,
+            "numeric_marks": 11,
+            "category_display": "Ювеналы-1 N+E",
+            "marks_label": "9 крестов",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2025-09-28",
@@ -22457,7 +22497,15 @@
             "result_source": "dance_final_place",
             "result_place": 6.0,
             "result_place_label": "6 место",
-            "date": "2025-09-28"
+            "date": "2025-09-28",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 7,
+            "numeric_marks": 11,
+            "category_display": "Ювеналы-1 N+E",
+            "marks_label": "7 крестов",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2025-09-28",
@@ -22477,7 +22525,15 @@
             "result_source": "dance_final_place",
             "result_place": 5.0,
             "result_place_label": "5 место",
-            "date": "2025-09-28"
+            "date": "2025-09-28",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 9,
+            "numeric_marks": 11,
+            "category_display": "Ювеналы-1 N+E",
+            "marks_label": "9 крестов",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2025-09-28",
@@ -22497,7 +22553,15 @@
             "result_source": "dance_final_place",
             "result_place": 1.0,
             "result_place_label": "1 место",
-            "date": "2025-09-28"
+            "date": "2025-09-28",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 11,
+            "numeric_marks": 11,
+            "category_display": "Ювеналы-1 N+E",
+            "marks_label": "11 крестов",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2025-09-28",
@@ -22517,7 +22581,15 @@
             "result_source": "dance_final_place",
             "result_place": 1.0,
             "result_place_label": "1 место",
-            "date": "2025-09-28"
+            "date": "2025-09-28",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 11,
+            "numeric_marks": 11,
+            "category_display": "Ювеналы-1 N+E",
+            "marks_label": "11 крестов",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2025-09-28",
@@ -22537,7 +22609,15 @@
             "result_source": "dance_final_place",
             "result_place": 1.0,
             "result_place_label": "1 место",
-            "date": "2025-09-28"
+            "date": "2025-09-28",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 11,
+            "numeric_marks": 11,
+            "category_display": "Ювеналы-1 N+E",
+            "marks_label": "11 крестов",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           }
         ],
         "result_places": [
@@ -22556,6 +22636,9 @@
         "categories": [
           "Ювеналы-1 N+E La",
           "Ювеналы-1 N+E St"
+        ],
+        "categories_display": [
+          "Ювеналы-1 N+E"
         ],
         "programs": [
           "latin",
@@ -22704,6 +22787,26 @@
             "tied_metric_label": "2 место"
           }
         ],
+        "program_briefs": [
+          {
+            "program": "standard",
+            "program_label": "Стандарт",
+            "status": "final",
+            "place_labels": [
+              "3 место"
+            ],
+            "text": "Стандарт: 3 место · финал"
+          },
+          {
+            "program": "latin",
+            "program_label": "Латина",
+            "status": "final",
+            "place_labels": [
+              "2 место"
+            ],
+            "text": "Латина: 2 место · финал"
+          }
+        ],
         "dance_results": [
           {
             "event_date": "2025-10-12",
@@ -22723,7 +22826,15 @@
             "result_source": "dance_final_place",
             "result_place": 2.0,
             "result_place_label": "2 место",
-            "date": "2025-10-12"
+            "date": "2025-10-12",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 0,
+            "numeric_marks": 11,
+            "category_display": "Ювеналы-1 N+E",
+            "marks_label": "11 оценок",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2025-10-12",
@@ -22743,7 +22854,15 @@
             "result_source": "dance_final_place",
             "result_place": 3.0,
             "result_place_label": "3 место",
-            "date": "2025-10-12"
+            "date": "2025-10-12",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 0,
+            "numeric_marks": 11,
+            "category_display": "Ювеналы-1 N+E",
+            "marks_label": "11 оценок",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2025-10-12",
@@ -22763,7 +22882,15 @@
             "result_source": "dance_final_place",
             "result_place": 3.0,
             "result_place_label": "3 место",
-            "date": "2025-10-12"
+            "date": "2025-10-12",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 0,
+            "numeric_marks": 11,
+            "category_display": "Ювеналы-1 N+E",
+            "marks_label": "11 оценок",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2025-10-12",
@@ -22783,7 +22910,15 @@
             "result_source": "dance_final_place",
             "result_place": 2.0,
             "result_place_label": "2 место",
-            "date": "2025-10-12"
+            "date": "2025-10-12",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 0,
+            "numeric_marks": 11,
+            "category_display": "Ювеналы-1 N+E",
+            "marks_label": "11 оценок",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2025-10-12",
@@ -22803,7 +22938,15 @@
             "result_source": "dance_final_place",
             "result_place": 2.0,
             "result_place_label": "2 место",
-            "date": "2025-10-12"
+            "date": "2025-10-12",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 0,
+            "numeric_marks": 11,
+            "category_display": "Ювеналы-1 N+E",
+            "marks_label": "11 оценок",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2025-10-12",
@@ -22823,7 +22966,15 @@
             "result_source": "dance_final_place",
             "result_place": 2.0,
             "result_place_label": "2 место",
-            "date": "2025-10-12"
+            "date": "2025-10-12",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 0,
+            "numeric_marks": 11,
+            "category_display": "Ювеналы-1 N+E",
+            "marks_label": "11 оценок",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           }
         ],
         "result_places": [
@@ -22842,6 +22993,9 @@
         "categories": [
           "Ювеналы-1 N+E La",
           "Ювеналы-1 N+E St"
+        ],
+        "categories_display": [
+          "Ювеналы-1 N+E"
         ],
         "programs": [
           "latin",
@@ -22990,6 +23144,26 @@
             "tied_metric_label": "1 место"
           }
         ],
+        "program_briefs": [
+          {
+            "program": "standard",
+            "program_label": "Стандарт",
+            "status": "final",
+            "place_labels": [
+              "4 место"
+            ],
+            "text": "Стандарт: 4 место · финал"
+          },
+          {
+            "program": "latin",
+            "program_label": "Латина",
+            "status": "final",
+            "place_labels": [
+              "1 место"
+            ],
+            "text": "Латина: 1 место · финал"
+          }
+        ],
         "dance_results": [
           {
             "event_date": "2025-11-09",
@@ -23009,7 +23183,15 @@
             "result_source": "dance_final_place",
             "result_place": 4.0,
             "result_place_label": "4 место",
-            "date": "2025-11-09"
+            "date": "2025-11-09",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 0,
+            "numeric_marks": 7,
+            "category_display": "Ювеналы-1 N+E",
+            "marks_label": "7 оценок",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2025-11-09",
@@ -23029,7 +23211,15 @@
             "result_source": "dance_final_place",
             "result_place": 4.0,
             "result_place_label": "4 место",
-            "date": "2025-11-09"
+            "date": "2025-11-09",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 0,
+            "numeric_marks": 7,
+            "category_display": "Ювеналы-1 N+E",
+            "marks_label": "7 оценок",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2025-11-09",
@@ -23049,7 +23239,15 @@
             "result_source": "dance_final_place",
             "result_place": 2.0,
             "result_place_label": "2 место",
-            "date": "2025-11-09"
+            "date": "2025-11-09",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 0,
+            "numeric_marks": 7,
+            "category_display": "Ювеналы-1 N+E",
+            "marks_label": "7 оценок",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2025-11-09",
@@ -23069,7 +23267,15 @@
             "result_source": "dance_final_place",
             "result_place": 1.0,
             "result_place_label": "1 место",
-            "date": "2025-11-09"
+            "date": "2025-11-09",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 0,
+            "numeric_marks": 7,
+            "category_display": "Ювеналы-1 N+E",
+            "marks_label": "7 оценок",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2025-11-09",
@@ -23089,7 +23295,15 @@
             "result_source": "dance_final_place",
             "result_place": 1.0,
             "result_place_label": "1 место",
-            "date": "2025-11-09"
+            "date": "2025-11-09",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 0,
+            "numeric_marks": 7,
+            "category_display": "Ювеналы-1 N+E",
+            "marks_label": "7 оценок",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2025-11-09",
@@ -23109,7 +23323,15 @@
             "result_source": "dance_final_place",
             "result_place": 1.0,
             "result_place_label": "1 место",
-            "date": "2025-11-09"
+            "date": "2025-11-09",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 0,
+            "numeric_marks": 7,
+            "category_display": "Ювеналы-1 N+E",
+            "marks_label": "7 оценок",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           }
         ],
         "result_places": [
@@ -23128,6 +23350,9 @@
         "categories": [
           "Ювеналы-1+2 N+E La",
           "Ювеналы-1+2 N+E St"
+        ],
+        "categories_display": [
+          "Ювеналы-1+2 N+E"
         ],
         "programs": [
           "latin",
@@ -23332,6 +23557,26 @@
             "tied_metric_value": null
           }
         ],
+        "program_briefs": [
+          {
+            "program": "standard",
+            "program_label": "Стандарт",
+            "status": "final",
+            "place_labels": [
+              "8 место"
+            ],
+            "text": "Стандарт: 8 место · финал"
+          },
+          {
+            "program": "latin",
+            "program_label": "Латина",
+            "status": "final",
+            "place_labels": [
+              "2 место"
+            ],
+            "text": "Латина: 2 место · финал"
+          }
+        ],
         "dance_results": [
           {
             "event_date": "2025-11-22",
@@ -23351,7 +23596,15 @@
             "result_source": "dance_final_place",
             "result_place": 7.0,
             "result_place_label": "7 место",
-            "date": "2025-11-22"
+            "date": "2025-11-22",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 6,
+            "numeric_marks": 9,
+            "category_display": "Ювеналы-1+2 N+E",
+            "marks_label": "6 крестов",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2025-11-22",
@@ -23371,7 +23624,15 @@
             "result_source": "dance_final_place",
             "result_place": 8.0,
             "result_place_label": "8 место",
-            "date": "2025-11-22"
+            "date": "2025-11-22",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 6,
+            "numeric_marks": 9,
+            "category_display": "Ювеналы-1+2 N+E",
+            "marks_label": "6 крестов",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2025-11-22",
@@ -23391,7 +23652,15 @@
             "result_source": "dance_final_place",
             "result_place": 7.0,
             "result_place_label": "7 место",
-            "date": "2025-11-22"
+            "date": "2025-11-22",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 6,
+            "numeric_marks": 9,
+            "category_display": "Ювеналы-1+2 N+E",
+            "marks_label": "6 крестов",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2025-11-22",
@@ -23411,7 +23680,15 @@
             "result_source": "dance_final_place",
             "result_place": 2.0,
             "result_place_label": "2 место",
-            "date": "2025-11-22"
+            "date": "2025-11-22",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 8,
+            "numeric_marks": 9,
+            "category_display": "Ювеналы-1+2 N+E",
+            "marks_label": "8 крестов",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2025-11-22",
@@ -23431,7 +23708,15 @@
             "result_source": "dance_final_place",
             "result_place": 1.0,
             "result_place_label": "1 место",
-            "date": "2025-11-22"
+            "date": "2025-11-22",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 8,
+            "numeric_marks": 9,
+            "category_display": "Ювеналы-1+2 N+E",
+            "marks_label": "8 крестов",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2025-11-22",
@@ -23451,7 +23736,15 @@
             "result_source": "dance_final_place",
             "result_place": 2.0,
             "result_place_label": "2 место",
-            "date": "2025-11-22"
+            "date": "2025-11-22",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 8,
+            "numeric_marks": 9,
+            "category_display": "Ювеналы-1+2 N+E",
+            "marks_label": "8 крестов",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           }
         ],
         "result_places": [
@@ -23470,6 +23763,9 @@
         "categories": [
           "Ювеналы-1+2 N+E La",
           "Ювеналы-1+2 N+E St"
+        ],
+        "categories_display": [
+          "Ювеналы-1+2 N+E"
         ],
         "programs": [
           "latin",
@@ -23652,6 +23948,26 @@
             "tied_metric_value": null
           }
         ],
+        "program_briefs": [
+          {
+            "program": "standard",
+            "program_label": "Стандарт",
+            "status": "final",
+            "place_labels": [
+              "5 место"
+            ],
+            "text": "Стандарт: 5 место · финал"
+          },
+          {
+            "program": "latin",
+            "program_label": "Латина",
+            "status": "final",
+            "place_labels": [
+              "2 место"
+            ],
+            "text": "Латина: 2 место · финал"
+          }
+        ],
         "dance_results": [
           {
             "event_date": "2025-12-21",
@@ -23671,7 +23987,15 @@
             "result_source": "dance_final_place",
             "result_place": 4.0,
             "result_place_label": "4 место",
-            "date": "2025-12-21"
+            "date": "2025-12-21",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 10,
+            "numeric_marks": 11,
+            "category_display": "Ювеналы-1+2 N+E",
+            "marks_label": "10 крестов",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2025-12-21",
@@ -23691,7 +24015,15 @@
             "result_source": "dance_final_place",
             "result_place": 5.0,
             "result_place_label": "5 место",
-            "date": "2025-12-21"
+            "date": "2025-12-21",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 9,
+            "numeric_marks": 11,
+            "category_display": "Ювеналы-1+2 N+E",
+            "marks_label": "9 крестов",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2025-12-21",
@@ -23711,7 +24043,15 @@
             "result_source": "dance_final_place",
             "result_place": 7.0,
             "result_place_label": "7 место",
-            "date": "2025-12-21"
+            "date": "2025-12-21",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 8,
+            "numeric_marks": 11,
+            "category_display": "Ювеналы-1+2 N+E",
+            "marks_label": "8 крестов",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2025-12-21",
@@ -23731,7 +24071,15 @@
             "result_source": "dance_final_place",
             "result_place": 1.0,
             "result_place_label": "1 место",
-            "date": "2025-12-21"
+            "date": "2025-12-21",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 10,
+            "numeric_marks": 11,
+            "category_display": "Ювеналы-1+2 N+E",
+            "marks_label": "10 крестов",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2025-12-21",
@@ -23751,7 +24099,15 @@
             "result_source": "dance_final_place",
             "result_place": 3.0,
             "result_place_label": "3 место",
-            "date": "2025-12-21"
+            "date": "2025-12-21",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 10,
+            "numeric_marks": 11,
+            "category_display": "Ювеналы-1+2 N+E",
+            "marks_label": "10 крестов",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2025-12-21",
@@ -23771,7 +24127,15 @@
             "result_source": "dance_final_place",
             "result_place": 2.0,
             "result_place_label": "2 место",
-            "date": "2025-12-21"
+            "date": "2025-12-21",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 11,
+            "numeric_marks": 11,
+            "category_display": "Ювеналы-1+2 N+E",
+            "marks_label": "11 крестов",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           }
         ],
         "result_places": [
@@ -23790,6 +24154,9 @@
         "categories": [
           "Ювеналы-1 N+E La",
           "Ювеналы-1 N+E St"
+        ],
+        "categories_display": [
+          "Ювеналы-1 N+E"
         ],
         "programs": [
           "latin",
@@ -23938,6 +24305,26 @@
             "tied_metric_label": "1 место"
           }
         ],
+        "program_briefs": [
+          {
+            "program": "standard",
+            "program_label": "Стандарт",
+            "status": "final",
+            "place_labels": [
+              "3 место"
+            ],
+            "text": "Стандарт: 3 место · финал"
+          },
+          {
+            "program": "latin",
+            "program_label": "Латина",
+            "status": "final",
+            "place_labels": [
+              "1 место"
+            ],
+            "text": "Латина: 1 место · финал"
+          }
+        ],
         "dance_results": [
           {
             "event_date": "2026-01-18",
@@ -23957,7 +24344,15 @@
             "result_source": "dance_final_place",
             "result_place": 1.0,
             "result_place_label": "1 место",
-            "date": "2026-01-18"
+            "date": "2026-01-18",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 0,
+            "numeric_marks": 7,
+            "category_display": "Ювеналы-1 N+E",
+            "marks_label": "7 оценок",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2026-01-18",
@@ -23977,7 +24372,15 @@
             "result_source": "dance_final_place",
             "result_place": 3.0,
             "result_place_label": "3 место",
-            "date": "2026-01-18"
+            "date": "2026-01-18",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 0,
+            "numeric_marks": 7,
+            "category_display": "Ювеналы-1 N+E",
+            "marks_label": "7 оценок",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2026-01-18",
@@ -23997,7 +24400,15 @@
             "result_source": "dance_final_place",
             "result_place": 3.0,
             "result_place_label": "3 место",
-            "date": "2026-01-18"
+            "date": "2026-01-18",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 0,
+            "numeric_marks": 7,
+            "category_display": "Ювеналы-1 N+E",
+            "marks_label": "7 оценок",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2026-01-18",
@@ -24017,7 +24428,15 @@
             "result_source": "dance_final_place",
             "result_place": 1.0,
             "result_place_label": "1 место",
-            "date": "2026-01-18"
+            "date": "2026-01-18",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 0,
+            "numeric_marks": 7,
+            "category_display": "Ювеналы-1 N+E",
+            "marks_label": "7 оценок",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2026-01-18",
@@ -24037,7 +24456,15 @@
             "result_source": "dance_final_place",
             "result_place": 1.0,
             "result_place_label": "1 место",
-            "date": "2026-01-18"
+            "date": "2026-01-18",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 0,
+            "numeric_marks": 7,
+            "category_display": "Ювеналы-1 N+E",
+            "marks_label": "7 оценок",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2026-01-18",
@@ -24057,7 +24484,15 @@
             "result_source": "dance_final_place",
             "result_place": 1.0,
             "result_place_label": "1 место",
-            "date": "2026-01-18"
+            "date": "2026-01-18",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 0,
+            "numeric_marks": 7,
+            "category_display": "Ювеналы-1 N+E",
+            "marks_label": "7 оценок",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           }
         ],
         "result_places": [
@@ -24076,6 +24511,9 @@
         "categories": [
           "Ювеналы-1 N+E La",
           "Ювеналы-1 N+E St"
+        ],
+        "categories_display": [
+          "Ювеналы-1 N+E"
         ],
         "programs": [
           "latin",
@@ -24168,6 +24606,26 @@
             "tied_metric_label": "1 место"
           }
         ],
+        "program_briefs": [
+          {
+            "program": "standard",
+            "program_label": "Стандарт",
+            "status": "final",
+            "place_labels": [
+              "2 место"
+            ],
+            "text": "Стандарт: 2 место · финал"
+          },
+          {
+            "program": "latin",
+            "program_label": "Латина",
+            "status": "final",
+            "place_labels": [
+              "1 место"
+            ],
+            "text": "Латина: 1 место · финал"
+          }
+        ],
         "dance_results": [
           {
             "event_date": "2026-02-01",
@@ -24187,7 +24645,15 @@
             "result_source": "dance_final_place",
             "result_place": 2.0,
             "result_place_label": "2 место",
-            "date": "2026-02-01"
+            "date": "2026-02-01",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 0,
+            "numeric_marks": 7,
+            "category_display": "Ювеналы-1 N+E",
+            "marks_label": "7 оценок",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2026-02-01",
@@ -24207,7 +24673,15 @@
             "result_source": "dance_final_place",
             "result_place": 2.0,
             "result_place_label": "2 место",
-            "date": "2026-02-01"
+            "date": "2026-02-01",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 0,
+            "numeric_marks": 7,
+            "category_display": "Ювеналы-1 N+E",
+            "marks_label": "7 оценок",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2026-02-01",
@@ -24227,7 +24701,15 @@
             "result_source": "dance_final_place",
             "result_place": 2.0,
             "result_place_label": "2 место",
-            "date": "2026-02-01"
+            "date": "2026-02-01",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 0,
+            "numeric_marks": 7,
+            "category_display": "Ювеналы-1 N+E",
+            "marks_label": "7 оценок",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2026-02-01",
@@ -24247,7 +24729,15 @@
             "result_source": "dance_final_place",
             "result_place": 1.0,
             "result_place_label": "1 место",
-            "date": "2026-02-01"
+            "date": "2026-02-01",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 0,
+            "numeric_marks": 7,
+            "category_display": "Ювеналы-1 N+E",
+            "marks_label": "7 оценок",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2026-02-01",
@@ -24267,7 +24757,15 @@
             "result_source": "dance_final_place",
             "result_place": 1.0,
             "result_place_label": "1 место",
-            "date": "2026-02-01"
+            "date": "2026-02-01",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 0,
+            "numeric_marks": 7,
+            "category_display": "Ювеналы-1 N+E",
+            "marks_label": "7 оценок",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2026-02-01",
@@ -24287,7 +24785,15 @@
             "result_source": "dance_final_place",
             "result_place": 1.0,
             "result_place_label": "1 место",
-            "date": "2026-02-01"
+            "date": "2026-02-01",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 0,
+            "numeric_marks": 7,
+            "category_display": "Ювеналы-1 N+E",
+            "marks_label": "7 оценок",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           }
         ],
         "result_places": [
@@ -24306,6 +24812,9 @@
         "categories": [
           "Ювеналы-1 N+E La",
           "Ювеналы-1 N+E St"
+        ],
+        "categories_display": [
+          "Ювеналы-1 N+E"
         ],
         "programs": [
           "latin",
@@ -24454,6 +24963,26 @@
             "tied_metric_label": "1 место"
           }
         ],
+        "program_briefs": [
+          {
+            "program": "standard",
+            "program_label": "Стандарт",
+            "status": "final",
+            "place_labels": [
+              "1 место"
+            ],
+            "text": "Стандарт: 1 место · финал"
+          },
+          {
+            "program": "latin",
+            "program_label": "Латина",
+            "status": "final",
+            "place_labels": [
+              "1 место"
+            ],
+            "text": "Латина: 1 место · финал"
+          }
+        ],
         "dance_results": [
           {
             "event_date": "2026-02-23",
@@ -24473,7 +25002,15 @@
             "result_source": "dance_final_place",
             "result_place": 3.0,
             "result_place_label": "3 место",
-            "date": "2026-02-23"
+            "date": "2026-02-23",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 0,
+            "numeric_marks": 7,
+            "category_display": "Ювеналы-1 N+E",
+            "marks_label": "7 оценок",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2026-02-23",
@@ -24493,7 +25030,15 @@
             "result_source": "dance_final_place",
             "result_place": 1.0,
             "result_place_label": "1 место",
-            "date": "2026-02-23"
+            "date": "2026-02-23",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 0,
+            "numeric_marks": 7,
+            "category_display": "Ювеналы-1 N+E",
+            "marks_label": "7 оценок",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2026-02-23",
@@ -24513,7 +25058,15 @@
             "result_source": "dance_final_place",
             "result_place": 1.0,
             "result_place_label": "1 место",
-            "date": "2026-02-23"
+            "date": "2026-02-23",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 0,
+            "numeric_marks": 7,
+            "category_display": "Ювеналы-1 N+E",
+            "marks_label": "7 оценок",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2026-02-23",
@@ -24533,7 +25086,15 @@
             "result_source": "dance_final_place",
             "result_place": 1.0,
             "result_place_label": "1 место",
-            "date": "2026-02-23"
+            "date": "2026-02-23",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 0,
+            "numeric_marks": 9,
+            "category_display": "Ювеналы-1 N+E",
+            "marks_label": "9 оценок",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2026-02-23",
@@ -24553,7 +25114,15 @@
             "result_source": "dance_final_place",
             "result_place": 1.0,
             "result_place_label": "1 место",
-            "date": "2026-02-23"
+            "date": "2026-02-23",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 0,
+            "numeric_marks": 9,
+            "category_display": "Ювеналы-1 N+E",
+            "marks_label": "9 оценок",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2026-02-23",
@@ -24573,7 +25142,15 @@
             "result_source": "dance_final_place",
             "result_place": 1.0,
             "result_place_label": "1 место",
-            "date": "2026-02-23"
+            "date": "2026-02-23",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 0,
+            "numeric_marks": 9,
+            "category_display": "Ювеналы-1 N+E",
+            "marks_label": "9 оценок",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           }
         ],
         "result_places": [
@@ -24591,6 +25168,9 @@
         "categories": [
           "Ювеналы-1 N+E La",
           "Ювеналы-1 N+E St"
+        ],
+        "categories_display": [
+          "Ювеналы-1 N+E"
         ],
         "programs": [
           "latin",
@@ -24739,6 +25319,26 @@
             "tied_metric_label": "1 место"
           }
         ],
+        "program_briefs": [
+          {
+            "program": "standard",
+            "program_label": "Стандарт",
+            "status": "final",
+            "place_labels": [
+              "1 место"
+            ],
+            "text": "Стандарт: 1 место · финал"
+          },
+          {
+            "program": "latin",
+            "program_label": "Латина",
+            "status": "final",
+            "place_labels": [
+              "1 место"
+            ],
+            "text": "Латина: 1 место · финал"
+          }
+        ],
         "dance_results": [
           {
             "event_date": "2026-03-08",
@@ -24758,7 +25358,15 @@
             "result_source": "dance_final_place",
             "result_place": 2.0,
             "result_place_label": "2 место",
-            "date": "2026-03-08"
+            "date": "2026-03-08",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 0,
+            "numeric_marks": 7,
+            "category_display": "Ювеналы-1 N+E",
+            "marks_label": "7 оценок",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2026-03-08",
@@ -24778,7 +25386,15 @@
             "result_source": "dance_final_place",
             "result_place": 1.0,
             "result_place_label": "1 место",
-            "date": "2026-03-08"
+            "date": "2026-03-08",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 0,
+            "numeric_marks": 7,
+            "category_display": "Ювеналы-1 N+E",
+            "marks_label": "7 оценок",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2026-03-08",
@@ -24798,7 +25414,15 @@
             "result_source": "dance_final_place",
             "result_place": 1.0,
             "result_place_label": "1 место",
-            "date": "2026-03-08"
+            "date": "2026-03-08",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 0,
+            "numeric_marks": 7,
+            "category_display": "Ювеналы-1 N+E",
+            "marks_label": "7 оценок",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2026-03-08",
@@ -24818,7 +25442,15 @@
             "result_source": "dance_final_place",
             "result_place": 1.0,
             "result_place_label": "1 место",
-            "date": "2026-03-08"
+            "date": "2026-03-08",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 0,
+            "numeric_marks": 7,
+            "category_display": "Ювеналы-1 N+E",
+            "marks_label": "7 оценок",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2026-03-08",
@@ -24838,7 +25470,15 @@
             "result_source": "dance_final_place",
             "result_place": 1.0,
             "result_place_label": "1 место",
-            "date": "2026-03-08"
+            "date": "2026-03-08",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 0,
+            "numeric_marks": 7,
+            "category_display": "Ювеналы-1 N+E",
+            "marks_label": "7 оценок",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2026-03-08",
@@ -24858,7 +25498,15 @@
             "result_source": "dance_final_place",
             "result_place": 1.0,
             "result_place_label": "1 место",
-            "date": "2026-03-08"
+            "date": "2026-03-08",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 0,
+            "numeric_marks": 7,
+            "category_display": "Ювеналы-1 N+E",
+            "marks_label": "7 оценок",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           }
         ],
         "result_places": [
@@ -24877,6 +25525,9 @@
           "Ювеналы-1 N+E La",
           "Ювеналы-1 N+E St"
         ],
+        "categories_display": [
+          "Ювеналы-1 N+E"
+        ],
         "programs": [
           "latin",
           "standard"
@@ -24968,6 +25619,26 @@
             "tied_metric_label": "1 место"
           }
         ],
+        "program_briefs": [
+          {
+            "program": "standard",
+            "program_label": "Стандарт",
+            "status": "final",
+            "place_labels": [
+              "1 место"
+            ],
+            "text": "Стандарт: 1 место · финал"
+          },
+          {
+            "program": "latin",
+            "program_label": "Латина",
+            "status": "final",
+            "place_labels": [
+              "1 место"
+            ],
+            "text": "Латина: 1 место · финал"
+          }
+        ],
         "dance_results": [
           {
             "event_date": "2026-04-26",
@@ -24987,7 +25658,15 @@
             "result_source": "dance_final_place",
             "result_place": 1.0,
             "result_place_label": "1 место",
-            "date": "2026-04-26"
+            "date": "2026-04-26",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 0,
+            "numeric_marks": 9,
+            "category_display": "Ювеналы-1 N+E",
+            "marks_label": "9 оценок",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2026-04-26",
@@ -25007,7 +25686,15 @@
             "result_source": "dance_final_place",
             "result_place": 1.0,
             "result_place_label": "1 место",
-            "date": "2026-04-26"
+            "date": "2026-04-26",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 0,
+            "numeric_marks": 9,
+            "category_display": "Ювеналы-1 N+E",
+            "marks_label": "9 оценок",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2026-04-26",
@@ -25027,7 +25714,15 @@
             "result_source": "dance_final_place",
             "result_place": 1.0,
             "result_place_label": "1 место",
-            "date": "2026-04-26"
+            "date": "2026-04-26",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 0,
+            "numeric_marks": 9,
+            "category_display": "Ювеналы-1 N+E",
+            "marks_label": "9 оценок",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2026-04-26",
@@ -25047,7 +25742,15 @@
             "result_source": "dance_final_place",
             "result_place": 1.0,
             "result_place_label": "1 место",
-            "date": "2026-04-26"
+            "date": "2026-04-26",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 9,
+            "numeric_marks": 9,
+            "category_display": "Ювеналы-1 N+E",
+            "marks_label": "9 крестов",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2026-04-26",
@@ -25067,7 +25770,15 @@
             "result_source": "dance_final_place",
             "result_place": 1.0,
             "result_place_label": "1 место",
-            "date": "2026-04-26"
+            "date": "2026-04-26",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 9,
+            "numeric_marks": 9,
+            "category_display": "Ювеналы-1 N+E",
+            "marks_label": "9 крестов",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2026-04-26",
@@ -25087,7 +25798,15 @@
             "result_source": "dance_final_place",
             "result_place": 1.0,
             "result_place_label": "1 место",
-            "date": "2026-04-26"
+            "date": "2026-04-26",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 9,
+            "numeric_marks": 9,
+            "category_display": "Ювеналы-1 N+E",
+            "marks_label": "9 крестов",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           }
         ],
         "result_places": [
@@ -25106,6 +25825,9 @@
           "Ювеналы-1 N+E La",
           "Ювеналы-1 N+E St"
         ],
+        "categories_display": [
+          "Ювеналы-1 N+E"
+        ],
         "programs": [
           "latin",
           "standard"
@@ -25197,6 +25919,26 @@
             "tied_metric_label": "1 место"
           }
         ],
+        "program_briefs": [
+          {
+            "program": "standard",
+            "program_label": "Стандарт",
+            "status": "final",
+            "place_labels": [
+              "1 место"
+            ],
+            "text": "Стандарт: 1 место · финал"
+          },
+          {
+            "program": "latin",
+            "program_label": "Латина",
+            "status": "final",
+            "place_labels": [
+              "1 место"
+            ],
+            "text": "Латина: 1 место · финал"
+          }
+        ],
         "dance_results": [
           {
             "event_date": "2026-05-17",
@@ -25216,7 +25958,15 @@
             "result_source": "dance_final_place",
             "result_place": 1.0,
             "result_place_label": "1 место",
-            "date": "2026-05-17"
+            "date": "2026-05-17",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 0,
+            "numeric_marks": 9,
+            "category_display": "Ювеналы-1 N+E",
+            "marks_label": "9 оценок",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2026-05-17",
@@ -25236,7 +25986,15 @@
             "result_source": "dance_final_place",
             "result_place": 1.0,
             "result_place_label": "1 место",
-            "date": "2026-05-17"
+            "date": "2026-05-17",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 0,
+            "numeric_marks": 9,
+            "category_display": "Ювеналы-1 N+E",
+            "marks_label": "9 оценок",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2026-05-17",
@@ -25256,7 +26014,15 @@
             "result_source": "dance_final_place",
             "result_place": 1.0,
             "result_place_label": "1 место",
-            "date": "2026-05-17"
+            "date": "2026-05-17",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 0,
+            "numeric_marks": 9,
+            "category_display": "Ювеналы-1 N+E",
+            "marks_label": "9 оценок",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2026-05-17",
@@ -25276,7 +26042,15 @@
             "result_source": "dance_final_place",
             "result_place": 1.0,
             "result_place_label": "1 место",
-            "date": "2026-05-17"
+            "date": "2026-05-17",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 0,
+            "numeric_marks": 9,
+            "category_display": "Ювеналы-1 N+E",
+            "marks_label": "9 оценок",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2026-05-17",
@@ -25296,7 +26070,15 @@
             "result_source": "dance_final_place",
             "result_place": 1.0,
             "result_place_label": "1 место",
-            "date": "2026-05-17"
+            "date": "2026-05-17",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 0,
+            "numeric_marks": 9,
+            "category_display": "Ювеналы-1 N+E",
+            "marks_label": "9 оценок",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2026-05-17",
@@ -25316,7 +26098,15 @@
             "result_source": "dance_final_place",
             "result_place": 1.0,
             "result_place_label": "1 место",
-            "date": "2026-05-17"
+            "date": "2026-05-17",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 0,
+            "numeric_marks": 9,
+            "category_display": "Ювеналы-1 N+E",
+            "marks_label": "9 оценок",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           }
         ],
         "result_places": [
@@ -25335,6 +26125,9 @@
           "Ювеналы-1 N+E La",
           "Ювеналы-1 N+E St"
         ],
+        "categories_display": [
+          "Ювеналы-1 N+E"
+        ],
         "programs": [
           "latin",
           "standard"
@@ -25426,6 +26219,26 @@
             "tied_metric_label": "1 место"
           }
         ],
+        "program_briefs": [
+          {
+            "program": "standard",
+            "program_label": "Стандарт",
+            "status": "final",
+            "place_labels": [
+              "1 место"
+            ],
+            "text": "Стандарт: 1 место · финал"
+          },
+          {
+            "program": "latin",
+            "program_label": "Латина",
+            "status": "final",
+            "place_labels": [
+              "1 место"
+            ],
+            "text": "Латина: 1 место · финал"
+          }
+        ],
         "dance_results": [
           {
             "event_date": "2026-05-24",
@@ -25445,7 +26258,15 @@
             "result_source": "dance_final_place",
             "result_place": 1.0,
             "result_place_label": "1 место",
-            "date": "2026-05-24"
+            "date": "2026-05-24",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 0,
+            "numeric_marks": 11,
+            "category_display": "Ювеналы-1 N+E",
+            "marks_label": "11 оценок",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2026-05-24",
@@ -25465,7 +26286,15 @@
             "result_source": "dance_final_place",
             "result_place": 1.0,
             "result_place_label": "1 место",
-            "date": "2026-05-24"
+            "date": "2026-05-24",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 0,
+            "numeric_marks": 11,
+            "category_display": "Ювеналы-1 N+E",
+            "marks_label": "11 оценок",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2026-05-24",
@@ -25485,7 +26314,15 @@
             "result_source": "dance_final_place",
             "result_place": 1.0,
             "result_place_label": "1 место",
-            "date": "2026-05-24"
+            "date": "2026-05-24",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 0,
+            "numeric_marks": 11,
+            "category_display": "Ювеналы-1 N+E",
+            "marks_label": "11 оценок",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2026-05-24",
@@ -25505,7 +26342,15 @@
             "result_source": "dance_final_place",
             "result_place": 1.0,
             "result_place_label": "1 место",
-            "date": "2026-05-24"
+            "date": "2026-05-24",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 0,
+            "numeric_marks": 11,
+            "category_display": "Ювеналы-1 N+E",
+            "marks_label": "11 оценок",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2026-05-24",
@@ -25525,7 +26370,15 @@
             "result_source": "dance_final_place",
             "result_place": 1.0,
             "result_place_label": "1 место",
-            "date": "2026-05-24"
+            "date": "2026-05-24",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 0,
+            "numeric_marks": 11,
+            "category_display": "Ювеналы-1 N+E",
+            "marks_label": "11 оценок",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           },
           {
             "event_date": "2026-05-24",
@@ -25545,7 +26398,15 @@
             "result_source": "dance_final_place",
             "result_place": 1.0,
             "result_place_label": "1 место",
-            "date": "2026-05-24"
+            "date": "2026-05-24",
+            "round_label": "финал",
+            "result_detail": "по финалу",
+            "cross_marks": 0,
+            "numeric_marks": 11,
+            "category_display": "Ювеналы-1 N+E",
+            "marks_label": "11 оценок",
+            "protocol_place_value": null,
+            "protocol_place_label": null
           }
         ],
         "result_places": [

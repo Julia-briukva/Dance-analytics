@@ -11,7 +11,7 @@ from typing import Any
 
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
-from dance_display import DANCE_CODE_ORDER, normalize_dance_code, sort_dance_codes
+from dance_display import DANCE_CODE_ORDER, dance_russian_name, normalize_dance_code, sort_dance_codes
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
@@ -96,18 +96,7 @@ def label_category_slice(value: str | None) -> str:
 
 
 def dance_label(value: str | None) -> str:
-    return {
-        "W": "Медленный вальс",
-        "T": "Танго",
-        "V": "Венский вальс",
-        "F": "Фокстрот",
-        "Q": "Квикстеп",
-        "S": "Самба",
-        "C": "Ча-ча-ча",
-        "R": "Румба",
-        "P": "Пасодобль",
-        "J": "Джайв",
-    }.get(str(value or ""), str(value or "—"))
+    return dance_russian_name(value)
 
 
 def dance_code(value: str | None) -> str:
