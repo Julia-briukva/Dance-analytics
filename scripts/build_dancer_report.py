@@ -44,6 +44,11 @@ PROJECT_ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_REPORTS_DIR = PROJECT_ROOT / "reports"
 ANALYTICS_VERSION = "report_layer_v1"
 JUDGE_REPORT_MIN_MARKS = 10
+JUDGE_DEVIATION_THRESHOLD = 0.6
+CROSS_JUDGE_DEVIATION_THRESHOLD = 0.15
+CROSS_JUDGE_MIN_DECISIONS = 10
+CROSS_JUDGE_MIN_PROTOCOLS = 2
+CROSS_JUDGE_MIN_TOURNAMENTS = 2
 VISIBLE_CATEGORY_MIN_MARKS = 20
 PANEL_REACTION_SPREAD_THRESHOLD = 0.15
 CATEGORY_SLICE_LABELS = {"all": "Все категории"}
@@ -1420,9 +1425,11 @@ def build_judges_payload(numeric: pd.DataFrame) -> dict[str, Any]:
         }
     reportable = stats[stats["n_marks"] >= JUDGE_REPORT_MIN_MARKS].copy() if not stats.empty else stats
     by_program = judge_stats_by_program(numeric)
+    strict_pool = reportable[reportable["avg_deviation"] > JUDGE_DEVIATION_THRESHOLD].copy()
+    soft_pool = reportable[reportable["avg_deviation"] < -JUDGE_DEVIATION_THRESHOLD].copy()
     payload = {
-        "strictest": df_records(reportable.sort_values(["strictness", "n_marks"], ascending=[False, False]), max_rows=10),
-        "softest": df_records(reportable.sort_values(["softness", "n_marks"], ascending=[False, False]), max_rows=10),
+        "strictest": df_records(strict_pool.sort_values(["strictness", "n_marks"], ascending=[False, False]), max_rows=10),
+        "softest": df_records(soft_pool.sort_values(["softness", "n_marks"], ascending=[False, False]), max_rows=10),
         "low_confidence": df_records(stats[stats["n_marks"] < JUDGE_REPORT_MIN_MARKS].sort_values(["strictness", "n_marks"], ascending=[False, False]))
         if not stats.empty
         else [],
@@ -1433,11 +1440,86 @@ def build_judges_payload(numeric: pd.DataFrame) -> dict[str, Any]:
             payload["by_program"][program] = {"strictest": [], "softest": []}
             continue
         subset = by_program[(by_program["program"] == program) & (by_program["n_marks"] >= JUDGE_REPORT_MIN_MARKS)].copy()
+        strict_subset = subset[subset["avg_deviation"] > JUDGE_DEVIATION_THRESHOLD].copy()
+        soft_subset = subset[subset["avg_deviation"] < -JUDGE_DEVIATION_THRESHOLD].copy()
         payload["by_program"][program] = {
-            "strictest": df_records(subset.sort_values(["strictness", "n_marks"], ascending=[False, False]), max_rows=10),
-            "softest": df_records(subset.sort_values(["softness", "n_marks"], ascending=[False, False]), max_rows=10),
+            "strictest": df_records(strict_subset.sort_values(["strictness", "n_marks"], ascending=[False, False]), max_rows=10),
+            "softest": df_records(soft_subset.sort_values(["softness", "n_marks"], ascending=[False, False]), max_rows=10),
         }
     return payload
+
+
+def build_cross_judge_decisions(conn: sqlite3.Connection, marks: pd.DataFrame) -> list[dict[str, Any]]:
+    if marks.empty or "mark_type" not in marks.columns:
+        return []
+    crosses = marks[(marks["mark_type"] == "cross") & marks["judge_id"].notna() & marks["protocol_db_id"].notna()].copy()
+    if crosses.empty:
+        return []
+
+    protocol_ids = sorted({int(value) for value in crosses["protocol_db_id"].dropna().tolist()})
+    placeholders = ",".join("?" for _ in protocol_ids)
+    panel_judges = pd.read_sql_query(
+        f"""
+        SELECT
+            pj.protocol_id AS protocol_db_id,
+            pj.judge_id AS judge_id,
+            COALESCE(j.name, pj.judge_name) AS judge
+        FROM protocol_judges pj
+        LEFT JOIN judges j ON j.id = pj.judge_id
+        WHERE pj.protocol_id IN ({placeholders})
+        ORDER BY pj.protocol_id, pj.judge_position, pj.judge_index
+        """,
+        conn,
+        params=protocol_ids,
+    )
+    if panel_judges.empty:
+        return []
+
+    judges_by_protocol = {
+        int(protocol_id): group[["judge_id", "judge"]].drop_duplicates().to_dict(orient="records")
+        for protocol_id, group in panel_judges.groupby("protocol_db_id")
+    }
+    group_columns = [
+        "protocol_db_id",
+        "protocol_id",
+        "tournament_id",
+        "event_date",
+        "tournament_city",
+        "round",
+        "dance",
+        "program",
+    ]
+    decisions: list[dict[str, Any]] = []
+    for keys, group in crosses.groupby(group_columns, dropna=False):
+        context = dict(zip(group_columns, keys))
+        protocol_db_id = int(context["protocol_db_id"])
+        panel = judges_by_protocol.get(protocol_db_id, [])
+        if not panel:
+            continue
+        crossed_judges = {int(value) for value in group["judge_id"].dropna().tolist()}
+        panel_cross_rate = len(crossed_judges) / len(panel)
+        for judge in panel:
+            judge_id = judge.get("judge_id")
+            if judge_id is None:
+                continue
+            judge_cross = 1 if int(judge_id) in crossed_judges else 0
+            decisions.append(
+                {
+                    "event_date": clean_value(context.get("event_date")),
+                    "tournament_city": clean_value(context.get("tournament_city")),
+                    "tournament_id": clean_value(context.get("tournament_id")),
+                    "protocol_db_id": clean_value(protocol_db_id),
+                    "protocol_id": clean_value(context.get("protocol_id")),
+                    "round": clean_value(context.get("round")),
+                    "dance": clean_value(normalize_dance_code(context.get("dance")) or context.get("dance")),
+                    "program": clean_value(context.get("program")),
+                    "judge": clean_value(judge.get("judge")),
+                    "judge_cross": judge_cross,
+                    "panel_cross_rate": clean_value(round(panel_cross_rate, 3)),
+                    "cross_deviation": clean_value(round(judge_cross - panel_cross_rate, 3)),
+                }
+            )
+    return decisions
 
 
 def ranking_mismatch_warnings(summary: pd.DataFrame) -> list[dict[str, Any]]:
@@ -1615,6 +1697,7 @@ def build_report(conn: sqlite3.Connection, compreg_idd: str | int) -> dict[str, 
 
     numeric_all = marks[marks["mark_type"] == "numeric_place"].dropna(subset=["numeric_mark"]).copy()
     crosses = marks[marks["mark_type"] == "cross"].copy()
+    cross_judge_decisions = build_cross_judge_decisions(conn, marks)
 
     report = {
         "metadata": {
@@ -1682,6 +1765,7 @@ def build_report(conn: sqlite3.Connection, compreg_idd: str | int) -> dict[str, 
                     ]
                 ]
             ),
+            "cross_judge_decisions": cross_judge_decisions,
         },
         "trainer_mode": build_trainer_mode_payload(tournament_dance_results, marks, protocol_results),
         "warnings": build_warnings_payload(conn, marks, summary, numeric),
