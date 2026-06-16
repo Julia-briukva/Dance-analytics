@@ -1845,6 +1845,7 @@
               <h3>Сравнение танцев</h3>
               {{ icon("equal", "neutral") }}
             </div>
+            <p class="trend-help">Этот блок сравнивает среднее место танцев за выбранный период. Динамика ниже отдельно показывает изменение от первой к последней дате.</p>
             {% if slice.display_mode == "all_equal" %}
               <div class="dance-comparison-zone neutral">
                 <div class="dance-comparison-title"><span>Равный результат</span>{{ icon("equal", "neutral") }}</div>
@@ -1864,21 +1865,21 @@
             {% else %}
               <div class="dance-comparison-grid">
                 <div class="dance-comparison-zone positive">
-                  <div class="dance-comparison-title"><span>Сильнее сейчас</span>{{ icon("star", "positive") }}</div>
+                  <div class="dance-comparison-title"><span>Лучшее среднее за период</span>{{ icon("star", "positive") }}</div>
                   {% if slice.best %}
                     <div class="dance-name-list">{{ slice.best|map(attribute="dance")|map("dance_label")|join(", ") }}</div>
                     <div class="dance-comparison-value">среднее место {{ slice.best[0].final_avg_place|fmt }}</div>
                   {% else %}
-                    <p class="muted">Сильная зона в этом срезе не выделяется.</p>
+                    <p class="muted">Лучшее среднее в этом срезе не выделяется.</p>
                   {% endif %}
                 </div>
                 <div class="dance-comparison-zone attention">
-                  <div class="dance-comparison-title"><span>Зона внимания</span>{{ icon("alert", "attention") }}</div>
+                  <div class="dance-comparison-title"><span>Слабее по среднему за период</span>{{ icon("alert", "attention") }}</div>
                   {% if slice.attention %}
                     <div class="dance-name-list">{{ slice.attention|map(attribute="dance")|map("dance_label")|join(", ") }}</div>
                     <div class="dance-comparison-value">среднее место {{ slice.attention[0].final_avg_place|fmt }}</div>
                   {% else %}
-                    <p class="muted">Зона внимания в этом срезе не выделяется.</p>
+                    <p class="muted">Более слабое среднее в этом срезе не выделяется.</p>
                   {% endif %}
                 </div>
               </div>
@@ -1890,7 +1891,7 @@
               <h3>Динамика танцев</h3>
               {{ icon("up", "neutral") }}
             </div>
-            <p class="trend-help">Динамика считается по изменению среднего места между ранней и последней доступной датой выбранного периода. Меньшее место означает лучший результат.</p>
+            <p class="trend-help">Динамика считается отдельно от среднего уровня: сравнивается среднее место между ранней и последней доступной датой выбранного периода. Меньшее место означает лучший результат.</p>
             {% if not slice.improving and not slice.declining %}
               <div class="dance-comparison-zone neutral">
                 <div class="dance-comparison-title"><span>Без заметных изменений</span>{{ icon("equal", "neutral") }}</div>
@@ -1910,11 +1911,11 @@
                     {% endfor %}
                     </div>
                   {% else %}
-                    <p class="trend-empty">{{ "Динамика неустойчива из-за ограниченной выборки." if not slice.enough_data else "Явного улучшения по тренду сейчас не видно." }}</p>
+                    <p class="trend-empty">{{ "Динамика неустойчива из-за ограниченной выборки." if not slice.enough_data else "Явного улучшения по тренду не видно." }}</p>
                   {% endif %}
                 </div>
                 <div class="dance-comparison-zone attention">
-                  <div class="dance-comparison-title"><span>Требует внимания</span>{{ icon("down", "attention") }}</div>
+                  <div class="dance-comparison-title"><span>Ухудшается по динамике</span>{{ icon("down", "attention") }}</div>
                   {% if slice.declining %}
                     <div class="dance-metric-list">
                     {% for item in slice.declining %}
@@ -1925,7 +1926,7 @@
                     {% endfor %}
                     </div>
                   {% else %}
-                    <p class="trend-empty">{{ "Динамика неустойчива из-за ограниченной выборки." if not slice.enough_data else "Тревожной динамики по тренду сейчас не видно." }}</p>
+                    <p class="trend-empty">{{ "Динамика неустойчива из-за ограниченной выборки." if not slice.enough_data else "Тревожной динамики по тренду не видно." }}</p>
                   {% endif %}
                 </div>
               </div>
@@ -2469,7 +2470,7 @@
     function renderComparison(element, metrics) {
       if (!element) return;
       var comparison = comparisonFromMetrics(metrics);
-      var html = '<div class="dance-comparison-header"><h3>Сравнение танцев</h3></div>';
+      var html = '<div class="dance-comparison-header"><h3>Сравнение танцев</h3></div><p class="trend-help">Этот блок сравнивает среднее место танцев за выбранный период. Динамика ниже отдельно показывает изменение от первой к последней дате.</p>';
       if (comparison.mode === "none") {
         html += '<div class="dance-comparison-zone neutral"><div class="dance-comparison-title"><span>Сравнение недоступно</span></div><p class="dance-comparison-message">В выбранном периоде нет данных для сравнения танцев.</p></div>';
       } else if (comparison.mode === "single") {
@@ -2477,8 +2478,8 @@
       } else if (comparison.mode === "equal") {
         html += '<div class="dance-comparison-zone neutral"><div class="dance-comparison-title"><span>Равный результат</span></div><p class="dance-comparison-message">Танцы показали одинаковый результат: ' + escapeHtml(comparison.items.map(function (item) { return danceLabel(item.dance_code); }).join(", ")) + ' — место ' + fmt(comparison.value) + '.</p></div>';
       } else {
-        html += '<div class="dance-comparison-grid"><div class="dance-comparison-zone positive"><div class="dance-comparison-title"><span>Сильнее сейчас</span></div><div class="dance-name-list">' + escapeHtml(comparison.best.map(function (item) { return danceLabel(item.dance_code); }).join(", ")) + '</div><div class="dance-comparison-value">среднее место ' + fmt(comparison.best[0].final_avg_place) + '</div></div>';
-        html += '<div class="dance-comparison-zone attention"><div class="dance-comparison-title"><span>Зона внимания</span></div><div class="dance-name-list">' + escapeHtml(comparison.worst.map(function (item) { return danceLabel(item.dance_code); }).join(", ")) + '</div><div class="dance-comparison-value">среднее место ' + fmt(comparison.worst[0].final_avg_place) + '</div></div></div>';
+        html += '<div class="dance-comparison-grid"><div class="dance-comparison-zone positive"><div class="dance-comparison-title"><span>Лучшее среднее за период</span></div><div class="dance-name-list">' + escapeHtml(comparison.best.map(function (item) { return danceLabel(item.dance_code); }).join(", ")) + '</div><div class="dance-comparison-value">среднее место ' + fmt(comparison.best[0].final_avg_place) + '</div></div>';
+        html += '<div class="dance-comparison-zone attention"><div class="dance-comparison-title"><span>Слабее по среднему за период</span></div><div class="dance-name-list">' + escapeHtml(comparison.worst.map(function (item) { return danceLabel(item.dance_code); }).join(", ")) + '</div><div class="dance-comparison-value">среднее место ' + fmt(comparison.worst[0].final_avg_place) + '</div></div></div>';
       }
       element.innerHTML = html;
     }
@@ -2486,14 +2487,14 @@
     function renderTrends(element, rows) {
       if (!element) return;
       var trends = trendsFromRows(rows);
-      var html = '<div class="dance-comparison-header"><h3>Динамика танцев</h3></div><p class="trend-help">Динамика пересчитывается по выбранному периоду: сравнивается среднее место на первой и последней доступной дате. Меньшее место означает лучший результат.</p>';
+      var html = '<div class="dance-comparison-header"><h3>Динамика танцев</h3></div><p class="trend-help">Динамика пересчитывается отдельно от среднего уровня: сравнивается среднее место на первой и последней доступной дате выбранного периода. Меньшее место означает лучший результат.</p>';
       if (!trends.improving.length && !trends.declining.length) {
         html += '<div class="dance-comparison-zone neutral"><div class="dance-comparison-title"><span>Без заметных изменений</span></div><p class="dance-comparison-message">Заметных изменений по динамике в выбранном периоде пока нет.</p></div>';
       } else {
         html += '<div class="dance-comparison-grid"><div class="dance-comparison-zone positive"><div class="dance-comparison-title"><span>Улучшается</span></div>';
-        html += trends.improving.length ? trends.improving.map(function (item) { return '<div class="dance-metric-row"><span class="dance-name-line">' + escapeHtml(danceLabel(item.dance_code)) + '</span><span class="dance-comparison-value">среднее место: ' + fmt(item.first_avg_place) + ' → ' + fmt(item.last_avg_place) + '</span></div>'; }).join("") : '<p class="trend-empty">Явного улучшения по тренду сейчас не видно.</p>';
-        html += '</div><div class="dance-comparison-zone attention"><div class="dance-comparison-title"><span>Требует внимания</span></div>';
-        html += trends.declining.length ? trends.declining.map(function (item) { return '<div class="dance-metric-row"><span class="dance-name-line">' + escapeHtml(danceLabel(item.dance_code)) + '</span><span class="dance-comparison-value">среднее место: ' + fmt(item.first_avg_place) + ' → ' + fmt(item.last_avg_place) + '</span></div>'; }).join("") : '<p class="trend-empty">Тревожной динамики по тренду сейчас не видно.</p>';
+        html += trends.improving.length ? trends.improving.map(function (item) { return '<div class="dance-metric-row"><span class="dance-name-line">' + escapeHtml(danceLabel(item.dance_code)) + '</span><span class="dance-comparison-value">среднее место: ' + fmt(item.first_avg_place) + ' → ' + fmt(item.last_avg_place) + '</span></div>'; }).join("") : '<p class="trend-empty">Явного улучшения по тренду не видно.</p>';
+        html += '</div><div class="dance-comparison-zone attention"><div class="dance-comparison-title"><span>Ухудшается по динамике</span></div>';
+        html += trends.declining.length ? trends.declining.map(function (item) { return '<div class="dance-metric-row"><span class="dance-name-line">' + escapeHtml(danceLabel(item.dance_code)) + '</span><span class="dance-comparison-value">среднее место: ' + fmt(item.first_avg_place) + ' → ' + fmt(item.last_avg_place) + '</span></div>'; }).join("") : '<p class="trend-empty">Тревожной динамики по тренду не видно.</p>';
         html += '</div></div>';
       }
       element.innerHTML = html;
