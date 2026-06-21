@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dance Analytics · portfolio demo</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #2f2a3c;
+      --muted: #746b83;
+      --line: rgba(128, 108, 170, .18);
+      --paper: #fff;
+      --soft: #f7f4fb;
+      --accent: #6c55a3;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font: 15px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: linear-gradient(180deg, #fbf9ff 0%, #f4f1f8 100%);
+    }
+    .page { max-width: 1040px; margin: 0 auto; padding: 42px 20px 64px; }
+    .demo-badge {
+      display: inline-flex;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(108, 85, 163, .1);
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 22px;
+    }
+    h1 { margin: 0; font-size: clamp(32px, 6vw, 56px); line-height: 1.05; letter-spacing: -0.02em; }
+    .lead { max-width: 680px; margin: 18px 0 32px; color: var(--muted); font-size: 17px; }
+    .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+    .profile-card {
+      display: grid;
+      gap: 8px;
+      min-height: 150px;
+      padding: 22px;
+      color: inherit;
+      text-decoration: none;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      box-shadow: 0 18px 50px rgba(64, 45, 96, .08);
+      transition: transform .18s ease, border-color .18s ease;
+    }
+    .profile-card:hover { transform: translateY(-2px); border-color: rgba(108, 85, 163, .36); }
+    .profile-name { font-size: 21px; font-weight: 750; line-height: 1.2; }
+    .profile-meta { color: var(--muted); font-size: 13px; align-self: end; }
+    .note { margin-top: 26px; color: var(--muted); font-size: 13px; }
+    @media (max-width: 760px) {
+      .grid { grid-template-columns: 1fr; }
+      .page { padding-top: 28px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <div class="demo-badge">Демо-версия. Персональные данные анонимизированы.</div>
+    <h1>Dance Analytics</h1>
+    <p class="lead">Публичная демо-версия отчётов: имена и клубы заменены, а структура отчёта, числовые показатели, динамика и аналитические блоки сохранены.</p>
+    <section class="grid" aria-label="Демо-профили">
+        <a class="profile-card" href="sasha_zakharova.html">
+          <span class="profile-name">Саша Захарова</span>
+          <span class="profile-meta">Демо-профиль · расчёты сохранены из исходного отчёта</span>
+        </a>
+        <a class="profile-card" href="elizaveta_hlopkova.html">
+          <span class="profile-name">Елизавета Хлопкова</span>
+          <span class="profile-meta">Демо-профиль · расчёты сохранены из исходного отчёта</span>
+        </a>
+        <a class="profile-card" href="antonina_aleksandrova.html">
+          <span class="profile-name">Антонина Александрова</span>
+          <span class="profile-meta">Демо-профиль · расчёты сохранены из исходного отчёта</span>
+        </a>
+    </section>
+    <p class="note">Все ссылки в этом разделе ведут только на автономные demo-страницы внутри <code>portfolio_demo</code>.</p>
+  </main>
+</body>
+</html>
