@@ -29,10 +29,16 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
-      - name: Upload reports
+      - name: Prepare Pages artifact
+        run: |
+          mkdir -p _site
+          cp -R reports/. _site/
+          cp -R portfolio_demo _site/portfolio_demo
+
+      - name: Upload site
         uses: actions/upload-pages-artifact@v3
         with:
-          path: reports
+          path: _site
 
       - name: Deploy
         uses: actions/deploy-pages@v4
