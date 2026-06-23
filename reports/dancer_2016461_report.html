@@ -287,7 +287,7 @@
       border: 0;
       border-radius: 0;
       padding: 8px 0 2px;
-      margin: 18px 0 18px;
+      margin: 10px 0 18px;
       break-inside: avoid;
     }
 
@@ -837,9 +837,11 @@
     }
 
     .interpretation {
-      color: var(--ink-soft);
-      font-weight: 650;
-      margin-top: 2px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 1.35;
+      margin-top: 3px;
     }
 
     .interpretation-marker {
@@ -847,7 +849,7 @@
       align-items: center;
       gap: 6px;
       color: var(--muted);
-      font-weight: 620;
+      font-weight: 450;
       white-space: nowrap;
     }
 
@@ -890,12 +892,66 @@
 
     .judge-table-stack {
       display: grid;
-      gap: 22px;
-      margin-top: 12px;
+      gap: 24px;
+      margin-top: 16px;
+    }
+
+    .judge-table-block {
+      display: grid;
+      gap: 10px;
     }
 
     .judge-table-block h3 {
-      margin-bottom: 10px;
+      margin-bottom: 0;
+    }
+
+    .judge-table-block .section-kicker {
+      margin: 0;
+    }
+
+    .judge-table-block .table-wrap {
+      margin-top: 0;
+    }
+
+    .judge-subsection {
+      display: grid;
+      gap: 10px;
+    }
+
+    .judge-subsection + .judge-subsection {
+      margin-top: 24px;
+    }
+
+    .judge-table {
+      table-layout: fixed;
+      width: 100%;
+    }
+
+    .judge-table .col-judge { width: 36%; }
+    .judge-table .col-deviation { width: 24%; }
+    .judge-table .col-count { width: 14%; }
+    .judge-table .col-protocols { width: 13%; }
+    .judge-table .col-tournaments { width: 13%; }
+
+    .judge-deviation-cell {
+      display: grid;
+      gap: 2px;
+      justify-items: end;
+      line-height: 1.35;
+    }
+
+    .judge-deviation-value {
+      color: var(--ink);
+      font-size: 13px;
+      font-weight: 620;
+      line-height: 1.25;
+      white-space: nowrap;
+    }
+
+    .judge-table td,
+    .judge-table th {
+      height: 46px;
+      vertical-align: middle;
     }
 
     .judge-mobile-note {
@@ -1112,6 +1168,7 @@
 
     table {
       width: 100%;
+      table-layout: fixed;
       border-collapse: collapse;
       background: var(--paper);
       font-size: 12.5px;
@@ -1146,24 +1203,33 @@
     tbody tr:nth-child(even) td { background: #FEFDFF; }
     tbody tr:last-child td { border-bottom: 0; }
 
-    .col-dance { min-width: 170px; }
+    .col-dance { width: 40%; min-width: 170px; }
     .col-program { min-width: 110px; }
-    .col-avg { min-width: 118px; }
-    .col-best { min-width: 104px; }
+    .col-avg { width: 20%; min-width: 112px; }
+    .col-best { width: 16%; min-width: 92px; }
     .col-place { min-width: 118px; }
     .col-protocols { min-width: 108px; }
     .col-stability {
-      min-width: 190px;
-      padding-left: 22px;
+      width: 24%;
+      min-width: 136px;
     }
 
+    th.col-avg,
+    td.col-avg,
+    th.col-best,
+    td.col-best,
+    th.col-place,
+    td.col-place,
+    th.col-protocols,
+    td.col-protocols,
     th.col-stability,
     td.col-stability {
-      text-align: left;
+      text-align: right;
     }
 
     .col-stability .progress-track {
-      max-width: 148px;
+      max-width: 116px;
+      margin-left: auto;
     }
 
     details {
@@ -1477,6 +1543,24 @@
       }
       .mobile-card-table .number {
         white-space: normal;
+      }
+      .mobile-card-table .judge-table {
+        table-layout: fixed;
+      }
+      .mobile-card-table .judge-table colgroup {
+        display: none;
+      }
+      .mobile-card-table .judge-table td,
+      .mobile-card-table .judge-table th {
+        height: auto;
+      }
+      .mobile-card-table .judge-deviation-cell {
+        justify-items: end;
+      }
+      .mobile-card-table .judge-deviation-value,
+      .mobile-card-table .interpretation-marker {
+        white-space: normal;
+        text-align: right;
       }
       .mobile-card-table td > * {
         min-width: 0;
@@ -4158,57 +4242,64 @@
           <div class="judge-table-block">
             <h3>Более строгие судьи</h3>
             <div class="table-wrap table-scroll mobile-card-table">
-              <table>
-                <thead><tr><th>Судья</th><th>Интерпретация</th><th class="number">Отклонение</th><th class="number">Оценок</th><th class="number">Протоколов</th></tr></thead>
+              <table class="judge-table">
+                <colgroup>
+                  <col class="col-judge">
+                  <col class="col-deviation">
+                  <col class="col-count">
+                  <col class="col-protocols">
+                  <col class="col-tournaments">
+                </colgroup>
+                <thead><tr><th>Судья</th><th class="number">Отклонение</th><th class="number">Оценок</th><th class="number">Протоколов</th><th class="number">Турниров</th></tr></thead>
                 <tbody data-judge-strict-body>
                 <tr>
                   <td data-label="Судья"><strong>Клековкин Алексей</strong></td>
-                  <td data-label="Интерпретация"><div class="interpretation"><span class="interpretation-marker strict">Строже среднего</span></div></td>
-                  <td class="number" data-label="Отклонение">1.828</td>
+                  <td class="number" data-label="Отклонение"><div class="judge-deviation-cell"><span class="judge-deviation-value">1.828</span><span class="interpretation-marker strict">Строже среднего</span></div></td>
                   <td class="number" data-label="Оценок">14 оценок</td>
                   <td class="number" data-label="Протоколов">3 протокола</td>
+                  <td class="number" data-label="Турниров">—</td>
                 </tr>
                 <tr>
                   <td data-label="Судья"><strong>Кинареев Михаил</strong></td>
-                  <td data-label="Интерпретация"><div class="interpretation"><span class="interpretation-marker strict">Строже среднего</span></div></td>
-                  <td class="number" data-label="Отклонение">1.359</td>
+                  <td class="number" data-label="Отклонение"><div class="judge-deviation-cell"><span class="judge-deviation-value">1.359</span><span class="interpretation-marker strict">Строже среднего</span></div></td>
                   <td class="number" data-label="Оценок">20 оценок</td>
                   <td class="number" data-label="Протоколов">5 протоколов</td>
+                  <td class="number" data-label="Турниров">—</td>
                 </tr>
                 <tr>
                   <td data-label="Судья"><strong>Дюков Юрий</strong></td>
-                  <td data-label="Интерпретация"><div class="interpretation"><span class="interpretation-marker strict">Строже среднего</span></div></td>
-                  <td class="number" data-label="Отклонение">1.12</td>
+                  <td class="number" data-label="Отклонение"><div class="judge-deviation-cell"><span class="judge-deviation-value">1.12</span><span class="interpretation-marker strict">Строже среднего</span></div></td>
                   <td class="number" data-label="Оценок">17 оценок</td>
                   <td class="number" data-label="Протоколов">4 протокола</td>
+                  <td class="number" data-label="Турниров">—</td>
                 </tr>
                 <tr>
                   <td data-label="Судья"><strong>Антоненко Александра</strong></td>
-                  <td data-label="Интерпретация"><div class="interpretation"><span class="interpretation-marker strict">Строже среднего</span></div></td>
-                  <td class="number" data-label="Отклонение">1.12</td>
+                  <td class="number" data-label="Отклонение"><div class="judge-deviation-cell"><span class="judge-deviation-value">1.12</span><span class="interpretation-marker strict">Строже среднего</span></div></td>
                   <td class="number" data-label="Оценок">16 оценок</td>
                   <td class="number" data-label="Протоколов">4 протокола</td>
+                  <td class="number" data-label="Турниров">—</td>
                 </tr>
                 <tr>
                   <td data-label="Судья"><strong>Ковальская Оксана</strong></td>
-                  <td data-label="Интерпретация"><div class="interpretation"><span class="interpretation-marker strict">Строже среднего</span></div></td>
-                  <td class="number" data-label="Отклонение">0.996</td>
+                  <td class="number" data-label="Отклонение"><div class="judge-deviation-cell"><span class="judge-deviation-value">0.996</span><span class="interpretation-marker strict">Строже среднего</span></div></td>
                   <td class="number" data-label="Оценок">16 оценок</td>
                   <td class="number" data-label="Протоколов">4 протокола</td>
+                  <td class="number" data-label="Турниров">—</td>
                 </tr>
                 <tr>
                   <td data-label="Судья"><strong>Симонов Виталий</strong></td>
-                  <td data-label="Интерпретация"><div class="interpretation"><span class="interpretation-marker strict">Строже среднего</span></div></td>
-                  <td class="number" data-label="Отклонение">0.767</td>
+                  <td class="number" data-label="Отклонение"><div class="judge-deviation-cell"><span class="judge-deviation-value">0.767</span><span class="interpretation-marker strict">Строже среднего</span></div></td>
                   <td class="number" data-label="Оценок">10 оценок</td>
                   <td class="number" data-label="Протоколов">2 протокола</td>
+                  <td class="number" data-label="Турниров">—</td>
                 </tr>
                 <tr>
                   <td data-label="Судья"><strong>Сыров Павел</strong></td>
-                  <td data-label="Интерпретация"><div class="interpretation"><span class="interpretation-marker strict">Строже среднего</span></div></td>
-                  <td class="number" data-label="Отклонение">0.667</td>
+                  <td class="number" data-label="Отклонение"><div class="judge-deviation-cell"><span class="judge-deviation-value">0.667</span><span class="interpretation-marker strict">Строже среднего</span></div></td>
                   <td class="number" data-label="Оценок">12 оценок</td>
                   <td class="number" data-label="Протоколов">4 протокола</td>
+                  <td class="number" data-label="Турниров">—</td>
                 </tr>
                 </tbody>
               </table>
@@ -4217,57 +4308,64 @@
           <div class="judge-table-block">
             <h3>Более мягкие судьи</h3>
             <div class="table-wrap table-scroll mobile-card-table">
-              <table>
-                <thead><tr><th>Судья</th><th>Интерпретация</th><th class="number">Отклонение</th><th class="number">Оценок</th><th class="number">Протоколов</th></tr></thead>
+              <table class="judge-table">
+                <colgroup>
+                  <col class="col-judge">
+                  <col class="col-deviation">
+                  <col class="col-count">
+                  <col class="col-protocols">
+                  <col class="col-tournaments">
+                </colgroup>
+                <thead><tr><th>Судья</th><th class="number">Отклонение</th><th class="number">Оценок</th><th class="number">Протоколов</th><th class="number">Турниров</th></tr></thead>
                 <tbody data-judge-soft-body>
                 <tr>
                   <td data-label="Судья"><strong>Маляева Олеся</strong></td>
-                  <td data-label="Интерпретация"><div class="interpretation"><span class="interpretation-marker soft">Мягче среднего</span></div></td>
-                  <td class="number" data-label="Отклонение">-1.485</td>
+                  <td class="number" data-label="Отклонение"><div class="judge-deviation-cell"><span class="judge-deviation-value">-1.485</span><span class="interpretation-marker soft">Мягче среднего</span></div></td>
                   <td class="number" data-label="Оценок">30 оценок</td>
                   <td class="number" data-label="Протоколов">7 протоколов</td>
+                  <td class="number" data-label="Турниров">—</td>
                 </tr>
                 <tr>
                   <td data-label="Судья"><strong>Едигарьева Татьяна</strong></td>
-                  <td data-label="Интерпретация"><div class="interpretation"><span class="interpretation-marker soft">Мягче среднего</span></div></td>
-                  <td class="number" data-label="Отклонение">-1.381</td>
+                  <td class="number" data-label="Отклонение"><div class="judge-deviation-cell"><span class="judge-deviation-value">-1.381</span><span class="interpretation-marker soft">Мягче среднего</span></div></td>
                   <td class="number" data-label="Оценок">12 оценок</td>
                   <td class="number" data-label="Протоколов">3 протокола</td>
+                  <td class="number" data-label="Турниров">—</td>
                 </tr>
                 <tr>
                   <td data-label="Судья"><strong>Кашина Анна</strong></td>
-                  <td data-label="Интерпретация"><div class="interpretation"><span class="interpretation-marker soft">Мягче среднего</span></div></td>
-                  <td class="number" data-label="Отклонение">-1.175</td>
+                  <td class="number" data-label="Отклонение"><div class="judge-deviation-cell"><span class="judge-deviation-value">-1.175</span><span class="interpretation-marker soft">Мягче среднего</span></div></td>
                   <td class="number" data-label="Оценок">45 оценок</td>
                   <td class="number" data-label="Протоколов">11 протоколов</td>
+                  <td class="number" data-label="Турниров">—</td>
                 </tr>
                 <tr>
                   <td data-label="Судья"><strong>Степанова Анна</strong></td>
-                  <td data-label="Интерпретация"><div class="interpretation"><span class="interpretation-marker soft">Мягче среднего</span></div></td>
-                  <td class="number" data-label="Отклонение">-0.967</td>
+                  <td class="number" data-label="Отклонение"><div class="judge-deviation-cell"><span class="judge-deviation-value">-0.967</span><span class="interpretation-marker soft">Мягче среднего</span></div></td>
                   <td class="number" data-label="Оценок">22 оценки</td>
                   <td class="number" data-label="Протоколов">5 протоколов</td>
+                  <td class="number" data-label="Турниров">—</td>
                 </tr>
                 <tr>
                   <td data-label="Судья"><strong>Ларченко Екатерина</strong></td>
-                  <td data-label="Интерпретация"><div class="interpretation"><span class="interpretation-marker soft">Мягче среднего</span></div></td>
-                  <td class="number" data-label="Отклонение">-0.882</td>
+                  <td class="number" data-label="Отклонение"><div class="judge-deviation-cell"><span class="judge-deviation-value">-0.882</span><span class="interpretation-marker soft">Мягче среднего</span></div></td>
                   <td class="number" data-label="Оценок">12 оценок</td>
                   <td class="number" data-label="Протоколов">3 протокола</td>
+                  <td class="number" data-label="Турниров">—</td>
                 </tr>
                 <tr>
                   <td data-label="Судья"><strong>Зеленина Елизавета</strong></td>
-                  <td data-label="Интерпретация"><div class="interpretation"><span class="interpretation-marker soft">Мягче среднего</span></div></td>
-                  <td class="number" data-label="Отклонение">-0.854</td>
+                  <td class="number" data-label="Отклонение"><div class="judge-deviation-cell"><span class="judge-deviation-value">-0.854</span><span class="interpretation-marker soft">Мягче среднего</span></div></td>
                   <td class="number" data-label="Оценок">12 оценок</td>
                   <td class="number" data-label="Протоколов">4 протокола</td>
+                  <td class="number" data-label="Турниров">—</td>
                 </tr>
                 <tr>
                   <td data-label="Судья"><strong>Курило Иван</strong></td>
-                  <td data-label="Интерпретация"><div class="interpretation"><span class="interpretation-marker soft">Мягче среднего</span></div></td>
-                  <td class="number" data-label="Отклонение">-0.705</td>
+                  <td class="number" data-label="Отклонение"><div class="judge-deviation-cell"><span class="judge-deviation-value">-0.705</span><span class="interpretation-marker soft">Мягче среднего</span></div></td>
                   <td class="number" data-label="Оценок">12 оценок</td>
                   <td class="number" data-label="Протоколов">3 протокола</td>
+                  <td class="number" data-label="Турниров">—</td>
                 </tr>
                 </tbody>
               </table>
@@ -4278,20 +4376,34 @@
           <h3>По отборочным турам</h3>
           <p class="section-kicker">Недостаточно финальных оценок по местам. Ниже показано, как судьи отмечали проходными крестами относительно средней линии панели.</p>
           <div data-judge-cross-empty hidden class="muted">Недостаточно данных по местам и отборочным турам для надёжной судейской аналитики.</div>
-          <div data-judge-cross-support-section hidden>
+          <div class="judge-subsection" data-judge-cross-support-section hidden>
             <h3>Чаще отмечали проходным крестом</h3>
             <div class="table-wrap table-scroll mobile-card-table">
-              <table>
-                <thead><tr><th>Судья</th><th>Интерпретация</th><th class="number">Отклонение по крестам</th><th class="number">Решений</th><th class="number">Протоколов</th><th class="number">Турниров</th></tr></thead>
+              <table class="judge-table">
+                <colgroup>
+                  <col class="col-judge">
+                  <col class="col-deviation">
+                  <col class="col-count">
+                  <col class="col-protocols">
+                  <col class="col-tournaments">
+                </colgroup>
+                <thead><tr><th>Судья</th><th class="number">Отклонение</th><th class="number">Решений</th><th class="number">Протоколов</th><th class="number">Турниров</th></tr></thead>
                 <tbody data-judge-cross-support-body></tbody>
               </table>
             </div>
           </div>
-          <div data-judge-cross-less-section hidden>
+          <div class="judge-subsection" data-judge-cross-less-section hidden>
             <h3>Реже отмечали проходным крестом</h3>
             <div class="table-wrap table-scroll mobile-card-table">
-              <table>
-                <thead><tr><th>Судья</th><th>Интерпретация</th><th class="number">Отклонение по крестам</th><th class="number">Решений</th><th class="number">Протоколов</th><th class="number">Турниров</th></tr></thead>
+              <table class="judge-table">
+                <colgroup>
+                  <col class="col-judge">
+                  <col class="col-deviation">
+                  <col class="col-count">
+                  <col class="col-protocols">
+                  <col class="col-tournaments">
+                </colgroup>
+                <thead><tr><th>Судья</th><th class="number">Отклонение</th><th class="number">Решений</th><th class="number">Протоколов</th><th class="number">Турниров</th></tr></thead>
                 <tbody data-judge-cross-less-body></tbody>
               </table>
             </div>
@@ -4735,8 +4847,7 @@
       tbody.innerHTML = rows.map(function (item) {
         var label = crossJudgeLabel(item.cross_deviation);
         return '<tr><td data-label="Судья"><strong>' + escapeHtml(item.judge) + '</strong></td>' +
-          '<td data-label="Интерпретация"><div class="interpretation"><span class="interpretation-marker ' + crossInterpretationClass(item.cross_deviation) + '">' + escapeHtml(label) + '</span></div></td>' +
-          '<td class="number" data-label="Отклонение по крестам">' + fmt(item.cross_deviation) + '</td>' +
+          '<td class="number" data-label="Отклонение"><div class="judge-deviation-cell"><span class="judge-deviation-value">' + fmt(item.cross_deviation) + '</span><span class="interpretation-marker ' + crossInterpretationClass(item.cross_deviation) + '">' + escapeHtml(label) + '</span></div></td>' +
           '<td class="number" data-label="Решений">' + plural(item.decisions, "решение", "решения", "решений") + '</td>' +
           '<td class="number" data-label="Протоколов">' + plural(item.protocols, "протокол", "протокола", "протоколов") + '</td>' +
           '<td class="number" data-label="Турниров">' + plural(item.tournaments, "турнир", "турнира", "турниров") + '</td></tr>';
@@ -4875,10 +4986,10 @@
       tbody.innerHTML = rows.map(function (item) {
         var label = judgeLabel(item.avg_deviation);
         return '<tr><td data-label="Судья"><strong>' + escapeHtml(item.judge) + '</strong></td>' +
-          '<td data-label="Интерпретация"><div class="interpretation"><span class="interpretation-marker ' + placeInterpretationClass(item.avg_deviation) + '">' + escapeHtml(label) + '</span></div></td>' +
-          '<td class="number" data-label="Отклонение">' + fmt(item.avg_deviation) + '</td>' +
+          '<td class="number" data-label="Отклонение"><div class="judge-deviation-cell"><span class="judge-deviation-value">' + fmt(item.avg_deviation) + '</span><span class="interpretation-marker ' + placeInterpretationClass(item.avg_deviation) + '">' + escapeHtml(label) + '</span></div></td>' +
           '<td class="number" data-label="Оценок">' + plural(item.n_marks, "оценка", "оценки", "оценок") + '</td>' +
-          '<td class="number" data-label="Протоколов">' + plural(item.protocols, "протокол", "протокола", "протоколов") + '</td></tr>';
+          '<td class="number" data-label="Протоколов">' + plural(item.protocols, "протокол", "протокола", "протоколов") + '</td>' +
+          '<td class="number" data-label="Турниров">—</td></tr>';
       }).join("");
     }
 
