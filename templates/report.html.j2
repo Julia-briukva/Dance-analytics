@@ -2223,7 +2223,7 @@
                   <td class="number" data-label="Отклонение"><div class="judge-deviation-cell"><span class="judge-deviation-value">{{ item.avg_deviation|fmt }}</span><span class="interpretation-marker {% if item.avg_deviation > 0.6 %}strict{% elif item.avg_deviation < -0.6 %}soft{% else %}neutral{% endif %}">{% if item.avg_deviation > 0.6 %}Строже среднего{% elif item.avg_deviation < -0.6 %}Мягче среднего{% else %}Близко к среднему{% endif %}</span></div></td>
                   <td class="number" data-label="Оценок">{{ item.n_marks|pluralize("оценка", "оценки", "оценок") }}</td>
                   <td class="number" data-label="Протоколов">{{ item.protocols|pluralize("протокол", "протокола", "протоколов") }}</td>
-                  <td class="number" data-label="Турниров">—</td>
+                  <td class="number" data-label="Турниров">{{ item.tournaments|default(0)|pluralize("турнир", "турнира", "турниров") }}</td>
                 </tr>
               {% endfor %}
               {% else %}
@@ -2253,7 +2253,7 @@
                   <td class="number" data-label="Отклонение"><div class="judge-deviation-cell"><span class="judge-deviation-value">{{ item.avg_deviation|fmt }}</span><span class="interpretation-marker {% if item.avg_deviation > 0.6 %}strict{% elif item.avg_deviation < -0.6 %}soft{% else %}neutral{% endif %}">{% if item.avg_deviation > 0.6 %}Строже среднего{% elif item.avg_deviation < -0.6 %}Мягче среднего{% else %}Близко к среднему{% endif %}</span></div></td>
                   <td class="number" data-label="Оценок">{{ item.n_marks|pluralize("оценка", "оценки", "оценок") }}</td>
                   <td class="number" data-label="Протоколов">{{ item.protocols|pluralize("протокол", "протокола", "протоколов") }}</td>
-                  <td class="number" data-label="Турниров">—</td>
+                  <td class="number" data-label="Турниров">{{ item.tournaments|default(0)|pluralize("турнир", "турнира", "турниров") }}</td>
                 </tr>
               {% endfor %}
               {% else %}
@@ -2682,9 +2682,10 @@
       rows.forEach(function (row) {
         var key = [row.protocol_db_id, row.round, row.dance].join("||");
         var judge = row.judge || "—";
-        judges[judge] = judges[judge] || { judge: judge, deviations: [], protocols: {} };
+        judges[judge] = judges[judge] || { judge: judge, deviations: [], protocols: {}, tournaments: {} };
         judges[judge].deviations.push(Number(row.numeric_mark) - panelAvg[key]);
         if (row.protocol_id != null) judges[judge].protocols[row.protocol_id] = true;
+        if (row.tournament_id != null) judges[judge].tournaments[row.tournament_id] = true;
       });
       return Object.keys(judges).map(function (name) {
         var item = judges[name];
@@ -2692,7 +2693,8 @@
           judge: name,
           avg_deviation: mean(item.deviations),
           n_marks: item.deviations.length,
-          protocols: Object.keys(item.protocols).length
+          protocols: Object.keys(item.protocols).length,
+          tournaments: Object.keys(item.tournaments).length
         };
       }).filter(function (item) { return item.n_marks >= 10; });
     }
@@ -2881,7 +2883,7 @@
           '<td class="number" data-label="Отклонение"><div class="judge-deviation-cell"><span class="judge-deviation-value">' + fmt(item.avg_deviation) + '</span><span class="interpretation-marker ' + placeInterpretationClass(item.avg_deviation) + '">' + escapeHtml(label) + '</span></div></td>' +
           '<td class="number" data-label="Оценок">' + plural(item.n_marks, "оценка", "оценки", "оценок") + '</td>' +
           '<td class="number" data-label="Протоколов">' + plural(item.protocols, "протокол", "протокола", "протоколов") + '</td>' +
-          '<td class="number" data-label="Турниров">—</td></tr>';
+          '<td class="number" data-label="Турниров">' + plural(item.tournaments, "турнир", "турнира", "турниров") + '</td></tr>';
       }).join("");
     }
 

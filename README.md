@@ -62,6 +62,20 @@ python3 scripts/update_database.py
 
 Он проверяет только даты после последней найденной даты турнира в базе.
 
+Если известна точная страница турнира Compreg, удобнее обновлять базу одной командой:
+
+```bash
+python3 scripts/update_from_compreg_listcat.py https://compreg.ru/resultsdata/YYYY/MM/DDXX/listcat.php
+```
+
+Скрипт скачивает только указанный `listcat.php`, добавляет/обновляет протоколы этого турнира и парсит только те протоколы, которые ещё не были нормализованы. Для полного цикла с пересборкой отчётов и root-копий GitHub Pages:
+
+```bash
+python3 scripts/update_from_compreg_listcat.py https://compreg.ru/resultsdata/YYYY/MM/DDXX/listcat.php --build-reports --deploy-pages
+```
+
+Если Compreg обновил уже загруженную страницу, добавьте `--refresh`. Если нужно перепарсить все протоколы турнира, добавьте `--reparse-tournament`.
+
 ## Нормализация протоколов
 
 После загрузки HTML-протоколов запустите:

@@ -1031,6 +1031,19 @@ def round_display_label(values: pd.Series) -> str | None:
     return parts[-1] if parts else selected
 
 
+def display_result_marks_label(row: pd.Series) -> str:
+    numeric_marks = row.get("numeric_marks")
+    if pd.notna(numeric_marks) and int(numeric_marks) > 0:
+        return f"{int(numeric_marks)} оценок"
+    cross_marks = row.get("cross_marks")
+    if pd.notna(cross_marks) and int(cross_marks) > 0:
+        return f"{int(cross_marks)} крестов"
+    judge_marks = row.get("judge_marks")
+    if pd.notna(judge_marks):
+        return f"{int(judge_marks)} оценок"
+    return "нет данных"
+
+
 def build_tournament_display_results(
     tournament_rows: pd.DataFrame,
     mark_rows: pd.DataFrame,
@@ -1102,7 +1115,7 @@ def build_tournament_display_results(
         mark_display["result_detail"] = "по протоколу"
         mark_display["category_display"] = mark_display["category"].map(display_category_label)
         mark_display["marks_label"] = mark_display.apply(
-            lambda row: f"{int(row['cross_marks'])} крестов" if pd.notna(row.get("cross_marks")) and int(row["cross_marks"]) > 0 else f"{int(row['judge_marks'])} оценок",
+            display_result_marks_label,
             axis=1,
         )
         mark_display["date"] = mark_display["event_date"]
@@ -1116,7 +1129,7 @@ def build_tournament_display_results(
                 base = base.drop(columns=["round_label_from_marks"])
             base["category_display"] = base["category"].map(display_category_label)
             base["marks_label"] = base.apply(
-                lambda row: f"{int(row['cross_marks'])} крестов" if pd.notna(row.get("cross_marks")) and int(row["cross_marks"]) > 0 else f"{int(row['judge_marks'])} оценок",
+                display_result_marks_label,
                 axis=1,
             )
             base_keys = set(
@@ -1754,6 +1767,7 @@ def build_report(conn: sqlite3.Connection, compreg_idd: str | int) -> dict[str, 
                 numeric_all[
                     [
                         "event_date",
+                        "tournament_id",
                         "tournament_city",
                         "protocol_db_id",
                         "protocol_id",

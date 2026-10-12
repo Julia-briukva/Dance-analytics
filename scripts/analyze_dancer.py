@@ -314,6 +314,7 @@ def final_judge_stats(numeric: pd.DataFrame) -> pd.DataFrame:
         .agg(
             n_marks=("numeric_mark", "count"),
             protocols=("protocol_id", "nunique"),
+            tournaments=("tournament_id", "nunique"),
             avg_judge_mark=("numeric_mark", "mean"),
             avg_panel_mean=("panel_mean", "mean"),
             avg_deviation=("deviation", "mean"),

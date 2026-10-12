@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-06-23T08:57:54.438803+00:00",
+    "generated_at": "2026-10-12T09:08:33.589482+00:00",
     "analytics_version": "report_layer_v1",
     "database": "database/compreg_spb_2025_2026.sqlite"
   },
@@ -419,6 +419,7 @@
         "judge": "Чубарова Влада",
         "n_marks": 10,
         "protocols": 2,
+        "tournaments": 1,
         "avg_judge_mark": 4.4,
         "avg_panel_mean": 2.2,
         "avg_deviation": 2.2,
@@ -430,6 +431,7 @@
         "judge": "Огаркова Оксана",
         "n_marks": 18,
         "protocols": 4,
+        "tournaments": 2,
         "avg_judge_mark": 5.278,
         "avg_panel_mean": 4.124,
         "avg_deviation": 1.154,
@@ -441,6 +443,7 @@
         "judge": "Миронова Любовь",
         "n_marks": 10,
         "protocols": 2,
+        "tournaments": 1,
         "avg_judge_mark": 5.2,
         "avg_panel_mean": 4.084,
         "avg_deviation": 1.116,
@@ -452,6 +455,7 @@
         "judge": "Авенирова Алина",
         "n_marks": 13,
         "protocols": 3,
+        "tournaments": 2,
         "avg_judge_mark": 5.385,
         "avg_panel_mean": 4.29,
         "avg_deviation": 1.095,
@@ -463,6 +467,7 @@
         "judge": "Агеева Наталья",
         "n_marks": 18,
         "protocols": 4,
+        "tournaments": 2,
         "avg_judge_mark": 4.944,
         "avg_panel_mean": 4.124,
         "avg_deviation": 0.821,
@@ -476,6 +481,7 @@
         "judge": "Шанкина Светлана",
         "n_marks": 10,
         "protocols": 2,
+        "tournaments": 1,
         "avg_judge_mark": 3.3,
         "avg_panel_mean": 4.543,
         "avg_deviation": -1.243,
@@ -487,6 +493,7 @@
         "judge": "Степовой Сергей",
         "n_marks": 15,
         "protocols": 3,
+        "tournaments": 2,
         "avg_judge_mark": 1.8,
         "avg_panel_mean": 2.959,
         "avg_deviation": -1.159,
@@ -498,6 +505,7 @@
         "judge": "Федоров Влад",
         "n_marks": 10,
         "protocols": 2,
+        "tournaments": 1,
         "avg_judge_mark": 3.3,
         "avg_panel_mean": 4.084,
         "avg_deviation": -0.784,
@@ -509,6 +517,7 @@
         "judge": "Порохина Мария",
         "n_marks": 10,
         "protocols": 2,
+        "tournaments": 1,
         "avg_judge_mark": 1.5,
         "avg_panel_mean": 2.2,
         "avg_deviation": -0.7,
@@ -520,6 +529,7 @@
         "judge": "Тищенко Петр",
         "n_marks": 10,
         "protocols": 2,
+        "tournaments": 1,
         "avg_judge_mark": 1.5,
         "avg_panel_mean": 2.2,
         "avg_deviation": -0.7,
@@ -533,6 +543,7 @@
         "judge": "Антонюк Екатерина",
         "n_marks": 5,
         "protocols": 1,
+        "tournaments": 1,
         "avg_judge_mark": 7.0,
         "avg_panel_mean": 4.477,
         "avg_deviation": 2.523,
@@ -544,6 +555,7 @@
         "judge": "Фуфурина Мария",
         "n_marks": 8,
         "protocols": 2,
+        "tournaments": 1,
         "avg_judge_mark": 5.75,
         "avg_panel_mean": 4.173,
         "avg_deviation": 1.577,
@@ -555,6 +567,7 @@
         "judge": "Беляева Тамара",
         "n_marks": 5,
         "protocols": 1,
+        "tournaments": 1,
         "avg_judge_mark": 6.0,
         "avg_panel_mean": 4.477,
         "avg_deviation": 1.523,
@@ -566,6 +579,7 @@
         "judge": "Трошичев Павел",
         "n_marks": 8,
         "protocols": 2,
+        "tournaments": 1,
         "avg_judge_mark": 5.25,
         "avg_panel_mean": 4.173,
         "avg_deviation": 1.077,
@@ -577,6 +591,7 @@
         "judge": "Уланов Даниил",
         "n_marks": 8,
         "protocols": 2,
+        "tournaments": 1,
         "avg_judge_mark": 5.125,
         "avg_panel_mean": 4.173,
         "avg_deviation": 0.952,
@@ -588,6 +603,7 @@
         "judge": "Комаров Дмитрий",
         "n_marks": 5,
         "protocols": 1,
+        "tournaments": 1,
         "avg_judge_mark": 4.4,
         "avg_panel_mean": 3.691,
         "avg_deviation": 0.709,
@@ -599,6 +615,7 @@
         "judge": "Антоненко Александра",
         "n_marks": 5,
         "protocols": 1,
+        "tournaments": 1,
         "avg_judge_mark": 3.4,
         "avg_panel_mean": 3.691,
         "avg_deviation": -0.291,
@@ -610,6 +627,7 @@
         "judge": "Смирнова Наталия",
         "n_marks": 8,
         "protocols": 2,
+        "tournaments": 1,
         "avg_judge_mark": 3.75,
         "avg_panel_mean": 4.173,
         "avg_deviation": -0.423,
@@ -621,6 +639,7 @@
         "judge": "Подкас Анастасия",
         "n_marks": 8,
         "protocols": 2,
+        "tournaments": 1,
         "avg_judge_mark": 3.625,
         "avg_panel_mean": 4.173,
         "avg_deviation": -0.548,
@@ -632,6 +651,7 @@
         "judge": "Клецун Карияна",
         "n_marks": 8,
         "protocols": 2,
+        "tournaments": 1,
         "avg_judge_mark": 3.5,
         "avg_panel_mean": 4.173,
         "avg_deviation": -0.673,
@@ -643,6 +663,7 @@
         "judge": "Кузнецов Денис",
         "n_marks": 5,
         "protocols": 1,
+        "tournaments": 1,
         "avg_judge_mark": 3.6,
         "avg_panel_mean": 4.477,
         "avg_deviation": -0.877,
@@ -654,6 +675,7 @@
         "judge": "Беляев Алексей",
         "n_marks": 5,
         "protocols": 1,
+        "tournaments": 1,
         "avg_judge_mark": 2.8,
         "avg_panel_mean": 3.691,
         "avg_deviation": -0.891,
@@ -665,6 +687,7 @@
         "judge": "Маляева Олеся",
         "n_marks": 5,
         "protocols": 1,
+        "tournaments": 1,
         "avg_judge_mark": 1.8,
         "avg_panel_mean": 3.691,
         "avg_deviation": -1.891,
@@ -676,6 +699,7 @@
         "judge": "Кудинов Олег",
         "n_marks": 8,
         "protocols": 2,
+        "tournaments": 1,
         "avg_judge_mark": 2.0,
         "avg_panel_mean": 4.173,
         "avg_deviation": -2.173,
@@ -687,6 +711,7 @@
         "judge": "Бурдинская Екатерина",
         "n_marks": 8,
         "protocols": 2,
+        "tournaments": 1,
         "avg_judge_mark": 1.5,
         "avg_panel_mean": 4.173,
         "avg_deviation": -2.673,
@@ -698,6 +723,7 @@
         "judge": "Стадниченко Андрей",
         "n_marks": 8,
         "protocols": 2,
+        "tournaments": 1,
         "avg_judge_mark": 1.5,
         "avg_panel_mean": 4.173,
         "avg_deviation": -2.673,
@@ -714,6 +740,7 @@
             "program": "standard",
             "n_marks": 10,
             "protocols": 2,
+            "tournaments": 2,
             "avg_judge_mark": 5.8,
             "avg_panel_mean": 3.738,
             "avg_deviation": 2.062,
@@ -726,6 +753,7 @@
             "program": "standard",
             "n_marks": 10,
             "protocols": 2,
+            "tournaments": 2,
             "avg_judge_mark": 5.0,
             "avg_panel_mean": 3.738,
             "avg_deviation": 1.262,
@@ -744,6 +772,7 @@
             "program": "latin",
             "n_marks": 10,
             "protocols": 2,
+            "tournaments": 2,
             "avg_judge_mark": 1.7,
             "avg_panel_mean": 3.502,
             "avg_deviation": -1.802,
@@ -9162,6 +9191,7 @@
     "numeric_marks": [
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5885,
         "protocol_id": 73056,
@@ -9173,6 +9203,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5885,
         "protocol_id": 73056,
@@ -9184,6 +9215,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5885,
         "protocol_id": 73056,
@@ -9195,6 +9227,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5885,
         "protocol_id": 73056,
@@ -9206,6 +9239,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5885,
         "protocol_id": 73056,
@@ -9217,6 +9251,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5885,
         "protocol_id": 73056,
@@ -9228,6 +9263,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5885,
         "protocol_id": 73056,
@@ -9239,6 +9275,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5885,
         "protocol_id": 73056,
@@ -9250,6 +9287,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5885,
         "protocol_id": 73056,
@@ -9261,6 +9299,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5885,
         "protocol_id": 73056,
@@ -9272,6 +9311,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5885,
         "protocol_id": 73056,
@@ -9283,6 +9323,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5885,
         "protocol_id": 73056,
@@ -9294,6 +9335,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5885,
         "protocol_id": 73056,
@@ -9305,6 +9347,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5885,
         "protocol_id": 73056,
@@ -9316,6 +9359,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5885,
         "protocol_id": 73056,
@@ -9327,6 +9371,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5885,
         "protocol_id": 73056,
@@ -9338,6 +9383,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5885,
         "protocol_id": 73056,
@@ -9349,6 +9395,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5885,
         "protocol_id": 73056,
@@ -9360,6 +9407,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5885,
         "protocol_id": 73056,
@@ -9371,6 +9419,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5885,
         "protocol_id": 73056,
@@ -9382,6 +9431,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5885,
         "protocol_id": 73056,
@@ -9393,6 +9443,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5885,
         "protocol_id": 73056,
@@ -9404,6 +9455,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5885,
         "protocol_id": 73056,
@@ -9415,6 +9467,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5885,
         "protocol_id": 73056,
@@ -9426,6 +9479,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5885,
         "protocol_id": 73056,
@@ -9437,6 +9491,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5885,
         "protocol_id": 73056,
@@ -9448,6 +9503,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5885,
         "protocol_id": 73056,
@@ -9459,6 +9515,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5885,
         "protocol_id": 73056,
@@ -9470,6 +9527,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5885,
         "protocol_id": 73056,
@@ -9481,6 +9539,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5885,
         "protocol_id": 73056,
@@ -9492,6 +9551,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5885,
         "protocol_id": 73056,
@@ -9503,6 +9563,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5885,
         "protocol_id": 73056,
@@ -9514,6 +9575,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5885,
         "protocol_id": 73056,
@@ -9525,6 +9587,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5885,
         "protocol_id": 73056,
@@ -9536,6 +9599,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5885,
         "protocol_id": 73056,
@@ -9547,6 +9611,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5885,
         "protocol_id": 73056,
@@ -9558,6 +9623,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5885,
         "protocol_id": 73056,
@@ -9569,6 +9635,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5885,
         "protocol_id": 73056,
@@ -9580,6 +9647,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5885,
         "protocol_id": 73056,
@@ -9591,6 +9659,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5885,
         "protocol_id": 73056,
@@ -9602,6 +9671,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5885,
         "protocol_id": 73056,
@@ -9613,6 +9683,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5885,
         "protocol_id": 73056,
@@ -9624,6 +9695,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5885,
         "protocol_id": 73056,
@@ -9635,6 +9707,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5885,
         "protocol_id": 73056,
@@ -9646,6 +9719,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5885,
         "protocol_id": 73056,
@@ -9657,6 +9731,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5885,
         "protocol_id": 73056,
@@ -9668,6 +9743,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5885,
         "protocol_id": 73056,
@@ -9679,6 +9755,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5885,
         "protocol_id": 73056,
@@ -9690,6 +9767,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5885,
         "protocol_id": 73056,
@@ -9701,6 +9779,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5885,
         "protocol_id": 73056,
@@ -9712,6 +9791,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5885,
         "protocol_id": 73056,
@@ -9723,6 +9803,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5885,
         "protocol_id": 73056,
@@ -9734,6 +9815,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5885,
         "protocol_id": 73056,
@@ -9745,6 +9827,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5885,
         "protocol_id": 73056,
@@ -9756,6 +9839,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5885,
         "protocol_id": 73056,
@@ -9767,6 +9851,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5905,
         "protocol_id": 73079,
@@ -9778,6 +9863,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5905,
         "protocol_id": 73079,
@@ -9789,6 +9875,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5905,
         "protocol_id": 73079,
@@ -9800,6 +9887,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5905,
         "protocol_id": 73079,
@@ -9811,6 +9899,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5905,
         "protocol_id": 73079,
@@ -9822,6 +9911,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5905,
         "protocol_id": 73079,
@@ -9833,6 +9923,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5905,
         "protocol_id": 73079,
@@ -9844,6 +9935,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5905,
         "protocol_id": 73079,
@@ -9855,6 +9947,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5905,
         "protocol_id": 73079,
@@ -9866,6 +9959,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5905,
         "protocol_id": 73079,
@@ -9877,6 +9971,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5905,
         "protocol_id": 73079,
@@ -9888,6 +9983,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5905,
         "protocol_id": 73079,
@@ -9899,6 +9995,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5905,
         "protocol_id": 73079,
@@ -9910,6 +10007,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5905,
         "protocol_id": 73079,
@@ -9921,6 +10019,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5905,
         "protocol_id": 73079,
@@ -9932,6 +10031,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5905,
         "protocol_id": 73079,
@@ -9943,6 +10043,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5905,
         "protocol_id": 73079,
@@ -9954,6 +10055,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5905,
         "protocol_id": 73079,
@@ -9965,6 +10067,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5905,
         "protocol_id": 73079,
@@ -9976,6 +10079,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5905,
         "protocol_id": 73079,
@@ -9987,6 +10091,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5905,
         "protocol_id": 73079,
@@ -9998,6 +10103,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5905,
         "protocol_id": 73079,
@@ -10009,6 +10115,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5905,
         "protocol_id": 73079,
@@ -10020,6 +10127,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5905,
         "protocol_id": 73079,
@@ -10031,6 +10139,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5905,
         "protocol_id": 73079,
@@ -10042,6 +10151,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5905,
         "protocol_id": 73079,
@@ -10053,6 +10163,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5905,
         "protocol_id": 73079,
@@ -10064,6 +10175,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5905,
         "protocol_id": 73079,
@@ -10075,6 +10187,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5905,
         "protocol_id": 73079,
@@ -10086,6 +10199,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5905,
         "protocol_id": 73079,
@@ -10097,6 +10211,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5905,
         "protocol_id": 73079,
@@ -10108,6 +10223,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5905,
         "protocol_id": 73079,
@@ -10119,6 +10235,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5905,
         "protocol_id": 73079,
@@ -10130,6 +10247,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5905,
         "protocol_id": 73079,
@@ -10141,6 +10259,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5905,
         "protocol_id": 73079,
@@ -10152,6 +10271,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5905,
         "protocol_id": 73079,
@@ -10163,6 +10283,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5905,
         "protocol_id": 73079,
@@ -10174,6 +10295,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5905,
         "protocol_id": 73079,
@@ -10185,6 +10307,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5905,
         "protocol_id": 73079,
@@ -10196,6 +10319,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5905,
         "protocol_id": 73079,
@@ -10207,6 +10331,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5905,
         "protocol_id": 73079,
@@ -10218,6 +10343,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5905,
         "protocol_id": 73079,
@@ -10229,6 +10355,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5905,
         "protocol_id": 73079,
@@ -10240,6 +10367,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5905,
         "protocol_id": 73079,
@@ -10251,6 +10379,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5905,
         "protocol_id": 73079,
@@ -10262,6 +10391,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5905,
         "protocol_id": 73079,
@@ -10273,6 +10403,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5905,
         "protocol_id": 73079,
@@ -10284,6 +10415,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5905,
         "protocol_id": 73079,
@@ -10295,6 +10427,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5905,
         "protocol_id": 73079,
@@ -10306,6 +10439,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5905,
         "protocol_id": 73079,
@@ -10317,6 +10451,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5905,
         "protocol_id": 73079,
@@ -10328,6 +10463,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5905,
         "protocol_id": 73079,
@@ -10339,6 +10475,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5905,
         "protocol_id": 73079,
@@ -10350,6 +10487,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5905,
         "protocol_id": 73079,
@@ -10361,6 +10499,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5905,
         "protocol_id": 73079,
@@ -10372,6 +10511,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5862,
         "protocol_id": 73100,
@@ -10383,6 +10523,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5862,
         "protocol_id": 73100,
@@ -10394,6 +10535,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5862,
         "protocol_id": 73100,
@@ -10405,6 +10547,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5862,
         "protocol_id": 73100,
@@ -10416,6 +10559,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5862,
         "protocol_id": 73100,
@@ -10427,6 +10571,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5862,
         "protocol_id": 73100,
@@ -10438,6 +10583,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5862,
         "protocol_id": 73100,
@@ -10449,6 +10595,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5862,
         "protocol_id": 73100,
@@ -10460,6 +10607,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5862,
         "protocol_id": 73100,
@@ -10471,6 +10619,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5862,
         "protocol_id": 73100,
@@ -10482,6 +10631,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5862,
         "protocol_id": 73100,
@@ -10493,6 +10643,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5862,
         "protocol_id": 73100,
@@ -10504,6 +10655,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5862,
         "protocol_id": 73100,
@@ -10515,6 +10667,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5862,
         "protocol_id": 73100,
@@ -10526,6 +10679,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5862,
         "protocol_id": 73100,
@@ -10537,6 +10691,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5862,
         "protocol_id": 73100,
@@ -10548,6 +10703,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5862,
         "protocol_id": 73100,
@@ -10559,6 +10715,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5862,
         "protocol_id": 73100,
@@ -10570,6 +10727,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5862,
         "protocol_id": 73100,
@@ -10581,6 +10739,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5862,
         "protocol_id": 73100,
@@ -10592,6 +10751,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5862,
         "protocol_id": 73100,
@@ -10603,6 +10763,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5862,
         "protocol_id": 73100,
@@ -10614,6 +10775,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5862,
         "protocol_id": 73100,
@@ -10625,6 +10787,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5862,
         "protocol_id": 73100,
@@ -10636,6 +10799,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5862,
         "protocol_id": 73100,
@@ -10647,6 +10811,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5862,
         "protocol_id": 73100,
@@ -10658,6 +10823,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5862,
         "protocol_id": 73100,
@@ -10669,6 +10835,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5862,
         "protocol_id": 73100,
@@ -10680,6 +10847,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5862,
         "protocol_id": 73100,
@@ -10691,6 +10859,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5862,
         "protocol_id": 73100,
@@ -10702,6 +10871,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5862,
         "protocol_id": 73100,
@@ -10713,6 +10883,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5862,
         "protocol_id": 73100,
@@ -10724,6 +10895,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5862,
         "protocol_id": 73100,
@@ -10735,6 +10907,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5862,
         "protocol_id": 73100,
@@ -10746,6 +10919,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5862,
         "protocol_id": 73100,
@@ -10757,6 +10931,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5862,
         "protocol_id": 73100,
@@ -10768,6 +10943,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5862,
         "protocol_id": 73100,
@@ -10779,6 +10955,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5862,
         "protocol_id": 73100,
@@ -10790,6 +10967,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5862,
         "protocol_id": 73100,
@@ -10801,6 +10979,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5862,
         "protocol_id": 73100,
@@ -10812,6 +10991,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5862,
         "protocol_id": 73100,
@@ -10823,6 +11003,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5862,
         "protocol_id": 73100,
@@ -10834,6 +11015,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5862,
         "protocol_id": 73100,
@@ -10845,6 +11027,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5862,
         "protocol_id": 73100,
@@ -10856,6 +11039,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5862,
         "protocol_id": 73100,
@@ -10867,6 +11051,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5862,
         "protocol_id": 73100,
@@ -10878,6 +11063,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5862,
         "protocol_id": 73100,
@@ -10889,6 +11075,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5862,
         "protocol_id": 73100,
@@ -10900,6 +11087,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5862,
         "protocol_id": 73100,
@@ -10911,6 +11099,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5862,
         "protocol_id": 73100,
@@ -10922,6 +11111,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5862,
         "protocol_id": 73100,
@@ -10933,6 +11123,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5862,
         "protocol_id": 73100,
@@ -10944,6 +11135,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5862,
         "protocol_id": 73100,
@@ -10955,6 +11147,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5862,
         "protocol_id": 73100,
@@ -10966,6 +11159,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5862,
         "protocol_id": 73100,
@@ -10977,6 +11171,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5862,
         "protocol_id": 73100,
@@ -10988,6 +11183,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5862,
         "protocol_id": 73100,
@@ -10999,6 +11195,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5862,
         "protocol_id": 73100,
@@ -11010,6 +11207,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5862,
         "protocol_id": 73100,
@@ -11021,6 +11219,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5862,
         "protocol_id": 73100,
@@ -11032,6 +11231,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5862,
         "protocol_id": 73100,
@@ -11043,6 +11243,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5862,
         "protocol_id": 73100,
@@ -11054,6 +11255,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5862,
         "protocol_id": 73100,
@@ -11065,6 +11267,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5862,
         "protocol_id": 73100,
@@ -11076,6 +11279,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5862,
         "protocol_id": 73100,
@@ -11087,6 +11291,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5893,
         "protocol_id": 73104,
@@ -11098,6 +11303,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5893,
         "protocol_id": 73104,
@@ -11109,6 +11315,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5893,
         "protocol_id": 73104,
@@ -11120,6 +11327,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5893,
         "protocol_id": 73104,
@@ -11131,6 +11339,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5893,
         "protocol_id": 73104,
@@ -11142,6 +11351,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5893,
         "protocol_id": 73104,
@@ -11153,6 +11363,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5893,
         "protocol_id": 73104,
@@ -11164,6 +11375,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5893,
         "protocol_id": 73104,
@@ -11175,6 +11387,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5893,
         "protocol_id": 73104,
@@ -11186,6 +11399,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5893,
         "protocol_id": 73104,
@@ -11197,6 +11411,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5893,
         "protocol_id": 73104,
@@ -11208,6 +11423,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5893,
         "protocol_id": 73104,
@@ -11219,6 +11435,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5893,
         "protocol_id": 73104,
@@ -11230,6 +11447,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5893,
         "protocol_id": 73104,
@@ -11241,6 +11459,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5893,
         "protocol_id": 73104,
@@ -11252,6 +11471,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5893,
         "protocol_id": 73104,
@@ -11263,6 +11483,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5893,
         "protocol_id": 73104,
@@ -11274,6 +11495,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5893,
         "protocol_id": 73104,
@@ -11285,6 +11507,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5893,
         "protocol_id": 73104,
@@ -11296,6 +11519,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5893,
         "protocol_id": 73104,
@@ -11307,6 +11531,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5893,
         "protocol_id": 73104,
@@ -11318,6 +11543,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5893,
         "protocol_id": 73104,
@@ -11329,6 +11555,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5893,
         "protocol_id": 73104,
@@ -11340,6 +11567,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5893,
         "protocol_id": 73104,
@@ -11351,6 +11579,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5893,
         "protocol_id": 73104,
@@ -11362,6 +11591,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5893,
         "protocol_id": 73104,
@@ -11373,6 +11603,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5893,
         "protocol_id": 73104,
@@ -11384,6 +11615,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5893,
         "protocol_id": 73104,
@@ -11395,6 +11627,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5893,
         "protocol_id": 73104,
@@ -11406,6 +11639,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5893,
         "protocol_id": 73104,
@@ -11417,6 +11651,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5893,
         "protocol_id": 73104,
@@ -11428,6 +11663,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5893,
         "protocol_id": 73104,
@@ -11439,6 +11675,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5893,
         "protocol_id": 73104,
@@ -11450,6 +11687,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5893,
         "protocol_id": 73104,
@@ -11461,6 +11699,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5893,
         "protocol_id": 73104,
@@ -11472,6 +11711,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5893,
         "protocol_id": 73104,
@@ -11483,6 +11723,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5893,
         "protocol_id": 73104,
@@ -11494,6 +11735,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5893,
         "protocol_id": 73104,
@@ -11505,6 +11747,7 @@
       },
       {
         "event_date": "2025-09-28",
+        "tournament_id": 2025092800,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 5893,
         "protocol_id": 73104,
@@ -11516,6 +11759,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6146,
         "protocol_id": 74583,
@@ -11527,6 +11771,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6146,
         "protocol_id": 74583,
@@ -11538,6 +11783,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6146,
         "protocol_id": 74583,
@@ -11549,6 +11795,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6146,
         "protocol_id": 74583,
@@ -11560,6 +11807,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6146,
         "protocol_id": 74583,
@@ -11571,6 +11819,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6146,
         "protocol_id": 74583,
@@ -11582,6 +11831,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6146,
         "protocol_id": 74583,
@@ -11593,6 +11843,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6146,
         "protocol_id": 74583,
@@ -11604,6 +11855,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6146,
         "protocol_id": 74583,
@@ -11615,6 +11867,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6146,
         "protocol_id": 74583,
@@ -11626,6 +11879,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6146,
         "protocol_id": 74583,
@@ -11637,6 +11891,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6146,
         "protocol_id": 74583,
@@ -11648,6 +11903,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6146,
         "protocol_id": 74583,
@@ -11659,6 +11915,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6146,
         "protocol_id": 74583,
@@ -11670,6 +11927,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6146,
         "protocol_id": 74583,
@@ -11681,6 +11939,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6146,
         "protocol_id": 74583,
@@ -11692,6 +11951,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6146,
         "protocol_id": 74583,
@@ -11703,6 +11963,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6146,
         "protocol_id": 74583,
@@ -11714,6 +11975,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6146,
         "protocol_id": 74583,
@@ -11725,6 +11987,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6146,
         "protocol_id": 74583,
@@ -11736,6 +11999,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6146,
         "protocol_id": 74583,
@@ -11747,6 +12011,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6146,
         "protocol_id": 74583,
@@ -11758,6 +12023,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6146,
         "protocol_id": 74583,
@@ -11769,6 +12035,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6146,
         "protocol_id": 74583,
@@ -11780,6 +12047,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6146,
         "protocol_id": 74583,
@@ -11791,6 +12059,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6146,
         "protocol_id": 74583,
@@ -11802,6 +12071,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6146,
         "protocol_id": 74583,
@@ -11813,6 +12083,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6146,
         "protocol_id": 74583,
@@ -11824,6 +12095,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6146,
         "protocol_id": 74583,
@@ -11835,6 +12107,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6146,
         "protocol_id": 74583,
@@ -11846,6 +12119,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6146,
         "protocol_id": 74583,
@@ -11857,6 +12131,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6146,
         "protocol_id": 74583,
@@ -11868,6 +12143,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6146,
         "protocol_id": 74583,
@@ -11879,6 +12155,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6146,
         "protocol_id": 74583,
@@ -11890,6 +12167,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6146,
         "protocol_id": 74583,
@@ -11901,6 +12179,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6146,
         "protocol_id": 74583,
@@ -11912,6 +12191,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6146,
         "protocol_id": 74583,
@@ -11923,6 +12203,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6146,
         "protocol_id": 74583,
@@ -11934,6 +12215,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6146,
         "protocol_id": 74583,
@@ -11945,6 +12227,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6146,
         "protocol_id": 74583,
@@ -11956,6 +12239,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6146,
         "protocol_id": 74583,
@@ -11967,6 +12251,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6146,
         "protocol_id": 74583,
@@ -11978,6 +12263,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6146,
         "protocol_id": 74583,
@@ -11989,6 +12275,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6146,
         "protocol_id": 74583,
@@ -12000,6 +12287,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6146,
         "protocol_id": 74583,
@@ -12011,6 +12299,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6146,
         "protocol_id": 74583,
@@ -12022,6 +12311,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6146,
         "protocol_id": 74583,
@@ -12033,6 +12323,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6146,
         "protocol_id": 74583,
@@ -12044,6 +12335,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6146,
         "protocol_id": 74583,
@@ -12055,6 +12347,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6146,
         "protocol_id": 74583,
@@ -12066,6 +12359,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6146,
         "protocol_id": 74583,
@@ -12077,6 +12371,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6146,
         "protocol_id": 74583,
@@ -12088,6 +12383,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6146,
         "protocol_id": 74583,
@@ -12099,6 +12395,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6146,
         "protocol_id": 74583,
@@ -12110,6 +12407,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6146,
         "protocol_id": 74583,
@@ -12121,6 +12419,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6119,
         "protocol_id": 74585,
@@ -12132,6 +12431,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6119,
         "protocol_id": 74585,
@@ -12143,6 +12443,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6119,
         "protocol_id": 74585,
@@ -12154,6 +12455,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6119,
         "protocol_id": 74585,
@@ -12165,6 +12467,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6119,
         "protocol_id": 74585,
@@ -12176,6 +12479,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6119,
         "protocol_id": 74585,
@@ -12187,6 +12491,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6119,
         "protocol_id": 74585,
@@ -12198,6 +12503,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6119,
         "protocol_id": 74585,
@@ -12209,6 +12515,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6119,
         "protocol_id": 74585,
@@ -12220,6 +12527,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6119,
         "protocol_id": 74585,
@@ -12231,6 +12539,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6119,
         "protocol_id": 74585,
@@ -12242,6 +12551,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6119,
         "protocol_id": 74585,
@@ -12253,6 +12563,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6119,
         "protocol_id": 74585,
@@ -12264,6 +12575,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6119,
         "protocol_id": 74585,
@@ -12275,6 +12587,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6119,
         "protocol_id": 74585,
@@ -12286,6 +12599,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6119,
         "protocol_id": 74585,
@@ -12297,6 +12611,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6119,
         "protocol_id": 74585,
@@ -12308,6 +12623,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6119,
         "protocol_id": 74585,
@@ -12319,6 +12635,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6119,
         "protocol_id": 74585,
@@ -12330,6 +12647,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6119,
         "protocol_id": 74585,
@@ -12341,6 +12659,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6119,
         "protocol_id": 74585,
@@ -12352,6 +12671,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6119,
         "protocol_id": 74585,
@@ -12363,6 +12683,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6119,
         "protocol_id": 74585,
@@ -12374,6 +12695,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6119,
         "protocol_id": 74585,
@@ -12385,6 +12707,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6119,
         "protocol_id": 74585,
@@ -12396,6 +12719,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6119,
         "protocol_id": 74585,
@@ -12407,6 +12731,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6119,
         "protocol_id": 74585,
@@ -12418,6 +12743,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6119,
         "protocol_id": 74585,
@@ -12429,6 +12755,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6119,
         "protocol_id": 74585,
@@ -12440,6 +12767,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6119,
         "protocol_id": 74585,
@@ -12451,6 +12779,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6119,
         "protocol_id": 74585,
@@ -12462,6 +12791,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6119,
         "protocol_id": 74585,
@@ -12473,6 +12803,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6119,
         "protocol_id": 74585,
@@ -12484,6 +12815,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6119,
         "protocol_id": 74585,
@@ -12495,6 +12827,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6119,
         "protocol_id": 74585,
@@ -12506,6 +12839,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6119,
         "protocol_id": 74585,
@@ -12517,6 +12851,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6119,
         "protocol_id": 74585,
@@ -12528,6 +12863,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6119,
         "protocol_id": 74585,
@@ -12539,6 +12875,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6119,
         "protocol_id": 74585,
@@ -12550,6 +12887,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6119,
         "protocol_id": 74585,
@@ -12561,6 +12899,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6119,
         "protocol_id": 74585,
@@ -12572,6 +12911,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6119,
         "protocol_id": 74585,
@@ -12583,160 +12923,175 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6119,
         "protocol_id": 74585,
         "round": "EADC Юниоры-2 Соло Ж, финал",
         "dance": "P",
-        "program": "latin",
-        "judge": "Беляева Тамара",
-        "numeric_mark": 8.0
-      },
-      {
-        "event_date": "2025-11-09",
-        "tournament_city": "Санкт-Петербург",
-        "protocol_db_id": 6119,
-        "protocol_id": 74585,
-        "round": "EADC Юниоры-2 Соло Ж, финал",
-        "dance": "P",
-        "program": "latin",
-        "judge": "Жаворонкова Екатерина",
-        "numeric_mark": 3.0
-      },
-      {
-        "event_date": "2025-11-09",
-        "tournament_city": "Санкт-Петербург",
-        "protocol_db_id": 6119,
-        "protocol_id": 74585,
-        "round": "EADC Юниоры-2 Соло Ж, финал",
-        "dance": "P",
-        "program": "latin",
-        "judge": "Кузнецов Денис",
-        "numeric_mark": 4.0
-      },
-      {
-        "event_date": "2025-11-09",
-        "tournament_city": "Санкт-Петербург",
-        "protocol_db_id": 6119,
-        "protocol_id": 74585,
-        "round": "EADC Юниоры-2 Соло Ж, финал",
-        "dance": "P",
-        "program": "latin",
-        "judge": "Миронова Любовь",
-        "numeric_mark": 7.0
-      },
-      {
-        "event_date": "2025-11-09",
-        "tournament_city": "Санкт-Петербург",
-        "protocol_db_id": 6119,
-        "protocol_id": 74585,
-        "round": "EADC Юниоры-2 Соло Ж, финал",
-        "dance": "P",
-        "program": "latin",
-        "judge": "Огаркова Оксана",
-        "numeric_mark": 4.0
-      },
-      {
-        "event_date": "2025-11-09",
-        "tournament_city": "Санкт-Петербург",
-        "protocol_db_id": 6119,
-        "protocol_id": 74585,
-        "round": "EADC Юниоры-2 Соло Ж, финал",
-        "dance": "P",
-        "program": "latin",
-        "judge": "Оскольских Татьяна",
-        "numeric_mark": 4.0
-      },
-      {
-        "event_date": "2025-11-09",
-        "tournament_city": "Санкт-Петербург",
-        "protocol_db_id": 6119,
-        "protocol_id": 74585,
-        "round": "EADC Юниоры-2 Соло Ж, финал",
-        "dance": "P",
-        "program": "latin",
-        "judge": "Сокович Светлана",
-        "numeric_mark": 6.0
-      },
-      {
-        "event_date": "2025-11-09",
-        "tournament_city": "Санкт-Петербург",
-        "protocol_db_id": 6119,
-        "protocol_id": 74585,
-        "round": "EADC Юниоры-2 Соло Ж, финал",
-        "dance": "P",
-        "program": "latin",
-        "judge": "Степовой Сергей",
-        "numeric_mark": 1.0
-      },
-      {
-        "event_date": "2025-11-09",
-        "tournament_city": "Санкт-Петербург",
-        "protocol_db_id": 6119,
-        "protocol_id": 74585,
-        "round": "EADC Юниоры-2 Соло Ж, финал",
-        "dance": "P",
-        "program": "latin",
-        "judge": "Теплицкая Полина",
-        "numeric_mark": 5.0
-      },
-      {
-        "event_date": "2025-11-09",
-        "tournament_city": "Санкт-Петербург",
-        "protocol_db_id": 6119,
-        "protocol_id": 74585,
-        "round": "EADC Юниоры-2 Соло Ж, финал",
-        "dance": "P",
-        "program": "latin",
-        "judge": "Федоров Влад",
-        "numeric_mark": 5.0
-      },
-      {
-        "event_date": "2025-11-09",
-        "tournament_city": "Санкт-Петербург",
-        "protocol_db_id": 6119,
-        "protocol_id": 74585,
-        "round": "EADC Юниоры-2 Соло Ж, финал",
-        "dance": "J",
-        "program": "latin",
-        "judge": "Авенирова Алина",
-        "numeric_mark": 6.0
-      },
-      {
-        "event_date": "2025-11-09",
-        "tournament_city": "Санкт-Петербург",
-        "protocol_db_id": 6119,
-        "protocol_id": 74585,
-        "round": "EADC Юниоры-2 Соло Ж, финал",
-        "dance": "J",
-        "program": "latin",
-        "judge": "Агеева Наталья",
-        "numeric_mark": 3.0
-      },
-      {
-        "event_date": "2025-11-09",
-        "tournament_city": "Санкт-Петербург",
-        "protocol_db_id": 6119,
-        "protocol_id": 74585,
-        "round": "EADC Юниоры-2 Соло Ж, финал",
-        "dance": "J",
-        "program": "latin",
-        "judge": "Антонюк Екатерина",
-        "numeric_mark": 7.0
-      },
-      {
-        "event_date": "2025-11-09",
-        "tournament_city": "Санкт-Петербург",
-        "protocol_db_id": 6119,
-        "protocol_id": 74585,
-        "round": "EADC Юниоры-2 Соло Ж, финал",
-        "dance": "J",
         "program": "latin",
         "judge": "Беляева Тамара",
         "numeric_mark": 8.0
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
+        "tournament_city": "Санкт-Петербург",
+        "protocol_db_id": 6119,
+        "protocol_id": 74585,
+        "round": "EADC Юниоры-2 Соло Ж, финал",
+        "dance": "P",
+        "program": "latin",
+        "judge": "Жаворонкова Екатерина",
+        "numeric_mark": 3.0
+      },
+      {
+        "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
+        "tournament_city": "Санкт-Петербург",
+        "protocol_db_id": 6119,
+        "protocol_id": 74585,
+        "round": "EADC Юниоры-2 Соло Ж, финал",
+        "dance": "P",
+        "program": "latin",
+        "judge": "Кузнецов Денис",
+        "numeric_mark": 4.0
+      },
+      {
+        "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
+        "tournament_city": "Санкт-Петербург",
+        "protocol_db_id": 6119,
+        "protocol_id": 74585,
+        "round": "EADC Юниоры-2 Соло Ж, финал",
+        "dance": "P",
+        "program": "latin",
+        "judge": "Миронова Любовь",
+        "numeric_mark": 7.0
+      },
+      {
+        "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
+        "tournament_city": "Санкт-Петербург",
+        "protocol_db_id": 6119,
+        "protocol_id": 74585,
+        "round": "EADC Юниоры-2 Соло Ж, финал",
+        "dance": "P",
+        "program": "latin",
+        "judge": "Огаркова Оксана",
+        "numeric_mark": 4.0
+      },
+      {
+        "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
+        "tournament_city": "Санкт-Петербург",
+        "protocol_db_id": 6119,
+        "protocol_id": 74585,
+        "round": "EADC Юниоры-2 Соло Ж, финал",
+        "dance": "P",
+        "program": "latin",
+        "judge": "Оскольских Татьяна",
+        "numeric_mark": 4.0
+      },
+      {
+        "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
+        "tournament_city": "Санкт-Петербург",
+        "protocol_db_id": 6119,
+        "protocol_id": 74585,
+        "round": "EADC Юниоры-2 Соло Ж, финал",
+        "dance": "P",
+        "program": "latin",
+        "judge": "Сокович Светлана",
+        "numeric_mark": 6.0
+      },
+      {
+        "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
+        "tournament_city": "Санкт-Петербург",
+        "protocol_db_id": 6119,
+        "protocol_id": 74585,
+        "round": "EADC Юниоры-2 Соло Ж, финал",
+        "dance": "P",
+        "program": "latin",
+        "judge": "Степовой Сергей",
+        "numeric_mark": 1.0
+      },
+      {
+        "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
+        "tournament_city": "Санкт-Петербург",
+        "protocol_db_id": 6119,
+        "protocol_id": 74585,
+        "round": "EADC Юниоры-2 Соло Ж, финал",
+        "dance": "P",
+        "program": "latin",
+        "judge": "Теплицкая Полина",
+        "numeric_mark": 5.0
+      },
+      {
+        "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
+        "tournament_city": "Санкт-Петербург",
+        "protocol_db_id": 6119,
+        "protocol_id": 74585,
+        "round": "EADC Юниоры-2 Соло Ж, финал",
+        "dance": "P",
+        "program": "latin",
+        "judge": "Федоров Влад",
+        "numeric_mark": 5.0
+      },
+      {
+        "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
+        "tournament_city": "Санкт-Петербург",
+        "protocol_db_id": 6119,
+        "protocol_id": 74585,
+        "round": "EADC Юниоры-2 Соло Ж, финал",
+        "dance": "J",
+        "program": "latin",
+        "judge": "Авенирова Алина",
+        "numeric_mark": 6.0
+      },
+      {
+        "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
+        "tournament_city": "Санкт-Петербург",
+        "protocol_db_id": 6119,
+        "protocol_id": 74585,
+        "round": "EADC Юниоры-2 Соло Ж, финал",
+        "dance": "J",
+        "program": "latin",
+        "judge": "Агеева Наталья",
+        "numeric_mark": 3.0
+      },
+      {
+        "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
+        "tournament_city": "Санкт-Петербург",
+        "protocol_db_id": 6119,
+        "protocol_id": 74585,
+        "round": "EADC Юниоры-2 Соло Ж, финал",
+        "dance": "J",
+        "program": "latin",
+        "judge": "Антонюк Екатерина",
+        "numeric_mark": 7.0
+      },
+      {
+        "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
+        "tournament_city": "Санкт-Петербург",
+        "protocol_db_id": 6119,
+        "protocol_id": 74585,
+        "round": "EADC Юниоры-2 Соло Ж, финал",
+        "dance": "J",
+        "program": "latin",
+        "judge": "Беляева Тамара",
+        "numeric_mark": 8.0
+      },
+      {
+        "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6119,
         "protocol_id": 74585,
@@ -12748,6 +13103,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6119,
         "protocol_id": 74585,
@@ -12759,6 +13115,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6119,
         "protocol_id": 74585,
@@ -12770,6 +13127,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6119,
         "protocol_id": 74585,
@@ -12781,6 +13139,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6119,
         "protocol_id": 74585,
@@ -12792,6 +13151,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6119,
         "protocol_id": 74585,
@@ -12803,6 +13163,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6119,
         "protocol_id": 74585,
@@ -12814,6 +13175,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6119,
         "protocol_id": 74585,
@@ -12825,6 +13187,7 @@
       },
       {
         "event_date": "2025-11-09",
+        "tournament_id": 2025110901,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6119,
         "protocol_id": 74585,
@@ -12836,6 +13199,7 @@
       },
       {
         "event_date": "2026-01-18",
+        "tournament_id": 2026011801,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6363,
         "protocol_id": 76394,
@@ -12847,6 +13211,7 @@
       },
       {
         "event_date": "2026-01-18",
+        "tournament_id": 2026011801,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6363,
         "protocol_id": 76394,
@@ -12858,6 +13223,7 @@
       },
       {
         "event_date": "2026-01-18",
+        "tournament_id": 2026011801,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6363,
         "protocol_id": 76394,
@@ -12869,6 +13235,7 @@
       },
       {
         "event_date": "2026-01-18",
+        "tournament_id": 2026011801,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6363,
         "protocol_id": 76394,
@@ -12880,6 +13247,7 @@
       },
       {
         "event_date": "2026-01-18",
+        "tournament_id": 2026011801,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6363,
         "protocol_id": 76394,
@@ -12891,6 +13259,7 @@
       },
       {
         "event_date": "2026-01-18",
+        "tournament_id": 2026011801,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6363,
         "protocol_id": 76394,
@@ -12902,6 +13271,7 @@
       },
       {
         "event_date": "2026-01-18",
+        "tournament_id": 2026011801,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6363,
         "protocol_id": 76394,
@@ -12913,6 +13283,7 @@
       },
       {
         "event_date": "2026-01-18",
+        "tournament_id": 2026011801,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6363,
         "protocol_id": 76394,
@@ -12924,6 +13295,7 @@
       },
       {
         "event_date": "2026-01-18",
+        "tournament_id": 2026011801,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6363,
         "protocol_id": 76394,
@@ -12935,6 +13307,7 @@
       },
       {
         "event_date": "2026-01-18",
+        "tournament_id": 2026011801,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6363,
         "protocol_id": 76394,
@@ -12946,6 +13319,7 @@
       },
       {
         "event_date": "2026-01-18",
+        "tournament_id": 2026011801,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6363,
         "protocol_id": 76394,
@@ -12957,6 +13331,7 @@
       },
       {
         "event_date": "2026-01-18",
+        "tournament_id": 2026011801,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6363,
         "protocol_id": 76394,
@@ -12968,6 +13343,7 @@
       },
       {
         "event_date": "2026-01-18",
+        "tournament_id": 2026011801,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6363,
         "protocol_id": 76394,
@@ -12979,6 +13355,7 @@
       },
       {
         "event_date": "2026-01-18",
+        "tournament_id": 2026011801,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6363,
         "protocol_id": 76394,
@@ -12990,6 +13367,7 @@
       },
       {
         "event_date": "2026-01-18",
+        "tournament_id": 2026011801,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6363,
         "protocol_id": 76394,
@@ -13001,6 +13379,7 @@
       },
       {
         "event_date": "2026-01-18",
+        "tournament_id": 2026011801,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6363,
         "protocol_id": 76394,
@@ -13012,6 +13391,7 @@
       },
       {
         "event_date": "2026-01-18",
+        "tournament_id": 2026011801,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6363,
         "protocol_id": 76394,
@@ -13023,6 +13403,7 @@
       },
       {
         "event_date": "2026-01-18",
+        "tournament_id": 2026011801,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6363,
         "protocol_id": 76394,
@@ -13034,6 +13415,7 @@
       },
       {
         "event_date": "2026-01-18",
+        "tournament_id": 2026011801,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6363,
         "protocol_id": 76394,
@@ -13045,6 +13427,7 @@
       },
       {
         "event_date": "2026-01-18",
+        "tournament_id": 2026011801,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6363,
         "protocol_id": 76394,
@@ -13056,6 +13439,7 @@
       },
       {
         "event_date": "2026-01-18",
+        "tournament_id": 2026011801,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6363,
         "protocol_id": 76394,
@@ -13067,6 +13451,7 @@
       },
       {
         "event_date": "2026-01-18",
+        "tournament_id": 2026011801,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6363,
         "protocol_id": 76394,
@@ -13078,6 +13463,7 @@
       },
       {
         "event_date": "2026-01-18",
+        "tournament_id": 2026011801,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6363,
         "protocol_id": 76394,
@@ -13089,6 +13475,7 @@
       },
       {
         "event_date": "2026-01-18",
+        "tournament_id": 2026011801,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6363,
         "protocol_id": 76394,
@@ -13100,6 +13487,7 @@
       },
       {
         "event_date": "2026-01-18",
+        "tournament_id": 2026011801,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6363,
         "protocol_id": 76394,
@@ -13111,6 +13499,7 @@
       },
       {
         "event_date": "2026-01-18",
+        "tournament_id": 2026011801,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6363,
         "protocol_id": 76394,
@@ -13122,6 +13511,7 @@
       },
       {
         "event_date": "2026-01-18",
+        "tournament_id": 2026011801,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6363,
         "protocol_id": 76394,
@@ -13133,6 +13523,7 @@
       },
       {
         "event_date": "2026-01-18",
+        "tournament_id": 2026011801,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6363,
         "protocol_id": 76394,
@@ -13144,6 +13535,7 @@
       },
       {
         "event_date": "2026-01-18",
+        "tournament_id": 2026011801,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6363,
         "protocol_id": 76394,
@@ -13155,6 +13547,7 @@
       },
       {
         "event_date": "2026-01-18",
+        "tournament_id": 2026011801,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6363,
         "protocol_id": 76394,
@@ -13166,6 +13559,7 @@
       },
       {
         "event_date": "2026-01-18",
+        "tournament_id": 2026011801,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6363,
         "protocol_id": 76394,
@@ -13177,6 +13571,7 @@
       },
       {
         "event_date": "2026-01-18",
+        "tournament_id": 2026011801,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6363,
         "protocol_id": 76394,
@@ -13188,6 +13583,7 @@
       },
       {
         "event_date": "2026-01-18",
+        "tournament_id": 2026011801,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6363,
         "protocol_id": 76394,
@@ -13199,6 +13595,7 @@
       },
       {
         "event_date": "2026-01-18",
+        "tournament_id": 2026011801,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6363,
         "protocol_id": 76394,
@@ -13210,6 +13607,7 @@
       },
       {
         "event_date": "2026-01-18",
+        "tournament_id": 2026011801,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6363,
         "protocol_id": 76394,
@@ -13221,6 +13619,7 @@
       },
       {
         "event_date": "2026-01-18",
+        "tournament_id": 2026011801,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6390,
         "protocol_id": 76412,
@@ -13232,6 +13631,7 @@
       },
       {
         "event_date": "2026-01-18",
+        "tournament_id": 2026011801,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6390,
         "protocol_id": 76412,
@@ -13243,6 +13643,7 @@
       },
       {
         "event_date": "2026-01-18",
+        "tournament_id": 2026011801,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6390,
         "protocol_id": 76412,
@@ -13254,6 +13655,7 @@
       },
       {
         "event_date": "2026-01-18",
+        "tournament_id": 2026011801,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6390,
         "protocol_id": 76412,
@@ -13265,6 +13667,7 @@
       },
       {
         "event_date": "2026-01-18",
+        "tournament_id": 2026011801,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6390,
         "protocol_id": 76412,
@@ -13276,6 +13679,7 @@
       },
       {
         "event_date": "2026-01-18",
+        "tournament_id": 2026011801,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6390,
         "protocol_id": 76412,
@@ -13287,6 +13691,7 @@
       },
       {
         "event_date": "2026-01-18",
+        "tournament_id": 2026011801,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6390,
         "protocol_id": 76412,
@@ -13298,6 +13703,7 @@
       },
       {
         "event_date": "2026-01-18",
+        "tournament_id": 2026011801,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6390,
         "protocol_id": 76412,
@@ -13309,6 +13715,7 @@
       },
       {
         "event_date": "2026-01-18",
+        "tournament_id": 2026011801,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6390,
         "protocol_id": 76412,
@@ -13320,6 +13727,7 @@
       },
       {
         "event_date": "2026-01-18",
+        "tournament_id": 2026011801,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6390,
         "protocol_id": 76412,
@@ -13331,6 +13739,7 @@
       },
       {
         "event_date": "2026-01-18",
+        "tournament_id": 2026011801,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6390,
         "protocol_id": 76412,
@@ -13342,6 +13751,7 @@
       },
       {
         "event_date": "2026-01-18",
+        "tournament_id": 2026011801,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6390,
         "protocol_id": 76412,
@@ -13353,6 +13763,7 @@
       },
       {
         "event_date": "2026-01-18",
+        "tournament_id": 2026011801,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6390,
         "protocol_id": 76412,
@@ -13364,6 +13775,7 @@
       },
       {
         "event_date": "2026-01-18",
+        "tournament_id": 2026011801,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6390,
         "protocol_id": 76412,
@@ -13375,6 +13787,7 @@
       },
       {
         "event_date": "2026-01-18",
+        "tournament_id": 2026011801,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6390,
         "protocol_id": 76412,
@@ -13386,6 +13799,7 @@
       },
       {
         "event_date": "2026-01-18",
+        "tournament_id": 2026011801,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6390,
         "protocol_id": 76412,
@@ -13397,6 +13811,7 @@
       },
       {
         "event_date": "2026-01-18",
+        "tournament_id": 2026011801,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6390,
         "protocol_id": 76412,
@@ -13408,6 +13823,7 @@
       },
       {
         "event_date": "2026-01-18",
+        "tournament_id": 2026011801,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6390,
         "protocol_id": 76412,
@@ -13419,6 +13835,7 @@
       },
       {
         "event_date": "2026-01-18",
+        "tournament_id": 2026011801,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6390,
         "protocol_id": 76412,
@@ -13430,6 +13847,7 @@
       },
       {
         "event_date": "2026-01-18",
+        "tournament_id": 2026011801,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6390,
         "protocol_id": 76412,
@@ -13441,6 +13859,7 @@
       },
       {
         "event_date": "2026-01-18",
+        "tournament_id": 2026011801,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6390,
         "protocol_id": 76412,
@@ -13452,6 +13871,7 @@
       },
       {
         "event_date": "2026-01-18",
+        "tournament_id": 2026011801,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6390,
         "protocol_id": 76412,
@@ -13463,6 +13883,7 @@
       },
       {
         "event_date": "2026-01-18",
+        "tournament_id": 2026011801,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6390,
         "protocol_id": 76412,
@@ -13474,6 +13895,7 @@
       },
       {
         "event_date": "2026-01-18",
+        "tournament_id": 2026011801,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6390,
         "protocol_id": 76412,
@@ -13485,6 +13907,7 @@
       },
       {
         "event_date": "2026-01-18",
+        "tournament_id": 2026011801,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6390,
         "protocol_id": 76412,
@@ -13496,6 +13919,7 @@
       },
       {
         "event_date": "2026-01-18",
+        "tournament_id": 2026011801,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6390,
         "protocol_id": 76412,
@@ -13507,6 +13931,7 @@
       },
       {
         "event_date": "2026-01-18",
+        "tournament_id": 2026011801,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6390,
         "protocol_id": 76412,
@@ -13518,6 +13943,7 @@
       },
       {
         "event_date": "2026-01-18",
+        "tournament_id": 2026011801,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6390,
         "protocol_id": 76412,
@@ -13529,6 +13955,7 @@
       },
       {
         "event_date": "2026-01-18",
+        "tournament_id": 2026011801,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6390,
         "protocol_id": 76412,
@@ -13540,6 +13967,7 @@
       },
       {
         "event_date": "2026-01-18",
+        "tournament_id": 2026011801,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6390,
         "protocol_id": 76412,
@@ -13551,6 +13979,7 @@
       },
       {
         "event_date": "2026-01-18",
+        "tournament_id": 2026011801,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6390,
         "protocol_id": 76412,
@@ -13562,6 +13991,7 @@
       },
       {
         "event_date": "2026-01-18",
+        "tournament_id": 2026011801,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6390,
         "protocol_id": 76412,
@@ -13573,6 +14003,7 @@
       },
       {
         "event_date": "2026-01-18",
+        "tournament_id": 2026011801,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6390,
         "protocol_id": 76412,
@@ -13584,6 +14015,7 @@
       },
       {
         "event_date": "2026-01-18",
+        "tournament_id": 2026011801,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6390,
         "protocol_id": 76412,
@@ -13595,6 +14027,7 @@
       },
       {
         "event_date": "2026-01-18",
+        "tournament_id": 2026011801,
         "tournament_city": "Санкт-Петербург",
         "protocol_db_id": 6390,
         "protocol_id": 76412,
@@ -18220,7 +18653,7 @@
             "cross_marks": 10,
             "numeric_marks": 11,
             "category_display": "Юниоры-1+2 D+C Соло Ж",
-            "marks_label": "10 крестов",
+            "marks_label": "11 оценок",
             "protocol_place_value": null,
             "protocol_place_label": null
           },
@@ -18248,7 +18681,7 @@
             "cross_marks": 10,
             "numeric_marks": 11,
             "category_display": "Юниоры-1+2 D+C Соло Ж",
-            "marks_label": "10 крестов",
+            "marks_label": "11 оценок",
             "protocol_place_value": null,
             "protocol_place_label": null
           },
@@ -18276,7 +18709,7 @@
             "cross_marks": 9,
             "numeric_marks": 11,
             "category_display": "Юниоры-1+2 D+C Соло Ж",
-            "marks_label": "9 крестов",
+            "marks_label": "11 оценок",
             "protocol_place_value": null,
             "protocol_place_label": null
           },
@@ -18304,7 +18737,7 @@
             "cross_marks": 10,
             "numeric_marks": 11,
             "category_display": "Юниоры-1+2 D+C Соло Ж",
-            "marks_label": "10 крестов",
+            "marks_label": "11 оценок",
             "protocol_place_value": null,
             "protocol_place_label": null
           },
@@ -18332,7 +18765,7 @@
             "cross_marks": 11,
             "numeric_marks": 11,
             "category_display": "Юниоры-1+2 D+C Соло Ж",
-            "marks_label": "11 крестов",
+            "marks_label": "11 оценок",
             "protocol_place_value": null,
             "protocol_place_label": null
           },
@@ -18500,7 +18933,7 @@
             "cross_marks": 11,
             "numeric_marks": 13,
             "category_display": "EADC Юниоры-1 RS Соло Ж",
-            "marks_label": "11 крестов",
+            "marks_label": "13 оценок",
             "protocol_place_value": null,
             "protocol_place_label": null
           },
@@ -18528,7 +18961,7 @@
             "cross_marks": 9,
             "numeric_marks": 13,
             "category_display": "EADC Юниоры-1 RS Соло Ж",
-            "marks_label": "9 крестов",
+            "marks_label": "13 оценок",
             "protocol_place_value": null,
             "protocol_place_label": null
           },
@@ -18556,7 +18989,7 @@
             "cross_marks": 11,
             "numeric_marks": 13,
             "category_display": "EADC Юниоры-1 RS Соло Ж",
-            "marks_label": "11 крестов",
+            "marks_label": "13 оценок",
             "protocol_place_value": null,
             "protocol_place_label": null
           },
@@ -18584,7 +19017,7 @@
             "cross_marks": 11,
             "numeric_marks": 13,
             "category_display": "EADC Юниоры-1 RS Соло Ж",
-            "marks_label": "11 крестов",
+            "marks_label": "13 оценок",
             "protocol_place_value": null,
             "protocol_place_label": null
           },
@@ -18612,7 +19045,7 @@
             "cross_marks": 9,
             "numeric_marks": 13,
             "category_display": "EADC Юниоры-1 RS Соло Ж",
-            "marks_label": "9 крестов",
+            "marks_label": "13 оценок",
             "protocol_place_value": null,
             "protocol_place_label": null
           },
@@ -18640,7 +19073,7 @@
             "cross_marks": 7,
             "numeric_marks": 13,
             "category_display": "EADC Юниоры-1 RS Соло Ж",
-            "marks_label": "7 крестов",
+            "marks_label": "13 оценок",
             "protocol_place_value": null,
             "protocol_place_label": null
           },
@@ -18724,7 +19157,7 @@
             "cross_marks": 10,
             "numeric_marks": 13,
             "category_display": "EADC Юниоры-1 RS Соло Ж",
-            "marks_label": "10 крестов",
+            "marks_label": "13 оценок",
             "protocol_place_value": null,
             "protocol_place_label": null
           },
@@ -18752,7 +19185,7 @@
             "cross_marks": 6,
             "numeric_marks": 13,
             "category_display": "EADC Юниоры-1 RS Соло Ж",
-            "marks_label": "6 крестов",
+            "marks_label": "13 оценок",
             "protocol_place_value": null,
             "protocol_place_label": null
           }
@@ -19075,7 +19508,7 @@
             "cross_marks": 10,
             "numeric_marks": 11,
             "category_display": "EADC Юниоры-2 Соло Ж",
-            "marks_label": "10 крестов",
+            "marks_label": "11 оценок",
             "protocol_place_value": null,
             "protocol_place_label": null
           },
@@ -19103,7 +19536,7 @@
             "cross_marks": 11,
             "numeric_marks": 11,
             "category_display": "EADC Юниоры-2 Соло Ж",
-            "marks_label": "11 крестов",
+            "marks_label": "11 оценок",
             "protocol_place_value": null,
             "protocol_place_label": null
           },
@@ -19131,7 +19564,7 @@
             "cross_marks": 10,
             "numeric_marks": 11,
             "category_display": "EADC Юниоры-2 Соло Ж",
-            "marks_label": "10 крестов",
+            "marks_label": "11 оценок",
             "protocol_place_value": null,
             "protocol_place_label": null
           },
@@ -19159,7 +19592,7 @@
             "cross_marks": 8,
             "numeric_marks": 11,
             "category_display": "EADC Юниоры-2 Соло Ж",
-            "marks_label": "8 крестов",
+            "marks_label": "11 оценок",
             "protocol_place_value": null,
             "protocol_place_label": null
           },
@@ -19187,7 +19620,7 @@
             "cross_marks": 9,
             "numeric_marks": 11,
             "category_display": "EADC Юниоры-2 Соло Ж",
-            "marks_label": "9 крестов",
+            "marks_label": "11 оценок",
             "protocol_place_value": null,
             "protocol_place_label": null
           },
@@ -19637,7 +20070,7 @@
             "cross_marks": 7,
             "numeric_marks": 7,
             "category_display": "Юниоры-1+2 D+C соло Ж",
-            "marks_label": "7 крестов",
+            "marks_label": "7 оценок",
             "protocol_place_value": null,
             "protocol_place_label": null
           },
@@ -19665,7 +20098,7 @@
             "cross_marks": 4,
             "numeric_marks": 7,
             "category_display": "Юниоры-1+2 D+C соло Ж",
-            "marks_label": "4 крестов",
+            "marks_label": "7 оценок",
             "protocol_place_value": null,
             "protocol_place_label": null
           },
@@ -19693,7 +20126,7 @@
             "cross_marks": 4,
             "numeric_marks": 7,
             "category_display": "Юниоры-1+2 D+C соло Ж",
-            "marks_label": "4 крестов",
+            "marks_label": "7 оценок",
             "protocol_place_value": null,
             "protocol_place_label": null
           },
@@ -19721,7 +20154,7 @@
             "cross_marks": 7,
             "numeric_marks": 7,
             "category_display": "Юниоры-1+2 D+C соло Ж",
-            "marks_label": "7 крестов",
+            "marks_label": "7 оценок",
             "protocol_place_value": null,
             "protocol_place_label": null
           },
@@ -19749,7 +20182,7 @@
             "cross_marks": 6,
             "numeric_marks": 7,
             "category_display": "Юниоры-1+2 D+C соло Ж",
-            "marks_label": "6 крестов",
+            "marks_label": "7 оценок",
             "protocol_place_value": null,
             "protocol_place_label": null
           },
@@ -19777,7 +20210,7 @@
             "cross_marks": 5,
             "numeric_marks": 7,
             "category_display": "Юниоры-1+2 D+C соло Ж",
-            "marks_label": "5 крестов",
+            "marks_label": "7 оценок",
             "protocol_place_value": null,
             "protocol_place_label": null
           },
@@ -19805,7 +20238,7 @@
             "cross_marks": 6,
             "numeric_marks": 7,
             "category_display": "Юниоры-1+2 D+C соло Ж",
-            "marks_label": "6 крестов",
+            "marks_label": "7 оценок",
             "protocol_place_value": null,
             "protocol_place_label": null
           },
@@ -19833,7 +20266,7 @@
             "cross_marks": 6,
             "numeric_marks": 7,
             "category_display": "Юниоры-1+2 D+C соло Ж",
-            "marks_label": "6 крестов",
+            "marks_label": "7 оценок",
             "protocol_place_value": null,
             "protocol_place_label": null
           },
@@ -19861,7 +20294,7 @@
             "cross_marks": 5,
             "numeric_marks": 7,
             "category_display": "Юниоры-1+2 D+C соло Ж",
-            "marks_label": "5 крестов",
+            "marks_label": "7 оценок",
             "protocol_place_value": null,
             "protocol_place_label": null
           },
@@ -19889,7 +20322,7 @@
             "cross_marks": 4,
             "numeric_marks": 7,
             "category_display": "Юниоры-1+2 D+C соло Ж",
-            "marks_label": "4 крестов",
+            "marks_label": "7 оценок",
             "protocol_place_value": null,
             "protocol_place_label": null
           }
