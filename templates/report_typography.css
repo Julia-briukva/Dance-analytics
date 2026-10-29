@@ -1,0 +1,91 @@
+/* Alternative presentation. Original report.html.j2 remains unchanged. */
+:root { --bg: #fff; --paper: transparent; --paper-soft: transparent; --shadow: none; }
+.report { width: min(1120px, calc(100% - 64px)); padding-top: 48px; }
+.cover { padding: 0 0 28px; margin: 0; background: transparent; border: 0; border-radius: 0; box-shadow: none; }
+.cover h1 { font-size: 40px; line-height: 1.15; letter-spacing: -.035em; margin: 0 0 16px; }
+.section, .card, .note-box, .program-story, .program-card, .insight-card,
+.judge-insight-card, .judge-insight-item, .judge-consensus-item,
+.dance-comparison-card, .trend-card, .category-panel, .profile-grid,
+.profile-item, .story-card, .dance-comparison, .dance-comparison-zone,
+.dance-comparison-zone.positive, .dance-comparison-zone.attention,
+.dance-comparison-zone.neutral, .insight-card.positive,
+.insight-card.attention, .insight-card.neutral, .note-box.limited-note {
+  background: transparent; box-shadow: none; border-radius: 0; border: 0;
+}
+.section { padding: 0; margin: 0 0 64px; }
+.section > h2 { font-size: 28px; line-height: 1.25; margin: 0 0 20px; letter-spacing: -.02em; }
+h3 { font-size: 21px; line-height: 1.35; font-weight: 650; margin: 24px 0 16px; }
+h4 { font-size: 18px; line-height: 1.4; margin: 28px 0 16px; }
+h5 { font-size: 15px; line-height: 1.5; margin: 20px 0 12px; }
+.section-kicker { margin: -8px 0 24px; color: var(--muted); }
+.card, .note-box, .judge-insight-card { padding: 16px 0; }
+.kpi-grid, .judge-insight-grid { gap: 32px; }
+.note-box { border-top: 1px solid var(--line); margin-top: 24px; }
+.header-filter-panel { background: transparent; padding: 20px 0 0; border: 0; box-shadow: none; }
+.page-nav { top: 0; width: 100%; max-width: 100%; margin: 0 0 40px; padding: 8px 0; gap: 28px; border: 0; border-bottom: 1px solid var(--line); border-radius: 0; box-shadow: none; background: transparent; backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); }
+.page-nav a { min-height: 44px; padding: 8px 0; font-size: 17px; line-height: 1.4; font-weight: 550; border: 0; border-bottom: 2px solid transparent; border-radius: 0; background: transparent; color: var(--muted); }
+.page-nav a:hover, .page-nav a.is-active { border-color: var(--accent); background: transparent; color: var(--ink); }
+.page-nav a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+[id] { scroll-margin-top: 92px; }
+.tournament-category-card { padding: 24px 0 32px; border: 0; border-bottom: 1px solid var(--line); }
+.tournament-category-card:first-of-type { padding-top: 0; }
+.tournament-category-header { padding: 0 0 16px; }
+.tournament-category-card .tournament-category-header h3 { font-size: 22px; margin: 6px 0 12px; }
+.category-result-columns, .tournament-category-card .category-result-summary { padding-left: 0; padding-right: 0; }
+.category-result-content { padding: 0 0 24px; }
+.category-result-content .judge-section-title { font-size: 19px; margin: 32px 0 20px; }
+.judge-panel-result .judge-dance-title { font-size: 15px; margin: 0 0 12px; }
+.table-wrap { box-shadow: none; border-radius: 0; border: 0; }
+table, .mobile-card-table table, .mobile-card-table tr { background: transparent; box-shadow: none; }
+thead, thead th { background: transparent; }
+th { border-bottom: 1px solid var(--line); }
+tbody tr, tbody tr:nth-child(even), tbody tr:hover { background: transparent; }
+.dance-program { display: grid; grid-template-columns: auto minmax(0, 1fr); column-gap: 24px; align-items: start; margin-top: 36px; }
+.dance-program > h3 { margin: 0; font-size: 21px; line-height: 32px; }
+.dance-program > .category-chip-groups { margin: 0; justify-self: start; }
+.dance-program > .category-panels { grid-column: 1 / -1; margin-top: 24px; }
+.program-heading { margin-bottom: 16px; }
+@media (max-width: 650px) {
+  .report { width: calc(100% - 32px); padding-top: 28px; }
+  .cover h1 { font-size: 32px; }
+  .section > h2 { font-size: 25px; }
+  .page-nav { gap: 22px; margin-bottom: 32px; }
+  .page-nav a { font-size: 16px; }
+  .dance-program { grid-template-columns: 1fr; row-gap: 12px; }
+  .dance-program > .category-panels { grid-column: 1; }
+}
+
+/* Second typography pass: compact comparisons and familiar table framing. */
+.table-wrap { border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+.table-wrap.table-scroll { overflow-x: auto; }
+.table-wrap table { border: 0; margin: 0; }
+.table-wrap thead, .table-wrap thead th { background: #F4F1FC; }
+.table-wrap tbody td { border-bottom: 1px solid var(--line); }
+.table-wrap tbody tr:last-child td { border-bottom: 0; }
+.dancer-program-class, .dancer-program-class strong { font-weight: 400; }
+.dance-program { grid-template-columns: max-content minmax(0, 1fr); column-gap: 16px; row-gap: 0; margin-top: 28px; }
+.dance-program > h3 { font-weight: 400; }
+.dance-program > .category-chip-groups { display: flex; flex-wrap: wrap; width: auto; justify-content: flex-start; justify-self: start; align-self: center; gap: 12px; padding: 0; margin: 0; }
+.dance-program .category-tabs { justify-content: flex-start; }
+.dance-program > .category-panels { margin-top: 16px; }
+.dance-program .category-panel { padding-top: 0; }
+.dance-program .dance-comparison { padding: 0; margin: 0 0 28px; }
+.dance-program .dance-comparison-header { margin: 0 0 8px; }
+.dance-program .dance-comparison-header h4 { font-size: 18px; margin: 0; }
+.dance-program .trend-help { margin: 0 0 16px; max-width: 760px; }
+.dance-program .dance-comparison-grid { grid-template-columns: repeat(2, minmax(0, 340px)); gap: 24px; justify-content: start; }
+.dance-program .dance-comparison-zone { padding: 0; margin: 0; min-height: 0; }
+.dance-program .dance-comparison-title { margin-bottom: 6px; justify-content: flex-start; }
+.dance-program .dance-name-list { margin: 0; }
+.dance-program .dance-comparison-value { margin-top: 4px; }
+@media (max-width: 650px) {
+  .dance-program { grid-template-columns: 1fr; row-gap: 10px; }
+  .dance-program > .category-panels { margin-top: 8px; }
+  .dance-program .dance-comparison-grid { grid-template-columns: 1fr; gap: 18px; }
+}
+
+/* Keep title and chips next to each other, without distributing free space. */
+#dances .dance-program { display: flex; flex-wrap: wrap; justify-content: flex-start; align-items: center; gap: 16px; }
+#dances .dance-program > h3 { flex: 0 0 auto; width: auto; margin: 0; }
+#dances .dance-program > .category-chip-groups { flex: 0 1 auto; width: auto; max-width: 100%; margin: 0; padding: 0; }
+#dances .dance-program > .category-panels { flex: 0 0 100%; width: 100%; margin: 0; }

@@ -111,7 +111,10 @@ def _parse_class_result_containers(soup: BeautifulSoup, profile: dict[str, Any])
             exact_by_program[program] = candidate
 
     for program in ("st", "la"):
-        candidate = exact_by_program.get(program) or fallback_by_program.get(program)
+        # A previous class's achieved norm is not the current class's norm.
+        candidate = exact_by_program.get(program)
+        if not clean_text(profile.get(f"class_{program}")):
+            candidate = fallback_by_program.get(program)
         if not candidate:
             continue
         profile[f"skr_class_{program}"] = candidate["skr_class"]
@@ -148,4 +151,5 @@ def parse_profile_html(html: str) -> dict[str, str]:
 
     _parse_class_result_containers(soup, profile)
     return clean_profile(profile)
+
 

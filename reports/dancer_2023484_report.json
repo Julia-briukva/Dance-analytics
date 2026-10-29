@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-10-12T09:09:58.091669+00:00",
+    "generated_at": "2026-10-29T11:19:47.331823+00:00",
     "analytics_version": "report_layer_v1",
     "database": "database/compreg_spb_2025_2026.sqlite"
   },
@@ -10,14 +10,14 @@
     "name": "Сорокина София",
     "club": "Триумф",
     "city": "Санкт-Петербург",
-    "coaches_st": "Маляева Олеся",
-    "coaches_la": "Маляева Олеся",
-    "class_st": "N",
-    "skr_class_st": "25.526",
-    "norm_status_st": "норматив на E класс выполнен",
-    "class_la": "N",
-    "skr_class_la": "19.692",
-    "norm_status_la": "норматив на E класс выполнен",
+    "coaches_st": null,
+    "coaches_la": null,
+    "class_st": "Программа сложности E",
+    "skr_class_st": null,
+    "norm_status_st": null,
+    "class_la": "Программа сложности E",
+    "skr_class_la": null,
+    "norm_status_la": null,
     "profile_source": "data/cache/dancer_profiles/2023484_danceinfo_post_ci_2023484.html"
   },
   "summary": {
@@ -5032,6 +5032,92 @@
         "result_place": 5.0,
         "result_place_label": "5 место",
         "date": "2026-09-27"
+      }
+    ],
+    "protocol_results": [
+      {
+        "protocol_db_id": 6483,
+        "protocol_id": 76799,
+        "tournament_id": 2026020100,
+        "tournament_title": "Tiara Dance Cup (Санкт-Петербург)",
+        "event_date": "2026-02-01",
+        "city": "Санкт-Петербург",
+        "category": "Ювеналы-2 N соло Ж St",
+        "competitor_number": "411",
+        "protocol_place": "1",
+        "program": "standard",
+        "protocol_place_value": 1.0,
+        "protocol_place_label": "1 место"
+      },
+      {
+        "protocol_db_id": 6505,
+        "protocol_id": 76814,
+        "tournament_id": 2026020100,
+        "tournament_title": "Tiara Dance Cup (Санкт-Петербург)",
+        "event_date": "2026-02-01",
+        "city": "Санкт-Петербург",
+        "category": "Ювеналы-2 N соло Ж La",
+        "competitor_number": "411",
+        "protocol_place": "4",
+        "program": "latin",
+        "protocol_place_value": 4.0,
+        "protocol_place_label": "4 место"
+      },
+      {
+        "protocol_db_id": 6659,
+        "protocol_id": 77937,
+        "tournament_id": 2026030800,
+        "tournament_title": "Амбассадор 2026 (Санкт-Петербург)",
+        "event_date": "2026-03-08",
+        "city": "Санкт-Петербург",
+        "category": "Ювеналы-1+2 N Соло Ж St",
+        "competitor_number": "45",
+        "protocol_place": "1",
+        "program": "standard",
+        "protocol_place_value": 1.0,
+        "protocol_place_label": "1 место"
+      },
+      {
+        "protocol_db_id": 6691,
+        "protocol_id": 77949,
+        "tournament_id": 2026030800,
+        "tournament_title": "Амбассадор 2026 (Санкт-Петербург)",
+        "event_date": "2026-03-08",
+        "city": "Санкт-Петербург",
+        "category": "Ювеналы-1+2 N Соло Ж La",
+        "competitor_number": "45",
+        "protocol_place": "25-26",
+        "program": "latin",
+        "protocol_place_value": 25.5,
+        "protocol_place_label": "25–26 место"
+      },
+      {
+        "protocol_db_id": 7027,
+        "protocol_id": 81362,
+        "tournament_id": 2026092700,
+        "tournament_title": "Кубок Лиги 2026 (Санкт-Петербург)",
+        "event_date": "2026-09-27",
+        "city": "Санкт-Петербург",
+        "category": "Ювеналы-2 N+E Соло Ж St",
+        "competitor_number": "290",
+        "protocol_place": "2",
+        "program": "standard",
+        "protocol_place_value": 2.0,
+        "protocol_place_label": "2 место"
+      },
+      {
+        "protocol_db_id": 7055,
+        "protocol_id": 81383,
+        "tournament_id": 2026092700,
+        "tournament_title": "Кубок Лиги 2026 (Санкт-Петербург)",
+        "event_date": "2026-09-27",
+        "city": "Санкт-Петербург",
+        "category": "Ювеналы-2 N+E Соло Ж La",
+        "competitor_number": "290",
+        "protocol_place": "6",
+        "program": "latin",
+        "protocol_place_value": 6.0,
+        "protocol_place_label": "6 место"
       }
     ]
   },
@@ -10873,7 +10959,7 @@
       {
         "status": "skipped",
         "message": "no_round_sections_result_summary_only",
-        "protocols": 1
+        "protocols": 2
       }
     ],
     "low_confidence_dances": [

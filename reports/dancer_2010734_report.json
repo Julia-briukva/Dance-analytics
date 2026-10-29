@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-10-12T09:10:02.381530+00:00",
+    "generated_at": "2026-10-29T11:19:50.759410+00:00",
     "analytics_version": "report_layer_v1",
     "database": "database/compreg_spb_2025_2026.sqlite"
   },
@@ -10,14 +10,14 @@
     "name": "Чистова Анна",
     "club": "Триумф",
     "city": "Санкт-Петербург",
-    "coaches_st": "Маляева Олеся",
-    "coaches_la": "Маляева Олеся",
-    "class_st": "D",
-    "skr_class_st": "16.321",
-    "norm_status_st": "норматив на D класс выполнен",
-    "class_la": "D",
-    "skr_class_la": "23.484",
-    "norm_status_la": "норматив на D класс выполнен",
+    "coaches_st": null,
+    "coaches_la": null,
+    "class_st": "Программа сложности D",
+    "skr_class_st": null,
+    "norm_status_st": null,
+    "class_la": "Программа сложности D",
+    "skr_class_la": null,
+    "norm_status_la": null,
     "profile_source": "data/cache/dancer_profiles/2010734_danceinfo_post_ci_2010734.html"
   },
   "summary": {
@@ -744,7 +744,65 @@
         "date": "2026-09-27"
       }
     ],
-    "dance_results": []
+    "dance_results": [],
+    "protocol_results": [
+      {
+        "protocol_db_id": 7018,
+        "protocol_id": 80279,
+        "tournament_id": 2026051601,
+        "tournament_title": "Чемпионат СПТС 2026 (Санкт-Петербург)",
+        "event_date": "2026-05-17",
+        "city": "Санкт-Петербург",
+        "category": "Юниоры-1+2 E+D Соло Ж St",
+        "competitor_number": "541",
+        "protocol_place": "19-20",
+        "program": "standard",
+        "protocol_place_value": 19.5,
+        "protocol_place_label": "19–20 место"
+      },
+      {
+        "protocol_db_id": 6938,
+        "protocol_id": 80288,
+        "tournament_id": 2026051601,
+        "tournament_title": "Чемпионат СПТС 2026 (Санкт-Петербург)",
+        "event_date": "2026-05-17",
+        "city": "Санкт-Петербург",
+        "category": "Юниоры-1+2 E+D Соло Ж La",
+        "competitor_number": "541",
+        "protocol_place": "20",
+        "program": "latin",
+        "protocol_place_value": 20.0,
+        "protocol_place_label": "20 место"
+      },
+      {
+        "protocol_db_id": 7031,
+        "protocol_id": 81374,
+        "tournament_id": 2026092700,
+        "tournament_title": "Кубок Лиги 2026 (Санкт-Петербург)",
+        "event_date": "2026-09-27",
+        "city": "Санкт-Петербург",
+        "category": "Юниоры-1+2 E+D Соло Ж St",
+        "competitor_number": "307",
+        "protocol_place": "15",
+        "program": "standard",
+        "protocol_place_value": 15.0,
+        "protocol_place_label": "15 место"
+      },
+      {
+        "protocol_db_id": 7059,
+        "protocol_id": 81395,
+        "tournament_id": 2026092700,
+        "tournament_title": "Кубок Лиги 2026 (Санкт-Петербург)",
+        "event_date": "2026-09-27",
+        "city": "Санкт-Петербург",
+        "category": "Юниоры-1+2 E+D Соло Ж La",
+        "competitor_number": "307",
+        "protocol_place": "12",
+        "program": "latin",
+        "protocol_place_value": 12.0,
+        "protocol_place_label": "12 место"
+      }
+    ]
   },
   "client_data": {
     "numeric_marks": [],
@@ -4355,7 +4413,7 @@
       {
         "status": "skipped",
         "message": "no_round_sections_result_summary_only",
-        "protocols": 1
+        "protocols": 2
       }
     ],
     "low_confidence_dances": [],

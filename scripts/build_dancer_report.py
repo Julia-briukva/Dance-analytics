@@ -1761,6 +1761,7 @@ def build_report(conn: sqlite3.Connection, compreg_idd: str | int) -> dict[str, 
         "tournaments": {
             **build_tournament_payload(marks, tournament_dance_results, protocol_results),
             "dance_results": df_records(tournament_dance_results),
+            "protocol_results": df_records(protocol_results),
         },
         "client_data": {
             "numeric_marks": df_records(
@@ -1813,3 +1814,4 @@ def main(argv: list[str]) -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main(sys.argv[1:]))
+

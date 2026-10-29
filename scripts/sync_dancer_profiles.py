@@ -13,7 +13,7 @@ from typing import TextIO
 
 import requests
 
-from compreg_encoding import read_compreg_html_file, write_compreg_html_file
+from compreg_encoding import decode_compreg_html, read_compreg_html_file, write_compreg_html_file
 from compreg_profile import clean_text, parse_profile_html
 
 
@@ -138,8 +138,17 @@ def fetch_or_read_profile(
             reason=str(exc),
         )
 
-    html = write_compreg_html_file(cache_path, response.content, declared_encoding=response.encoding)
+    html = decode_compreg_html(response.content, declared_encoding=response.encoding)
     profile = parse_profile_html(html)
+    if not (profile.get("class_st") or profile.get("class_la")):
+        cached = parse_profile_html(read_compreg_html_file(cache_path)) if cache_path.exists() else {}
+        return ProfileSyncResult(
+            idd=idd, name=name, compreg_url=compreg_url, cache_path=cache_path,
+            card_status="cache_fallback" if cached else "unavailable",
+            http_status=str(response.status_code), profile=cached,
+            reason="fresh response has no assigned solo classes; previous cache preserved",
+        )
+    write_compreg_html_file(cache_path, response.content, declared_encoding=response.encoding)
     return ProfileSyncResult(
         idd=idd,
         name=name,
@@ -180,7 +189,7 @@ def sync_profiles(
     rows: list[dict[str, str]],
     *,
     audit_csv: Path = DEFAULT_AUDIT_CSV,
-    refresh: bool = False,
+    refresh: bool = True,
     log: TextIO | None = None,
 ) -> list[dict[str, str]]:
     session = requests.Session()
@@ -195,6 +204,7 @@ def sync_profiles(
                 f"profile [{index}/{len(rows)}] idd={result.idd} status={result.card_status} "
                 f"header={audit_row['compreg_has_header_data']} reason={result.reason}\n"
             )
+            log.flush()
     audit_csv.parent.mkdir(parents=True, exist_ok=True)
     with audit_csv.open("w", encoding="utf-8", newline="") as file_obj:
         writer = csv.DictWriter(file_obj, fieldnames=AUDIT_FIELDS)
@@ -207,29 +217,33 @@ def parse_args(argv: list[str]) -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Sync Compreg dancer profile cards for report headers.")
     parser.add_argument("--club-csv", type=Path, default=DEFAULT_CLUB_CSV)
     parser.add_argument("--audit-csv", type=Path, default=DEFAULT_AUDIT_CSV)
-    parser.add_argument("--refresh", action="store_true", help="Re-fetch cards even if cache already exists.")
+    parser.add_argument("--refresh", action="store_true", help="Re-fetch cards even if cache already exists (default).")
+    parser.add_argument("--use-cache", action="store_true", help="Explicitly reuse previously saved cards.")
     return parser.parse_args(argv)
 
 
 def main(argv: list[str]) -> int:
     args = parse_args(argv)
     rows = read_rows(args.club_csv)
-    audit_rows = sync_profiles(rows, audit_csv=args.audit_csv, refresh=args.refresh)
+    audit_rows = sync_profiles(rows, audit_csv=args.audit_csv, refresh=args.refresh or not args.use_cache, log=sys.stdout)
     counts = {
         "checked": len(audit_rows),
         "with_header_data": sum(row["compreg_has_header_data"] == "yes" for row in audit_rows),
         "unavailable": sum(row["card_status"] == "unavailable" for row in audit_rows),
         "fetched": sum(row["card_status"] == "fetched" for row in audit_rows),
         "cache": sum(row["card_status"] == "cache" for row in audit_rows),
+        "stale": sum(row["card_status"] == "cache_fallback" for row in audit_rows),
     }
     print(f"Checked: {counts['checked']}")
     print(f"With header data: {counts['with_header_data']}")
     print(f"Fetched: {counts['fetched']}")
     print(f"Cache: {counts['cache']}")
     print(f"Unavailable: {counts['unavailable']}")
+    print(f"Not refreshed (previous cache retained): {counts['stale']}")
     print(f"Audit CSV: {args.audit_csv.relative_to(PROJECT_ROOT)}")
-    return 0 if counts["unavailable"] == 0 else 1
+    return 0 if counts["unavailable"] == 0 and counts["stale"] == 0 else 1
 
 
 if __name__ == "__main__":
     raise SystemExit(main(sys.argv[1:]))
+

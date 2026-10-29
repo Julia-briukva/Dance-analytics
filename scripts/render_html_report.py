@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import sys
 from pathlib import Path
 from typing import Any
@@ -17,7 +18,7 @@ from dance_display import DANCE_CODE_ORDER, dance_russian_name, normalize_dance_
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_REPORTS_DIR = PROJECT_ROOT / "reports"
 DEFAULT_TEMPLATES_DIR = PROJECT_ROOT / "templates"
-DEFAULT_TEMPLATE_NAME = "report.html.j2"
+DEFAULT_TEMPLATE_NAME = "report_typography.html.j2"
 CATEGORY_SLICE_ORDER = ["all", "n", "n_e", "e", "e_d", "d", "d_c", "c", "c_b", "b", "a", "s", "m", "eadc", "open"]
 CATEGORY_SLICE_LABELS = {
     "all": "Все категории",
@@ -672,6 +673,81 @@ def build_tournament_details_from_records(records: list[dict[str, Any]]) -> list
     return details
 
 
+def tournament_entries(report: dict[str, Any], tournament: dict[str, Any]) -> list[dict[str, Any]]:
+    """Keep official category places separate from dance and individual judge places."""
+    tid = str(tournament.get("tournament_id"))
+    official = [row for row in report.get("tournaments", {}).get("protocol_results", [])
+                if str(row.get("tournament_id")) == tid]
+    dance_rows = tournament.get("dance_results") or []
+    entries: dict[tuple[str, str, str], dict[str, Any]] = {}
+
+    def entry_for(row: dict[str, Any]) -> dict[str, Any]:
+        key = (str(row.get("protocol_id")), str(row.get("category") or ""), str(row.get("program") or "unknown"))
+        if key not in entries:
+            category = row.get("category_display") or row.get("category") or "Категория не указана"
+            category = re.sub(r"\s+(?:St|La)\s*$", "", category, flags=re.IGNORECASE)
+            entries[key] = {"protocol_id": row.get("protocol_id"), "category": category,
+                            "program": key[2], "place_label": "Место не указано",
+                            "dance_results": [], "judge_panels": []}
+        return entries[key]
+
+    for row in official:
+        entry = entry_for(row)
+        value = row.get("protocol_place_label")
+        raw = row.get("protocol_place")
+        entry["place_label"] = value or (f"{raw} место" if raw not in (None, "") else "Место не указано")
+    for row in dance_rows:
+        entry_for(row)["dance_results"].append(row)
+
+    client = report.get("client_data") or {}
+    marks = [(row, "place") for row in client.get("numeric_marks", [])]
+    marks += [(row, "cross") for row in client.get("cross_judge_decisions", [])]
+    by_protocol: dict[tuple[str, str], list[tuple[dict[str, Any], str]]] = {}
+    for row, kind in marks:
+        if str(row.get("tournament_id")) == tid:
+            by_protocol.setdefault((str(row.get("protocol_id")), str(row.get("program"))), []).append((row, kind))
+    for entry in entries.values():
+        panels: dict[tuple[str, str, str], dict[str, Any]] = {}
+        entry_marks = by_protocol.get((str(entry["protocol_id"]), entry["program"]), [])
+        # Ranked judge marks establish a placed performance; do not infer a
+        # final from the overall place (final sizes vary between categories).
+        has_places = any(kind == "place" and row.get("numeric_mark") is not None
+                         for row, kind in entry_marks)
+        is_finalist = has_places or any(
+            row.get("result_source") == "dance_final_place"
+            or str(row.get("round_label") or row.get("round") or "").strip().casefold() in {"финал", "final"}
+            for row in entry["dance_results"]
+        )
+        if is_finalist:
+            counts: dict[str, int] = {}
+            for row, kind in entry_marks:
+                if kind == "place" and row.get("numeric_mark") is not None:
+                    code = normalize_dance_code(row.get("dance"))
+                    counts[code] = counts.get(code, 0) + 1
+            final_results = []
+            for row in entry["dance_results"]:
+                code = normalize_dance_code(row.get("dance_code") or row.get("dance"))
+                if code in counts or row.get("result_source") == "dance_final_place":
+                    final_results.append({**row, "round_label": "Финал",
+                                          "marks_label": pluralize(counts[code], "оценка", "оценки", "оценок") if code in counts else "Оценки отсутствуют"})
+            entry["dance_results"] = final_results
+        for row, kind in entry_marks:
+            if is_finalist and kind == "cross":
+                continue
+            code = normalize_dance_code(row.get("dance"))
+            key = (str(row.get("round") or "Тур не указан"), code, kind)
+            round_label = key[0]
+            # Compreg may put the full category before the round name.
+            match = re.search(r"(?:^|[,;:]\s*)(финал|полуфинал|четвертьфинал|1/\d+(?:\s+финала)?)\s*$", round_label, re.IGNORECASE)
+            if match:
+                round_label = match.group(1).capitalize()
+            panel = panels.setdefault(key, {"round": round_label, "dance": code, "kind": kind, "judges": []})
+            value = row.get("numeric_mark") if kind == "place" else ("×" if row.get("judge_cross") else "—")
+            panel["judges"].append({"judge": row.get("judge") or "Судья не указан", "value": value})
+        entry["judge_panels"] = sorted(panels.values(), key=lambda panel: (panel["round"], DANCE_CODE_ORDER.get(panel["dance"], 999), panel["kind"]))
+    return sorted(entries.values(), key=lambda entry: (entry["category"], {"standard": 0, "latin": 1}.get(entry["program"], 2), str(entry["protocol_id"])))
+
+
 def trainer_tournament_summaries(report: dict[str, Any]) -> list[dict[str, Any]]:
     summaries = report.get("trainer_mode", {}).get("tournament_summaries", []) or []
     if not summaries:
@@ -687,6 +763,12 @@ def trainer_tournament_summaries(report: dict[str, Any]) -> list[dict[str, Any]]
         }
         for item in report.get("tournaments", {}).get("items", []) or []
     }
+    summaries = list(summaries)
+    seen = {str(item.get("tournament_id")) for item in summaries}
+    for row in report.get("tournaments", {}).get("protocol_results", []):
+        if str(row.get("tournament_id")) not in seen:
+            summaries.append({**row, "city": row.get("city") or "", "dance_results": []})
+            seen.add(str(row.get("tournament_id")))
     result = []
     for item in summaries:
         merged = dict(item)
@@ -697,6 +779,7 @@ def trainer_tournament_summaries(report: dict[str, Any]) -> list[dict[str, Any]]
             merged["result_places"] = meta.get("result_places") or []
         merged.setdefault("avg_result_place", meta.get("avg_result_place"))
         merged.setdefault("best_result_place", meta.get("best_result_place"))
+        merged["category_entries"] = tournament_entries(report, merged)
         result.append(merged)
     return result
 
@@ -819,7 +902,18 @@ def has_category_slice_evidence(slice_payload: dict[str, Any]) -> bool:
     return int(slice_payload.get("protocol_count") or 0) > 0 or len(metrics) > 0
 
 
+def clean_display_labels(value):
+    if isinstance(value, dict):
+        return {key: clean_display_labels(item) for key, item in value.items()}
+    if isinstance(value, list):
+        return [clean_display_labels(item) for item in value]
+    if isinstance(value, str):
+        return re.sub(r"программа\s+сложности", "", value, flags=re.IGNORECASE).strip()
+    return value
+
+
 def build_view_model(report: dict[str, Any], input_path: Path, output_path: Path) -> dict[str, Any]:
+    report = clean_display_labels(report)
     tournaments = report.get("tournaments", {}).get("protocols", [])
     entry_types = {item.get("entry_type") for item in tournaments if item.get("entry_type")}
     entry_label = "солистка" if entry_types == {"solo"} else ", ".join(label_entry_type(item) for item in sorted(entry_types)) or "—"
@@ -999,3 +1093,4 @@ def main(argv: list[str]) -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main(sys.argv[1:]))
+

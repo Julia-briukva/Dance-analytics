@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-10-12T09:08:33.589482+00:00",
+    "generated_at": "2026-10-29T11:18:45.885317+00:00",
     "analytics_version": "report_layer_v1",
     "database": "database/compreg_spb_2025_2026.sqlite"
   },
@@ -10,12 +10,12 @@
     "name": "Козлова Полина",
     "club": "Триумф",
     "city": "Санкт-Петербург",
-    "coaches_st": "Маляева Олеся, Кашина Анна",
-    "coaches_la": "Маляева Олеся",
-    "class_st": "C",
+    "coaches_st": null,
+    "coaches_la": null,
+    "class_st": "Программа сложности C",
     "skr_class_st": null,
     "norm_status_st": null,
-    "class_la": "C",
+    "class_la": "Программа сложности C",
     "skr_class_la": null,
     "norm_status_la": null,
     "profile_source": "data/cache/dancer_profiles/2014552_danceinfo_post_ci_2014552.html"
@@ -9184,6 +9184,120 @@
         "result_place": 6.0,
         "result_place_label": "6 место",
         "date": "2026-01-18"
+      }
+    ],
+    "protocol_results": [
+      {
+        "protocol_db_id": 5885,
+        "protocol_id": 73056,
+        "tournament_id": 2025092800,
+        "tournament_title": "Северный кубок 2025 (Санкт-Петербург)",
+        "event_date": "2025-09-28",
+        "city": "Санкт-Петербург",
+        "category": "Юниоры-1+2 D+C Соло Ж St",
+        "competitor_number": "275",
+        "protocol_place": "1",
+        "program": "standard",
+        "protocol_place_value": 1.0,
+        "protocol_place_label": "1 место"
+      },
+      {
+        "protocol_db_id": 5905,
+        "protocol_id": 73079,
+        "tournament_id": 2025092800,
+        "tournament_title": "Северный кубок 2025 (Санкт-Петербург)",
+        "event_date": "2025-09-28",
+        "city": "Санкт-Петербург",
+        "category": "Юниоры-1+2 D+C Соло Ж La",
+        "competitor_number": "275",
+        "protocol_place": "1",
+        "program": "latin",
+        "protocol_place_value": 1.0,
+        "protocol_place_label": "1 место"
+      },
+      {
+        "protocol_db_id": 5862,
+        "protocol_id": 73100,
+        "tournament_id": 2025092800,
+        "tournament_title": "Северный кубок 2025 (Санкт-Петербург)",
+        "event_date": "2025-09-28",
+        "city": "Санкт-Петербург",
+        "category": "EADC Юниоры-1 RS Соло Ж St",
+        "competitor_number": "275",
+        "protocol_place": "5",
+        "program": "standard",
+        "protocol_place_value": 5.0,
+        "protocol_place_label": "5 место"
+      },
+      {
+        "protocol_db_id": 5893,
+        "protocol_id": 73104,
+        "tournament_id": 2025092800,
+        "tournament_title": "Северный кубок 2025 (Санкт-Петербург)",
+        "event_date": "2025-09-28",
+        "city": "Санкт-Петербург",
+        "category": "EADC Юниоры-1 RS Соло Ж La",
+        "competitor_number": "275",
+        "protocol_place": "7",
+        "program": "latin",
+        "protocol_place_value": 7.0,
+        "protocol_place_label": "7 место"
+      },
+      {
+        "protocol_db_id": 6146,
+        "protocol_id": 74583,
+        "tournament_id": 2025110901,
+        "tournament_title": "Кубок Лиги 2025 (Санкт-Петербург)",
+        "event_date": "2025-11-09",
+        "city": "Санкт-Петербург",
+        "category": "EADC Юниоры-2 Соло Ж St",
+        "competitor_number": "388",
+        "protocol_place": "4",
+        "program": "standard",
+        "protocol_place_value": 4.0,
+        "protocol_place_label": "4 место"
+      },
+      {
+        "protocol_db_id": 6119,
+        "protocol_id": 74585,
+        "tournament_id": 2025110901,
+        "tournament_title": "Кубок Лиги 2025 (Санкт-Петербург)",
+        "event_date": "2025-11-09",
+        "city": "Санкт-Петербург",
+        "category": "EADC Юниоры-2 Соло Ж La",
+        "competitor_number": "388",
+        "protocol_place": "4",
+        "program": "latin",
+        "protocol_place_value": 4.0,
+        "protocol_place_label": "4 место"
+      },
+      {
+        "protocol_db_id": 6363,
+        "protocol_id": 76394,
+        "tournament_id": 2026011801,
+        "tournament_title": "Lider Cup 2026 (Санкт-Петербург)",
+        "event_date": "2026-01-18",
+        "city": "Санкт-Петербург",
+        "category": "Юниоры-1+2 D+C соло Ж St",
+        "competitor_number": "322",
+        "protocol_place": "6",
+        "program": "standard",
+        "protocol_place_value": 6.0,
+        "protocol_place_label": "6 место"
+      },
+      {
+        "protocol_db_id": 6390,
+        "protocol_id": 76412,
+        "tournament_id": 2026011801,
+        "tournament_title": "Lider Cup 2026 (Санкт-Петербург)",
+        "event_date": "2026-01-18",
+        "city": "Санкт-Петербург",
+        "category": "Юниоры-1+2 D+C соло Ж La",
+        "competitor_number": "322",
+        "protocol_place": "6",
+        "program": "latin",
+        "protocol_place_value": 6.0,
+        "protocol_place_label": "6 место"
       }
     ]
   },
@@ -20350,7 +20464,7 @@
       {
         "status": "skipped",
         "message": "no_round_sections_result_summary_only",
-        "protocols": 1
+        "protocols": 2
       }
     ],
     "low_confidence_dances": [
