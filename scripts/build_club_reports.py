@@ -132,8 +132,7 @@ def render_index(existing_html: str, status_rows: list[dict[str, str]]) -> str:
         return (
           "          <tr>\n"
             f"            <td class=\"club-name\">{name_cell}</td>\n"
-            f"            <td><span class=\"idd-value\">{idd}</span> "
-            f"<button class=\"copy-idd\" type=\"button\" data-copy=\"{idd}\" title=\"Скопировать IDD\" aria-label=\"Скопировать IDD {idd}\">⧉</button></td>\n"
+            f"            <td><span class=\"idd-value\">{idd}</span></td>\n"
             f"            <td>{status_label}</td>\n"
             "          </tr>"
         )
@@ -172,34 +171,6 @@ def render_index(existing_html: str, status_rows: list[dict[str, str]]) -> str:
         f"{table_html('Соло', groups['solo'])}\n"
         f"{table_html('Пары', groups['couple'])}\n"
         "    </section>\n"
-        "    <script>\n"
-        "      (function () {\n"
-        "        function fallbackCopy(text) {\n"
-        "          var area = document.createElement('textarea');\n"
-        "          area.value = text;\n"
-        "          area.setAttribute('readonly', '');\n"
-        "          area.style.position = 'fixed';\n"
-        "          area.style.left = '-9999px';\n"
-        "          document.body.appendChild(area);\n"
-        "          area.select();\n"
-        "          try { document.execCommand('copy'); } finally { document.body.removeChild(area); }\n"
-        "        }\n"
-        "        document.querySelectorAll('.copy-idd').forEach(function (button) {\n"
-        "          button.addEventListener('click', function () {\n"
-        "            var text = button.getAttribute('data-copy') || '';\n"
-        "            var done = function () {\n"
-        "              var old = button.textContent;\n"
-        "              button.textContent = 'Скопировано';\n"
-        "              button.classList.add('copied');\n"
-        "              window.setTimeout(function () { button.textContent = old; button.classList.remove('copied'); }, 1400);\n"
-        "            };\n"
-        "            if (navigator.clipboard && navigator.clipboard.writeText) {\n"
-        "              navigator.clipboard.writeText(text).then(done, function () { fallbackCopy(text); done(); });\n"
-        "            } else { fallbackCopy(text); done(); }\n"
-        "          });\n"
-        "        });\n"
-        "      }());\n"
-        "    </script>\n"
         f"    {section_end}"
     )
     if section_start in existing_html and section_end in existing_html:
@@ -480,3 +451,4 @@ def main(argv: list[str]) -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main(sys.argv[1:]))
+
