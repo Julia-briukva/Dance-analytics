@@ -59,3 +59,14 @@ body .header-date-filter .date-control input { appearance: none; -webkit-appeara
   .date-control { width: 100%; }
   body .header-date-filter .date-control input { font-size: 16px; }
 }
+
+/* Full-width date rows leave enough room for a complete localized date. */
+.date-control-label { display: none; }
+@media screen and (max-width: 700px) {
+  body .header-filter-panel { display: grid; grid-template-columns: minmax(0, 1fr); width: 100%; min-width: 0; }
+  body .header-date-filter { display: grid; grid-template-columns: minmax(0, 1fr); gap: 10px; width: 100%; min-width: 0; max-width: 100%; }
+  body .header-date-filter > .date-separator { display: none; }
+  body .header-date-filter .date-control { display: grid; grid-template-columns: 24px minmax(0, 1fr); align-items: center; gap: 8px; width: 100%; min-width: 0; }
+  .date-control-label { display: block; color: var(--muted); font-size: 14px; line-height: 20px; }
+  body .header-date-filter .date-control input { height: 44px; min-height: 44px; width: 100%; max-width: 100%; min-width: 0; padding: 10px 42px 10px 12px; font-size: 16px; line-height: 22px; }
+}
