@@ -44,5 +44,24 @@ h3 { font-size: 21px; line-height: 1.4; font-weight: 600; }
   .hero { padding: 0 0 24px; border-radius: 0; }
   .club-summary-grid { gap: 24px; }
   .club-group-head { flex-wrap: wrap; gap: 6px 16px; }
-  .club-table { min-width: 580px; }
+  .club-table { min-width: 0; }
+}
+
+@media screen and (max-width: 700px) {
+  .club-section, .club-group { min-width: 0; max-width: 100%; }
+  .club-table-wrap { width: 100%; max-width: 100%; min-width: 0; overflow: visible; border: 0; border-radius: 0; }
+  .club-table { display: block; width: 100%; min-width: 0; max-width: 100%; border: 0; }
+  .club-table thead, .club-table colgroup { display: none; }
+  .club-table tbody { display: grid; grid-template-columns: minmax(0, 1fr); gap: 12px; width: 100%; }
+  .club-table tbody tr { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 10px 12px; min-width: 0; width: 100%; padding: 16px; border: 1px solid var(--line); border-radius: 12px; background: #fff; box-sizing: border-box; }
+  .club-table tbody td { display: block; width: auto; min-width: 0; height: auto; padding: 0; border: 0; text-align: left; overflow-wrap: anywhere; }
+  .club-table tbody td:first-child { grid-column: 1 / -1; font-size: 16px; line-height: 1.45; }
+  .club-name-link, .club-name-disabled { display: block; overflow-wrap: anywhere; }
+  .club-table tbody td:nth-child(2) { display: flex; flex-wrap: wrap; align-items: center; gap: 4px; font-size: 13px; }
+  .club-table tbody td:nth-child(2)::before { content: "IDD"; color: var(--muted); font-size: 12px; margin-right: 2px; }
+  .club-table .copy-idd { margin-left: 2px; min-width: 32px; min-height: 32px; }
+  .club-table tbody td:last-child { justify-self: end; }
+  .club-table .status-pill { white-space: normal; text-align: right; }
+  .club-summary-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+  .club-summary-grid > div { min-width: 0; }
 }
