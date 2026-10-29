@@ -1831,6 +1831,20 @@ tbody tr, tbody tr:nth-child(even), tbody tr:hover { background: transparent; }
 #dances .dance-program > .category-chip-groups { flex: 0 1 auto; width: auto; max-width: 100%; margin: 0; padding: 0; }
 #dances .dance-program > .category-panels { flex: 0 0 100%; width: 100%; margin: 0; }/* Only the Rossoshanskaya preview includes these rules. Desktop is unchanged. */
 @media screen and (max-width: 700px) {
+  #tournaments, #tournaments .tournament-list,
+  #tournaments .tournament-category-card, #tournaments .category-result,
+  #tournaments .category-result-content, #tournaments .judge-panel-result {
+    min-width: 0; max-width: 100%; box-sizing: border-box;
+  }
+  #tournaments .table-wrap, #tournaments .table-scroll,
+  #tournaments .table-scroll table, #tournaments .table-wrap table,
+  #tournaments .table-wrap tbody, #tournaments .table-wrap tbody tr {
+    min-width: 0; width: 100%; max-width: 100%; box-sizing: border-box;
+  }
+  #tournaments .table-scroll, #tournaments .table-wrap { overflow-x: visible; }
+  #tournaments .table-wrap tbody { grid-template-columns: minmax(0, 1fr); }
+  #tournaments .table-wrap tbody tr { grid-template-columns: minmax(0, 1fr); }
+  #tournaments .judge-panel-result .table-wrap tbody tr { grid-template-columns: minmax(0, 1fr) 40px; }
   body .report { width: calc(100% - 32px); overflow-wrap: anywhere; }
   body .page-nav { max-width: 100%; gap: 20px; }
   body .header-date-filter { flex-wrap: wrap; min-width: 0; }
