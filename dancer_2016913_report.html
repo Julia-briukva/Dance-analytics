@@ -1829,7 +1829,78 @@ tbody tr, tbody tr:nth-child(even), tbody tr:hover { background: transparent; }
 #dances .dance-program { display: flex; flex-wrap: wrap; justify-content: flex-start; align-items: center; gap: 16px; }
 #dances .dance-program > h3 { flex: 0 0 auto; width: auto; margin: 0; }
 #dances .dance-program > .category-chip-groups { flex: 0 1 auto; width: auto; max-width: 100%; margin: 0; padding: 0; }
-#dances .dance-program > .category-panels { flex: 0 0 100%; width: 100%; margin: 0; }  </style>
+#dances .dance-program > .category-panels { flex: 0 0 100%; width: 100%; margin: 0; }/* Shared responsive report styles. Desktop is unchanged. */
+@media screen and (max-width: 700px) {
+  #tournaments, #tournaments .tournament-list,
+  #tournaments .tournament-category-card, #tournaments .category-result,
+  #tournaments .category-result-content, #tournaments .judge-panel-result {
+    min-width: 0; max-width: 100%; box-sizing: border-box;
+  }
+  #tournaments .table-wrap, #tournaments .table-scroll,
+  #tournaments .table-scroll table, #tournaments .table-wrap table,
+  #tournaments .table-wrap tbody, #tournaments .table-wrap tbody tr {
+    min-width: 0; width: 100%; max-width: 100%; box-sizing: border-box;
+  }
+  #tournaments .table-scroll, #tournaments .table-wrap { overflow-x: visible; }
+  #tournaments .table-wrap tbody { grid-template-columns: minmax(0, 1fr); }
+  #tournaments .table-wrap tbody tr { grid-template-columns: minmax(0, 1fr); }
+  #tournaments .judge-panel-result .table-wrap tbody tr { grid-template-columns: minmax(0, 1fr) 40px; }
+  body .report { width: calc(100% - 32px); overflow-wrap: anywhere; }
+  body .page-nav { max-width: 100%; gap: 20px; }
+  body .header-date-filter { flex-wrap: wrap; min-width: 0; }
+  body .header-date-filter input { min-width: 0; max-width: 100%; }
+  body .category-result-columns { display: none; }
+  body .tournament-category-card .category-result-summary { display: grid; grid-template-columns: minmax(0, 1fr) auto 28px; gap: 6px 10px; padding: 14px 0; }
+  body .category-result-summary > strong:first-child { grid-column: 1 / -1; font-size: 13px; }
+  body .category-result-content { padding: 0 0 20px; }
+  body .table-wrap, body .table-scroll, body .mobile-card-table { overflow: visible; border: 0; border-radius: 0; width: 100%; }
+  body .table-wrap table { display: block; width: 100%; min-width: 0; table-layout: auto; border: 0; }
+  body .table-wrap colgroup, body .table-wrap thead { display: none; }
+  body .table-wrap tbody { display: grid; width: 100%; gap: 12px; }
+  body .table-wrap tbody tr { display: grid; width: 100%; min-width: 0; padding: 14px; gap: 10px; border: 1px solid var(--line); border-radius: 10px; background: #fff; }
+  body .table-wrap tbody td, body .table-wrap tbody td.number { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); align-items: start; gap: 12px; width: auto; min-width: 0; padding: 0; border: 0; text-align: left; font-size: 14px; overflow-wrap: anywhere; white-space: normal; }
+  body .table-wrap tbody td::before { content: attr(data-label); position: static; display: block; color: var(--muted); font-size: 12px; font-weight: 400; text-align: left; }
+  body .table-wrap tbody td[colspan] { display: block; }
+  body .table-wrap tbody td[colspan]::before { display: none; }
+  body .judge-panel-result { margin-top: 20px; }
+  body .judge-panel-result .table-wrap { border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+  body .judge-panel-result .table-wrap tbody { display: block; }
+  body .judge-panel-result .table-wrap tbody tr { display: grid; grid-template-columns: minmax(0, 1fr) 40px; gap: 12px; align-items: center; padding: 12px 14px; border: 0; border-bottom: 1px solid var(--line); border-radius: 0; }
+  body .judge-panel-result .table-wrap tbody tr:last-child { border-bottom: 0; }
+  body .judge-panel-result .table-wrap tbody td { display: block; font-size: 14px; }
+  body .judge-panel-result .table-wrap tbody td::before { display: none; }
+  body .judge-panel-result .table-wrap tbody td:last-child { text-align: right; font-variant-numeric: tabular-nums; font-weight: 600; }
+  body .dance-program { display: flex; flex-wrap: wrap; gap: 12px; }
+  body .dance-program > .category-panels { flex-basis: 100%; }
+  body .dance-program .dance-comparison-grid { grid-template-columns: minmax(0, 1fr); gap: 18px; }
+  body .judge-insight-grid, body .three-column, body .two-column { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* Consistent date affordance while retaining the native accessible date picker. */
+body .header-date-filter { gap: 10px; align-items: center; }
+.date-control { position: relative; display: block; min-width: 0; width: 164px; max-width: 100%; }
+body .header-date-filter .date-control input { appearance: none; -webkit-appearance: none; position: relative; width: 100%; height: 38px; min-height: 38px; margin: 0; padding: 8px 40px 8px 12px; border: 1px solid var(--line); border-radius: 8px; background: #fff; font: inherit; font-size: 14px; line-height: 20px; color: var(--ink); box-sizing: border-box; }
+.date-control .date-calendar-icon { position: absolute; right: 12px; top: 50%; transform: translateY(-50%); width: 18px; height: 18px; color: var(--muted); pointer-events: none; }
+.date-control input::-webkit-calendar-picker-indicator { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; padding: 0; opacity: 0; cursor: pointer; }
+.date-control input::-webkit-date-and-time-value { text-align: left; min-height: 20px; }
+.date-control input::-webkit-datetime-edit { padding: 0; }
+.date-control input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+@media screen and (max-width: 700px) {
+  body .header-date-filter { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); gap: 8px; width: 100%; }
+  .date-control { width: 100%; }
+  body .header-date-filter .date-control input { font-size: 16px; }
+}
+
+/* Full-width date rows leave enough room for a complete localized date. */
+.date-control-label { display: none; }
+@media screen and (max-width: 700px) {
+  body .header-filter-panel { display: grid; grid-template-columns: minmax(0, 1fr); width: 100%; min-width: 0; }
+  body .header-date-filter { display: grid; grid-template-columns: minmax(0, 1fr); gap: 10px; width: 100%; min-width: 0; max-width: 100%; }
+  body .header-date-filter > .date-separator { display: none; }
+  body .header-date-filter .date-control { display: grid; grid-template-columns: 24px minmax(0, 1fr); align-items: center; gap: 8px; width: 100%; min-width: 0; }
+  .date-control-label { display: block; color: var(--muted); font-size: 14px; line-height: 20px; }
+  body .header-date-filter .date-control input { height: 44px; min-height: 44px; width: 100%; max-width: 100%; min-width: 0; padding: 10px 42px 10px 12px; font-size: 16px; line-height: 22px; }
+}  </style>
 </head>
 <body>
 <main class="report">
@@ -1852,9 +1923,9 @@ tbody tr, tbody tr:nth-child(even), tbody tr:hover { background: transparent; }
         </div>
       </div>
       <div class="header-date-filter" role="group" aria-label="Фильтр периода">
-        <input id="report-filter-date-from" type="date" value="2025-09-28" aria-label="Дата начала периода">
+        <label class="date-control"><span class="date-control-label">С</span><input id="report-filter-date-from" type="date" value="2025-09-28" aria-label="Дата начала периода"><svg class="date-calendar-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18M8 15h2M14 15h2"/></svg></label>
         <span class="date-separator" aria-hidden="true">—</span>
-        <input id="report-filter-date-to" type="date" value="2026-09-27" aria-label="Дата окончания периода">
+        <label class="date-control"><span class="date-control-label">По</span><input id="report-filter-date-to" type="date" value="2026-09-27" aria-label="Дата окончания периода"><svg class="date-calendar-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18M8 15h2M14 15h2"/></svg></label>
       </div>
     </div>
   </header>
@@ -1899,28 +1970,28 @@ tbody tr, tbody tr:nth-child(even), tbody tr:hover { background: transparent; }
               </div>
               <h4 class="judge-section-title">Оценки судей</h4>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Медленный вальс · Финал</h5>
+                <h5 class="judge-dance-title">Медленный вальс · 3 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Евсеева Татьяна</td><td>2</td></tr><tr><td>Замахаева Екатерина</td><td>3</td></tr><tr><td>Кабисов Тимур</td><td>7</td></tr><tr><td>Карташева Анастасия</td><td>3</td></tr><tr><td>Ларченко Екатерина</td><td>6</td></tr><tr><td>Новичкова Валерия</td><td>4</td></tr><tr><td>Садковская Юлия</td><td>1</td></tr><tr><td>Сперанский Валерий</td><td>6</td></tr><tr><td>Филиппов Виталий</td><td>7</td></tr><tr><td>Шумков Егор</td><td>2</td></tr><tr><td>Ютанов Василий</td><td>8</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Танго · Финал</h5>
+                <h5 class="judge-dance-title">Танго · 8 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Евсеева Татьяна</td><td>3</td></tr><tr><td>Замахаева Екатерина</td><td>7</td></tr><tr><td>Кабисов Тимур</td><td>8</td></tr><tr><td>Карташева Анастасия</td><td>2</td></tr><tr><td>Ларченко Екатерина</td><td>8</td></tr><tr><td>Новичкова Валерия</td><td>5</td></tr><tr><td>Садковская Юлия</td><td>6</td></tr><tr><td>Сперанский Валерий</td><td>8</td></tr><tr><td>Филиппов Виталий</td><td>7</td></tr><tr><td>Шумков Егор</td><td>3</td></tr><tr><td>Ютанов Василий</td><td>8</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Медленный фокстрот · Финал</h5>
+                <h5 class="judge-dance-title">Медленный фокстрот · 8 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Евсеева Татьяна</td><td>7</td></tr><tr><td>Замахаева Екатерина</td><td>5</td></tr><tr><td>Кабисов Тимур</td><td>8</td></tr><tr><td>Карташева Анастасия</td><td>7</td></tr><tr><td>Ларченко Екатерина</td><td>8</td></tr><tr><td>Новичкова Валерия</td><td>4</td></tr><tr><td>Садковская Юлия</td><td>7</td></tr><tr><td>Сперанский Валерий</td><td>8</td></tr><tr><td>Филиппов Виталий</td><td>8</td></tr><tr><td>Шумков Егор</td><td>2</td></tr><tr><td>Ютанов Василий</td><td>4</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Квикстеп · Финал</h5>
+                <h5 class="judge-dance-title">Квикстеп · 7 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Евсеева Татьяна</td><td>4</td></tr><tr><td>Замахаева Екатерина</td><td>5</td></tr><tr><td>Кабисов Тимур</td><td>7</td></tr><tr><td>Карташева Анастасия</td><td>4</td></tr><tr><td>Ларченко Екатерина</td><td>8</td></tr><tr><td>Новичкова Валерия</td><td>3</td></tr><tr><td>Садковская Юлия</td><td>7</td></tr><tr><td>Сперанский Валерий</td><td>8</td></tr><tr><td>Филиппов Виталий</td><td>7</td></tr><tr><td>Шумков Егор</td><td>2</td></tr><tr><td>Ютанов Василий</td><td>8</td></tr></tbody>
@@ -1951,28 +2022,28 @@ tbody tr, tbody tr:nth-child(even), tbody tr:hover { background: transparent; }
               </div>
               <h4 class="judge-section-title">Оценки судей</h4>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Самба · Финал</h5>
+                <h5 class="judge-dance-title">Самба · 7 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Евсеева Татьяна</td><td>3</td></tr><tr><td>Замахаева Екатерина</td><td>5</td></tr><tr><td>Кабисов Тимур</td><td>7</td></tr><tr><td>Карташева Анастасия</td><td>3</td></tr><tr><td>Ларченко Екатерина</td><td>6</td></tr><tr><td>Новичкова Валерия</td><td>7</td></tr><tr><td>Садковская Юлия</td><td>7</td></tr><tr><td>Сперанский Валерий</td><td>4</td></tr><tr><td>Филиппов Виталий</td><td>7</td></tr><tr><td>Шумков Егор</td><td>5</td></tr><tr><td>Ютанов Василий</td><td>3</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Ча-ча-ча · Финал</h5>
+                <h5 class="judge-dance-title">Ча-ча-ча · 7 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Евсеева Татьяна</td><td>5</td></tr><tr><td>Замахаева Екатерина</td><td>3</td></tr><tr><td>Кабисов Тимур</td><td>5</td></tr><tr><td>Карташева Анастасия</td><td>7</td></tr><tr><td>Ларченко Екатерина</td><td>7</td></tr><tr><td>Новичкова Валерия</td><td>7</td></tr><tr><td>Садковская Юлия</td><td>7</td></tr><tr><td>Сперанский Валерий</td><td>4</td></tr><tr><td>Филиппов Виталий</td><td>7</td></tr><tr><td>Шумков Егор</td><td>5</td></tr><tr><td>Ютанов Василий</td><td>7</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Румба · Финал</h5>
+                <h5 class="judge-dance-title">Румба · 7 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Евсеева Татьяна</td><td>6</td></tr><tr><td>Замахаева Екатерина</td><td>2</td></tr><tr><td>Кабисов Тимур</td><td>6</td></tr><tr><td>Карташева Анастасия</td><td>4</td></tr><tr><td>Ларченко Екатерина</td><td>7</td></tr><tr><td>Новичкова Валерия</td><td>6</td></tr><tr><td>Садковская Юлия</td><td>3</td></tr><tr><td>Сперанский Валерий</td><td>5</td></tr><tr><td>Филиппов Виталий</td><td>7</td></tr><tr><td>Шумков Егор</td><td>5</td></tr><tr><td>Ютанов Василий</td><td>7</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Джайв · Финал</h5>
+                <h5 class="judge-dance-title">Джайв · 7 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Евсеева Татьяна</td><td>6</td></tr><tr><td>Замахаева Екатерина</td><td>2</td></tr><tr><td>Кабисов Тимур</td><td>6</td></tr><tr><td>Карташева Анастасия</td><td>6</td></tr><tr><td>Ларченко Екатерина</td><td>7</td></tr><tr><td>Новичкова Валерия</td><td>7</td></tr><tr><td>Садковская Юлия</td><td>5</td></tr><tr><td>Сперанский Валерий</td><td>4</td></tr><tr><td>Филиппов Виталий</td><td>7</td></tr><tr><td>Шумков Егор</td><td>6</td></tr><tr><td>Ютанов Василий</td><td>6</td></tr></tbody>
@@ -2062,28 +2133,28 @@ tbody tr, tbody tr:nth-child(even), tbody tr:hover { background: transparent; }
               </div>
               <h4 class="judge-section-title">Оценки судей</h4>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Самба · Финал</h5>
+                <h5 class="judge-dance-title">Самба · 4 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Агеева Наталья</td><td>6</td></tr><tr><td>Дюков Юрий</td><td>4</td></tr><tr><td>Жмерик Елена</td><td>4</td></tr><tr><td>Кашина Анна</td><td>2</td></tr><tr><td>Курило Иван</td><td>6</td></tr><tr><td>Оводов Сергей</td><td>4</td></tr><tr><td>Оскольских Татьяна</td><td>6</td></tr><tr><td>Степовой Сергей</td><td>1</td></tr><tr><td>Стратьева Юлия</td><td>2</td></tr><tr><td>Филиппов Виталий</td><td>1</td></tr><tr><td>Чубарова Влада</td><td>4</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Ча-ча-ча · Финал</h5>
+                <h5 class="judge-dance-title">Ча-ча-ча · 4 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Агеева Наталья</td><td>6</td></tr><tr><td>Дюков Юрий</td><td>5</td></tr><tr><td>Жмерик Елена</td><td>4</td></tr><tr><td>Кашина Анна</td><td>3</td></tr><tr><td>Курило Иван</td><td>4</td></tr><tr><td>Оводов Сергей</td><td>1</td></tr><tr><td>Оскольских Татьяна</td><td>6</td></tr><tr><td>Степовой Сергей</td><td>1</td></tr><tr><td>Стратьева Юлия</td><td>2</td></tr><tr><td>Филиппов Виталий</td><td>1</td></tr><tr><td>Чубарова Влада</td><td>4</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Румба · Финал</h5>
+                <h5 class="judge-dance-title">Румба · 2 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Агеева Наталья</td><td>5</td></tr><tr><td>Дюков Юрий</td><td>3</td></tr><tr><td>Жмерик Елена</td><td>4</td></tr><tr><td>Кашина Анна</td><td>3</td></tr><tr><td>Курило Иван</td><td>6</td></tr><tr><td>Оводов Сергей</td><td>2</td></tr><tr><td>Оскольских Татьяна</td><td>5</td></tr><tr><td>Степовой Сергей</td><td>1</td></tr><tr><td>Стратьева Юлия</td><td>1</td></tr><tr><td>Филиппов Виталий</td><td>1</td></tr><tr><td>Чубарова Влада</td><td>2</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Джайв · Финал</h5>
+                <h5 class="judge-dance-title">Джайв · 3 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Агеева Наталья</td><td>4</td></tr><tr><td>Дюков Юрий</td><td>2</td></tr><tr><td>Жмерик Елена</td><td>4</td></tr><tr><td>Кашина Анна</td><td>3</td></tr><tr><td>Курило Иван</td><td>6</td></tr><tr><td>Оводов Сергей</td><td>3</td></tr><tr><td>Оскольских Татьяна</td><td>4</td></tr><tr><td>Степовой Сергей</td><td>1</td></tr><tr><td>Стратьева Юлия</td><td>2</td></tr><tr><td>Филиппов Виталий</td><td>1</td></tr><tr><td>Чубарова Влада</td><td>4</td></tr></tbody>
@@ -2836,28 +2907,28 @@ tbody tr, tbody tr:nth-child(even), tbody tr:hover { background: transparent; }
               </div>
               <h4 class="judge-section-title">Оценки судей</h4>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Самба · Финал</h5>
+                <h5 class="judge-dance-title">Самба · 6 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Жаворонкова Екатерина</td><td>6</td></tr><tr><td>Карташева Анастасия</td><td>4</td></tr><tr><td>Ларченко Екатерина</td><td>6</td></tr><tr><td>Легкоступов Роман</td><td>6</td></tr><tr><td>Лежнева Виктория</td><td>3</td></tr><tr><td>Новичкова Валерия</td><td>6</td></tr><tr><td>Павленко Виктория</td><td>6</td></tr><tr><td>Порохина Мария</td><td>3</td></tr><tr><td>Садковская Юлия</td><td>4</td></tr><tr><td>Филиппов Виталий</td><td>6</td></tr><tr><td>Яковенко Камилия</td><td>4</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Ча-ча-ча · Финал</h5>
+                <h5 class="judge-dance-title">Ча-ча-ча · 6 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Жаворонкова Екатерина</td><td>6</td></tr><tr><td>Карташева Анастасия</td><td>2</td></tr><tr><td>Ларченко Екатерина</td><td>6</td></tr><tr><td>Легкоступов Роман</td><td>6</td></tr><tr><td>Лежнева Виктория</td><td>6</td></tr><tr><td>Новичкова Валерия</td><td>6</td></tr><tr><td>Павленко Виктория</td><td>6</td></tr><tr><td>Порохина Мария</td><td>3</td></tr><tr><td>Садковская Юлия</td><td>3</td></tr><tr><td>Филиппов Виталий</td><td>6</td></tr><tr><td>Яковенко Камилия</td><td>3</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Румба · Финал</h5>
+                <h5 class="judge-dance-title">Румба · 6 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Жаворонкова Екатерина</td><td>5</td></tr><tr><td>Карташева Анастасия</td><td>4</td></tr><tr><td>Ларченко Екатерина</td><td>6</td></tr><tr><td>Легкоступов Роман</td><td>6</td></tr><tr><td>Лежнева Виктория</td><td>4</td></tr><tr><td>Новичкова Валерия</td><td>6</td></tr><tr><td>Павленко Виктория</td><td>6</td></tr><tr><td>Порохина Мария</td><td>3</td></tr><tr><td>Садковская Юлия</td><td>6</td></tr><tr><td>Филиппов Виталий</td><td>5</td></tr><tr><td>Яковенко Камилия</td><td>4</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Джайв · Финал</h5>
+                <h5 class="judge-dance-title">Джайв · 6 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Жаворонкова Екатерина</td><td>5</td></tr><tr><td>Карташева Анастасия</td><td>4</td></tr><tr><td>Ларченко Екатерина</td><td>6</td></tr><tr><td>Легкоступов Роман</td><td>6</td></tr><tr><td>Лежнева Виктория</td><td>5</td></tr><tr><td>Новичкова Валерия</td><td>6</td></tr><tr><td>Павленко Виктория</td><td>6</td></tr><tr><td>Порохина Мария</td><td>3</td></tr><tr><td>Садковская Юлия</td><td>5</td></tr><tr><td>Филиппов Виталий</td><td>6</td></tr><tr><td>Яковенко Камилия</td><td>1</td></tr></tbody>
@@ -3228,51 +3299,6 @@ tbody tr, tbody tr:nth-child(even), tbody tr:hover { background: transparent; }
               </div>
           </div>
 
-          <h4 class="dance-table-heading">Стабильность танцев</h4>
-          <p class="helper-text">Стабильность показывает, насколько сильно меняется итоговое место танца от турнира к турниру. Чем меньше колебания, тем выше стабильность.</p>
-          <div class="table-wrap table-scroll mobile-card-table">
-            <table>
-              <thead><tr><th class="col-dance">Танец</th><th class="number col-avg">Среднее место</th><th class="number col-best">Лучшее</th><th class="col-stability">Стабильность</th></tr></thead>
-              <tbody data-dynamic-metrics>
-                <tr>
-                  <td class="col-dance" data-label="Танец"><strong>Медленный фокстрот</strong></td>
-                  <td class="number col-avg" data-label="Среднее место">8</td>
-                  <td class="number col-best" data-label="Лучшее">8</td>
-                  <td class="col-stability" data-label="Стабильность">
-                    <div class="progress-label">Средняя</div>
-                    <div class="progress-track"><div class="progress-fill" style="--stability-width: 50%;"></div></div>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="col-dance" data-label="Танец"><strong>Квикстеп</strong></td>
-                  <td class="number col-avg" data-label="Среднее место">7</td>
-                  <td class="number col-best" data-label="Лучшее">7</td>
-                  <td class="col-stability" data-label="Стабильность">
-                    <div class="progress-label">Средняя</div>
-                    <div class="progress-track"><div class="progress-fill" style="--stability-width: 50%;"></div></div>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="col-dance" data-label="Танец"><strong>Танго</strong></td>
-                  <td class="number col-avg" data-label="Среднее место">8</td>
-                  <td class="number col-best" data-label="Лучшее">8</td>
-                  <td class="col-stability" data-label="Стабильность">
-                    <div class="progress-label">Средняя</div>
-                    <div class="progress-track"><div class="progress-fill" style="--stability-width: 50%;"></div></div>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="col-dance" data-label="Танец"><strong>Медленный вальс</strong></td>
-                  <td class="number col-avg" data-label="Среднее место">3</td>
-                  <td class="number col-best" data-label="Лучшее">3</td>
-                  <td class="col-stability" data-label="Стабильность">
-                    <div class="progress-label">Средняя</div>
-                    <div class="progress-track"><div class="progress-fill" style="--stability-width: 50%;"></div></div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
 
         </div>
         <div class="category-panel panel-standard-e_d" data-category-panel data-program="standard" data-slice-key="e_d">
@@ -3318,55 +3344,9 @@ tbody tr, tbody tr:nth-child(even), tbody tr:hover { background: transparent; }
               </div>
           </div>
 
-          <h4 class="dance-table-heading">Стабильность танцев</h4>
-          <p class="helper-text">Стабильность показывает, насколько сильно меняется итоговое место танца от турнира к турниру. Чем меньше колебания, тем выше стабильность.</p>
-          <div class="table-wrap table-scroll mobile-card-table">
-            <table>
-              <thead><tr><th class="col-dance">Танец</th><th class="number col-avg">Среднее место</th><th class="number col-best">Лучшее</th><th class="col-stability">Стабильность</th></tr></thead>
-              <tbody data-dynamic-metrics>
-                <tr>
-                  <td class="col-dance" data-label="Танец"><strong>Медленный фокстрот</strong></td>
-                  <td class="number col-avg" data-label="Среднее место">8</td>
-                  <td class="number col-best" data-label="Лучшее">8</td>
-                  <td class="col-stability" data-label="Стабильность">
-                    <div class="progress-label">Средняя</div>
-                    <div class="progress-track"><div class="progress-fill" style="--stability-width: 50%;"></div></div>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="col-dance" data-label="Танец"><strong>Квикстеп</strong></td>
-                  <td class="number col-avg" data-label="Среднее место">7</td>
-                  <td class="number col-best" data-label="Лучшее">7</td>
-                  <td class="col-stability" data-label="Стабильность">
-                    <div class="progress-label">Средняя</div>
-                    <div class="progress-track"><div class="progress-fill" style="--stability-width: 50%;"></div></div>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="col-dance" data-label="Танец"><strong>Танго</strong></td>
-                  <td class="number col-avg" data-label="Среднее место">8</td>
-                  <td class="number col-best" data-label="Лучшее">8</td>
-                  <td class="col-stability" data-label="Стабильность">
-                    <div class="progress-label">Средняя</div>
-                    <div class="progress-track"><div class="progress-fill" style="--stability-width: 50%;"></div></div>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="col-dance" data-label="Танец"><strong>Медленный вальс</strong></td>
-                  <td class="number col-avg" data-label="Среднее место">3</td>
-                  <td class="number col-best" data-label="Лучшее">3</td>
-                  <td class="col-stability" data-label="Стабильность">
-                    <div class="progress-label">Средняя</div>
-                    <div class="progress-track"><div class="progress-fill" style="--stability-width: 50%;"></div></div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
 
         </div>
       </div>
-      <p class="helper-text">Расчёт стабильности основан на разбросе итоговых мест по турнирам. Полная шкала означает очень устойчивый результат, короткая шкала — сильные колебания.</p>
     </section>
     <section class="dance-program">
       <h3>Латина</h3>
@@ -3426,51 +3406,6 @@ tbody tr, tbody tr:nth-child(even), tbody tr:hover { background: transparent; }
               </div>
           </div>
 
-          <h4 class="dance-table-heading">Стабильность танцев</h4>
-          <p class="helper-text">Стабильность показывает, насколько сильно меняется итоговое место танца от турнира к турниру. Чем меньше колебания, тем выше стабильность.</p>
-          <div class="table-wrap table-scroll mobile-card-table">
-            <table>
-              <thead><tr><th class="col-dance">Танец</th><th class="number col-avg">Среднее место</th><th class="number col-best">Лучшее</th><th class="col-stability">Стабильность</th></tr></thead>
-              <tbody data-dynamic-metrics>
-                <tr>
-                  <td class="col-dance" data-label="Танец"><strong>Ча-ча-ча</strong></td>
-                  <td class="number col-avg" data-label="Среднее место">5.667</td>
-                  <td class="number col-best" data-label="Лучшее">4</td>
-                  <td class="col-stability" data-label="Стабильность">
-                    <div class="progress-label">Очень высокая</div>
-                    <div class="progress-track"><div class="progress-fill" style="--stability-width: 95%;"></div></div>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="col-dance" data-label="Танец"><strong>Джайв</strong></td>
-                  <td class="number col-avg" data-label="Среднее место">5.333</td>
-                  <td class="number col-best" data-label="Лучшее">3</td>
-                  <td class="col-stability" data-label="Стабильность">
-                    <div class="progress-label">Средняя</div>
-                    <div class="progress-track"><div class="progress-fill" style="--stability-width: 60%;"></div></div>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="col-dance" data-label="Танец"><strong>Румба</strong></td>
-                  <td class="number col-avg" data-label="Среднее место">5</td>
-                  <td class="number col-best" data-label="Лучшее">2</td>
-                  <td class="col-stability" data-label="Стабильность">
-                    <div class="progress-label">Очень низкая</div>
-                    <div class="progress-track"><div class="progress-fill" style="--stability-width: 25%;"></div></div>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="col-dance" data-label="Танец"><strong>Самба</strong></td>
-                  <td class="number col-avg" data-label="Среднее место">5.667</td>
-                  <td class="number col-best" data-label="Лучшее">4</td>
-                  <td class="col-stability" data-label="Стабильность">
-                    <div class="progress-label">Очень высокая</div>
-                    <div class="progress-track"><div class="progress-fill" style="--stability-width: 95%;"></div></div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
 
         </div>
         <div class="category-panel panel-latin-e_d" data-category-panel data-program="latin" data-slice-key="e_d">
@@ -3516,55 +3451,9 @@ tbody tr, tbody tr:nth-child(even), tbody tr:hover { background: transparent; }
               </div>
           </div>
 
-          <h4 class="dance-table-heading">Стабильность танцев</h4>
-          <p class="helper-text">Стабильность показывает, насколько сильно меняется итоговое место танца от турнира к турниру. Чем меньше колебания, тем выше стабильность.</p>
-          <div class="table-wrap table-scroll mobile-card-table">
-            <table>
-              <thead><tr><th class="col-dance">Танец</th><th class="number col-avg">Среднее место</th><th class="number col-best">Лучшее</th><th class="col-stability">Стабильность</th></tr></thead>
-              <tbody data-dynamic-metrics>
-                <tr>
-                  <td class="col-dance" data-label="Танец"><strong>Ча-ча-ча</strong></td>
-                  <td class="number col-avg" data-label="Среднее место">5.667</td>
-                  <td class="number col-best" data-label="Лучшее">4</td>
-                  <td class="col-stability" data-label="Стабильность">
-                    <div class="progress-label">Очень высокая</div>
-                    <div class="progress-track"><div class="progress-fill" style="--stability-width: 95%;"></div></div>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="col-dance" data-label="Танец"><strong>Джайв</strong></td>
-                  <td class="number col-avg" data-label="Среднее место">5.333</td>
-                  <td class="number col-best" data-label="Лучшее">3</td>
-                  <td class="col-stability" data-label="Стабильность">
-                    <div class="progress-label">Средняя</div>
-                    <div class="progress-track"><div class="progress-fill" style="--stability-width: 60%;"></div></div>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="col-dance" data-label="Танец"><strong>Румба</strong></td>
-                  <td class="number col-avg" data-label="Среднее место">5</td>
-                  <td class="number col-best" data-label="Лучшее">2</td>
-                  <td class="col-stability" data-label="Стабильность">
-                    <div class="progress-label">Очень низкая</div>
-                    <div class="progress-track"><div class="progress-fill" style="--stability-width: 25%;"></div></div>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="col-dance" data-label="Танец"><strong>Самба</strong></td>
-                  <td class="number col-avg" data-label="Среднее место">5.667</td>
-                  <td class="number col-best" data-label="Лучшее">4</td>
-                  <td class="col-stability" data-label="Стабильность">
-                    <div class="progress-label">Очень высокая</div>
-                    <div class="progress-track"><div class="progress-fill" style="--stability-width: 95%;"></div></div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
 
         </div>
       </div>
-      <p class="helper-text">Расчёт стабильности основан на разбросе итоговых мест по турнирам. Полная шкала означает очень устойчивый результат, короткая шкала — сильные колебания.</p>
     </section>
 
     </section>
@@ -4294,6 +4183,22 @@ tbody tr, tbody tr:nth-child(even), tbody tr:hover { background: transparent; }
     initPageNav();
     applyFilters();
   }());
+</script>
+<script>
+(function () {
+  function labelTables() {
+    document.querySelectorAll('.table-wrap table').forEach(function (table) {
+      var headers = Array.from(table.querySelectorAll('thead th')).map(function (th) { return th.textContent.trim(); });
+      table.querySelectorAll('tbody tr').forEach(function (row) {
+        Array.from(row.cells).forEach(function (cell, index) {
+          if (!cell.hasAttribute('data-label') && headers[index]) cell.setAttribute('data-label', headers[index]);
+        });
+      });
+    });
+  }
+  labelTables();
+  new MutationObserver(labelTables).observe(document.querySelector('main'), {childList: true, subtree: true});
+}());
 </script>
 </body>
 </html>

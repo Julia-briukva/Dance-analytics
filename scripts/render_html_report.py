@@ -18,7 +18,7 @@ from dance_display import DANCE_CODE_ORDER, dance_russian_name, normalize_dance_
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_REPORTS_DIR = PROJECT_ROOT / "reports"
 DEFAULT_TEMPLATES_DIR = PROJECT_ROOT / "templates"
-DEFAULT_TEMPLATE_NAME = "report_typography.html.j2"
+DEFAULT_TEMPLATE_NAME = "report_mobile.html.j2"
 CATEGORY_SLICE_ORDER = ["all", "n", "n_e", "e", "e_d", "d", "d_c", "c", "c_b", "b", "a", "s", "m", "eadc", "open"]
 CATEGORY_SLICE_LABELS = {
     "all": "Все категории",
@@ -745,6 +745,14 @@ def tournament_entries(report: dict[str, Any], tournament: dict[str, Any]) -> li
             value = row.get("numeric_mark") if kind == "place" else ("×" if row.get("judge_cross") else "—")
             panel["judges"].append({"judge": row.get("judge") or "Судья не указан", "value": value})
         entry["judge_panels"] = sorted(panels.values(), key=lambda panel: (panel["round"], DANCE_CODE_ORDER.get(panel["dance"], 999), panel["kind"]))
+        for panel in entry["judge_panels"]:
+            candidates = [row for row in entry["dance_results"]
+                          if normalize_dance_code(row.get("dance_code") or row.get("dance")) == panel["dance"]
+                          and row.get("result_source") == "dance_final_place"
+                          and row.get("final_place") is not None]
+            if panel["round"].strip().casefold() in {"финал", "final"} and len(candidates) == 1:
+                panel["dance_place_label"] = fmt(candidates[0]["final_place"]) + " место"
+
     return sorted(entries.values(), key=lambda entry: (entry["category"], {"standard": 0, "latin": 1}.get(entry["program"], 2), str(entry["protocol_id"])))
 
 
