@@ -1829,7 +1829,38 @@ tbody tr, tbody tr:nth-child(even), tbody tr:hover { background: transparent; }
 #dances .dance-program { display: flex; flex-wrap: wrap; justify-content: flex-start; align-items: center; gap: 16px; }
 #dances .dance-program > h3 { flex: 0 0 auto; width: auto; margin: 0; }
 #dances .dance-program > .category-chip-groups { flex: 0 1 auto; width: auto; max-width: 100%; margin: 0; padding: 0; }
-#dances .dance-program > .category-panels { flex: 0 0 100%; width: 100%; margin: 0; }  </style>
+#dances .dance-program > .category-panels { flex: 0 0 100%; width: 100%; margin: 0; }/* Only the Rossoshanskaya preview includes these rules. Desktop is unchanged. */
+@media screen and (max-width: 700px) {
+  body .report { width: calc(100% - 32px); overflow-wrap: anywhere; }
+  body .page-nav { max-width: 100%; gap: 20px; }
+  body .header-date-filter { flex-wrap: wrap; min-width: 0; }
+  body .header-date-filter input { min-width: 0; max-width: 100%; }
+  body .category-result-columns { display: none; }
+  body .tournament-category-card .category-result-summary { display: grid; grid-template-columns: minmax(0, 1fr) auto 28px; gap: 6px 10px; padding: 14px 0; }
+  body .category-result-summary > strong:first-child { grid-column: 1 / -1; font-size: 13px; }
+  body .category-result-content { padding: 0 0 20px; }
+  body .table-wrap, body .table-scroll, body .mobile-card-table { overflow: visible; border: 0; border-radius: 0; width: 100%; }
+  body .table-wrap table { display: block; width: 100%; min-width: 0; table-layout: auto; border: 0; }
+  body .table-wrap colgroup, body .table-wrap thead { display: none; }
+  body .table-wrap tbody { display: grid; width: 100%; gap: 12px; }
+  body .table-wrap tbody tr { display: grid; width: 100%; min-width: 0; padding: 14px; gap: 10px; border: 1px solid var(--line); border-radius: 10px; background: #fff; }
+  body .table-wrap tbody td, body .table-wrap tbody td.number { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); align-items: start; gap: 12px; width: auto; min-width: 0; padding: 0; border: 0; text-align: left; font-size: 14px; overflow-wrap: anywhere; white-space: normal; }
+  body .table-wrap tbody td::before { content: attr(data-label); position: static; display: block; color: var(--muted); font-size: 12px; font-weight: 400; text-align: left; }
+  body .table-wrap tbody td[colspan] { display: block; }
+  body .table-wrap tbody td[colspan]::before { display: none; }
+  body .judge-panel-result { margin-top: 20px; }
+  body .judge-panel-result .table-wrap { border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+  body .judge-panel-result .table-wrap tbody { display: block; }
+  body .judge-panel-result .table-wrap tbody tr { display: grid; grid-template-columns: minmax(0, 1fr) 40px; gap: 12px; align-items: center; padding: 12px 14px; border: 0; border-bottom: 1px solid var(--line); border-radius: 0; }
+  body .judge-panel-result .table-wrap tbody tr:last-child { border-bottom: 0; }
+  body .judge-panel-result .table-wrap tbody td { display: block; font-size: 14px; }
+  body .judge-panel-result .table-wrap tbody td::before { display: none; }
+  body .judge-panel-result .table-wrap tbody td:last-child { text-align: right; font-variant-numeric: tabular-nums; font-weight: 600; }
+  body .dance-program { display: flex; flex-wrap: wrap; gap: 12px; }
+  body .dance-program > .category-panels { flex-basis: 100%; }
+  body .dance-program .dance-comparison-grid { grid-template-columns: minmax(0, 1fr); gap: 18px; }
+  body .judge-insight-grid, body .three-column, body .two-column { grid-template-columns: minmax(0, 1fr); }
+}  </style>
 </head>
 <body>
 <main class="report">
@@ -1901,21 +1932,21 @@ tbody tr, tbody tr:nth-child(even), tbody tr:hover { background: transparent; }
               </div>
               <h4 class="judge-section-title">Оценки судей</h4>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Медленный вальс · Финал</h5>
+                <h5 class="judge-dance-title">Медленный вальс · 1 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Агеева Наталья</td><td>5</td></tr><tr><td>Едигарьева Татьяна</td><td>2</td></tr><tr><td>Зеленина Елизавета</td><td>1</td></tr><tr><td>Кашина Анна</td><td>1</td></tr><tr><td>Курило Иван</td><td>1</td></tr><tr><td>Лунев Игорь</td><td>2</td></tr><tr><td>Радаева Елена</td><td>2</td></tr><tr><td>Сенькова Дарья</td><td>5</td></tr><tr><td>Токарева Нина</td><td>1</td></tr><tr><td>Чуносова Альбина</td><td>1</td></tr><tr><td>Яковенко Камилия</td><td>1</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Танго · Финал</h5>
+                <h5 class="judge-dance-title">Танго · 1 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Агеева Наталья</td><td>2</td></tr><tr><td>Едигарьева Татьяна</td><td>1</td></tr><tr><td>Зеленина Елизавета</td><td>2</td></tr><tr><td>Кашина Анна</td><td>2</td></tr><tr><td>Курило Иван</td><td>1</td></tr><tr><td>Лунев Игорь</td><td>2</td></tr><tr><td>Радаева Елена</td><td>2</td></tr><tr><td>Сенькова Дарья</td><td>3</td></tr><tr><td>Токарева Нина</td><td>1</td></tr><tr><td>Чуносова Альбина</td><td>1</td></tr><tr><td>Яковенко Камилия</td><td>2</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Квикстеп · Финал</h5>
+                <h5 class="judge-dance-title">Квикстеп · 1 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Агеева Наталья</td><td>2</td></tr><tr><td>Едигарьева Татьяна</td><td>1</td></tr><tr><td>Зеленина Елизавета</td><td>1</td></tr><tr><td>Кашина Анна</td><td>1</td></tr><tr><td>Курило Иван</td><td>1</td></tr><tr><td>Лунев Игорь</td><td>1</td></tr><tr><td>Радаева Елена</td><td>2</td></tr><tr><td>Сенькова Дарья</td><td>3</td></tr><tr><td>Токарева Нина</td><td>5</td></tr><tr><td>Чуносова Альбина</td><td>2</td></tr><tr><td>Яковенко Камилия</td><td>4</td></tr></tbody>
@@ -1945,21 +1976,21 @@ tbody tr, tbody tr:nth-child(even), tbody tr:hover { background: transparent; }
               </div>
               <h4 class="judge-section-title">Оценки судей</h4>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Ча-ча-ча · Финал</h5>
+                <h5 class="judge-dance-title">Ча-ча-ча · 1 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Агеева Наталья</td><td>1</td></tr><tr><td>Едигарьева Татьяна</td><td>1</td></tr><tr><td>Зеленина Елизавета</td><td>3</td></tr><tr><td>Кашина Анна</td><td>1</td></tr><tr><td>Курило Иван</td><td>1</td></tr><tr><td>Лунев Игорь</td><td>1</td></tr><tr><td>Радаева Елена</td><td>2</td></tr><tr><td>Сенькова Дарья</td><td>1</td></tr><tr><td>Токарева Нина</td><td>4</td></tr><tr><td>Чуносова Альбина</td><td>3</td></tr><tr><td>Яковенко Камилия</td><td>4</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Румба · Финал</h5>
+                <h5 class="judge-dance-title">Румба · 1 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Агеева Наталья</td><td>1</td></tr><tr><td>Едигарьева Татьяна</td><td>1</td></tr><tr><td>Зеленина Елизавета</td><td>5</td></tr><tr><td>Кашина Анна</td><td>1</td></tr><tr><td>Курило Иван</td><td>1</td></tr><tr><td>Лунев Игорь</td><td>1</td></tr><tr><td>Радаева Елена</td><td>2</td></tr><tr><td>Сенькова Дарья</td><td>1</td></tr><tr><td>Токарева Нина</td><td>4</td></tr><tr><td>Чуносова Альбина</td><td>2</td></tr><tr><td>Яковенко Камилия</td><td>3</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Джайв · Финал</h5>
+                <h5 class="judge-dance-title">Джайв · 1 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Агеева Наталья</td><td>7</td></tr><tr><td>Едигарьева Татьяна</td><td>1</td></tr><tr><td>Зеленина Елизавета</td><td>5</td></tr><tr><td>Кашина Анна</td><td>2</td></tr><tr><td>Курило Иван</td><td>1</td></tr><tr><td>Лунев Игорь</td><td>2</td></tr><tr><td>Радаева Елена</td><td>2</td></tr><tr><td>Сенькова Дарья</td><td>1</td></tr><tr><td>Токарева Нина</td><td>4</td></tr><tr><td>Чуносова Альбина</td><td>2</td></tr><tr><td>Яковенко Камилия</td><td>3</td></tr></tbody>
@@ -1996,21 +2027,21 @@ tbody tr, tbody tr:nth-child(even), tbody tr:hover { background: transparent; }
               </div>
               <h4 class="judge-section-title">Оценки судей</h4>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Медленный вальс · Финал</h5>
+                <h5 class="judge-dance-title">Медленный вальс · 1 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Волков Иван</td><td>1</td></tr><tr><td>Жмерик Елена</td><td>1</td></tr><tr><td>Замахаева Екатерина</td><td>4</td></tr><tr><td>Миронова Любовь</td><td>2</td></tr><tr><td>Соколов Виталий</td><td>5</td></tr><tr><td>Стадниченко Андрей</td><td>1</td></tr><tr><td>Стратьева Юлия</td><td>1</td></tr><tr><td>Филиппов Виталий</td><td>1</td></tr><tr><td>Шалько Полина</td><td>5</td></tr><tr><td>Ютанов Василий</td><td>1</td></tr><tr><td>Яковенко Камилия</td><td>3</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Танго · Финал</h5>
+                <h5 class="judge-dance-title">Танго · 1 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Волков Иван</td><td>2</td></tr><tr><td>Жмерик Елена</td><td>1</td></tr><tr><td>Замахаева Екатерина</td><td>4</td></tr><tr><td>Миронова Любовь</td><td>1</td></tr><tr><td>Соколов Виталий</td><td>1</td></tr><tr><td>Стадниченко Андрей</td><td>1</td></tr><tr><td>Стратьева Юлия</td><td>2</td></tr><tr><td>Филиппов Виталий</td><td>1</td></tr><tr><td>Шалько Полина</td><td>5</td></tr><tr><td>Ютанов Василий</td><td>1</td></tr><tr><td>Яковенко Камилия</td><td>4</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Квикстеп · Финал</h5>
+                <h5 class="judge-dance-title">Квикстеп · 1 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Волков Иван</td><td>2</td></tr><tr><td>Жмерик Елена</td><td>1</td></tr><tr><td>Замахаева Екатерина</td><td>4</td></tr><tr><td>Миронова Любовь</td><td>1</td></tr><tr><td>Соколов Виталий</td><td>3</td></tr><tr><td>Стадниченко Андрей</td><td>1</td></tr><tr><td>Стратьева Юлия</td><td>1</td></tr><tr><td>Филиппов Виталий</td><td>1</td></tr><tr><td>Шалько Полина</td><td>3</td></tr><tr><td>Ютанов Василий</td><td>1</td></tr><tr><td>Яковенко Камилия</td><td>3</td></tr></tbody>
@@ -2040,21 +2071,21 @@ tbody tr, tbody tr:nth-child(even), tbody tr:hover { background: transparent; }
               </div>
               <h4 class="judge-section-title">Оценки судей</h4>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Ча-ча-ча · Финал</h5>
+                <h5 class="judge-dance-title">Ча-ча-ча · 2 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Дюков Юрий</td><td>1</td></tr><tr><td>Евсеева Татьяна</td><td>4</td></tr><tr><td>Жаворонкова Екатерина</td><td>2</td></tr><tr><td>Кабисов Тимур</td><td>3</td></tr><tr><td>Карташева Анастасия</td><td>7</td></tr><tr><td>Кашина Анна</td><td>2</td></tr><tr><td>Королева Ксения</td><td>1</td></tr><tr><td>Литвинчук София</td><td>5</td></tr><tr><td>Чубарова Влада</td><td>4</td></tr><tr><td>Шинкаренко Даниил</td><td>3</td></tr><tr><td>Юшкова Светлана</td><td>2</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Румба · Финал</h5>
+                <h5 class="judge-dance-title">Румба · 1 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Дюков Юрий</td><td>1</td></tr><tr><td>Евсеева Татьяна</td><td>3</td></tr><tr><td>Жаворонкова Екатерина</td><td>1</td></tr><tr><td>Кабисов Тимур</td><td>1</td></tr><tr><td>Карташева Анастасия</td><td>2</td></tr><tr><td>Кашина Анна</td><td>1</td></tr><tr><td>Королева Ксения</td><td>2</td></tr><tr><td>Литвинчук София</td><td>2</td></tr><tr><td>Чубарова Влада</td><td>3</td></tr><tr><td>Шинкаренко Даниил</td><td>2</td></tr><tr><td>Юшкова Светлана</td><td>1</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Джайв · Финал</h5>
+                <h5 class="judge-dance-title">Джайв · 2 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Дюков Юрий</td><td>2</td></tr><tr><td>Евсеева Татьяна</td><td>2</td></tr><tr><td>Жаворонкова Екатерина</td><td>2</td></tr><tr><td>Кабисов Тимур</td><td>2</td></tr><tr><td>Карташева Анастасия</td><td>1</td></tr><tr><td>Кашина Анна</td><td>3</td></tr><tr><td>Королева Ксения</td><td>1</td></tr><tr><td>Литвинчук София</td><td>3</td></tr><tr><td>Чубарова Влада</td><td>4</td></tr><tr><td>Шинкаренко Даниил</td><td>2</td></tr><tr><td>Юшкова Светлана</td><td>2</td></tr></tbody>
@@ -2091,21 +2122,21 @@ tbody tr, tbody tr:nth-child(even), tbody tr:hover { background: transparent; }
               </div>
               <h4 class="judge-section-title">Оценки судей</h4>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Медленный вальс · Финал</h5>
+                <h5 class="judge-dance-title">Медленный вальс · 1 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Дьячков Сергей</td><td>2</td></tr><tr><td>Кашина Анна</td><td>3</td></tr><tr><td>Ларченко Екатерина</td><td>1</td></tr><tr><td>Павленко Виктория</td><td>1</td></tr><tr><td>Садковская Юлия</td><td>1</td></tr><tr><td>Филиппов Виталий</td><td>1</td></tr><tr><td>Шинкаренко Даниил</td><td>1</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Танго · Финал</h5>
+                <h5 class="judge-dance-title">Танго · 1 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Дьячков Сергей</td><td>1</td></tr><tr><td>Кашина Анна</td><td>2</td></tr><tr><td>Ларченко Екатерина</td><td>1</td></tr><tr><td>Павленко Виктория</td><td>1</td></tr><tr><td>Садковская Юлия</td><td>1</td></tr><tr><td>Филиппов Виталий</td><td>1</td></tr><tr><td>Шинкаренко Даниил</td><td>1</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Квикстеп · Финал</h5>
+                <h5 class="judge-dance-title">Квикстеп · 1 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Дьячков Сергей</td><td>1</td></tr><tr><td>Кашина Анна</td><td>3</td></tr><tr><td>Ларченко Екатерина</td><td>1</td></tr><tr><td>Павленко Виктория</td><td>1</td></tr><tr><td>Садковская Юлия</td><td>1</td></tr><tr><td>Филиппов Виталий</td><td>1</td></tr><tr><td>Шинкаренко Даниил</td><td>1</td></tr></tbody>
@@ -2135,21 +2166,21 @@ tbody tr, tbody tr:nth-child(even), tbody tr:hover { background: transparent; }
               </div>
               <h4 class="judge-section-title">Оценки судей</h4>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Ча-ча-ча · Финал</h5>
+                <h5 class="judge-dance-title">Ча-ча-ча · 4 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Андрощук Вера</td><td>4</td></tr><tr><td>Замахаева Екатерина</td><td>4</td></tr><tr><td>Ковальская Оксана</td><td>3</td></tr><tr><td>Миронова Любовь</td><td>2</td></tr><tr><td>Румянцева Татьяна</td><td>5</td></tr><tr><td>Токарева Нина</td><td>5</td></tr><tr><td>Чуносова Альбина</td><td>1</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Румба · Финал</h5>
+                <h5 class="judge-dance-title">Румба · 1 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Андрощук Вера</td><td>1</td></tr><tr><td>Замахаева Екатерина</td><td>4</td></tr><tr><td>Ковальская Оксана</td><td>1</td></tr><tr><td>Миронова Любовь</td><td>1</td></tr><tr><td>Румянцева Татьяна</td><td>4</td></tr><tr><td>Токарева Нина</td><td>3</td></tr><tr><td>Чуносова Альбина</td><td>1</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Джайв · Финал</h5>
+                <h5 class="judge-dance-title">Джайв · 1 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Андрощук Вера</td><td>1</td></tr><tr><td>Замахаева Екатерина</td><td>3</td></tr><tr><td>Ковальская Оксана</td><td>1</td></tr><tr><td>Миронова Любовь</td><td>1</td></tr><tr><td>Румянцева Татьяна</td><td>3</td></tr><tr><td>Токарева Нина</td><td>3</td></tr><tr><td>Чуносова Альбина</td><td>2</td></tr></tbody>
@@ -2186,21 +2217,21 @@ tbody tr, tbody tr:nth-child(even), tbody tr:hover { background: transparent; }
               </div>
               <h4 class="judge-section-title">Оценки судей</h4>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Медленный вальс · Финал</h5>
+                <h5 class="judge-dance-title">Медленный вальс · 3 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Вершинина Елизавета</td><td>3</td></tr><tr><td>Замахаева Екатерина</td><td>3</td></tr><tr><td>Кинареев Михаил</td><td>5</td></tr><tr><td>Ларченко Екатерина</td><td>4</td></tr><tr><td>Павленко Виктория</td><td>3</td></tr><tr><td>Румянцева Татьяна</td><td>4</td></tr><tr><td>Стратьева Юлия</td><td>5</td></tr><tr><td>Цифрова Вероника</td><td>3</td></tr><tr><td>Яковенко Камилия</td><td>2</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Танго · Финал</h5>
+                <h5 class="judge-dance-title">Танго · 3 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Вершинина Елизавета</td><td>5</td></tr><tr><td>Замахаева Екатерина</td><td>2</td></tr><tr><td>Кинареев Михаил</td><td>5</td></tr><tr><td>Ларченко Екатерина</td><td>1</td></tr><tr><td>Павленко Виктория</td><td>3</td></tr><tr><td>Румянцева Татьяна</td><td>6</td></tr><tr><td>Стратьева Юлия</td><td>5</td></tr><tr><td>Цифрова Вероника</td><td>3</td></tr><tr><td>Яковенко Камилия</td><td>3</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Квикстеп · Финал</h5>
+                <h5 class="judge-dance-title">Квикстеп · 3 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Вершинина Елизавета</td><td>5</td></tr><tr><td>Замахаева Екатерина</td><td>2</td></tr><tr><td>Кинареев Михаил</td><td>5</td></tr><tr><td>Ларченко Екатерина</td><td>1</td></tr><tr><td>Павленко Виктория</td><td>1</td></tr><tr><td>Румянцева Татьяна</td><td>4</td></tr><tr><td>Стратьева Юлия</td><td>5</td></tr><tr><td>Цифрова Вероника</td><td>3</td></tr><tr><td>Яковенко Камилия</td><td>4</td></tr></tbody>
@@ -2230,21 +2261,21 @@ tbody tr, tbody tr:nth-child(even), tbody tr:hover { background: transparent; }
               </div>
               <h4 class="judge-section-title">Оценки судей</h4>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Ча-ча-ча · Финал</h5>
+                <h5 class="judge-dance-title">Ча-ча-ча · 3 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Ахрамеева Виктория</td><td>1</td></tr><tr><td>Дюков Юрий</td><td>3</td></tr><tr><td>Кашина Анна</td><td>2</td></tr><tr><td>Королева Ксения</td><td>1</td></tr><tr><td>Лунев Игорь</td><td>4</td></tr><tr><td>Порохина Мария</td><td>1</td></tr><tr><td>Сивас Евстолия</td><td>3</td></tr><tr><td>Тищенко Петр</td><td>3</td></tr><tr><td>Чубарова Влада</td><td>3</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Румба · Финал</h5>
+                <h5 class="judge-dance-title">Румба · 1 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Ахрамеева Виктория</td><td>1</td></tr><tr><td>Дюков Юрий</td><td>3</td></tr><tr><td>Кашина Анна</td><td>1</td></tr><tr><td>Королева Ксения</td><td>1</td></tr><tr><td>Лунев Игорь</td><td>4</td></tr><tr><td>Порохина Мария</td><td>1</td></tr><tr><td>Сивас Евстолия</td><td>3</td></tr><tr><td>Тищенко Петр</td><td>3</td></tr><tr><td>Чубарова Влада</td><td>1</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Джайв · Финал</h5>
+                <h5 class="judge-dance-title">Джайв · 1 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Ахрамеева Виктория</td><td>1</td></tr><tr><td>Дюков Юрий</td><td>3</td></tr><tr><td>Кашина Анна</td><td>3</td></tr><tr><td>Королева Ксения</td><td>1</td></tr><tr><td>Лунев Игорь</td><td>3</td></tr><tr><td>Порохина Мария</td><td>3</td></tr><tr><td>Сивас Евстолия</td><td>2</td></tr><tr><td>Тищенко Петр</td><td>2</td></tr><tr><td>Чубарова Влада</td><td>2</td></tr></tbody>
@@ -2281,21 +2312,21 @@ tbody tr, tbody tr:nth-child(even), tbody tr:hover { background: transparent; }
               </div>
               <h4 class="judge-section-title">Оценки судей</h4>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Медленный вальс · Финал</h5>
+                <h5 class="judge-dance-title">Медленный вальс · 1 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Мажирин Герман</td><td>1</td></tr><tr><td>Гладышева Александра</td><td>1</td></tr><tr><td>Евсеева Татьяна</td><td>1</td></tr><tr><td>Едигарьева Татьяна</td><td>1</td></tr><tr><td>Замахаева Екатерина</td><td>2</td></tr><tr><td>Ларченко Екатерина</td><td>2</td></tr><tr><td>Лисичкин Константин</td><td>1</td></tr><tr><td>Моцакова Дарья</td><td>1</td></tr><tr><td>Тищенко Петр</td><td>1</td></tr><tr><td>Яремчук Татьяна</td><td>1</td></tr><tr><td>Филиппов Виталий</td><td>4</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Танго · Финал</h5>
+                <h5 class="judge-dance-title">Танго · 1 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Мажирин Герман</td><td>1</td></tr><tr><td>Гладышева Александра</td><td>1</td></tr><tr><td>Евсеева Татьяна</td><td>1</td></tr><tr><td>Едигарьева Татьяна</td><td>1</td></tr><tr><td>Замахаева Екатерина</td><td>2</td></tr><tr><td>Ларченко Екатерина</td><td>1</td></tr><tr><td>Лисичкин Константин</td><td>1</td></tr><tr><td>Моцакова Дарья</td><td>1</td></tr><tr><td>Тищенко Петр</td><td>1</td></tr><tr><td>Яремчук Татьяна</td><td>1</td></tr><tr><td>Филиппов Виталий</td><td>4</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Квикстеп · Финал</h5>
+                <h5 class="judge-dance-title">Квикстеп · 1 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Мажирин Герман</td><td>1</td></tr><tr><td>Гладышева Александра</td><td>1</td></tr><tr><td>Евсеева Татьяна</td><td>1</td></tr><tr><td>Едигарьева Татьяна</td><td>1</td></tr><tr><td>Замахаева Екатерина</td><td>2</td></tr><tr><td>Ларченко Екатерина</td><td>1</td></tr><tr><td>Лисичкин Константин</td><td>1</td></tr><tr><td>Моцакова Дарья</td><td>2</td></tr><tr><td>Тищенко Петр</td><td>1</td></tr><tr><td>Яремчук Татьяна</td><td>1</td></tr><tr><td>Филиппов Виталий</td><td>4</td></tr></tbody>
@@ -2325,21 +2356,21 @@ tbody tr, tbody tr:nth-child(even), tbody tr:hover { background: transparent; }
               </div>
               <h4 class="judge-section-title">Оценки судей</h4>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Ча-ча-ча · Финал</h5>
+                <h5 class="judge-dance-title">Ча-ча-ча · 1 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Громова Ксения</td><td>1</td></tr><tr><td>Дьячков Сергей</td><td>4</td></tr><tr><td>Золотаревский Алексей</td><td>2</td></tr><tr><td>Ковальская Оксана</td><td>5</td></tr><tr><td>Павленко Виктория</td><td>1</td></tr><tr><td>Порохина Мария</td><td>1</td></tr><tr><td>Румянцева Татьяна</td><td>2</td></tr><tr><td>Садковская Юлия</td><td>2</td></tr><tr><td>Сыров Павел</td><td>1</td></tr><tr><td>Чубарова Влада</td><td>1</td></tr><tr><td>Шинкаренко Даниил</td><td>1</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Румба · Финал</h5>
+                <h5 class="judge-dance-title">Румба · 1 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Громова Ксения</td><td>1</td></tr><tr><td>Дьячков Сергей</td><td>2</td></tr><tr><td>Золотаревский Алексей</td><td>2</td></tr><tr><td>Ковальская Оксана</td><td>3</td></tr><tr><td>Павленко Виктория</td><td>2</td></tr><tr><td>Порохина Мария</td><td>1</td></tr><tr><td>Румянцева Татьяна</td><td>1</td></tr><tr><td>Садковская Юлия</td><td>1</td></tr><tr><td>Сыров Павел</td><td>1</td></tr><tr><td>Чубарова Влада</td><td>2</td></tr><tr><td>Шинкаренко Даниил</td><td>1</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Джайв · Финал</h5>
+                <h5 class="judge-dance-title">Джайв · 1 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Громова Ксения</td><td>2</td></tr><tr><td>Дьячков Сергей</td><td>6</td></tr><tr><td>Золотаревский Алексей</td><td>2</td></tr><tr><td>Ковальская Оксана</td><td>3</td></tr><tr><td>Павленко Виктория</td><td>1</td></tr><tr><td>Порохина Мария</td><td>1</td></tr><tr><td>Румянцева Татьяна</td><td>1</td></tr><tr><td>Садковская Юлия</td><td>1</td></tr><tr><td>Сыров Павел</td><td>1</td></tr><tr><td>Чубарова Влада</td><td>2</td></tr><tr><td>Шинкаренко Даниил</td><td>1</td></tr></tbody>
@@ -2376,21 +2407,21 @@ tbody tr, tbody tr:nth-child(even), tbody tr:hover { background: transparent; }
               </div>
               <h4 class="judge-section-title">Оценки судей</h4>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Медленный вальс · Финал</h5>
+                <h5 class="judge-dance-title">Медленный вальс · 1 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Данилова Екатерина</td><td>1</td></tr><tr><td>Кабисов Тимур</td><td>1</td></tr><tr><td>Кафтан Константин</td><td>1</td></tr><tr><td>Курило Иван</td><td>1</td></tr><tr><td>Лунев Игорь</td><td>1</td></tr><tr><td>Новичкова Валерия</td><td>1</td></tr><tr><td>Тищенко Петр</td><td>5</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Танго · Финал</h5>
+                <h5 class="judge-dance-title">Танго · 1 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Данилова Екатерина</td><td>2</td></tr><tr><td>Кабисов Тимур</td><td>8</td></tr><tr><td>Кафтан Константин</td><td>1</td></tr><tr><td>Курило Иван</td><td>1</td></tr><tr><td>Лунев Игорь</td><td>1</td></tr><tr><td>Новичкова Валерия</td><td>1</td></tr><tr><td>Тищенко Петр</td><td>3</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Квикстеп · Финал</h5>
+                <h5 class="judge-dance-title">Квикстеп · 1 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Данилова Екатерина</td><td>1</td></tr><tr><td>Кабисов Тимур</td><td>2</td></tr><tr><td>Кафтан Константин</td><td>1</td></tr><tr><td>Курило Иван</td><td>1</td></tr><tr><td>Лунев Игорь</td><td>1</td></tr><tr><td>Новичкова Валерия</td><td>1</td></tr><tr><td>Тищенко Петр</td><td>6</td></tr></tbody>
@@ -2420,21 +2451,21 @@ tbody tr, tbody tr:nth-child(even), tbody tr:hover { background: transparent; }
               </div>
               <h4 class="judge-section-title">Оценки судей</h4>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Ча-ча-ча · Финал</h5>
+                <h5 class="judge-dance-title">Ча-ча-ча · 2 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Кашина Анна</td><td>3</td></tr><tr><td>Кинареев Михаил</td><td>2</td></tr><tr><td>Клецун Карияна</td><td>3</td></tr><tr><td>Логинова Оксана</td><td>4</td></tr><tr><td>Соколов Виталий</td><td>4</td></tr><tr><td>Стратьева Юлия</td><td>1</td></tr><tr><td>Сыров Павел</td><td>2</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Румба · Финал</h5>
+                <h5 class="judge-dance-title">Румба · 1 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Кашина Анна</td><td>2</td></tr><tr><td>Кинареев Михаил</td><td>1</td></tr><tr><td>Клецун Карияна</td><td>3</td></tr><tr><td>Логинова Оксана</td><td>3</td></tr><tr><td>Соколов Виталий</td><td>2</td></tr><tr><td>Стратьева Юлия</td><td>1</td></tr><tr><td>Сыров Павел</td><td>2</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Джайв · Финал</h5>
+                <h5 class="judge-dance-title">Джайв · 2 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Кашина Анна</td><td>3</td></tr><tr><td>Кинареев Михаил</td><td>2</td></tr><tr><td>Клецун Карияна</td><td>3</td></tr><tr><td>Логинова Оксана</td><td>4</td></tr><tr><td>Соколов Виталий</td><td>4</td></tr><tr><td>Стратьева Юлия</td><td>3</td></tr><tr><td>Сыров Павел</td><td>3</td></tr></tbody>
@@ -2465,28 +2496,28 @@ tbody tr, tbody tr:nth-child(even), tbody tr:hover { background: transparent; }
               </div>
               <h4 class="judge-section-title">Оценки судей</h4>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Медленный вальс · Финал</h5>
+                <h5 class="judge-dance-title">Медленный вальс · 6 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Ахрамеева Виктория</td><td>7</td></tr><tr><td>Данилова Екатерина</td><td>6</td></tr><tr><td>Кашина Анна</td><td>6</td></tr><tr><td>Кинареев Михаил</td><td>6</td></tr><tr><td>Клецун Карияна</td><td>1</td></tr><tr><td>Стратьева Юлия</td><td>2</td></tr><tr><td>Сыров Павел</td><td>2</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Танго · Финал</h5>
+                <h5 class="judge-dance-title">Танго · 3 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Ахрамеева Виктория</td><td>1</td></tr><tr><td>Данилова Екатерина</td><td>4</td></tr><tr><td>Кашина Анна</td><td>4</td></tr><tr><td>Кинареев Михаил</td><td>7</td></tr><tr><td>Клецун Карияна</td><td>3</td></tr><tr><td>Стратьева Юлия</td><td>3</td></tr><tr><td>Сыров Павел</td><td>2</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Медленный фокстрот · Финал</h5>
+                <h5 class="judge-dance-title">Медленный фокстрот · 2 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Ахрамеева Виктория</td><td>2</td></tr><tr><td>Данилова Екатерина</td><td>3</td></tr><tr><td>Кашина Анна</td><td>6</td></tr><tr><td>Кинареев Михаил</td><td>6</td></tr><tr><td>Клецун Карияна</td><td>3</td></tr><tr><td>Стратьева Юлия</td><td>4</td></tr><tr><td>Сыров Павел</td><td>3</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Квикстеп · Финал</h5>
+                <h5 class="judge-dance-title">Квикстеп · 2 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Ахрамеева Виктория</td><td>2</td></tr><tr><td>Данилова Екатерина</td><td>4</td></tr><tr><td>Кашина Анна</td><td>3</td></tr><tr><td>Кинареев Михаил</td><td>5</td></tr><tr><td>Клецун Карияна</td><td>3</td></tr><tr><td>Стратьева Юлия</td><td>4</td></tr><tr><td>Сыров Павел</td><td>4</td></tr></tbody>
@@ -2517,28 +2548,28 @@ tbody tr, tbody tr:nth-child(even), tbody tr:hover { background: transparent; }
               </div>
               <h4 class="judge-section-title">Оценки судей</h4>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Самба · Финал</h5>
+                <h5 class="judge-dance-title">Самба · 4 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Андрощук Вера</td><td>2</td></tr><tr><td>Ахрамеева Виктория</td><td>2</td></tr><tr><td>Логинова Оксана</td><td>5</td></tr><tr><td>Попова Алиса</td><td>4</td></tr><tr><td>Порохина Мария</td><td>8</td></tr><tr><td>Соколов Виталий</td><td>2</td></tr><tr><td>Ютанов Василий</td><td>5</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Ча-ча-ча · Финал</h5>
+                <h5 class="judge-dance-title">Ча-ча-ча · 4 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Андрощук Вера</td><td>2</td></tr><tr><td>Ахрамеева Виктория</td><td>1</td></tr><tr><td>Логинова Оксана</td><td>3</td></tr><tr><td>Попова Алиса</td><td>5</td></tr><tr><td>Порохина Мария</td><td>7</td></tr><tr><td>Соколов Виталий</td><td>3</td></tr><tr><td>Ютанов Василий</td><td>5</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Румба · Финал</h5>
+                <h5 class="judge-dance-title">Румба · 4 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Андрощук Вера</td><td>2</td></tr><tr><td>Ахрамеева Виктория</td><td>6</td></tr><tr><td>Логинова Оксана</td><td>4</td></tr><tr><td>Попова Алиса</td><td>4</td></tr><tr><td>Порохина Мария</td><td>6</td></tr><tr><td>Соколов Виталий</td><td>3</td></tr><tr><td>Ютанов Василий</td><td>4</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Джайв · Финал</h5>
+                <h5 class="judge-dance-title">Джайв · 3 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Андрощук Вера</td><td>2</td></tr><tr><td>Ахрамеева Виктория</td><td>1</td></tr><tr><td>Логинова Оксана</td><td>8</td></tr><tr><td>Попова Алиса</td><td>1</td></tr><tr><td>Порохина Мария</td><td>8</td></tr><tr><td>Соколов Виталий</td><td>3</td></tr><tr><td>Ютанов Василий</td><td>5</td></tr></tbody>
@@ -2576,28 +2607,28 @@ tbody tr, tbody tr:nth-child(even), tbody tr:hover { background: transparent; }
               </div>
               <h4 class="judge-section-title">Оценки судей</h4>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Медленный вальс · Финал</h5>
+                <h5 class="judge-dance-title">Медленный вальс · 2 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Бондаренко Елизавета</td><td>3</td></tr><tr><td>Жаворонкова Екатерина</td><td>2</td></tr><tr><td>Ковальская Оксана</td><td>3</td></tr><tr><td>Маляева Олеся</td><td>1</td></tr><tr><td>Миронова Любовь</td><td>3</td></tr><tr><td>Сокович Светлана</td><td>3</td></tr><tr><td>Чуносова Альбина</td><td>2</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Танго · Финал</h5>
+                <h5 class="judge-dance-title">Танго · 2 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Бондаренко Елизавета</td><td>3</td></tr><tr><td>Жаворонкова Екатерина</td><td>4</td></tr><tr><td>Ковальская Оксана</td><td>3</td></tr><tr><td>Маляева Олеся</td><td>1</td></tr><tr><td>Миронова Любовь</td><td>2</td></tr><tr><td>Сокович Светлана</td><td>3</td></tr><tr><td>Чуносова Альбина</td><td>1</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Медленный фокстрот · Финал</h5>
+                <h5 class="judge-dance-title">Медленный фокстрот · 2 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Бондаренко Елизавета</td><td>2</td></tr><tr><td>Жаворонкова Екатерина</td><td>2</td></tr><tr><td>Ковальская Оксана</td><td>3</td></tr><tr><td>Маляева Олеся</td><td>1</td></tr><tr><td>Миронова Любовь</td><td>2</td></tr><tr><td>Сокович Светлана</td><td>2</td></tr><tr><td>Чуносова Альбина</td><td>2</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Квикстеп · Финал</h5>
+                <h5 class="judge-dance-title">Квикстеп · 2 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Бондаренко Елизавета</td><td>2</td></tr><tr><td>Жаворонкова Екатерина</td><td>4</td></tr><tr><td>Ковальская Оксана</td><td>4</td></tr><tr><td>Маляева Олеся</td><td>1</td></tr><tr><td>Миронова Любовь</td><td>2</td></tr><tr><td>Сокович Светлана</td><td>2</td></tr><tr><td>Чуносова Альбина</td><td>3</td></tr></tbody>
@@ -2628,28 +2659,28 @@ tbody tr, tbody tr:nth-child(even), tbody tr:hover { background: transparent; }
               </div>
               <h4 class="judge-section-title">Оценки судей</h4>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Самба · Финал</h5>
+                <h5 class="judge-dance-title">Самба · 1 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Агеева Наталья</td><td>1</td></tr><tr><td>Вершинина Елизавета</td><td>1</td></tr><tr><td>Кашина Анна</td><td>2</td></tr><tr><td>Комаров Дмитрий</td><td>1</td></tr><tr><td>Мардачев Олег</td><td>5</td></tr><tr><td>Садковская Юлия</td><td>4</td></tr><tr><td>Степанова Анна</td><td>1</td></tr><tr><td>Шинкаренко Даниил</td><td>1</td></tr><tr><td>Юшкова Светлана</td><td>1</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Ча-ча-ча · Финал</h5>
+                <h5 class="judge-dance-title">Ча-ча-ча · 1 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Агеева Наталья</td><td>1</td></tr><tr><td>Вершинина Елизавета</td><td>1</td></tr><tr><td>Кашина Анна</td><td>1</td></tr><tr><td>Комаров Дмитрий</td><td>1</td></tr><tr><td>Мардачев Олег</td><td>5</td></tr><tr><td>Садковская Юлия</td><td>1</td></tr><tr><td>Степанова Анна</td><td>1</td></tr><tr><td>Шинкаренко Даниил</td><td>1</td></tr><tr><td>Юшкова Светлана</td><td>1</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Румба · Финал</h5>
+                <h5 class="judge-dance-title">Румба · 1 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Агеева Наталья</td><td>1</td></tr><tr><td>Вершинина Елизавета</td><td>1</td></tr><tr><td>Кашина Анна</td><td>3</td></tr><tr><td>Комаров Дмитрий</td><td>1</td></tr><tr><td>Мардачев Олег</td><td>5</td></tr><tr><td>Садковская Юлия</td><td>1</td></tr><tr><td>Степанова Анна</td><td>1</td></tr><tr><td>Шинкаренко Даниил</td><td>1</td></tr><tr><td>Юшкова Светлана</td><td>1</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Джайв · Финал</h5>
+                <h5 class="judge-dance-title">Джайв · 1 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Агеева Наталья</td><td>1</td></tr><tr><td>Вершинина Елизавета</td><td>2</td></tr><tr><td>Кашина Анна</td><td>3</td></tr><tr><td>Комаров Дмитрий</td><td>1</td></tr><tr><td>Мардачев Олег</td><td>5</td></tr><tr><td>Садковская Юлия</td><td>2</td></tr><tr><td>Степанова Анна</td><td>1</td></tr><tr><td>Шинкаренко Даниил</td><td>1</td></tr><tr><td>Юшкова Светлана</td><td>1</td></tr></tbody>
@@ -2679,21 +2710,21 @@ tbody tr, tbody tr:nth-child(even), tbody tr:hover { background: transparent; }
               </div>
               <h4 class="judge-section-title">Оценки судей</h4>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Медленный вальс · Финал</h5>
+                <h5 class="judge-dance-title">Медленный вальс · 3 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Агеева Наталья</td><td>3</td></tr><tr><td>Вершинина Елизавета</td><td>2</td></tr><tr><td>Кашина Анна</td><td>1</td></tr><tr><td>Комаров Дмитрий</td><td>3</td></tr><tr><td>Мардачев Олег</td><td>7</td></tr><tr><td>Садковская Юлия</td><td>1</td></tr><tr><td>Степанова Анна</td><td>4</td></tr><tr><td>Шинкаренко Даниил</td><td>2</td></tr><tr><td>Юшкова Светлана</td><td>1</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Танго · Финал</h5>
+                <h5 class="judge-dance-title">Танго · 3 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Агеева Наталья</td><td>1</td></tr><tr><td>Вершинина Елизавета</td><td>4</td></tr><tr><td>Кашина Анна</td><td>1</td></tr><tr><td>Комаров Дмитрий</td><td>4</td></tr><tr><td>Мардачев Олег</td><td>7</td></tr><tr><td>Садковская Юлия</td><td>4</td></tr><tr><td>Степанова Анна</td><td>2</td></tr><tr><td>Шинкаренко Даниил</td><td>5</td></tr><tr><td>Юшкова Светлана</td><td>3</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Квикстеп · Финал</h5>
+                <h5 class="judge-dance-title">Квикстеп · 1 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Агеева Наталья</td><td>1</td></tr><tr><td>Вершинина Елизавета</td><td>1</td></tr><tr><td>Кашина Анна</td><td>1</td></tr><tr><td>Комаров Дмитрий</td><td>4</td></tr><tr><td>Мардачев Олег</td><td>7</td></tr><tr><td>Садковская Юлия</td><td>1</td></tr><tr><td>Степанова Анна</td><td>1</td></tr><tr><td>Шинкаренко Даниил</td><td>1</td></tr><tr><td>Юшкова Светлана</td><td>1</td></tr></tbody>
@@ -2723,21 +2754,21 @@ tbody tr, tbody tr:nth-child(even), tbody tr:hover { background: transparent; }
               </div>
               <h4 class="judge-section-title">Оценки судей</h4>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Ча-ча-ча · Финал</h5>
+                <h5 class="judge-dance-title">Ча-ча-ча · 2 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Антоненко Александра</td><td>3</td></tr><tr><td>Едигарьева Татьяна</td><td>1</td></tr><tr><td>Клецун Карияна</td><td>7</td></tr><tr><td>Ларченко Екатерина</td><td>1</td></tr><tr><td>Лисичкин Константин</td><td>1</td></tr><tr><td>Порохина Мария</td><td>1</td></tr><tr><td>Федоров Влад</td><td>5</td></tr><tr><td>Шмельков Виктор</td><td>5</td></tr><tr><td>Ютанов Василий</td><td>3</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Румба · Финал</h5>
+                <h5 class="judge-dance-title">Румба · 1 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Антоненко Александра</td><td>3</td></tr><tr><td>Едигарьева Татьяна</td><td>1</td></tr><tr><td>Клецун Карияна</td><td>3</td></tr><tr><td>Ларченко Екатерина</td><td>1</td></tr><tr><td>Лисичкин Константин</td><td>1</td></tr><tr><td>Порохина Мария</td><td>1</td></tr><tr><td>Федоров Влад</td><td>2</td></tr><tr><td>Шмельков Виктор</td><td>7</td></tr><tr><td>Ютанов Василий</td><td>1</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Джайв · Финал</h5>
+                <h5 class="judge-dance-title">Джайв · 1 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Антоненко Александра</td><td>6</td></tr><tr><td>Едигарьева Татьяна</td><td>2</td></tr><tr><td>Клецун Карияна</td><td>2</td></tr><tr><td>Ларченко Екатерина</td><td>1</td></tr><tr><td>Лисичкин Константин</td><td>1</td></tr><tr><td>Порохина Мария</td><td>1</td></tr><tr><td>Федоров Влад</td><td>2</td></tr><tr><td>Шмельков Виктор</td><td>3</td></tr><tr><td>Ютанов Василий</td><td>1</td></tr></tbody>
@@ -2774,21 +2805,21 @@ tbody tr, tbody tr:nth-child(even), tbody tr:hover { background: transparent; }
               </div>
               <h4 class="judge-section-title">Оценки судей</h4>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Медленный вальс · Финал</h5>
+                <h5 class="judge-dance-title">Медленный вальс · 2 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Воронков Павел</td><td>1</td></tr><tr><td>Канаев Роман</td><td>3</td></tr><tr><td>Карчев Сергей</td><td>1</td></tr><tr><td>Минаева Елена</td><td>3</td></tr><tr><td>Поддуев Степан</td><td>4</td></tr><tr><td>Порохина Мария</td><td>1</td></tr><tr><td>Потапцев Артур</td><td>4</td></tr><tr><td>Турчина Анна</td><td>3</td></tr><tr><td>Фуфурин Игорь</td><td>4</td></tr><tr><td>Чернова Галина</td><td>5</td></tr><tr><td>Элькин Игорь</td><td>4</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Танго · Финал</h5>
+                <h5 class="judge-dance-title">Танго · 2 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Воронков Павел</td><td>6</td></tr><tr><td>Канаев Роман</td><td>2</td></tr><tr><td>Карчев Сергей</td><td>2</td></tr><tr><td>Минаева Елена</td><td>2</td></tr><tr><td>Поддуев Степан</td><td>3</td></tr><tr><td>Порохина Мария</td><td>1</td></tr><tr><td>Потапцев Артур</td><td>3</td></tr><tr><td>Турчина Анна</td><td>3</td></tr><tr><td>Фуфурин Игорь</td><td>2</td></tr><tr><td>Чернова Галина</td><td>7</td></tr><tr><td>Элькин Игорь</td><td>4</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Квикстеп · Финал</h5>
+                <h5 class="judge-dance-title">Квикстеп · 2 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Воронков Павел</td><td>6</td></tr><tr><td>Канаев Роман</td><td>1</td></tr><tr><td>Карчев Сергей</td><td>2</td></tr><tr><td>Минаева Елена</td><td>2</td></tr><tr><td>Поддуев Степан</td><td>3</td></tr><tr><td>Порохина Мария</td><td>1</td></tr><tr><td>Потапцев Артур</td><td>3</td></tr><tr><td>Турчина Анна</td><td>3</td></tr><tr><td>Фуфурин Игорь</td><td>4</td></tr><tr><td>Чернова Галина</td><td>7</td></tr><tr><td>Элькин Игорь</td><td>5</td></tr></tbody>
@@ -2826,28 +2857,28 @@ tbody tr, tbody tr:nth-child(even), tbody tr:hover { background: transparent; }
               </div>
               <h4 class="judge-section-title">Оценки судей</h4>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Медленный вальс · Финал</h5>
+                <h5 class="judge-dance-title">Медленный вальс · 2 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Агеева Наталья</td><td>1</td></tr><tr><td>Дюков Юрий</td><td>3</td></tr><tr><td>Замахаева Екатерина</td><td>3</td></tr><tr><td>Клековкин Алексей</td><td>1</td></tr><tr><td>Маляева Олеся</td><td>1</td></tr><tr><td>Попова Анастасия</td><td>2</td></tr><tr><td>Сокович Светлана</td><td>1</td></tr><tr><td>Тищенко Петр</td><td>2</td></tr><tr><td>Шляхтина Станислава</td><td>4</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Танго · Финал</h5>
+                <h5 class="judge-dance-title">Танго · 2 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Агеева Наталья</td><td>2</td></tr><tr><td>Дюков Юрий</td><td>2</td></tr><tr><td>Замахаева Екатерина</td><td>2</td></tr><tr><td>Клековкин Алексей</td><td>3</td></tr><tr><td>Маляева Олеся</td><td>1</td></tr><tr><td>Попова Анастасия</td><td>5</td></tr><tr><td>Сокович Светлана</td><td>1</td></tr><tr><td>Тищенко Петр</td><td>2</td></tr><tr><td>Шляхтина Станислава</td><td>1</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Медленный фокстрот · Финал</h5>
+                <h5 class="judge-dance-title">Медленный фокстрот · 2 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Агеева Наталья</td><td>2</td></tr><tr><td>Дюков Юрий</td><td>2</td></tr><tr><td>Замахаева Екатерина</td><td>4</td></tr><tr><td>Клековкин Алексей</td><td>1</td></tr><tr><td>Маляева Олеся</td><td>1</td></tr><tr><td>Попова Анастасия</td><td>4</td></tr><tr><td>Сокович Светлана</td><td>3</td></tr><tr><td>Тищенко Петр</td><td>1</td></tr><tr><td>Шляхтина Станислава</td><td>1</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Квикстеп · Финал</h5>
+                <h5 class="judge-dance-title">Квикстеп · 2 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Агеева Наталья</td><td>2</td></tr><tr><td>Дюков Юрий</td><td>4</td></tr><tr><td>Замахаева Екатерина</td><td>3</td></tr><tr><td>Клековкин Алексей</td><td>2</td></tr><tr><td>Маляева Олеся</td><td>1</td></tr><tr><td>Попова Анастасия</td><td>6</td></tr><tr><td>Сокович Светлана</td><td>3</td></tr><tr><td>Тищенко Петр</td><td>2</td></tr><tr><td>Шляхтина Станислава</td><td>1</td></tr></tbody>
@@ -2878,28 +2909,28 @@ tbody tr, tbody tr:nth-child(even), tbody tr:hover { background: transparent; }
               </div>
               <h4 class="judge-section-title">Оценки судей</h4>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Самба · Финал</h5>
+                <h5 class="judge-dance-title">Самба · 6 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Антоненко Александра</td><td>4</td></tr><tr><td>Дьячков Сергей</td><td>2</td></tr><tr><td>Жаворонкова Екатерина</td><td>6</td></tr><tr><td>Кашина Анна</td><td>6</td></tr><tr><td>Кинареев Михаил</td><td>6</td></tr><tr><td>Лисичкин Константин</td><td>1</td></tr><tr><td>Филиппов Виталий</td><td>2</td></tr><tr><td>Чуносова Альбина</td><td>6</td></tr><tr><td>Юшкова Светлана</td><td>6</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Ча-ча-ча · Финал</h5>
+                <h5 class="judge-dance-title">Ча-ча-ча · 1 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Антоненко Александра</td><td>1</td></tr><tr><td>Дьячков Сергей</td><td>2</td></tr><tr><td>Жаворонкова Екатерина</td><td>1</td></tr><tr><td>Кашина Анна</td><td>2</td></tr><tr><td>Кинареев Михаил</td><td>2</td></tr><tr><td>Лисичкин Константин</td><td>1</td></tr><tr><td>Филиппов Виталий</td><td>2</td></tr><tr><td>Чуносова Альбина</td><td>1</td></tr><tr><td>Юшкова Светлана</td><td>1</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Румба · Финал</h5>
+                <h5 class="judge-dance-title">Румба · 1 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Антоненко Александра</td><td>1</td></tr><tr><td>Дьячков Сергей</td><td>3</td></tr><tr><td>Жаворонкова Екатерина</td><td>6</td></tr><tr><td>Кашина Анна</td><td>4</td></tr><tr><td>Кинареев Михаил</td><td>2</td></tr><tr><td>Лисичкин Константин</td><td>1</td></tr><tr><td>Филиппов Виталий</td><td>1</td></tr><tr><td>Чуносова Альбина</td><td>1</td></tr><tr><td>Юшкова Светлана</td><td>1</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Джайв · Финал</h5>
+                <h5 class="judge-dance-title">Джайв · 3 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Антоненко Александра</td><td>1</td></tr><tr><td>Дьячков Сергей</td><td>3</td></tr><tr><td>Жаворонкова Екатерина</td><td>6</td></tr><tr><td>Кашина Анна</td><td>4</td></tr><tr><td>Кинареев Михаил</td><td>2</td></tr><tr><td>Лисичкин Константин</td><td>2</td></tr><tr><td>Филиппов Виталий</td><td>1</td></tr><tr><td>Чуносова Альбина</td><td>3</td></tr><tr><td>Юшкова Светлана</td><td>5</td></tr></tbody>
@@ -2929,21 +2960,21 @@ tbody tr, tbody tr:nth-child(even), tbody tr:hover { background: transparent; }
               </div>
               <h4 class="judge-section-title">Оценки судей</h4>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Медленный вальс · Финал</h5>
+                <h5 class="judge-dance-title">Медленный вальс · 1 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Агеева Наталья</td><td>3</td></tr><tr><td>Дюков Юрий</td><td>4</td></tr><tr><td>Замахаева Екатерина</td><td>2</td></tr><tr><td>Клековкин Алексей</td><td>2</td></tr><tr><td>Маляева Олеся</td><td>1</td></tr><tr><td>Попова Анастасия</td><td>2</td></tr><tr><td>Сокович Светлана</td><td>2</td></tr><tr><td>Тищенко Петр</td><td>1</td></tr><tr><td>Шляхтина Станислава</td><td>1</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Танго · Финал</h5>
+                <h5 class="judge-dance-title">Танго · 1 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Агеева Наталья</td><td>2</td></tr><tr><td>Дюков Юрий</td><td>4</td></tr><tr><td>Замахаева Екатерина</td><td>2</td></tr><tr><td>Клековкин Алексей</td><td>2</td></tr><tr><td>Маляева Олеся</td><td>1</td></tr><tr><td>Попова Анастасия</td><td>1</td></tr><tr><td>Сокович Светлана</td><td>4</td></tr><tr><td>Тищенко Петр</td><td>1</td></tr><tr><td>Шляхтина Станислава</td><td>1</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Квикстеп · Финал</h5>
+                <h5 class="judge-dance-title">Квикстеп · 1 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Агеева Наталья</td><td>1</td></tr><tr><td>Дюков Юрий</td><td>4</td></tr><tr><td>Замахаева Екатерина</td><td>1</td></tr><tr><td>Клековкин Алексей</td><td>1</td></tr><tr><td>Маляева Олеся</td><td>1</td></tr><tr><td>Попова Анастасия</td><td>1</td></tr><tr><td>Сокович Светлана</td><td>2</td></tr><tr><td>Тищенко Петр</td><td>1</td></tr><tr><td>Шляхтина Станислава</td><td>2</td></tr></tbody>
@@ -2973,21 +3004,21 @@ tbody tr, tbody tr:nth-child(even), tbody tr:hover { background: transparent; }
               </div>
               <h4 class="judge-section-title">Оценки судей</h4>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Ча-ча-ча · Финал</h5>
+                <h5 class="judge-dance-title">Ча-ча-ча · 1 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Антоненко Александра</td><td>1</td></tr><tr><td>Дьячков Сергей</td><td>1</td></tr><tr><td>Жаворонкова Екатерина</td><td>7</td></tr><tr><td>Кашина Анна</td><td>3</td></tr><tr><td>Кинареев Михаил</td><td>2</td></tr><tr><td>Лисичкин Константин</td><td>2</td></tr><tr><td>Филиппов Виталий</td><td>2</td></tr><tr><td>Чуносова Альбина</td><td>1</td></tr><tr><td>Юшкова Светлана</td><td>1</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Румба · Финал</h5>
+                <h5 class="judge-dance-title">Румба · 1 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Антоненко Александра</td><td>1</td></tr><tr><td>Дьячков Сергей</td><td>1</td></tr><tr><td>Жаворонкова Екатерина</td><td>3</td></tr><tr><td>Кашина Анна</td><td>3</td></tr><tr><td>Кинареев Михаил</td><td>3</td></tr><tr><td>Лисичкин Константин</td><td>2</td></tr><tr><td>Филиппов Виталий</td><td>2</td></tr><tr><td>Чуносова Альбина</td><td>1</td></tr><tr><td>Юшкова Светлана</td><td>1</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Джайв · Финал</h5>
+                <h5 class="judge-dance-title">Джайв · 3 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Антоненко Александра</td><td>1</td></tr><tr><td>Дьячков Сергей</td><td>3</td></tr><tr><td>Жаворонкова Екатерина</td><td>4</td></tr><tr><td>Кашина Анна</td><td>3</td></tr><tr><td>Кинареев Михаил</td><td>3</td></tr><tr><td>Лисичкин Константин</td><td>2</td></tr><tr><td>Филиппов Виталий</td><td>1</td></tr><tr><td>Чуносова Альбина</td><td>4</td></tr><tr><td>Юшкова Светлана</td><td>6</td></tr></tbody>
@@ -3025,28 +3056,28 @@ tbody tr, tbody tr:nth-child(even), tbody tr:hover { background: transparent; }
               </div>
               <h4 class="judge-section-title">Оценки судей</h4>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Медленный вальс · Финал</h5>
+                <h5 class="judge-dance-title">Медленный вальс · 1 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Афанасьева Светлана</td><td>4</td></tr><tr><td>Ахрамеева Виктория</td><td>1</td></tr><tr><td>Бородинов Владислав</td><td>1</td></tr><tr><td>Замахаева Екатерина</td><td>3</td></tr><tr><td>Кузин Евгений</td><td>1</td></tr><tr><td>Курило Иван</td><td>1</td></tr><tr><td>Сызранцев Дмитрий</td><td>1</td></tr><tr><td>Филиппов Виталий</td><td>5</td></tr><tr><td>Харитонова Ольга</td><td>1</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Танго · Финал</h5>
+                <h5 class="judge-dance-title">Танго · 1 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Афанасьева Светлана</td><td>2</td></tr><tr><td>Ахрамеева Виктория</td><td>1</td></tr><tr><td>Бородинов Владислав</td><td>2</td></tr><tr><td>Замахаева Екатерина</td><td>3</td></tr><tr><td>Кузин Евгений</td><td>1</td></tr><tr><td>Курило Иван</td><td>2</td></tr><tr><td>Сызранцев Дмитрий</td><td>3</td></tr><tr><td>Филиппов Виталий</td><td>1</td></tr><tr><td>Харитонова Ольга</td><td>1</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Медленный фокстрот · Финал</h5>
+                <h5 class="judge-dance-title">Медленный фокстрот · 1 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Афанасьева Светлана</td><td>1</td></tr><tr><td>Ахрамеева Виктория</td><td>1</td></tr><tr><td>Бородинов Владислав</td><td>1</td></tr><tr><td>Замахаева Екатерина</td><td>3</td></tr><tr><td>Кузин Евгений</td><td>1</td></tr><tr><td>Курило Иван</td><td>1</td></tr><tr><td>Сызранцев Дмитрий</td><td>4</td></tr><tr><td>Филиппов Виталий</td><td>1</td></tr><tr><td>Харитонова Ольга</td><td>2</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Квикстеп · Финал</h5>
+                <h5 class="judge-dance-title">Квикстеп · 1 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Афанасьева Светлана</td><td>4</td></tr><tr><td>Ахрамеева Виктория</td><td>1</td></tr><tr><td>Бородинов Владислав</td><td>2</td></tr><tr><td>Замахаева Екатерина</td><td>4</td></tr><tr><td>Кузин Евгений</td><td>1</td></tr><tr><td>Курило Иван</td><td>1</td></tr><tr><td>Сызранцев Дмитрий</td><td>3</td></tr><tr><td>Филиппов Виталий</td><td>1</td></tr><tr><td>Харитонова Ольга</td><td>1</td></tr></tbody>
@@ -3077,28 +3108,28 @@ tbody tr, tbody tr:nth-child(even), tbody tr:hover { background: transparent; }
               </div>
               <h4 class="judge-section-title">Оценки судей</h4>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Самба · Финал</h5>
+                <h5 class="judge-dance-title">Самба · 1 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Антонюк Екатерина</td><td>2</td></tr><tr><td>Ахрамеева Виктория</td><td>1</td></tr><tr><td>Бородинов Владислав</td><td>2</td></tr><tr><td>Кашина Анна</td><td>1</td></tr><tr><td>Курило Иван</td><td>1</td></tr><tr><td>Литвинчук София</td><td>1</td></tr><tr><td>Логинова Оксана</td><td>2</td></tr><tr><td>Чесноков Александр</td><td>2</td></tr><tr><td>Яковенко Камилия</td><td>1</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Ча-ча-ча · Финал</h5>
+                <h5 class="judge-dance-title">Ча-ча-ча · 1 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Антонюк Екатерина</td><td>2</td></tr><tr><td>Ахрамеева Виктория</td><td>1</td></tr><tr><td>Бородинов Владислав</td><td>5</td></tr><tr><td>Кашина Анна</td><td>3</td></tr><tr><td>Курило Иван</td><td>3</td></tr><tr><td>Литвинчук София</td><td>3</td></tr><tr><td>Логинова Оксана</td><td>2</td></tr><tr><td>Чесноков Александр</td><td>2</td></tr><tr><td>Яковенко Камилия</td><td>1</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Румба · Финал</h5>
+                <h5 class="judge-dance-title">Румба · 1 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Антонюк Екатерина</td><td>3</td></tr><tr><td>Ахрамеева Виктория</td><td>1</td></tr><tr><td>Бородинов Владислав</td><td>5</td></tr><tr><td>Кашина Анна</td><td>3</td></tr><tr><td>Курило Иван</td><td>1</td></tr><tr><td>Литвинчук София</td><td>1</td></tr><tr><td>Логинова Оксана</td><td>1</td></tr><tr><td>Чесноков Александр</td><td>1</td></tr><tr><td>Яковенко Камилия</td><td>1</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Джайв · Финал</h5>
+                <h5 class="judge-dance-title">Джайв · 1 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Антонюк Екатерина</td><td>3</td></tr><tr><td>Ахрамеева Виктория</td><td>1</td></tr><tr><td>Бородинов Владислав</td><td>2</td></tr><tr><td>Кашина Анна</td><td>4</td></tr><tr><td>Курило Иван</td><td>1</td></tr><tr><td>Литвинчук София</td><td>3</td></tr><tr><td>Логинова Оксана</td><td>1</td></tr><tr><td>Чесноков Александр</td><td>1</td></tr><tr><td>Яковенко Камилия</td><td>1</td></tr></tbody>
@@ -3128,21 +3159,21 @@ tbody tr, tbody tr:nth-child(even), tbody tr:hover { background: transparent; }
               </div>
               <h4 class="judge-section-title">Оценки судей</h4>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Медленный вальс · Финал</h5>
+                <h5 class="judge-dance-title">Медленный вальс · 4 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Зеленина Елизавета</td><td>3</td></tr><tr><td>Карташева Анастасия</td><td>5</td></tr><tr><td>Ларченко Екатерина</td><td>4</td></tr><tr><td>Литвинчук София</td><td>2</td></tr><tr><td>Моцакова Дарья</td><td>4</td></tr><tr><td>Ютанов Василий</td><td>5</td></tr><tr><td>Яковенко Камилия</td><td>4</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Танго · Финал</h5>
+                <h5 class="judge-dance-title">Танго · 4 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Зеленина Елизавета</td><td>3</td></tr><tr><td>Карташева Анастасия</td><td>5</td></tr><tr><td>Ларченко Екатерина</td><td>6</td></tr><tr><td>Литвинчук София</td><td>2</td></tr><tr><td>Моцакова Дарья</td><td>3</td></tr><tr><td>Ютанов Василий</td><td>5</td></tr><tr><td>Яковенко Камилия</td><td>5</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Квикстеп · Финал</h5>
+                <h5 class="judge-dance-title">Квикстеп · 2.5 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Зеленина Елизавета</td><td>2</td></tr><tr><td>Карташева Анастасия</td><td>4</td></tr><tr><td>Ларченко Екатерина</td><td>2</td></tr><tr><td>Литвинчук София</td><td>2</td></tr><tr><td>Моцакова Дарья</td><td>3</td></tr><tr><td>Ютанов Василий</td><td>5</td></tr><tr><td>Яковенко Камилия</td><td>4</td></tr></tbody>
@@ -3172,21 +3203,21 @@ tbody tr, tbody tr:nth-child(even), tbody tr:hover { background: transparent; }
               </div>
               <h4 class="judge-section-title">Оценки судей</h4>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Ча-ча-ча · Финал</h5>
+                <h5 class="judge-dance-title">Ча-ча-ча · 2 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Грачева Полина</td><td>3</td></tr><tr><td>Евсеева Татьяна</td><td>1</td></tr><tr><td>Зеленина Елизавета</td><td>2</td></tr><tr><td>Ларченко Екатерина</td><td>1</td></tr><tr><td>Литвинчук София</td><td>2</td></tr><tr><td>Радаева Елена</td><td>2</td></tr><tr><td>Филиппов Виталий</td><td>2</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Румба · Финал</h5>
+                <h5 class="judge-dance-title">Румба · 2 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Грачева Полина</td><td>2</td></tr><tr><td>Евсеева Татьяна</td><td>2</td></tr><tr><td>Зеленина Елизавета</td><td>2</td></tr><tr><td>Ларченко Екатерина</td><td>2</td></tr><tr><td>Литвинчук София</td><td>2</td></tr><tr><td>Радаева Елена</td><td>2</td></tr><tr><td>Филиппов Виталий</td><td>2</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Джайв · Финал</h5>
+                <h5 class="judge-dance-title">Джайв · 2 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Грачева Полина</td><td>2</td></tr><tr><td>Евсеева Татьяна</td><td>2</td></tr><tr><td>Зеленина Елизавета</td><td>3</td></tr><tr><td>Ларченко Екатерина</td><td>2</td></tr><tr><td>Литвинчук София</td><td>2</td></tr><tr><td>Радаева Елена</td><td>2</td></tr><tr><td>Филиппов Виталий</td><td>2</td></tr></tbody>
@@ -3224,28 +3255,28 @@ tbody tr, tbody tr:nth-child(even), tbody tr:hover { background: transparent; }
               </div>
               <h4 class="judge-section-title">Оценки судей</h4>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Медленный вальс · Финал</h5>
+                <h5 class="judge-dance-title">Медленный вальс · 2 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Агеева Наталья</td><td>2</td></tr><tr><td>Ахрамеева Виктория</td><td>4</td></tr><tr><td>Будин Виктор</td><td>4</td></tr><tr><td>Вершинина Елизавета</td><td>5</td></tr><tr><td>Замахаева Екатерина</td><td>2</td></tr><tr><td>Кинареев Михаил</td><td>6</td></tr><tr><td>Маляева Олеся</td><td>1</td></tr><tr><td>Шинкаренко Даниил</td><td>1</td></tr><tr><td>Юшкова Светлана</td><td>2</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Танго · Финал</h5>
+                <h5 class="judge-dance-title">Танго · 2 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Агеева Наталья</td><td>2</td></tr><tr><td>Ахрамеева Виктория</td><td>3</td></tr><tr><td>Будин Виктор</td><td>4</td></tr><tr><td>Вершинина Елизавета</td><td>5</td></tr><tr><td>Замахаева Екатерина</td><td>2</td></tr><tr><td>Кинареев Михаил</td><td>3</td></tr><tr><td>Маляева Олеся</td><td>1</td></tr><tr><td>Шинкаренко Даниил</td><td>4</td></tr><tr><td>Юшкова Светлана</td><td>4</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Медленный фокстрот · Финал</h5>
+                <h5 class="judge-dance-title">Медленный фокстрот · 3 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Агеева Наталья</td><td>5</td></tr><tr><td>Ахрамеева Виктория</td><td>2</td></tr><tr><td>Будин Виктор</td><td>4</td></tr><tr><td>Вершинина Елизавета</td><td>4</td></tr><tr><td>Замахаева Екатерина</td><td>2</td></tr><tr><td>Кинареев Михаил</td><td>4</td></tr><tr><td>Маляева Олеся</td><td>1</td></tr><tr><td>Шинкаренко Даниил</td><td>3</td></tr><tr><td>Юшкова Светлана</td><td>4</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Квикстеп · Финал</h5>
+                <h5 class="judge-dance-title">Квикстеп · 2 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Агеева Наталья</td><td>3</td></tr><tr><td>Ахрамеева Виктория</td><td>3</td></tr><tr><td>Будин Виктор</td><td>3</td></tr><tr><td>Вершинина Елизавета</td><td>4</td></tr><tr><td>Замахаева Екатерина</td><td>3</td></tr><tr><td>Кинареев Михаил</td><td>7</td></tr><tr><td>Маляева Олеся</td><td>1</td></tr><tr><td>Шинкаренко Даниил</td><td>2</td></tr><tr><td>Юшкова Светлана</td><td>3</td></tr></tbody>
@@ -3276,28 +3307,28 @@ tbody tr, tbody tr:nth-child(even), tbody tr:hover { background: transparent; }
               </div>
               <h4 class="judge-section-title">Оценки судей</h4>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Самба · Финал</h5>
+                <h5 class="judge-dance-title">Самба · 1 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Антоненко Александра</td><td>1</td></tr><tr><td>Едигарьева Татьяна</td><td>1</td></tr><tr><td>Замахаева Екатерина</td><td>1</td></tr><tr><td>Карабаева Милана</td><td>1</td></tr><tr><td>Лугин Дмитрий</td><td>2</td></tr><tr><td>Маляева Олеся</td><td>1</td></tr><tr><td>Садковская Юлия</td><td>2</td></tr><tr><td>Степанова Анна</td><td>1</td></tr><tr><td>Юшкова Светлана</td><td>1</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Ча-ча-ча · Финал</h5>
+                <h5 class="judge-dance-title">Ча-ча-ча · 1 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Антоненко Александра</td><td>1</td></tr><tr><td>Едигарьева Татьяна</td><td>1</td></tr><tr><td>Замахаева Екатерина</td><td>3</td></tr><tr><td>Карабаева Милана</td><td>1</td></tr><tr><td>Лугин Дмитрий</td><td>2</td></tr><tr><td>Маляева Олеся</td><td>1</td></tr><tr><td>Садковская Юлия</td><td>1</td></tr><tr><td>Степанова Анна</td><td>1</td></tr><tr><td>Юшкова Светлана</td><td>1</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Румба · Финал</h5>
+                <h5 class="judge-dance-title">Румба · 1 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Антоненко Александра</td><td>1</td></tr><tr><td>Едигарьева Татьяна</td><td>1</td></tr><tr><td>Замахаева Екатерина</td><td>2</td></tr><tr><td>Карабаева Милана</td><td>1</td></tr><tr><td>Лугин Дмитрий</td><td>1</td></tr><tr><td>Маляева Олеся</td><td>1</td></tr><tr><td>Садковская Юлия</td><td>1</td></tr><tr><td>Степанова Анна</td><td>1</td></tr><tr><td>Юшкова Светлана</td><td>1</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Джайв · Финал</h5>
+                <h5 class="judge-dance-title">Джайв · 1 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Антоненко Александра</td><td>3</td></tr><tr><td>Едигарьева Татьяна</td><td>1</td></tr><tr><td>Замахаева Екатерина</td><td>1</td></tr><tr><td>Карабаева Милана</td><td>1</td></tr><tr><td>Лугин Дмитрий</td><td>1</td></tr><tr><td>Маляева Олеся</td><td>1</td></tr><tr><td>Садковская Юлия</td><td>1</td></tr><tr><td>Степанова Анна</td><td>1</td></tr><tr><td>Юшкова Светлана</td><td>1</td></tr></tbody>
@@ -3327,21 +3358,21 @@ tbody tr, tbody tr:nth-child(even), tbody tr:hover { background: transparent; }
               </div>
               <h4 class="judge-section-title">Оценки судей</h4>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Медленный вальс · Финал</h5>
+                <h5 class="judge-dance-title">Медленный вальс · 1 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Агеева Наталья</td><td>1</td></tr><tr><td>Ахрамеева Виктория</td><td>1</td></tr><tr><td>Будин Виктор</td><td>5</td></tr><tr><td>Вершинина Елизавета</td><td>4</td></tr><tr><td>Замахаева Екатерина</td><td>1</td></tr><tr><td>Карабаева Милана</td><td>3</td></tr><tr><td>Порохина Мария</td><td>1</td></tr><tr><td>Садковская Юлия</td><td>2</td></tr><tr><td>Сокович Светлана</td><td>1</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Танго · Финал</h5>
+                <h5 class="judge-dance-title">Танго · 1 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Агеева Наталья</td><td>2</td></tr><tr><td>Ахрамеева Виктория</td><td>1</td></tr><tr><td>Будин Виктор</td><td>3</td></tr><tr><td>Вершинина Елизавета</td><td>1</td></tr><tr><td>Замахаева Екатерина</td><td>1</td></tr><tr><td>Карабаева Милана</td><td>2</td></tr><tr><td>Порохина Мария</td><td>2</td></tr><tr><td>Садковская Юлия</td><td>1</td></tr><tr><td>Сокович Светлана</td><td>1</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Квикстеп · Финал</h5>
+                <h5 class="judge-dance-title">Квикстеп · 1 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Агеева Наталья</td><td>5</td></tr><tr><td>Ахрамеева Виктория</td><td>2</td></tr><tr><td>Будин Виктор</td><td>2</td></tr><tr><td>Вершинина Елизавета</td><td>3</td></tr><tr><td>Замахаева Екатерина</td><td>1</td></tr><tr><td>Карабаева Милана</td><td>1</td></tr><tr><td>Порохина Мария</td><td>2</td></tr><tr><td>Садковская Юлия</td><td>3</td></tr><tr><td>Сокович Светлана</td><td>1</td></tr></tbody>
@@ -3371,21 +3402,21 @@ tbody tr, tbody tr:nth-child(even), tbody tr:hover { background: transparent; }
               </div>
               <h4 class="judge-section-title">Оценки судей</h4>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Ча-ча-ча · Финал</h5>
+                <h5 class="judge-dance-title">Ча-ча-ча · 1 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Антоненко Александра</td><td>2</td></tr><tr><td>Бондаренко Елизавета</td><td>1</td></tr><tr><td>Жаворонкова Екатерина</td><td>3</td></tr><tr><td>Замахаева Екатерина</td><td>3</td></tr><tr><td>Ларченко Екатерина</td><td>1</td></tr><tr><td>Порохина Мария</td><td>3</td></tr><tr><td>Садковская Юлия</td><td>1</td></tr><tr><td>Степанова Анна</td><td>2</td></tr><tr><td>Шинкаренко Даниил</td><td>1</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Румба · Финал</h5>
+                <h5 class="judge-dance-title">Румба · 1 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Антоненко Александра</td><td>1</td></tr><tr><td>Бондаренко Елизавета</td><td>1</td></tr><tr><td>Жаворонкова Екатерина</td><td>2</td></tr><tr><td>Замахаева Екатерина</td><td>2</td></tr><tr><td>Ларченко Екатерина</td><td>1</td></tr><tr><td>Порохина Мария</td><td>2</td></tr><tr><td>Садковская Юлия</td><td>1</td></tr><tr><td>Степанова Анна</td><td>1</td></tr><tr><td>Шинкаренко Даниил</td><td>1</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Джайв · Финал</h5>
+                <h5 class="judge-dance-title">Джайв · 1 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Антоненко Александра</td><td>2</td></tr><tr><td>Бондаренко Елизавета</td><td>1</td></tr><tr><td>Жаворонкова Екатерина</td><td>4</td></tr><tr><td>Замахаева Екатерина</td><td>1</td></tr><tr><td>Ларченко Екатерина</td><td>1</td></tr><tr><td>Порохина Мария</td><td>5</td></tr><tr><td>Садковская Юлия</td><td>1</td></tr><tr><td>Степанова Анна</td><td>1</td></tr><tr><td>Шинкаренко Даниил</td><td>1</td></tr></tbody>
@@ -3423,28 +3454,28 @@ tbody tr, tbody tr:nth-child(even), tbody tr:hover { background: transparent; }
               </div>
               <h4 class="judge-section-title">Оценки судей</h4>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Медленный вальс · Финал</h5>
+                <h5 class="judge-dance-title">Медленный вальс · 4 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Говор Лилия</td><td>6</td></tr><tr><td>Жмерик Елена</td><td>3</td></tr><tr><td>Кинареев Михаил</td><td>5</td></tr><tr><td>Ларченко Екатерина</td><td>1</td></tr><tr><td>Огаркова Оксана</td><td>4</td></tr><tr><td>Порохина Мария</td><td>4</td></tr><tr><td>Сокович Светлана</td><td>6</td></tr><tr><td>Степовой Сергей</td><td>4</td></tr><tr><td>Чубарова Влада</td><td>2</td></tr><tr><td>Шмельков Виктор</td><td>4</td></tr><tr><td>Ютанов Василий</td><td>6</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Танго · Финал</h5>
+                <h5 class="judge-dance-title">Танго · 5 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Говор Лилия</td><td>6</td></tr><tr><td>Жмерик Елена</td><td>1</td></tr><tr><td>Кинареев Михаил</td><td>6</td></tr><tr><td>Ларченко Екатерина</td><td>1</td></tr><tr><td>Огаркова Оксана</td><td>4</td></tr><tr><td>Порохина Мария</td><td>4</td></tr><tr><td>Сокович Светлана</td><td>6</td></tr><tr><td>Степовой Сергей</td><td>4</td></tr><tr><td>Чубарова Влада</td><td>2</td></tr><tr><td>Шмельков Виктор</td><td>5</td></tr><tr><td>Ютанов Василий</td><td>6</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Медленный фокстрот · Финал</h5>
+                <h5 class="judge-dance-title">Медленный фокстрот · 4 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Говор Лилия</td><td>6</td></tr><tr><td>Жмерик Елена</td><td>6</td></tr><tr><td>Кинареев Михаил</td><td>5</td></tr><tr><td>Ларченко Екатерина</td><td>3</td></tr><tr><td>Огаркова Оксана</td><td>4</td></tr><tr><td>Порохина Мария</td><td>4</td></tr><tr><td>Сокович Светлана</td><td>6</td></tr><tr><td>Степовой Сергей</td><td>4</td></tr><tr><td>Чубарова Влада</td><td>3</td></tr><tr><td>Шмельков Виктор</td><td>4</td></tr><tr><td>Ютанов Василий</td><td>6</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Квикстеп · Финал</h5>
+                <h5 class="judge-dance-title">Квикстеп · 4 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Говор Лилия</td><td>6</td></tr><tr><td>Жмерик Елена</td><td>5</td></tr><tr><td>Кинареев Михаил</td><td>5</td></tr><tr><td>Ларченко Екатерина</td><td>5</td></tr><tr><td>Огаркова Оксана</td><td>4</td></tr><tr><td>Порохина Мария</td><td>3</td></tr><tr><td>Сокович Светлана</td><td>6</td></tr><tr><td>Степовой Сергей</td><td>4</td></tr><tr><td>Чубарова Влада</td><td>2</td></tr><tr><td>Шмельков Виктор</td><td>4</td></tr><tr><td>Ютанов Василий</td><td>5</td></tr></tbody>
@@ -3475,28 +3506,28 @@ tbody tr, tbody tr:nth-child(even), tbody tr:hover { background: transparent; }
               </div>
               <h4 class="judge-section-title">Оценки судей</h4>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Самба · Финал</h5>
+                <h5 class="judge-dance-title">Самба · 4 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Говор Лилия</td><td>5</td></tr><tr><td>Жмерик Елена</td><td>2</td></tr><tr><td>Кинареев Михаил</td><td>3</td></tr><tr><td>Ларченко Екатерина</td><td>3</td></tr><tr><td>Огаркова Оксана</td><td>5</td></tr><tr><td>Порохина Мария</td><td>4</td></tr><tr><td>Сокович Светлана</td><td>5</td></tr><tr><td>Степовой Сергей</td><td>2</td></tr><tr><td>Чубарова Влада</td><td>4</td></tr><tr><td>Шмельков Виктор</td><td>5</td></tr><tr><td>Ютанов Василий</td><td>5</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Ча-ча-ча · Финал</h5>
+                <h5 class="judge-dance-title">Ча-ча-ча · 4 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Говор Лилия</td><td>6</td></tr><tr><td>Жмерик Елена</td><td>3</td></tr><tr><td>Кинареев Михаил</td><td>3</td></tr><tr><td>Ларченко Екатерина</td><td>1</td></tr><tr><td>Огаркова Оксана</td><td>5</td></tr><tr><td>Порохина Мария</td><td>4</td></tr><tr><td>Сокович Светлана</td><td>6</td></tr><tr><td>Степовой Сергей</td><td>1</td></tr><tr><td>Чубарова Влада</td><td>4</td></tr><tr><td>Шмельков Виктор</td><td>5</td></tr><tr><td>Ютанов Василий</td><td>5</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Румба · Финал</h5>
+                <h5 class="judge-dance-title">Румба · 5 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Говор Лилия</td><td>5</td></tr><tr><td>Жмерик Елена</td><td>3</td></tr><tr><td>Кинареев Михаил</td><td>4</td></tr><tr><td>Ларченко Екатерина</td><td>1</td></tr><tr><td>Огаркова Оксана</td><td>4</td></tr><tr><td>Порохина Мария</td><td>4</td></tr><tr><td>Сокович Светлана</td><td>6</td></tr><tr><td>Степовой Сергей</td><td>2</td></tr><tr><td>Чубарова Влада</td><td>4</td></tr><tr><td>Шмельков Виктор</td><td>5</td></tr><tr><td>Ютанов Василий</td><td>6</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Джайв · Финал</h5>
+                <h5 class="judge-dance-title">Джайв · 5 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Говор Лилия</td><td>6</td></tr><tr><td>Жмерик Елена</td><td>2</td></tr><tr><td>Кинареев Михаил</td><td>4</td></tr><tr><td>Ларченко Екатерина</td><td>2</td></tr><tr><td>Огаркова Оксана</td><td>5</td></tr><tr><td>Порохина Мария</td><td>4</td></tr><tr><td>Сокович Светлана</td><td>6</td></tr><tr><td>Степовой Сергей</td><td>2</td></tr><tr><td>Чубарова Влада</td><td>5</td></tr><tr><td>Шмельков Виктор</td><td>5</td></tr><tr><td>Ютанов Василий</td><td>1</td></tr></tbody>
@@ -3526,21 +3557,21 @@ tbody tr, tbody tr:nth-child(even), tbody tr:hover { background: transparent; }
               </div>
               <h4 class="judge-section-title">Оценки судей</h4>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Медленный вальс · Финал</h5>
+                <h5 class="judge-dance-title">Медленный вальс · 3 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Говор Лилия</td><td>7</td></tr><tr><td>Евсеева Татьяна</td><td>4</td></tr><tr><td>Едигарьева Татьяна</td><td>1</td></tr><tr><td>Кашина Анна</td><td>4</td></tr><tr><td>Ларченко Екатерина</td><td>5</td></tr><tr><td>Новичкова Валерия</td><td>2</td></tr><tr><td>Павленко Виктория</td><td>1</td></tr><tr><td>Приходько Дмитрий</td><td>5</td></tr><tr><td>Чубарова Влада</td><td>1</td></tr><tr><td>Ютанов Василий</td><td>5</td></tr><tr><td>Яковенко Камилия</td><td>6</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Танго · Финал</h5>
+                <h5 class="judge-dance-title">Танго · 1 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Говор Лилия</td><td>6</td></tr><tr><td>Евсеева Татьяна</td><td>1</td></tr><tr><td>Едигарьева Татьяна</td><td>1</td></tr><tr><td>Кашина Анна</td><td>3</td></tr><tr><td>Ларченко Екатерина</td><td>2</td></tr><tr><td>Новичкова Валерия</td><td>2</td></tr><tr><td>Павленко Виктория</td><td>1</td></tr><tr><td>Приходько Дмитрий</td><td>2</td></tr><tr><td>Чубарова Влада</td><td>1</td></tr><tr><td>Ютанов Василий</td><td>4</td></tr><tr><td>Яковенко Камилия</td><td>4</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Квикстеп · Финал</h5>
+                <h5 class="judge-dance-title">Квикстеп · 2 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Говор Лилия</td><td>6</td></tr><tr><td>Евсеева Татьяна</td><td>1</td></tr><tr><td>Едигарьева Татьяна</td><td>1</td></tr><tr><td>Кашина Анна</td><td>4</td></tr><tr><td>Ларченко Екатерина</td><td>2</td></tr><tr><td>Новичкова Валерия</td><td>2</td></tr><tr><td>Павленко Виктория</td><td>2</td></tr><tr><td>Приходько Дмитрий</td><td>6</td></tr><tr><td>Чубарова Влада</td><td>3</td></tr><tr><td>Ютанов Василий</td><td>4</td></tr><tr><td>Яковенко Камилия</td><td>7</td></tr></tbody>
@@ -3570,21 +3601,21 @@ tbody tr, tbody tr:nth-child(even), tbody tr:hover { background: transparent; }
               </div>
               <h4 class="judge-section-title">Оценки судей</h4>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Ча-ча-ча · Финал</h5>
+                <h5 class="judge-dance-title">Ча-ча-ча · 2 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Будишевская Мария</td><td>5</td></tr><tr><td>Вершинина Елизавета</td><td>3</td></tr><tr><td>Громова Ксения</td><td>1</td></tr><tr><td>Дарашкевичуте Станислава</td><td>4</td></tr><tr><td>Жмерик Елена</td><td>2</td></tr><tr><td>Кинареев Михаил</td><td>2</td></tr><tr><td>Литвинчук София</td><td>3</td></tr><tr><td>Моцакова Дарья</td><td>4</td></tr><tr><td>Садковская Юлия</td><td>1</td></tr><tr><td>Сперанский Валерий</td><td>4</td></tr><tr><td>Филиппов Виталий</td><td>2</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Румба · Финал</h5>
+                <h5 class="judge-dance-title">Румба · 2 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Будишевская Мария</td><td>1</td></tr><tr><td>Вершинина Елизавета</td><td>3</td></tr><tr><td>Громова Ксения</td><td>1</td></tr><tr><td>Дарашкевичуте Станислава</td><td>4</td></tr><tr><td>Жмерик Елена</td><td>1</td></tr><tr><td>Кинареев Михаил</td><td>3</td></tr><tr><td>Литвинчук София</td><td>4</td></tr><tr><td>Моцакова Дарья</td><td>6</td></tr><tr><td>Садковская Юлия</td><td>1</td></tr><tr><td>Сперанский Валерий</td><td>4</td></tr><tr><td>Филиппов Виталий</td><td>3</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Джайв · Финал</h5>
+                <h5 class="judge-dance-title">Джайв · 4 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Будишевская Мария</td><td>5</td></tr><tr><td>Вершинина Елизавета</td><td>3</td></tr><tr><td>Громова Ксения</td><td>1</td></tr><tr><td>Дарашкевичуте Станислава</td><td>4</td></tr><tr><td>Жмерик Елена</td><td>3</td></tr><tr><td>Кинареев Михаил</td><td>5</td></tr><tr><td>Литвинчук София</td><td>5</td></tr><tr><td>Моцакова Дарья</td><td>6</td></tr><tr><td>Садковская Юлия</td><td>1</td></tr><tr><td>Сперанский Валерий</td><td>4</td></tr><tr><td>Филиппов Виталий</td><td>2</td></tr></tbody>
@@ -3622,28 +3653,28 @@ tbody tr, tbody tr:nth-child(even), tbody tr:hover { background: transparent; }
               </div>
               <h4 class="judge-section-title">Оценки судей</h4>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Медленный вальс · Финал</h5>
+                <h5 class="judge-dance-title">Медленный вальс · 2 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Вершинина Елизавета</td><td>3</td></tr><tr><td>Жаворонкова Екатерина</td><td>2</td></tr><tr><td>Карташева Анастасия</td><td>5</td></tr><tr><td>Кудинов Олег</td><td>3</td></tr><tr><td>Легкоступов Роман</td><td>3</td></tr><tr><td>Новичкова Валерия</td><td>1</td></tr><tr><td>Писанец Михаил</td><td>6</td></tr><tr><td>Порохина Мария</td><td>1</td></tr><tr><td>Филиппов Виталий</td><td>5</td></tr><tr><td>Хамутовская Ольга</td><td>1</td></tr><tr><td>Ютанов Василий</td><td>5</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Танго · Финал</h5>
+                <h5 class="judge-dance-title">Танго · 3 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Вершинина Елизавета</td><td>1</td></tr><tr><td>Жаворонкова Екатерина</td><td>2</td></tr><tr><td>Карташева Анастасия</td><td>6</td></tr><tr><td>Кудинов Олег</td><td>1</td></tr><tr><td>Легкоступов Роман</td><td>4</td></tr><tr><td>Новичкова Валерия</td><td>1</td></tr><tr><td>Писанец Михаил</td><td>3</td></tr><tr><td>Порохина Мария</td><td>1</td></tr><tr><td>Филиппов Виталий</td><td>4</td></tr><tr><td>Хамутовская Ольга</td><td>5</td></tr><tr><td>Ютанов Василий</td><td>6</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Медленный фокстрот · Финал</h5>
+                <h5 class="judge-dance-title">Медленный фокстрот · 3 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Вершинина Елизавета</td><td>2</td></tr><tr><td>Жаворонкова Екатерина</td><td>4</td></tr><tr><td>Карташева Анастасия</td><td>6</td></tr><tr><td>Кудинов Олег</td><td>1</td></tr><tr><td>Легкоступов Роман</td><td>3</td></tr><tr><td>Новичкова Валерия</td><td>1</td></tr><tr><td>Писанец Михаил</td><td>3</td></tr><tr><td>Порохина Мария</td><td>1</td></tr><tr><td>Филиппов Виталий</td><td>6</td></tr><tr><td>Хамутовская Ольга</td><td>6</td></tr><tr><td>Ютанов Василий</td><td>6</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Квикстеп · Финал</h5>
+                <h5 class="judge-dance-title">Квикстеп · 2 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Вершинина Елизавета</td><td>2</td></tr><tr><td>Жаворонкова Екатерина</td><td>2</td></tr><tr><td>Карташева Анастасия</td><td>5</td></tr><tr><td>Кудинов Олег</td><td>1</td></tr><tr><td>Легкоступов Роман</td><td>3</td></tr><tr><td>Новичкова Валерия</td><td>1</td></tr><tr><td>Писанец Михаил</td><td>3</td></tr><tr><td>Порохина Мария</td><td>1</td></tr><tr><td>Филиппов Виталий</td><td>5</td></tr><tr><td>Хамутовская Ольга</td><td>2</td></tr><tr><td>Ютанов Василий</td><td>6</td></tr></tbody>
@@ -3674,28 +3705,28 @@ tbody tr, tbody tr:nth-child(even), tbody tr:hover { background: transparent; }
               </div>
               <h4 class="judge-section-title">Оценки судей</h4>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Самба · Финал</h5>
+                <h5 class="judge-dance-title">Самба · 2 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Вершинина Елизавета</td><td>2</td></tr><tr><td>Жаворонкова Екатерина</td><td>6</td></tr><tr><td>Кудинов Олег</td><td>2</td></tr><tr><td>Легкоступов Роман</td><td>5</td></tr><tr><td>Новичкова Валерия</td><td>3</td></tr><tr><td>Павленко Виктория</td><td>1</td></tr><tr><td>Порохина Мария</td><td>3</td></tr><tr><td>Токарева Нина</td><td>6</td></tr><tr><td>Хамутовская Ольга</td><td>3</td></tr><tr><td>Шашаева Анна</td><td>4</td></tr><tr><td>Яковенко Камилия</td><td>3</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Ча-ча-ча · Финал</h5>
+                <h5 class="judge-dance-title">Ча-ча-ча · 2 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Вершинина Елизавета</td><td>2</td></tr><tr><td>Жаворонкова Екатерина</td><td>4</td></tr><tr><td>Кудинов Олег</td><td>2</td></tr><tr><td>Легкоступов Роман</td><td>5</td></tr><tr><td>Новичкова Валерия</td><td>2</td></tr><tr><td>Павленко Виктория</td><td>2</td></tr><tr><td>Порохина Мария</td><td>3</td></tr><tr><td>Токарева Нина</td><td>6</td></tr><tr><td>Хамутовская Ольга</td><td>4</td></tr><tr><td>Шашаева Анна</td><td>3</td></tr><tr><td>Яковенко Камилия</td><td>2</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Румба · Финал</h5>
+                <h5 class="judge-dance-title">Румба · 2 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Вершинина Елизавета</td><td>2</td></tr><tr><td>Жаворонкова Екатерина</td><td>5</td></tr><tr><td>Кудинов Олег</td><td>1</td></tr><tr><td>Легкоступов Роман</td><td>4</td></tr><tr><td>Новичкова Валерия</td><td>2</td></tr><tr><td>Павленко Виктория</td><td>1</td></tr><tr><td>Порохина Мария</td><td>3</td></tr><tr><td>Токарева Нина</td><td>6</td></tr><tr><td>Хамутовская Ольга</td><td>3</td></tr><tr><td>Шашаева Анна</td><td>3</td></tr><tr><td>Яковенко Камилия</td><td>1</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Джайв · Финал</h5>
+                <h5 class="judge-dance-title">Джайв · 2 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Вершинина Елизавета</td><td>2</td></tr><tr><td>Жаворонкова Екатерина</td><td>4</td></tr><tr><td>Кудинов Олег</td><td>1</td></tr><tr><td>Легкоступов Роман</td><td>2</td></tr><tr><td>Новичкова Валерия</td><td>4</td></tr><tr><td>Павленко Виктория</td><td>1</td></tr><tr><td>Порохина Мария</td><td>3</td></tr><tr><td>Токарева Нина</td><td>6</td></tr><tr><td>Хамутовская Ольга</td><td>3</td></tr><tr><td>Шашаева Анна</td><td>2</td></tr><tr><td>Яковенко Камилия</td><td>2</td></tr></tbody>
@@ -3733,28 +3764,28 @@ tbody tr, tbody tr:nth-child(even), tbody tr:hover { background: transparent; }
               </div>
               <h4 class="judge-section-title">Оценки судей</h4>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Медленный вальс · Финал</h5>
+                <h5 class="judge-dance-title">Медленный вальс · 2 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Громова Ксения</td><td>2</td></tr><tr><td>Замахаева Екатерина</td><td>3</td></tr><tr><td>Кашина Анна</td><td>4</td></tr><tr><td>Ларченко Екатерина</td><td>2</td></tr><tr><td>Павленко Виктория</td><td>3</td></tr><tr><td>Садковская Юлия</td><td>3</td></tr><tr><td>Тищенко Петр</td><td>1</td></tr><tr><td>Шинкаренко Даниил</td><td>3</td></tr><tr><td>Яковенко Камилия</td><td>3</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Танго · Финал</h5>
+                <h5 class="judge-dance-title">Танго · 3 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Громова Ксения</td><td>4</td></tr><tr><td>Замахаева Екатерина</td><td>1</td></tr><tr><td>Кашина Анна</td><td>4</td></tr><tr><td>Ларченко Екатерина</td><td>2</td></tr><tr><td>Павленко Виктория</td><td>4</td></tr><tr><td>Садковская Юлия</td><td>3</td></tr><tr><td>Тищенко Петр</td><td>1</td></tr><tr><td>Шинкаренко Даниил</td><td>3</td></tr><tr><td>Яковенко Камилия</td><td>5</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Медленный фокстрот · Финал</h5>
+                <h5 class="judge-dance-title">Медленный фокстрот · 2 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Громова Ксения</td><td>5</td></tr><tr><td>Замахаева Екатерина</td><td>2</td></tr><tr><td>Кашина Анна</td><td>4</td></tr><tr><td>Ларченко Екатерина</td><td>1</td></tr><tr><td>Павленко Виктория</td><td>2</td></tr><tr><td>Садковская Юлия</td><td>3</td></tr><tr><td>Тищенко Петр</td><td>1</td></tr><tr><td>Шинкаренко Даниил</td><td>3</td></tr><tr><td>Яковенко Камилия</td><td>1</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Квикстеп · Финал</h5>
+                <h5 class="judge-dance-title">Квикстеп · 2 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Громова Ксения</td><td>3</td></tr><tr><td>Замахаева Екатерина</td><td>3</td></tr><tr><td>Кашина Анна</td><td>4</td></tr><tr><td>Ларченко Екатерина</td><td>1</td></tr><tr><td>Павленко Виктория</td><td>1</td></tr><tr><td>Садковская Юлия</td><td>4</td></tr><tr><td>Тищенко Петр</td><td>1</td></tr><tr><td>Шинкаренко Даниил</td><td>3</td></tr><tr><td>Яковенко Камилия</td><td>4</td></tr></tbody>
@@ -3785,28 +3816,28 @@ tbody tr, tbody tr:nth-child(even), tbody tr:hover { background: transparent; }
               </div>
               <h4 class="judge-section-title">Оценки судей</h4>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Самба · Финал</h5>
+                <h5 class="judge-dance-title">Самба · 4 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Замахаева Екатерина</td><td>3</td></tr><tr><td>Кашина Анна</td><td>5</td></tr><tr><td>Котова Екатерина</td><td>2</td></tr><tr><td>Ларченко Екатерина</td><td>2</td></tr><tr><td>Павленко Виктория</td><td>3</td></tr><tr><td>Садковская Юлия</td><td>5</td></tr><tr><td>Соколов Виталий</td><td>6</td></tr><tr><td>Тищенко Петр</td><td>4</td></tr><tr><td>Ютанов Василий</td><td>1</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Ча-ча-ча · Финал</h5>
+                <h5 class="judge-dance-title">Ча-ча-ча · 2 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Замахаева Екатерина</td><td>2</td></tr><tr><td>Кашина Анна</td><td>5</td></tr><tr><td>Котова Екатерина</td><td>1</td></tr><tr><td>Ларченко Екатерина</td><td>1</td></tr><tr><td>Павленко Виктория</td><td>3</td></tr><tr><td>Садковская Юлия</td><td>5</td></tr><tr><td>Соколов Виталий</td><td>5</td></tr><tr><td>Тищенко Петр</td><td>5</td></tr><tr><td>Ютанов Василий</td><td>2</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Румба · Финал</h5>
+                <h5 class="judge-dance-title">Румба · 1 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Замахаева Екатерина</td><td>2</td></tr><tr><td>Кашина Анна</td><td>5</td></tr><tr><td>Котова Екатерина</td><td>1</td></tr><tr><td>Ларченко Екатерина</td><td>1</td></tr><tr><td>Павленко Виктория</td><td>1</td></tr><tr><td>Садковская Юлия</td><td>4</td></tr><tr><td>Соколов Виталий</td><td>4</td></tr><tr><td>Тищенко Петр</td><td>4</td></tr><tr><td>Ютанов Василий</td><td>1</td></tr></tbody>
                 </table></div>
               </div>
               <div class="judge-panel-result">
-                <h5 class="judge-dance-title">Джайв · Финал</h5>
+                <h5 class="judge-dance-title">Джайв · 1 место · Финал</h5>
                 <div class="table-wrap table-scroll"><table>
                   <thead><tr><th>Судья</th><th>Место</th></tr></thead>
                   <tbody><tr><td>Замахаева Екатерина</td><td>2</td></tr><tr><td>Кашина Анна</td><td>4</td></tr><tr><td>Котова Екатерина</td><td>1</td></tr><tr><td>Ларченко Екатерина</td><td>2</td></tr><tr><td>Павленко Виктория</td><td>1</td></tr><tr><td>Садковская Юлия</td><td>4</td></tr><tr><td>Соколов Виталий</td><td>5</td></tr><tr><td>Тищенко Петр</td><td>1</td></tr><tr><td>Ютанов Василий</td><td>1</td></tr></tbody>
@@ -6070,6 +6101,22 @@ tbody tr, tbody tr:nth-child(even), tbody tr:hover { background: transparent; }
     initPageNav();
     applyFilters();
   }());
+</script>
+<script>
+(function () {
+  function labelTables() {
+    document.querySelectorAll('.table-wrap table').forEach(function (table) {
+      var headers = Array.from(table.querySelectorAll('thead th')).map(function (th) { return th.textContent.trim(); });
+      table.querySelectorAll('tbody tr').forEach(function (row) {
+        Array.from(row.cells).forEach(function (cell, index) {
+          if (!cell.hasAttribute('data-label') && headers[index]) cell.setAttribute('data-label', headers[index]);
+        });
+      });
+    });
+  }
+  labelTables();
+  new MutationObserver(labelTables).observe(document.querySelector('main'), {childList: true, subtree: true});
+}());
 </script>
 </body>
 </html>
