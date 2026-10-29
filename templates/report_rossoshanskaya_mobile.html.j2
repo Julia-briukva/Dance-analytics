@@ -1790,9 +1790,9 @@
         </div>
       </div>
       <div class="header-date-filter" role="group" aria-label="Фильтр периода">
-        <input id="report-filter-date-from" type="date" value="{{ filter_options.date_from }}" aria-label="Дата начала периода">
+        <label class="date-control"><input id="report-filter-date-from" type="date" value="{{ filter_options.date_from }}" aria-label="Дата начала периода"><svg class="date-calendar-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18M8 15h2M14 15h2"/></svg></label>
         <span class="date-separator" aria-hidden="true">—</span>
-        <input id="report-filter-date-to" type="date" value="{{ filter_options.date_to }}" aria-label="Дата окончания периода">
+        <label class="date-control"><input id="report-filter-date-to" type="date" value="{{ filter_options.date_to }}" aria-label="Дата окончания периода"><svg class="date-calendar-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18M8 15h2M14 15h2"/></svg></label>
       </div>
     </div>
   </header>
@@ -2275,34 +2275,10 @@
           </div>
           {% endif %}
 
-          <h4 class="dance-table-heading">Стабильность танцев</h4>
-          <p class="helper-text">Стабильность показывает, насколько сильно меняется итоговое место танца от турнира к турниру. Чем меньше колебания, тем выше стабильность.</p>
-          <div class="table-wrap table-scroll mobile-card-table">
-            <table>
-              <thead><tr><th class="col-dance">Танец</th><th class="number col-avg">Среднее место</th><th class="number col-best">Лучшее</th><th class="col-stability">Стабильность</th></tr></thead>
-              <tbody data-dynamic-metrics>
-              {% for item in slice.metrics %}
-                <tr>
-                  <td class="col-dance" data-label="Танец"><strong>{{ item.dance|dance_label }}</strong></td>
-                  <td class="number col-avg" data-label="Среднее место">{{ item.final_avg_place|fmt }}</td>
-                  <td class="number col-best" data-label="Лучшее">{{ item.best_place|fmt }}</td>
-                  <td class="col-stability" data-label="Стабильность">
-                    <div class="progress-label">{{ item.stability_label }}</div>
-                    <div class="progress-track"><div class="progress-fill" style="{{ item.stability_style }}"></div></div>
-                  </td>
-                </tr>
-              {% endfor %}
-              {% if not slice.metrics %}
-                <tr><td colspan="4" data-label="Статус">{{ "Нет устойчивых метрик по танцам в этом срезе." if slice.visibility_status == "limited" else "Ограниченная выборка." }}</td></tr>
-              {% endif %}
-              </tbody>
-            </table>
-          </div>
 
         </div>
       {% endfor %}
       </div>
-      <p class="helper-text">Расчёт стабильности основан на разбросе итоговых мест по турнирам. Полная шкала означает очень устойчивый результат, короткая шкала — сильные колебания.</p>
     </section>
     {% endfor %}
 

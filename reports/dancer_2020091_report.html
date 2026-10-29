@@ -1874,6 +1874,21 @@ tbody tr, tbody tr:nth-child(even), tbody tr:hover { background: transparent; }
   body .dance-program > .category-panels { flex-basis: 100%; }
   body .dance-program .dance-comparison-grid { grid-template-columns: minmax(0, 1fr); gap: 18px; }
   body .judge-insight-grid, body .three-column, body .two-column { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* Consistent date affordance while retaining the native accessible date picker. */
+body .header-date-filter { gap: 10px; align-items: center; }
+.date-control { position: relative; display: block; min-width: 0; width: 164px; max-width: 100%; }
+body .header-date-filter .date-control input { appearance: none; -webkit-appearance: none; position: relative; width: 100%; height: 38px; min-height: 38px; margin: 0; padding: 8px 40px 8px 12px; border: 1px solid var(--line); border-radius: 8px; background: #fff; font: inherit; font-size: 14px; line-height: 20px; color: var(--ink); box-sizing: border-box; }
+.date-control .date-calendar-icon { position: absolute; right: 12px; top: 50%; transform: translateY(-50%); width: 18px; height: 18px; color: var(--muted); pointer-events: none; }
+.date-control input::-webkit-calendar-picker-indicator { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; padding: 0; opacity: 0; cursor: pointer; }
+.date-control input::-webkit-date-and-time-value { text-align: left; min-height: 20px; }
+.date-control input::-webkit-datetime-edit { padding: 0; }
+.date-control input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+@media screen and (max-width: 700px) {
+  body .header-date-filter { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); gap: 8px; width: 100%; }
+  .date-control { width: 100%; }
+  body .header-date-filter .date-control input { font-size: 16px; }
 }  </style>
 </head>
 <body>
@@ -1900,9 +1915,9 @@ tbody tr, tbody tr:nth-child(even), tbody tr:hover { background: transparent; }
         </div>
       </div>
       <div class="header-date-filter" role="group" aria-label="Фильтр периода">
-        <input id="report-filter-date-from" type="date" value="2025-09-28" aria-label="Дата начала периода">
+        <label class="date-control"><input id="report-filter-date-from" type="date" value="2025-09-28" aria-label="Дата начала периода"><svg class="date-calendar-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18M8 15h2M14 15h2"/></svg></label>
         <span class="date-separator" aria-hidden="true">—</span>
-        <input id="report-filter-date-to" type="date" value="2026-10-11" aria-label="Дата окончания периода">
+        <label class="date-control"><input id="report-filter-date-to" type="date" value="2026-10-11" aria-label="Дата окончания периода"><svg class="date-calendar-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18M8 15h2M14 15h2"/></svg></label>
       </div>
     </div>
   </header>
@@ -4464,51 +4479,6 @@ tbody tr, tbody tr:nth-child(even), tbody tr:hover { background: transparent; }
               </div>
           </div>
 
-          <h4 class="dance-table-heading">Стабильность танцев</h4>
-          <p class="helper-text">Стабильность показывает, насколько сильно меняется итоговое место танца от турнира к турниру. Чем меньше колебания, тем выше стабильность.</p>
-          <div class="table-wrap table-scroll mobile-card-table">
-            <table>
-              <thead><tr><th class="col-dance">Танец</th><th class="number col-avg">Среднее место</th><th class="number col-best">Лучшее</th><th class="col-stability">Стабильность</th></tr></thead>
-              <tbody data-dynamic-metrics>
-                <tr>
-                  <td class="col-dance" data-label="Танец"><strong>Медленный фокстрот</strong></td>
-                  <td class="number col-avg" data-label="Среднее место">2.375</td>
-                  <td class="number col-best" data-label="Лучшее">1</td>
-                  <td class="col-stability" data-label="Стабильность">
-                    <div class="progress-label">Высокая</div>
-                    <div class="progress-track"><div class="progress-fill" style="--stability-width: 82%;"></div></div>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="col-dance" data-label="Танец"><strong>Квикстеп</strong></td>
-                  <td class="number col-avg" data-label="Среднее место">1.725</td>
-                  <td class="number col-best" data-label="Лучшее">1</td>
-                  <td class="col-stability" data-label="Стабильность">
-                    <div class="progress-label">Очень высокая</div>
-                    <div class="progress-track"><div class="progress-fill" style="--stability-width: 95%;"></div></div>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="col-dance" data-label="Танец"><strong>Танго</strong></td>
-                  <td class="number col-avg" data-label="Среднее место">2.05</td>
-                  <td class="number col-best" data-label="Лучшее">1</td>
-                  <td class="col-stability" data-label="Стабильность">
-                    <div class="progress-label">Низкая</div>
-                    <div class="progress-track"><div class="progress-fill" style="--stability-width: 46%;"></div></div>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="col-dance" data-label="Танец"><strong>Медленный вальс</strong></td>
-                  <td class="number col-avg" data-label="Среднее место">2.15</td>
-                  <td class="number col-best" data-label="Лучшее">1</td>
-                  <td class="col-stability" data-label="Стабильность">
-                    <div class="progress-label">Очень низкая</div>
-                    <div class="progress-track"><div class="progress-fill" style="--stability-width: 25%;"></div></div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
 
         </div>
         <div class="category-panel panel-standard-n_e" data-category-panel data-program="standard" data-slice-key="n_e">
@@ -4572,42 +4542,6 @@ tbody tr, tbody tr:nth-child(even), tbody tr:hover { background: transparent; }
               </div>
           </div>
 
-          <h4 class="dance-table-heading">Стабильность танцев</h4>
-          <p class="helper-text">Стабильность показывает, насколько сильно меняется итоговое место танца от турнира к турниру. Чем меньше колебания, тем выше стабильность.</p>
-          <div class="table-wrap table-scroll mobile-card-table">
-            <table>
-              <thead><tr><th class="col-dance">Танец</th><th class="number col-avg">Среднее место</th><th class="number col-best">Лучшее</th><th class="col-stability">Стабильность</th></tr></thead>
-              <tbody data-dynamic-metrics>
-                <tr>
-                  <td class="col-dance" data-label="Танец"><strong>Квикстеп</strong></td>
-                  <td class="number col-avg" data-label="Среднее место">1.318</td>
-                  <td class="number col-best" data-label="Лучшее">1</td>
-                  <td class="col-stability" data-label="Стабильность">
-                    <div class="progress-label">Очень высокая</div>
-                    <div class="progress-track"><div class="progress-fill" style="--stability-width: 95%;"></div></div>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="col-dance" data-label="Танец"><strong>Танго</strong></td>
-                  <td class="number col-avg" data-label="Среднее место">1.545</td>
-                  <td class="number col-best" data-label="Лучшее">1</td>
-                  <td class="col-stability" data-label="Стабильность">
-                    <div class="progress-label">Низкая</div>
-                    <div class="progress-track"><div class="progress-fill" style="--stability-width: 34%;"></div></div>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="col-dance" data-label="Танец"><strong>Медленный вальс</strong></td>
-                  <td class="number col-avg" data-label="Среднее место">1.727</td>
-                  <td class="number col-best" data-label="Лучшее">1</td>
-                  <td class="col-stability" data-label="Стабильность">
-                    <div class="progress-label">Очень низкая</div>
-                    <div class="progress-track"><div class="progress-fill" style="--stability-width: 25%;"></div></div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
 
         </div>
         <div class="category-panel panel-standard-e" data-category-panel data-program="standard" data-slice-key="e">
@@ -4647,42 +4581,6 @@ tbody tr, tbody tr:nth-child(even), tbody tr:hover { background: transparent; }
               </div>
           </div>
 
-          <h4 class="dance-table-heading">Стабильность танцев</h4>
-          <p class="helper-text">Стабильность показывает, насколько сильно меняется итоговое место танца от турнира к турниру. Чем меньше колебания, тем выше стабильность.</p>
-          <div class="table-wrap table-scroll mobile-card-table">
-            <table>
-              <thead><tr><th class="col-dance">Танец</th><th class="number col-avg">Среднее место</th><th class="number col-best">Лучшее</th><th class="col-stability">Стабильность</th></tr></thead>
-              <tbody data-dynamic-metrics>
-                <tr>
-                  <td class="col-dance" data-label="Танец"><strong>Квикстеп</strong></td>
-                  <td class="number col-avg" data-label="Среднее место">3</td>
-                  <td class="number col-best" data-label="Лучшее">3</td>
-                  <td class="col-stability" data-label="Стабильность">
-                    <div class="progress-label">Средняя</div>
-                    <div class="progress-track"><div class="progress-fill" style="--stability-width: 50%;"></div></div>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="col-dance" data-label="Танец"><strong>Танго</strong></td>
-                  <td class="number col-avg" data-label="Среднее место">3</td>
-                  <td class="number col-best" data-label="Лучшее">3</td>
-                  <td class="col-stability" data-label="Стабильность">
-                    <div class="progress-label">Средняя</div>
-                    <div class="progress-track"><div class="progress-fill" style="--stability-width: 50%;"></div></div>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="col-dance" data-label="Танец"><strong>Медленный вальс</strong></td>
-                  <td class="number col-avg" data-label="Среднее место">3</td>
-                  <td class="number col-best" data-label="Лучшее">3</td>
-                  <td class="col-stability" data-label="Стабильность">
-                    <div class="progress-label">Средняя</div>
-                    <div class="progress-track"><div class="progress-fill" style="--stability-width: 50%;"></div></div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
 
         </div>
         <div class="category-panel panel-standard-e_d" data-category-panel data-program="standard" data-slice-key="e_d">
@@ -4742,51 +4640,6 @@ tbody tr, tbody tr:nth-child(even), tbody tr:hover { background: transparent; }
               </div>
           </div>
 
-          <h4 class="dance-table-heading">Стабильность танцев</h4>
-          <p class="helper-text">Стабильность показывает, насколько сильно меняется итоговое место танца от турнира к турниру. Чем меньше колебания, тем выше стабильность.</p>
-          <div class="table-wrap table-scroll mobile-card-table">
-            <table>
-              <thead><tr><th class="col-dance">Танец</th><th class="number col-avg">Среднее место</th><th class="number col-best">Лучшее</th><th class="col-stability">Стабильность</th></tr></thead>
-              <tbody data-dynamic-metrics>
-                <tr>
-                  <td class="col-dance" data-label="Танец"><strong>Медленный фокстрот</strong></td>
-                  <td class="number col-avg" data-label="Среднее место">2.571</td>
-                  <td class="number col-best" data-label="Лучшее">2</td>
-                  <td class="col-stability" data-label="Стабильность">
-                    <div class="progress-label">Очень высокая</div>
-                    <div class="progress-track"><div class="progress-fill" style="--stability-width: 92%;"></div></div>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="col-dance" data-label="Танец"><strong>Квикстеп</strong></td>
-                  <td class="number col-avg" data-label="Среднее место">2.286</td>
-                  <td class="number col-best" data-label="Лучшее">2</td>
-                  <td class="col-stability" data-label="Стабильность">
-                    <div class="progress-label">Очень высокая</div>
-                    <div class="progress-track"><div class="progress-fill" style="--stability-width: 95%;"></div></div>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="col-dance" data-label="Танец"><strong>Танго</strong></td>
-                  <td class="number col-avg" data-label="Среднее место">2.857</td>
-                  <td class="number col-best" data-label="Лучшее">2</td>
-                  <td class="col-stability" data-label="Стабильность">
-                    <div class="progress-label">Высокая</div>
-                    <div class="progress-track"><div class="progress-fill" style="--stability-width: 68%;"></div></div>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="col-dance" data-label="Танец"><strong>Медленный вальс</strong></td>
-                  <td class="number col-avg" data-label="Среднее место">2.857</td>
-                  <td class="number col-best" data-label="Лучшее">2</td>
-                  <td class="col-stability" data-label="Стабильность">
-                    <div class="progress-label">Очень низкая</div>
-                    <div class="progress-track"><div class="progress-fill" style="--stability-width: 25%;"></div></div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
 
         </div>
         <div class="category-panel panel-standard-eadc" data-category-panel data-program="standard" data-slice-key="eadc">
@@ -4826,55 +4679,9 @@ tbody tr, tbody tr:nth-child(even), tbody tr:hover { background: transparent; }
               </div>
           </div>
 
-          <h4 class="dance-table-heading">Стабильность танцев</h4>
-          <p class="helper-text">Стабильность показывает, насколько сильно меняется итоговое место танца от турнира к турниру. Чем меньше колебания, тем выше стабильность.</p>
-          <div class="table-wrap table-scroll mobile-card-table">
-            <table>
-              <thead><tr><th class="col-dance">Танец</th><th class="number col-avg">Среднее место</th><th class="number col-best">Лучшее</th><th class="col-stability">Стабильность</th></tr></thead>
-              <tbody data-dynamic-metrics>
-                <tr>
-                  <td class="col-dance" data-label="Танец"><strong>Медленный фокстрот</strong></td>
-                  <td class="number col-avg" data-label="Среднее место">1</td>
-                  <td class="number col-best" data-label="Лучшее">1</td>
-                  <td class="col-stability" data-label="Стабильность">
-                    <div class="progress-label">Средняя</div>
-                    <div class="progress-track"><div class="progress-fill" style="--stability-width: 50%;"></div></div>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="col-dance" data-label="Танец"><strong>Квикстеп</strong></td>
-                  <td class="number col-avg" data-label="Среднее место">1</td>
-                  <td class="number col-best" data-label="Лучшее">1</td>
-                  <td class="col-stability" data-label="Стабильность">
-                    <div class="progress-label">Средняя</div>
-                    <div class="progress-track"><div class="progress-fill" style="--stability-width: 50%;"></div></div>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="col-dance" data-label="Танец"><strong>Танго</strong></td>
-                  <td class="number col-avg" data-label="Среднее место">1</td>
-                  <td class="number col-best" data-label="Лучшее">1</td>
-                  <td class="col-stability" data-label="Стабильность">
-                    <div class="progress-label">Средняя</div>
-                    <div class="progress-track"><div class="progress-fill" style="--stability-width: 50%;"></div></div>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="col-dance" data-label="Танец"><strong>Медленный вальс</strong></td>
-                  <td class="number col-avg" data-label="Среднее место">1</td>
-                  <td class="number col-best" data-label="Лучшее">1</td>
-                  <td class="col-stability" data-label="Стабильность">
-                    <div class="progress-label">Средняя</div>
-                    <div class="progress-track"><div class="progress-fill" style="--stability-width: 50%;"></div></div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
 
         </div>
       </div>
-      <p class="helper-text">Расчёт стабильности основан на разбросе итоговых мест по турнирам. Полная шкала означает очень устойчивый результат, короткая шкала — сильные колебания.</p>
     </section>
     <section class="dance-program">
       <h3>Латина</h3>
@@ -4954,51 +4761,6 @@ tbody tr, tbody tr:nth-child(even), tbody tr:hover { background: transparent; }
               </div>
           </div>
 
-          <h4 class="dance-table-heading">Стабильность танцев</h4>
-          <p class="helper-text">Стабильность показывает, насколько сильно меняется итоговое место танца от турнира к турниру. Чем меньше колебания, тем выше стабильность.</p>
-          <div class="table-wrap table-scroll mobile-card-table">
-            <table>
-              <thead><tr><th class="col-dance">Танец</th><th class="number col-avg">Среднее место</th><th class="number col-best">Лучшее</th><th class="col-stability">Стабильность</th></tr></thead>
-              <tbody data-dynamic-metrics>
-                <tr>
-                  <td class="col-dance" data-label="Танец"><strong>Ча-ча-ча</strong></td>
-                  <td class="number col-avg" data-label="Среднее место">1.947</td>
-                  <td class="number col-best" data-label="Лучшее">1</td>
-                  <td class="col-stability" data-label="Стабильность">
-                    <div class="progress-label">Очень высокая</div>
-                    <div class="progress-track"><div class="progress-fill" style="--stability-width: 95%;"></div></div>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="col-dance" data-label="Танец"><strong>Джайв</strong></td>
-                  <td class="number col-avg" data-label="Среднее место">1.895</td>
-                  <td class="number col-best" data-label="Лучшее">1</td>
-                  <td class="col-stability" data-label="Стабильность">
-                    <div class="progress-label">Высокая</div>
-                    <div class="progress-track"><div class="progress-fill" style="--stability-width: 85%;"></div></div>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="col-dance" data-label="Танец"><strong>Румба</strong></td>
-                  <td class="number col-avg" data-label="Среднее место">1.526</td>
-                  <td class="number col-best" data-label="Лучшее">1</td>
-                  <td class="col-stability" data-label="Стабильность">
-                    <div class="progress-label">Очень высокая</div>
-                    <div class="progress-track"><div class="progress-fill" style="--stability-width: 91%;"></div></div>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="col-dance" data-label="Танец"><strong>Самба</strong></td>
-                  <td class="number col-avg" data-label="Среднее место">2.875</td>
-                  <td class="number col-best" data-label="Лучшее">1</td>
-                  <td class="col-stability" data-label="Стабильность">
-                    <div class="progress-label">Очень низкая</div>
-                    <div class="progress-track"><div class="progress-fill" style="--stability-width: 25%;"></div></div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
 
         </div>
         <div class="category-panel panel-latin-n_e" data-category-panel data-program="latin" data-slice-key="n_e">
@@ -5066,42 +4828,6 @@ tbody tr, tbody tr:nth-child(even), tbody tr:hover { background: transparent; }
               </div>
           </div>
 
-          <h4 class="dance-table-heading">Стабильность танцев</h4>
-          <p class="helper-text">Стабильность показывает, насколько сильно меняется итоговое место танца от турнира к турниру. Чем меньше колебания, тем выше стабильность.</p>
-          <div class="table-wrap table-scroll mobile-card-table">
-            <table>
-              <thead><tr><th class="col-dance">Танец</th><th class="number col-avg">Среднее место</th><th class="number col-best">Лучшее</th><th class="col-stability">Стабильность</th></tr></thead>
-              <tbody data-dynamic-metrics>
-                <tr>
-                  <td class="col-dance" data-label="Танец"><strong>Ча-ча-ча</strong></td>
-                  <td class="number col-avg" data-label="Среднее место">1.8</td>
-                  <td class="number col-best" data-label="Лучшее">1</td>
-                  <td class="col-stability" data-label="Стабильность">
-                    <div class="progress-label">Низкая</div>
-                    <div class="progress-track"><div class="progress-fill" style="--stability-width: 38%;"></div></div>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="col-dance" data-label="Танец"><strong>Джайв</strong></td>
-                  <td class="number col-avg" data-label="Среднее место">1.8</td>
-                  <td class="number col-best" data-label="Лучшее">1</td>
-                  <td class="col-stability" data-label="Стабильность">
-                    <div class="progress-label">Очень низкая</div>
-                    <div class="progress-track"><div class="progress-fill" style="--stability-width: 25%;"></div></div>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="col-dance" data-label="Танец"><strong>Румба</strong></td>
-                  <td class="number col-avg" data-label="Среднее место">1.2</td>
-                  <td class="number col-best" data-label="Лучшее">1</td>
-                  <td class="col-stability" data-label="Стабильность">
-                    <div class="progress-label">Очень высокая</div>
-                    <div class="progress-track"><div class="progress-fill" style="--stability-width: 95%;"></div></div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
 
         </div>
         <div class="category-panel panel-latin-e" data-category-panel data-program="latin" data-slice-key="e">
@@ -5150,42 +4876,6 @@ tbody tr, tbody tr:nth-child(even), tbody tr:hover { background: transparent; }
               </div>
           </div>
 
-          <h4 class="dance-table-heading">Стабильность танцев</h4>
-          <p class="helper-text">Стабильность показывает, насколько сильно меняется итоговое место танца от турнира к турниру. Чем меньше колебания, тем выше стабильность.</p>
-          <div class="table-wrap table-scroll mobile-card-table">
-            <table>
-              <thead><tr><th class="col-dance">Танец</th><th class="number col-avg">Среднее место</th><th class="number col-best">Лучшее</th><th class="col-stability">Стабильность</th></tr></thead>
-              <tbody data-dynamic-metrics>
-                <tr>
-                  <td class="col-dance" data-label="Танец"><strong>Ча-ча-ча</strong></td>
-                  <td class="number col-avg" data-label="Среднее место">3</td>
-                  <td class="number col-best" data-label="Лучшее">3</td>
-                  <td class="col-stability" data-label="Стабильность">
-                    <div class="progress-label">Средняя</div>
-                    <div class="progress-track"><div class="progress-fill" style="--stability-width: 50%;"></div></div>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="col-dance" data-label="Танец"><strong>Джайв</strong></td>
-                  <td class="number col-avg" data-label="Среднее место">1</td>
-                  <td class="number col-best" data-label="Лучшее">1</td>
-                  <td class="col-stability" data-label="Стабильность">
-                    <div class="progress-label">Средняя</div>
-                    <div class="progress-track"><div class="progress-fill" style="--stability-width: 50%;"></div></div>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="col-dance" data-label="Танец"><strong>Румба</strong></td>
-                  <td class="number col-avg" data-label="Среднее место">1</td>
-                  <td class="number col-best" data-label="Лучшее">1</td>
-                  <td class="col-stability" data-label="Стабильность">
-                    <div class="progress-label">Средняя</div>
-                    <div class="progress-track"><div class="progress-fill" style="--stability-width: 50%;"></div></div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
 
         </div>
         <div class="category-panel panel-latin-e_d" data-category-panel data-program="latin" data-slice-key="e_d">
@@ -5253,51 +4943,6 @@ tbody tr, tbody tr:nth-child(even), tbody tr:hover { background: transparent; }
               </div>
           </div>
 
-          <h4 class="dance-table-heading">Стабильность танцев</h4>
-          <p class="helper-text">Стабильность показывает, насколько сильно меняется итоговое место танца от турнира к турниру. Чем меньше колебания, тем выше стабильность.</p>
-          <div class="table-wrap table-scroll mobile-card-table">
-            <table>
-              <thead><tr><th class="col-dance">Танец</th><th class="number col-avg">Среднее место</th><th class="number col-best">Лучшее</th><th class="col-stability">Стабильность</th></tr></thead>
-              <tbody data-dynamic-metrics>
-                <tr>
-                  <td class="col-dance" data-label="Танец"><strong>Ча-ча-ча</strong></td>
-                  <td class="number col-avg" data-label="Среднее место">2.143</td>
-                  <td class="number col-best" data-label="Лучшее">1</td>
-                  <td class="col-stability" data-label="Стабильность">
-                    <div class="progress-label">Очень высокая</div>
-                    <div class="progress-track"><div class="progress-fill" style="--stability-width: 95%;"></div></div>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="col-dance" data-label="Танец"><strong>Джайв</strong></td>
-                  <td class="number col-avg" data-label="Среднее место">2.286</td>
-                  <td class="number col-best" data-label="Лучшее">1</td>
-                  <td class="col-stability" data-label="Стабильность">
-                    <div class="progress-label">Высокая</div>
-                    <div class="progress-track"><div class="progress-fill" style="--stability-width: 75%;"></div></div>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="col-dance" data-label="Танец"><strong>Румба</strong></td>
-                  <td class="number col-avg" data-label="Среднее место">2.143</td>
-                  <td class="number col-best" data-label="Лучшее">1</td>
-                  <td class="col-stability" data-label="Стабильность">
-                    <div class="progress-label">Средняя</div>
-                    <div class="progress-track"><div class="progress-fill" style="--stability-width: 50%;"></div></div>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="col-dance" data-label="Танец"><strong>Самба</strong></td>
-                  <td class="number col-avg" data-label="Среднее место">3.143</td>
-                  <td class="number col-best" data-label="Лучшее">1</td>
-                  <td class="col-stability" data-label="Стабильность">
-                    <div class="progress-label">Очень низкая</div>
-                    <div class="progress-track"><div class="progress-fill" style="--stability-width: 25%;"></div></div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
 
         </div>
         <div class="category-panel panel-latin-eadc" data-category-panel data-program="latin" data-slice-key="eadc">
@@ -5337,55 +4982,9 @@ tbody tr, tbody tr:nth-child(even), tbody tr:hover { background: transparent; }
               </div>
           </div>
 
-          <h4 class="dance-table-heading">Стабильность танцев</h4>
-          <p class="helper-text">Стабильность показывает, насколько сильно меняется итоговое место танца от турнира к турниру. Чем меньше колебания, тем выше стабильность.</p>
-          <div class="table-wrap table-scroll mobile-card-table">
-            <table>
-              <thead><tr><th class="col-dance">Танец</th><th class="number col-avg">Среднее место</th><th class="number col-best">Лучшее</th><th class="col-stability">Стабильность</th></tr></thead>
-              <tbody data-dynamic-metrics>
-                <tr>
-                  <td class="col-dance" data-label="Танец"><strong>Ча-ча-ча</strong></td>
-                  <td class="number col-avg" data-label="Среднее место">1</td>
-                  <td class="number col-best" data-label="Лучшее">1</td>
-                  <td class="col-stability" data-label="Стабильность">
-                    <div class="progress-label">Средняя</div>
-                    <div class="progress-track"><div class="progress-fill" style="--stability-width: 50%;"></div></div>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="col-dance" data-label="Танец"><strong>Джайв</strong></td>
-                  <td class="number col-avg" data-label="Среднее место">1</td>
-                  <td class="number col-best" data-label="Лучшее">1</td>
-                  <td class="col-stability" data-label="Стабильность">
-                    <div class="progress-label">Средняя</div>
-                    <div class="progress-track"><div class="progress-fill" style="--stability-width: 50%;"></div></div>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="col-dance" data-label="Танец"><strong>Румба</strong></td>
-                  <td class="number col-avg" data-label="Среднее место">1</td>
-                  <td class="number col-best" data-label="Лучшее">1</td>
-                  <td class="col-stability" data-label="Стабильность">
-                    <div class="progress-label">Средняя</div>
-                    <div class="progress-track"><div class="progress-fill" style="--stability-width: 50%;"></div></div>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="col-dance" data-label="Танец"><strong>Самба</strong></td>
-                  <td class="number col-avg" data-label="Среднее место">1</td>
-                  <td class="number col-best" data-label="Лучшее">1</td>
-                  <td class="col-stability" data-label="Стабильность">
-                    <div class="progress-label">Средняя</div>
-                    <div class="progress-track"><div class="progress-fill" style="--stability-width: 50%;"></div></div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
 
         </div>
       </div>
-      <p class="helper-text">Расчёт стабильности основан на разбросе итоговых мест по турнирам. Полная шкала означает очень устойчивый результат, короткая шкала — сильные колебания.</p>
     </section>
 
     </section>
