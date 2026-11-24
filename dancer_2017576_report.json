@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-11-24T07:15:04.451259+00:00",
+    "generated_at": "2026-11-24T08:56:19.182447+00:00",
     "analytics_version": "report_layer_v1",
     "database": "database/compreg_spb_2025_2026.sqlite"
   },
@@ -1304,7 +1304,7 @@
         "tournament_title": "Танцевальное Свидание 2026 - Dance Date Cup (Санкт-Петербург)",
         "event_date": "2026-03-01",
         "city": "Санкт-Петербург",
-        "panel_spread": 1.622693342879735,
+        "panel_spread": 1.6226933428797348,
         "protocol_count": 3,
         "protocol_dance_round_groups": 15,
         "numeric_marks": 145,
@@ -1356,7 +1356,7 @@
         "tournament_title": "Карнавал 2026 (Санкт-Петербург)",
         "event_date": "2026-04-26",
         "city": "Санкт-Петербург",
-        "panel_spread": 1.4913806715040716,
+        "panel_spread": 1.4913806715040714,
         "protocol_count": 2,
         "protocol_dance_round_groups": 10,
         "numeric_marks": 130,
@@ -1379,8 +1379,8 @@
       }
     ],
     "panel_spread_first": 1.5360213565678165,
-    "panel_spread_last": 1.3336607948290902,
-    "panel_spread_delta": -0.2023605617387263,
+    "panel_spread_last": 1.33366079482909,
+    "panel_spread_delta": -0.20236056173872652,
     "panel_spread_trend": "more_consistent",
     "early_late_window_tournaments": 2,
     "tournament_count": 4,

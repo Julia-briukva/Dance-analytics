@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-11-24T07:16:21.167751+00:00",
+    "generated_at": "2026-11-24T08:57:25.395164+00:00",
     "analytics_version": "report_layer_v1",
     "database": "database/compreg_spb_2025_2026.sqlite"
   },
@@ -1313,7 +1313,7 @@
         "tournament_title": "Кубок Лиги 2025 (Санкт-Петербург)",
         "event_date": "2025-11-09",
         "city": "Санкт-Петербург",
-        "panel_spread": 1.2800334939539786,
+        "panel_spread": 1.2800334939539788,
         "protocol_count": 1,
         "protocol_dance_round_groups": 4,
         "numeric_marks": 28,

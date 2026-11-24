@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-11-24T07:16:24.543064+00:00",
+    "generated_at": "2026-11-24T08:57:28.465576+00:00",
     "analytics_version": "report_layer_v1",
     "database": "database/compreg_spb_2025_2026.sqlite"
   },
@@ -1490,7 +1490,7 @@
         "tournament_title": "Открытый Рейтинговый и Классификационный Чемпионат СПТЛ 2026 (Санкт-Петербург)",
         "event_date": "2026-02-23",
         "city": "Санкт-Петербург",
-        "panel_spread": 0.6866798612964367,
+        "panel_spread": 0.6866798612964368,
         "protocol_count": 3,
         "protocol_dance_round_groups": 15,
         "numeric_marks": 155,
@@ -1630,7 +1630,7 @@
         "tournament_title": "Балтийская Звезда (Санкт-Петербург)",
         "event_date": "2026-10-11",
         "city": "Санкт-Петербург",
-        "panel_spread": 1.4016300479629469,
+        "panel_spread": 1.401630047962947,
         "protocol_count": 2,
         "protocol_dance_round_groups": 9,
         "numeric_marks": 81,
@@ -1670,7 +1670,7 @@
         "tournament_title": "Северный Кубок 2026 (Санкт-Петербург)",
         "event_date": "2026-11-01",
         "city": "Санкт-Петербург",
-        "panel_spread": 1.1677517196937377,
+        "panel_spread": 1.167751719693738,
         "protocol_count": 2,
         "protocol_dance_round_groups": 8,
         "numeric_marks": 120,

@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-11-24T07:15:10.136439+00:00",
+    "generated_at": "2026-11-24T08:56:24.108175+00:00",
     "analytics_version": "report_layer_v1",
     "database": "database/compreg_spb_2025_2026.sqlite"
   },
@@ -1743,7 +1743,7 @@
         "tournament_title": "Кубок Петербурга 2025 (Санкт-Петербург)",
         "event_date": "2025-12-21",
         "city": "Санкт-Петербург",
-        "panel_spread": 0.7055402407999605,
+        "panel_spread": 0.7055402407999604,
         "protocol_count": 1,
         "protocol_dance_round_groups": 5,
         "numeric_marks": 65,
@@ -1841,7 +1841,7 @@
         "tournament_title": "Карнавал 2026 (Санкт-Петербург)",
         "event_date": "2026-04-26",
         "city": "Санкт-Петербург",
-        "panel_spread": 0.8674897288533737,
+        "panel_spread": 0.8674897288533735,
         "protocol_count": 4,
         "protocol_dance_round_groups": 20,
         "numeric_marks": 260,
@@ -1867,7 +1867,7 @@
         "tournament_title": "Чемпионат СПТЛ 2026 (Санкт-Петербург)",
         "event_date": "2026-05-24",
         "city": "Санкт-Петербург",
-        "panel_spread": 1.234780221662769,
+        "panel_spread": 1.2347802216627692,
         "protocol_count": 2,
         "protocol_dance_round_groups": 10,
         "numeric_marks": 90,
@@ -1893,7 +1893,7 @@
         "tournament_title": "Северный Кубок 2026 (Санкт-Петербург)",
         "event_date": "2026-11-01",
         "city": "Санкт-Петербург",
-        "panel_spread": 1.4119031254868653,
+        "panel_spread": 1.4119031254868655,
         "protocol_count": 4,
         "protocol_dance_round_groups": 20,
         "numeric_marks": 280,

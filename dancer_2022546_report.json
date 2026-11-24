@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-11-24T07:16:17.643111+00:00",
+    "generated_at": "2026-11-24T08:57:22.131072+00:00",
     "analytics_version": "report_layer_v1",
     "database": "database/compreg_spb_2025_2026.sqlite"
   },
@@ -1165,7 +1165,7 @@
         "tournament_title": "Кубок Лиги 2025 (Санкт-Петербург)",
         "event_date": "2025-11-09",
         "city": "Санкт-Петербург",
-        "panel_spread": 1.9432882364466666,
+        "panel_spread": 1.9432882364466668,
         "protocol_count": 2,
         "protocol_dance_round_groups": 4,
         "numeric_marks": 28,
@@ -1219,7 +1219,7 @@
         "tournament_title": "Амбассадор 2026 (Санкт-Петербург)",
         "event_date": "2026-03-08",
         "city": "Санкт-Петербург",
-        "panel_spread": 0.657721304677789,
+        "panel_spread": 0.6577213046777889,
         "protocol_count": 2,
         "protocol_dance_round_groups": 4,
         "numeric_marks": 28,

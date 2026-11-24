@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-11-24T07:16:30.615714+00:00",
+    "generated_at": "2026-11-24T08:57:33.671296+00:00",
     "analytics_version": "report_layer_v1",
     "database": "database/compreg_spb_2025_2026.sqlite"
   },
@@ -1862,7 +1862,7 @@
         "tournament_title": "Северный кубок 2025 (Санкт-Петербург)",
         "event_date": "2025-09-28",
         "city": "Санкт-Петербург",
-        "panel_spread": 0.9666021260468298,
+        "panel_spread": 0.9666021260468297,
         "protocol_count": 5,
         "protocol_dance_round_groups": 24,
         "numeric_marks": 324,
@@ -1888,7 +1888,7 @@
         "tournament_title": "Балтийская Звезда - 2025 (Санкт-Петербург)",
         "event_date": "2025-10-12",
         "city": "Санкт-Петербург",
-        "panel_spread": 1.007527463745059,
+        "panel_spread": 1.0075274637450593,
         "protocol_count": 3,
         "protocol_dance_round_groups": 14,
         "numeric_marks": 182,
@@ -1933,7 +1933,7 @@
         "tournament_title": "Кубок Петербурга 2025 (Санкт-Петербург)",
         "event_date": "2025-12-21",
         "city": "Санкт-Петербург",
-        "panel_spread": 1.8603195225599916,
+        "panel_spread": 1.8603195225599918,
         "protocol_count": 1,
         "protocol_dance_round_groups": 4,
         "numeric_marks": 36,
@@ -1952,7 +1952,7 @@
         "tournament_title": "Lider Cup 2026 (Санкт-Петербург)",
         "event_date": "2026-01-18",
         "city": "Санкт-Петербург",
-        "panel_spread": 1.1288385876297533,
+        "panel_spread": 1.1288385876297535,
         "protocol_count": 3,
         "protocol_dance_round_groups": 15,
         "numeric_marks": 115,
@@ -2085,9 +2085,9 @@
         ]
       }
     ],
-    "panel_spread_first": 1.3911708665829783,
+    "panel_spread_first": 1.3911708665829785,
     "panel_spread_last": 1.3633493384156232,
-    "panel_spread_delta": -0.02782152816735506,
+    "panel_spread_delta": -0.02782152816735528,
     "panel_spread_trend": "stable",
     "early_late_window_tournaments": 4,
     "tournament_count": 10,

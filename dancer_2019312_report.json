@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-11-24T07:15:23.373459+00:00",
+    "generated_at": "2026-11-24T08:56:35.515359+00:00",
     "analytics_version": "report_layer_v1",
     "database": "database/compreg_spb_2025_2026.sqlite"
   },
@@ -1508,7 +1508,7 @@
         "tournament_title": "Гордость Санкт-Петербурга 2025 (Санкт-Петербург)",
         "event_date": "2025-11-16",
         "city": "Санкт-Петербург",
-        "panel_spread": 2.311129905878301,
+        "panel_spread": 2.3111299058783015,
         "protocol_count": 1,
         "protocol_dance_round_groups": 3,
         "numeric_marks": 21,
@@ -1588,7 +1588,7 @@
         "tournament_title": "Амбассадор 2026 (Санкт-Петербург)",
         "event_date": "2026-03-08",
         "city": "Санкт-Петербург",
-        "panel_spread": 0.982134337698993,
+        "panel_spread": 0.9821343376989929,
         "protocol_count": 2,
         "protocol_dance_round_groups": 6,
         "numeric_marks": 42,
@@ -1647,9 +1647,9 @@
         ]
       }
     ],
-    "panel_spread_first": 1.8478827394641577,
+    "panel_spread_first": 1.847882739464158,
     "panel_spread_last": 1.3108187243665128,
-    "panel_spread_delta": -0.5370640150976449,
+    "panel_spread_delta": -0.5370640150976451,
     "panel_spread_trend": "more_consistent",
     "early_late_window_tournaments": 4,
     "tournament_count": 9,

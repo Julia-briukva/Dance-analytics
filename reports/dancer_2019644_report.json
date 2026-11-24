@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-11-24T07:15:37.657694+00:00",
+    "generated_at": "2026-11-24T08:56:47.653449+00:00",
     "analytics_version": "report_layer_v1",
     "database": "database/compreg_spb_2025_2026.sqlite"
   },
@@ -1839,7 +1839,7 @@
         "tournament_title": "Карнавал 2026 (Санкт-Петербург)",
         "event_date": "2026-04-26",
         "city": "Санкт-Петербург",
-        "panel_spread": 1.6898043193253756,
+        "panel_spread": 1.6898043193253751,
         "protocol_count": 3,
         "protocol_dance_round_groups": 10,
         "numeric_marks": 90,
@@ -1862,7 +1862,7 @@
         "tournament_title": "Чемпионат СПТС 2026 (Санкт-Петербург)",
         "event_date": "2026-05-17",
         "city": "Санкт-Петербург",
-        "panel_spread": 1.5513932346851154,
+        "panel_spread": 1.5513932346851151,
         "protocol_count": 2,
         "protocol_dance_round_groups": 7,
         "numeric_marks": 63,
@@ -1900,8 +1900,8 @@
       }
     ],
     "panel_spread_first": 1.7202480970420748,
-    "panel_spread_last": 1.5891653030762813,
-    "panel_spread_delta": -0.13108279396579348,
+    "panel_spread_last": 1.5891653030762811,
+    "panel_spread_delta": -0.1310827939657937,
     "panel_spread_trend": "stable",
     "early_late_window_tournaments": 5,
     "tournament_count": 13,

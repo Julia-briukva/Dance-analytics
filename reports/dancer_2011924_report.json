@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-11-24T07:15:50.017110+00:00",
+    "generated_at": "2026-11-24T08:56:58.648638+00:00",
     "analytics_version": "report_layer_v1",
     "database": "database/compreg_spb_2025_2026.sqlite"
   },
@@ -1546,7 +1546,7 @@
         "tournament_title": "Амбассадор 2026 (Санкт-Петербург)",
         "event_date": "2026-03-08",
         "city": "Санкт-Петербург",
-        "panel_spread": 1.1799768942527809,
+        "panel_spread": 1.179976894252781,
         "protocol_count": 3,
         "protocol_dance_round_groups": 10,
         "numeric_marks": 78,
@@ -1569,7 +1569,7 @@
         "tournament_title": "Карнавал 2026 (Санкт-Петербург)",
         "event_date": "2026-04-26",
         "city": "Санкт-Петербург",
-        "panel_spread": 1.7857511749447477,
+        "panel_spread": 1.7857511749447479,
         "protocol_count": 1,
         "protocol_dance_round_groups": 4,
         "numeric_marks": 52,
@@ -1585,8 +1585,8 @@
       }
     ],
     "panel_spread_first": 1.3301305802826107,
-    "panel_spread_last": 1.4828640345987643,
-    "panel_spread_delta": 0.1527334543161536,
+    "panel_spread_last": 1.4828640345987645,
+    "panel_spread_delta": 0.15273345431615382,
     "panel_spread_trend": "less_consistent",
     "early_late_window_tournaments": 2,
     "tournament_count": 6,

@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-11-24T07:14:58.519406+00:00",
+    "generated_at": "2026-11-24T08:56:13.886041+00:00",
     "analytics_version": "report_layer_v1",
     "database": "database/compreg_spb_2025_2026.sqlite"
   },
@@ -1748,7 +1748,7 @@
         "tournament_title": "Кубок Лиги 2025 (Санкт-Петербург)",
         "event_date": "2025-11-09",
         "city": "Санкт-Петербург",
-        "panel_spread": 1.5064121784990852,
+        "panel_spread": 1.5064121784990854,
         "protocol_count": 1,
         "protocol_dance_round_groups": 4,
         "numeric_marks": 28,
@@ -1809,7 +1809,7 @@
         "tournament_title": "Танцевальное Свидание 2026 - Dance Date Cup (Санкт-Петербург)",
         "event_date": "2026-03-01",
         "city": "Санкт-Петербург",
-        "panel_spread": 1.56966484469401,
+        "panel_spread": 1.5696648446940098,
         "protocol_count": 1,
         "protocol_dance_round_groups": 4,
         "numeric_marks": 36,
@@ -1952,7 +1952,7 @@
         "tournament_title": "Северный Кубок 2026 (Санкт-Петербург)",
         "event_date": "2026-11-01",
         "city": "Санкт-Петербург",
-        "panel_spread": 0.7619266579693909,
+        "panel_spread": 0.761926657969391,
         "protocol_count": 1,
         "protocol_dance_round_groups": 5,
         "numeric_marks": 55,
@@ -1968,9 +1968,9 @@
         ]
       }
     ],
-    "panel_spread_first": 1.433614068861255,
+    "panel_spread_first": 1.4336140688612549,
     "panel_spread_last": 1.1868600385327683,
-    "panel_spread_delta": -0.24675403032848675,
+    "panel_spread_delta": -0.24675403032848653,
     "panel_spread_trend": "more_consistent",
     "early_late_window_tournaments": 4,
     "tournament_count": 11,

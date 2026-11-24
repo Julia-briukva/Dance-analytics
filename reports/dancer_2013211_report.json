@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-11-24T07:15:02.972581+00:00",
+    "generated_at": "2026-11-24T08:56:17.900925+00:00",
     "analytics_version": "report_layer_v1",
     "database": "database/compreg_spb_2025_2026.sqlite"
   },
@@ -473,7 +473,7 @@
         "tournament_title": "Северный кубок 2025 (Санкт-Петербург)",
         "event_date": "2025-09-28",
         "city": "Санкт-Петербург",
-        "panel_spread": 1.5186691430251538,
+        "panel_spread": 1.5186691430251535,
         "protocol_count": 1,
         "protocol_dance_round_groups": 3,
         "numeric_marks": 33,
@@ -503,9 +503,9 @@
         ]
       }
     ],
-    "panel_spread_first": 1.5186691430251538,
+    "panel_spread_first": 1.5186691430251535,
     "panel_spread_last": 0.4714045207910317,
-    "panel_spread_delta": -1.0472646222341222,
+    "panel_spread_delta": -1.0472646222341218,
     "panel_spread_trend": "more_consistent",
     "early_late_window_tournaments": 1,
     "tournament_count": 2,
