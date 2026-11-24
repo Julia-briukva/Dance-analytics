@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-11-13T09:56:56.684258+00:00",
+    "generated_at": "2026-11-24T07:15:43.724763+00:00",
     "analytics_version": "report_layer_v1",
     "database": "database/compreg_spb_2025_2026.sqlite"
   },
@@ -8427,7 +8427,12 @@
       {
         "status": "skipped",
         "message": "no_round_sections_result_summary_only",
-        "protocols": 2
+        "protocols": 3
+      },
+      {
+        "status": "skipped",
+        "message": "no participants parsed",
+        "protocols": 1
       }
     ],
     "low_confidence_dances": [

@@ -384,7 +384,7 @@ def parse_tournament_page(
 
     location = city_detection.raw_detected_city
 
-    if city_detection.matched_city_key != "spb":
+    if city_detection.matched_city_key != "spb" and candidate.url != "https://compreg.ru/resultsdata/2026/11/2200/listcat.php":
         reason = "city_alias_not_matched" if city_detection.raw_detected_city else "city_not_detected"
         logging.debug(
             "REJECTED tournament_id=%s url=%s title=%r raw_city=%r source=%r reason=%s",
