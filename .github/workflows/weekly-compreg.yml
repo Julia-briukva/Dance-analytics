@@ -13,6 +13,7 @@ on:
         type: string
 
 permissions:
+  actions: read
   contents: write
   pages: write
   id-token: write
@@ -117,10 +118,19 @@ jobs:
         if: steps.sync.outputs.updated == 'true'
         uses: actions/upload-pages-artifact@v3
         with:
+          name: github-pages-${{ github.run_id }}-${{ github.run_attempt }}
           path: _site
+      - name: Wait for Pages archive metadata
+        if: steps.sync.outputs.updated == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PAGES_ARTIFACT_NAME: github-pages-${{ github.run_id }}-${{ github.run_attempt }}
+        run: python3 app/scripts/wait_for_pages_artifact.py
       - name: Deploy reports
         if: steps.sync.outputs.updated == 'true'
         uses: actions/deploy-pages@v4
+        with:
+          artifact_name: github-pages-${{ github.run_id }}-${{ github.run_attempt }}
       - name: Confirm publication in private state
         if: steps.sync.outputs.updated == 'true'
         working-directory: private-state
