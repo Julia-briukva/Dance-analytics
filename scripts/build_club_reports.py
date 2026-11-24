@@ -112,7 +112,49 @@ def build_one_report(conn: sqlite3.Connection, idd: str) -> tuple[Path, Path]:
     return json_path, html_path
 
 
+def index_entries(status_rows: list[dict[str, str]]) -> list[dict[str, str]]:
+    """One index entry per solo dancer or complete couple, keeping every partner IDD."""
+    singles: list[dict[str, str]] = []
+    couples: dict[tuple[str, ...], list[dict[str, str]]] = {}
+    # The source status keeps each roster member's own name even when the report is a couple.
+    roster_ids: dict[str, set[str]] = {}
+    for row in status_rows:
+        personal_name = row.get("name") or ""
+        if personal_name and not is_couple_name(personal_name):
+            key = " ".join(personal_name.casefold().replace("ё", "е").split())
+            roster_ids.setdefault(key, set()).update(idd.strip() for idd in (row.get("idd") or "").split("/") if idd.strip())
+    for row in status_rows:
+        name = report_display_name(row)
+        if not is_couple_name(name):
+            singles.append(dict(row))
+            continue
+        parts = PAIR_SEPARATOR_RE.split(name)
+        key = tuple(sorted(" ".join(part.casefold().replace("ё", "е").split()) for part in parts))
+        couples.setdefault(key, []).append(row)
+
+    entries = list(singles)
+    for pair_key, members in couples.items():
+        def rank(row: dict[str, str]) -> tuple:
+            report = PROJECT_ROOT / (row.get("report_html") or "")
+            ready = row.get("status") == "success" and report.is_file() and report.stat().st_size > 128
+            # Prefer a working report; deterministic choice avoids link changes every build.
+            return (not ready, row.get("idd") or "")
+        canonical = min(members, key=rank)
+        entry = dict(canonical)
+        ids = {idd.strip() for row in members for idd in (row.get("idd") or "").split("/") if idd.strip()}
+        # A partner can also have a separate solo report; retain it and show their roster IDD here.
+        if any(" ".join((row.get("name") or "").casefold().replace("ё", "е").split()) in pair_key for row in members):
+            for partner in pair_key:
+                candidates = roster_ids.get(partner, set())
+                if len(candidates) == 1:
+                    ids.update(candidates)
+        entry["idd"] = " / ".join(sorted(ids))
+        entries.append(entry)
+    return sorted(entries, key=lambda row: report_display_name(row).casefold().replace("ё", "е"))
+
+
 def render_index(existing_html: str, status_rows: list[dict[str, str]]) -> str:
+    status_rows = index_entries(status_rows)
     section_start = "<!-- club-reports:start -->"
     section_end = "<!-- club-reports:end -->"
 
