@@ -1,0 +1,141 @@
+name: Update club results
+
+on:
+  schedule:
+    # Wednesday 10:00 Moscow = 07:00 UTC. GitHub can start scheduled jobs later.
+    - cron: '0 7 * * 3'
+  workflow_dispatch:
+    inputs:
+      tournament_url:
+        description: 'Ссылка listcat.php (оставьте пустой для проверки последних 4 недель)'
+        required: false
+        default: ''
+        type: string
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+# Shared lock with the normal Pages workflow. Never cancel an in-progress update.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  update:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    environment:
+      name: github-pages
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          path: app
+      - name: Check private state configuration
+        env:
+          STATE_KEY: ${{ secrets.DANCE_STATE_SSH_KEY }}
+          STATE_REPOSITORY: ${{ vars.DANCE_STATE_REPOSITORY }}
+        run: |
+          test -n "$STATE_KEY" || { echo 'Run the one-time installer: DANCE_STATE_SSH_KEY is missing'; exit 1; }
+          test -n "$STATE_REPOSITORY" || { echo 'DANCE_STATE_REPOSITORY is missing'; exit 1; }
+          python - <<'PY'
+          import json, os, re, urllib.request, urllib.error
+          name = os.environ['STATE_REPOSITORY']
+          if not re.fullmatch(r'[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+', name):
+              raise SystemExit('Invalid state repository')
+          # A private repository is not visible to an unauthenticated request.
+          try:
+              with urllib.request.urlopen('https://api.github.com/repos/' + name, timeout=30) as response:
+                  repo = json.load(response)
+          except urllib.error.HTTPError as exc:
+              if exc.code != 404:
+                  raise
+          else:
+              if not repo.get('private'):
+                  raise SystemExit('The state repository is publicly visible; update stopped')
+          PY
+      - uses: actions/checkout@v4
+        with:
+          repository: ${{ vars.DANCE_STATE_REPOSITORY }}
+          ssh-key: ${{ secrets.DANCE_STATE_SSH_KEY }}
+          ref: main
+          path: private-state
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: app/requirements.txt
+      - name: Install dependencies
+        run: python -m pip install -r app/requirements.txt
+      - name: Run importer regression checks
+        run: python -m unittest discover -s app/tests -v
+      - name: Restore full history
+        run: python app/scripts/weekly_state.py restore --state private-state/state
+      - name: Find club dancers and refresh reports
+        id: sync
+        env:
+          TOURNAMENT_URL: ${{ inputs.tournament_url || '' }}
+        run: python -u app/scripts/weekly_compreg.py --state private-state/state --url "$TOURNAMENT_URL"
+      - name: Save validated state
+        run: |
+          python app/scripts/weekly_state.py save --state private-state/state
+          cd private-state
+          git config user.name 'Dance results automation'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- state
+          if ! git diff --cached --quiet; then
+            git commit -m 'Update Compreg database and source protocols'
+            git push origin HEAD:main
+          fi
+      - name: Commit refreshed public reports
+        if: steps.sync.outputs.updated == 'true'
+        working-directory: app
+        run: |
+          git config user.name 'Dance results automation'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- 'dancer_*_report.html' 'dancer_*_report.json' index.html 'reports/dancer_*_report.html' 'reports/dancer_*_report.json' reports/index.html
+          if ! git diff --cached --quiet; then
+            git commit -m 'Refresh club tournament results'
+            git push origin HEAD:main
+          fi
+      # GITHUB_TOKEN pushes do not trigger pages.yml. Deploy here explicitly.
+      - name: Setup Pages
+        if: steps.sync.outputs.updated == 'true'
+        uses: actions/configure-pages@v5
+      - name: Prepare public site
+        if: steps.sync.outputs.updated == 'true'
+        run: |
+          mkdir -p _site
+          cp app/reports/index.html _site/index.html
+          cp app/reports/dancer_*_report.html _site/
+          cp app/reports/dancer_*_report.json _site/
+          if [ -d app/portfolio_demo ]; then cp -R app/portfolio_demo _site/portfolio_demo; fi
+      - name: Upload site
+        if: steps.sync.outputs.updated == 'true'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - name: Deploy reports
+        if: steps.sync.outputs.updated == 'true'
+        uses: actions/deploy-pages@v4
+      - name: Confirm publication in private state
+        if: steps.sync.outputs.updated == 'true'
+        working-directory: private-state
+        run: |
+          rm -f state/pending_publication.json
+          git add -- state
+          if ! git diff --cached --quiet; then
+            git commit -m 'Confirm successful Pages publication'
+            git push origin HEAD:main
+          fi
+      - name: Retain run summary
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: compreg-run-summary
+          path: app/reports/weekly_update_summary.json
+          if-no-files-found: ignore
+          retention-days: 30
