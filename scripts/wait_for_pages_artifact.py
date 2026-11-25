@@ -25,7 +25,11 @@ def main():
                 raise RuntimeError('Several Pages archives have the current attempt name')
             if len(found) == 1:
                 print(f"Pages archive ready: {name} (id {found[0]['id']})", flush=True)
-                return
+                artifact_id = int(found[0]['id'])
+                if os.environ.get('GITHUB_OUTPUT'):
+                    with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
+                        f.write(f'artifact_id={artifact_id}\n')
+                return artifact_id
         except urllib.error.HTTPError as exc:
             if exc.code not in {429, 500, 502, 503, 504}:
                 raise

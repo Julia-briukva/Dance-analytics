@@ -121,6 +121,7 @@ jobs:
           name: github-pages-${{ github.run_id }}-${{ github.run_attempt }}
           path: _site
       - name: Wait for Pages archive metadata
+        id: pages_archive
         if: steps.sync.outputs.updated == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
@@ -128,9 +129,10 @@ jobs:
         run: python3 app/scripts/wait_for_pages_artifact.py
       - name: Deploy reports
         if: steps.sync.outputs.updated == 'true'
-        uses: actions/deploy-pages@v4
-        with:
-          artifact_name: github-pages-${{ github.run_id }}-${{ github.run_attempt }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PAGES_ARTIFACT_ID: ${{ steps.pages_archive.outputs.artifact_id }}
+        run: python3 app/scripts/deploy_pages_by_id.py
       - name: Confirm publication in private state
         if: steps.sync.outputs.updated == 'true'
         working-directory: private-state
