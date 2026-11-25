@@ -110,6 +110,7 @@ jobs:
         if: steps.sync.outputs.updated == 'true'
         run: |
           mkdir -p _site
+          cp app/reports/favicon.ico app/reports/favicon-32.png app/reports/favicon-192.png app/reports/apple-touch-icon.png _site/
           cp app/reports/index.html _site/index.html
           cp app/reports/dancer_*_report.html _site/
           cp app/reports/dancer_*_report.json _site/
